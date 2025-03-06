@@ -1,0 +1,13 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "ef24d28c-f99c-11ef-8c58-efeb0ef80c88",
+  "appTemplate": {
+    "appThemeId": 1,
+    "preloadedAppJavaScript": "",
+    "isFetching": true,
+    "appThemeName": "Agabang & Company key color",
+    "version": "3.114.3",
+    "experimentalDataTabEnabled": true
+  }
+}
