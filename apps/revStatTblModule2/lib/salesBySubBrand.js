@@ -42,9 +42,12 @@ function pivotData(data, groupKeys, pivotKey, sumKeys) {
 
 const sumKeys = ["rev"]
 const data = {{ inputDataByStyle.value }}
-const arrData = formatDataAsArray(data)
+let arrData = formatDataAsArray(data)
+
+arrData = arrData.filter(item => item.biz_cd === {{ selectedRow.value.biz_cd }})
 
 const keys = ["sub_br_nm", "sub_br_cd"]
 const groupedArr = groupBySum(arrData, ["time_unit", ...keys], sumKeys)
 const result = pivotData(groupedArr, keys, "time_unit", sumKeys)
-return result
+
+return result.sort((a, b) => a.sub_br_nm.localeCompare(b.sub_br_nm, "ko"))

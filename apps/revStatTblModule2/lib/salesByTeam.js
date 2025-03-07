@@ -54,3 +54,4 @@ return result.map(item => {
   );
   return {...item, target_sales: matched ? matched.target_sales : 0}
 })
+.sort((a, b) => b.target_sales - a.target_sales)

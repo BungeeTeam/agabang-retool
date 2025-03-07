@@ -123,9 +123,62 @@
     "col": 9,
     "height": 1.4
   },
+  "modalCloseButton2": {
+    "rowGroup": "header",
+    "subcontainer": "teamModalFrame",
+    "col": 9,
+    "height": 1
+  },
+  "modalCloseButton3": {
+    "rowGroup": "header",
+    "subcontainer": "bizModalFrame",
+    "col": 9,
+    "height": 1
+  },
+  "modalCloseButton4": {
+    "rowGroup": "header",
+    "subcontainer": "onoffModalFrame",
+    "col": 9,
+    "height": 1
+  },
+  "modalTitle1": {
+    "rowGroup": "header",
+    "subcontainer": "teamModalFrame",
+    "height": 0.6,
+    "width": 9
+  },
+  "modalTitle2": {
+    "subcontainer": "teamModalFrame",
+    "height": 0.6,
+    "width": 9
+  },
+  "modalTitle3": {
+    "subcontainer": "teamModalFrame",
+    "row": 2.4,
+    "height": 0.6,
+    "width": 9
+  },
+  "modalTitle4": {
+    "subcontainer": "teamModalFrame",
+    "row": 5.8,
+    "height": 0.6,
+    "width": 9
+  },
+  "modalTitle5": {
+    "rowGroup": "header",
+    "subcontainer": "bizModalFrame",
+    "height": 0.6,
+    "width": 9
+  },
   "moduleContainer": {
     "height": 44,
     "width": 12
+  },
+  "onoffModalFrameHeader": {
+    "rowGroup": "header",
+    "subcontainer": "onoffModalFrame",
+    "height": 0.6,
+    "width": 9
   },
   "plotlyJsonChart1": {
     "subcontainer": "shopDetailModalFrame",
@@ -133,10 +186,54 @@
     "height": 8.6,
     "width": 5
   },
-  "styleTabContainer": {
+  "spacer1": {
+    "subcontainer": "teamModalFrame",
+    "row": 5.2,
+    "height": 0.6,
+    "width": 2
+  },
+  "spacer3": {
+    "subcontainer": "teamModalFrame",
+    "row": 1.8,
+    "height": 0.6,
+    "width": 2
+  },
+  "spacer4": {
     "container": "moduleContainer",
-    "row": 36.4,
+    "row": 2,
     "height": 0.8,
+    "width": 2
+  },
+  "spacer5": {
+    "container": "moduleContainer",
+    "row": 5.6,
+    "height": 0.8,
+    "width": 2
+  },
+  "spacer6": {
+    "subcontainer": "bizModalFrame",
+    "row": 2,
+    "height": 0.8,
+    "width": 2
+  },
+  "styleTabContainer": {
+    "subcontainer": "bizModalFrame",
+    "row": 5.6,
+    "height": 0.8,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "subBrandTbl": {
+    "subcontainer": "bizModalFrame",
+    "row": 1,
+    "height": 1,
     "width": 12
   },
   "table1": {
@@ -171,7 +268,7 @@
     "height": 0.6,
     "width": 12
   },
-  "tabs2": {
+  "tabs3": {
     "container": "styleTabContainer",
     "rowGroup": "header",
     "height": 0.6,
@@ -179,6 +276,7 @@
   },
   "text1": {
     "container": "moduleContainer",
+    "row": 0.2,
     "height": 0.6,
     "width": 9
   },
@@ -285,7 +383,7 @@
   },
   "text2": {
     "container": "moduleContainer",
-    "row": 9.2,
+    "row": 6.4,
     "height": 0.6,
     "width": 9
   },
@@ -300,115 +398,84 @@
     "row": 3.2,
     "height": 0.6
   },
-  "text25": {
-    "container": "moduleContainer",
-    "row": 35.4,
-    "col": 1,
-    "height": 0.6
-  },
-  "text26": {
-    "container": "moduleContainer",
-    "row": 30.8,
-    "col": 1,
-    "height": 0.6,
-    "width": 5
-  },
-  "text27": {
-    "container": "moduleContainer",
-    "row": 41.2,
-    "height": 0.6,
-    "width": 6
-  },
   "text28": {
     "container": "moduleContainer",
     "row": 0.4,
     "col": 9,
     "height": 0.6
   },
-  "text29": {
-    "container": "moduleContainer",
-    "row": 37.2,
-    "col": 9,
-    "height": 0.6
-  },
   "text3": {
     "container": "moduleContainer",
-    "row": 5,
+    "row": 2.8,
     "height": 0.6,
     "width": 9
   },
-  "text30": {
-    "container": "moduleContainer",
-    "row": 30.2,
-    "col": 9,
-    "height": 0.6
-  },
-  "text31": {
-    "container": "moduleContainer",
-    "row": 25,
-    "col": 9,
-    "height": 0.6
-  },
-  "text32": {
-    "container": "moduleContainer",
-    "row": 21,
-    "col": 9,
-    "height": 0.6
-  },
-  "text33": {
-    "container": "moduleContainer",
-    "row": 16.6,
-    "col": 9,
-    "height": 0.6
-  },
-  "text34": {
-    "container": "moduleContainer",
-    "row": 12.6,
-    "col": 9,
-    "height": 0.6
-  },
   "text35": {
     "container": "moduleContainer",
-    "row": 9.6,
+    "row": 7.6,
     "col": 9,
     "height": 0.6
   },
   "text36": {
     "container": "moduleContainer",
-    "row": 5.4,
+    "row": 4,
     "col": 9,
     "height": 0.6
   },
-  "text4": {
-    "container": "moduleContainer",
-    "row": 19,
-    "col": 1,
-    "height": 0.6
-  },
-  "text5": {
-    "container": "moduleContainer",
-    "row": 23,
-    "col": 1,
-    "height": 0.6
-  },
-  "text6": {
-    "container": "moduleContainer",
-    "row": 26.8,
-    "col": 1,
-    "height": 0.6
-  },
-  "text7": {
-    "container": "moduleContainer",
-    "row": 41.8,
-    "col": 1,
+  "text37": {
+    "subcontainer": "bizModalFrame",
+    "row": 0.2,
     "height": 0.6,
-    "width": 4
+    "width": 9
+  },
+  "text38": {
+    "subcontainer": "bizModalFrame",
+    "row": 0.4,
+    "col": 9,
+    "height": 0.6
+  },
+  "text39": {
+    "subcontainer": "bizModalFrame",
+    "row": 5,
+    "col": 9,
+    "height": 0.6
+  },
+  "text40": {
+    "subcontainer": "bizModalFrame",
+    "row": 2.8,
+    "height": 0.6
+  },
+  "text42": {
+    "subcontainer": "teamModalFrame",
+    "row": 0.2,
+    "col": 10,
+    "height": 0.6,
+    "width": 2
+  },
+  "text43": {
+    "subcontainer": "teamModalFrame",
+    "row": 3.6,
+    "col": 10,
+    "height": 0.6,
+    "width": 2
+  },
+  "text44": {
+    "subcontainer": "teamModalFrame",
+    "row": 7,
+    "col": 10,
+    "height": 0.6,
+    "width": 2
+  },
+  "text46": {
+    "subcontainer": "onoffModalFrame",
+    "row": 0.4,
+    "col": 9,
+    "height": 0.6
   },
   "text8": {
-    "container": "moduleContainer",
     "rowGroup": "header",
     "subcontainer": "shopDetailModalFrame",
-    "row": 1,
+    "row": 0.6,
     "height": 0.6
   },
   "text9": {
@@ -429,10 +496,34 @@
   "typeStatTbl": {
     "container": "moduleContainer",
     "row": 1,
-    "height": 3.4,
+    "height": 1,
     "width": 12
   },
-  "typeStatTbl10": {
+  "typeStatTbl16": {
+    "subcontainer": "teamModalFrame",
+    "row": 0.8,
+    "height": 1,
+    "width": 12
+  },
+  "typeStatTbl17": {
+    "subcontainer": "teamModalFrame",
+    "row": 4.2,
+    "height": 1,
+    "width": 12
+  },
+  "typeStatTbl18": {
+    "subcontainer": "teamModalFrame",
+    "row": 7.6,
+    "height": 1,
+    "width": 12
+  },
+  "typeStatTbl2": {
+    "container": "moduleContainer",
+    "row": 8.2,
+    "height": 1,
+    "width": 12
+  },
+  "typeStatTbl20": {
     "container": "styleTabContainer",
     "subcontainer": "43b7f",
     "height": 1,
@@ -446,106 +537,40 @@
       }
     }
   },
-  "typeStatTbl11": {
+  "typeStatTbl21": {
     "container": "styleTabContainer",
     "subcontainer": "4682a",
     "height": 1,
     "width": 12
   },
-  "typeStatTbl12": {
+  "typeStatTbl22": {
     "container": "styleTabContainer",
     "subcontainer": "e7069",
     "height": 1,
     "width": 12
   },
-  "typeStatTbl13": {
+  "typeStatTbl23": {
     "container": "styleTabContainer",
     "subcontainer": "e5cf6",
     "height": 1,
     "width": 12
   },
-  "typeStatTbl14": {
+  "typeStatTbl24": {
     "container": "styleTabContainer",
     "subcontainer": "f0f86",
     "height": 1,
     "width": 12
   },
-  "typeStatTbl15": {
-    "container": "moduleContainer",
-    "row": 31.8,
-    "height": 1,
-    "width": 12
-  },
-  "typeStatTbl2": {
-    "container": "moduleContainer",
-    "row": 10.2,
+  "typeStatTbl25": {
+    "subcontainer": "onoffModalFrame",
+    "row": 1,
     "height": 1,
     "width": 12
   },
   "typeStatTbl3": {
     "container": "moduleContainer",
-    "row": 6,
-    "height": 2.6,
-    "width": 12
-  },
-  "typeStatTbl4": {
-    "container": "moduleContainer",
-    "row": 20,
+    "row": 4.6,
     "height": 1,
     "width": 12
-  },
-  "typeStatTbl5": {
-    "container": "moduleContainer",
-    "row": 24,
-    "height": 1,
-    "width": 12
-  },
-  "typeStatTbl6": {
-    "container": "moduleContainer",
-    "row": 27.8,
-    "height": 1,
-    "width": 12
-  },
-  "typeStatTbl7": {
-    "container": "moduleContainer",
-    "row": 43,
-    "height": 1,
-    "width": 12
-  },
-  "typeToggleBtn10": {
-    "container": "moduleContainer",
-    "row": 35.4,
-    "height": 1,
-    "width": 1
-  },
-  "typeToggleBtn11": {
-    "container": "moduleContainer",
-    "row": 30.8,
-    "height": 1,
-    "width": 1
-  },
-  "typeToggleBtn4": {
-    "container": "moduleContainer",
-    "row": 19,
-    "height": 1,
-    "width": 1
-  },
-  "typeToggleBtn5": {
-    "container": "moduleContainer",
-    "row": 23,
-    "height": 1,
-    "width": 1
-  },
-  "typeToggleBtn6": {
-    "container": "moduleContainer",
-    "row": 26.8,
-    "height": 1,
-    "width": 1
-  },
-  "typeToggleBtn7": {
-    "container": "moduleContainer",
-    "row": 41.8,
-    "height": 1,
-    "width": 1
   }
 }
