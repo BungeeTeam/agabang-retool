@@ -8,7 +8,11 @@
   width="large"
 >
   <Header>
-    <Text id="text1" value="#### 매장 분류" verticalAlign="center" />
+    <Text
+      id="text1"
+      value="#### 영업부 목표매출 달성현황"
+      verticalAlign="center"
+    />
   </Header>
   <Body>
     <Multiselect
