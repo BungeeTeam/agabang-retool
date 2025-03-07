@@ -10,5 +10,5 @@ SELECT
   max(user_nm) as user_nm,
   max(area_nm) as area_nm
 FROM agabang_dw.dim_shop
-WHERE shop_cd = '{{ selectedShopInfo.value.shop_cd }}'
+WHERE shop_cd = '{{ selectedRow.value.shop_cd }}'
 GROUP BY shop_cd, shop_nm, open_dt

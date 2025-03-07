@@ -14,7 +14,7 @@
   <Header>
     <Text
       id="head"
-      value="### {{ selectedShopInfo.value.shop_nm }}"
+      value="### {{ selectedRow.value.shop_nm }}"
       verticalAlign="center"
     />
     <Button
@@ -36,16 +36,52 @@
       />
       <Event
         event="click"
-        method="trigger"
+        method=""
         params={{ ordered: [] }}
-        pluginId="testQuery"
+        pluginId=""
         type="datasource"
         waitMs="0"
         waitType="debounce"
       />
     </Button>
+    <Text
+      id="text8"
+      value="{{ selectedRow.value.shop_cd }}"
+      verticalAlign="center"
+    />
   </Header>
   <Body>
+    <Container
+      id="container1"
+      _direction="vertical"
+      _gap="0px"
+      _type="stack"
+      footerPadding="4px 12px"
+      headerPadding="0"
+      heightType="fixed"
+      margin="0px 1px"
+      padding="0"
+      showBody={true}
+      showHeader={true}
+      style={{ ordered: [{ headerBackground: "primary" }] }}
+    >
+      <Header>
+        <Text
+          id="containerTitle1"
+          horizontalAlign="center"
+          value="**개점일**"
+          verticalAlign="center"
+        />
+      </Header>
+      <View id="5ef41" viewKey="View 1">
+        <Text
+          id="text9"
+          heightType="fill"
+          value="{{ shopInfoQuery.data.open_dt[0]}}"
+          verticalAlign="center"
+        />
+      </View>
+    </Container>
     <Container
       id="container2"
       _direction="vertical"
@@ -74,6 +110,39 @@
           heightType="fill"
           value={
             '{{ shopInfoQuery.data.biz_nm.join(0).replace("]", "").replace("[", "")}}'
+          }
+          verticalAlign="center"
+        />
+      </View>
+    </Container>
+    <Container
+      id="container3"
+      _direction="vertical"
+      _gap="0px"
+      _type="stack"
+      footerPadding="4px 12px"
+      headerPadding="0"
+      heightType="fixed"
+      margin="0px 1px"
+      padding="0"
+      showBody={true}
+      showHeader={true}
+      style={{ ordered: [{ headerBackground: "primary" }] }}
+    >
+      <Header>
+        <Text
+          id="containerTitle3"
+          horizontalAlign="center"
+          value="**운영브랜드**"
+          verticalAlign="center"
+        />
+      </Header>
+      <View id="5ef41" viewKey="View 1">
+        <Text
+          id="text11"
+          heightType="fill"
+          value={
+            '{{ shopInfoQuery.data.br_nm.join("").replace("]", "").replace("[", "") }}'
           }
           verticalAlign="center"
         />
@@ -203,72 +272,19 @@
         />
       </View>
     </Container>
-    <Container
-      id="container1"
-      _direction="vertical"
-      _gap="0px"
-      _type="stack"
-      footerPadding="4px 12px"
-      headerPadding="0"
-      heightType="fixed"
-      margin="0px 1px"
-      padding="0"
-      showBody={true}
-      showHeader={true}
-      style={{ ordered: [{ headerBackground: "primary" }] }}
-    >
-      <Header>
-        <Text
-          id="containerTitle1"
-          horizontalAlign="center"
-          value="**개점일**"
-          verticalAlign="center"
-        />
-      </Header>
-      <View id="5ef41" viewKey="View 1">
-        <Text
-          id="text9"
-          heightType="fill"
-          value="{{ shopInfoQuery.data.open_dt[0]}}"
-          verticalAlign="center"
-        />
-      </View>
-    </Container>
-    <Container
-      id="container3"
-      _direction="vertical"
-      _gap="0px"
-      _type="stack"
-      footerPadding="4px 12px"
-      headerPadding="0"
-      heightType="fixed"
-      margin="0px 1px"
-      padding="0"
-      showBody={true}
-      showHeader={true}
-      style={{ ordered: [{ headerBackground: "primary" }] }}
-    >
-      <Header>
-        <Text
-          id="containerTitle3"
-          horizontalAlign="center"
-          value="**운영브랜드**"
-          verticalAlign="center"
-        />
-      </Header>
-      <View id="5ef41" viewKey="View 1">
-        <Text
-          id="text11"
-          heightType="fill"
-          value={
-            '{{ shopInfoQuery.data.br_nm.join("").replace("]", "").replace("[", "") }}'
-          }
-          verticalAlign="center"
-        />
-      </View>
-    </Container>
     <Text id="text21" value="###### 월별 매출 추이" verticalAlign="center" />
     <Text id="text17" value="###### 분기별 매출 추이" verticalAlign="center" />
+    <Chart
+      id="plotlyJsonChart1"
+      chartType="plotlyJson"
+      plotlyDataJson={
+        '[\n  {\n    "x": {{ shopSalesMonthlyQuery.data.year_month }},\n    "y": {{ shopSalesMonthlyQuery.data.판매금액 }},\n    "type": "bar",\n    "marker": {\n      "color": "01488F",\n      "opacity": 1\n    }\n  },\n  {\n    x: {{ shopTargetSalesMonthlyQuery.data.year_month }},\n    y: {{ shopTargetSalesMonthlyQuery.data.목표매출 }},\n    type: "scatter",\n    mode: "lines",\n    line: {\n      color: "red",\n      width: 2\n    }\n  }\n]'
+      }
+      plotlyLayoutJson={
+        '{\n  "margin": {\n    "l": 30,\n    "r": 0,\n    "t": 0,\n    "b": 30\n  },\n  showlegend: false,\n  "autosize": false,\n  "axis": {\n    type: "date"\n  }\n}'
+      }
+      selectedPoints="[]"
+    />
     <Table
       id="table1"
       cellSelection="none"
@@ -404,17 +420,6 @@
         />
       </ToolbarButton>
     </Table>
-    <Chart
-      id="plotlyJsonChart1"
-      chartType="plotlyJson"
-      plotlyDataJson={
-        '[\n  {\n    "x": {{ shopSalesMonthlyQuery.data.year_month }},\n    "y": {{ shopSalesMonthlyQuery.data.판매금액 }},\n    "type": "bar",\n    "marker": {\n      "color": "01488F",\n      "opacity": 1\n    }\n  },\n  {\n    x: {{ shopTargetSalesMonthlyQuery.data.year_month }},\n    y: {{ shopTargetSalesMonthlyQuery.data.목표매출 }},\n    type: "scatter",\n    mode: "lines",\n    line: {\n      color: "red",\n      width: 2\n    }\n  }\n]'
-      }
-      plotlyLayoutJson={
-        '{\n  "margin": {\n    "l": 30,\n    "r": 0,\n    "t": 0,\n    "b": 30\n  },\n  showlegend: false,\n  "autosize": false,\n  "axis": {\n    type: "date"\n  }\n}'
-      }
-      selectedPoints="[]"
-    />
     <Text
       id="text18"
       value="###### 브랜드별 카테고리 매출"
@@ -446,6 +451,7 @@
         </Tabs>
         <Table
           id="table4"
+          autoColumnWidth={true}
           cellSelection="none"
           clearChangesetOnSave={true}
           data="{{ shopSalesByBrandQuery.data }}"
@@ -471,7 +477,7 @@
             label="연도"
             placeholder="Enter value"
             position="left"
-            size={47.09375}
+            size={36.765625}
             summaryAggregationMode="none"
           />
           <Column
@@ -484,7 +490,7 @@
             label="정상구분"
             placeholder="Select option"
             position="left"
-            size={65.171875}
+            size={57.515625}
             summaryAggregationMode="none"
             valueOverride="{{ _.startCase(item) }}"
           />
@@ -499,7 +505,7 @@
             label="일반용품"
             placeholder="Enter value"
             position="center"
-            size={84.796875}
+            size={57.515625}
             summaryAggregationMode="none"
           />
           <Column
@@ -513,7 +519,7 @@
             label="유아복"
             placeholder="Enter value"
             position="center"
-            size={92.5625}
+            size={47.140625}
             summaryAggregationMode="none"
           />
           <Column
@@ -535,7 +541,7 @@
             placeholder="Enter value"
             position="right"
             referenceId="비중"
-            size={52.375}
+            size={36.765625}
             summaryAggregationMode="none"
             textColor="rgb(1, 72, 143)"
           />
@@ -550,7 +556,7 @@
             label="총합"
             placeholder="Enter value"
             position="right"
-            size={103.640625}
+            size={36.765625}
             summaryAggregationMode="none"
             textColor="#01488f"
           />
@@ -565,7 +571,7 @@
             label="기초복 아동"
             placeholder="Enter value"
             position="center"
-            size={100}
+            size={71.28125}
             summaryAggregationMode="none"
           />
           <Column
@@ -579,7 +585,7 @@
             label="시즌용품"
             placeholder="Enter value"
             position="center"
-            size={100}
+            size={57.515625}
             summaryAggregationMode="none"
           />
           <Column
@@ -593,7 +599,7 @@
             label="기획"
             placeholder="Enter value"
             position="center"
-            size={100}
+            size={36.765625}
             summaryAggregationMode="none"
           />
           <Column
@@ -607,7 +613,7 @@
             label="터들러"
             placeholder="Enter value"
             position="center"
-            size={100}
+            size={47.140625}
             summaryAggregationMode="none"
           />
           <Column
@@ -621,7 +627,7 @@
             label="일반용품위탁"
             placeholder="Enter value"
             position="center"
-            size={100}
+            size={78.28125}
             summaryAggregationMode="none"
           />
           <Column
@@ -635,7 +641,7 @@
             label="실내복 주니어"
             placeholder="Enter value"
             position="center"
-            size={100}
+            size={81.65625}
             summaryAggregationMode="none"
           />
           <Column
@@ -649,7 +655,7 @@
             label="판촉 부자재"
             placeholder="Enter value"
             position="center"
-            size={100}
+            size={71.28125}
             summaryAggregationMode="none"
           />
         </Table>
@@ -686,7 +692,7 @@
             label="연도"
             placeholder="Enter value"
             position="left"
-            size={36.75}
+            size={36.765625}
             summaryAggregationMode="none"
           />
           <Column
@@ -714,7 +720,7 @@
             label="조끼"
             placeholder="Enter value"
             position="center"
-            size={36.75}
+            size={36.765625}
             summaryAggregationMode="none"
           />
           <Column
@@ -728,7 +734,7 @@
             label="팬티"
             placeholder="Enter value"
             position="center"
-            size={36.75}
+            size={36.765625}
             summaryAggregationMode="none"
           />
           <Column
@@ -770,7 +776,7 @@
             label="신발"
             placeholder="Enter value"
             position="center"
-            size={36.75}
+            size={36.765625}
             summaryAggregationMode="none"
           />
           <Column
@@ -784,7 +790,7 @@
             label="양말"
             placeholder="Enter value"
             position="center"
-            size={36.75}
+            size={36.765625}
             summaryAggregationMode="none"
           />
           <Column
@@ -840,7 +846,7 @@
             label="런닝"
             placeholder="Enter value"
             position="center"
-            size={36.75}
+            size={36.765625}
             summaryAggregationMode="none"
           />
           <Column
@@ -854,7 +860,7 @@
             label="기타"
             placeholder="Enter value"
             position="center"
-            size={36.75}
+            size={36.765625}
             summaryAggregationMode="none"
           />
           <Column
@@ -910,7 +916,7 @@
             label="모자"
             placeholder="Enter value"
             position="center"
-            size={36.75}
+            size={36.765625}
             summaryAggregationMode="none"
           />
           <Column
@@ -924,7 +930,7 @@
             label="내의"
             placeholder="Enter value"
             position="center"
-            size={36.75}
+            size={36.765625}
             summaryAggregationMode="none"
           />
           <Column
@@ -966,7 +972,7 @@
             label="섬유"
             placeholder="Enter value"
             position="center"
-            size={36.75}
+            size={36.765625}
             summaryAggregationMode="none"
           />
           <Column
@@ -980,7 +986,7 @@
             label="우비"
             placeholder="Enter value"
             position="center"
-            size={36.75}
+            size={36.765625}
             summaryAggregationMode="none"
           />
           <ToolbarButton
@@ -1077,7 +1083,7 @@
         label="연도"
         placeholder="Select option"
         position="center"
-        size={36.75}
+        size={36.765625}
         summaryAggregationMode="none"
       />
       <Column
@@ -1091,7 +1097,7 @@
         placeholder="Select option"
         position="center"
         referenceId="column9"
-        size={36.75}
+        size={36.765625}
         summaryAggregationMode="none"
       />
       <Column
@@ -1151,7 +1157,7 @@
         label="매장판매율"
         placeholder="Enter value"
         position="center"
-        size={67.890625}
+        size={67.90625}
         summaryAggregationMode="none"
       />
       <Column
@@ -1169,7 +1175,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="전체"
-        size={67.890625}
+        size={67.90625}
         summaryAggregationMode="none"
         valueOverride="{{ totalInventoryQuery.data[i].ratio }}"
       />
@@ -1188,7 +1194,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="차이"
-        size={36.75}
+        size={36.765625}
         summaryAggregationMode="none"
         textColor={'{{ item >= 0? "green": "red" }}'}
         valueOverride="{{ shopInventoryQuery.data.ratio[i] - totalInventoryQuery.data[i].ratio }}"

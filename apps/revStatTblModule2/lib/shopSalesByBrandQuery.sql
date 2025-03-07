@@ -10,7 +10,7 @@ WITH tbl AS (
       sales_price / sales_qty as unit_price,
       year(sale_dt) as sales_year
     FROM agabang_dw.daily_shop_sales_by_size
-    WHERE shop_cd = '{{ selectedShopInfo.value.shop_cd }}' 
+    WHERE shop_cd = '{{ selectedRow.value.shop_cd }}' 
     AND YEAR(sale_dt) > YEAR(today()) - 3
   ) AS A
   LEFT JOIN (

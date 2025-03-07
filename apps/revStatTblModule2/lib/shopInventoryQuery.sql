@@ -6,7 +6,7 @@ WITH sales_tbl as (
     season_cd,
     SUM(sales_qty) as sales_qty
   FROM agabang_dw.daily_shop_sales_by_dimension
-  WHERE shop_cd = '{{ selectedShopInfo.value.shop_cd }}'
+  WHERE shop_cd = '{{ selectedRow.value.shop_cd }}'
   GROUP BY year_cd, year_nm, season_nm, season_cd
 ),
 inventory_tbl as (
@@ -19,7 +19,7 @@ inventory_tbl as (
         sty_cd,
         SUM(out_qty) as out_qty
       FROM agabang_dw.daily_shop_dsoutrtn_by_size 
-      WHERE shop_cd = '{{ selectedShopInfo.value.shop_cd }}'
+      WHERE shop_cd = '{{ selectedRow.value.shop_cd }}'
       GROUP BY sty_cd
     ) AS A
     LEFT JOIN (

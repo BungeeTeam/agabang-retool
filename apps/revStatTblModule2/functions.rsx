@@ -35,7 +35,6 @@
     id="salesByShop"
     funcBody={include("./lib/salesByShop.js", "string")}
   />
-  <State id="selectedShopInfo" value={'""'} />
   <SqlQuery
     id="shopInfoQuery"
     query={include("./lib/shopInfoQuery.sql", "string")}
@@ -126,4 +125,5 @@ return pivotData(data).sort((a, b) => b.sales_year - a.sales_year)"
     resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
     warningCodes={[]}
   />
+  <State id="selectedRow" value={'{"team_cd": "01", "biz_cd": "A1"}'} />
 </GlobalFunctions>
