@@ -348,14 +348,35 @@
         />
         <Option
           id="e6855"
-          appTarget="dc62843a-ecf6-11ef-b4e6-8be2db6b111e"
           disabled={false}
           hidden={false}
-          icon="bold/shopping-store-1"
+          icon="bold/shopping-cloth-accessories-necktie"
           iconPosition="left"
           itemType="app"
           key="a5cf9"
-          label="매장Overview"
+          label="영업"
+        />
+        <Option
+          id="5cde3"
+          appTarget="ef24d28c-f99c-11ef-8c58-efeb0ef80c88"
+          disabled={false}
+          hidden={false}
+          icon="bold/shopping-store-discount-percent-increase"
+          iconPosition="left"
+          itemType="app"
+          label="목표매출 개요"
+          parentKey="a5cf9"
+        />
+        <Option
+          id="522b8"
+          appTarget="88f62050-fb37-11ef-9dfc-47aabcf5b8e0"
+          disabled={false}
+          hidden={false}
+          icon="bold/shopping-store-2"
+          iconPosition="left"
+          itemType="app"
+          label="매장상세 현황"
+          parentKey="a5cf9"
         />
         <Option
           id="74263"
