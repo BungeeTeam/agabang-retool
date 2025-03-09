@@ -68,36 +68,6 @@
       }
     }
   },
-  "dailyModule": {
-    "container": "monthlySelect",
-    "subcontainer": "89490",
-    "row": 0.2,
-    "height": 0.2,
-    "width": 12,
-    "stackPosition": {
-      "object": {
-        "ordinal": 2,
-        "widthType": "fixed",
-        "width": 0,
-        "height": 0
-      }
-    }
-  },
-  "dailyModule2": {
-    "container": "monthlySelect",
-    "subcontainer": "14b44",
-    "row": 0.2,
-    "height": 0.2,
-    "width": 12,
-    "stackPosition": {
-      "object": {
-        "ordinal": 3,
-        "widthType": "fixed",
-        "width": 0,
-        "height": 0
-      }
-    }
-  },
   "dateRange": {
     "container": "monthlySelect",
     "subcontainer": "14b44",
@@ -161,21 +131,6 @@
       }
     }
   },
-  "monthlyModule": {
-    "container": "monthlySelect",
-    "subcontainer": "ef5a8",
-    "row": 2.2,
-    "height": 0.2,
-    "width": 12,
-    "stackPosition": {
-      "object": {
-        "ordinal": 4,
-        "widthType": "fixed",
-        "width": 0,
-        "height": 0
-      }
-    }
-  },
   "monthlySelect": {
     "height": 75.2,
     "width": 12,
@@ -191,6 +146,51 @@
   "revStatTblModule1": {
     "container": "monthlySelect",
     "subcontainer": "0330c",
+    "row": 0.2,
+    "height": 8.8,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 4,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "revStatTblModule2": {
+    "container": "monthlySelect",
+    "subcontainer": "ef5a8",
+    "row": 2,
+    "height": 8.8,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 3,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "revStatTblModule3": {
+    "container": "monthlySelect",
+    "subcontainer": "89490",
+    "row": 0.2,
+    "height": 8.8,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "revStatTblModule4": {
+    "container": "monthlySelect",
+    "subcontainer": "14b44",
     "row": 0.2,
     "height": 8.8,
     "width": 12,
