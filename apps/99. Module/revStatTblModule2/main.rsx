@@ -129,7 +129,7 @@
           id="b97a4"
           alignment="right"
           backgroundColor={
-            '{{ item < 1 ? "rgba(237, 41, 57, 0.1)" : "green" }}'
+            '{{ item < 1 ? "rgba(237, 41, 57, 0.1)" : "rgba(0, 100, 0, 0.1)" }}'
           }
           cellTooltip="{{ item }}"
           cellTooltipMode="custom"
@@ -366,7 +366,7 @@
           waitType="debounce"
         />
       </Table>
-      <Spacer id="spacer4" />
+      <Spacer id="spacer7" />
       <Text
         id="text3"
         value="##### 온오프라인 매출 현황"
@@ -470,7 +470,7 @@
           id="b97a4"
           alignment="right"
           backgroundColor={
-            '{{ item < 1 ? "rgba(237, 41, 57, 0.1)" : "green" }}'
+            '{{ item < 1 ? "rgba(237, 41, 57, 0.1)" : "rgba(0, 100, 0, 0.1)" }}'
           }
           editableOptions={{ showStepper: true }}
           format="percent"
@@ -756,7 +756,7 @@
           id="b97a4"
           alignment="right"
           backgroundColor={
-            '{{ item < 1 ? "rgba(237, 41, 57, 0.1)" : "green" }}'
+            '{{ item < 1 ? "rgba(237, 41, 57, 0.1)" : "rgba(0, 100, 0, 0.1)" }}'
           }
           editableOptions={{ showStepper: true }}
           format="percent"

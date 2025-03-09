@@ -126,4 +126,13 @@ return pivotData(data).sort((a, b) => b.sales_year - a.sales_year)"
     warningCodes={[]}
   />
   <State id="selectedRow" value={'{"team_cd": "01", "biz_cd": "A1"}'} />
+  <SqlQuery
+    id="expectedTargetSalesQuery"
+    enableTransformer={true}
+    query={include("./lib/expectedTargetSalesQuery.sql", "string")}
+    resourceDisplayName="clickhouse-dw"
+    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
+    transformer="return formatDataAsArray(data)"
+    warningCodes={[]}
+  />
 </GlobalFunctions>
