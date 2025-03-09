@@ -66,17 +66,19 @@
       data="{{ monthList.value }}"
       direction="horizontal"
       itemWidth="77px"
+      layoutType="grid"
       margin="0"
-      numColumns={3}
+      numColumns="12"
       padding="0"
     >
       <Statistic
         id="statistic1"
+        align="center"
         decimalPlaces="1"
         formattingStyle="percent"
         hidden="{{ self.value == 0 }}"
         label="목표달성률"
-        margin="0px 4px"
+        margin="0px 0px"
         positiveTrend="{{ self.value >= 0 }}"
         secondaryCurrency="USD"
         secondaryEnableTrend={true}
@@ -86,7 +88,7 @@
         secondarySignDisplay="trendArrows"
         secondaryValue=""
         showSeparators={true}
-        style={{ ordered: [{ valueFontSize: "18px" }, { color: "info" }] }}
+        style={{ ordered: [{ valueFontSize: "18px" }, { color: "primary" }] }}
         tooltipText="{{ formatDataAsArray(monthlySalesQuery.data)
   .filter(obj => {
     return obj.month === (item + 1) && obj.yr === (new Date()).getFullYear()
@@ -117,15 +119,11 @@
       />
     </ListViewBeta>
     <Module
-      id="monthlyModule"
-      dataInput=""
+      id="revStatTblModule2"
       inputData="{{ formatDataAsObject(formatDataAsArray(monthlySalesQuery.data).filter(obj => obj.month == (monthSelect.value + 1))) }}"
       inputDataByStyle="{{ monthlySalesByStyleQuery.data }}"
-      inputQuery="yearlySalesQuery"
-      inventoryData=""
-      name="shopRevStatTblModule"
-      pageUuid="462b10a8-ef31-11ef-9dae-bb6899aaf8d4"
-      queryInput="yearlySalesQuery"
+      name="revStatTblModule2"
+      pageUuid="c2c2b498-f99c-11ef-b77a-2ba139bbf501"
     />
   </View>
   <View id="89490" label="일별" viewKey="daily">
@@ -142,15 +140,11 @@
       }
     />
     <Module
-      id="dailyModule"
-      dataInput=""
+      id="revStatTblModule3"
       inputData="{{ dailySalesQuery.data }}"
       inputDataByStyle="{{ dailySalesByStyleQuery.data }}"
-      inputQuery="yearlySalesQuery"
-      inventoryData=""
-      name="shopRevStatTblModule"
-      pageUuid="462b10a8-ef31-11ef-9dae-bb6899aaf8d4"
-      queryInput="yearlySalesQuery"
+      name="revStatTblModule2"
+      pageUuid="c2c2b498-f99c-11ef-b77a-2ba139bbf501"
     />
   </View>
   <View
@@ -187,15 +181,11 @@
       />
     </DateRange>
     <Module
-      id="dailyModule2"
-      dataInput=""
+      id="revStatTblModule4"
       inputData="{{ periodicSalesQuery.data }}"
       inputDataByStyle="{{ periodicSalesByStyleQuery.data }}"
-      inputQuery="yearlySalesQuery"
-      inventoryData=""
-      name="shopRevStatTblModule"
-      pageUuid="462b10a8-ef31-11ef-9dae-bb6899aaf8d4"
-      queryInput="yearlySalesQuery"
+      name="revStatTblModule2"
+      pageUuid="c2c2b498-f99c-11ef-b77a-2ba139bbf501"
     />
   </View>
   <Event

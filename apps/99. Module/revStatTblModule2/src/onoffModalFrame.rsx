@@ -134,9 +134,7 @@
       <Column
         id="b97a4"
         alignment="right"
-        backgroundColor={
-          '{{ item < 1 ? "rgba(237, 41, 57, 0.1)" : "rgba(0, 100, 0, 0.1)" }}'
-        }
+        backgroundColor={'{{ item < 1 ? "rgba(237, 41, 57, 0.1)" : null }}'}
         editableOptions={{ showStepper: true }}
         format="percent"
         formatOptions={{

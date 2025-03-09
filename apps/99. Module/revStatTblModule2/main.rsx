@@ -367,7 +367,6 @@
         />
       </Table>
       <Spacer id="spacer7" />
-      <Spacer id="spacer4" />
       <Text
         id="text3"
         value="##### 온오프라인 매출 현황"
@@ -655,7 +654,6 @@
         />
       </Table>
       <Spacer id="spacer5" />
-      <Spacer id="spacer8" />
       <Text
         id="text2"
         value="##### 담당조직별 매출 현황"

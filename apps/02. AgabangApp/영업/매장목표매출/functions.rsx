@@ -51,9 +51,16 @@ return formatDataAsObject(arrData)"
     resourceDisplayName="clickhouse-dw"
     resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
     showSuccessToaster={false}
-    transformer={
-      '// FILTER by selected options\nlet arrData = formatDataAsArray(data)\n\n// by biz_div\nif({{ bizMultiSelect.value }} != "-1") {\n arrData = arrData.filter(item => item.biz_cd === {{ bizMultiSelect.value }})                       \n}\n\n//  by brand\narrData = arrData.filter(item => {{ brandMultiSelect.value }}.includes(item.br_cd))\n\n// by sub-brand\n//  arrData = arrData.filter(item => {{ subBrandMultiSelect.value}}.includes(item.sub_br_cd))\n\n// by on or offline\narrData = arrData.filter(item => item.onoff_flag === {{ onoffControl.value }})\n\nreturn formatDataAsObject(arrData)'
-    }
+    transformer="// FILTER by selected options
+let arrData = formatDataAsArray(data)
+
+// by biz_div
+arrData = arrData.filter(item => {{ bizMultiSelect.value }}.includes(item.biz_cd))                       
+
+//  by brand
+arrData = arrData.filter(item => {{ brandMultiSelect.value }}.includes(item.br_cd))
+
+return formatDataAsObject(arrData)"
     warningCodes={[]}
   />
   <SqlQuery
@@ -66,9 +73,16 @@ return formatDataAsObject(arrData)"
     resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
     resourceTypeOverride=""
     showSuccessToaster={false}
-    transformer={
-      '// FILTER by selected options\nlet arrData = formatDataAsArray(data)\n\n// by biz_div\nif({{ bizMultiSelect.value }} != "-1") {\n arrData = arrData.filter(item => item.biz_cd === {{ bizMultiSelect.value }})                       \n}\n\n//  by brand\narrData = arrData.filter(item => {{ brandMultiSelect.value }}.includes(item.br_cd))\n\n// by sub-brand\n//  arrData = arrData.filter(item => {{ subBrandMultiSelect.value}}.includes(item.sub_br_cd))\n\n// by on or offline\narrData = arrData.filter(item => item.onoff_flag === {{ onoffControl.value }})\n\nreturn formatDataAsObject(arrData)'
-    }
+    transformer="// FILTER by selected options
+let arrData = formatDataAsArray(data)
+
+// by biz_div
+arrData = arrData.filter(item => {{ bizMultiSelect.value }}.includes(item.biz_cd))                       
+
+//  by brand
+arrData = arrData.filter(item => {{ brandMultiSelect.value }}.includes(item.br_cd))
+
+return formatDataAsObject(arrData)"
     warningCodes={[]}
   />
   <SqlQuery
@@ -81,9 +95,16 @@ return formatDataAsObject(arrData)"
     resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
     resourceTypeOverride=""
     showSuccessToaster={false}
-    transformer={
-      '// FILTER by selected options\nlet arrData = formatDataAsArray(data)\n\n// by biz_div\nif({{ bizMultiSelect.value }} != "-1") {\n arrData = arrData.filter(item => item.biz_cd === {{ bizMultiSelect.value }})                       \n}\n\n//  by brand\narrData = arrData.filter(item => {{ brandMultiSelect.value }}.includes(item.br_cd))\n\n// by sub-brand\n//  arrData = arrData.filter(item => {{ subBrandMultiSelect.value}}.includes(item.sub_br_cd))\n\n// by on or offline\narrData = arrData.filter(item => item.onoff_flag === {{ onoffControl.value }})\n\nreturn formatDataAsObject(arrData)'
-    }
+    transformer="// FILTER by selected options
+let arrData = formatDataAsArray(data)
+
+// by biz_div
+arrData = arrData.filter(item => {{ bizMultiSelect.value }}.includes(item.biz_cd))                       
+
+//  by brand
+arrData = arrData.filter(item => {{ brandMultiSelect.value }}.includes(item.br_cd))
+
+return formatDataAsObject(arrData)"
     warningCodes={[]}
   />
   <SqlQuery
@@ -120,9 +141,16 @@ return formatDataAsObject(arrData)"
     resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
     resourceTypeOverride=""
     showSuccessToaster={false}
-    transformer={
-      '// FILTER by selected options\nlet arrData = formatDataAsArray(data)\n\n// by biz_div\nif({{ bizMultiSelect.value }} != "-1") {\narrData = arrData.filter(item => item.biz_cd === {{ bizMultiSelect.value }})                       \n}\n\n//  by brand\narrData = arrData.filter(item => {{ brandMultiSelect.value }}.includes(item.br_cd))\n\n// by sub-brand\n//  arrData = arrData.filter(item => {{ subBrandMultiSelect.value}}.includes(item.sub_br_cd))\n\n// by on or offline\narrData = arrData.filter(item => item.onoff_flag === {{ onoffControl.value }})\n\nreturn formatDataAsObject(arrData)'
-    }
+    transformer="// FILTER by selected options
+let arrData = formatDataAsArray(data)
+
+// by biz_div
+arrData = arrData.filter(item => {{ bizMultiSelect.value }}.includes(item.biz_cd))                       
+
+//  by brand
+arrData = arrData.filter(item => {{ brandMultiSelect.value }}.includes(item.br_cd))
+
+return formatDataAsObject(arrData)"
     warningCodes={[]}
   />
   <SqlQuery
@@ -135,9 +163,16 @@ return formatDataAsObject(arrData)"
     resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
     resourceTypeOverride=""
     showSuccessToaster={false}
-    transformer={
-      '// FILTER by selected options\nlet arrData = formatDataAsArray(data)\n\n// by biz_div\nif({{ bizMultiSelect.value }} != "-1") {\narrData = arrData.filter(item => item.biz_cd === {{ bizMultiSelect.value }})                       \n}\n\n//  by brand\narrData = arrData.filter(item => {{ brandMultiSelect.value }}.includes(item.br_cd))\n\n// by sub-brand\n//  arrData = arrData.filter(item => {{ subBrandMultiSelect.value}}.includes(item.sub_br_cd))\n\n// by on or offline\narrData = arrData.filter(item => item.onoff_flag === {{ onoffControl.value }})\n\nreturn formatDataAsObject(arrData)'
-    }
+    transformer="// FILTER by selected options
+let arrData = formatDataAsArray(data)
+
+// by biz_div
+arrData = arrData.filter(item => {{ bizMultiSelect.value }}.includes(item.biz_cd))                       
+
+//  by brand
+arrData = arrData.filter(item => {{ brandMultiSelect.value }}.includes(item.br_cd))
+
+return formatDataAsObject(arrData)"
     warningCodes={[]}
   />
   <SqlQuery
@@ -150,9 +185,16 @@ return formatDataAsObject(arrData)"
     resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
     resourceTypeOverride=""
     showSuccessToaster={false}
-    transformer={
-      '// FILTER by selected options\nlet arrData = formatDataAsArray(data)\n\n// by biz_div\nif({{ bizMultiSelect.value }} != "-1") {\narrData = arrData.filter(item => item.biz_cd === {{ bizMultiSelect.value }})                       \n}\n\n//  by brand\narrData = arrData.filter(item => {{ brandMultiSelect.value }}.includes(item.br_cd))\n\n// by sub-brand\n//  arrData = arrData.filter(item => {{ subBrandMultiSelect.value}}.includes(item.sub_br_cd))\n\n// by on or offline\narrData = arrData.filter(item => item.onoff_flag === {{ onoffControl.value }})\n\nreturn formatDataAsObject(arrData)'
-    }
+    transformer="// FILTER by selected options
+let arrData = formatDataAsArray(data)
+
+// by biz_div
+arrData = arrData.filter(item => {{ bizMultiSelect.value }}.includes(item.biz_cd))                       
+
+//  by brand
+arrData = arrData.filter(item => {{ brandMultiSelect.value }}.includes(item.br_cd))
+
+return formatDataAsObject(arrData)"
     warningCodes={[]}
   />
 </GlobalFunctions>
