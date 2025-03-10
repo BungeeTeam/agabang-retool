@@ -160,7 +160,7 @@
   },
   "modalTitle4": {
     "subcontainer": "teamModalFrame",
-    "row": 5.8,
+    "row": 4.8,
     "height": 0.6,
     "width": 9
   },
@@ -188,20 +188,35 @@
   },
   "spacer1": {
     "subcontainer": "teamModalFrame",
-    "row": 5.2,
+    "row": 4.2,
     "height": 0.6,
+    "width": 2
+  },
+  "spacer10": {
+    "subcontainer": "teamModalFrame",
+    "row": 1.8,
+    "col": 10,
+    "height": 0.8,
+    "width": 2
+  },
+  "spacer11": {
+    "subcontainer": "teamModalFrame",
+    "row": 4.2,
+    "col": 10,
+    "height": 0.8,
+    "width": 2
+  },
+  "spacer12": {
+    "subcontainer": "bizModalFrame",
+    "row": 2,
+    "col": 10,
+    "height": 1,
     "width": 2
   },
   "spacer3": {
     "subcontainer": "teamModalFrame",
     "row": 1.8,
     "height": 0.6,
-    "width": 2
-  },
-  "spacer4": {
-    "container": "moduleContainer",
-    "row": 2,
-    "height": 0.8,
     "width": 2
   },
   "spacer5": {
@@ -225,6 +240,12 @@
   },
   "spacer8": {
     "container": "moduleContainer",
+    "row": 2,
+    "height": 0.8,
+    "width": 2
+  },
+  "spacer9": {
+    "container": "moduleContainer",
     "row": 4.6,
     "col": 10,
     "height": 1,
@@ -232,7 +253,7 @@
   },
   "styleTabContainer": {
     "subcontainer": "bizModalFrame",
-    "row": 5.6,
+    "row": 3.6,
     "height": 0.8,
     "width": 12,
     "stackPosition": {
@@ -450,7 +471,7 @@
   },
   "text39": {
     "subcontainer": "bizModalFrame",
-    "row": 5,
+    "row": 3,
     "col": 9,
     "height": 0.6
   },
@@ -468,14 +489,14 @@
   },
   "text43": {
     "subcontainer": "teamModalFrame",
-    "row": 3.6,
+    "row": 2.6,
     "col": 10,
     "height": 0.6,
     "width": 2
   },
   "text44": {
     "subcontainer": "teamModalFrame",
-    "row": 7,
+    "row": 5,
     "col": 10,
     "height": 0.6,
     "width": 2
@@ -521,13 +542,13 @@
   },
   "typeStatTbl17": {
     "subcontainer": "teamModalFrame",
-    "row": 4.2,
+    "row": 3.2,
     "height": 1,
     "width": 12
   },
   "typeStatTbl18": {
     "subcontainer": "teamModalFrame",
-    "row": 7.6,
+    "row": 5.6,
     "height": 1,
     "width": 12
   },

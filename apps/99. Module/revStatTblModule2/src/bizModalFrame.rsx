@@ -327,6 +327,7 @@
       </ToolbarButton>
     </Table>
     <Spacer id="spacer6" />
+    <Spacer id="spacer12" />
     <Text id="text40" value="#### 상품별 매출 현황" verticalAlign="center" />
     <Text
       id="text39"
