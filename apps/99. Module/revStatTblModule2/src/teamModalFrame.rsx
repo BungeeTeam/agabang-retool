@@ -343,6 +343,7 @@
         />
       </ToolbarButton>
     </Table>
+    <Spacer id="spacer10" />
     <Spacer id="spacer3" />
     <Text
       id="modalTitle3"
@@ -642,6 +643,7 @@
       </ToolbarButton>
     </Table>
     <Spacer id="spacer1" />
+    <Spacer id="spacer11" />
     <Text
       id="modalTitle4"
       value="#### 매장별 매출 현황({{ salesByShop.value.length }})"
@@ -959,15 +961,6 @@
         params={{ ordered: [{ value: "{{ currentRow }}" }] }}
         pluginId="selectedRow"
         type="state"
-        waitMs="0"
-        waitType="debounce"
-      />
-      <Event
-        event="clickRow"
-        method="show"
-        params={{ ordered: [] }}
-        pluginId="shopDetailModalFrame"
-        type="widget"
         waitMs="0"
         waitType="debounce"
       />

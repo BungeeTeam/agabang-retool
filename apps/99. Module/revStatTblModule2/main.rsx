@@ -366,6 +366,7 @@
           waitType="debounce"
         />
       </Table>
+      <Spacer id="spacer8" />
       <Spacer id="spacer7" />
       <Text
         id="text3"
@@ -654,6 +655,7 @@
         />
       </Table>
       <Spacer id="spacer5" />
+      <Spacer id="spacer9" />
       <Text
         id="text2"
         value="##### 담당조직별 매출 현황"
