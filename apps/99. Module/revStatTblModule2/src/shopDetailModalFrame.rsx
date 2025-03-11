@@ -77,7 +77,7 @@
         <Text
           id="text9"
           heightType="fill"
-          value="{{ shopInfoQuery.data.open_dt[0]}}"
+          value={'{{ shopInfoQuery.data?.open_dt?.at(0) || ""}}'}
           verticalAlign="center"
         />
       </View>
@@ -109,7 +109,7 @@
           id="text10"
           heightType="fill"
           value={
-            '{{ shopInfoQuery.data.biz_nm.join(0).replace("]", "").replace("[", "")}}'
+            '{{ shopInfoQuery.data?.biz_nm?.join(0).replace("]", "").replace("[", "") || ""}}'
           }
           verticalAlign="center"
         />
@@ -142,7 +142,7 @@
           id="text11"
           heightType="fill"
           value={
-            '{{ shopInfoQuery.data.br_nm.join("").replace("]", "").replace("[", "") }}'
+            '{{ shopInfoQuery.data?.br_nm?.join("").replace("]", "").replace("[", "") || ""}}'
           }
           verticalAlign="center"
         />
@@ -174,7 +174,7 @@
         <Text
           id="text12"
           heightType="fill"
-          value="{{ shopInfoQuery.data.gb_nm[0] }}"
+          value={'{{ shopInfoQuery.data?.gb_nm?.at(0) || ""}}'}
           verticalAlign="center"
         />
       </View>
@@ -205,7 +205,7 @@
         <Text
           id="text15"
           heightType="fill"
-          value="{{ shopInfoQuery.data.area_nm[0] }}"
+          value={'{{ shopInfoQuery.data?.area_nm?.at(0) || ""}}'}
           verticalAlign="center"
         />
       </View>
@@ -236,7 +236,7 @@
         <Text
           id="text13"
           heightType="fill"
-          value="{{ shopInfoQuery.data.team_nm[0]}}"
+          value={'{{ shopInfoQuery.data?.team_nm?.at(0) || ""}}'}
           verticalAlign="center"
         />
       </View>
@@ -267,7 +267,7 @@
         <Text
           id="text14"
           heightType="fill"
-          value="{{ shopInfoQuery.data.user_nm[0]}}"
+          value={'{{ shopInfoQuery.data?.user_nm?.at(0) || ""}}'}
           verticalAlign="center"
         />
       </View>

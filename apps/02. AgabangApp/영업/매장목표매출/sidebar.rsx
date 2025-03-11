@@ -31,7 +31,7 @@
       placeholder="Select an option"
       showSelectionIndicator={true}
       style={{ ordered: [] }}
-      value={'["A1", "A4"]'}
+      value={'["A1"]'}
       values="{{ item.biz_cd }}"
       wrapTags={true}
     />

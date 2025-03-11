@@ -132,6 +132,17 @@
           parentKey="5acd8932-9f75-4167-afa0-5152d7c03222"
         />
         <Option
+          id="0c707"
+          appTarget="bf8a50f6-ef60-11ef-8a7e-6b936168ecd4"
+          disabled={false}
+          hidden={false}
+          icon="bold/interface-edit-grid"
+          iconPosition="left"
+          itemType="app"
+          label="판매율(시즌)"
+          parentKey="5acd8932-9f75-4167-afa0-5152d7c03222"
+        />
+        <Option
           id="9720c"
           appTarget="1a2d5df0-b83e-11ef-9c79-fb3fe1d0c969"
           disabled={false}
@@ -170,17 +181,6 @@
             waitType="debounce"
           />
         </Option>
-        <Option
-          id="0c707"
-          appTarget="bf8a50f6-ef60-11ef-8a7e-6b936168ecd4"
-          disabled={false}
-          hidden={false}
-          icon="bold/interface-edit-grid"
-          iconPosition="left"
-          itemType="app"
-          label="판매율"
-          parentKey="5acd8932-9f75-4167-afa0-5152d7c03222"
-        />
         <Option
           id="c2e6a"
           appTarget="6e82edba-f020-11ef-b777-cf766f5a1880"
@@ -376,6 +376,17 @@
           iconPosition="left"
           itemType="app"
           label="매장상세 현황"
+          parentKey="a5cf9"
+        />
+        <Option
+          id="e31c3"
+          appTarget="600a68fa-f01e-11ef-82fc-a7f2c8f09938"
+          disabled={false}
+          hidden={false}
+          icon="bold/interface-edit-write-2"
+          iconPosition="left"
+          itemType="app"
+          label="매장 관리"
           parentKey="a5cf9"
         />
         <Option

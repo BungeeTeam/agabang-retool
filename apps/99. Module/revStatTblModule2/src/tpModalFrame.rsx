@@ -1,5 +1,5 @@
 <ModalFrame
-  id="teamModalFrame"
+  id="tpModalFrame"
   footerPadding="8px 12px"
   headerPadding="8px 12px"
   hidden={true}
@@ -14,7 +14,7 @@
   <Header>
     <Text
       id="modalTitle1"
-      value="### {{ selectedRow.value.team_nm }} 매출 상세"
+      value="### {{ selectedRow.value.tp_nm }} 매출 상세"
       verticalAlign="center"
     />
     <Button
@@ -29,7 +29,7 @@
         event="click"
         method="setHidden"
         params={{ ordered: [{ hidden: true }] }}
-        pluginId="teamModalFrame"
+        pluginId="tpModalFrame"
         type="widget"
         waitMs="0"
         waitType="debounce"
@@ -46,11 +46,7 @@
     </Button>
   </Header>
   <Body>
-    <Text
-      id="modalTitle2"
-      value="#### 유통채널별 매출 현황"
-      verticalAlign="center"
-    />
+    <Text id="modalTitle2" value="#### 팀별 매출 현황" verticalAlign="center" />
     <Text
       id="text42"
       horizontalAlign="right"
@@ -63,7 +59,7 @@
       autoColumnWidth={true}
       cellSelection="none"
       clearChangesetOnSave={true}
-      data="{{ salesByType.value }}"
+      data="{{ salesByTeam.value }}"
       defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
       emptyMessage="No rows found"
       enableSaveActions={true}
@@ -87,13 +83,13 @@
         formatOptions={{ automaticColors: true }}
         groupAggregationMode="none"
         key="tp_nm"
-        label="유통채널"
+        label="팀"
         optionList={{ mode: "manual" }}
         placeholder="Enter value"
         position="center"
-        size={57.515625}
+        size={26.375}
         summaryAggregationMode="none"
-        valueOverride={'{{ self.data[i]["tp_nm"] }}'}
+        valueOverride={'{{ self.data[i]["team_nm"] }}'}
       />
       <Column
         id="b17a1"
@@ -343,8 +339,8 @@
         />
       </ToolbarButton>
     </Table>
-    <Spacer id="spacer10" />
     <Spacer id="spacer3" />
+    <Spacer id="spacer10" />
     <Text
       id="modalTitle3"
       value="#### 담당자별 매출 현황"
@@ -955,15 +951,6 @@
           waitType="debounce"
         />
       </ToolbarButton>
-      <Event
-        event="clickRow"
-        method="setValue"
-        params={{ ordered: [{ value: "{{ currentRow }}" }] }}
-        pluginId="selectedRow"
-        type="state"
-        waitMs="0"
-        waitType="debounce"
-      />
     </Table>
   </Body>
 </ModalFrame>
