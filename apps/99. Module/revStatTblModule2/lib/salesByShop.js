@@ -45,7 +45,7 @@ const groupKeys = ["shop_cd", "shop_nm"]
 const data = {{ inputData.value }}
 let arrData = formatDataAsArray(data)
 
-arrData = arrData.filter(item => item.team_cd === {{ selectedRow.value.team_cd }})
+arrData = arrData.filter(item => item.tp_cd === {{ selectedRow.value.tp_cd }})
 
 const groupedArr = groupBySum(arrData, ["time_unit", ...groupKeys], sumKeys)
 const targetArr = groupBySum(arrData, groupKeys, ["target_sales"])

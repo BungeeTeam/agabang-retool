@@ -5,7 +5,7 @@
   <Include src="./src/bizModalFrame.rsx" />
   <Include src="./src/onoffModalFrame.rsx" />
   <Include src="./src/shopDetailModalFrame.rsx" />
-  <Include src="./src/teamModalFrame.rsx" />
+  <Include src="./src/tpModalFrame.rsx" />
   <Frame
     id="$main"
     enableFullBleed={false}
@@ -42,8 +42,9 @@
         clearChangesetOnSave={true}
         data="{{ salesByBiz.value }}"
         defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
+        dynamicColumnProperties={{ formatByIndex: "auto" }}
+        dynamicColumnsEnabled={true}
         emptyMessage="No rows found"
-        enableSaveActions={true}
         heightType="auto"
         hidden=""
         margin="0"
@@ -658,7 +659,7 @@
       <Spacer id="spacer9" />
       <Text
         id="text2"
-        value="##### 담당조직별 매출 현황"
+        value="##### 유통채널별 매출 현황"
         verticalAlign="center"
       />
       <Text
@@ -673,7 +674,7 @@
         autoColumnWidth={true}
         cellSelection="none"
         clearChangesetOnSave={true}
-        data="{{ salesByTeam.value }}"
+        data="{{ salesByType.value }}"
         defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
         emptyMessage="No rows found"
         enableSaveActions={true}
@@ -697,13 +698,13 @@
           formatOptions={{ automaticColors: true }}
           groupAggregationMode="none"
           key="tp_nm"
-          label="담당조직"
+          label="유통채널"
           placeholder="Enter value"
           position="center"
-          referenceId="team_nm"
+          referenceId="tp_nm"
           size={57.515625}
           summaryAggregationMode="none"
-          valueOverride={'{{ self.data[i]["team_nm"] }}'}
+          valueOverride={'{{ self.data[i]["tp_nm"] }}'}
         />
         <Column
           id="b17a1"
@@ -928,13 +929,13 @@
           format="string"
           groupAggregationMode="none"
           hidden="true"
-          label="team_cd"
+          label="tp_cd"
           placeholder="Enter value"
           position="center"
-          referenceId="team_cd"
+          referenceId="tp_cd"
           size={100}
           summaryAggregationMode="none"
-          valueOverride={'{{ self.data[i]["team_cd"] }}'}
+          valueOverride={'{{ self.data[i]["tp_cd"] }}'}
         />
         <ToolbarButton
           id="1a"
@@ -976,7 +977,7 @@
           event="clickRow"
           method="show"
           params={{ ordered: [] }}
-          pluginId="teamModalFrame"
+          pluginId="tpModalFrame"
           type="widget"
           waitMs="0"
           waitType="debounce"

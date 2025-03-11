@@ -43,7 +43,9 @@ function pivotData(data, groupKeys, pivotKey, sumKeys) {
 const sumKeys = ["rev"]
 const groupKeys = ["team_cd", "team_nm"]
 const data = {{ inputData.value }}
-const arrData = formatDataAsArray(data)
+let arrData = formatDataAsArray(data)
+
+arrData = arrData.filter(item => item.tp_cd === {{ selectedRow.value.tp_cd }})
 
 const groupedArr = groupBySum(arrData, ["time_unit", ...groupKeys], sumKeys)
 const targetArr = groupBySum(arrData, groupKeys, ["target_sales"])
