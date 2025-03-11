@@ -37,7 +37,9 @@
       label=""
       labelPosition="top"
       textBefore="기준일자"
-      value={'{{ new Date().toISOString().split("T")[0] }}'}
+      value={
+        '{{ new Date(new Date().setDate(new Date().getDate() - 1)).toISOString().split("T")[0] }}'
+      }
     />
     <Module
       id="revStatTblModule1"
