@@ -43,7 +43,6 @@
         data="{{ salesByBiz.value }}"
         defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
         dynamicColumnProperties={{ formatByIndex: "auto" }}
-        dynamicColumnsEnabled={true}
         emptyMessage="No rows found"
         heightType="auto"
         hidden=""
@@ -77,6 +76,7 @@
         <Column
           id="b17a1"
           alignment="right"
+          backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
           cellTooltip="{{ item }}"
           cellTooltipMode="custom"
           editableOptions={{ showStepper: true }}
@@ -179,6 +179,7 @@
         <Column
           id="8a9cb"
           alignment="right"
+          backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
           editableOptions={{ showStepper: true }}
           format="decimal"
           formatOptions={{
@@ -240,6 +241,7 @@
         <Column
           id="ba994"
           alignment="right"
+          backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
           editableOptions={{ showStepper: true }}
           format="decimal"
           formatOptions={{
@@ -422,6 +424,7 @@
         <Column
           id="b17a1"
           alignment="right"
+          backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
           editableOptions={{ showStepper: true }}
           format="decimal"
           formatOptions={{
@@ -517,6 +520,7 @@
         <Column
           id="8a9cb"
           alignment="right"
+          backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
           editableOptions={{ showStepper: true }}
           format="decimal"
           formatOptions={{
@@ -578,6 +582,7 @@
         <Column
           id="ba994"
           alignment="right"
+          backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
           editableOptions={{ showStepper: true }}
           format="decimal"
           formatOptions={{
@@ -709,6 +714,7 @@
         <Column
           id="b17a1"
           alignment="right"
+          backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
           editableOptions={{ showStepper: true }}
           format="decimal"
           formatOptions={{
@@ -804,6 +810,7 @@
         <Column
           id="8a9cb"
           alignment="right"
+          backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
           editableOptions={{ showStepper: true }}
           format="decimal"
           formatOptions={{
@@ -865,6 +872,7 @@
         <Column
           id="ba994"
           alignment="right"
+          backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
           editableOptions={{ showStepper: true }}
           format="decimal"
           formatOptions={{
