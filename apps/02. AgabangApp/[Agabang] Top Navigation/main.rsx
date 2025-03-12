@@ -110,17 +110,6 @@
           parentKey="5acd8932-9f75-4167-afa0-5152d7c03222"
         />
         <Option
-          id="85474"
-          appTarget="a8918214-6f6f-11ef-84a9-1b6e7e154d45"
-          disabled={false}
-          hidden={false}
-          icon="bold/interface-home-2"
-          iconPosition="left"
-          itemType="app"
-          label="급상승 매장"
-          parentKey="5acd8932-9f75-4167-afa0-5152d7c03222"
-        />
-        <Option
           id="c3ff5"
           appTarget="ae508d20-7123-11ef-9d55-e35089544082"
           disabled={false}
@@ -182,6 +171,16 @@
           />
         </Option>
         <Option
+          id="85474"
+          appTarget="a8918214-6f6f-11ef-84a9-1b6e7e154d45"
+          disabled={false}
+          hidden={false}
+          icon="bold/interface-home-2"
+          iconPosition="left"
+          itemType="app"
+          label="급상승 매장"
+        />
+        <Option
           id="c2e6a"
           appTarget="6e82edba-f020-11ef-b777-cf766f5a1880"
           disabled={false}
@@ -190,6 +189,16 @@
           iconPosition="left"
           itemType="app"
           label="매출비중"
+          parentKey="5acd8932-9f75-4167-afa0-5152d7c03222"
+        />
+        <Option
+          id="53172"
+          appTarget="80ec9290-fa51-11ef-b3b5-f3ba9f0a23b2"
+          disabled={false}
+          hidden={false}
+          icon="bold/shopping-gift"
+          iconPosition="left"
+          itemType="app"
           parentKey="5acd8932-9f75-4167-afa0-5152d7c03222"
         />
         <Option
