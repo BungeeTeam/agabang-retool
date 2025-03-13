@@ -477,7 +477,7 @@
             label="연도"
             placeholder="Enter value"
             position="left"
-            size={36.765625}
+            size={36.75}
             summaryAggregationMode="none"
           />
           <Column
@@ -519,7 +519,7 @@
             label="유아복"
             placeholder="Enter value"
             position="center"
-            size={47.140625}
+            size={47.125}
             summaryAggregationMode="none"
           />
           <Column
@@ -541,7 +541,7 @@
             placeholder="Enter value"
             position="right"
             referenceId="비중"
-            size={36.765625}
+            size={36.75}
             summaryAggregationMode="none"
             textColor="rgb(1, 72, 143)"
           />
@@ -556,7 +556,7 @@
             label="총합"
             placeholder="Enter value"
             position="right"
-            size={36.765625}
+            size={36.75}
             summaryAggregationMode="none"
             textColor="#01488f"
           />
@@ -571,7 +571,7 @@
             label="기초복 아동"
             placeholder="Enter value"
             position="center"
-            size={71.28125}
+            size={71.265625}
             summaryAggregationMode="none"
           />
           <Column
@@ -599,7 +599,7 @@
             label="기획"
             placeholder="Enter value"
             position="center"
-            size={36.765625}
+            size={36.75}
             summaryAggregationMode="none"
           />
           <Column
@@ -613,7 +613,7 @@
             label="터들러"
             placeholder="Enter value"
             position="center"
-            size={47.140625}
+            size={47.125}
             summaryAggregationMode="none"
           />
           <Column
@@ -655,7 +655,7 @@
             label="판촉 부자재"
             placeholder="Enter value"
             position="center"
-            size={71.28125}
+            size={71.265625}
             summaryAggregationMode="none"
           />
         </Table>
@@ -1083,7 +1083,7 @@
         label="연도"
         placeholder="Select option"
         position="center"
-        size={36.765625}
+        size={36.75}
         summaryAggregationMode="none"
       />
       <Column
@@ -1097,7 +1097,7 @@
         placeholder="Select option"
         position="center"
         referenceId="column9"
-        size={36.765625}
+        size={36.75}
         summaryAggregationMode="none"
       />
       <Column
@@ -1111,7 +1111,7 @@
         label="입고량"
         placeholder="Enter value"
         position="center"
-        size={47.140625}
+        size={47.125}
         summaryAggregationMode="none"
       />
       <Column
@@ -1125,7 +1125,7 @@
         label="판매량"
         placeholder="Enter value"
         position="center"
-        size={47.140625}
+        size={47.125}
         summaryAggregationMode="none"
       />
       <Column
@@ -1139,7 +1139,7 @@
         label="재고량"
         placeholder="Enter value"
         position="center"
-        size={47.140625}
+        size={47.125}
         summaryAggregationMode="none"
       />
       <Column
@@ -1157,7 +1157,7 @@
         label="매장판매율"
         placeholder="Enter value"
         position="center"
-        size={67.90625}
+        size={67.890625}
         summaryAggregationMode="none"
       />
       <Column
@@ -1175,7 +1175,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="전체"
-        size={67.90625}
+        size={67.890625}
         summaryAggregationMode="none"
         valueOverride="{{ totalInventoryQuery.data[i].ratio }}"
       />
@@ -1194,7 +1194,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="차이"
-        size={36.765625}
+        size={36.75}
         summaryAggregationMode="none"
         textColor={'{{ item >= 0? "green": "red" }}'}
         valueOverride="{{ shopInventoryQuery.data.ratio[i] - totalInventoryQuery.data[i].ratio }}"

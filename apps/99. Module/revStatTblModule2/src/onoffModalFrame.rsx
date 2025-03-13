@@ -78,7 +78,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="팀"
-        size={36.765625}
+        size={36.75}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["area_nm"] }}'}
       />
@@ -97,7 +97,7 @@
         label="25실적"
         placeholder="Enter value"
         position="center"
-        size={52.3125}
+        size={52.296875}
         summaryAggregationMode="none"
       >
         <Event
@@ -125,7 +125,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="25목표"
-        size={52.3125}
+        size={52.296875}
         summaryAggregationMode="none"
         valueOverride={
           '{{ self.data[i]["target_sales"] === 0 ? null: self.data[i]["target_sales"] }}'
@@ -147,7 +147,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="목표달성율"
-        size={67.90625}
+        size={67.890625}
         summaryAggregationMode="none"
         valueOverride={
           '{{ self.data[i]["target_sales"] === 0 ? null : self.data[i]["2025"] / self.data[i]["target_sales"] }}'
@@ -190,7 +190,7 @@
         label="24실적"
         placeholder="Enter value"
         position="center"
-        size={52.3125}
+        size={52.296875}
         summaryAggregationMode="none"
       />
       <Column
@@ -208,7 +208,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="24대비신장율"
-        size={83.453125}
+        size={83.4375}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -230,7 +230,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="24대비신장액"
-        size={83.453125}
+        size={83.4375}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2024"]}}'}
       />
@@ -249,7 +249,7 @@
         label="23실적"
         placeholder="Enter value"
         position="center"
-        size={52.3125}
+        size={52.296875}
         summaryAggregationMode="none"
       />
       <Column
@@ -267,7 +267,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="23대비신장율"
-        size={83.453125}
+        size={83.4375}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -289,7 +289,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="23대비N신장액"
-        size={83.453125}
+        size={83.4375}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2023"]}}'}
       />
