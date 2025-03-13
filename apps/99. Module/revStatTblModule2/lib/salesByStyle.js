@@ -57,15 +57,15 @@ const viewConfig = {
   },
   it: {
     keys: ["it", "it_nm"],
-    sortFn: (a, b) => b["2025"] - a["2025"],
+    sortFn: (a, b) => a.it_nm.localeCompare(b.it_nm, "ko"),
   },
   it_gb: {
     keys: ["it", "it_nm", "it_gb", "it_gb_nm"],
-    sortFn: (a, b) => b["2025"] - a["2025"],
+    sortFn: (a, b) => a.it_nm.localeCompare(b.it_nm, "ko") && a.it_gb_nm.localeCompare(b.it_gb_nm, "ko"),
   },
   item: {
     keys: ["it", "it_nm", "it_gb", "it_gb_nm", "item", "item_nm"],
-    sortFn: (a, b) => b["2025"] - a["2025"],
+    sortFn: (a, b) => a.it_nm.localeCompare(b.it_nm, "ko") && a.it_gb_nm.localeCompare(b.it_gb_nm, "ko") && a.item_nm.localeCompare(b.item_nm, "ko"),
   },
 }
 
