@@ -18,7 +18,7 @@
   },
   "brandMultiSelect": {
     "subcontainer": "sidebarFrame1",
-    "row": 2.6,
+    "row": 0.4,
     "height": 0.2,
     "width": 1
   },
@@ -151,7 +151,7 @@
     "width": 12,
     "stackPosition": {
       "object": {
-        "ordinal": 4,
+        "ordinal": 0,
         "widthType": "fixed",
         "width": 0,
         "height": 0
@@ -166,7 +166,7 @@
     "width": 12,
     "stackPosition": {
       "object": {
-        "ordinal": 3,
+        "ordinal": 4,
         "widthType": "fixed",
         "width": 0,
         "height": 0
@@ -181,7 +181,7 @@
     "width": 12,
     "stackPosition": {
       "object": {
-        "ordinal": 2,
+        "ordinal": 3,
         "widthType": "fixed",
         "width": 0,
         "height": 0
@@ -196,7 +196,7 @@
     "width": 12,
     "stackPosition": {
       "object": {
-        "ordinal": 1,
+        "ordinal": 2,
         "widthType": "fixed",
         "width": 0,
         "height": 0
@@ -272,7 +272,7 @@
     "width": 4,
     "stackPosition": {
       "object": {
-        "ordinal": 0,
+        "ordinal": 1,
         "widthType": "fixed",
         "width": 0,
         "height": 0
