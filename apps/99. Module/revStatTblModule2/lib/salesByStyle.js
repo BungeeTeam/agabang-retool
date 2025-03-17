@@ -48,7 +48,7 @@ arrData = arrData.filter(item => item.biz_cd === {{ selectedRow.value.biz_cd }})
 
 const viewConfig = {
   season: {
-    keys: ["year_cd", "year_nm"],
+    keys: ["sales_type", "year_cd", "year_nm"],
     sortFn: (a, b) => b.year_nm - a.year_nm,
   },
   season_detail: {

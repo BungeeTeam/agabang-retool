@@ -1,128 +1,4 @@
 {
-  "brandTabbedContainer": {
-    "subcontainer": "shopDetailModalFrame",
-    "row": 13.6,
-    "height": 7.2,
-    "width": 12,
-    "stackPosition": {
-      "object": {
-        "ordinal": 0,
-        "widthType": "fixed",
-        "width": 0,
-        "height": 0
-      }
-    }
-  },
-  "container1": {
-    "subcontainer": "shopDetailModalFrame",
-    "row": 0.2,
-    "height": 2.6,
-    "width": 1,
-    "stackPosition": {
-      "object": {
-        "ordinal": 0,
-        "widthType": "fixed",
-        "width": 0,
-        "height": 0
-      }
-    }
-  },
-  "container2": {
-    "subcontainer": "shopDetailModalFrame",
-    "row": 0.2,
-    "col": 1,
-    "height": 2.6,
-    "width": 1
-  },
-  "container3": {
-    "subcontainer": "shopDetailModalFrame",
-    "row": 0.2,
-    "col": 2,
-    "height": 2.6,
-    "width": 2
-  },
-  "container4": {
-    "subcontainer": "shopDetailModalFrame",
-    "row": 0.2,
-    "col": 4,
-    "height": 2.6,
-    "width": 1
-  },
-  "container5": {
-    "subcontainer": "shopDetailModalFrame",
-    "row": 0.2,
-    "col": 6,
-    "height": 2.6,
-    "width": 1
-  },
-  "container6": {
-    "subcontainer": "shopDetailModalFrame",
-    "row": 0.2,
-    "col": 7,
-    "height": 2.6,
-    "width": 1
-  },
-  "container7": {
-    "subcontainer": "shopDetailModalFrame",
-    "row": 0.2,
-    "col": 5,
-    "height": 2.6,
-    "width": 1
-  },
-  "containerTitle1": {
-    "container": "container1",
-    "rowGroup": "header",
-    "height": 0.6,
-    "width": 12
-  },
-  "containerTitle2": {
-    "container": "container2",
-    "rowGroup": "header",
-    "height": 0.6,
-    "width": 12
-  },
-  "containerTitle3": {
-    "container": "container3",
-    "rowGroup": "header",
-    "height": 0.6,
-    "width": 12
-  },
-  "containerTitle4": {
-    "container": "container4",
-    "rowGroup": "header",
-    "height": 0.6,
-    "width": 12
-  },
-  "containerTitle5": {
-    "container": "container5",
-    "rowGroup": "header",
-    "height": 0.6,
-    "width": 12
-  },
-  "containerTitle6": {
-    "container": "container6",
-    "rowGroup": "header",
-    "height": 0.6,
-    "width": 12
-  },
-  "containerTitle7": {
-    "container": "container7",
-    "rowGroup": "header",
-    "height": 0.6,
-    "width": 12
-  },
-  "head": {
-    "rowGroup": "header",
-    "subcontainer": "shopDetailModalFrame",
-    "height": 0.6,
-    "width": 9
-  },
-  "modalCloseButton1": {
-    "rowGroup": "header",
-    "subcontainer": "shopDetailModalFrame",
-    "col": 9,
-    "height": 1.4
-  },
   "modalCloseButton2": {
     "rowGroup": "header",
     "subcontainer": "tpModalFrame",
@@ -180,11 +56,11 @@
     "height": 0.6,
     "width": 9
   },
-  "plotlyJsonChart1": {
-    "subcontainer": "shopDetailModalFrame",
-    "row": 3.8,
-    "height": 8.6,
-    "width": 5
+  "salesTypeTbl": {
+    "subcontainer": "bizModalFrame",
+    "row": 0.8,
+    "height": 6.6,
+    "width": 12
   },
   "spacer1": {
     "subcontainer": "tpModalFrame",
@@ -208,10 +84,16 @@
   },
   "spacer12": {
     "subcontainer": "bizModalFrame",
-    "row": 2,
+    "row": 9.6,
     "col": 10,
     "height": 1,
     "width": 2
+  },
+  "spacer13": {
+    "subcontainer": "bizModalFrame",
+    "row": 7.4,
+    "height": 0.8,
+    "width": 12
   },
   "spacer3": {
     "subcontainer": "tpModalFrame",
@@ -227,7 +109,7 @@
   },
   "spacer6": {
     "subcontainer": "bizModalFrame",
-    "row": 2,
+    "row": 9.6,
     "height": 0.8,
     "width": 2
   },
@@ -253,7 +135,7 @@
   },
   "styleTabContainer": {
     "subcontainer": "bizModalFrame",
-    "row": 3.6,
+    "row": 8.8,
     "height": 0.8,
     "width": 12,
     "stackPosition": {
@@ -267,47 +149,15 @@
   },
   "subBrandTbl": {
     "subcontainer": "bizModalFrame",
-    "row": 1,
+    "row": 11.2,
     "height": 1,
-    "width": 12
-  },
-  "table1": {
-    "subcontainer": "shopDetailModalFrame",
-    "row": 3.8,
-    "col": 5,
-    "height": 3.6,
-    "width": 7
-  },
-  "table3": {
-    "container": "brandTabbedContainer",
-    "subcontainer": "d2422",
-    "height": 6.2,
-    "width": 12
-  },
-  "table4": {
-    "container": "brandTabbedContainer",
-    "rowGroup": "header",
-    "row": 0.8,
-    "height": 6.2,
-    "width": 12
-  },
-  "table6": {
-    "subcontainer": "shopDetailModalFrame",
-    "row": 22,
-    "height": 8,
-    "width": 8
-  },
-  "tabs1": {
-    "container": "brandTabbedContainer",
-    "rowGroup": "header",
-    "height": 0.6,
     "width": 12
   },
   "tabs3": {
     "container": "styleTabContainer",
     "rowGroup": "header",
     "height": 0.6,
-    "width": 12
+    "width": 11
   },
   "text1": {
     "container": "moduleContainer",
@@ -315,123 +165,11 @@
     "height": 0.6,
     "width": 9
   },
-  "text10": {
-    "type": "stack",
-    "container": "container2",
-    "subcontainer": "5ef41",
-    "height": 1.2,
-    "width": 12,
-    "stackPosition": {
-      "object": {
-        "ordinal": 0,
-        "widthType": "fill",
-        "width": 80,
-        "height": 48
-      }
-    }
-  },
-  "text11": {
-    "type": "stack",
-    "container": "container3",
-    "subcontainer": "5ef41",
-    "height": 1.2,
-    "width": 12,
-    "stackPosition": {
-      "object": {
-        "ordinal": 0,
-        "widthType": "fill",
-        "width": 80,
-        "height": 48
-      }
-    }
-  },
-  "text12": {
-    "type": "stack",
-    "container": "container4",
-    "subcontainer": "5ef41",
-    "height": 1.2,
-    "width": 12,
-    "stackPosition": {
-      "object": {
-        "ordinal": 0,
-        "widthType": "fill",
-        "width": 80,
-        "height": 48
-      }
-    }
-  },
-  "text13": {
-    "type": "stack",
-    "container": "container5",
-    "subcontainer": "5ef41",
-    "height": 1.2,
-    "width": 12,
-    "stackPosition": {
-      "object": {
-        "ordinal": 0,
-        "widthType": "fill",
-        "width": 80,
-        "height": 48
-      }
-    }
-  },
-  "text14": {
-    "type": "stack",
-    "container": "container6",
-    "subcontainer": "5ef41",
-    "height": 1.2,
-    "width": 12,
-    "stackPosition": {
-      "object": {
-        "ordinal": 0,
-        "widthType": "fill",
-        "width": 80,
-        "height": 48
-      }
-    }
-  },
-  "text15": {
-    "type": "stack",
-    "container": "container7",
-    "subcontainer": "5ef41",
-    "height": 1.2,
-    "width": 12,
-    "stackPosition": {
-      "object": {
-        "ordinal": 0,
-        "widthType": "fill",
-        "width": 80,
-        "height": 48
-      }
-    }
-  },
-  "text17": {
-    "subcontainer": "shopDetailModalFrame",
-    "row": 3.2,
-    "col": 5,
-    "height": 0.6
-  },
-  "text18": {
-    "subcontainer": "shopDetailModalFrame",
-    "row": 13,
-    "height": 0.6
-  },
   "text2": {
     "container": "moduleContainer",
     "row": 5.4,
     "height": 0.6,
     "width": 9
-  },
-  "text20": {
-    "subcontainer": "shopDetailModalFrame",
-    "row": 21.4,
-    "height": 0.6,
-    "width": 2
-  },
-  "text21": {
-    "subcontainer": "shopDetailModalFrame",
-    "row": 3.2,
-    "height": 0.6
   },
   "text28": {
     "container": "moduleContainer",
@@ -459,25 +197,24 @@
   },
   "text37": {
     "subcontainer": "bizModalFrame",
-    "row": 0.2,
+    "row": 10.4,
     "height": 0.6,
     "width": 9
   },
   "text38": {
     "subcontainer": "bizModalFrame",
-    "row": 0.4,
+    "row": 10.6,
     "col": 9,
     "height": 0.6
   },
   "text39": {
     "subcontainer": "bizModalFrame",
-    "row": 3,
+    "row": 0.2,
     "col": 9,
     "height": 0.6
   },
   "text40": {
     "subcontainer": "bizModalFrame",
-    "row": 2.8,
     "height": 0.6
   },
   "text42": {
@@ -507,26 +244,16 @@
     "col": 9,
     "height": 0.6
   },
-  "text8": {
-    "rowGroup": "header",
-    "subcontainer": "shopDetailModalFrame",
-    "row": 0.6,
+  "text47": {
+    "subcontainer": "bizModalFrame",
+    "row": 8.2,
     "height": 0.6
   },
-  "text9": {
-    "type": "stack",
-    "container": "container1",
-    "subcontainer": "5ef41",
-    "height": 1.2,
-    "width": 12,
-    "stackPosition": {
-      "object": {
-        "ordinal": 0,
-        "widthType": "fill",
-        "width": 80,
-        "height": 48
-      }
-    }
+  "text48": {
+    "subcontainer": "bizModalFrame",
+    "row": 8.2,
+    "col": 9,
+    "height": 0.6
   },
   "typeStatTbl": {
     "container": "moduleContainer",
@@ -561,6 +288,7 @@
   "typeStatTbl20": {
     "container": "styleTabContainer",
     "subcontainer": "43b7f",
+    "row": 0,
     "height": 1,
     "width": 12,
     "stackPosition": {
@@ -576,25 +304,57 @@
     "container": "styleTabContainer",
     "subcontainer": "4682a",
     "height": 1,
-    "width": 12
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
   },
   "typeStatTbl22": {
     "container": "styleTabContainer",
     "subcontainer": "e7069",
     "height": 1,
-    "width": 12
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
   },
   "typeStatTbl23": {
     "container": "styleTabContainer",
     "subcontainer": "e5cf6",
     "height": 1,
-    "width": 12
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 3,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
   },
   "typeStatTbl24": {
     "container": "styleTabContainer",
     "subcontainer": "f0f86",
     "height": 1,
-    "width": 12
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 4,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
   },
   "typeStatTbl25": {
     "subcontainer": "onoffModalFrame",
@@ -605,6 +365,11 @@
   "typeStatTbl3": {
     "container": "moduleContainer",
     "row": 3.6,
+    "height": 1,
+    "width": 12
+  },
+  "yearSeasonTbl": {
+    "container": "salesTypeTbl",
     "height": 1,
     "width": 12
   }
