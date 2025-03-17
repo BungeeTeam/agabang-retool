@@ -5,7 +5,7 @@
   headerPadding="4px 12px"
   hidden=""
   margin="0"
-  padding="12px"
+  padding="0px"
   showBody={true}
   showHeader={true}
 >
@@ -13,6 +13,7 @@
     <Tabs
       id="tabs3"
       itemMode="static"
+      margin="4px 0px"
       navigateContainer={true}
       style={{ ordered: [] }}
       targetContainerId="styleTabContainer"

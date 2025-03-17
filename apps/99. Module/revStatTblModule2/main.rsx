@@ -4,7 +4,6 @@
   <GlobalWidgetProp id="inputDataByStyle" />
   <Include src="./src/bizModalFrame.rsx" />
   <Include src="./src/onoffModalFrame.rsx" />
-  <Include src="./src/shopDetailModalFrame.rsx" />
   <Include src="./src/tpModalFrame.rsx" />
   <Frame
     id="$main"
