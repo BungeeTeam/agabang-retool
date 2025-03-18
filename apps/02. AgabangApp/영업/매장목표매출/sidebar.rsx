@@ -35,6 +35,7 @@
       values="{{ item.biz_cd }}"
       wrapTags={true}
     />
+    <Spacer id="spacer1" />
     <Multiselect
       id="brandMultiSelect"
       captionByIndex=""
