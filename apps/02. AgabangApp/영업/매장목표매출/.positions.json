@@ -18,7 +18,7 @@
   },
   "brandMultiSelect": {
     "subcontainer": "sidebarFrame1",
-    "row": 0.4,
+    "row": 1.2,
     "height": 0.2,
     "width": 1
   },
@@ -215,6 +215,12 @@
     "col": 7,
     "height": 6.2,
     "width": 5
+  },
+  "spacer1": {
+    "subcontainer": "sidebarFrame1",
+    "row": 0.4,
+    "height": 0.8,
+    "width": 1
   },
   "statistic1": {
     "container": "listView2",
