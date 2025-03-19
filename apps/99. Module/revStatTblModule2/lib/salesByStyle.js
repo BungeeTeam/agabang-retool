@@ -44,7 +44,9 @@ const sumKeys = ["rev"]
 const data = {{ inputDataByStyle.value }}
 let arrData = formatDataAsArray(data)
 
-arrData = arrData.filter(item => item.biz_cd === {{ selectedRow.value.biz_cd }})
+arrData = arrData
+  .filter(item => item.biz_cd === {{ selectedRow.value.biz_cd }})
+  .filter(item => (item.it_nm != '') && (item.it_gb_nm != '') && (item.item_nm != ''))
 
 const viewConfig = {
   season: {
