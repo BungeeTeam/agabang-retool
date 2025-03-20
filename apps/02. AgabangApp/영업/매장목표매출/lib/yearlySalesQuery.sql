@@ -61,9 +61,9 @@ ON A.biz_cd = B.biz_cd AND A.br_cd = B.br_cd AND A.shop_cd = B.shop_cd AND A.ym 
 )
 SELECT 
   time_unit, shop_cd, shop_nm, biz_cd, biz_nm,
-  br_cd, br_nm,
-  tp_cd, tp_nm, team_cd, team_nm,
-  user_cd, user_nm, area_cd, area_nm, onoff_flag,
+  br_cd, br_nm, tp_cd, tp_nm, team_cd, team_nm,
+  user_cd, user_nm, area_cd, area_nm, 
+  onoff_flag,
   SUM(rev) / 1000000 as rev, 
   SUM(target_sales) / 1000000 as target_sales
 FROM tbl

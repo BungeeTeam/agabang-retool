@@ -4,7 +4,7 @@
     autoColumnWidth={true}
     cellSelection="none"
     clearChangesetOnSave={true}
-    data="{{ salesBySeasonYear.value?.filter(item => item.sales_type === currentRow.sales_type).sort((a, b) => b.year_nm - a.year_nm) }}"
+    data="{{ salesBySeason.value?.filter(item => item.sales_type === currentRow.sales_type).sort((a, b) => b.year_nm - a.year_nm) }}"
     defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
     emptyMessage="No rows found"
     enableSaveActions={true}

@@ -46,7 +46,7 @@ const data = {{ inputData.value }}
 let arrData = formatDataAsArray(data)
 
 const onoff_flag = {{ selectedRow.value.onoff_flag }}
-arrData = arrData.filter(item => item.onoff_flag === onoff_flag.replace("(전국)", ""))
+arrData = arrData.filter(item => item.onoff_flag === onoff_flag?.replace("(전국)", ""))
 
 const groupedArr = groupBySum(arrData, ["time_unit", ...groupKeys], sumKeys)
 const targetArr = groupBySum(arrData, groupKeys, ["target_sales"])
