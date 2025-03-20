@@ -206,7 +206,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="신장율"
-        size={47.140625}
+        size={47.125}
         summaryAggregationMode="none"
       />
       <Column
