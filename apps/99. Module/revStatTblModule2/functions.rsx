@@ -32,18 +32,25 @@
     funcBody={include("./lib/salesBySalesType.js", "string")}
   />
   <Function
-    id="salesBySeasonYear"
-    funcBody={include("./lib/salesBySeasonYear.js", "string")}
+    id="salesBySeason"
+    funcBody={include("./lib/salesBySeason.js", "string")}
   />
   <Function
     id="salesByStyle"
     funcBody={include("./lib/salesByStyle.js", "string")}
   />
   <Function
+    id="salesByFirstLevel"
+    funcBody={include("./lib/salesByFirstLevel.js", "string")}
+  />
+  <Function
+    id="salesBySecondLevel"
+    funcBody={include("./lib/salesBySecondLevel.js", "string")}
+  />
+  <Function
     id="salesByShop"
     funcBody={include("./lib/salesByShop.js", "string")}
   />
-  <State id="selectedRow" value={'{"team_cd": "01", "biz_cd": "A1"}'} />
   <SqlQuery
     id="expectedTargetSalesQuery"
     enableTransformer={true}
@@ -61,4 +68,6 @@
     resourceTypeOverride=""
     warningCodes={[]}
   />
+  <State id="selectedSalesRow" value={'{"team_cd": "01", "biz_cd": "A1"}'} />
+  <State id="selectedRow" value={'{"team_cd": "01", "biz_cd": "A1"}'} />
 </GlobalFunctions>

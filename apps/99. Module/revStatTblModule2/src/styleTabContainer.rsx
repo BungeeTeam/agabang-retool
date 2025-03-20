@@ -64,6 +64,7 @@
       <Column
         id="b17a1"
         alignment="right"
+        backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -137,6 +138,7 @@
       <Column
         id="8a9cb"
         alignment="right"
+        backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -196,6 +198,7 @@
       <Column
         id="ba994"
         alignment="right"
+        backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -327,6 +330,19 @@
         valueOverride={'{{ self.data[i]["year_nm"] }}'}
       />
       <Column
+        id="2d619"
+        alignment="left"
+        format="string"
+        groupAggregationMode="none"
+        label="시즌코드"
+        placeholder="Enter value"
+        position="center"
+        referenceId="season_cd"
+        size={57.515625}
+        summaryAggregationMode="none"
+        valueOverride={'{{ self.data[i]["year_cd"] }}'}
+      />
+      <Column
         id="24511"
         alignment="left"
         format="string"
@@ -343,6 +359,7 @@
       <Column
         id="b17a1"
         alignment="right"
+        backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -401,6 +418,7 @@
       <Column
         id="8a9cb"
         alignment="right"
+        backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -460,6 +478,7 @@
       <Column
         id="ba994"
         alignment="right"
+        backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -596,6 +615,7 @@
       <Column
         id="b17a1"
         alignment="right"
+        backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -669,6 +689,7 @@
       <Column
         id="8a9cb"
         alignment="right"
+        backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -728,6 +749,7 @@
       <Column
         id="ba994"
         alignment="right"
+        backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -887,6 +909,7 @@
       <Column
         id="b17a1"
         alignment="right"
+        backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -960,6 +983,7 @@
       <Column
         id="8a9cb"
         alignment="right"
+        backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -1019,6 +1043,7 @@
       <Column
         id="ba994"
         alignment="right"
+        backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -1194,6 +1219,7 @@
       <Column
         id="b17a1"
         alignment="right"
+        backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -1267,6 +1293,7 @@
       <Column
         id="8a9cb"
         alignment="right"
+        backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -1326,6 +1353,7 @@
       <Column
         id="ba994"
         alignment="right"
+        backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
