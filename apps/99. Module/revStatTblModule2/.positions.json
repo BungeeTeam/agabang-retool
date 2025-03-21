@@ -114,15 +114,15 @@
   },
   "spacer12": {
     "subcontainer": "bizModalFrame",
-    "row": 4.2,
+    "row": 4.4,
     "col": 10,
     "height": 1,
     "width": 2
   },
   "spacer13": {
     "subcontainer": "bizModalFrame",
-    "row": 1.8,
-    "height": 0.8,
+    "row": 2.4,
+    "height": 0.4,
     "width": 10
   },
   "spacer14": {
@@ -139,7 +139,7 @@
     "subcontainer": "bizModalFrame",
     "row": 1.8,
     "col": 10,
-    "height": 1,
+    "height": 1.2,
     "width": 2
   },
   "spacer3": {
@@ -150,13 +150,13 @@
   },
   "spacer5": {
     "container": "moduleContainer",
-    "row": 4.6,
+    "row": 5.2,
     "height": 0.8,
     "width": 2
   },
   "spacer6": {
     "subcontainer": "bizModalFrame",
-    "row": 4.2,
+    "row": 4.4,
     "height": 0.8,
     "width": 2
   },
@@ -182,7 +182,7 @@
   },
   "styleTabContainer": {
     "subcontainer": "bizModalFrame",
-    "row": 3.4,
+    "row": 3.6,
     "height": 0.8,
     "width": 12,
     "stackPosition": {
@@ -196,7 +196,7 @@
   },
   "subBrandTbl": {
     "subcontainer": "bizModalFrame",
-    "row": 5.8,
+    "row": 6,
     "height": 1,
     "width": 12
   },
@@ -214,7 +214,7 @@
   },
   "text2": {
     "container": "moduleContainer",
-    "row": 5.4,
+    "row": 6,
     "height": 0.6,
     "width": 9
   },
@@ -244,7 +244,7 @@
   },
   "text37": {
     "subcontainer": "bizModalFrame",
-    "row": 5,
+    "row": 5.2,
     "height": 0.6,
     "width": 9
   },
@@ -287,12 +287,12 @@
   },
   "text47": {
     "subcontainer": "bizModalFrame",
-    "row": 2.6,
+    "row": 2.8,
     "height": 0.6
   },
   "text48": {
     "subcontainer": "bizModalFrame",
-    "row": 5.2,
+    "row": 5.4,
     "col": 9,
     "height": 0.6
   },
@@ -313,7 +313,7 @@
   },
   "text54": {
     "subcontainer": "bizModalFrame",
-    "row": 2.8,
+    "row": 3,
     "col": 9,
     "height": 0.6
   },
@@ -328,6 +328,18 @@
     "row": 6.8,
     "col": 9,
     "height": 0.6
+  },
+  "text57": {
+    "container": "moduleContainer",
+    "row": 4.6,
+    "height": 0.6,
+    "width": 10
+  },
+  "text58": {
+    "subcontainer": "bizModalFrame",
+    "row": 1.8,
+    "height": 0.6,
+    "width": 10
   },
   "typeStatTbl": {
     "container": "moduleContainer",
@@ -355,7 +367,7 @@
   },
   "typeStatTbl2": {
     "container": "moduleContainer",
-    "row": 6.2,
+    "row": 6.6,
     "height": 1,
     "width": 12
   },
