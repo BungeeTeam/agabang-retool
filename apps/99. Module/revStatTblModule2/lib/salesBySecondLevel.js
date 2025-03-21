@@ -44,9 +44,9 @@ const sumKeys = ["rev"]
 const data = {{ inputDataByStyle.value }}
 let arrData = formatDataAsArray(data)
 arrData = arrData.filter(item => item.biz_cd === {{ selectedRow.value.biz_cd }})
-console.log(arrData)
+
 const keys = ["sales_type", "first_lv_class", "second_lv_class"]
 const groupedArr = groupBySum(arrData, ["time_unit", ...keys], sumKeys)
 const result = pivotData(groupedArr, keys, "time_unit", sumKeys)
-console.log(result[0])
+
 return result.sort((a, b) => b.first_lv_class.localeCompare(a.first_lv_class, "ko") || a.second_lv_class.localeCompare(b.second_lv_class, "ko"))
