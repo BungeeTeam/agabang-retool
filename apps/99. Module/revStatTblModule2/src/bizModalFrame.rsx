@@ -300,8 +300,13 @@
         waitType="debounce"
       />
     </Table>
-    <Spacer id="spacer13" />
+    <Text
+      id="text58"
+      value="※ 정상/이월의 기준은 **각 시즌마다 반품이 가장 많은 달**에 추가 한 달(반품 확인을 위해)을 더해 정의합니다"
+      verticalAlign="center"
+    />
     <Spacer id="spacer16" />
+    <Spacer id="spacer13" />
     <Text
       id="text47"
       value="#### 시즌 및 복종분류별 매출 현황"
