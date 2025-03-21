@@ -122,13 +122,12 @@
         />
         <Option
           id="0c707"
-          appTarget="bf8a50f6-ef60-11ef-8a7e-6b936168ecd4"
+          appTarget="cd0e0728-055d-11f0-82c8-87ca7b76571e"
           disabled={false}
           hidden={false}
           icon="bold/interface-edit-grid"
           iconPosition="left"
           itemType="app"
-          label="판매율(시즌)"
           parentKey="5acd8932-9f75-4167-afa0-5152d7c03222"
         />
         <Option
@@ -179,17 +178,6 @@
           iconPosition="left"
           itemType="app"
           label="급상승 매장"
-        />
-        <Option
-          id="c2e6a"
-          appTarget="6e82edba-f020-11ef-b777-cf766f5a1880"
-          disabled={false}
-          hidden={false}
-          icon="bold/shopping-store-discount-percent-increase"
-          iconPosition="left"
-          itemType="app"
-          label="매출비중"
-          parentKey="5acd8932-9f75-4167-afa0-5152d7c03222"
         />
         <Option
           id="53172"
@@ -322,17 +310,6 @@
           icon="bold/money-graph-bar"
           iconPosition="left"
           itemType="app"
-          parentKey="b1676491-3002-4dc3-9dad-a966c2a3b173"
-        />
-        <Option
-          id="cd890"
-          appTarget="d574d940-e295-11ef-9aea-3f81ab646935"
-          disabled={false}
-          hidden={false}
-          icon="bold/travel-map-location-compass-2-alternate"
-          iconPosition="left"
-          itemType="app"
-          label="AP PLAN"
           parentKey="b1676491-3002-4dc3-9dad-a966c2a3b173"
         />
         <Option
