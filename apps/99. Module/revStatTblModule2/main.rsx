@@ -29,7 +29,7 @@
         verticalAlign="center"
       />
       <Text
-        id="text28"
+        id="text35"
         horizontalAlign="right"
         margin="4px 12px"
         value="단위: 백만원"
@@ -370,7 +370,7 @@
         />
       </Table>
       <Spacer id="spacer8" />
-      <Spacer id="spacer7" />
+      <Spacer id="spacer9" />
       <Text
         id="text3"
         value="##### 온오프라인 매출 현황"
@@ -665,18 +665,18 @@
         value="※ 온라인 매출의 경우, 오프라인 매장의 온라인 매출이 아닌 **온라인 전용 매장의 매출**을 의미합니다"
         verticalAlign="center"
       />
-      <Spacer id="spacer9" />
+      <Spacer id="spacer7" />
       <Spacer id="spacer5" />
-      <Text
-        id="text35"
-        horizontalAlign="right"
-        margin="4px 12px"
-        value="단위: 백만원"
-        verticalAlign="center"
-      />
       <Text
         id="text2"
         value="##### 유통채널별 매출 현황"
+        verticalAlign="center"
+      />
+      <Text
+        id="text28"
+        horizontalAlign="right"
+        margin="4px 12px"
+        value="단위: 백만원"
         verticalAlign="center"
       />
       <Table

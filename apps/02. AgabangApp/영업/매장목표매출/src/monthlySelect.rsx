@@ -28,23 +28,48 @@
       <Option id="5acaa" value="Tab 3" />
     </Tabs>
   </Header>
-  <View id="0330c" label="연도별" viewKey="yearly">
-    <Date
-      id="yearlyDate"
+  <View
+    id="14b44"
+    disabled={false}
+    hidden={false}
+    iconPosition="left"
+    label="기간별"
+    viewKey="periodic"
+  >
+    <DateRange
+      id="dateRange"
       dateFormat="yyyy-MM-dd"
-      datePlaceholder="{{ self.dateFormat.toUpperCase() }}"
-      iconBefore="bold/interface-calendar"
+      endPlaceholder="종료일자"
+      firstDayOfWeek={0}
+      iconBefore="bold/interface-calendar-remove"
       label=""
       labelPosition="top"
-      textBefore="기준일자"
-      value={
-        '{{ new Date(new Date().setDate(new Date().getDate() - 1)).toISOString().split("T")[0] }}'
-      }
-    />
+      loading=""
+      showClear={true}
+      startPlaceholder="시작일자"
+      textBefore="조회기간"
+      textBetween="~"
+      value={{
+        ordered: [
+          { start: '{{ moment().startOf("year").format("YYYY-MM-DD") }}' },
+          { end: '{{ moment().subtract(1, "days").format("YYYY-MM-DD") }} }}' },
+        ],
+      }}
+    >
+      <Event
+        event="submit"
+        method="trigger"
+        params={{ ordered: [] }}
+        pluginId="periodicSalesQuery"
+        type="datasource"
+        waitMs="0"
+        waitType="debounce"
+      />
+    </DateRange>
     <Module
-      id="revStatTblModule1"
-      inputData="{{ yearlySalesQuery.data }}"
-      inputDataByStyle="{{ yearlySalesByStyleQuery.data }}"
+      id="revStatTblModule4"
+      inputData="{{ periodicSalesQuery.data }}"
+      inputDataByStyle="{{ periodicSalesByStyleQuery.data }}"
       name="revStatTblModule2"
       pageUuid="c2c2b498-f99c-11ef-b77a-2ba139bbf501"
     />
@@ -124,68 +149,6 @@
       id="revStatTblModule2"
       inputData="{{ formatDataAsObject(formatDataAsArray(monthlySalesQuery.data).filter(obj => obj.month == (monthSelect.value + 1))) }}"
       inputDataByStyle="{{ monthlySalesByStyleQuery.data }}"
-      name="revStatTblModule2"
-      pageUuid="c2c2b498-f99c-11ef-b77a-2ba139bbf501"
-    />
-  </View>
-  <View id="89490" label="일별" viewKey="daily">
-    <Date
-      id="dailyDate"
-      dateFormat="yyyy-MM-dd"
-      datePlaceholder="{{ self.dateFormat.toUpperCase() }}"
-      iconBefore="bold/interface-calendar"
-      label=""
-      labelPosition="top"
-      textBefore="기준일자"
-      value={
-        '{{ new Date(new Date().setDate(new Date().getDate() - 1)).toISOString().split("T")[0] }}'
-      }
-    />
-    <Module
-      id="revStatTblModule3"
-      inputData="{{ dailySalesQuery.data }}"
-      inputDataByStyle="{{ dailySalesByStyleQuery.data }}"
-      name="revStatTblModule2"
-      pageUuid="c2c2b498-f99c-11ef-b77a-2ba139bbf501"
-    />
-  </View>
-  <View
-    id="14b44"
-    disabled={false}
-    hidden={false}
-    iconPosition="left"
-    label="기간별"
-    viewKey="periodic"
-  >
-    <DateRange
-      id="dateRange"
-      dateFormat="yyyy-MM-dd"
-      endPlaceholder="종료일자"
-      firstDayOfWeek={0}
-      iconBefore="bold/interface-calendar-remove"
-      label=""
-      labelPosition="top"
-      loading=""
-      showClear={true}
-      startPlaceholder="시작일자"
-      textBefore="조회기간"
-      textBetween="~"
-      value={{ ordered: [{ start: "" }, { end: "" }] }}
-    >
-      <Event
-        event="submit"
-        method="trigger"
-        params={{ ordered: [] }}
-        pluginId="periodicSalesQuery"
-        type="datasource"
-        waitMs="0"
-        waitType="debounce"
-      />
-    </DateRange>
-    <Module
-      id="revStatTblModule4"
-      inputData="{{ periodicSalesQuery.data }}"
-      inputDataByStyle="{{ periodicSalesByStyleQuery.data }}"
       name="revStatTblModule2"
       pageUuid="c2c2b498-f99c-11ef-b77a-2ba139bbf501"
     />

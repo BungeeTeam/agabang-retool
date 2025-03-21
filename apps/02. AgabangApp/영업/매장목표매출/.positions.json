@@ -54,20 +54,6 @@
     "height": 0.6,
     "width": 12
   },
-  "dailyDate": {
-    "container": "monthlySelect",
-    "subcontainer": "89490",
-    "height": 0.2,
-    "width": 4,
-    "stackPosition": {
-      "object": {
-        "ordinal": 8,
-        "widthType": "fixed",
-        "width": 0,
-        "height": 0
-      }
-    }
-  },
   "dateRange": {
     "container": "monthlySelect",
     "subcontainer": "14b44",
@@ -143,21 +129,6 @@
       }
     }
   },
-  "revStatTblModule1": {
-    "container": "monthlySelect",
-    "subcontainer": "0330c",
-    "row": 0.2,
-    "height": 8.8,
-    "width": 12,
-    "stackPosition": {
-      "object": {
-        "ordinal": 0,
-        "widthType": "fixed",
-        "width": 0,
-        "height": 0
-      }
-    }
-  },
   "revStatTblModule2": {
     "container": "monthlySelect",
     "subcontainer": "ef5a8",
@@ -167,21 +138,6 @@
     "stackPosition": {
       "object": {
         "ordinal": 4,
-        "widthType": "fixed",
-        "width": 0,
-        "height": 0
-      }
-    }
-  },
-  "revStatTblModule3": {
-    "container": "monthlySelect",
-    "subcontainer": "89490",
-    "row": 0.2,
-    "height": 8.8,
-    "width": 12,
-    "stackPosition": {
-      "object": {
-        "ordinal": 3,
         "widthType": "fixed",
         "width": 0,
         "height": 0
@@ -270,19 +226,5 @@
     "rowGroup": "header",
     "height": 0.8,
     "width": 12
-  },
-  "yearlyDate": {
-    "container": "monthlySelect",
-    "subcontainer": "0330c",
-    "height": 0.2,
-    "width": 4,
-    "stackPosition": {
-      "object": {
-        "ordinal": 1,
-        "widthType": "fixed",
-        "width": 0,
-        "height": 0
-      }
-    }
   }
 }

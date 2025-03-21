@@ -17,7 +17,7 @@ SELECT
   onoff_flag,
   SUM(sales_price) / 1000000 as rev
 FROM agabang_dw.daily_shop_sales_by_dimension
-WHERE date_format(sale_dt, '%m-%d') >= date_format(DATE '{{ dateRange.value.start || moment().format("YYYY-MM-DD") }}', '%m-%d') AND date_format(sale_dt, '%m-%d') <= date_format(DATE '{{ dateRange.value.end || moment().format("YYYY-MM-DD") }}', '%m-%d')
+WHERE date_format(sale_dt, '%m-%d') >= date_format(DATE '{{ dateRange.value.start || moment().startOf("year").format("YYYY-MM-DD") }}', '%m-%d') AND date_format(sale_dt, '%m-%d') <= date_format(DATE '{{ dateRange.value.end || moment().subtract(1, "days").format("YYYY-MM-DD") }}', '%m-%d')
 GROUP BY
   YEAR(sale_dt),
   br_cd,

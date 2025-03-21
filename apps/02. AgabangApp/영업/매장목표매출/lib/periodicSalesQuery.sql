@@ -23,7 +23,7 @@ FROM (
     area_cd, area_nm, onoff_flag,
     sum(sales_price) as rev
   FROM agabang_dw.daily_shop_sales_by_dimension
-  WHERE date_format(sale_dt, '%m-%d') >= date_format(DATE '{{ dateRange.value.start || moment().format("YYYY-MM-DD") }}', '%m-%d') AND date_format(sale_dt, '%m-%d') <= date_format(DATE '{{ dateRange.value.end || moment().format("YYYY-MM-DD") }}', '%m-%d')
+  WHERE date_format(sale_dt, '%m-%d') >= date_format(DATE '{{ dateRange.value.start || moment().startOf("year").format("YYYY-MM-DD") }}', '%m-%d') AND date_format(sale_dt, '%m-%d') <= date_format(DATE '{{ dateRange.value.end || moment().subtract(1, "days").format("YYYY-MM-DD") }}', '%m-%d')
   GROUP BY 
     YEAR(sale_dt), date_format(sale_dt, '%y-%m'),
     shop_cd, shop_nm, 
@@ -55,7 +55,7 @@ FULL OUTER JOIN (
     '47' as tp_cd,
     br_cd, shop_cd, year_month, target_sales
   FROM agabang_dw.yearly_target_sales_by_shop
-  WHERE date_format(year_month, '%m-%d') >= date_format(DATE '{{ dateRange.value.start || moment().format("YYYY-MM-DD") }}', '%m-%d') AND date_format(year_month, '%m-%d') <= date_format(DATE '{{ dateRange.value.end || moment().format("YYYY-MM-DD") }}', '%m-%d')
+  WHERE date_format(year_month, '%m-%d') >= date_format(DATE '{{ dateRange.value.start || moment().startOf("year").format("YYYY-MM-DD") }}', '%m-%d') AND date_format(year_month, '%m-%d') <= date_format(DATE '{{ dateRange.value.end || moment().subtract(1, "days").format("YYYY-MM-DD") }}', '%m-%d')
 ) as B
 ON A.biz_cd = B.biz_cd AND A.br_cd = B.br_cd AND A.shop_cd = B.shop_cd AND A.ym = date_format(B.year_month, '%y-%m')
 )
