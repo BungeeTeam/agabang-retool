@@ -128,6 +128,7 @@
           icon="bold/interface-edit-grid"
           iconPosition="left"
           itemType="app"
+          label="시즌 상품 판매율"
           parentKey="5acd8932-9f75-4167-afa0-5152d7c03222"
         />
         <Option
