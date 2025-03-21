@@ -17,30 +17,6 @@
     warningCodes={[]}
   />
   <SqlQuery
-    id="yearlySalesQuery"
-    cacheKeyTtl="3600"
-    enableCaching={true}
-    enableTransformer={true}
-    isMultiplayerEdited={false}
-    notificationDuration={4.5}
-    query={include("./lib/yearlySalesQuery.sql", "string")}
-    resourceDisplayName="clickhouse-dw"
-    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
-    resourceTypeOverride=""
-    showSuccessToaster={false}
-    transformer="// FILTER by selected options
-let arrData = formatDataAsArray(data)
-
-// by biz_div
-arrData = arrData.filter(item => {{ bizMultiSelect.value }}.includes(item.biz_cd))                       
-
-//  by brand
-arrData = arrData.filter(item => {{ brandMultiSelect.value }}.includes(item.br_cd))
-
-return formatDataAsObject(arrData)"
-    warningCodes={[]}
-  />
-  <SqlQuery
     id="monthlySalesQuery"
     cacheKeyTtl="3600"
     enableCaching={true}
@@ -64,57 +40,13 @@ return formatDataAsObject(arrData)"
     warningCodes={[]}
   />
   <SqlQuery
-    id="dailySalesQuery"
-    enableTransformer={true}
-    isMultiplayerEdited={false}
-    notificationDuration={4.5}
-    query={include("./lib/dailySalesQuery.sql", "string")}
-    resourceDisplayName="clickhouse-dw"
-    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
-    resourceTypeOverride=""
-    showSuccessToaster={false}
-    transformer="// FILTER by selected options
-let arrData = formatDataAsArray(data)
-
-// by biz_div
-arrData = arrData.filter(item => {{ bizMultiSelect.value }}.includes(item.biz_cd))                       
-
-//  by brand
-arrData = arrData.filter(item => {{ brandMultiSelect.value }}.includes(item.br_cd))
-
-return formatDataAsObject(arrData)"
-    warningCodes={[]}
-  />
-  <SqlQuery
     id="periodicSalesQuery"
-    enableTransformer={true}
-    isMultiplayerEdited={false}
-    notificationDuration={4.5}
-    query={include("./lib/periodicSalesQuery.sql", "string")}
-    resourceDisplayName="clickhouse-dw"
-    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
-    resourceTypeOverride=""
-    showSuccessToaster={false}
-    transformer="// FILTER by selected options
-let arrData = formatDataAsArray(data)
-
-// by biz_div
-arrData = arrData.filter(item => {{ bizMultiSelect.value }}.includes(item.biz_cd))                       
-
-//  by brand
-arrData = arrData.filter(item => {{ brandMultiSelect.value }}.includes(item.br_cd))
-
-return formatDataAsObject(arrData)"
-    warningCodes={[]}
-  />
-  <SqlQuery
-    id="yearlySalesByStyleQuery"
     cacheKeyTtl="3600"
     enableCaching={true}
     enableTransformer={true}
     isMultiplayerEdited={false}
     notificationDuration={4.5}
-    query={include("./lib/yearlySalesByStyleQuery.sql", "string")}
+    query={include("./lib/periodicSalesQuery.sql", "string")}
     resourceDisplayName="clickhouse-dw"
     resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
     resourceTypeOverride=""
@@ -154,29 +86,9 @@ return formatDataAsObject(arrData)"
     warningCodes={[]}
   />
   <SqlQuery
-    id="dailySalesByStyleQuery"
-    enableTransformer={true}
-    isMultiplayerEdited={false}
-    notificationDuration={4.5}
-    query={include("./lib/dailySalesByStyleQuery.sql", "string")}
-    resourceDisplayName="clickhouse-dw"
-    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
-    resourceTypeOverride=""
-    showSuccessToaster={false}
-    transformer="// FILTER by selected options
-let arrData = formatDataAsArray(data)
-
-// by biz_div
-arrData = arrData.filter(item => {{ bizMultiSelect.value }}.includes(item.biz_cd))                       
-
-//  by brand
-arrData = arrData.filter(item => {{ brandMultiSelect.value }}.includes(item.br_cd))
-
-return formatDataAsObject(arrData)"
-    warningCodes={[]}
-  />
-  <SqlQuery
     id="periodicSalesByStyleQuery"
+    cacheKeyTtl="3600"
+    enableCaching={true}
     enableTransformer={true}
     isMultiplayerEdited={false}
     notificationDuration={4.5}

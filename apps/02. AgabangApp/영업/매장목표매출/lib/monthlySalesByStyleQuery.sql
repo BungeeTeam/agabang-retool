@@ -25,7 +25,7 @@ SELECT
   second_lv_class,
   SUM(sales_price) / 1000000 as rev
 FROM agabang_dw.daily_shop_sales_by_dimension
-WHERE date_format(sale_dt, '%m-%d') <= date_format(DATE '{{ yearlyDate.value }}', '%m-%d') AND MONTH(sale_dt) = {{ monthSelect.value + 1 }}
+WHERE date_format(sale_dt, '%m-%d') <= date_format(DATE '{{ dateRange.value.end || moment().subtract(1, "days").format("YYYY-MM-DD") }}', '%m-%d') AND MONTH(sale_dt) = {{ monthSelect.value + 1 }}
 GROUP BY
   YEAR(sale_dt),
   sales_type,
