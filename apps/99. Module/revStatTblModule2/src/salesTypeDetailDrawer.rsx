@@ -284,10 +284,18 @@
       />
     </Table>
     <Spacer id="spacer14" />
+    <Spacer id="spacer17" />
     <Text
       id="text55"
       margin="0"
       value="###### 차상위 카테고리별 매출 현황"
+      verticalAlign="center"
+    />
+    <Text
+      id="text59"
+      horizontalAlign="right"
+      margin="4px 12px"
+      value="단위: 백만원"
       verticalAlign="center"
     />
     <Table
@@ -536,6 +544,7 @@
       />
     </Table>
     <Spacer id="spacer15" />
+    <Spacer id="spacer18" />
     <Text
       id="text50"
       margin="0"
