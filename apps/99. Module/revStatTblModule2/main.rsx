@@ -78,7 +78,6 @@
           alignment="right"
           backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
           cellTooltip="{{ item }}"
-          cellTooltipMode="custom"
           editableOptions={{ showStepper: true }}
           format="decimal"
           formatOptions={{
