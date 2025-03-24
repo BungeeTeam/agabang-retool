@@ -76,7 +76,7 @@
   },
   "salesTypeTbl2": {
     "subcontainer": "salesTypeDetailDrawer",
-    "row": 7.4,
+    "row": 5.4,
     "height": 1,
     "width": 12
   },
@@ -141,6 +141,18 @@
     "col": 10,
     "height": 1.2,
     "width": 2
+  },
+  "spacer17": {
+    "subcontainer": "salesTypeDetailDrawer",
+    "row": 1.6,
+    "col": 9,
+    "height": 0.8
+  },
+  "spacer18": {
+    "subcontainer": "salesTypeDetailDrawer",
+    "row": 4,
+    "col": 9,
+    "height": 0.8
   },
   "spacer3": {
     "subcontainer": "tpModalFrame",
@@ -324,7 +336,7 @@
   },
   "text56": {
     "subcontainer": "salesTypeDetailDrawer",
-    "row": 6.8,
+    "row": 4.8,
     "col": 9,
     "height": 0.6
   },
@@ -339,6 +351,12 @@
     "row": 1.8,
     "height": 0.6,
     "width": 10
+  },
+  "text59": {
+    "subcontainer": "salesTypeDetailDrawer",
+    "row": 2.4,
+    "col": 9,
+    "height": 0.6
   },
   "typeStatTbl": {
     "container": "moduleContainer",
