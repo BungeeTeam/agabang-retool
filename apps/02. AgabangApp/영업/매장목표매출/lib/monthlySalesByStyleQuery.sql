@@ -17,10 +17,10 @@ SELECT
   item_nm,
   onoff_flag,
   CASE
-      WHEN it = '8' THEN '용품'
-      WHEN it != '8' AND sale_dt <= season_end_dt THEN '정상'
-      ELSE '이월'
-    END AS sales_type,
+    WHEN it = '8' THEN '용품'
+    WHEN it != '8' AND sale_dt <= season_end_dt THEN '정상'
+    ELSE '이월'
+  END AS sales_type,
   first_lv_class,
   second_lv_class,
   SUM(sales_price) / 1000000 as rev
