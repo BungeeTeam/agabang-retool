@@ -56,7 +56,7 @@
         label="시즌"
         placeholder="Enter value"
         position="center"
-        referenceId="팀"
+        referenceId="year_nm"
         size={36.75}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["year_nm"] }}'}

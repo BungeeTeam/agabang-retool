@@ -668,7 +668,7 @@
       <Spacer id="spacer5" />
       <Text
         id="text2"
-        value="##### 유통채널별 매출 현황"
+        value="##### 유통채널, 팀, 담당자별 매출 현황"
         verticalAlign="center"
       />
       <Text
@@ -678,332 +678,993 @@
         value="단위: 백만원"
         verticalAlign="center"
       />
-      <Table
-        id="typeStatTbl2"
-        autoColumnWidth={true}
-        cellSelection="none"
-        clearChangesetOnSave={true}
-        data="{{ salesByType.value }}"
-        defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
-        emptyMessage="No rows found"
-        enableSaveActions={true}
-        heightType="auto"
-        hidden=""
+      <Container
+        id="salesTabbedContainer"
+        _direction="vertical"
+        _gap="0px"
+        currentViewKey="{{ self.viewKeys[0] }}"
+        footerPadding="4px 12px"
+        headerPadding="4px 12px"
         margin="0"
-        primaryKeyColumnId="b7f5c"
-        rowBackgroundColor=""
-        rowSelection="none"
-        showBorder={true}
-        showColumnBorders={true}
+        padding="0"
+        showBody={true}
         showHeader={true}
-        style={{ headerBackground: "#f5f5f5" }}
-        toolbarPosition="bottom"
       >
-        <Column
-          id="b7f5c"
-          alignment="left"
-          editable="false"
-          format="string"
-          formatOptions={{ automaticColors: true }}
-          groupAggregationMode="none"
-          key="tp_nm"
-          label="유통채널"
-          placeholder="Enter value"
-          position="center"
-          referenceId="tp_nm"
-          size={57.515625}
-          summaryAggregationMode="none"
-          valueOverride={'{{ self.data[i]["tp_nm"] }}'}
-        />
-        <Column
-          id="b17a1"
-          alignment="right"
-          backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
-          editableOptions={{ showStepper: true }}
-          format="decimal"
-          formatOptions={{
-            showSeparators: true,
-            notation: "standard",
-            decimalPlaces: "0",
-          }}
-          groupAggregationMode="sum"
-          key="2025"
-          label="25실적"
-          placeholder="Enter value"
-          position="center"
-          size={52.296875}
-          summaryAggregationMode="none"
-        >
-          <Event
-            event="clickCell"
-            method="trigger"
-            params={{ ordered: [] }}
-            pluginId="testQuery"
-            type="datasource"
-            waitMs="0"
-            waitType="debounce"
-          />
-        </Column>
-        <Column
-          id="a312d"
-          alignment="right"
-          editableOptions={{ showStepper: true }}
-          format="decimal"
-          formatOptions={{
-            showSeparators: true,
-            notation: "standard",
-            decimalPlaces: "0",
-          }}
-          groupAggregationMode="sum"
-          label="25목표"
-          placeholder="Enter value"
-          position="center"
-          referenceId="25목표"
-          size={52.296875}
-          summaryAggregationMode="none"
-          valueOverride={
-            '{{ self.data[i]["target_sales"] === 0 ? null: self.data[i]["target_sales"] }}'
-          }
-        />
-        <Column
-          id="b97a4"
-          alignment="right"
-          backgroundColor={
-            '{{ item < 1 ? "rgba(237, 41, 57, 0.1)" : "rgba(0, 100, 0, 0.1)" }}'
-          }
-          editableOptions={{ showStepper: true }}
-          format="percent"
-          formatOptions={{
-            showSeparators: true,
-            notation: "standard",
-            decimalPlaces: "1",
-          }}
-          groupAggregationMode="average"
-          label="목표달성율"
-          placeholder="Enter value"
-          position="center"
-          referenceId="목표달성율"
-          size={67.890625}
-          summaryAggregationMode="none"
-          valueOverride={
-            '{{ self.data[i]["target_sales"] === 0 ? null : self.data[i]["2025"] / self.data[i]["target_sales"] }}'
-          }
-        />
-        <Column
-          id="b646b"
-          alignment="right"
-          editableOptions={{ showStepper: true }}
-          format="decimal"
-          formatOptions={{
-            showSeparators: true,
-            notation: "standard",
-            decimalPlaces: "0",
-          }}
-          groupAggregationMode="sum"
-          label="목표차액"
-          placeholder="Enter value"
-          position="center"
-          referenceId="목표차액"
-          size={57.515625}
-          summaryAggregationMode="none"
-          textColor={'{{ item > 0 ? "green" : "red" }}'}
-          valueOverride={
-            '{{ self.data[i]["2025"] - self.data[i]["target_sales"] }}'
-          }
-        />
-        <Column
-          id="8a9cb"
-          alignment="right"
-          backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
-          editableOptions={{ showStepper: true }}
-          format="decimal"
-          formatOptions={{
-            showSeparators: true,
-            notation: "standard",
-            decimalPlaces: "0",
-          }}
-          groupAggregationMode="sum"
-          key="2024"
-          label="24실적"
-          placeholder="Enter value"
-          position="center"
-          size={52.296875}
-          summaryAggregationMode="none"
-        />
-        <Column
-          id="36681"
-          alignment="right"
-          editableOptions={{ showStepper: true }}
-          format="percent"
-          formatOptions={{
-            showSeparators: true,
-            notation: "standard",
-            decimalPlaces: "1",
-          }}
-          groupAggregationMode="average"
-          label="24대비신장율"
-          placeholder="Enter value"
-          position="center"
-          referenceId="24대비신장율"
-          size={83.4375}
-          summaryAggregationMode="none"
-          textColor={
-            '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
-          }
-          valueOverride={
-            '{{ self.data[i]["2025"] / self.data[i]["2024"] - 1 }}'
-          }
-        />
-        <Column
-          id="e0872"
-          alignment="right"
-          editableOptions={{ showStepper: true }}
-          format="decimal"
-          formatOptions={{
-            showSeparators: true,
-            notation: "standard",
-            decimalPlaces: "0",
-          }}
-          groupAggregationMode="sum"
-          label="24대비신장액"
-          placeholder="Enter value"
-          position="center"
-          referenceId="24대비신장액"
-          size={83.4375}
-          summaryAggregationMode="none"
-          valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2024"]}}'}
-        />
-        <Column
-          id="ba994"
-          alignment="right"
-          backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
-          editableOptions={{ showStepper: true }}
-          format="decimal"
-          formatOptions={{
-            showSeparators: true,
-            notation: "standard",
-            decimalPlaces: "0",
-          }}
-          groupAggregationMode="sum"
-          key="2023"
-          label="23실적"
-          placeholder="Enter value"
-          position="center"
-          size={52.296875}
-          summaryAggregationMode="none"
-        />
-        <Column
-          id="2783a"
-          alignment="right"
-          editableOptions={{ showStepper: true }}
-          format="percent"
-          formatOptions={{
-            showSeparators: true,
-            notation: "standard",
-            decimalPlaces: "1",
-          }}
-          groupAggregationMode="average"
-          label="23대비신장율"
-          placeholder="Enter value"
-          position="center"
-          referenceId="23대비신장율"
-          size={83.4375}
-          summaryAggregationMode="none"
-          textColor={
-            '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
-          }
-          valueOverride={
-            '{{ self.data[i]["2025"] / self.data[i]["2023"] - 1 }}'
-          }
-        />
-        <Column
-          id="cc18b"
-          alignment="right"
-          editableOptions={{ showStepper: true }}
-          format="decimal"
-          formatOptions={{
-            showSeparators: true,
-            notation: "standard",
-            decimalPlaces: "0",
-          }}
-          groupAggregationMode="sum"
-          label="23대비신장액"
-          placeholder="Enter value"
-          position="center"
-          referenceId="23대비N신장액"
-          size={83.4375}
-          summaryAggregationMode="none"
-          valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2023"]}}'}
-        />
-        <Column
-          id="2d30f"
-          alignment="left"
-          format="string"
-          groupAggregationMode="none"
-          hidden="true"
-          label="tp_cd"
-          placeholder="Enter value"
-          position="center"
-          referenceId="tp_cd"
-          size={100}
-          summaryAggregationMode="none"
-          valueOverride={'{{ self.data[i]["tp_cd"] }}'}
-        />
-        <ToolbarButton
-          id="1a"
-          icon="bold/interface-text-formatting-filter-2"
-          label="Filter"
-          type="filter"
-        />
-        <ToolbarButton
-          id="3c"
-          icon="bold/interface-download-button-2"
-          label="Download"
-          type="custom"
-        >
-          <Event
-            event="clickToolbar"
-            method="exportData"
-            pluginId="typeStatTbl2"
-            type="widget"
-            waitMs="0"
-            waitType="debounce"
-          />
-        </ToolbarButton>
-        <ToolbarButton
-          id="4d"
-          icon="bold/interface-arrows-round-left"
-          label="Refresh"
-          type="custom"
-        >
-          <Event
-            event="clickToolbar"
-            method="refresh"
-            pluginId="typeStatTbl2"
-            type="widget"
-            waitMs="0"
-            waitType="debounce"
-          />
-        </ToolbarButton>
-        <Event
-          event="clickRow"
-          method="show"
-          params={{ ordered: [] }}
-          pluginId="tpModalFrame"
-          type="widget"
-          waitMs="0"
-          waitType="debounce"
-        />
-        <Event
-          event="clickRow"
-          method="setValue"
-          params={{ ordered: [{ value: "{{ currentRow }}" }] }}
-          pluginId="selectedRow"
-          type="state"
-          waitMs="0"
-          waitType="debounce"
-        />
-      </Table>
+        <Header>
+          <Tabs
+            id="tabs4"
+            itemMode="static"
+            margin="0"
+            navigateContainer={true}
+            targetContainerId="salesTabbedContainer"
+            value="{{ self.values[0] }}"
+          >
+            <Option id="bc9e8" value="Tab 1" />
+            <Option id="8f0cd" value="Tab 2" />
+            <Option id="d6b17" value="Tab 3" />
+          </Tabs>
+        </Header>
+        <View id="2ed7b" label="유통채널별" viewKey="type">
+          <Table
+            id="typeStatTbl2"
+            autoColumnWidth={true}
+            cellSelection="none"
+            clearChangesetOnSave={true}
+            data="{{ salesByType.value }}"
+            defaultSelectedRow={{
+              mode: "index",
+              indexType: "display",
+              index: 0,
+            }}
+            emptyMessage="No rows found"
+            enableSaveActions={true}
+            heightType="auto"
+            hidden=""
+            margin="0"
+            primaryKeyColumnId="b7f5c"
+            rowBackgroundColor=""
+            rowSelection="none"
+            showBorder={true}
+            showColumnBorders={true}
+            showHeader={true}
+            style={{ headerBackground: "#f5f5f5" }}
+            toolbarPosition="bottom"
+          >
+            <Column
+              id="b7f5c"
+              alignment="left"
+              editable="false"
+              format="string"
+              formatOptions={{ automaticColors: true }}
+              groupAggregationMode="none"
+              key="tp_nm"
+              label="유통채널"
+              placeholder="Enter value"
+              position="center"
+              referenceId="tp_nm"
+              size={57.515625}
+              valueOverride={'{{ self.data[i]["tp_nm"] }}'}
+            />
+            <Column
+              id="b17a1"
+              alignment="right"
+              backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              key="2025"
+              label="25실적"
+              placeholder="Enter value"
+              position="center"
+              size={52.296875}
+            >
+              <Event
+                event="clickCell"
+                method="trigger"
+                params={{ ordered: [] }}
+                pluginId="testQuery"
+                type="datasource"
+                waitMs="0"
+                waitType="debounce"
+              />
+            </Column>
+            <Column
+              id="a312d"
+              alignment="right"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              label="25목표"
+              placeholder="Enter value"
+              position="center"
+              referenceId="25목표"
+              size={52.296875}
+              valueOverride={
+                '{{ self.data[i]["target_sales"] === 0 ? null: self.data[i]["target_sales"] }}'
+              }
+            />
+            <Column
+              id="b97a4"
+              alignment="right"
+              backgroundColor={
+                '{{ item < 1 ? "rgba(237, 41, 57, 0.1)" : "rgba(0, 100, 0, 0.1)" }}'
+              }
+              editableOptions={{ showStepper: true }}
+              format="percent"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "1",
+              }}
+              groupAggregationMode="average"
+              label="목표달성율"
+              placeholder="Enter value"
+              position="center"
+              referenceId="목표달성율"
+              size={67.890625}
+              valueOverride={
+                '{{ self.data[i]["target_sales"] === 0 ? null : self.data[i]["2025"] / self.data[i]["target_sales"] }}'
+              }
+            />
+            <Column
+              id="b646b"
+              alignment="right"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              label="목표차액"
+              placeholder="Enter value"
+              position="center"
+              referenceId="목표차액"
+              size={57.515625}
+              textColor={'{{ item > 0 ? "green" : "red" }}'}
+              valueOverride={
+                '{{ self.data[i]["2025"] - self.data[i]["target_sales"] }}'
+              }
+            />
+            <Column
+              id="8a9cb"
+              alignment="right"
+              backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              key="2024"
+              label="24실적"
+              placeholder="Enter value"
+              position="center"
+              size={52.296875}
+            />
+            <Column
+              id="36681"
+              alignment="right"
+              editableOptions={{ showStepper: true }}
+              format="percent"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "1",
+              }}
+              groupAggregationMode="average"
+              label="24대비신장율"
+              placeholder="Enter value"
+              position="center"
+              referenceId="24대비신장율"
+              size={83.4375}
+              textColor={
+                '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
+              }
+              valueOverride={
+                '{{ self.data[i]["2025"] / self.data[i]["2024"] - 1 }}'
+              }
+            />
+            <Column
+              id="e0872"
+              alignment="right"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              label="24대비신장액"
+              placeholder="Enter value"
+              position="center"
+              referenceId="24대비신장액"
+              size={83.4375}
+              valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2024"]}}'}
+            />
+            <Column
+              id="ba994"
+              alignment="right"
+              backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              key="2023"
+              label="23실적"
+              placeholder="Enter value"
+              position="center"
+              size={52.296875}
+            />
+            <Column
+              id="2783a"
+              alignment="right"
+              editableOptions={{ showStepper: true }}
+              format="percent"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "1",
+              }}
+              groupAggregationMode="average"
+              label="23대비신장율"
+              placeholder="Enter value"
+              position="center"
+              referenceId="23대비신장율"
+              size={83.4375}
+              textColor={
+                '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
+              }
+              valueOverride={
+                '{{ self.data[i]["2025"] / self.data[i]["2023"] - 1 }}'
+              }
+            />
+            <Column
+              id="cc18b"
+              alignment="right"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              label="23대비신장액"
+              placeholder="Enter value"
+              position="center"
+              referenceId="23대비N신장액"
+              size={83.4375}
+              valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2023"]}}'}
+            />
+            <Column
+              id="2d30f"
+              alignment="left"
+              format="string"
+              groupAggregationMode="none"
+              hidden="true"
+              label="tp_cd"
+              placeholder="Enter value"
+              position="center"
+              referenceId="tp_cd"
+              size={100}
+              valueOverride={'{{ self.data[i]["tp_cd"] }}'}
+            />
+            <ToolbarButton
+              id="1a"
+              icon="bold/interface-text-formatting-filter-2"
+              label="Filter"
+              type="filter"
+            />
+            <ToolbarButton
+              id="3c"
+              icon="bold/interface-download-button-2"
+              label="Download"
+              type="custom"
+            >
+              <Event
+                event="clickToolbar"
+                method="exportData"
+                pluginId="typeStatTbl2"
+                type="widget"
+                waitMs="0"
+                waitType="debounce"
+              />
+            </ToolbarButton>
+            <ToolbarButton
+              id="4d"
+              icon="bold/interface-arrows-round-left"
+              label="Refresh"
+              type="custom"
+            >
+              <Event
+                event="clickToolbar"
+                method="refresh"
+                pluginId="typeStatTbl2"
+                type="widget"
+                waitMs="0"
+                waitType="debounce"
+              />
+            </ToolbarButton>
+            <Event
+              event="clickRow"
+              method="show"
+              params={{ ordered: [] }}
+              pluginId="tpModalFrame"
+              type="widget"
+              waitMs="0"
+              waitType="debounce"
+            />
+            <Event
+              event="clickRow"
+              method="setValue"
+              params={{ ordered: [{ value: "{{ currentRow }}" }] }}
+              pluginId="selectedRow"
+              type="state"
+              waitMs="0"
+              waitType="debounce"
+            />
+          </Table>
+        </View>
+        <View id="79fda" label="팀별" viewKey="team">
+          <Table
+            id="typeStatTbl26"
+            autoColumnWidth={true}
+            cellSelection="none"
+            clearChangesetOnSave={true}
+            data="{{ salesByTeam.value }}"
+            defaultSelectedRow={{
+              mode: "index",
+              indexType: "display",
+              index: 0,
+            }}
+            emptyMessage="No rows found"
+            enableSaveActions={true}
+            heightType="auto"
+            hidden=""
+            margin="0"
+            primaryKeyColumnId="b7f5c"
+            rowBackgroundColor=""
+            rowSelection="none"
+            showBorder={true}
+            showColumnBorders={true}
+            showHeader={true}
+            style={{ headerBackground: "#f5f5f5" }}
+            toolbarPosition="bottom"
+          >
+            <Column
+              id="b7f5c"
+              alignment="left"
+              editable="false"
+              format="string"
+              formatOptions={{ automaticColors: true }}
+              groupAggregationMode="none"
+              key="tp_nm"
+              label="팀"
+              placeholder="Enter value"
+              position="center"
+              referenceId="team_nm"
+              size={26.375}
+              valueOverride={'{{ self.data[i]["team_nm"] }}'}
+            />
+            <Column
+              id="b17a1"
+              alignment="right"
+              backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              key="2025"
+              label="25실적"
+              placeholder="Enter value"
+              position="center"
+              size={52.296875}
+            >
+              <Event
+                event="clickCell"
+                method="trigger"
+                params={{ ordered: [] }}
+                pluginId="testQuery"
+                type="datasource"
+                waitMs="0"
+                waitType="debounce"
+              />
+            </Column>
+            <Column
+              id="a312d"
+              alignment="right"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              label="25목표"
+              placeholder="Enter value"
+              position="center"
+              referenceId="25목표"
+              size={52.296875}
+              valueOverride={
+                '{{ self.data[i]["target_sales"] === 0 ? null: self.data[i]["target_sales"] }}'
+              }
+            />
+            <Column
+              id="b97a4"
+              alignment="right"
+              backgroundColor={
+                '{{ item < 1 ? "rgba(237, 41, 57, 0.1)" : "rgba(0, 100, 0, 0.1)" }}'
+              }
+              editableOptions={{ showStepper: true }}
+              format="percent"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "1",
+              }}
+              groupAggregationMode="average"
+              label="목표달성율"
+              placeholder="Enter value"
+              position="center"
+              referenceId="목표달성율"
+              size={67.890625}
+              valueOverride={
+                '{{ self.data[i]["target_sales"] === 0 ? null : self.data[i]["2025"] / self.data[i]["target_sales"] }}'
+              }
+            />
+            <Column
+              id="b646b"
+              alignment="right"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              label="목표차액"
+              placeholder="Enter value"
+              position="center"
+              referenceId="목표차액"
+              size={57.515625}
+              textColor={'{{ item > 0 ? "green" : "red" }}'}
+              valueOverride={
+                '{{ self.data[i]["2025"] - self.data[i]["target_sales"] }}'
+              }
+            />
+            <Column
+              id="8a9cb"
+              alignment="right"
+              backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              key="2024"
+              label="24실적"
+              placeholder="Enter value"
+              position="center"
+              size={52.296875}
+            />
+            <Column
+              id="36681"
+              alignment="right"
+              editableOptions={{ showStepper: true }}
+              format="percent"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "1",
+              }}
+              groupAggregationMode="average"
+              label="24대비신장율"
+              placeholder="Enter value"
+              position="center"
+              referenceId="24대비신장율"
+              size={83.4375}
+              textColor={
+                '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
+              }
+              valueOverride={
+                '{{ self.data[i]["2025"] / self.data[i]["2024"] - 1 }}'
+              }
+            />
+            <Column
+              id="e0872"
+              alignment="right"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              label="24대비신장액"
+              placeholder="Enter value"
+              position="center"
+              referenceId="24대비신장액"
+              size={83.4375}
+              valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2024"]}}'}
+            />
+            <Column
+              id="ba994"
+              alignment="right"
+              backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              key="2023"
+              label="23실적"
+              placeholder="Enter value"
+              position="center"
+              size={52.296875}
+            />
+            <Column
+              id="2783a"
+              alignment="right"
+              editableOptions={{ showStepper: true }}
+              format="percent"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "1",
+              }}
+              groupAggregationMode="average"
+              label="23대비신장율"
+              placeholder="Enter value"
+              position="center"
+              referenceId="23대비신장율"
+              size={83.4375}
+              textColor={
+                '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
+              }
+              valueOverride={
+                '{{ self.data[i]["2025"] / self.data[i]["2023"] - 1 }}'
+              }
+            />
+            <Column
+              id="cc18b"
+              alignment="right"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              label="23대비신장액"
+              placeholder="Enter value"
+              position="center"
+              referenceId="23대비N신장액"
+              size={83.4375}
+              valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2023"]}}'}
+            />
+            <Column
+              id="2d30f"
+              alignment="left"
+              format="string"
+              groupAggregationMode="none"
+              hidden="true"
+              label="team_cd"
+              placeholder="Enter value"
+              position="center"
+              referenceId="team_cd"
+              size={100}
+              valueOverride={'{{ self.data[i]["team_cd"] }}'}
+            />
+            <ToolbarButton
+              id="1a"
+              icon="bold/interface-text-formatting-filter-2"
+              label="Filter"
+              type="filter"
+            />
+            <ToolbarButton
+              id="3c"
+              icon="bold/interface-download-button-2"
+              label="Download"
+              type="custom"
+            >
+              <Event
+                event="clickToolbar"
+                method="exportData"
+                pluginId="typeStatTbl26"
+                type="widget"
+                waitMs="0"
+                waitType="debounce"
+              />
+            </ToolbarButton>
+            <ToolbarButton
+              id="4d"
+              icon="bold/interface-arrows-round-left"
+              label="Refresh"
+              type="custom"
+            >
+              <Event
+                event="clickToolbar"
+                method="refresh"
+                pluginId="typeStatTbl26"
+                type="widget"
+                waitMs="0"
+                waitType="debounce"
+              />
+            </ToolbarButton>
+            <Event
+              event="clickRow"
+              method="show"
+              params={{ ordered: [] }}
+              pluginId="tpModalFrame"
+              type="widget"
+              waitMs="0"
+              waitType="debounce"
+            />
+            <Event
+              event="clickRow"
+              method="setValue"
+              params={{ ordered: [{ value: "{{ currentRow }}" }] }}
+              pluginId="selectedRow"
+              type="state"
+              waitMs="0"
+              waitType="debounce"
+            />
+          </Table>
+        </View>
+        <View id="33d57" label="담당자별" viewKey="person">
+          <Table
+            id="typeStatTbl27"
+            autoColumnWidth={true}
+            cellSelection="none"
+            clearChangesetOnSave={true}
+            data="{{ salesByUser.value }}"
+            defaultSelectedRow={{
+              mode: "index",
+              indexType: "display",
+              index: 0,
+            }}
+            emptyMessage="No rows found"
+            enableSaveActions={true}
+            heightType="auto"
+            hidden=""
+            margin="0"
+            primaryKeyColumnId="b7f5c"
+            rowBackgroundColor=""
+            rowSelection="none"
+            showBorder={true}
+            showColumnBorders={true}
+            showHeader={true}
+            style={{ headerBackground: "#f5f5f5" }}
+            toolbarPosition="bottom"
+          >
+            <Column
+              id="b7f5c"
+              alignment="left"
+              editable="false"
+              format="string"
+              formatOptions={{ automaticColors: true }}
+              groupAggregationMode="none"
+              key="tp_nm"
+              label="담당자명"
+              placeholder="Enter value"
+              position="center"
+              referenceId="user_nm"
+              size={57.515625}
+              valueOverride={'{{ self.data[i]["user_nm"] }}'}
+            />
+            <Column
+              id="b17a1"
+              alignment="right"
+              backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              key="2025"
+              label="25실적"
+              placeholder="Enter value"
+              position="center"
+              size={52.296875}
+            >
+              <Event
+                event="clickCell"
+                method="trigger"
+                params={{ ordered: [] }}
+                pluginId="testQuery"
+                type="datasource"
+                waitMs="0"
+                waitType="debounce"
+              />
+            </Column>
+            <Column
+              id="a312d"
+              alignment="right"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              label="25목표"
+              placeholder="Enter value"
+              position="center"
+              referenceId="25목표"
+              size={52.296875}
+              valueOverride={
+                '{{ self.data[i]["target_sales"] === 0 ? null: self.data[i]["target_sales"] }}'
+              }
+            />
+            <Column
+              id="b97a4"
+              alignment="right"
+              backgroundColor={
+                '{{ item < 1 ? "rgba(237, 41, 57, 0.1)" : "rgba(0, 100, 0, 0.1)" }}'
+              }
+              editableOptions={{ showStepper: true }}
+              format="percent"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "1",
+              }}
+              groupAggregationMode="average"
+              label="목표달성율"
+              placeholder="Enter value"
+              position="center"
+              referenceId="목표달성율"
+              size={67.890625}
+              valueOverride={
+                '{{ self.data[i]["target_sales"] === 0 ? null : self.data[i]["2025"] / self.data[i]["target_sales"] }}'
+              }
+            />
+            <Column
+              id="b646b"
+              alignment="right"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              label="목표차액"
+              placeholder="Enter value"
+              position="center"
+              referenceId="목표차액"
+              size={57.515625}
+              textColor={'{{ item > 0 ? "green" : "red" }}'}
+              valueOverride={
+                '{{ self.data[i]["2025"] - self.data[i]["target_sales"] }}'
+              }
+            />
+            <Column
+              id="8a9cb"
+              alignment="right"
+              backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              key="2024"
+              label="24실적"
+              placeholder="Enter value"
+              position="center"
+              size={52.296875}
+            />
+            <Column
+              id="36681"
+              alignment="right"
+              editableOptions={{ showStepper: true }}
+              format="percent"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "1",
+              }}
+              groupAggregationMode="average"
+              label="24대비신장율"
+              placeholder="Enter value"
+              position="center"
+              referenceId="24대비신장율"
+              size={83.4375}
+              textColor={
+                '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
+              }
+              valueOverride={
+                '{{ self.data[i]["2025"] / self.data[i]["2024"] - 1 }}'
+              }
+            />
+            <Column
+              id="e0872"
+              alignment="right"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              label="24대비신장액"
+              placeholder="Enter value"
+              position="center"
+              referenceId="24대비신장액"
+              size={83.4375}
+              valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2024"]}}'}
+            />
+            <Column
+              id="ba994"
+              alignment="right"
+              backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              key="2023"
+              label="23실적"
+              placeholder="Enter value"
+              position="center"
+              size={52.296875}
+            />
+            <Column
+              id="2783a"
+              alignment="right"
+              editableOptions={{ showStepper: true }}
+              format="percent"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "1",
+              }}
+              groupAggregationMode="average"
+              label="23대비신장율"
+              placeholder="Enter value"
+              position="center"
+              referenceId="23대비신장율"
+              size={83.4375}
+              textColor={
+                '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
+              }
+              valueOverride={
+                '{{ self.data[i]["2025"] / self.data[i]["2023"] - 1 }}'
+              }
+            />
+            <Column
+              id="cc18b"
+              alignment="right"
+              editableOptions={{ showStepper: true }}
+              format="decimal"
+              formatOptions={{
+                showSeparators: true,
+                notation: "standard",
+                decimalPlaces: "0",
+              }}
+              groupAggregationMode="sum"
+              label="23대비신장액"
+              placeholder="Enter value"
+              position="center"
+              referenceId="23대비N신장액"
+              size={83.4375}
+              valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2023"]}}'}
+            />
+            <Column
+              id="2d30f"
+              alignment="left"
+              format="string"
+              groupAggregationMode="none"
+              hidden="true"
+              label="user_cd"
+              placeholder="Enter value"
+              position="center"
+              referenceId="user_cd"
+              size={100}
+              valueOverride={'{{ self.data[i]["user_cd"] }}'}
+            />
+            <ToolbarButton
+              id="1a"
+              icon="bold/interface-text-formatting-filter-2"
+              label="Filter"
+              type="filter"
+            />
+            <ToolbarButton
+              id="3c"
+              icon="bold/interface-download-button-2"
+              label="Download"
+              type="custom"
+            >
+              <Event
+                event="clickToolbar"
+                method="exportData"
+                pluginId="typeStatTbl27"
+                type="widget"
+                waitMs="0"
+                waitType="debounce"
+              />
+            </ToolbarButton>
+            <ToolbarButton
+              id="4d"
+              icon="bold/interface-arrows-round-left"
+              label="Refresh"
+              type="custom"
+            >
+              <Event
+                event="clickToolbar"
+                method="refresh"
+                pluginId="typeStatTbl27"
+                type="widget"
+                waitMs="0"
+                waitType="debounce"
+              />
+            </ToolbarButton>
+            <Event
+              event="clickRow"
+              method="show"
+              params={{ ordered: [] }}
+              pluginId="tpModalFrame"
+              type="widget"
+              waitMs="0"
+              waitType="debounce"
+            />
+            <Event
+              event="clickRow"
+              method="setValue"
+              params={{ ordered: [{ value: "{{ currentRow }}" }] }}
+              pluginId="selectedRow"
+              type="state"
+              waitMs="0"
+              waitType="debounce"
+            />
+          </Table>
+        </View>
+      </Container>
     </ModuleContainerWidget>
   </Frame>
 </App>
