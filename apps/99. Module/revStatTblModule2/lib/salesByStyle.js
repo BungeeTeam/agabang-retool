@@ -43,6 +43,7 @@ function pivotData(data, groupKeys, pivotKey, sumKeys) {
 const sumKeys = ["rev"]
 const data = {{ inputDataByStyle.value }}
 let arrData = formatDataAsArray(data)
+  .filter(item => item.onoff_flag === "오프라인")
 
 arrData = arrData
   .filter(item => item.biz_cd === {{ selectedRow.value.biz_cd }})
@@ -50,8 +51,8 @@ arrData = arrData
 
 const viewConfig = {
   season: {
-    keys: ["sales_type", "year_cd", "year_nm"],
-    sortFn: (a, b) => b.year_nm - a.year_nm,
+    keys: ["year_cd", "year_nm"],
+    sortFn: (a, b) => b.year_nm.replace('이하', '') - a.year_nm.replace('이하', ''),
   },
   season_detail: {
     keys: ["season_nm", "season_seq", "year_cd", "year_nm"],

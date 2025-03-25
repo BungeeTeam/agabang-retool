@@ -44,8 +44,15 @@ const sumKeys = ["rev"]
 const groupKeys = ["shop_cd", "shop_nm"]
 const data = {{ inputData.value }}
 let arrData = formatDataAsArray(data)
+  .filter(item => item.onoff_flag === "오프라인")
 
-arrData = arrData.filter(item => item.tp_cd === {{ selectedRow.value.tp_cd }})
+if ({{ salesTabbedContainer.currentViewKey }} === "type") {
+  arrData = arrData.filter(item => item.tp_cd === {{ selectedRow.value.tp_cd }})  
+} else if ({{ salesTabbedContainer.currentViewKey }} === "team") {
+  arrData = arrData.filter(item => item.team_cd === {{ selectedRow.value.team_cd }})  
+} else if ({{ salesTabbedContainer.currentViewKey }} === "person") {
+  arrData = arrData.filter(item => item.user_cd === {{ selectedRow.value.user_cd }})  
+}
 
 const groupedArr = groupBySum(arrData, ["time_unit", ...groupKeys], sumKeys)
 const targetArr = groupBySum(arrData, groupKeys, ["target_sales"])

@@ -44,6 +44,7 @@ const sumKeys = ["rev"]
 const groupKeys = ["biz_cd", "biz_nm"]
 const data = {{ inputData.value }}
 const arrData = formatDataAsArray(data)
+  .filter(item => item.onoff_flag === "오프라인")
 
 const groupedArr = groupBySum(arrData, ["time_unit", ...groupKeys], sumKeys)
 const targetArr = groupBySum(arrData, groupKeys, ["target_sales"])
