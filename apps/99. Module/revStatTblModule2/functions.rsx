@@ -70,4 +70,5 @@
   />
   <State id="selectedSalesRow" value={'{"team_cd": "01", "biz_cd": "A1"}'} />
   <State id="selectedRow" value={'{"team_cd": "01", "biz_cd": "A1"}'} />
+  <Function id="salesByGb" funcBody={include("./lib/salesByGb.js", "string")} />
 </GlobalFunctions>
