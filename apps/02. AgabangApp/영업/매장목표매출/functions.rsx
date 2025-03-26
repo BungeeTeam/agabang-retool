@@ -5,7 +5,7 @@
   />
   <SqlQuery
     id="shopInfoQuery"
-    cacheKeyTtl="21600"
+    cacheKeyTtl="3600"
     enableCaching={true}
     enableTransformer={true}
     isMultiplayerEdited={false}
@@ -87,7 +87,7 @@ return formatDataAsObject(arrData)"
   />
   <SqlQuery
     id="periodicSalesByStyleQuery"
-    cacheKeyTtl="3600"
+    cacheKeyTtl="108"
     enableCaching={true}
     enableTransformer={true}
     isMultiplayerEdited={false}

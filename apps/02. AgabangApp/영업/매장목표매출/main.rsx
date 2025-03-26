@@ -1,7 +1,6 @@
 <App>
   <Include src="./functions.rsx" />
   <Include src="./header.rsx" />
-  <Include src="./src/shopDetailModal.rsx" />
   <Include src="./sidebar.rsx" />
   <Frame
     id="$main"

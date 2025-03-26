@@ -28,52 +28,6 @@
       <Option id="5acaa" value="Tab 3" />
     </Tabs>
   </Header>
-  <View
-    id="14b44"
-    disabled={false}
-    hidden={false}
-    iconPosition="left"
-    label="기간별"
-    viewKey="periodic"
-  >
-    <DateRange
-      id="dateRange"
-      dateFormat="yyyy-MM-dd"
-      endPlaceholder="종료일자"
-      firstDayOfWeek={0}
-      iconBefore="bold/interface-calendar-remove"
-      label=""
-      labelPosition="top"
-      loading=""
-      showClear={true}
-      startPlaceholder="시작일자"
-      textBefore="조회기간"
-      textBetween="~"
-      value={{
-        ordered: [
-          { start: '{{ moment().startOf("year").format("YYYY-MM-DD") }}' },
-          { end: '{{ moment().subtract(1, "days").format("YYYY-MM-DD") }} }}' },
-        ],
-      }}
-    >
-      <Event
-        event="submit"
-        method="trigger"
-        params={{ ordered: [] }}
-        pluginId="periodicSalesQuery"
-        type="datasource"
-        waitMs="0"
-        waitType="debounce"
-      />
-    </DateRange>
-    <Module
-      id="revStatTblModule4"
-      inputData="{{ periodicSalesQuery.data }}"
-      inputDataByStyle="{{ periodicSalesByStyleQuery.data }}"
-      name="revStatTblModule2"
-      pageUuid="c2c2b498-f99c-11ef-b77a-2ba139bbf501"
-    />
-  </View>
   <View id="ef5a8" label="월별" viewKey="monthly">
     <SegmentedControl
       id="monthSelect"
@@ -116,39 +70,61 @@
         secondaryValue=""
         showSeparators={true}
         style={{ ordered: [{ valueFontSize: "18px" }, { color: "primary" }] }}
-        tooltipText="{{ formatDataAsArray(monthlySalesQuery.data)
-  .filter(obj => {
-    return obj.month === (item + 1) && obj.yr === (new Date()).getFullYear()
-  })
-  .reduce((acc, obj) => {
-  return acc + Number(obj.target_sales);
-}, 0) / 1000000 }}"
-        value="{{ (() => {
-  const monthlySales = formatDataAsArray(monthlySalesQuery.data)
-  .filter(obj => {
-    return obj.month === (item + 1) && obj.yr === (new Date()).getFullYear()
-  })
-  .reduce((acc, obj) => {
-  return acc + Number(obj.rev);
-}, 0) / 1000000
-
-  const monthlyTarget = formatDataAsArray(monthlySalesQuery.data)
-  .filter(obj => {
-    return obj.month === (item + 1) && obj.yr === (new Date()).getFullYear()
-  })
-  .reduce((acc, obj) => {
-  return acc + Number(obj.target_sales);
-}, 0) / 1000000
-
-  return monthlySales / monthlyTarget || 0
-})()
-}}"
+        value={
+          '{{ (() => {\n  const monthlySales = formatDataAsArray(monthlySalesQuery.data)\n  .filter(item => item?.onoff_flag === "오프라인")\n  .filter(obj => {\n    return obj.month === (item + 1) && obj.yr === (new Date()).getFullYear()\n  })\n  .reduce((acc, obj) => {\n  return acc + Number(obj.rev);\n}, 0) / 1000000\n\n  const monthlyTarget = formatDataAsArray(monthlySalesQuery.data)\n  .filter(obj => {\n    return obj.month === (item + 1) && obj.yr === (new Date()).getFullYear()\n  })\n  .reduce((acc, obj) => {\n  return acc + Number(obj.target_sales);\n}, 0) / 1000000\n\n  return monthlySales / monthlyTarget || 0\n})()\n}}'
+        }
       />
     </ListViewBeta>
     <Module
       id="revStatTblModule2"
       inputData="{{ formatDataAsObject(formatDataAsArray(monthlySalesQuery.data).filter(obj => obj.month == (monthSelect.value + 1))) }}"
       inputDataByStyle="{{ monthlySalesByStyleQuery.data }}"
+      name="revStatTblModule2"
+      pageUuid="c2c2b498-f99c-11ef-b77a-2ba139bbf501"
+    />
+  </View>
+  <View
+    id="14b44"
+    disabled={false}
+    hidden={false}
+    iconPosition="left"
+    label="기간별"
+    viewKey="periodic"
+  >
+    <DateRange
+      id="dateRange"
+      dateFormat="yyyy-MM-dd"
+      endPlaceholder="종료일자"
+      firstDayOfWeek={0}
+      iconBefore="bold/interface-calendar-remove"
+      label=""
+      labelPosition="top"
+      loading=""
+      showClear={true}
+      startPlaceholder="시작일자"
+      textBefore="조회기간"
+      textBetween="~"
+      value={{
+        ordered: [
+          { start: '{{ moment().startOf("year").format("YYYY-MM-DD") }}' },
+          { end: '{{ moment().subtract(1, "days").format("YYYY-MM-DD") }} }}' },
+        ],
+      }}
+    >
+      <Event
+        event="submit"
+        method="trigger"
+        params={{ ordered: [] }}
+        pluginId="periodicSalesQuery"
+        type="datasource"
+        waitMs="0"
+        waitType="debounce"
+      />
+    </DateRange>
+    <Module
+      id="revStatTblModule4"
+      inputData="{{ periodicSalesQuery.data }}"
+      inputDataByStyle="{{ periodicSalesByStyleQuery.data }}"
       name="revStatTblModule2"
       pageUuid="c2c2b498-f99c-11ef-b77a-2ba139bbf501"
     />
