@@ -1,6 +1,7 @@
 SELECT 
   YEAR(sale_dt) as time_unit,
   sales_type,
+  sale_gb,
   br_cd,
   biz_cd,
   sub_br_cd,
@@ -29,6 +30,7 @@ WHERE date_format(sale_dt, '%m-%d') <= date_format(DATE '{{ dateRange.value.end 
 GROUP BY
   YEAR(sale_dt),
   sales_type,
+  sale_gb,
   first_lv_class,
   second_lv_class,
   br_cd,

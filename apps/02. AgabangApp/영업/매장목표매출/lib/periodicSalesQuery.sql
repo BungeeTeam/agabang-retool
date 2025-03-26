@@ -64,7 +64,7 @@ SELECT
   br_cd, br_nm,
   tp_cd, tp_nm, team_cd, team_nm,
   user_cd, user_nm, area_cd, area_nm, onoff_flag,
-  SUM(rev) / 1000000 as rev, 
+  SUM(coalesce(rev, 0)) / 1000000 as rev, 
   SUM(target_sales) / 1000000 as target_sales
 FROM tbl
 GROUP BY time_unit, shop_cd, shop_nm, biz_cd, biz_nm,
