@@ -94,6 +94,12 @@
     "height": 1,
     "width": 12
   },
+  "salesTypeTbl5": {
+    "subcontainer": "onoffModalFrame",
+    "row": 0.8,
+    "height": 1,
+    "width": 12
+  },
   "spacer12": {
     "subcontainer": "bizModalFrame",
     "row": 4.6,
@@ -135,6 +141,19 @@
     "row": 4,
     "col": 9,
     "height": 0.8
+  },
+  "spacer19": {
+    "subcontainer": "onoffModalFrame",
+    "row": 1.8,
+    "height": 0.8,
+    "width": 2
+  },
+  "spacer20": {
+    "subcontainer": "onoffModalFrame",
+    "row": 1.8,
+    "col": 10,
+    "height": 1,
+    "width": 2
   },
   "spacer5": {
     "container": "moduleContainer",
@@ -260,9 +279,10 @@
   },
   "text46": {
     "subcontainer": "onoffModalFrame",
-    "row": 0.4,
-    "col": 9,
-    "height": 0.6
+    "row": 2.8,
+    "col": 10,
+    "height": 0.6,
+    "width": 2
   },
   "text47": {
     "subcontainer": "bizModalFrame",
@@ -323,6 +343,21 @@
   "text59": {
     "subcontainer": "salesTypeDetailDrawer",
     "row": 2.4,
+    "col": 9,
+    "height": 0.6
+  },
+  "text60": {
+    "subcontainer": "onoffModalFrame",
+    "height": 0.6
+  },
+  "text61": {
+    "subcontainer": "onoffModalFrame",
+    "row": 2.6,
+    "height": 0.6
+  },
+  "text62": {
+    "subcontainer": "onoffModalFrame",
+    "row": 0.2,
     "col": 9,
     "height": 0.6
   },
@@ -426,7 +461,7 @@
   },
   "typeStatTbl25": {
     "subcontainer": "onoffModalFrame",
-    "row": 1,
+    "row": 3.4,
     "height": 1,
     "width": 12
   },
