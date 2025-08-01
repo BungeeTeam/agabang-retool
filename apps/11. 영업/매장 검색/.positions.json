@@ -1,0 +1,70 @@
+{
+  "image1": {
+    "row": 0.8,
+    "col": 4,
+    "height": 5.8,
+    "width": 4
+  },
+  "modalCloseButton1": {
+    "subcontainer": "modalFrame1",
+    "col": 9,
+    "height": 1
+  },
+  "salesTopNavigation1": {
+    "subcontainer": "header",
+    "height": 2.4,
+    "width": 12
+  },
+  "search_text": {
+    "type": "stack",
+    "container": "stack1",
+    "subcontainer": "4e677",
+    "row": 8.2,
+    "col": 3,
+    "height": 0.2,
+    "width": 4,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 400.3333333333333,
+        "height": 32
+      }
+    }
+  },
+  "select1": {
+    "type": "stack",
+    "container": "stack1",
+    "subcontainer": "4e677",
+    "row": 8.2,
+    "col": 7,
+    "height": 0.2,
+    "width": 2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 180,
+        "height": 32
+      }
+    }
+  },
+  "stack1": {
+    "row": 6.6,
+    "col": 3,
+    "height": 3.8,
+    "width": 6
+  },
+  "storeDetailModule1": {
+    "subcontainer": "modalFrame1",
+    "row": 1,
+    "height": 0.2,
+    "width": 12
+  },
+  "table1": {
+    "row": 10.4,
+    "col": 4,
+    "height": 7.2,
+    "width": 4
+  }
+}
