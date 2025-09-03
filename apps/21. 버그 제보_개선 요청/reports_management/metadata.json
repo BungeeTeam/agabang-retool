@@ -1,0 +1,29 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "f7886b86-67b1-11f0-b2e8-b37eb6286f64",
+  "appTemplate": {
+    "appThemeId": 2,
+    "pageCodeFolders": {
+      "object": {
+        "all_reports": {
+          "array": []
+        },
+        "admin": {
+          "array": []
+        },
+        "form": {
+          "array": []
+        },
+        "dashboard": {
+          "array": []
+        }
+      }
+    },
+    "rootScreen": "all_reports",
+    "appThemeName": "Cleave",
+    "shortlink": "reports_management",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
