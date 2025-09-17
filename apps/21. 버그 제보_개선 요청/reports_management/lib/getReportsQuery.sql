@@ -5,6 +5,7 @@ select
   WHEN status = '해결 완료' THEN 4
   WHEN status = '처리 완료' THEN 5
   WHEN status = '보류' THEN 6
+  WHEN status = '반영 예정' THEN 7
   ELSE 99 END as status_order,
   *
   from user_reports
