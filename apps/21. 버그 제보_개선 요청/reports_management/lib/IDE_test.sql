@@ -1,0 +1,1 @@
+select * from agabang_dw.code_season where year_cd ='T';
