@@ -1,0 +1,19 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "442df616-d6c3-11ef-a664-5fa1767bcbd8",
+  "appTemplate": {
+    "appThemeId": "custom",
+    "pageCodeFolders": {
+      "object": {
+        "sitemap": {
+          "array": []
+        }
+      }
+    },
+    "isGlobalWidget": true,
+    "appThemeName": "Custom app theme",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
