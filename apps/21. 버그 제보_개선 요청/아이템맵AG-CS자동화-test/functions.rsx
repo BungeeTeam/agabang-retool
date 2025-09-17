@@ -288,4 +288,23 @@ return result"
     workflowBlockUuid={null}
     workflowRunId={null}
   />
+  <SqlQuery
+    id="ide_test"
+    enableTransformer={true}
+    errorTransformer="// The variable 'data' allows you to reference the request's data in the transformer. 
+// example: return data.find(element => element.isError)
+return data.error"
+    isMultiplayerEdited={false}
+    notificationDuration={4.5}
+    query={include("./lib/IDE_test.sql", "string")}
+    resourceDisplayName="clickhouse-dw"
+    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
+    showSuccessToaster={false}
+    transformer="// Query results are available as the `data` variable
+return data"
+    warningCodes={[]}
+    workflowActionType={null}
+    workflowBlockUuid={null}
+    workflowRunId={null}
+  />
 </GlobalFunctions>
