@@ -3,8 +3,6 @@ WITH
   
 SELECT 
   YEAR(sale_dt) as year_unit,
-  -- toQuarter(sale_dt) as quarter_unit,
-  -- MONTH(sale_dt) as month_unit,
   br_cd,
   br_nm,
   biz_cd,
