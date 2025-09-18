@@ -120,7 +120,7 @@ const totalObj = {
 
 result.push(totalObj);
 
-// '총계' 객체 추출
+
 const totalRow = result.find(item => item.category_name === '총계');
 const totalCurRev = totalRow?.cur_rev ?? 0;
 const totalPrevRev = totalRow?.prev_rev ?? 0;
