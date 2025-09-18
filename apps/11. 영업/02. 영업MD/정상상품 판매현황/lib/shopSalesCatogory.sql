@@ -4,11 +4,12 @@ WITH
     addYears(start_date, -1) as prev_start_date,
     addYears(end_date, -1) as prev_end_date,
     addYears(start_date, -2) as sale_start_date,
-    {{ bizSelect.value.map(i => `'${i}'`).join(',') }} as biz_code,
-    {{ brandMultiSelect.value.map(i => `'${i}'`).join(',') }} as brand_code,
+    ({{ bizSelect.value.map(i => `'${i}'`).join(',') }}) as biz_code,
+    ({{ brandMultiSelect.value.map(i => `'${i}'`).join(',') }}) as brand_code,
     '{{ varShopSalesCatogory.value?.category_name }}' as selected_category_name,
     '{{ varShopSalesCatogory.value?.season_nm }}' as selected_season_nm,
-    {{tabs1.value==='합계' ? `'오프라인', '온라인'`:`'${tabs1.value}'`}} as selected_onoff_flag,
+    '{{ varShopSalesCatogory.value?.season_cd }}' as selected_season_cd,
+    ({{tabs1.value==='합계' ? `'오프라인', '온라인'`:`'${tabs1.value}'`}}) as selected_onoff_flag,
 
     RelevantSeasons AS (
         SELECT DISTINCT
@@ -16,16 +17,16 @@ WITH
         FROM agabang_dw.daily_shop_sales_by_dimension
         WHERE sales_type = '정상'
           AND sale_dt BETWEEN start_date AND end_date 
-          AND biz_cd in (biz_code)
-          AND br_cd in (brand_code)
+          AND biz_cd in biz_code
+          AND br_cd in brand_code
         UNION ALL
         SELECT DISTINCT
             'PREV' as period_type, year_cd, season_cd
         FROM agabang_dw.daily_shop_sales_by_dimension
         WHERE sales_type = '정상'
           AND sale_dt BETWEEN prev_start_date AND prev_end_date 
-          AND biz_cd in (biz_code)
-          AND br_cd in (brand_code)
+          AND biz_cd in biz_code
+          AND br_cd in brand_code
     ),
 
     CategoryMapper AS (
@@ -83,10 +84,10 @@ WITH
             END = CM.item_code
         )
         WHERE
-            B.biz_cd in (biz_code)
-            AND A.br_cd in (brand_code)
+            B.biz_cd in biz_code
+            AND A.br_cd in brand_code
             AND substring(A.item,1,1) not in ('6', '8', '9') 
-            AND B.onoff_flag in (selected_onoff_flag)
+            AND B.onoff_flag in selected_onoff_flag
             AND toDate(A.wrk_dt) >= addYears(start_date, -3)
         GROUP BY shop_cd, shop_nm, sesn_cd, category_name
     ),
@@ -126,7 +127,7 @@ WITH
          WHERE sale_dt BETWEEN sale_start_date and end_date
           AND sales_type = '정상'
           AND season_cd in ('1','3','5','7','0') AND biz_cd in biz_code
-          AND br_cd in brand_code AND onoff_flag in (selected_onoff_flag)
+          AND br_cd in brand_code AND onoff_flag in selected_onoff_flag
         GROUP BY shop_cd, shop_nm, season_cd, season_nm, category_name
     )
 
@@ -154,7 +155,7 @@ SELECT
 FROM AllSales as S
 FULL OUTER JOIN AllOutRtn AS O ON S.shop_cd = O.shop_cd and S.category_name = O.category_name and O.season_cd = S.season_cd
 WHERE S.category_name = selected_category_name
-and season_nm = selected_season_nm
+and season_cd = selected_season_cd
 ORDER BY cur_rev desc;
 
 -- WITH
