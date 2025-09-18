@@ -1,0 +1,12 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "f5077e88-39f8-11f0-af68-5770912d62be",
+  "appTemplate": {
+    "isFetching": true,
+    "customDocumentTitleEnabled": true,
+    "shortlink": "sales-sales-by-new",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
