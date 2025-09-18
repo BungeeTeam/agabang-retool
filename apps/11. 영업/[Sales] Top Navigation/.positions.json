@@ -1,0 +1,83 @@
+{
+  "AccountDropdown": {
+    "type": "stack",
+    "container": "stack1",
+    "subcontainer": "c010c",
+    "row": 0,
+    "col": 11,
+    "height": 1,
+    "width": 1,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "auto",
+        "width": 86.25,
+        "height": 40
+      }
+    }
+  },
+  "disneyTopNavigation1": {
+    "subcontainer": "modalFrame1",
+    "row": 2.4,
+    "height": 2.4,
+    "width": 12
+  },
+  "ettoiTopNavigation1": {
+    "subcontainer": "modalFrame1",
+    "height": 2.4,
+    "width": 12
+  },
+  "modalCloseButton1": {
+    "rowGroup": "header",
+    "subcontainer": "modalFrame1",
+    "col": 9,
+    "height": 1
+  },
+  "modalTitle1": {
+    "rowGroup": "header",
+    "subcontainer": "modalFrame1",
+    "height": 0.6,
+    "width": 9
+  },
+  "moduleContainer": {
+    "height": 12,
+    "width": 12
+  },
+  "navigation1": {
+    "type": "stack",
+    "container": "stack1",
+    "subcontainer": "c010c",
+    "height": 1,
+    "width": 9,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fill",
+        "width": 1017,
+        "height": 40
+      }
+    }
+  },
+  "navigation2": {
+    "type": "stack",
+    "container": "stack1",
+    "subcontainer": "c010c",
+    "col": 9,
+    "height": 1,
+    "width": 2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 219.5,
+        "height": 46
+      }
+    }
+  },
+  "stack1": {
+    "container": "moduleContainer",
+    "row": 0,
+    "height": 3.8,
+    "width": 12
+  }
+}
