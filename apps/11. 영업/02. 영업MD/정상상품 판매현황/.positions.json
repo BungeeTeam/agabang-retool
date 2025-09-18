@@ -7,6 +7,7 @@
   },
   "bizSelect": {
     "subcontainer": "sidebarFrame1",
+    "row": 0,
     "height": 0.2,
     "width": 1,
     "stackPosition": {
@@ -81,6 +82,7 @@
   "dateRange": {
     "container": "container5",
     "subcontainer": "e4d73",
+    "row": 0,
     "col": 7,
     "height": 0.2,
     "width": 5,
@@ -94,6 +96,7 @@
     }
   },
   "listView1": {
+    "row": 0,
     "height": 17,
     "width": 12,
     "stackPosition": {
@@ -152,6 +155,7 @@
   "stack1": {
     "rowGroup": "header",
     "subcontainer": "sidebarFrame1",
+    "row": 0,
     "height": 1,
     "width": 1
   },
@@ -212,6 +216,7 @@
   "tabs1": {
     "container": "container5",
     "subcontainer": "e4d73",
+    "row": 0,
     "height": 0.8,
     "width": 7,
     "stackPosition": {
