@@ -1,0 +1,10 @@
+div[data-row-index="-1"] {
+  height: 50px !important;
+  position: sticky !important; /* 헤더를 고정 */
+  top: 0 !important; /* 화면 상단에 고정 */
+}
+
+span[data-testid*="HeaderCellContents"] {
+  text-align: center !important;
+  text-wrap: wrap !important;
+}
