@@ -67,18 +67,6 @@
     <Spacer id="spacer27" />
     <Include src="./collapsibleContainer1.rsx" />
     <Text
-      id="text31"
-      style={{
-        ordered: [
-          { fontSize: "h6Font" },
-          { fontWeight: "h6Font" },
-          { fontFamily: "h6Font" },
-        ],
-      }}
-      value="[기간별 티켓 건수]"
-      verticalAlign="center"
-    />
-    <Text
       id="text32"
       style={{
         ordered: [
@@ -90,6 +78,115 @@
       value="[유형별 티켓 비율]"
       verticalAlign="center"
     />
+    <Text
+      id="text31"
+      style={{
+        ordered: [
+          { fontSize: "h6Font" },
+          { fontWeight: "h6Font" },
+          { fontFamily: "h6Font" },
+        ],
+      }}
+      value="[기간별 티켓 건수]"
+      verticalAlign="center"
+    />
+    <Container
+      id="container9"
+      enableFullBleed={true}
+      footerPadding="4px 12px"
+      headerPadding="4px 12px"
+      heightType="fixed"
+      overflowType="hidden"
+      padding="12px"
+      showBody={true}
+      showHeader={true}
+    >
+      <Header>
+        <Tabs id="tabs3" itemMode="static" value="{{ self.values[0] }}">
+          <Option id="5a4f0" label="반영 범위" value="in_scope" />
+          <Option id="95ff6" label="진행상태" value="status" />
+          <Option
+            id="74ce7"
+            label="고객 문의유형"
+            tooltip="고객이 선택한 문의 유형"
+            value="category"
+          />
+          <Option
+            id="7de7e"
+            disabled={false}
+            hidden={false}
+            iconPosition="left"
+            label="클리브 분류유형"
+            tooltip="클리브가 분류한 문의유형"
+            value="admin_category"
+          />
+        </Tabs>
+      </Header>
+      <View id="150fd" viewKey="View 1">
+        <Chart
+          id="pieChart1"
+          chartType="pie"
+          colorArray={[
+            "#11B5AE",
+            "#4046CA",
+            "#F68512",
+            "#DE3C82",
+            "#7E84FA",
+            "#72E06A",
+          ]}
+          colorArrayDropDown={[
+            "#11B5AE",
+            "#4046CA",
+            "#F68512",
+            "#DE3C82",
+            "#7E84FA",
+            "#72E06A",
+          ]}
+          colorInputMode="colorArrayDropDown"
+          datasource="{{ getReportsQuery.data }}"
+          datasourceMode="source"
+          gradientColorArray={[
+            ["0.0", "{{ theme.canvas }}"],
+            ["1.0", "{{ theme.primary }}"],
+          ]}
+          hoverTemplate="%{label}<br>%{value}<br>%{percent}<extra></extra>"
+          hoverTemplateMode="source"
+          labelData="{{ formatDataAsObject(getReportsQuery.data)[tabs3.value]}}"
+          legendPosition="none"
+          lineColor="{{ theme.surfacePrimary }}"
+          lineWidth={2}
+          pieDataHole={0.4}
+          selectedPoints="[]"
+          textTemplate="%{label}<br>%{value}건(%{percent})"
+          textTemplatePosition="outside"
+          title={null}
+          valueData=""
+        >
+          <Event
+            event="select"
+            method="setFilter"
+            params={{
+              ordered: [
+                {
+                  filter: {
+                    ordered: [
+                      { id: "ticket_list" },
+                      { columnId: "{{ tabs3.value }}" },
+                      { operator: "=" },
+                      { value: "{{ self.selectedPoints[0]?.label }}" },
+                    ],
+                  },
+                },
+              ],
+            }}
+            pluginId="table4"
+            type="widget"
+            waitMs="0"
+            waitType="debounce"
+          />
+        </Chart>
+      </View>
+    </Container>
     <Container
       id="tabbedContainer1"
       currentViewKey="{{ self.viewKeys[0] }}"
@@ -241,103 +338,6 @@
       </View>
       <View id="d2676" label="주간" viewKey="year_week_num" />
       <View id="45997" label="월간" viewKey="year_month" />
-    </Container>
-    <Container
-      id="container9"
-      enableFullBleed={true}
-      footerPadding="4px 12px"
-      headerPadding="4px 12px"
-      heightType="fixed"
-      overflowType="hidden"
-      padding="12px"
-      showBody={true}
-      showHeader={true}
-    >
-      <Header>
-        <Tabs id="tabs3" itemMode="static" value="{{ self.values[0] }}">
-          <Option id="5a4f0" label="반영 범위" value="in_scope" />
-          <Option id="95ff6" label="진행상태" value="status" />
-          <Option
-            id="74ce7"
-            label="고객 문의유형"
-            tooltip="고객이 선택한 문의 유형"
-            value="category"
-          />
-          <Option
-            id="7de7e"
-            disabled={false}
-            hidden={false}
-            iconPosition="left"
-            label="클리브 분류유형"
-            tooltip="클리브가 분류한 문의유형"
-            value="admin_category"
-          />
-        </Tabs>
-      </Header>
-      <View id="150fd" viewKey="View 1">
-        <Chart
-          id="pieChart1"
-          chartType="pie"
-          colorArray={[
-            "#11B5AE",
-            "#4046CA",
-            "#F68512",
-            "#DE3C82",
-            "#7E84FA",
-            "#72E06A",
-          ]}
-          colorArrayDropDown={[
-            "#11B5AE",
-            "#4046CA",
-            "#F68512",
-            "#DE3C82",
-            "#7E84FA",
-            "#72E06A",
-          ]}
-          colorInputMode="colorArrayDropDown"
-          datasource="{{ getReportsQuery.data }}"
-          datasourceMode="source"
-          gradientColorArray={[
-            ["0.0", "{{ theme.canvas }}"],
-            ["1.0", "{{ theme.primary }}"],
-          ]}
-          hoverTemplate="%{label}<br>%{value}<br>%{percent}<extra></extra>"
-          hoverTemplateMode="source"
-          labelData="{{ formatDataAsObject(getReportsQuery.data)[tabs3.value]}}"
-          legendPosition="none"
-          lineColor="{{ theme.surfacePrimary }}"
-          lineWidth={2}
-          pieDataHole={0.4}
-          selectedPoints="[]"
-          textTemplate="%{label}<br>%{value}건(%{percent})"
-          textTemplatePosition="outside"
-          title={null}
-          valueData=""
-        >
-          <Event
-            event="select"
-            method="setFilter"
-            params={{
-              ordered: [
-                {
-                  filter: {
-                    ordered: [
-                      { id: "ticket_list" },
-                      { columnId: "{{ tabs3.value }}" },
-                      { operator: "=" },
-                      { value: "{{ self.selectedPoints[0]?.label }}" },
-                    ],
-                  },
-                },
-              ],
-            }}
-            pluginId="table4"
-            type="widget"
-            waitMs="0"
-            waitType="debounce"
-          />
-        </Chart>
-      </View>
     </Container>
     <Text
       id="text34"

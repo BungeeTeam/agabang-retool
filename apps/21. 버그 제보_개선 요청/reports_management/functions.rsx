@@ -191,4 +191,12 @@ return result;
   </WorkflowRun>
   <Function id="textOnly" funcBody={include("./lib/textOnly.js", "string")} />
   <State id="varSelected" />
+  <SqlQueryUnified
+    id="query18"
+    query={include("./lib/query18.sql", "string")}
+    resourceDisplayName="retool_db"
+    resourceName="33c51bac-e1f2-4560-8260-3be760a1fd8f"
+    runWhenModelUpdates={false}
+    warningCodes={[]}
+  />
 </GlobalFunctions>
