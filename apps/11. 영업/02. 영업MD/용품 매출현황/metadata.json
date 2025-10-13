@@ -1,0 +1,32 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "1cf7632a-52f1-11f0-93fc-d71253ef960f",
+  "appTemplate": {
+    "preloadedAppJavaScript": "function groupBySum(arr, groupKeys, sumKeys) {\n    return Object.values(\n      arr.reduce((acc, item) => {\n        const key = groupKeys.map(k => item[k]).join(\"-\");\n  \n        if (!acc[key]) {\n          acc[key] = Object.fromEntries(groupKeys.map(k => [k, item[k]]));\n          sumKeys.forEach(sumKey => {\n            acc[key][sumKey] = Number(item[sumKey]) || 0;\n          });\n        } else {\n          sumKeys.forEach(sumKey => {\n            acc[key][sumKey] += Number(item[sumKey]) || 0;\n          });\n        }\n        return acc;\n      }, {})\n    );\n  }\n\n\nfunction pivotData(data, groupKeys, pivotKey, sumKeys) {\n  const pivotMap = {};\n\n  data.forEach(item => {\n    // Create a unique key based on selected group keys\n    const groupKey = groupKeys.map(k => item[k]).join(\"-\");\n\n    if (!pivotMap[groupKey]) {\n      // Initialize object with only group keys\n      pivotMap[groupKey] = Object.fromEntries(groupKeys.map(k => [k, item[k]]));\n    }\n\n    // Ensure numeric fields exist and sum them\n    sumKeys.forEach(sumKey => {\n      pivotMap[groupKey][item[pivotKey]] = \n        (pivotMap[groupKey][item[pivotKey]] || 0) + Number(item[sumKey] || 0);\n    });\n  });\n\n  return Object.values(pivotMap);\n}\n",
+    "pageCodeFolders": {
+      "object": {
+        "salesBySalesType": {
+          "array": []
+        },
+        "inSeasonSales": {
+          "array": []
+        },
+        "offSeasonSales": {
+          "array": []
+        },
+        "SuppliesSales": {
+          "array": ["archive"]
+        },
+        "suppliesSales": {
+          "array": ["archive"]
+        }
+      }
+    },
+    "rootScreen": "salesBySalesType",
+    "customDocumentTitleEnabled": true,
+    "shortlink": "sales_by_sales_type",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
