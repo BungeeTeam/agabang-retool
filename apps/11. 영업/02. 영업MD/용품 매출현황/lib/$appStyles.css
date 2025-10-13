@@ -1,0 +1,34 @@
+._retool-table26 {
+  height: {{viewport.height * 0.80}}px;
+}
+
+div[data-row-index="-1"]{
+  height:36px !important;
+}
+
+span[data-testid*="HeaderCellContents"]{
+  text-align: center !important;
+  text-wrap: wrap !important;
+}
+
+._retool-table1, ._retool-table2, ._retool-table3, ._retool-listView1, ._retool-listView2 , ._retool-listView3, ._retool-listView4  {
+  height: {{viewport.height * 0.80}}px;
+}
+
+div[data-row-index="-1"]{
+  height:36px !important;
+}
+
+
+span[data-testid*="HeaderCellContents"]{
+  text-align: center !important;
+  text-wrap: wrap !important;
+}
+
+._retool-container1, ._retool-container11, ._retool-container5, ._retool-container8, ._retool-container2  {
+  height: {{viewport.height}}px;
+}
+
+._retool-containerSalesType{
+  height: {{viewport.height}}px;
+}
