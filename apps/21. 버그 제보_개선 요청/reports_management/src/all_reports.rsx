@@ -140,16 +140,37 @@
       <Column
         id="5b4af"
         alignment="center"
+        editable="false"
         format="tag"
-        formatOptions={{ automaticColors: true }}
+        formatOptions={{ automaticColors: false, icon: "", color: "" }}
         groupAggregationMode="none"
         key="status"
         label="진행 상태"
+        optionList={{
+          manualData: [
+            { ordered: [{ value: "처리 진행 중" }, { color: "#a8d5e2" }] },
+            { ordered: [{ value: "처리 완료" }, { color: "#c5d86d" }] },
+            { ordered: [{ value: "반영 예정" }, { color: "#c7ceea" }] },
+            { ordered: [{ value: "보류" }, { color: "#ff9aa2" }] },
+            { ordered: [{ value: "접수 대기" }, { color: "#f9f7dc" }] },
+            { ordered: [{ value: "담당자 지정" }, { color: "#ffd97d" }] },
+          ],
+        }}
         placeholder="Select option"
         position="center"
         size={98}
         summaryAggregationMode="none"
-      />
+      >
+        <Event
+          event="clickCell"
+          method="trigger"
+          params={{ ordered: [] }}
+          pluginId="updateRepliesAdmin"
+          type="datasource"
+          waitMs="0"
+          waitType="debounce"
+        />
+      </Column>
       <Column
         id="41394"
         alignment="left"

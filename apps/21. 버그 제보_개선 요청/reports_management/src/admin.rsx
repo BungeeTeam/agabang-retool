@@ -537,19 +537,25 @@ return result;
         label="진행 상태"
         optionList={{
           manualData: [
-            { ordered: [{ value: "접수 대기" }] },
-            { ordered: [{ value: "담당자 지정" }, { label: "담당자 지정" }] },
-            { ordered: [{ value: "처리 진행 중" }] },
-            { ordered: [{ value: "보류" }] },
-            { ordered: [{ value: "해결 완료" }] },
-            { ordered: [{ value: "처리 완료" }] },
-            { ordered: [{ value: "반영 예정" }] },
+            { ordered: [{ value: "접수 대기" }, { color: "#f9f7dc" }] },
+            {
+              ordered: [
+                { value: "담당자 지정" },
+                { label: "담당자 지정" },
+                { color: "#ffd97d" },
+              ],
+            },
+            { ordered: [{ value: "처리 진행 중" }, { color: "#a8d5e2" }] },
+            { ordered: [{ value: "처리 완료" }, { color: "#c5d86d" }] },
+            { ordered: [{ value: "보류" }, { color: "#ff9aa2" }] },
+            { ordered: [{ value: "반영 예정" }, { color: "#c7ceea" }] },
           ],
           mode: "manual",
         }}
         placeholder="Select option"
         position="center"
         size={98}
+        summaryAggregationMode="none"
       />
       <Column
         id="41394"

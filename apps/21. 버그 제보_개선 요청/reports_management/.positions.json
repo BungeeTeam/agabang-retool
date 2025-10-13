@@ -1,7 +1,6 @@
 {
   "AccountDropdown": {
     "subcontainer": "header",
-    "row": 0,
     "col": 11,
     "height": 1,
     "width": 1
@@ -678,7 +677,6 @@
   "pieChart1": {
     "container": "container9",
     "subcontainer": "150fd",
-    "row": 0,
     "height": 5.6,
     "width": 12,
     "stackPosition": {
