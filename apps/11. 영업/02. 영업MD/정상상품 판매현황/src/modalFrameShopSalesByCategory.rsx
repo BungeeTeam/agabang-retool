@@ -59,7 +59,6 @@
       margin="0"
       rowBackgroundColor=""
       rowHeight="medium"
-      rowSelection="none"
       showBorder={true}
       showColumnBorders={true}
       showHeader={true}
@@ -89,7 +88,7 @@
         groupAggregationMode="sum"
         hidden="{{ !checkboxTreeNew1.value.includes( tableHeader.value[2]) }}"
         key="cur_rev"
-        label="{{ tableHeader.value[2] }}"
+        label="{{ tableHeader.value[2] }}(기간)"
         placeholder="Enter value"
         position="center"
         referenceId="cur_rev"
@@ -105,7 +104,7 @@
         formatOptions={{ showSeparators: true, notation: "standard" }}
         groupAggregationMode="sum"
         key="cur_qty"
-        label="{{ tableHeader.value[20] }}"
+        label="{{ tableHeader.value[20] }}(기간)"
         placeholder="Enter value"
         position="center"
         referenceId="cur_qty"
@@ -395,7 +394,7 @@
         position="center"
         referenceId="작년 할인율"
         size={101.4375}
-        summaryAggregationMode="none"
+        summaryAggregationMode="average"
         valueOverride="{{ 1-(currentSourceRow.prev_rev/item) }}"
       />
       <Column

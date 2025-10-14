@@ -169,7 +169,7 @@
   "table4": {
     "container": "container5",
     "subcontainer": "e4d73",
-    "row": 11.6,
+    "row": 12,
     "height": 33,
     "width": 12,
     "stackPosition": {
@@ -286,7 +286,7 @@
   "text49": {
     "container": "container5",
     "subcontainer": "e4d73",
-    "row": 11,
+    "row": 11.4,
     "col": 5,
     "height": 0.6,
     "width": 7,

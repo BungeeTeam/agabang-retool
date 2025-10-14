@@ -151,4 +151,5 @@ return formatDataAsObject(arrData)"
     warningCodes={[]}
   />
   <State id="varShopSalesCatogory" />
+  <Function id="transformer10" />
 </GlobalFunctions>
