@@ -79,6 +79,8 @@ return arrData"
     id="filterBySelectedRow"
     funcBody={include("../lib/filterBySelectedRow.js", "string")}
   />
+  <Function id="transformer18" />
+  <State id="variable8" />
   <Include src="./modalFrameShopList.rsx" />
   <Include src="./sidebar1.rsx" />
   <Frame

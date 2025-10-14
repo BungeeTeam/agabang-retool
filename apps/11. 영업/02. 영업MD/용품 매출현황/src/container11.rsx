@@ -38,6 +38,17 @@
       <Option id="47702" label="온라인" value="온라인" />
       <Option id="215bc" label="온오프라인 합계" value="합계" />
     </Tabs>
+    <Tabs
+      id="tabs4"
+      itemMode="static"
+      margin="4px 10px"
+      targetContainerId="container11"
+      value="{{ self.values[0] }}"
+    >
+      <Option id="519b8" label="중분류별" value="it_gb" />
+      <Option id="528ab" label="소분류별" value="item" />
+      <Option id="7366f" label="서브브랜드별" value="sub_brand" />
+    </Tabs>
     <DateRange
       id="dateRange5"
       dateFormat="yyyy-MM-dd"
@@ -58,17 +69,6 @@
         ],
       }}
     />
-    <Tabs
-      id="tabs4"
-      itemMode="static"
-      margin="4px 10px"
-      targetContainerId="container11"
-      value="{{ self.values[0] }}"
-    >
-      <Option id="519b8" label="중분류별" value="it_gb" />
-      <Option id="528ab" label="소분류별" value="item" />
-      <Option id="7366f" label="서브브랜드별" value="sub_brand" />
-    </Tabs>
   </Header>
   <View id="9bd21" viewKey="View 1">
     <ListViewBeta

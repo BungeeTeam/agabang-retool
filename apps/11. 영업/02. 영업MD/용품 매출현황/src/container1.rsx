@@ -92,6 +92,8 @@
       <Column
         id="5f8b9"
         alignment="right"
+        cellTooltip="{{ (item*1000000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -112,6 +114,8 @@
         id="b27ce"
         alignment="right"
         backgroundColor="rgba(253, 230, 138, 0.33)"
+        cellTooltip="{{ (item*1000000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -164,6 +168,8 @@
       <Column
         id="0340b"
         alignment="right"
+        cellTooltip="{{ (item*1000000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -183,6 +189,8 @@
       <Column
         id="8277b"
         alignment="right"
+        cellTooltip="{{ (item*1000000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -220,6 +228,8 @@
       <Column
         id="db2f9"
         alignment="right"
+        cellTooltip="{{ (item*1000000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -525,6 +535,8 @@
       <Column
         id="5f8b9"
         alignment="right"
+        cellTooltip="{{ (item*1000000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -545,6 +557,8 @@
         id="b27ce"
         alignment="right"
         backgroundColor="rgba(253, 230, 138, 0.33)"
+        cellTooltip="{{ (item*1000000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -597,6 +611,8 @@
       <Column
         id="0340b"
         alignment="right"
+        cellTooltip="{{ (item*1000000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -616,6 +632,8 @@
       <Column
         id="8277b"
         alignment="right"
+        cellTooltip="{{ (item*1000000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -653,6 +671,8 @@
       <Column
         id="db2f9"
         alignment="right"
+        cellTooltip="{{ (item*1000000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -942,6 +962,8 @@
       <Column
         id="5f8b9"
         alignment="right"
+        cellTooltip="{{ (item*1000000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -962,6 +984,8 @@
         id="b27ce"
         alignment="right"
         backgroundColor="rgba(253, 230, 138, 0.33)"
+        cellTooltip="{{ (item*1000000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -1014,6 +1038,8 @@
       <Column
         id="0340b"
         alignment="right"
+        cellTooltip="{{ (item*1000000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -1033,6 +1059,8 @@
       <Column
         id="8277b"
         alignment="right"
+        cellTooltip="{{ (item*1000000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -1070,6 +1098,8 @@
       <Column
         id="db2f9"
         alignment="right"
+        cellTooltip="{{ (item*1000000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -1263,6 +1293,34 @@
                         "{{ text1.value.slice(5) }}_{{ tabs1.value }}_({{ dateRange.value.start }}~{{ dateRange.value.end }})",
                     },
                   ],
+                },
+              },
+            ],
+          }}
+          pluginId="table6"
+          type="widget"
+          waitMs="0"
+          waitType="debounce"
+        />
+      </ToolbarButton>
+      <ToolbarButton
+        id="17f76"
+        icon="bold/shopping-gift"
+        label="Custom"
+        type="custom"
+      >
+        <Event
+          event="clickToolbar"
+          method="exportData"
+          params={{
+            ordered: [
+              {
+                options: {
+                  object: {
+                    fileName: "export",
+                    fileType: "csv",
+                    includeHiddenColumns: false,
+                  },
                 },
               },
             ],

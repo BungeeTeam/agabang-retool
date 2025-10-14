@@ -135,6 +135,7 @@
         id="c3861"
         alignment="right"
         backgroundColor="rgba(253, 230, 138, 0.33)"
+        cellTooltip="{{ item*1000 }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
