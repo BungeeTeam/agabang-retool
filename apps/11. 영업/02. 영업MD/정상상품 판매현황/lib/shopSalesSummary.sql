@@ -11,7 +11,7 @@ WITH
 
     RelevantSeasons AS (
         SELECT DISTINCT
-            'CURR' as period_type, year_cd, season_cd
+            'CURR' as period_type, year_cd, season_cd, season_end_dt
         FROM agabang_dw.daily_shop_sales_by_dimension
         WHERE sales_type = '정상'
           AND sale_dt BETWEEN DATE_TRUNC('year', end_date) AND end_date 
@@ -19,7 +19,7 @@ WITH
           AND br_cd in brand_code
         UNION ALL
         SELECT DISTINCT
-            'PREV' as period_type, year_cd, season_cd
+            'PREV' as period_type, year_cd, season_cd, season_end_dt
         FROM agabang_dw.daily_shop_sales_by_dimension
         WHERE sales_type = '정상'
           AND sale_dt BETWEEN DATE_TRUNC('year', prev_start_date) AND prev_end_date 
@@ -50,25 +50,45 @@ WITH
                 WHEN selected_category_name = '총계' THEN '총계'
                 ELSE COALESCE(CM.category_name, '기타')
             END as category_name,
-                  sum(CASE WHEN RS.period_type = 'CURR' AND toDate(A.wrk_dt) <= toDate(end_date)
+            --       sum(CASE WHEN RS.period_type = 'CURR' AND toDate(A.wrk_dt) <= toDate(end_date)
+            --          THEN (CASE WHEN A.io_type = 'O' THEN A.out_qty 
+            --                     WHEN A.rt_yn = 'Y' THEN A.out_qty * -1
+            --                     ELSE 0 END)
+            --          ELSE 0 END) as cur_out_qty,
+            -- sum(CASE WHEN RS.period_type = 'CURR' AND toDate(A.wrk_dt) <= toDate(end_date)
+            --          THEN (CASE WHEN A.io_type = 'O' THEN A.out_qty*toInt32(A.sale_prce)
+            --                     WHEN A.rt_yn = 'Y' THEN A.out_qty*toInt32(A.sale_prce) * -1
+            --                     ELSE 0 END)
+            --          ELSE 0 END) as cur_sup_amt,
+            -- sum(CASE WHEN RS.period_type = 'PREV' AND toDate(A.wrk_dt) <= toDate(addYears(end_date, -1))
+            --          THEN (CASE WHEN A.io_type = 'O' THEN A.out_qty 
+            --                     WHEN A.rt_yn = 'Y' THEN A.out_qty * -1
+            --                     ELSE 0 END)
+            --          ELSE 0 END) as prev_out_qty,
+            -- sum(CASE WHEN RS.period_type = 'PREV' AND toDate(A.wrk_dt) <= toDate(addYears(end_date, -1))
+            --          THEN (CASE WHEN A.io_type = 'O' THEN A.out_qty*toInt32(A.sale_prce) 
+            --                     WHEN A.rt_yn = 'Y' THEN A.out_qty*toInt32(A.sale_prce) * -1
+            --                     ELSE 0 END)
+            --          ELSE 0 END) as prev_sup_amt
+                        sum(CASE WHEN RS.period_type = 'CURR' AND toDate(A.wrk_dt) <= end_date AND toDate(A.wrk_dt) <= RS.season_end_dt
                      THEN (CASE WHEN A.io_type = 'O' THEN A.out_qty 
-                                WHEN A.rt_yn = 'Y' THEN A.out_qty * -1
-                                ELSE 0 END)
+                                WHEN A.io_type = 'R' THEN  A.out_qty * -1 
+                                END)
                      ELSE 0 END) as cur_out_qty,
-            sum(CASE WHEN RS.period_type = 'CURR' AND toDate(A.wrk_dt) <= toDate(end_date)
-                     THEN (CASE WHEN A.io_type = 'O' THEN A.out_qty*toInt32(A.sale_prce)
-                                WHEN A.rt_yn = 'Y' THEN A.out_qty*toInt32(A.sale_prce) * -1
-                                ELSE 0 END)
+            sum(CASE WHEN RS.period_type = 'CURR' AND toDate(A.wrk_dt) <= end_date AND toDate(A.wrk_dt) <= RS.season_end_dt
+                     THEN (CASE WHEN A.io_type = 'O' THEN (A.out_qty*toInt32(A.sale_prce)) 
+                                WHEN A.io_type = 'R' THEN (A.out_qty*toInt32(A.sale_prce) * -1)
+                                END)
                      ELSE 0 END) as cur_sup_amt,
-            sum(CASE WHEN RS.period_type = 'PREV' AND toDate(A.wrk_dt) <= toDate(addYears(end_date, -1))
+            sum(CASE WHEN RS.period_type = 'PREV' AND toDate(A.wrk_dt) <= prev_end_date AND toDate(A.wrk_dt) <= RS.season_end_dt
                      THEN (CASE WHEN A.io_type = 'O' THEN A.out_qty 
-                                WHEN A.rt_yn = 'Y' THEN A.out_qty * -1
-                                ELSE 0 END)
+                                WHEN A.io_type = 'R' THEN  A.out_qty * -1 
+                                END)
                      ELSE 0 END) as prev_out_qty,
-            sum(CASE WHEN RS.period_type = 'PREV' AND toDate(A.wrk_dt) <= toDate(addYears(end_date, -1))
-                     THEN (CASE WHEN A.io_type = 'O' THEN A.out_qty*toInt32(A.sale_prce) 
-                                WHEN A.rt_yn = 'Y' THEN A.out_qty*toInt32(A.sale_prce) * -1
-                                ELSE 0 END)
+            sum(CASE WHEN RS.period_type = 'PREV' AND toDate(A.wrk_dt) <= prev_end_date AND toDate(A.wrk_dt) <= RS.season_end_dt
+                     THEN (CASE WHEN A.io_type = 'O' THEN (A.out_qty*toInt32(A.sale_prce)) 
+                                WHEN A.io_type = 'R' THEN (A.out_qty*toInt32(A.sale_prce) * -1)
+                                END)
                      ELSE 0 END) as prev_sup_amt
         FROM agabang.dsoutrtn as A
         JOIN RelevantSeasons RS ON A.year_cd = RS.year_cd AND A.sesn_cd = RS.season_cd
@@ -86,6 +106,7 @@ WITH
             AND substring(A.item,1,1) not in ('6', '8', '9') 
             AND B.onoff_flag in selected_onoff_flag
             AND toDate(A.wrk_dt) >= addYears(start_date, -3)
+            AND A.wrk_gb not in ('R1','R12','O12') -- R1: 시즌 종료로 인한 반품 제거 / R12, O12: 정산이동으로 인한 출고반품 제거
         GROUP BY shop_cd, shop_nm, category_name
     ),
 

@@ -449,6 +449,7 @@
       showBorder={true}
       showColumnBorders={true}
       showHeader={true}
+      style={{}}
     >
       <Column
         id="b0152"

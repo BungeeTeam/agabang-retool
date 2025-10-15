@@ -41,7 +41,7 @@
       disableMarkdown={true}
       margin="0px 8px"
       value="* 기간: {{dateRange.value.start }} ~ {{ dateRange.value.end}} | 단위: 천원
-금년 누적: {{ salesCumYearSeason.data.filter(i=>i.period_type ==='CURR').map(i => i.year_season_cd) }} | 전년 누적: {{ salesCumYearSeason.data.filter(i=>i.period_type ==='PREV').map(i => i.year_season_cd) }}"
+* 금년 누적: {{ salesCumYearSeason.data.filter(i=>i.period_type ==='CURR').map(i => i.year_season_cd) }} | 전년 누적: {{ salesCumYearSeason.data.filter(i=>i.period_type ==='PREV').map(i => i.year_season_cd) }}"
       verticalAlign="center"
     />
   </Header>
@@ -58,13 +58,14 @@
       hidden="{{ select1.value != 'period' }}"
       limitOffsetRowCount="350"
       margin="0"
-      rowBackgroundColor=""
+      rowBackgroundColor="{{ 
+  currentSourceRow.shop_nm === '총계' ? '01488f60' :
+  'ffffff' }}"
       rowHeight="medium"
       rowSelection="none"
       showBorder={true}
       showColumnBorders={true}
       showHeader={true}
-      showSummaryRow={true}
       templatePageSize="10"
     >
       <Column
@@ -77,26 +78,30 @@
         label="매장명"
         placeholder="Enter value"
         position="center"
-        size={189.3125}
-        summaryAggregationMode="countDistinct"
+        size={265.3125}
       />
       <Column
         id="c5d5d"
         alignment="right"
         backgroundColor="{{  'FDE68A60'}}"
+        cellTooltip="{{ (item*1000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
-        formatOptions={{ showSeparators: true, notation: "standard" }}
+        formatOptions={{
+          showSeparators: true,
+          notation: "standard",
+          decimalPlaces: "0",
+        }}
         groupAggregationMode="sum"
         hidden="{{ !checkboxTreeNew1.value.includes( tableHeader.value[2]) }}"
         key="cur_rev"
-        label="{{ tableHeader.value[2] }}"
+        label="{{ tableHeader.value[2] }} (기간)"
         placeholder="Enter value"
         position="center"
         referenceId="cur_rev"
-        size={120.828125}
-        summaryAggregationMode="sum"
-        valueOverride="{{ (item/1000).toFixed(0) }}"
+        size={87.828125}
+        valueOverride="{{ item/1000 }}"
       />
       <Column
         id="3ff11"
@@ -106,16 +111,17 @@
         formatOptions={{ showSeparators: true, notation: "standard" }}
         groupAggregationMode="sum"
         key="cur_qty"
-        label="{{ tableHeader.value[20] }}"
+        label="{{ tableHeader.value[20] }} (기간)"
         placeholder="Enter value"
         position="center"
         referenceId="cur_qty"
-        size={114.21875}
-        summaryAggregationMode="sum"
+        size={103.21875}
       />
       <Column
         id="0df59"
         alignment="right"
+        cellTooltip="{{ (item*1000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -129,8 +135,8 @@
         placeholder="Enter value"
         position="center"
         referenceId="tableHeaderValue28"
-        size={120}
-        summaryAggregationMode="sum"
+        size={93}
+        summaryAggregationMode="none"
         valueOverride="{{ item/1000 }}"
       />
       <Column
@@ -145,40 +151,25 @@
         placeholder="Enter value"
         position="center"
         size={112}
-        summaryAggregationMode="sum"
       />
       <Column
-        id="0dac4"
+        id="05384"
         alignment="right"
         editableOptions={{ showStepper: true }}
-        format="decimal"
+        format="percent"
         formatOptions={{
           showSeparators: true,
           notation: "standard",
           decimalPlaces: "0",
         }}
-        groupAggregationMode="sum"
-        key="cur_sup_amt"
-        label="{{ tableHeader.value[22] }}"
+        groupAggregationMode="average"
+        label="{{ tableHeader.value[19] }}"
         placeholder="Enter value"
         position="center"
-        size={122.21875}
-        summaryAggregationMode="sum"
-        valueOverride="{{ item/1000 }}"
-      />
-      <Column
-        id="e1806"
-        alignment="right"
-        editableOptions={{ showStepper: true }}
-        format="decimal"
-        formatOptions={{ showSeparators: true, notation: "standard" }}
-        groupAggregationMode="sum"
-        key="cur_out_qty"
-        label="{{ tableHeader.value[21] }}"
-        placeholder="Enter value"
-        position="center"
-        size={113.21875}
-        summaryAggregationMode="sum"
+        referenceId="tableHeaderValue19"
+        size={131.734375}
+        summaryAggregationMode="none"
+        valueOverride="{{ currentSourceRow.cur_tot_rev/currentSourceRow.cur_sup_amt }}"
       />
       <Column
         id="92112"
@@ -197,27 +188,41 @@
         position="center"
         referenceId="tableHeaderValue18"
         size={123.34375}
-        summaryAggregationMode="average"
+        valueOverride="{{ currentSourceRow.cur_tot_qty / currentSourceRow.cur_out_qty }}"
       />
       <Column
-        id="05384"
+        id="0dac4"
         alignment="right"
+        cellTooltip="{{ (item*1000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
-        format="percent"
+        format="decimal"
         formatOptions={{
           showSeparators: true,
           notation: "standard",
           decimalPlaces: "0",
         }}
-        groupAggregationMode="average"
-        key="cur_sale_rate_amt"
-        label="{{ tableHeader.value[19] }}"
+        groupAggregationMode="sum"
+        key="cur_sup_amt"
+        label="{{ tableHeader.value[22] }}"
         placeholder="Enter value"
         position="center"
-        referenceId="tableHeaderValue19"
-        size={131.734375}
-        summaryAggregationMode="average"
-        valueOverride="{{ currentSourceRow.cur_tot_rev/currentSourceRow.cur_sup_amt }}"
+        size={122.21875}
+        summaryAggregationMode="none"
+        valueOverride="{{ item/1000 }}"
+      />
+      <Column
+        id="e1806"
+        alignment="right"
+        editableOptions={{ showStepper: true }}
+        format="decimal"
+        formatOptions={{ showSeparators: true, notation: "standard" }}
+        groupAggregationMode="sum"
+        key="cur_out_qty"
+        label="{{ tableHeader.value[21] }}"
+        placeholder="Enter value"
+        position="center"
+        size={113.21875}
       />
       <Column
         id="62cc1"
@@ -236,25 +241,30 @@
         placeholder="Enter value"
         position="center"
         size={67.21875}
-        summaryAggregationMode="none"
         valueOverride="{{ 1-currentSourceRow.cur_rev/item }}"
       />
       <Column
         id="c21f5"
         alignment="right"
+        cellTooltip="{{ (item*1000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
-        formatOptions={{ showSeparators: true, notation: "standard" }}
+        formatOptions={{
+          showSeparators: true,
+          notation: "standard",
+          decimalPlaces: "0",
+        }}
         groupAggregationMode="sum"
         hidden="{{ !checkboxTreeNew1.value.includes(checkboxTreeNew1.values[4]) }}"
         key="prev_rev"
-        label="{{ checkboxTreeNew1.values[4] }}"
+        label="{{ checkboxTreeNew1.values[4] }} (기간)"
         placeholder="Enter value"
         position="center"
         referenceId="{{ checkboxTreeNew1.values[4] }}"
-        size={116.0625}
-        summaryAggregationMode="sum"
-        valueOverride="{{ (item/1000).toFixed(0) }}"
+        size={96.0625}
+        summaryAggregationMode="none"
+        valueOverride="{{ item/1000 }}"
       />
       <Column
         id="188ae"
@@ -264,12 +274,11 @@
         formatOptions={{ showSeparators: true, notation: "standard" }}
         groupAggregationMode="sum"
         key="prev_qty"
-        label="{{ tableHeader.value[23] }}"
+        label="{{ tableHeader.value[23] }} (기간)"
         placeholder="Enter value"
         position="center"
-        referenceId="tableHeaderValue23"
-        size={121}
-        summaryAggregationMode="sum"
+        referenceId="tableHeaderValue23기간"
+        size={111}
       />
       <Column
         id="653aa"
@@ -287,8 +296,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="column29"
-        size={119}
-        summaryAggregationMode="sum"
+        size={97}
         valueOverride="{{ item/1000 }}"
       />
       <Column
@@ -302,12 +310,13 @@
         label="{{ tableHeader.value[31] }}"
         placeholder="Enter value"
         position="center"
-        size={138}
-        summaryAggregationMode="sum"
+        size={109}
       />
       <Column
         id="d69ca"
         alignment="right"
+        cellTooltip="{{ (item*1000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -322,7 +331,7 @@
         position="center"
         referenceId="tableHeaderValue24"
         size={129}
-        summaryAggregationMode="sum"
+        summaryAggregationMode="none"
         valueOverride="{{ item/1000 }}"
       />
       <Column
@@ -338,7 +347,6 @@
         position="center"
         referenceId="tableHeaderValue25"
         size={129}
-        summaryAggregationMode="sum"
       />
       <Column
         id="18b39"
@@ -357,7 +365,6 @@
         position="center"
         referenceId="tableHeaderValue27"
         size={136}
-        summaryAggregationMode="average"
         valueOverride="{{ currentSourceRow.prev_tot_rev/currentSourceRow.prev_sup_amt }}"
       />
       <Column
@@ -371,12 +378,13 @@
           decimalPlaces: "0",
         }}
         groupAggregationMode="average"
-        key="prev_sale_rate_qty"
         label="{{ tableHeader.value[26] }}"
         placeholder="Enter value"
         position="center"
+        referenceId="prev_sale_rate_qty"
         size={121}
-        summaryAggregationMode="average"
+        summaryAggregationMode="none"
+        valueOverride="{{ currentSourceRow.prev_tot_qty/currentSourceRow.prev_out_qty || 0 }}"
       />
       <Column
         id="f9e44"
@@ -396,7 +404,6 @@
         position="center"
         referenceId="작년 할인율"
         size={101.4375}
-        summaryAggregationMode="none"
         valueOverride="{{ 1-(currentSourceRow.prev_rev/item) }}"
       />
       <Column
@@ -412,7 +419,6 @@
         position="center"
         referenceId="매출 증감"
         size={115.515625}
-        summaryAggregationMode="sum"
         valueOverride="{{ ((currentSourceRow.cur_rev-currentSourceRow.prev_rev)/1000).toFixed(0) }}"
       />
       <Column
@@ -426,8 +432,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="out_qty_diff"
-        size={90}
-        summaryAggregationMode="sum"
+        size={121}
         valueOverride="{{ currentSourceRow.cur_out_qty-currentSourceRow.prev_out_qty }}"
       />
       <Column
@@ -447,7 +452,6 @@
         position="center"
         referenceId="{{ tableHeader.value[7] }}"
         size={47.140625}
-        summaryAggregationMode="average"
         valueOverride="{{ currentSourceRow.cur_rev/currentSourceRow.target_sales }}"
       />
       <Column
@@ -466,7 +470,6 @@
         position="center"
         referenceId="out_amt_diff"
         size={100}
-        summaryAggregationMode="sum"
         valueOverride="{{ (currentSourceRow.cur_sup_amt - currentSourceRow.prev_sup_amt)/1000 }}"
       />
       <Column
@@ -486,10 +489,7 @@
         position="center"
         referenceId="{{tableHeader.value[8]}}"
         size={89.84375}
-        summaryAggregationMode="none"
-        valueOverride="{{ ratio = currentSourceRow.prev_rev === 0 
-  ? 0 
-  :(currentSourceRow.cur_rev / currentSourceRow.prev_rev)-1 }}"
+        valueOverride="{{ (currentSourceRow.cur_rev / currentSourceRow.prev_rev)-1 || 0 }}"
       />
       <Column
         id="afb07"
@@ -505,7 +505,6 @@
         position="center"
         referenceId="{{tableHeader.value[10]}}"
         size={79.828125}
-        summaryAggregationMode="sum"
         valueOverride="{{ (item/1000000).toFixed(0) }}"
       />
       <Column
@@ -525,7 +524,6 @@
         position="center"
         referenceId="{{tableHeader.value[11]}}"
         size={90.21875}
-        summaryAggregationMode="average"
         valueOverride="{{ currentSourceRow.cur_cost/currentSourceRow.cur_tag }}"
       />
       <Column
@@ -542,7 +540,6 @@
         position="center"
         referenceId="{{tableHeader.value[12]}}"
         size={80.0625}
-        summaryAggregationMode="sum"
         valueOverride="{{ (item/1000000).toFixed(0) }}"
       />
       <Column
@@ -563,7 +560,6 @@
         position="center"
         referenceId="{{tableHeader.value[13]}}"
         size={90.4375}
-        summaryAggregationMode="average"
         valueOverride="{{ currentSourceRow.prev_cost/currentSourceRow.prev_tag }}"
       />
       <Column
@@ -579,7 +575,6 @@
         position="center"
         referenceId="{{tableHeader.value[14]}}"
         size={57.515625}
-        summaryAggregationMode="sum"
         valueOverride="{{ ((currentSourceRow.cur_cost-currentSourceRow.prev_cost)/1000000).toFixed(0) }}"
       />
       <Column
@@ -599,7 +594,6 @@
         position="center"
         referenceId="{{tableHeader.value[15]}}"
         size={67.90625}
-        summaryAggregationMode="average"
         valueOverride="{{ (currentSourceRow.cur_cost/currentSourceRow.cur_tag)-(currentSourceRow.prev_cost/currentSourceRow.prev_tag) }}"
       />
       <ToolbarButton
@@ -639,15 +633,6 @@
           waitType="debounce"
         />
       </ToolbarButton>
-      <Event
-        event="selectRow"
-        method="setValue"
-        params={{ ordered: [{ value: "{{ current_user }}" }] }}
-        pluginId="unitList"
-        type="state"
-        waitMs="0"
-        waitType="debounce"
-      />
     </Table>
   </Body>
 </ModalFrame>

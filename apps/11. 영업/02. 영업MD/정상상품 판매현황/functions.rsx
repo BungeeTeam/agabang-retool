@@ -128,11 +128,15 @@ return formatDataAsObject(arrData)"
   <Function id="summary" funcBody={include("./lib/summary.js", "string")} />
   <SqlQuery
     id="shopSalesSummary"
+    enableTransformer={true}
     isMultiplayerEdited={false}
     query={include("./lib/shopSalesSummary.sql", "string")}
     resourceDisplayName="clickhouse-dw"
     resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
     runWhenModelUpdates={false}
+    transformer={
+      'const arrData = formatDataAsArray(data)\n\n  const sumObj = {};\n\nObject.keys(arrData[0]).forEach(key => {\n  const numericValues = arrData\n    .map(d => Number(d[key]))\n    .filter(v => !isNaN(v));\n\n  if (numericValues.length > 0) {\n    sumObj[key] = _.sum(numericValues);\n  }\n});\n\nsumObj.shop_nm = "총계";\nsumObj.shop_cd = "";\n\narrData.unshift(sumObj);\n\nreturn arrData'
+    }
     warningCodes={[]}
   />
   <State id="varShopSalesSummary" />
@@ -147,7 +151,9 @@ return formatDataAsObject(arrData)"
     resourceDisplayName="clickhouse-dw"
     resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
     runWhenModelUpdates={false}
-    transformer="return formatDataAsArray(data)"
+    transformer={
+      'const arrData = formatDataAsArray(data)\n\n  const sumObj = {};\n\nObject.keys(arrData[0]).forEach(key => {\n  const numericValues = arrData\n    .map(d => Number(d[key]))\n    .filter(v => !isNaN(v));\n\n  if (numericValues.length > 0) {\n    sumObj[key] = _.sum(numericValues);\n  }\n});\n\nsumObj.shop_nm = "총계";\nsumObj.shop_cd = "";\n\narrData.unshift(sumObj);\n\nreturn arrData'
+    }
     warningCodes={[]}
   />
   <State id="varShopSalesCatogory" />
