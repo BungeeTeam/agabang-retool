@@ -114,6 +114,8 @@
       <Column
         id="0b6e5"
         alignment="right"
+        cellTooltip="{{ (item*1000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -135,6 +137,8 @@
         id="c3861"
         alignment="right"
         backgroundColor="rgba(253, 230, 138, 0.33)"
+        cellTooltip="{{ (item*1000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -188,6 +192,8 @@
       <Column
         id="4d618"
         alignment="right"
+        cellTooltip="{{ (item*1000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -201,13 +207,15 @@
         label="{{moment(dateRange.value.start).subtract(1,'year').format('YY') }}년 매출 (TAG)"
         placeholder="Enter value"
         position="center"
-        size={66.140625}
+        size={107.140625}
         summaryAggregationMode="none"
         valueOverride="{{ item*1000 }}"
       />
       <Column
         id="af2b2"
         alignment="right"
+        cellTooltip="{{ (item*1000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -246,6 +254,8 @@
       <Column
         id="db2f9"
         alignment="right"
+        cellTooltip="{{ (item*1000).toLocaleString() }}"
+        cellTooltipMode="custom"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{
@@ -259,6 +269,7 @@
         position="center"
         referenceId="매출증감"
         size={71.515625}
+        summaryAggregationMode="none"
         textColor={'{{ item > 0 ? "black" : "red" }}'}
         valueOverride="{{ (currentSourceRow.cur_amt-currentSourceRow.prev_amt)*1000 }}"
       />
