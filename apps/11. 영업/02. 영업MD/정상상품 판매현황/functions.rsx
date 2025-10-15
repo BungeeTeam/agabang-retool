@@ -151,4 +151,16 @@ return formatDataAsObject(arrData)"
     warningCodes={[]}
   />
   <State id="varShopSalesCatogory" />
+  <SqlQuery
+    id="salesCumYearSeason"
+    enableTransformer={true}
+    isMultiplayerEdited={false}
+    notificationDuration={4.5}
+    query={include("./lib/salesCumYearSeason.sql", "string")}
+    resourceDisplayName="clickhouse-dw"
+    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
+    showSuccessToaster={false}
+    transformer="return formatDataAsArray(data)"
+    warningCodes={[]}
+  />
 </GlobalFunctions>

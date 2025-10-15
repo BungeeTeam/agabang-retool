@@ -40,7 +40,8 @@
       id="text51"
       disableMarkdown={true}
       margin="0px 8px"
-      value="* 기간: {{dateRange.value.start }} ~ {{ dateRange.value.end}} | 단위: 천원"
+      value="* 기간: {{dateRange.value.start }} ~ {{ dateRange.value.end}} | 단위: 천원
+금년 누적: {{ salesCumYearSeason.data.filter(i=>i.period_type ==='CURR').map(i => i.year_season_cd) }} | 전년 누적: {{ salesCumYearSeason.data.filter(i=>i.period_type ==='PREV').map(i => i.year_season_cd) }}"
       verticalAlign="center"
     />
   </Header>

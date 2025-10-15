@@ -16,7 +16,7 @@ WITH
             'CURR' as period_type, year_cd, season_cd
         FROM agabang_dw.daily_shop_sales_by_dimension
         WHERE sales_type = '정상'
-          AND sale_dt BETWEEN start_date AND end_date 
+          AND sale_dt BETWEEN DATE_TRUNC('year', end_date) AND end_date 
           AND biz_cd in biz_code
           AND br_cd in brand_code
         UNION ALL
@@ -24,7 +24,7 @@ WITH
             'PREV' as period_type, year_cd, season_cd
         FROM agabang_dw.daily_shop_sales_by_dimension
         WHERE sales_type = '정상'
-          AND sale_dt BETWEEN prev_start_date AND prev_end_date 
+          AND sale_dt BETWEEN DATE_TRUNC('year', prev_start_date) AND prev_end_date 
           AND biz_cd in biz_code
           AND br_cd in brand_code
     ),
@@ -59,8 +59,8 @@ WITH
                                 ELSE 0 END)
                      ELSE 0 END) as cur_out_qty,
             sum(CASE WHEN RS.period_type = 'CURR' AND toDate(A.wrk_dt) <= toDate(end_date)
-                     THEN (CASE WHEN A.io_type = 'O' THEN (A.out_qty*A.sale_prce) 
-                                WHEN A.rt_yn = 'Y' THEN (A.out_qty*A.sale_prce * -1)
+                     THEN (CASE WHEN A.io_type = 'O' THEN (A.out_qty*toInt32(A.sale_prce)) 
+                                WHEN A.rt_yn = 'Y' THEN (A.out_qty*toInt32(A.sale_prce) * -1)
                                 ELSE 0 END)
                      ELSE 0 END) as cur_sup_amt,
             sum(CASE WHEN RS.period_type = 'PREV' AND toDate(A.wrk_dt) <= toDate(addYears(end_date, -1))
@@ -69,8 +69,8 @@ WITH
                                 ELSE 0 END)
                      ELSE 0 END) as prev_out_qty,
             sum(CASE WHEN RS.period_type = 'PREV' AND toDate(A.wrk_dt) <= toDate(addYears(end_date, -1))
-                     THEN (CASE WHEN A.io_type = 'O' THEN (A.out_qty*A.sale_prce) 
-                                WHEN A.rt_yn = 'Y' THEN (A.out_qty*A.sale_prce * -1)
+                     THEN (CASE WHEN A.io_type = 'O' THEN (A.out_qty*toInt32(A.sale_prce)) 
+                                WHEN A.rt_yn = 'Y' THEN (A.out_qty*toInt32(A.sale_prce) * -1)
                                 ELSE 0 END)
                      ELSE 0 END) as prev_sup_amt
         FROM agabang.dsoutrtn as A
@@ -104,18 +104,18 @@ WITH
                 ELSE COALESCE(CM.category_name, '기타')
             END as category_name,
           sum(CASE WHEN sale_dt BETWEEN start_date AND end_date THEN sales_qty ELSE 0 END) as cur_qty,
-          sum(CASE WHEN sale_dt BETWEEN prev_end_date AND end_date THEN sales_qty ELSE 0 END) as cur_tot_qty,
+          sum(CASE WHEN sale_dt BETWEEN DATE_TRUNC('year', end_date) AND end_date THEN sales_qty ELSE 0 END) as cur_tot_qty,
           sum(CASE WHEN sale_dt BETWEEN start_date AND end_date THEN sales_price ELSE 0 END) as cur_rev,
-          sum(CASE WHEN sale_dt BETWEEN prev_end_date AND end_date THEN sales_price ELSE 0 END) as cur_tot_rev,
+          sum(CASE WHEN sale_dt BETWEEN DATE_TRUNC('year', end_date) AND end_date THEN sales_price ELSE 0 END) as cur_tot_rev,
           sum(CASE WHEN sale_dt BETWEEN start_date AND end_date THEN sales_qty*tag_price ELSE 0 END) as cur_tag,
-          sum(CASE WHEN sale_dt BETWEEN prev_end_date AND end_date THEN sales_qty*tag_price ELSE 0 END) as cur_tot_tag,
+          sum(CASE WHEN sale_dt BETWEEN DATE_TRUNC('year', end_date) AND end_date THEN sales_qty*tag_price ELSE 0 END) as cur_tot_tag,
           sum(CASE WHEN sale_dt BETWEEN start_date AND end_date THEN cost_price * sales_qty ELSE 0 END) as cur_cost,
           sum(CASE WHEN sale_dt BETWEEN prev_start_date AND prev_end_date THEN sales_qty ELSE 0 END) as prev_qty,
-          sum(CASE WHEN sale_dt <= prev_end_date THEN sales_qty ELSE 0 END) as prev_tot_qty,
+          sum(CASE WHEN sale_dt BETWEEN DATE_TRUNC('year', prev_end_date) and prev_end_date THEN sales_qty ELSE 0 END) as prev_tot_qty,
           sum(CASE WHEN sale_dt BETWEEN prev_start_date AND prev_end_date THEN sales_price ELSE 0 END) as prev_rev,
-          sum(CASE WHEN sale_dt <= prev_end_date THEN sales_price ELSE 0 END) as prev_tot_rev,
+          sum(CASE WHEN sale_dt BETWEEN DATE_TRUNC('year', prev_end_date) and prev_end_date THEN sales_price ELSE 0 END) as prev_tot_rev,
           sum(CASE WHEN sale_dt BETWEEN prev_start_date AND prev_end_date THEN sales_qty*tag_price ELSE 0 END) as prev_tag,
-          sum(CASE WHEN sale_dt <= prev_end_date THEN sales_qty*tag_price ELSE 0 END) as prev_tot_tag,
+          sum(CASE WHEN sale_dt BETWEEN DATE_TRUNC('year', prev_end_date) and prev_end_date THEN sales_qty*tag_price ELSE 0 END) as prev_tot_tag,
           sum(CASE WHEN sale_dt BETWEEN prev_start_date AND prev_end_date THEN cost_price * sales_qty ELSE 0 END) as prev_cost
         FROM agabang_dw.daily_shop_sales_by_dimension as A
         LEFT JOIN CategoryMapper CM ON (
