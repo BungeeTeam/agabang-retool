@@ -23,7 +23,7 @@
         }
       }
     },
-    "rootScreen": "salesBySalesType",
+    "rootScreen": "SuppliesSales",
     "customDocumentTitleEnabled": true,
     "shortlink": "sales_by_sales_type",
     "version": "3.148.10",

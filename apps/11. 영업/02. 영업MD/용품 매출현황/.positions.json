@@ -505,7 +505,6 @@
   "table1": {
     "container": "container1",
     "subcontainer": "be05c",
-    "row": 0,
     "height": 15.2,
     "width": 12,
     "stackPosition": {
@@ -525,7 +524,6 @@
   "table5": {
     "container": "container1",
     "subcontainer": "53b8e",
-    "row": 0,
     "height": 16,
     "width": 12,
     "stackPosition": {
@@ -583,7 +581,6 @@
     "container": "container1",
     "rowGroup": "header",
     "subcontainer": "be05c",
-    "row": 0,
     "height": 0.8,
     "width": 7,
     "stackPosition": {
