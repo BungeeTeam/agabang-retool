@@ -83,9 +83,14 @@
         id="c5d5d"
         alignment="right"
         backgroundColor="{{  'FDE68A60'}}"
+        cellTooltip="{{ (item*1000000).toLocaleString() }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
-        formatOptions={{ showSeparators: true, notation: "standard" }}
+        formatOptions={{
+          showSeparators: true,
+          notation: "standard",
+          decimalPlaces: "0",
+        }}
         groupAggregationMode="sum"
         hidden="{{ !checkboxTreeNew1.value.includes( tableHeader.value[2]) }}"
         key="cur_rev"
@@ -140,9 +145,14 @@
       <Column
         id="c21f5"
         alignment="right"
+        cellTooltip="{{ (item*1000000).toLocaleString() }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
-        formatOptions={{ showSeparators: true, notation: "standard" }}
+        formatOptions={{
+          showSeparators: true,
+          notation: "standard",
+          decimalPlaces: "0",
+        }}
         groupAggregationMode="sum"
         hidden="{{ !checkboxTreeNew1.value.includes(checkboxTreeNew1.values[4]) }}"
         key="prev_rev"
@@ -197,9 +207,14 @@
       <Column
         id="03295"
         alignment="right"
+        cellTooltip="{{ (item*1000000).toLocaleString() }}"
         editableOptions={{ showStepper: true }}
         format="decimal"
-        formatOptions={{ showSeparators: true, notation: "standard" }}
+        formatOptions={{
+          showSeparators: true,
+          notation: "standard",
+          decimalPlaces: "0",
+        }}
         groupAggregationMode="sum"
         hidden="{{ !checkboxTreeNew1.value.includes(tableHeader.value[6] ) }}"
         label="{{ tableHeader.value[6] }}"
@@ -449,6 +464,7 @@
       showBorder={true}
       showColumnBorders={true}
       showHeader={true}
+      style={{}}
     >
       <Column
         id="b0152"
