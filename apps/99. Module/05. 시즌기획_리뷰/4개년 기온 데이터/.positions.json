@@ -1,0 +1,251 @@
+{
+  "container5": {
+    "type": "stack",
+    "container": "container_title",
+    "subcontainer": "0e22d",
+    "row": 0.6,
+    "height": 0.2,
+    "width": 6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 753,
+        "height": 152
+      }
+    }
+  },
+  "containerTitle4": {
+    "container": "container_title",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "containerTitle5": {
+    "container": "container5",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "container_temp_avg": {
+    "row": 0.6,
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container_temp_avg_title": {
+    "container": "container_temp_avg",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "container_temp_max": {
+    "row": 0.2,
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container_temp_max_title": {
+    "container": "container_temp_max",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "container_temp_min": {
+    "row": 0.4,
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container_temp_min_title": {
+    "container": "container_temp_min",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "container_title": {
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "dateRange_day": {
+    "type": "stack",
+    "container": "container5",
+    "subcontainer": "0e22d",
+    "row": 2.4,
+    "col": 4,
+    "height": 0.2,
+    "width": 2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "auto",
+        "width": 170,
+        "height": 40
+      }
+    }
+  },
+  "plotly_temp_avg": {
+    "container": "container_temp_avg",
+    "subcontainer": "50155",
+    "height": 7.6,
+    "width": 7,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "plotly_temp_max": {
+    "container": "container_temp_max",
+    "subcontainer": "50155",
+    "height": 7.6,
+    "width": 7,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "plotly_temp_min": {
+    "container": "container_temp_min",
+    "subcontainer": "50155",
+    "height": 7.6,
+    "width": 7,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "select_period": {
+    "type": "stack",
+    "container": "container5",
+    "subcontainer": "0e22d",
+    "row": 3.4,
+    "height": 0.2,
+    "width": 4,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 150,
+        "height": 40
+      }
+    }
+  },
+  "select_region": {
+    "type": "stack",
+    "container": "container5",
+    "subcontainer": "0e22d",
+    "row": 0.8,
+    "col": 9,
+    "height": 0.2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "fixed",
+        "width": 160,
+        "height": 40
+      }
+    }
+  },
+  "table_temp_avg": {
+    "container": "container_temp_avg",
+    "subcontainer": "50155",
+    "col": 7,
+    "height": 7.4,
+    "width": 5,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "table_temp_max": {
+    "container": "container_temp_max",
+    "subcontainer": "50155",
+    "col": 7,
+    "height": 7.4,
+    "width": 5,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "table_temp_min": {
+    "container": "container_temp_min",
+    "subcontainer": "50155",
+    "col": 7,
+    "height": 7.4,
+    "width": 5,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "title": {
+    "type": "stack",
+    "container": "container_title",
+    "subcontainer": "0e22d",
+    "col": 2,
+    "height": 0.6,
+    "width": 6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "auto",
+        "width": -20,
+        "height": 24
+      }
+    }
+  }
+}

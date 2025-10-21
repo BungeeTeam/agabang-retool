@@ -1,0 +1,12 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "9b6de822-fe56-11ef-81f7-8fc0aa0f8edf",
+  "appTemplate": {
+    "appThemeId": -1,
+    "customDocumentTitleEnabled": true,
+    "shortlink": "weather-ettoi",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
