@@ -1,0 +1,11 @@
+._retool-table_main img:before {
+  content: 'No Image';
+  color: #DADADA;
+  align-content: center;
+  text-align: center;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border-radius: 4px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/70/Solid_white.svg');
+}
