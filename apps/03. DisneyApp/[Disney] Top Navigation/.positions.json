@@ -1,7 +1,6 @@
 {
   "AccountDropdown": {
     "container": "moduleContainer",
-    "row": 0,
     "col": 11,
     "height": 1,
     "width": 1

@@ -60,56 +60,6 @@
       backgroundColor="white"
       isGlobalWidgetContainer={true}
     >
-      <DropdownButton
-        id="AccountDropdown"
-        _colorByIndex={["", ""]}
-        _fallbackTextByIndex={["", ""]}
-        _imageByIndex={["", ""]}
-        _values={["", ""]}
-        horizontalAlign="right"
-        icon="bold/interface-user-circle"
-        itemMode="static"
-        margin="8px 2px 8px 8px"
-        overlayMaxHeight={375}
-        style={{
-          ordered: [
-            { fontSize: "12px" },
-            { fontWeight: "500" },
-            { fontFamily: "Pretendard Variable" },
-            { icon: "rgba(41, 41, 41, 1)" },
-          ],
-        }}
-        styleVariant="outline"
-        text="{{current_user.lastName}}{{current_user.firstName}}"
-      >
-        <Option
-          id="16e70"
-          caption="{{ current_user.email }}"
-          disabled="true"
-          icon="bold/interface-user-circle"
-          label="{{current_user.lastName}}{{current_user.firstName}}"
-        />
-        <Option
-          id="516a6"
-          icon="bold/interface-logout-circle-alternate"
-          label="로그아웃"
-        >
-          <Event
-            event="click"
-            method="openUrl"
-            params={{
-              ordered: [
-                { url: "/logout" },
-                { options: { ordered: [{ newTab: false }] } },
-              ],
-            }}
-            pluginId=""
-            type="util"
-            waitMs="0"
-            waitType="debounce"
-          />
-        </Option>
-      </DropdownButton>
       <Navigation
         id="navigation1"
         dbBlobId="f2b27294-9b72-4306-92ce-22d465e90d85"
@@ -321,7 +271,7 @@
         <Option
           id="125f4"
           appTarget="4e47466e-4beb-11f0-a3ec-4748bb9ccf5f"
-          disabled={false}
+          disabled="true"
           hidden={false}
           icon="bold/travel-map-location-compass-2-alternate"
           iconPosition="left"
@@ -329,9 +279,7 @@
           label="1. 카테고리 배분 시뮬레이션"
           parentKey="b1676491-3002-4dc3-9dad-a966c2a3b173"
           screenTargetId="disneyPage"
-          tooltip={
-            '카테고리별로 "목표 판매율"을 달성하기 위한 발주 수량을 시뮬레이션합니다'
-          }
+          tooltip="디즈니 베이비는 해당 기능을 제공하지 않습니다."
         />
         <Option
           id="f09c3"
@@ -754,6 +702,56 @@
           screenTargetId="all_reports"
         />
       </Navigation>
+      <DropdownButton
+        id="AccountDropdown"
+        _colorByIndex={["", ""]}
+        _fallbackTextByIndex={["", ""]}
+        _imageByIndex={["", ""]}
+        _values={["", ""]}
+        horizontalAlign="right"
+        icon="bold/interface-user-circle"
+        itemMode="static"
+        margin="8px 2px 8px 8px"
+        overlayMaxHeight={375}
+        style={{
+          ordered: [
+            { fontSize: "12px" },
+            { fontWeight: "500" },
+            { fontFamily: "Pretendard Variable" },
+            { icon: "rgba(41, 41, 41, 1)" },
+          ],
+        }}
+        styleVariant="outline"
+        text="{{current_user.lastName}}{{current_user.firstName}}"
+      >
+        <Option
+          id="16e70"
+          caption="{{ current_user.email }}"
+          disabled="true"
+          icon="bold/interface-user-circle"
+          label="{{current_user.lastName}}{{current_user.firstName}}"
+        />
+        <Option
+          id="516a6"
+          icon="bold/interface-logout-circle-alternate"
+          label="로그아웃"
+        >
+          <Event
+            event="click"
+            method="openUrl"
+            params={{
+              ordered: [
+                { url: "/logout" },
+                { options: { ordered: [{ newTab: false }] } },
+              ],
+            }}
+            pluginId=""
+            type="util"
+            waitMs="0"
+            waitType="debounce"
+          />
+        </Option>
+      </DropdownButton>
     </ModuleContainerWidget>
   </Frame>
 </App>
