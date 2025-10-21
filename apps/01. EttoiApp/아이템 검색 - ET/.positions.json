@@ -1,0 +1,37 @@
+{
+  "ettoiTopNavigation1": {
+    "subcontainer": "header",
+    "height": 2.4,
+    "width": 12
+  },
+  "image1": {
+    "row": 2.2,
+    "col": 4,
+    "height": 5.8,
+    "width": 4
+  },
+  "itemDetail1": {
+    "subcontainer": "modalFrame1",
+    "height": 8.2,
+    "width": 12
+  },
+  "modalCloseButton1": {
+    "rowGroup": "header",
+    "subcontainer": "modalFrame1",
+    "row": 0.2,
+    "col": 9,
+    "height": 1
+  },
+  "search_text": {
+    "row": 8,
+    "col": 4,
+    "height": 0.2,
+    "width": 4
+  },
+  "table1": {
+    "row": 8.2,
+    "col": 4,
+    "height": 7.8,
+    "width": 4
+  }
+}
