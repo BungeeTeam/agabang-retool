@@ -1,0 +1,54 @@
+{
+  "container3": {
+    "height": 0.2,
+    "width": 12
+  },
+  "containerTitle3": {
+    "container": "container3",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "ettoiTopNavigation1": {
+    "subcontainer": "header",
+    "height": 2.4,
+    "width": 12
+  },
+  "image3": {
+    "subcontainer": "modalFrame1",
+    "height": 9.6,
+    "width": 12
+  },
+  "modalCloseButton1": {
+    "rowGroup": "header",
+    "subcontainer": "modalFrame1",
+    "col": 9,
+    "height": 1
+  },
+  "modalTitle1": {
+    "rowGroup": "header",
+    "subcontainer": "modalFrame1",
+    "height": 1,
+    "width": 9
+  },
+  "settingReorderToOriginalMatchRenewal1": {
+    "container": "container3",
+    "subcontainer": "d4dac",
+    "height": 17.6,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "spacer6": {
+    "subcontainer": "modalFrame1",
+    "row": 9.8,
+    "height": 0.2,
+    "width": 9
+  }
+}
