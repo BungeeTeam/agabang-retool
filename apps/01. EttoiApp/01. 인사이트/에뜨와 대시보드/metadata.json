@@ -1,0 +1,12 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "dfb80e9e-feed-11ef-9d1c-5ba28994ef18",
+  "appTemplate": {
+    "appThemeId": -1,
+    "customDocumentTitleEnabled": true,
+    "shortlink": "dashboard-ettoi",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}

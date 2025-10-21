@@ -1,0 +1,131 @@
+{
+  "container1": {
+    "row": 0.2,
+    "height": 0.2,
+    "width": 7,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container3": {
+    "row": 0.8,
+    "col": 7,
+    "height": 0.2,
+    "width": 5,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container4": {
+    "row": 0.4,
+    "height": 0.2,
+    "width": 6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container5": {
+    "row": 1,
+    "col": 6,
+    "height": 0.2,
+    "width": 6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "containerTitle1": {
+    "container": "container1",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "containerTitle2": {
+    "container": "container3",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "containerTitle3": {
+    "container": "container4",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "containerTitle4": {
+    "container": "container5",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "dateRange_day": {
+    "height": 0.2
+  },
+  "ettoiTopNavigation1": {
+    "subcontainer": "header",
+    "height": 2.4,
+    "width": 12
+  },
+  "select_season": {
+    "col": 3,
+    "height": 0.2,
+    "width": 2
+  },
+  "select_shop": {
+    "col": 8,
+    "height": 0.2
+  },
+  "select_style": {
+    "col": 5,
+    "height": 0.2
+  },
+  "stackedBarChart_sales_qty": {
+    "container": "container4",
+    "subcontainer": "39c45",
+    "height": 6,
+    "width": 12
+  },
+  "stackedBarChart_sales_qty2": {
+    "container": "container5",
+    "subcontainer": "39c45",
+    "height": 6,
+    "width": 12
+  },
+  "switch_exclude_stroller": {
+    "row": 0.2,
+    "col": 11,
+    "height": 0.6,
+    "width": 1
+  },
+  "table1": {
+    "container": "container1",
+    "subcontainer": "39c45",
+    "height": 7,
+    "width": 12
+  },
+  "table2": {
+    "container": "container3",
+    "subcontainer": "39c45",
+    "height": 7,
+    "width": 12
+  }
+}
