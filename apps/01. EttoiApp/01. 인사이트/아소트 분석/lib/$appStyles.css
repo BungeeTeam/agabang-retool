@@ -1,0 +1,9 @@
+._retool-table_main div[data-row-index="-1"] {
+  height: 50px !important;
+}
+
+._retool-table_main span[data-testid*="HeaderCellContents"] {
+  text-wrap: wrap;
+  display: block;
+  text-align: right;
+}

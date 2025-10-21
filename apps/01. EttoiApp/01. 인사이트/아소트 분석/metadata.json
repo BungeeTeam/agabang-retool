@@ -1,0 +1,82 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "9c83ee28-fee7-11ef-913b-47576043047c",
+  "appTemplate": {
+    "preloadedAppJavaScript": "function color_grad(num, slider_value=1) {\n\n  console.log(num)\n\n  const _cut = slider_value\n\n  // #DADADA\n  const start_r = 200\n  const start_g = 200\n  const start_b = 200\n\n  const mid_r = 13\n  const mid_g = 13\n  const mid_b = 13\n\n  // #DD5E2C\n  const end_r = 255\n  const end_g = 0\n  const end_b = 0\n\n  let r\n  let g\n  let b\n  let per\n\n  const cut_0 = 0\n  const cut_1 = _cut * 0.3\n  const cut_2 = _cut * 0.5\n  const cut_3 = _cut * 0.9\n\n  if(num >= cut_0 && num < cut_1) {\n    per = (num - cut_0) / (cut_1 - cut_0)\n    r = Math.floor(start_r + (mid_r - start_r) * per)\n    g = Math.floor(start_g + (mid_g - start_g) * per)\n    b = Math.floor(start_b + (mid_b - start_b) * per)\n  } else if(num >= cut_1 && num < cut_2) {\n    r = mid_r\n    g = mid_g\n    b = mid_b\n  } else if(num >= cut_2 && num < cut_3) {\n    per = (num - cut_2) / (cut_3 - cut_2)\n    r = Math.floor(mid_r + (end_r - mid_r) * per)\n    g = Math.floor(mid_g + (end_g - mid_g) * per)\n    b = Math.floor(mid_b + (end_b - mid_b) * per)\n  } else if(num >= cut_3) {\n    r = end_r\n    g = end_g\n    b = end_b\n  } else {\n    r = start_r\n    g = start_g\n    b = start_b\n  }\n  \n  const hex_r = r.toString(16).padStart(2, '0')\n  const hex_g = g.toString(16).padStart(2, '0')\n  const hex_b = b.toString(16).padStart(2, '0')\n\n  const hex = `#${hex_r}${hex_g}${hex_b}`\n\n  return hex\n}\n\nfunction numbers_html(in_rate, size_sale_rate_color, size_sale_rate) {\n\n  const chip_style = `\n    border-radius: 20px;\n    background-color: rgba(0, 0, 0, 0.1);\n    color: #0D0D0D;\n    padding-inline: 5px;\n    padding-block: none;\n    margin-right: 5px;\n    display:inline-block;\n    width: 55px;\n    text-align: center;\n  `\n  const div_style = `\n    display: flex;\n    margin-block: 2.5px;\n  `\n\n  if(in_rate > 0) {\n    return `\n    <div style=\"${div_style}\">\n      <div style=\"${chip_style}\">입고비중</div>\n      <div style=\"color: ${color_grad(in_rate)}\">${(in_rate * 100).toFixed(2)}%</div>\n    </div>\n    <div style=\"${div_style}\">\n      <div style=\"${chip_style}\">판매비중</div>\n      <div style=\"color: ${color_grad(size_sale_rate_color)}\">${(size_sale_rate_color * 100).toFixed(2)}%</div>\n    </div>\n    <div style=\"${div_style}\">\n      <div style=\"${chip_style}\">소진율</div>\n      <div style=\"color: ${color_grad(size_sale_rate)}\">${(size_sale_rate * 100).toFixed(2)}%</div>\n    </div>\n    `\n  } else {\n    return ``\n  }\n}",
+    "pageCodeFolders": {
+      "object": {
+        "query_get_": {
+          "array": []
+        },
+        "query_get_threshold": {
+          "array": []
+        },
+        "query_get_season_code": {
+          "array": []
+        },
+        "var_season_code": {
+          "array": []
+        },
+        "input_target_rate": {
+          "array": []
+        },
+        "input_search_keyword": {
+          "array": []
+        },
+        "query_for_test": {
+          "array": []
+        },
+        "table_main": {
+          "array": []
+        },
+        "query_get_each_item_info": {
+          "array": []
+        },
+        "def_size_dict": {
+          "array": []
+        },
+        "download_excel_data": {
+          "array": []
+        },
+        "def_size_tp_raw": {
+          "array": []
+        },
+        "def_size_tp_for_excel": {
+          "array": []
+        },
+        "var_data_excel_formatted": {
+          "array": []
+        },
+        "query_get_threshold_test": {
+          "array": []
+        },
+        "var_check_parity": {
+          "array": []
+        },
+        "var_check_parity_raw": {
+          "array": []
+        },
+        "var_check_parity_list": {
+          "array": []
+        },
+        "var_check_parity_final": {
+          "array": []
+        },
+        "query_parity_target_size_list": {
+          "array": []
+        }
+      }
+    },
+    "customDocumentTitleEnabled": true,
+    "shortlink": "assort-ettoi",
+    "preloadedAppJSLinks": {
+      "array": [
+        "https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/xlsx-populate/1.21.0/xlsx-populate.min.js"
+      ]
+    },
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
