@@ -1,0 +1,1 @@
+{{var_best_50_query.value}}
