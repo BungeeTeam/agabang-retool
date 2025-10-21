@@ -1,0 +1,13 @@
+._retool-table_main img:before {
+  content: ' ';
+  color: #DADADA;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 12px;
+  background-color: rgba(255, 255, 255, 0); /* 약간 투명한 흰색 배경 */
+}
