@@ -1,0 +1,39 @@
+{
+  "container1": {
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "containerTitle1": {
+    "container": "container1",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "ettoiTopNavigation1": {
+    "subcontainer": "header",
+    "height": 2.4,
+    "width": 12
+  },
+  "module1": {
+    "container": "container1",
+    "subcontainer": "7cdae",
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  }
+}
