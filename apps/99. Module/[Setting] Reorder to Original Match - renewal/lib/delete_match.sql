@@ -1,0 +1,1 @@
+delete from item_reorder_match where reorder_sty_cd = '{{delete_item.value.reorder_sty_cd}}'
