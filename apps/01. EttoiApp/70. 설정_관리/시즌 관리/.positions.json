@@ -1,0 +1,93 @@
+{
+  "button2": {
+    "container": "tabbedContainer1",
+    "subcontainer": "3dd61",
+    "row": 8,
+    "col": 10,
+    "height": 1,
+    "width": 2
+  },
+  "button7": {
+    "container": "tabbedContainer1",
+    "subcontainer": "de7eb",
+    "row": 1.2,
+    "col": 10,
+    "height": 1,
+    "width": 2
+  },
+  "container3": {
+    "height": 0.2,
+    "width": 12
+  },
+  "containerTitle3": {
+    "container": "container3",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "containerTitle5": {
+    "container": "tabbedContainer1",
+    "subcontainer": "de7eb",
+    "height": 0.6,
+    "width": 7
+  },
+  "ettoiTopNavigation1": {
+    "subcontainer": "header",
+    "height": 2.4,
+    "width": 12
+  },
+  "fileDropzone1": {
+    "container": "tabbedContainer1",
+    "subcontainer": "3dd61",
+    "height": 8,
+    "width": 7
+  },
+  "image3": {
+    "subcontainer": "modalFrame1",
+    "height": 9.6,
+    "width": 12
+  },
+  "modalCloseButton1": {
+    "rowGroup": "header",
+    "subcontainer": "modalFrame1",
+    "col": 9,
+    "height": 1
+  },
+  "modalTitle1": {
+    "rowGroup": "header",
+    "subcontainer": "modalFrame1",
+    "height": 1,
+    "width": 9
+  },
+  "season_month_table": {
+    "row": 0.2,
+    "height": 9,
+    "width": 12
+  },
+  "spacer6": {
+    "subcontainer": "modalFrame1",
+    "row": 9.8,
+    "height": 0.2,
+    "width": 9
+  },
+  "tabbedContainer1": {
+    "container": "container3",
+    "subcontainer": "d4dac",
+    "height": 3,
+    "width": 12
+  },
+  "table1": {
+    "container": "tabbedContainer1",
+    "subcontainer": "3dd61",
+    "col": 7,
+    "height": 8,
+    "width": 5
+  },
+  "text3": {
+    "container": "tabbedContainer1",
+    "subcontainer": "de7eb",
+    "row": 0.6,
+    "height": 0.6,
+    "width": 7
+  }
+}
