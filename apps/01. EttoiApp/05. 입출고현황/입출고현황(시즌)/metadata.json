@@ -1,0 +1,11 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "3ec8cb7e-edca-11ef-b058-c7e5c3846b8e",
+  "appTemplate": {
+    "customDocumentTitleEnabled": true,
+    "shortlink": "ettoi_dsin_season",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
