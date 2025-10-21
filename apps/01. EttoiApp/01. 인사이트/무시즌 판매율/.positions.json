@@ -1,0 +1,348 @@
+{
+  "container1": {
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container4": {
+    "row": 0.2,
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container5": {
+    "row": 0.4,
+    "height": 0.2,
+    "width": 12
+  },
+  "container6": {
+    "row": 0.6,
+    "height": 0.2,
+    "width": 12
+  },
+  "container7": {
+    "row": 0.8,
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "containerTitle2": {
+    "container": "container4",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 10
+  },
+  "containerTitle3": {
+    "container": "container5",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 10
+  },
+  "containerTitle4": {
+    "container": "container6",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 11
+  },
+  "containerTitle5": {
+    "container": "container7",
+    "rowGroup": "header",
+    "row": 0,
+    "height": 0.6,
+    "width": 9
+  },
+  "date_select": {
+    "container": "container1",
+    "subcontainer": "7b13c",
+    "row": 0.2,
+    "col": 9,
+    "height": 0.2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "drawerCloseButton1": {
+    "rowGroup": "header",
+    "subcontainer": "drawerFrame1",
+    "col": 9,
+    "height": 1
+  },
+  "drawerTitle1": {
+    "rowGroup": "header",
+    "subcontainer": "drawerFrame1",
+    "height": 0.6,
+    "width": 9
+  },
+  "ettoiTopNavigation1": {
+    "subcontainer": "header",
+    "height": 2.4,
+    "width": 12
+  },
+  "inventory_columns_toggle": {
+    "container": "container1",
+    "subcontainer": "7b13c",
+    "row": 0.4,
+    "col": 9,
+    "height": 0.6,
+    "width": 2
+  },
+  "itemDetail1": {
+    "rowGroup": "header",
+    "subcontainer": "drawerFrame1",
+    "row": 1.4,
+    "col": 1,
+    "height": 8.2,
+    "width": 11
+  },
+  "itemDetail2": {
+    "subcontainer": "drawerFrame1",
+    "height": 8.2,
+    "width": 12
+  },
+  "modalCloseButton1": {
+    "rowGroup": "header",
+    "subcontainer": "modal_item_list",
+    "col": 9,
+    "height": 1
+  },
+  "modalTitle2": {
+    "rowGroup": "header",
+    "subcontainer": "modal_item_list",
+    "row": 0,
+    "height": 0.6,
+    "width": 8
+  },
+  "spacer1": {
+    "container": "container1",
+    "subcontainer": "7b13c",
+    "row": 1.4,
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "spacer2": {
+    "container": "container1",
+    "subcontainer": "7b13c",
+    "height": 0.2,
+    "width": 11,
+    "stackPosition": {
+      "object": {
+        "ordinal": 5,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "table1": {
+    "container": "container4",
+    "subcontainer": "3df7a",
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "table2": {
+    "container": "container5",
+    "subcontainer": "3df7a",
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "table3": {
+    "container": "container6",
+    "subcontainer": "3df7a",
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "table4": {
+    "container": "container7",
+    "subcontainer": "3df7a",
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "table5": {
+    "container": "table1",
+    "height": 1,
+    "width": 12
+  },
+  "table6": {
+    "container": "table2",
+    "height": 1,
+    "width": 12
+  },
+  "table7": {
+    "container": "table3",
+    "height": 1,
+    "width": 12
+  },
+  "table8": {
+    "container": "table4",
+    "height": 1,
+    "width": 12
+  },
+  "table_item_list": {
+    "subcontainer": "modal_item_list",
+    "height": 1,
+    "width": 12
+  },
+  "text13": {
+    "container": "container1",
+    "subcontainer": "7b13c",
+    "row": 0.2,
+    "height": 1,
+    "width": 6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 3,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text14": {
+    "container": "container1",
+    "subcontainer": "7b13c",
+    "row": 0.8,
+    "height": 1,
+    "width": 6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 4,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text17": {
+    "rowGroup": "header",
+    "subcontainer": "modal_item_list",
+    "row": 0.6,
+    "height": 0.6,
+    "width": 7
+  },
+  "text18": {
+    "container": "container7",
+    "rowGroup": "header",
+    "row": 0.6,
+    "col": 11,
+    "height": 0.6,
+    "width": 1
+  },
+  "text19": {
+    "container": "container6",
+    "rowGroup": "header",
+    "row": 0.6,
+    "col": 11,
+    "height": 0.6,
+    "width": 1
+  },
+  "text20": {
+    "container": "container5",
+    "rowGroup": "header",
+    "row": 0.6,
+    "col": 11,
+    "height": 0.6,
+    "width": 1
+  },
+  "text21": {
+    "container": "container4",
+    "rowGroup": "header",
+    "row": 0.6,
+    "col": 11,
+    "height": 0.6,
+    "width": 1
+  },
+  "text22": {
+    "container": "container4",
+    "rowGroup": "header",
+    "row": 0.6,
+    "height": 0.6,
+    "width": 7
+  },
+  "text23": {
+    "container": "container5",
+    "rowGroup": "header",
+    "row": 0.6,
+    "height": 0.6,
+    "width": 8
+  },
+  "text24": {
+    "container": "container6",
+    "rowGroup": "header",
+    "row": 0.6,
+    "height": 0.6,
+    "width": 8
+  },
+  "text25": {
+    "container": "container7",
+    "rowGroup": "header",
+    "row": 0.6,
+    "height": 0.6,
+    "width": 8
+  }
+}
