@@ -1,0 +1,1 @@
+SELECT * FROM color_hex_list
