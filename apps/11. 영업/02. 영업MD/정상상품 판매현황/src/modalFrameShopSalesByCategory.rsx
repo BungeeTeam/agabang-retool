@@ -38,10 +38,13 @@
     </Button>
     <Text
       id="text51"
-      disableMarkdown={true}
       margin="0px 8px"
-      value="* 기간: {{dateRange.value.start }} ~ {{ dateRange.value.end}} | 단위: 천원
-* 금년 누적: {{ salesCumYearSeason.data.filter(i=>i.period_type ==='CURR').map(i => i.year_season_cd) }} | 전년 누적: {{ salesCumYearSeason.data.filter(i=>i.period_type ==='PREV').map(i => i.year_season_cd) }}"
+      value="조회 기간: {{dateRange.value.start }} ~ {{ dateRange.value.end}} | 단위: 천원
+
+하기 표에서 누적 매출 및 판매율은 **‘조회기간에 매출이 발생한 상품’의 출시 이후부터 조회기간 종료일까지의 누적 판매 실적**을 뜻합니다.
+따라서 조회기간이 달라질 경우, 누적 데이터 집계에 포함되는 연도코드가 달라질 수 있습니다.
+* 조회기간 누적매출 집계 대상 연도코드: {{ salesCumYearSeason.data.filter(i=>i.period_type ==='CURR').map(i => i.year_season_cd) }}
+* 전년동기 누적매출 집계 대상 연도코드: {{ salesCumYearSeason.data.filter(i=>i.period_type ==='PREV').map(i => i.year_season_cd) }}"
       verticalAlign="center"
     />
   </Header>
@@ -58,6 +61,7 @@
       hidden="{{ select1.value != 'period' }}"
       limitOffsetRowCount="350"
       margin="0"
+      primaryKeyColumnId="b8698"
       rowBackgroundColor="{{ 
   currentSourceRow.shop_nm === '총계' ? '01488f60' :
   'ffffff' }}"
@@ -72,6 +76,7 @@
         id="b8698"
         alignment="left"
         caption="{{ currentSourceRow.shop_cd }}"
+        editable={false}
         format="string"
         groupAggregationMode="none"
         key="shop_nm"
@@ -94,13 +99,13 @@
           decimalPlaces: "0",
         }}
         groupAggregationMode="sum"
-        hidden="{{ !checkboxTreeNew1.value.includes( tableHeader.value[2]) }}"
         key="cur_rev"
-        label="{{ tableHeader.value[2] }} (기간)"
+        label="조회기간 실매출"
         placeholder="Enter value"
         position="center"
         referenceId="cur_rev"
-        size={87.828125}
+        size={98.828125}
+        summaryAggregationMode="none"
         valueOverride="{{ item/1000 }}"
       />
       <Column
@@ -111,11 +116,12 @@
         formatOptions={{ showSeparators: true, notation: "standard" }}
         groupAggregationMode="sum"
         key="cur_qty"
-        label="{{ tableHeader.value[20] }} (기간)"
+        label="조회기간 판매수량"
         placeholder="Enter value"
         position="center"
         referenceId="cur_qty"
-        size={103.21875}
+        size={110.21875}
+        summaryAggregationMode="none"
       />
       <Column
         id="0df59"
@@ -131,11 +137,11 @@
         }}
         groupAggregationMode="sum"
         key="cur_tot_rev"
-        label="{{ tableHeader.value[28] }}"
+        label="조회기간 판매상품 누적 실매출"
         placeholder="Enter value"
         position="center"
-        referenceId="tableHeaderValue28"
-        size={93}
+        referenceId="조회기간판매상품누적실매출"
+        size={106}
         summaryAggregationMode="none"
         valueOverride="{{ item/1000 }}"
       />
@@ -147,10 +153,11 @@
         formatOptions={{ showSeparators: true, notation: "standard" }}
         groupAggregationMode="sum"
         key="cur_tot_qty"
-        label="{{ tableHeader.value[29] }}"
+        label="조회기간 판매상품 누적 판매수량"
         placeholder="Enter value"
         position="center"
-        size={112}
+        size={106}
+        summaryAggregationMode="none"
       />
       <Column
         id="05384"
@@ -163,11 +170,11 @@
           decimalPlaces: "0",
         }}
         groupAggregationMode="average"
-        label="{{ tableHeader.value[19] }}"
+        label="조회기간 판매상품 누적 판매율(실판가)"
         placeholder="Enter value"
         position="center"
-        referenceId="tableHeaderValue19"
-        size={131.734375}
+        referenceId="조회기간판매상품누적판매율실판가"
+        size={114.734375}
         summaryAggregationMode="none"
         valueOverride="{{ currentSourceRow.cur_tot_rev/currentSourceRow.cur_sup_amt }}"
       />
@@ -183,11 +190,12 @@
         }}
         groupAggregationMode="average"
         key="cur_sale_rate_qty"
-        label="{{tableHeader.value[18]}}"
+        label="조회기간 판매상품 누적 판매율 (수량)"
         placeholder="Enter value"
         position="center"
-        referenceId="tableHeaderValue18"
-        size={123.34375}
+        referenceId="조회기간판매상품누적판매율수량"
+        size={113.34375}
+        summaryAggregationMode="none"
         valueOverride="{{ currentSourceRow.cur_tot_qty / currentSourceRow.cur_out_qty }}"
       />
       <Column
@@ -204,10 +212,10 @@
         }}
         groupAggregationMode="sum"
         key="cur_sup_amt"
-        label="{{ tableHeader.value[22] }}"
+        label="조회기간 판매상품 입고금액"
         placeholder="Enter value"
         position="center"
-        size={122.21875}
+        size={110.21875}
         summaryAggregationMode="none"
         valueOverride="{{ item/1000 }}"
       />
@@ -219,10 +227,10 @@
         formatOptions={{ showSeparators: true, notation: "standard" }}
         groupAggregationMode="sum"
         key="cur_out_qty"
-        label="{{ tableHeader.value[21] }}"
+        label="조회기간 판매상품 입고수량"
         placeholder="Enter value"
         position="center"
-        size={113.21875}
+        size={106.21875}
       />
       <Column
         id="62cc1"
@@ -237,10 +245,10 @@
         groupAggregationMode="average"
         hidden="{{ !checkboxTreeNew1.value.includes(tableHeader.value[3]) }}"
         key="cur_tag"
-        label="{{ tableHeader.value[3] }}"
+        label="조회기간 판매상품 할인율"
         placeholder="Enter value"
         position="center"
-        size={67.21875}
+        size={107.21875}
         valueOverride="{{ 1-currentSourceRow.cur_rev/item }}"
       />
       <Column
@@ -256,13 +264,12 @@
           decimalPlaces: "0",
         }}
         groupAggregationMode="sum"
-        hidden="{{ !checkboxTreeNew1.value.includes(checkboxTreeNew1.values[4]) }}"
         key="prev_rev"
-        label="{{ checkboxTreeNew1.values[4] }} (기간)"
+        label="전년동기 실매출"
         placeholder="Enter value"
         position="center"
-        referenceId="{{ checkboxTreeNew1.values[4] }}"
-        size={96.0625}
+        referenceId="전년동기 실매출"
+        size={105.0625}
         summaryAggregationMode="none"
         valueOverride="{{ item/1000 }}"
       />
@@ -274,11 +281,12 @@
         formatOptions={{ showSeparators: true, notation: "standard" }}
         groupAggregationMode="sum"
         key="prev_qty"
-        label="{{ tableHeader.value[23] }} (기간)"
+        label="전년동기 판매수량"
         placeholder="Enter value"
         position="center"
-        referenceId="tableHeaderValue23기간"
-        size={111}
+        referenceId="전년동기판매수량"
+        size={118}
+        summaryAggregationMode="none"
       />
       <Column
         id="653aa"
@@ -292,11 +300,11 @@
         }}
         groupAggregationMode="sum"
         key="prev_tot_rev"
-        label="{{ tableHeader.value[30] }}"
+        label="전년동기 판매상품 누적 실매출"
         placeholder="Enter value"
         position="center"
         referenceId="column29"
-        size={97}
+        size={112}
         valueOverride="{{ item/1000 }}"
       />
       <Column
@@ -307,10 +315,50 @@
         formatOptions={{ showSeparators: true, notation: "standard" }}
         groupAggregationMode="sum"
         key="prev_tot_qty"
-        label="{{ tableHeader.value[31] }}"
+        label="전년동기 판매상품 누적 판매수량"
         placeholder="Enter value"
         position="center"
-        size={109}
+        size={113}
+        summaryAggregationMode="none"
+      />
+      <Column
+        id="18b39"
+        alignment="right"
+        editableOptions={{ showStepper: true }}
+        format="percent"
+        formatOptions={{
+          showSeparators: true,
+          notation: "standard",
+          decimalPlaces: "0",
+        }}
+        groupAggregationMode="average"
+        key="prev_sale_rate_amt"
+        label="전년동기 판매상품 누적 판매율 (실판가)"
+        placeholder="Enter value"
+        position="center"
+        referenceId="전년동기판매상품누적판매율실판가"
+        size={114}
+        summaryAggregationMode="none"
+        valueOverride="{{ currentSourceRow.prev_tot_rev/currentSourceRow.prev_sup_amt }}"
+      />
+      <Column
+        id="6fcfa"
+        alignment="right"
+        editableOptions={{ showStepper: true }}
+        format="percent"
+        formatOptions={{
+          showSeparators: true,
+          notation: "standard",
+          decimalPlaces: "0",
+        }}
+        groupAggregationMode="average"
+        label="전년동기 판매상품 누적 판매율 (수량)"
+        placeholder="Enter value"
+        position="center"
+        referenceId="전년동기판매상품누적판매율수량"
+        size={105}
+        summaryAggregationMode="none"
+        valueOverride="{{ currentSourceRow.prev_tot_qty/currentSourceRow.prev_out_qty || 0 }}"
       />
       <Column
         id="d69ca"
@@ -326,11 +374,11 @@
         }}
         groupAggregationMode="sum"
         key="prev_sup_amt"
-        label="{{tableHeader.value[24]}}"
+        label="전년동기 판매상품 입고금액"
         placeholder="Enter value"
         position="center"
-        referenceId="tableHeaderValue24"
-        size={129}
+        referenceId="전년동기판매상품입고금액"
+        size={110}
         summaryAggregationMode="none"
         valueOverride="{{ item/1000 }}"
       />
@@ -342,49 +390,12 @@
         formatOptions={{ showSeparators: true, notation: "standard" }}
         groupAggregationMode="sum"
         key="prev_out_qty"
-        label="{{ tableHeader.value[25] }}"
+        label="전년동기 판매상품 입고수량"
         placeholder="Enter value"
         position="center"
-        referenceId="tableHeaderValue25"
-        size={129}
-      />
-      <Column
-        id="18b39"
-        alignment="right"
-        editableOptions={{ showStepper: true }}
-        format="percent"
-        formatOptions={{
-          showSeparators: true,
-          notation: "standard",
-          decimalPlaces: "0",
-        }}
-        groupAggregationMode="average"
-        key="prev_sale_rate_amt"
-        label="{{ tableHeader.value[27] }}"
-        placeholder="Enter value"
-        position="center"
-        referenceId="tableHeaderValue27"
-        size={136}
-        valueOverride="{{ currentSourceRow.prev_tot_rev/currentSourceRow.prev_sup_amt }}"
-      />
-      <Column
-        id="6fcfa"
-        alignment="right"
-        editableOptions={{ showStepper: true }}
-        format="percent"
-        formatOptions={{
-          showSeparators: true,
-          notation: "standard",
-          decimalPlaces: "0",
-        }}
-        groupAggregationMode="average"
-        label="{{ tableHeader.value[26] }}"
-        placeholder="Enter value"
-        position="center"
-        referenceId="prev_sale_rate_qty"
-        size={121}
+        referenceId="전년동기판매상품입고수량"
+        size={106}
         summaryAggregationMode="none"
-        valueOverride="{{ currentSourceRow.prev_tot_qty/currentSourceRow.prev_out_qty || 0 }}"
       />
       <Column
         id="f9e44"
@@ -399,11 +410,12 @@
         groupAggregationMode="average"
         hidden="{{ !checkboxTreeNew1.value.includes(tableHeader.value[5]) }}"
         key="prev_tag"
-        label="{{ tableHeader.value[5] }}"
+        label="전년동기 판매상품 할인율"
         placeholder="Enter value"
         position="center"
         referenceId="작년 할인율"
-        size={101.4375}
+        size={104.515625}
+        summaryAggregationMode="none"
         valueOverride="{{ 1-(currentSourceRow.prev_rev/item) }}"
       />
       <Column
@@ -413,12 +425,12 @@
         format="decimal"
         formatOptions={{ showSeparators: true, notation: "standard" }}
         groupAggregationMode="sum"
-        hidden="{{ !checkboxTreeNew1.value.includes(tableHeader.value[6] ) }}"
         label="{{ tableHeader.value[6] }}"
         placeholder="Enter value"
         position="center"
         referenceId="매출 증감"
-        size={115.515625}
+        size={91.515625}
+        summaryAggregationMode="none"
         valueOverride="{{ ((currentSourceRow.cur_rev-currentSourceRow.prev_rev)/1000).toFixed(0) }}"
       />
       <Column
@@ -432,7 +444,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="out_qty_diff"
-        size={121}
+        size={86}
         valueOverride="{{ currentSourceRow.cur_out_qty-currentSourceRow.prev_out_qty }}"
       />
       <Column
@@ -483,12 +495,12 @@
           decimalPlaces: "0",
         }}
         groupAggregationMode="average"
-        hidden="{{ !checkboxTreeNew1.value.includes(tableHeader.value[8]) }}"
         label="{{tableHeader.value[8]}}"
         placeholder="Enter value"
         position="center"
         referenceId="{{tableHeader.value[8]}}"
         size={89.84375}
+        summaryAggregationMode="none"
         valueOverride="{{ (currentSourceRow.cur_rev / currentSourceRow.prev_rev)-1 || 0 }}"
       />
       <ToolbarButton
