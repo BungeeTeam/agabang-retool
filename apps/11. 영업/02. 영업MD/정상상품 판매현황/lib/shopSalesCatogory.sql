@@ -16,17 +16,20 @@ WITH
             'CURR' as period_type, year_cd, season_cd, season_end_dt
         FROM agabang_dw.daily_shop_sales_by_dimension
         WHERE sales_type = '정상'
-          AND sale_dt BETWEEN DATE_TRUNC('year', end_date) AND end_date 
+          AND sale_dt BETWEEN start_date AND end_date
           AND biz_cd in biz_code
           AND br_cd in brand_code
+          AND season_cd = selected_season_cd
         UNION ALL
         SELECT DISTINCT
             'PREV' as period_type, year_cd, season_cd, season_end_dt
         FROM agabang_dw.daily_shop_sales_by_dimension
         WHERE sales_type = '정상'
-          AND sale_dt BETWEEN DATE_TRUNC('year', prev_start_date) AND prev_end_date 
+          AND sale_dt BETWEEN prev_start_date AND prev_end_date
           AND biz_cd in biz_code
           AND br_cd in brand_code
+          AND season_cd = selected_season_cd
+          
     ),
 
     CategoryMapper AS (
@@ -125,19 +128,19 @@ WITH
                 ELSE COALESCE(CM.category_name, '기타')
             END as category_name,
           sum(CASE WHEN sale_dt BETWEEN start_date AND end_date THEN sales_qty ELSE 0 END) as cur_qty,
-          sum(CASE WHEN sale_dt BETWEEN DATE_TRUNC('year', end_date) AND end_date THEN sales_qty ELSE 0 END) as cur_tot_qty,
+          sum(CASE WHEN ((sale_dt <= end_date) AND year_cd in (select year_cd from RelevantSeasons WHERE period_type = 'CURR')) THEN sales_qty ELSE 0 END) as cur_tot_qty,
           sum(CASE WHEN sale_dt BETWEEN start_date AND end_date THEN sales_price ELSE 0 END) as cur_rev,
-          sum(CASE WHEN sale_dt BETWEEN DATE_TRUNC('year', end_date) AND end_date THEN sales_price ELSE 0 END) as cur_tot_rev,
+          sum(CASE WHEN ((sale_dt <= end_date) AND year_cd in (select year_cd from RelevantSeasons WHERE period_type = 'CURR')) THEN sales_price ELSE 0 END) as cur_tot_rev,
           sum(CASE WHEN sale_dt BETWEEN start_date AND end_date THEN sales_qty*tag_price ELSE 0 END) as cur_tag,
-          sum(CASE WHEN sale_dt BETWEEN DATE_TRUNC('year', end_date) AND end_date THEN sales_qty*tag_price ELSE 0 END) as cur_tot_tag,
-          sum(CASE WHEN sale_dt BETWEEN start_date AND end_date THEN cost_price * sales_qty ELSE 0 END) as cur_cost,
+          sum(CASE WHEN ((sale_dt <= end_date) AND year_cd in (select year_cd from RelevantSeasons WHERE period_type = 'CURR')) THEN sales_qty*tag_price ELSE 0 END) as cur_tot_tag,
+          -- sum(CASE WHEN sale_dt <= end_date THEN cost_price * sales_qty ELSE 0 END) as cur_cost,
           sum(CASE WHEN sale_dt BETWEEN prev_start_date AND prev_end_date THEN sales_qty ELSE 0 END) as prev_qty,
-          sum(CASE WHEN sale_dt BETWEEN DATE_TRUNC('year', prev_end_date) and prev_end_date THEN sales_qty ELSE 0 END) as prev_tot_qty,
+          sum(CASE WHEN (sale_dt <= prev_end_date AND year_cd in (select year_cd from RelevantSeasons WHERE period_type = 'PREV')) THEN sales_qty ELSE 0 END) as prev_tot_qty,
           sum(CASE WHEN sale_dt BETWEEN prev_start_date AND prev_end_date THEN sales_price ELSE 0 END) as prev_rev,
-          sum(CASE WHEN sale_dt BETWEEN DATE_TRUNC('year', prev_end_date) and prev_end_date THEN sales_price ELSE 0 END) as prev_tot_rev,
+          sum(CASE WHEN (sale_dt <= prev_end_date AND year_cd in (select year_cd from RelevantSeasons WHERE period_type = 'PREV')) THEN sales_price ELSE 0 END) as prev_tot_rev,
           sum(CASE WHEN sale_dt BETWEEN prev_start_date AND prev_end_date THEN sales_qty*tag_price ELSE 0 END) as prev_tag,
-          sum(CASE WHEN sale_dt BETWEEN DATE_TRUNC('year', prev_end_date) and prev_end_date THEN sales_qty*tag_price ELSE 0 END) as prev_tot_tag,
-          sum(CASE WHEN sale_dt BETWEEN prev_start_date AND prev_end_date THEN cost_price * sales_qty ELSE 0 END) as prev_cost
+          sum(CASE WHEN (sale_dt <= prev_end_date AND year_cd in (select year_cd from RelevantSeasons WHERE period_type = 'PREV')) THEN sales_qty*tag_price ELSE 0 END) as prev_tot_tag
+          -- ,sum(CASE WHEN sale_dt BETWEEN prev_start_date AND prev_end_date THEN cost_price * sales_qty ELSE 0 END) as prev_cost
         FROM agabang_dw.daily_shop_sales_by_dimension as A
         LEFT JOIN CategoryMapper CM ON (
             CASE 
@@ -158,7 +161,7 @@ SELECT
     COALESCE(S.shop_nm, O.shop_nm) as shop_nm,
     COALESCE(S.category_name, O.category_name) as category_name,
 
-    S.cur_qty, S.cur_rev, S.cur_tag, S.cur_cost,
+    S.cur_qty, S.cur_rev, S.cur_tag, -- S.cur_cost,
     S.cur_tot_qty, S.cur_tot_rev,
     O.cur_out_qty, O.cur_sup_amt,
 
@@ -166,7 +169,7 @@ SELECT
     CASE WHEN O.cur_out_qty = 0 THEN 0 ELSE S.cur_tot_qty / O.cur_out_qty END as cur_sale_rate_qty, -- 금년 수량기준 판매율
     CASE WHEN O.cur_sup_amt = 0 THEN 0 ELSE S.cur_tot_rev / O.cur_sup_amt END as cur_sale_rate_amt, -- 금년 실판가 기준 판매율
 
-    S.prev_rev, S.prev_qty, S.prev_tag, S.prev_cost, 
+    S.prev_rev, S.prev_qty, S.prev_tag,-- S.prev_cost, 
     S.prev_tot_rev, S.prev_tot_qty,
     O.prev_out_qty, O.prev_sup_amt,
 

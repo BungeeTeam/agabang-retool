@@ -14,17 +14,19 @@ WITH
             'CURR' as period_type, year_cd, season_cd, season_end_dt
         FROM agabang_dw.daily_shop_sales_by_dimension
         WHERE sales_type = '정상'
-          AND sale_dt BETWEEN DATE_TRUNC('year', end_date) AND end_date 
+          AND sale_dt BETWEEN start_date AND end_date 
           AND biz_cd in biz_code
           AND br_cd in brand_code
+          AND season_cd in ('0','1','3','5','7')
         UNION ALL
         SELECT DISTINCT
             'PREV' as period_type, year_cd, season_cd, season_end_dt
         FROM agabang_dw.daily_shop_sales_by_dimension
         WHERE sales_type = '정상'
-          AND sale_dt BETWEEN DATE_TRUNC('year', prev_start_date) AND prev_end_date 
+          AND sale_dt BETWEEN prev_start_date AND prev_end_date 
           AND biz_cd in biz_code
           AND br_cd in brand_code
+          AND season_cd in ('0','1','3','5','7')
     ),
 
     CategoryMapper AS (
@@ -120,20 +122,21 @@ WITH
                 ELSE COALESCE(CM.category_name, '기타')
             END as category_name,
           sum(CASE WHEN sale_dt BETWEEN start_date AND end_date THEN sales_qty ELSE 0 END) as cur_qty,
-          sum(CASE WHEN sale_dt BETWEEN DATE_TRUNC('year', end_date) AND end_date THEN sales_qty ELSE 0 END) as cur_tot_qty,
+          sum(CASE WHEN (sale_dt <= end_date AND RS.period_type = 'CURR') THEN sales_qty ELSE 0 END) as cur_tot_qty,
           sum(CASE WHEN sale_dt BETWEEN start_date AND end_date THEN sales_price ELSE 0 END) as cur_rev,
-          sum(CASE WHEN sale_dt BETWEEN DATE_TRUNC('year', end_date) AND end_date THEN sales_price ELSE 0 END) as cur_tot_rev,
+          sum(CASE WHEN (sale_dt <= end_date AND RS.period_type = 'CURR') THEN sales_price ELSE 0 END) as cur_tot_rev,
           sum(CASE WHEN sale_dt BETWEEN start_date AND end_date THEN sales_qty*tag_price ELSE 0 END) as cur_tag,
-          sum(CASE WHEN sale_dt BETWEEN DATE_TRUNC('year', end_date) AND end_date THEN sales_qty*tag_price ELSE 0 END) as cur_tot_tag,
-          sum(CASE WHEN sale_dt BETWEEN start_date AND end_date THEN cost_price * sales_qty ELSE 0 END) as cur_cost,
+          sum(CASE WHEN (sale_dt <= end_date AND RS.period_type = 'CURR') THEN sales_qty*tag_price ELSE 0 END) as cur_tot_tag,
+          sum(CASE WHEN sale_dt <= end_date THEN cost_price * sales_qty ELSE 0 END) as cur_cost,
           sum(CASE WHEN sale_dt BETWEEN prev_start_date AND prev_end_date THEN sales_qty ELSE 0 END) as prev_qty,
-          sum(CASE WHEN sale_dt BETWEEN DATE_TRUNC('year', prev_end_date) and prev_end_date THEN sales_qty ELSE 0 END) as prev_tot_qty,
+          sum(CASE WHEN (sale_dt <= prev_end_date AND RS.period_type = 'PREV') THEN sales_qty ELSE 0 END) as prev_tot_qty,
           sum(CASE WHEN sale_dt BETWEEN prev_start_date AND prev_end_date THEN sales_price ELSE 0 END) as prev_rev,
-          sum(CASE WHEN sale_dt BETWEEN DATE_TRUNC('year', prev_end_date) and prev_end_date THEN sales_price ELSE 0 END) as prev_tot_rev,
+          sum(CASE WHEN (sale_dt <= prev_end_date AND RS.period_type = 'PREV') THEN sales_price ELSE 0 END) as prev_tot_rev,
           sum(CASE WHEN sale_dt BETWEEN prev_start_date AND prev_end_date THEN sales_qty*tag_price ELSE 0 END) as prev_tag,
-          sum(CASE WHEN sale_dt BETWEEN DATE_TRUNC('year', prev_end_date) and prev_end_date THEN sales_qty*tag_price ELSE 0 END) as prev_tot_tag,
+          sum(CASE WHEN (sale_dt <= prev_end_date AND RS.period_type = 'PREV') THEN sales_qty*tag_price ELSE 0 END) as prev_tot_tag,
           sum(CASE WHEN sale_dt BETWEEN prev_start_date AND prev_end_date THEN cost_price * sales_qty ELSE 0 END) as prev_cost
-        FROM agabang_dw.daily_shop_sales_by_dimension A
+        FROM agabang_dw.daily_shop_sales_by_dimension as A
+        JOIN RelevantSeasons RS ON A.year_cd = RS.year_cd AND A.season_cd = RS.season_cd
         LEFT JOIN CategoryMapper CM ON (
             CASE 
                 WHEN substring(A.item,1,2) = '57' THEN '57'
@@ -142,7 +145,7 @@ WITH
         )
         WHERE sale_dt BETWEEN sale_start_date and end_date
           AND sales_type = '정상'
-          AND season_cd in ('1','3','5','7','0') AND biz_cd in biz_code
+          AND A.season_cd in ('1','3','5','7','0') AND biz_cd in biz_code
           AND br_cd in brand_code AND onoff_flag in selected_onoff_flag
         GROUP BY shop_cd, shop_nm, category_name
     )
