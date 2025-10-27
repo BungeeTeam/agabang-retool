@@ -1,0 +1,12 @@
+._retool-table26 {
+  height: {{viewport.height * 0.80}}px;
+}
+
+div[data-row-index="-1"]{
+  height:36px !important;
+}
+
+span[data-testid*="HeaderCellContents"]{
+  text-align: center !important;
+  text-wrap: wrap !important;
+}
