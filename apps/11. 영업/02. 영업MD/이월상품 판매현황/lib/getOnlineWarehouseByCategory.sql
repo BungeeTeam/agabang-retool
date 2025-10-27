@@ -12,13 +12,13 @@ WITH
                       sum(CASE WHEN in_wh_cd = '3000' THEN fix_qty ELSE 0 END)  as mv_in_qty,
                       sum(CASE WHEN out_wh_cd = '3000' THEN fix_qty ELSE 0 END) as mv_out_qty
                FROM agabang.dsmove as A
-               WHERE toDate(move_dt) between seasonEndDate and outEndDate
+               WHERE toDate(move_dt) between seasonEndDate and endDate
                group by sty_cd),
     dsin as (SELECT sty_cd,
                     sum(in_qty) as in_qty
             from agabang.dsin
             WHERE wh_cd = '3000'
-            and toDate(in_dt) between seasonEndDate and outEndDate
+            and toDate(in_dt) between seasonEndDate and endDate
             group by sty_cd)
 
 SELECT
