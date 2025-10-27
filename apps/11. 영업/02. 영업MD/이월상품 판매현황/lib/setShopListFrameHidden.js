@@ -1,0 +1,1 @@
+splitPaneFrame1.hide()
