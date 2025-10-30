@@ -19,9 +19,9 @@ const updatedData = target.map(item => {
   const base_target_sales = targetMap.get(key);
   return {
     ...item,
-    target_sales: base_target_sales !== undefined && item.target_rate !== undefined
-      ? base_target_sales * item.target_rate
-      : 0
+target_sales: base_target_sales !== undefined && item.target_rate !== undefined
+  ? Math.round(base_target_sales * item.target_rate)
+  : 0
   };
 });
 

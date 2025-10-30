@@ -23,7 +23,7 @@ function calculateSaleRates(result) {
   const monthlyTotals = {};
 
   result.forEach(item => {
-    if (item.sales_type === '합계') {
+    if (item.sales_type === '총계') {
       const month = item.month_unit;
       monthlyTotals[month] = {
         cur_rev: Number(item.cur_rev) || 0,
