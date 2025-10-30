@@ -13,19 +13,22 @@ const totalSums = data.reduce((acc, item) => {
 // 2. '총계' 객체 생성: 최종 배열에 추가할 객체를 만듭니다.
 const grandTotalObject = {
   br_cd: '총계',
-  br_nm: '총계',
-  it_gb_nm: '총계',
+  br_nm: '',
+  it_gb_nm: '',
   ...totalSums
 };
 
 // 3. '소계'를 위한 데이터 확장 (기존 로직)
 const expandedData = data.flatMap(item => [
   item,
-  { ...item, br_cd: '소계', br_nm: '소계' }
+  { ...item, br_cd: '소계', br_nm: '' }
 ]);
+
+console.log(expandedData)
 
 // 4. 아이템별 & 소계 그룹핑 (기존 로직)
 const keysToGroup = ["br_cd", "br_nm", "it_gb_nm"];
+
 const allGroups = groupBySum(expandedData, keysToGroup, sumKeys);
 
 // 5. 정렬 (기존 로직)

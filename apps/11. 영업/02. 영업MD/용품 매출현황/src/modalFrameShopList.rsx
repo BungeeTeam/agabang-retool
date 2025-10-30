@@ -15,7 +15,9 @@
   <Header>
     <Text
       id="modalTitle1"
-      value="#### 매장 리스트 ( {{ [selectedRow_old.value.it_gb_nm, selectedRow_old.value.item_nm, selectedRow_old.value.br_nm,selectedRow_old.value.sub_br_nm].filter(Boolean).join(' / ') }})"
+      value="#### 매장 리스트 ({{  selectedRow_old.value?.br_cd === '총계' ? '총계' :
+  [selectedRow_old.value?.br_cd,selectedRow_old.value?.sub_br_cd].includes('소계') ? [selectedRow_old.value.it_gb_nm, selectedRow_old.value.item_nm, selectedRow_old.value.br_nm,selectedRow_old.value.sub_br_nm,'소계'].filter(Boolean).join(' / ')
+  : [selectedRow_old.value.it_gb_nm, selectedRow_old.value.item_nm, selectedRow_old.value.br_nm,selectedRow_old.value.sub_br_nm].filter(Boolean).join(' / ') }})"
       verticalAlign="center"
     />
     <Button
