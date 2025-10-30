@@ -135,4 +135,25 @@ return formatDataAsObject(arrData)"
     id="targetSalesBySalesType"
     funcBody={include("./lib/targetSalesBySalesType.js", "string")}
   />
+  <JavascriptQuery
+    id="monthlyExcelDownload"
+    notificationDuration={4.5}
+    query={include("./lib/monthlyExcelDownload.js", "string")}
+    resourceName="JavascriptQuery"
+    showSuccessToaster={false}
+  />
+  <JavascriptQuery
+    id="quarterlyExcelDownload"
+    notificationDuration={4.5}
+    query={include("./lib/quarterlyExcelDownload.js", "string")}
+    resourceName="JavascriptQuery"
+    showSuccessToaster={false}
+  />
+  <JavascriptQuery
+    id="periodicExcelDownload"
+    notificationDuration={4.5}
+    query={include("./lib/periodicExcelDownload.js", "string")}
+    resourceName="JavascriptQuery"
+    showSuccessToaster={false}
+  />
 </GlobalFunctions>

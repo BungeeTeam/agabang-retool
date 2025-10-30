@@ -44,6 +44,16 @@
     </Tabs>
   </Header>
   <View id="e4d73" viewKey="View 1">
+    <Tabs
+      id="tabs1"
+      itemMode="static"
+      margin="4px 0px"
+      value="{{ self.values[0] }}"
+    >
+      <Option id="d3d24" label="오프라인" value="오프라인" />
+      <Option id="47702" label="온라인" value="온라인" />
+      <Option id="215bc" label="온오프라인 합계" value="합계" />
+    </Tabs>
     <DateRange
       id="dateRange"
       dateFormat="yyyy-MM-dd"
@@ -64,16 +74,30 @@
         ],
       }}
     />
-    <Tabs
-      id="tabs1"
-      itemMode="static"
-      margin="4px 0px"
-      value="{{ self.values[0] }}"
+    <Button
+      id="button1"
+      disabled="{{ !table1.data }}"
+      iconBefore="bold/interface-download-button-2"
+      style={{ ordered: [] }}
+      styleVariant="outline"
+      text="엑셀 다운로드"
     >
-      <Option id="d3d24" label="오프라인" value="오프라인" />
-      <Option id="47702" label="온라인" value="온라인" />
-      <Option id="215bc" label="온오프라인 합계" value="합계" />
-    </Tabs>
+      <Event
+        event="click"
+        method="run"
+        params={{
+          ordered: [
+            {
+              src: "if (select1.value === 'period') {\n  periodicExcelDownload.trigger();\n} else if (select1.value === 'month_unit') {\n  monthlyExcelDownload.trigger();\n} else if (select1.value === 'quarter_unit') {\n  quarterlyExcelDownload.trigger();\n}",
+            },
+          ],
+        }}
+        pluginId=""
+        type="script"
+        waitMs="0"
+        waitType="debounce"
+      />
+    </Button>
     <Text
       id="text3"
       disableMarkdown={true}
@@ -111,7 +135,7 @@
         label="정상/이월"
         placeholder="Enter value"
         position="center"
-        size={61.484375}
+        size={61.453125}
         summaryAggregationMode="none"
         valueOverride="{{ currentSourceRow.season_cd === '0' ? item:'' }}"
       />
@@ -139,7 +163,7 @@
         label="시즌"
         placeholder="Enter value"
         position="center"
-        size={67.765625}
+        size={67.734375}
         summaryAggregationMode="none"
       />
       <Column
@@ -160,7 +184,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="cur_rev"
-        size={92.5625}
+        size={78.46875}
         summaryAggregationMode="none"
         valueOverride="{{ (item/1000000) }}"
       />
@@ -181,7 +205,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="tableHeaderValue1"
-        size={90.75}
+        size={57.453125}
         summaryAggregationMode="none"
         valueOverride="{{ (item/1000000)}}"
       />
@@ -201,7 +225,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="{{ tableHeader.value[7] }}"
-        size={47.109375}
+        size={47.078125}
         summaryAggregationMode="none"
         valueOverride="{{ currentSourceRow.cur_rev/currentSourceRow.target_sales }}"
       />
@@ -222,7 +246,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="tableHeaderValue16"
-        size={99.265625}
+        size={99.21875}
         summaryAggregationMode="none"
       />
       <Column
@@ -241,7 +265,7 @@
         label="{{ tableHeader.value[3] }}"
         placeholder="Enter value"
         position="center"
-        size={119.078125}
+        size={88.84375}
         summaryAggregationMode="none"
         valueOverride="{{ 1-currentSourceRow.cur_rev/item }}"
       />
@@ -262,7 +286,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="{{ tableHeader.value[4] }}"
-        size={94.15625}
+        size={78.625}
         summaryAggregationMode="none"
         valueOverride="{{ (item/1000000) }}"
       />
@@ -282,7 +306,7 @@
         label="{{ tableHeader.value[17] }}"
         placeholder="Enter value"
         position="center"
-        size={99.40625}
+        size={99.359375}
         summaryAggregationMode="none"
       />
       <Column
@@ -302,7 +326,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="작년 할인율"
-        size={117.546875}
+        size={88.984375}
         summaryAggregationMode="none"
         valueOverride="{{ 1-(currentSourceRow.prev_rev/item) }}"
       />
@@ -318,7 +342,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="매출증감"
-        size={57.484375}
+        size={57.453125}
         summaryAggregationMode="none"
         valueOverride="{{ ((currentSourceRow.cur_rev-currentSourceRow.prev_rev)/1000000).toFixed(0) }}"
       />
@@ -338,7 +362,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="{{tableHeader.value[8]}}"
-        size={47.109375}
+        size={48.25}
         summaryAggregationMode="none"
         valueOverride="{{ ratio = currentSourceRow.prev_rev === 0 
   ? 0 
@@ -463,37 +487,6 @@
         summaryAggregationMode="none"
         valueOverride="{{ (currentSourceRow.cur_cost/currentSourceRow.cur_tag)-(currentSourceRow.prev_cost/currentSourceRow.prev_tag) }}"
       />
-      <ToolbarButton
-        id="3c"
-        icon="bold/interface-download-button-2"
-        label="엑셀 다운로드"
-        type="custom"
-      >
-        <Event
-          event="clickToolbar"
-          method="exportData"
-          params={{
-            ordered: [
-              {
-                options: {
-                  ordered: [
-                    { fileType: "xlsx" },
-                    {
-                      fileName:
-                        "({{ dateRange.value.end}} 마감) 정상/이월 판매데이터",
-                    },
-                    { includeHiddenColumns: false },
-                  ],
-                },
-              },
-            ],
-          }}
-          pluginId="table1"
-          type="widget"
-          waitMs="0"
-          waitType="debounce"
-        />
-      </ToolbarButton>
       <Event
         event="selectRow"
         method="setValue"
@@ -581,7 +574,7 @@
               label="' '"
               placeholder="Enter value"
               position="center"
-              size={47.078125}
+              size={67.8125}
               summaryAggregationMode="none"
             />
             <Column
@@ -602,7 +595,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="cur_rev"
-              size={78.46875}
+              size={96.375}
               summaryAggregationMode="none"
               valueOverride="{{ (item/1000000) }}"
             />
@@ -623,7 +616,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="rev_goal"
-              size={57.453125}
+              size={93.8125}
               summaryAggregationMode="none"
               valueOverride="{{ item/1000000 }}"
             />
@@ -643,7 +636,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="{{ tableHeader.value[7] }}"
-              size={58.390625}
+              size={47.078125}
               summaryAggregationMode="none"
               valueOverride="{{ currentSourceRow.cur_rev /currentSourceRow.target_sales}}"
             />
@@ -683,7 +676,7 @@
               label="{{ tableHeader.value[3] }}"
               placeholder="Enter value"
               position="center"
-              size={88.84375}
+              size={120.8125}
               summaryAggregationMode="none"
               valueOverride="{{ 1-currentSourceRow.cur_rev/item }}"
             />
@@ -704,7 +697,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="{{ tableHeader.value[4] }}"
-              size={78.625}
+              size={95.453125}
               summaryAggregationMode="none"
               valueOverride="{{ (item/1000000) }}"
             />
@@ -745,7 +738,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="{{tableHeader.value[5]}}"
-              size={88.984375}
+              size={118.8125}
               summaryAggregationMode="none"
               valueOverride="{{ 1-(currentSourceRow.prev_rev/item) }}"
             />
@@ -906,37 +899,6 @@
               summaryAggregationMode="none"
               valueOverride="{{ (currentSourceRow.cur_cost/currentSourceRow.cur_tag)-(currentSourceRow.prev_cost/currentSourceRow.prev_tag) }}"
             />
-            <ToolbarButton
-              id="3c"
-              icon="bold/interface-download-button-2"
-              label="엑셀 다운로드"
-              type="custom"
-            >
-              <Event
-                event="clickToolbar"
-                method="exportData"
-                params={{
-                  ordered: [
-                    {
-                      options: {
-                        ordered: [
-                          { fileType: "xlsx" },
-                          {
-                            fileName:
-                              "({{ dateRange.value.end}} 마감) 정상/이월 판매데이터",
-                          },
-                          { includeHiddenColumns: false },
-                        ],
-                      },
-                    },
-                  ],
-                }}
-                pluginId="table2"
-                type="widget"
-                waitMs="0"
-                waitType="debounce"
-              />
-            </ToolbarButton>
             <Event
               event="selectRow"
               method="setValue"

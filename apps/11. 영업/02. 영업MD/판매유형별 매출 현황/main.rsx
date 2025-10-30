@@ -2,6 +2,7 @@
   <Include src="./functions.rsx" />
   <AppStyles id="$appStyles" css={include("./lib/$appStyles.css", "string")} />
   <Include src="./header.rsx" />
+  <Include src="./src/modalFrame1.rsx" />
   <Include src="./sidebar.rsx" />
   <Frame
     id="$main"

@@ -42,7 +42,7 @@ function calculateSaleRates(result) {
     const quarterlyTotals = {};
   
     result.forEach(item => {
-      if (item.sales_type === '합계') {
+      if (item.sales_type === '총계') {
         const quarter = item.quarter_unit;
         quarterlyTotals[quarter] = {
           cur_rev: Number(item.cur_rev) || 0,

@@ -70,7 +70,7 @@ function calculateSaleRates(result) {
   const monthlyTotals = {};
 
   result.forEach(item => {
-    if (item.sales_type === '합계') {
+    if (item.sales_type === '총계') {
       const month = item.month_unit;
       monthlyTotals[month] = {
         cur_rev: Number(item.cur_rev) || 0,
@@ -122,7 +122,7 @@ const finalTotals = groupBySum(
 );
 
 fillDefaultValues(finalTotals, ["sales_type", "season_cd", "season_nm"], {
-  sales_type: "합계",
+  sales_type: "총계",
   season_cd: "999",
   season_nm: "총계"
 });

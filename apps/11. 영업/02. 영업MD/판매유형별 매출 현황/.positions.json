@@ -7,7 +7,6 @@
   },
   "bizSelect": {
     "subcontainer": "sidebarFrame1",
-    "row": 0,
     "height": 0.2,
     "width": 1,
     "stackPosition": {
@@ -25,6 +24,22 @@
     "height": 0.2,
     "width": 1
   },
+  "button1": {
+    "container": "container5",
+    "subcontainer": "e4d73",
+    "row": 0.2,
+    "col": 10,
+    "height": 1,
+    "width": 2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
   "checkboxTreeNew1": {
     "subcontainer": "sidebarFrame1",
     "row": 1.2,
@@ -32,7 +47,6 @@
     "width": 1
   },
   "container5": {
-    "row": 0,
     "height": 19.6,
     "width": 12,
     "stackPosition": {
@@ -66,10 +80,9 @@
   "dateRange": {
     "container": "container5",
     "subcontainer": "e4d73",
-    "row": 0,
+    "row": 0.2,
     "col": 7,
     "height": 0.2,
-    "width": 5,
     "stackPosition": {
       "object": {
         "ordinal": 0,
@@ -82,17 +95,29 @@
   "listView1": {
     "container": "container5",
     "subcontainer": "e4d73",
-    "row": 18.8,
+    "row": 19,
     "height": 17,
     "width": 12,
     "stackPosition": {
       "object": {
-        "ordinal": 2,
+        "ordinal": 3,
         "widthType": "fixed",
         "width": 0,
         "height": 0
       }
     }
+  },
+  "modalCloseButton1": {
+    "rowGroup": "header",
+    "subcontainer": "modalFrame1",
+    "col": 9,
+    "height": 1
+  },
+  "modalTitle1": {
+    "rowGroup": "header",
+    "subcontainer": "modalFrame1",
+    "height": 0.6,
+    "width": 9
   },
   "salesTopNavigation1": {
     "subcontainer": "header",
@@ -131,19 +156,18 @@
   "stack1": {
     "rowGroup": "header",
     "subcontainer": "sidebarFrame1",
-    "row": 0,
     "height": 1,
     "width": 1
   },
   "table1": {
     "container": "container5",
     "subcontainer": "e4d73",
-    "row": 1,
+    "row": 1.2,
     "height": 17.8,
     "width": 12,
     "stackPosition": {
       "object": {
-        "ordinal": 3,
+        "ordinal": 4,
         "widthType": "fixed",
         "width": 0,
         "height": 0
@@ -156,6 +180,11 @@
     "height": 1,
     "width": 12
   },
+  "table3": {
+    "subcontainer": "modalFrame1",
+    "height": 17.8,
+    "width": 12
+  },
   "tabs1": {
     "container": "container5",
     "subcontainer": "e4d73",
@@ -164,7 +193,7 @@
     "width": 4,
     "stackPosition": {
       "object": {
-        "ordinal": 4,
+        "ordinal": 5,
         "widthType": "fixed",
         "width": 0,
         "height": 0
@@ -190,12 +219,13 @@
   "text3": {
     "container": "container5",
     "subcontainer": "e4d73",
-    "row": 0.4,
-    "col": 4,
+    "row": 0.6,
+    "col": 6,
     "height": 0.6,
+    "width": 1,
     "stackPosition": {
       "object": {
-        "ordinal": 1,
+        "ordinal": 2,
         "widthType": "fixed",
         "width": 0,
         "height": 0
