@@ -58,7 +58,8 @@
         size={83.859375}
         sortMode="disabled"
         summaryAggregationMode="none"
-        valueOverride="{{ currentSourceRow.br_nm === '소계' ? '': item }}"
+        valueOverride="{{ currentSourceRow.br_cd === '총계' ? '총계':
+  currentSourceRow.br_cd === '소계' ? '' : item }}"
       />
       <Column
         id="8ba33"
@@ -72,7 +73,8 @@
         position="left"
         size={115.46875}
         summaryAggregationMode="none"
-        valueOverride="{{ item }}"
+        valueOverride="{{ currentSourceRow.br_cd === '총계' ? '':
+  currentSourceRow.br_cd === '소계' ? '소계' : item }}"
       />
       <Column
         id="40b72"
@@ -487,21 +489,22 @@
         size={83.859375}
         sortMode="disabled"
         summaryAggregationMode="none"
-        valueOverride="{{ currentSourceRow.br_nm === '소계' ? '': item }}"
+        valueOverride="{{ currentSourceRow.br_cd === '총계' ? '총계':
+  currentSourceRow.br_cd === '소계' ? '' : item }}"
       />
       <Column
         id="53be4"
         alignment="left"
-        format="string"
+        format="multilineString"
         groupAggregationMode="none"
         key="item_nm"
         label="소분류"
         placeholder="Enter value"
         position="left"
-        size={100}
+        size={156}
         sortMode="disabled"
         summaryAggregationMode="none"
-        valueOverride="{{ currentSourceRow.br_nm === '소계' ? '': item }}"
+        valueOverride="{{ currentSourceRow.br_cd === '소계' ? '': item }}"
       />
       <Column
         id="8ba33"
@@ -513,9 +516,10 @@
         label="브랜드"
         placeholder="Enter value"
         position="left"
-        size={75.15625}
+        size={110.15625}
         summaryAggregationMode="none"
-        valueOverride="{{ item }}"
+        valueOverride="{{ currentSourceRow.br_cd === '총계' ? '':
+  currentSourceRow.br_cd === '소계' ? '소계' : item }}"
       />
       <Column
         id="40b72"
@@ -930,7 +934,8 @@
         size={111.46875}
         sortMode="disabled"
         summaryAggregationMode="none"
-        valueOverride="{{ item }}"
+        valueOverride="{{ currentSourceRow.br_cd === '총계' ? '총계':
+  currentSourceRow.sub_br_cd === '소계' ? '' : item }}"
       />
       <Column
         id="42569"
@@ -943,6 +948,8 @@
         position="left"
         size={115}
         summaryAggregationMode="none"
+        valueOverride="{{ currentSourceRow.br_cd === '총계' ? '':
+  currentSourceRow.sub_br_cd === '소계' ? '소계' : item }}"
       />
       <Column
         id="40b72"

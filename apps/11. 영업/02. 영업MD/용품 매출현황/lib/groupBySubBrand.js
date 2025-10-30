@@ -13,9 +13,9 @@ const totalSums = data.reduce((acc, item) => {
 // 2. '총계' 객체 생성: 최종 배열에 추가할 객체를 만듭니다.
 const grandTotalObject = {
   br_cd: '총계',
-  br_nm: '총계',
+  br_nm: '',
   sub_br_cd: '총계',
-  sub_br_nm: '총계',
+  sub_br_nm: '',
   ...totalSums
 };
 
@@ -32,7 +32,7 @@ groupedData.forEach(item => {
       br_cd: item.br_cd,
       br_nm: item.br_nm,
       sub_br_cd: '소계',
-      sub_br_nm: '소계',
+      sub_br_nm: '',
       ...sumKeys.reduce((acc, key) => { acc[key] = 0; return acc; }, {})
     };
   }
@@ -52,8 +52,8 @@ allGroups.sort((a, b) => {
   }
 
   // 2순위: 같은 브랜드 내에서 소계는 마지막으로 보냄
-  const isASubtotal = a.sub_br_nm === '소계';
-  const isBSubtotal = b.sub_br_nm === '소계';
+  const isASubtotal = a.sub_br_cd === '소계';
+  const isBSubtotal = b.sub_br_cd === '소계';
 
   if (isASubtotal) return 1;
   if (isBSubtotal) return -1;
