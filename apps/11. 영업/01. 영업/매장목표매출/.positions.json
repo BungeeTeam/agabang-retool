@@ -1,0 +1,386 @@
+{
+  "avatar1": {
+    "rowGroup": "footer",
+    "subcontainer": "sidebarFrame1",
+    "height": 0.2,
+    "width": 1
+  },
+  "bizMultiSelect": {
+    "subcontainer": "sidebarFrame1",
+    "row": 0.2,
+    "height": 0.2,
+    "width": 1
+  },
+  "brandMultiSelect": {
+    "subcontainer": "sidebarFrame1",
+    "row": 1.2,
+    "height": 0.2,
+    "width": 1
+  },
+  "container1": {
+    "container": "listView4",
+    "height": 3.8,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container2": {
+    "container": "monthlySelect",
+    "subcontainer": "490e1",
+    "row": 0.8,
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 9,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "containerTitle1": {
+    "container": "container1",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "containerTitle2": {
+    "container": "container2",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "dateRange": {
+    "container": "monthlySelect",
+    "subcontainer": "14b44",
+    "height": 0.2,
+    "width": 4,
+    "stackPosition": {
+      "object": {
+        "ordinal": 11,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "listView4": {
+    "container": "monthlySelect",
+    "subcontainer": "490e1",
+    "row": 5.6,
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 8,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "monthSelect": {
+    "container": "monthlySelect",
+    "subcontainer": "ef5a8",
+    "row": 0.2,
+    "height": 0.8,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 12,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "monthlySelect": {
+    "height": 76.4,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "progressCircle1": {
+    "container": "container2",
+    "subcontainer": "02310",
+    "row": 0.8,
+    "col": 8,
+    "height": 2.2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 4,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "progressCircle2": {
+    "container": "container1",
+    "subcontainer": "bcc70",
+    "height": 2,
+    "width": 12
+  },
+  "revStatTblModule2": {
+    "container": "monthlySelect",
+    "subcontainer": "ef5a8",
+    "row": 1,
+    "height": 8.8,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 10,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "revStatTblModule4": {
+    "container": "monthlySelect",
+    "subcontainer": "14b44",
+    "row": 0.2,
+    "height": 8.8,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "salesBySecondLevelTbl": {
+    "container": "monthlySelect",
+    "subcontainer": "490e1",
+    "row": 14.8,
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 4,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "salesTopNavigation1": {
+    "subcontainer": "header",
+    "height": 2.4,
+    "width": 12
+  },
+  "spacer1": {
+    "subcontainer": "sidebarFrame1",
+    "row": 0.4,
+    "height": 0.8,
+    "width": 1
+  },
+  "statistic3": {
+    "container": "container2",
+    "subcontainer": "02310",
+    "row": 1,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "statistic4": {
+    "container": "container2",
+    "subcontainer": "02310",
+    "row": 1,
+    "col": 4,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 3,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text1": {
+    "rowGroup": "header",
+    "subcontainer": "sidebarFrame1",
+    "row": 0,
+    "height": 1,
+    "width": 1
+  },
+  "text10": {
+    "container": "monthlySelect",
+    "subcontainer": "490e1",
+    "row": 0.2,
+    "col": 9,
+    "height": 0.6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 5,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text11": {
+    "container": "monthlySelect",
+    "subcontainer": "490e1",
+    "row": 14,
+    "height": 0.6,
+    "width": 11,
+    "stackPosition": {
+      "object": {
+        "ordinal": 3,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text12": {
+    "container": "monthlySelect",
+    "subcontainer": "490e1",
+    "row": 14.2,
+    "col": 11,
+    "height": 0.6,
+    "width": 1,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text2": {
+    "container": "monthlySelect",
+    "subcontainer": "490e1",
+    "row": 0,
+    "height": 0.6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 6,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text3": {
+    "container": "container2",
+    "subcontainer": "02310",
+    "row": 1.8,
+    "col": 1,
+    "height": 0.6,
+    "width": 1,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text5": {
+    "container": "container2",
+    "subcontainer": "02310",
+    "row": 0.2,
+    "height": 0.6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 7,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text6": {
+    "container": "container2",
+    "subcontainer": "02310",
+    "row": 0.2,
+    "col": 4,
+    "height": 0.6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 6,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text7": {
+    "container": "container2",
+    "subcontainer": "02310",
+    "row": 1.8,
+    "col": 5,
+    "height": 0.6,
+    "width": 1,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text8": {
+    "container": "container2",
+    "subcontainer": "02310",
+    "row": 0.2,
+    "col": 8,
+    "height": 0.6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 5,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text9": {
+    "container": "monthlySelect",
+    "subcontainer": "490e1",
+    "row": 5,
+    "height": 0.6,
+    "width": 11,
+    "stackPosition": {
+      "object": {
+        "ordinal": 7,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "timeUnitHeader": {
+    "container": "monthlySelect",
+    "rowGroup": "header",
+    "height": 0.8,
+    "width": 12
+  }
+}
