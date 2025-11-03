@@ -1,6 +1,7 @@
 <App>
   <Include src="./functions.rsx" />
   <AppStyles id="$appStyles" css={include("./lib/$appStyles.css", "string")} />
+  <DocumentTitle id="$customDocumentTitle" value="시즌 판매율 | ET" />
   <UrlFragments
     id="$urlFragments"
     value={{
@@ -14,7 +15,6 @@
       ],
     }}
   />
-  <DocumentTitle id="$customDocumentTitle" value="시즌 판매율 | ET" />
   <Include src="./header.rsx" />
   <Include src="./src/drawerFrame_item_detail.rsx" />
   <Include src="./src/drawerFrame_item_detail_new.rsx" />

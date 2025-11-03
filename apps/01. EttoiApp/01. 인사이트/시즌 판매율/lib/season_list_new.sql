@@ -16,7 +16,7 @@ code_season_cur as (
                 row_number() OVER(order by year_nm_short desc, sesn_cd desc) AS row_num,
                 A.*
             FROM agabang_dw.code_season AS A
-            WHERE year_nm between '2000' and cast(toYear(toDate('{{date_select.value}}')) AS String)
+            WHERE year_nm between '2000' and cast(toYear(toDate('{{date_select.value}}')) + 1 AS String)
                 and sesn_cd in ('1','3','5','7'))
             --ORDER BY year_nm_short desc, sesn_cd desc)
 
@@ -32,5 +32,5 @@ B.prev_year_sesn_nm_kor,
 B.prev_year_sesn_nm_eng,
 B.prev_year_sesn_cd
 FROM code_season_cur as A
-JOIN code_season_prev AS B on A.row_num = B.row_num
+LEFT JOIN code_season_prev AS B on A.row_num = B.row_num
 ORDER BY A.row_num
