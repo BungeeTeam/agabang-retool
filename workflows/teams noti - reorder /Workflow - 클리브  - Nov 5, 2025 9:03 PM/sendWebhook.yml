@@ -1,0 +1,121 @@
+id: sendWebhook
+type: datasource
+subtype: PythonQuery
+resourceName: PythonQuery
+template:
+  ordered:
+    - queryRefreshTime: ''
+    - allowedGroupIds: []
+    - streamResponse: false
+    - lastReceivedFromResourceAt: null
+    - queryDisabledMessage: ''
+    - servedFromCache: false
+    - offlineUserQueryInputs: ''
+    - successMessage: ''
+    - queryDisabled: ''
+    - playgroundQuerySaveId: latest
+    - workflowParams: null
+    - resourceNameOverride: ''
+    - runWhenModelUpdates: false
+    - workflowRunExecutionType: sync
+    - showFailureToaster: true
+    - query: >+
+        import requests
+
+
+
+        data = startTrigger.data
+
+
+        webhook_payload = {
+                "attachments": data
+                }
+        webhook_url =
+        "https://defaultbe1862e916f8445c832742769daa9a.a8.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/657729a048504e20b9f2b3570aae94cb/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=zpY3ADPi8Yq3zAULJRIa6q2xXBmD1YhH2gGQz9yxo6I"
+
+
+        try:
+            response = requests.post(
+                webhook_url,
+                json=webhook_payload,
+                headers={"Content-Type": "application/json"}
+            )
+            
+            print(f"Status Code: {response.status_code}")
+            print(f"Response: {response.text}")
+            
+            # HTTP 표준: 2xx 범위 (200-299)가 성공 응답
+            # Power Automate는 200 OK 또는 202 Accepted를 반환할 수 있음
+            if response.ok:  # 200-299 범위를 확인
+                print("✅ 웹훅 전송 성공!")
+            else:
+                print(f"⚠️ 웹훅 전송 실패 (Status: {response.status_code})")
+                
+        except Exception as e:
+            print(f"❌ 오류 발생: {str(e)}")
+
+    - playgroundQueryUuid: ''
+    - playgroundQueryId: null
+    - error: null
+    - workflowRunBodyType: raw
+    - privateParams: []
+    - queryRunOnSelectorUpdate: false
+    - runWhenPageLoadsDelay: ''
+    - data: null
+    - importedQueryInputs:
+        ordered: []
+    - isImported: false
+    - showSuccessToaster: true
+    - cacheKeyTtl: ''
+    - requestSentTimestamp: null
+    - metadata: null
+    - queryRunTime: null
+    - changesetObject: ''
+    - offlineOptimisticResponse: null
+    - errorTransformer: return data.error
+    - finished: null
+    - confirmationMessage: null
+    - isFetching: false
+    - changeset: ''
+    - rawData: null
+    - queryTriggerDelay: '0'
+    - resourceTypeOverride: null
+    - watchedParams: []
+    - enableErrorTransformer: false
+    - isHidden: false
+    - showLatestVersionUpdatedWarning: false
+    - timestamp: 0
+    - evalType: script
+    - importedQueryDefaults:
+        ordered: []
+    - enableTransformer: false
+    - showUpdateSetValueDynamicallyToggle: true
+    - overrideOrgCacheForUserCache: false
+    - runWhenPageLoads: false
+    - transformer: return data
+    - events: []
+    - queryTimeout: '10000'
+    - workflowId: null
+    - requireConfirmation: false
+    - queryFailureConditions: ''
+    - changesetIsObject: false
+    - enableCaching: false
+    - allowedGroups: []
+    - offlineQueryType: None
+    - queryThrottleTime: '750'
+    - updateSetValueDynamically: false
+    - notificationDuration: ''
+createdAt: 2025-11-05T12:03:31.159Z
+blockData:
+  top: -480
+  left: 864
+  uuid: 189241fa-9417-44c1-b145-1457700df7df
+  pluginId: sendWebhook
+  blockType: code
+  dimensions:
+    width: 320
+    height: 384
+  editorType: PythonQuery
+  resourceName: PythonQuery
+  incomingOnSuccessEdges:
+    - 8b327d64-d4b0-4b5f-8176-73c751f28301
