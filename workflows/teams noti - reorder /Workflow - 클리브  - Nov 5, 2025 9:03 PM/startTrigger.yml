@@ -19,7 +19,68 @@ template:
     - runWhenModelUpdates: false
     - workflowRunExecutionType: sync
     - showFailureToaster: true
-    - query: return null
+    - query: |-
+        return {
+            "items": [
+                {
+                    "product_image_url": "https://agabang-image.s3.ap-northeast-2.amazonaws.com/item_final/07T08440103.jpg",
+                    "style_code": "07T084401",
+                    "style_name": "큐렛속싸보",
+                    "color_code": "03",
+                    "color_name": "O/WHITE",
+                    "color_key": "07T084401_03",
+                    "manufacturer_name": "일성실업",
+                    "tag_price": 49000,
+                    "cost_price": 9700,
+                    "recommended_reorder_qty": 1998.1730769230767,
+                    "details_url": "https://agabang.cleave.work/app/reorder_season_ettoi",
+                    "current_stock_total": 382,
+                    "current_stock_store": 382,
+                    "current_stock_warehouse": 0,
+                    "cumulative_sales_rate": 0.258252427184466,
+                    "sales_monthly_30d": 307,
+                    "stock_out_days_30d": 37,
+                    "sales_monthly_180d": 307,
+                    "stock_out_days_180d": 37,
+                    "sales_monthly_365d": 307,
+                    "stock_out_days_365d": 37,
+                    "initial_reorder_cost_price": 9700,
+                    "initial_moq": 1000,
+                    "initial_lead_time": 60,
+                    "input_deadline": "2025-11-08"
+                },
+                {
+                    "product_image_url": "https://agabang-image.s3.ap-northeast-2.amazonaws.com/item_final/07T08580103.jpg",
+                    "style_code": "07T085801",
+                    "style_name": "큐렛손싸개",
+                    "color_code": "03",
+                    "color_name": "O/WHITE",
+                    "color_key": "07T085801_03",
+                    "manufacturer_name": "일성실업",
+                    "tag_price": 13000,
+                    "cost_price": 2410,
+                    "recommended_reorder_qty": 1472.3076923076922,
+                    "details_url": "https://agabang.cleave.work/app/reorder_season_ettoi",
+                    "current_stock_total": 415,
+                    "current_stock_store": 377,
+                    "current_stock_warehouse": 38,
+                    "cumulative_sales_rate": 0.20192307692307693,
+                    "sales_monthly_30d": 242,
+                    "stock_out_days_30d": 51,
+                    "sales_monthly_180d": 242,
+                    "stock_out_days_180d": 51,
+                    "sales_monthly_365d": 242,
+                    "stock_out_days_365d": 51,
+                    "initial_reorder_cost_price": 2410,
+                    "initial_moq": 2000,
+                    "initial_lead_time": 60,
+                    "input_deadline": "2025-11-08"
+                }
+            ],
+            "simulation_url": "https://agabang.cleave.work/app/reorder_simulation_season_ettoi",
+            "triggeredBy": "project@cleave.work",
+            "br_cd":"test"
+        }
     - playgroundQueryUuid: ''
     - playgroundQueryId: null
     - error: null
@@ -74,13 +135,13 @@ template:
     - notificationDuration: ''
 createdAt: 2025-11-05T12:03:18.921Z
 blockData:
-  top: 48
-  left: 48
+  top: -480
+  left: 432
   uuid: 8b327d64-d4b0-4b5f-8176-73c751f28301
   options: {}
   pluginId: startTrigger
   blockType: webhook
   editorType: JavascriptQuery
   isMinimized: false
-  resourceName: webhook
+  resourceName: JavascriptQuery
   incomingOnSuccessEdges: []

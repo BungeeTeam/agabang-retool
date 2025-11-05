@@ -1,7 +1,7 @@
-id: code1
+id: webhookUrl
 type: datasource
-subtype: PythonQuery
-resourceName: PythonQuery
+subtype: JavascriptQuery
+resourceName: JavascriptQuery
 template:
   ordered:
     - queryRefreshTime: ''
@@ -19,7 +19,17 @@ template:
     - runWhenModelUpdates: false
     - workflowRunExecutionType: sync
     - showFailureToaster: true
-    - query: ''
+    - query: |-
+
+        const url_list = {
+          "test" : "https://defaultbe1862e916f8445c832742769daa9a.a8.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/657729a048504e20b9f2b3570aae94cb/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=zpY3ADPi8Yq3zAULJRIa6q2xXBmD1YhH2gGQz9yxo6I",
+            "01" : "cleave.work",
+          "07" : "cleave2.work",
+          "79" : "cleave3.work"
+        }
+
+
+        return url_list[startTrigger.data.br_cd]
     - playgroundQueryUuid: ''
     - playgroundQueryId: null
     - error: null
@@ -30,6 +40,7 @@ template:
     - data: null
     - importedQueryInputs:
         ordered: []
+    - _additionalScope: []
     - isImported: false
     - showSuccessToaster: true
     - cacheKeyTtl: ''
@@ -71,14 +82,13 @@ template:
     - queryThrottleTime: '750'
     - updateSetValueDynamically: false
     - notificationDuration: ''
-createdAt: 2025-11-05T12:03:31.159Z
+createdAt: 2025-11-05T12:23:06.343Z
 blockData:
-  top: 48
-  left: 448
-  uuid: 189241fa-9417-44c1-b145-1457700df7df
-  pluginId: code1
+  top: -752
+  left: 816
+  uuid: 441bec9a-526f-470f-8329-4e9a6b90a54a
+  pluginId: webhookUrl
   blockType: code
-  editorType: PythonQuery
-  resourceName: PythonQuery
-  incomingOnSuccessEdges:
-    - 8b327d64-d4b0-4b5f-8176-73c751f28301
+  editorType: JavascriptQuery
+  resourceName: JavascriptQuery
+  incomingOnSuccessEdges: []
