@@ -1,0 +1,11 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "6c4e5b84-f01f-11ef-b5ad-db9325754cbc",
+  "appTemplate": {
+    "inAppRetoolPillAppearance": "HIDE_MENU",
+    "isGlobalWidget": true,
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
