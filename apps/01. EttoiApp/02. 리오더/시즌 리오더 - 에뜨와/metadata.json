@@ -1,0 +1,10 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "94ac8d4e-3a16-11f0-b9b1-2ff5c5c999b7",
+  "appTemplate": {
+    "shortlink": "reorder_season_ettoi",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}

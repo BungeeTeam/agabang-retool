@@ -1,0 +1,1 @@
+SELECT * FROM discontinued_products WHERE TRIM(sty_cd) LIKE '{{var_brand_code.value}}%' AND is_discontinued = TRUE;
