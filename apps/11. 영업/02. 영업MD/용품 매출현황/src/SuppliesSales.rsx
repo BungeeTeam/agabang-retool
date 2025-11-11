@@ -89,6 +89,15 @@ return arrData"
     padding="8px 8px"
     sticky={null}
     type="main"
+  />
+  <Frame
+    id="$main"
+    enableFullBleed={false}
+    isHiddenOnDesktop={false}
+    isHiddenOnMobile={false}
+    padding="8px 12px"
+    sticky={null}
+    type="main"
   >
     <Tabs
       id="tabs1"
