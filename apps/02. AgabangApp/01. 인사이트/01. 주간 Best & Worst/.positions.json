@@ -1,0 +1,261 @@
+{
+  "agabangTopNavigation1": {
+    "subcontainer": "header",
+    "row": 0,
+    "height": 2.4,
+    "width": 12
+  },
+  "checkbox1": {
+    "container": "container8",
+    "subcontainer": "488cc",
+    "row": 0.2,
+    "col": 7,
+    "height": 0.6,
+    "width": 5,
+    "stackPosition": {
+      "object": {
+        "ordinal": 6,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container8": {
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "containerTitle10": {
+    "container": "container_worst",
+    "rowGroup": "header",
+    "row": 0.2,
+    "height": 0.6,
+    "width": 1
+  },
+  "containerTitle8": {
+    "container": "container8",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "containerTitle9": {
+    "container": "container_best",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 1
+  },
+  "container_best": {
+    "row": 0.4,
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container_worst": {
+    "row": 1.4,
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "dateRange": {
+    "container": "container8",
+    "subcontainer": "488cc",
+    "col": 9,
+    "height": 0.2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 5,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "drawerCloseButton1": {
+    "rowGroup": "header",
+    "subcontainer": "drawerFrame1",
+    "col": 9,
+    "height": 1
+  },
+  "drawerTitle1": {
+    "rowGroup": "header",
+    "subcontainer": "drawerFrame1",
+    "height": 0.6,
+    "width": 9
+  },
+  "itemDetail1": {
+    "subcontainer": "drawerFrame1",
+    "height": 8.2,
+    "width": 12
+  },
+  "multiselectSeoson": {
+    "container": "container8",
+    "subcontainer": "488cc",
+    "row": 0,
+    "col": 7,
+    "height": 0.2,
+    "width": 2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 3,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "sel_category": {
+    "container": "container8",
+    "subcontainer": "488cc",
+    "row": 1.2,
+    "height": 0.8,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 4,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "select_best_list_count": {
+    "container": "container_best",
+    "rowGroup": "header",
+    "col": 10,
+    "height": 0.2,
+    "width": 2
+  },
+  "select_exclude_day": {
+    "container": "container_worst",
+    "rowGroup": "header",
+    "col": 6,
+    "height": 0.2,
+    "width": 2
+  },
+  "select_exclude_rate": {
+    "container": "container_worst",
+    "rowGroup": "header",
+    "col": 8,
+    "height": 0.2,
+    "width": 2
+  },
+  "select_worst_list_count": {
+    "container": "container_worst",
+    "rowGroup": "header",
+    "row": 0,
+    "col": 10,
+    "height": 0.2,
+    "width": 2
+  },
+  "spacer8": {
+    "row": 0.2,
+    "height": 0.2,
+    "width": 12
+  },
+  "table_best_new": {
+    "container": "container_best",
+    "subcontainer": "6a4e6",
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "table_worst": {
+    "container": "container_worst",
+    "subcontainer": "6a4e6",
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text21": {
+    "container": "container8",
+    "subcontainer": "488cc",
+    "row": 0.6,
+    "height": 0.6,
+    "width": 4,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text4": {
+    "container": "container_best",
+    "rowGroup": "header",
+    "col": 1,
+    "height": 0.6
+  },
+  "text5": {
+    "container": "container_worst",
+    "rowGroup": "header",
+    "col": 1,
+    "height": 0.6
+  },
+  "text6": {
+    "container": "container8",
+    "subcontainer": "488cc",
+    "row": 0,
+    "height": 0.6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "textInput1": {
+    "container": "container8",
+    "subcontainer": "488cc",
+    "col": 5,
+    "height": 0.2,
+    "width": 2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  }
+}
