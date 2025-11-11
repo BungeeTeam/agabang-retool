@@ -1,0 +1,7 @@
+._retool-table_items, ._retool-table_items_related, ._retool-listView_selected_item, ._retool-container_qty_prod, ._retool-main_items_table {
+  height: {{ viewport.height * 0.8 }}px
+}
+
+._retool-container5 {
+ height: {{ viewport.height}}px 
+}

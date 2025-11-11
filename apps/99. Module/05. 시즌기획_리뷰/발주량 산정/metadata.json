@@ -1,0 +1,19 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "47b45410-45d1-11f0-89e7-47d4b1558cae",
+  "appTemplate": {
+    "isGlobalWidget": true,
+    "version": "3.148.10",
+    "customShortcuts": {
+      "array": [
+        {
+          "object": {
+            "shortcut": "enter",
+            "action": "save_assort.trigger()\nsave_assort_final.trigger()"
+          }
+        }
+      ]
+    }
+  }
+}
