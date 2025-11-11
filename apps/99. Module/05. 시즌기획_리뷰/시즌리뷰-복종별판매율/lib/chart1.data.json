@@ -1,0 +1,71 @@
+[
+  {
+    "name": "평균 판매량",
+    "x": {{formatDataAsObject(get_daily_sales_by_style.data).sale_dt?.map(item => moment(item).format())}},
+    "y": {{formatDataAsObject(get_daily_sales_by_style.data)['avg_sale_qty']}},
+    "type": "line",
+    "transforms": [
+      {
+        "type": "sort",
+        "target": {{formatDataAsObject(get_daily_sales_by_style.data).sale_dt?.map(item => moment(item).format())}},
+        "order": "ascending"
+      }
+    ],
+    "marker": {
+      "color": "#B4B4B4"
+    },
+    "line": {
+      "dash": "dot",
+    },
+    "mode": "lines"
+  },
+  {
+    "name": "누적 판매량",
+    "x": {{formatDataAsObject(get_daily_sales_by_style.data).sale_dt?.map(item => moment(item).format())}},
+    "y": {{formatDataAsObject(get_daily_sales_by_style.data)['sale_cumsum']}},
+    "type": "line",
+    "hovertemplate": {{formatDataAsObject(get_daily_sales_by_style.data)['sale_cumsum']}},
+    "transforms": [
+      {
+        "type": "sort",
+        "target": {{formatDataAsObject(get_daily_sales_by_style.data).sale_dt?.map(item => moment(item).format())}},
+        "order": "ascending"
+      },
+      {
+        "type": "aggregate",
+        "groups": {{formatDataAsObject(get_daily_sales_by_style.data).sale_dt?.map(item => moment(item).format())}},
+        "aggregations": [
+          {
+            "target": "y",
+            "func": "sum",
+            "enabled": true
+          }
+        ]
+      }
+    ],
+    "marker": {
+      "color": "#1E3A8A"
+    },
+    "mode": "lines"
+  },
+  {
+    "name": "누적 입고량",
+    "x": {{formatDataAsObject(get_daily_sales_by_style.data).sale_dt?.map(item => moment(item).format())}},
+    "y": {{formatDataAsObject(get_daily_sales_by_style.data)['in_cumsum']}},
+    "type": "line",
+    "line": {
+      "shape": 'vh',
+    },
+    "transforms": [
+      {
+        "type": "sort",
+        "target": {{formatDataAsObject(get_daily_sales_by_style.data).sale_dt?.map(item => moment(item).format())}},
+        "order": "ascending"
+      }
+    ],
+    "marker": {
+      "color": "#60A5FA"
+    },
+    "mode": "lines"
+  }
+]
