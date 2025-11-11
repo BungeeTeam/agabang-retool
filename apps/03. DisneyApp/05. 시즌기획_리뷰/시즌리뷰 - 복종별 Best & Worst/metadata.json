@@ -1,0 +1,201 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "27e801f0-ed01-11ef-add3-876d191ef7b8",
+  "appTemplate": {
+    "appThemeId": "custom",
+    "preloadedAppJavaScript": "function color_grad(num) {\n\n  // #DADADA\n  const start_r = 200\n  const start_g = 200\n  const start_b = 200\n\n  const mid_r = 13\n  const mid_g = 13\n  const mid_b = 13\n\n  // #DD5E2C\n  const end_r = 255\n  const end_g = 0\n  const end_b = 0\n\n  let r\n  let g\n  let b\n  let per\n\n  const cut_0 = 0\n  const cut_1 = 0.3\n  const cut_2 = 0.6\n  const cut_3 = 0.9\n\n  if(num >= cut_0 && num < cut_1) {\n    per = (num - cut_0) / (cut_1 - cut_0)\n    r = Math.floor(start_r + (mid_r - start_r) * per)\n    g = Math.floor(start_g + (mid_g - start_g) * per)\n    b = Math.floor(start_b + (mid_b - start_b) * per)\n  } else if(num >= cut_1 && num < cut_2) {\n    r = mid_r\n    g = mid_g\n    b = mid_b\n  } else if(num >= cut_2 && num < cut_3) {\n    per = (num - cut_2) / (cut_3 - cut_2)\n    r = Math.floor(mid_r + (end_r - mid_r) * per)\n    g = Math.floor(mid_g + (end_g - mid_g) * per)\n    b = Math.floor(mid_b + (end_b - mid_b) * per)\n  } else if(num >= cut_3) {\n    r = end_r\n    g = end_g\n    b = end_b\n  } else {\n    r = start_r\n    g = start_g\n    b = start_b\n  }\n  \n  const hex_r = r.toString(16).padStart(2, '0')\n  const hex_g = g.toString(16).padStart(2, '0')\n  const hex_b = b.toString(16).padStart(2, '0')\n\n  const hex = `#${hex_r}${hex_g}${hex_b}`\n\n  return hex\n}",
+    "pageCodeFolders": {
+      "object": {
+        "season_list": {
+          "array": []
+        },
+        "sel_season": {
+          "array": []
+        },
+        "get_season_image_list": {
+          "array": []
+        },
+        "upload_image": {
+          "array": []
+        },
+        "file_upload_dropzone": {
+          "array": []
+        },
+        "image_upload_modal": {
+          "array": []
+        },
+        "fileInput": {
+          "array": []
+        },
+        "file_input": {
+          "array": []
+        },
+        "get_season_": {
+          "array": []
+        },
+        "delete_image": {
+          "array": []
+        },
+        "image_list_view": {
+          "array": []
+        },
+        "sel_s3_key": {
+          "array": []
+        },
+        "get_signed_url": {
+          "array": []
+        },
+        "season_item_list": {
+          "array": []
+        },
+        "item_select": {
+          "array": []
+        },
+        "sel_style_info": {
+          "array": []
+        },
+        "update_review_item": {
+          "array": []
+        },
+        "season_review_item": {
+          "array": []
+        },
+        "insert_review_item": {
+          "array": []
+        },
+        "delete_review_item": {
+          "array": []
+        },
+        "search_text": {
+          "array": []
+        },
+        "item_list_view": {
+          "array": []
+        },
+        "airflow_best_worst": {
+          "array": []
+        },
+        "container_for_table": {
+          "array": []
+        },
+        "table_item_list": {
+          "array": []
+        },
+        "drawerFrame_item_detail": {
+          "array": []
+        },
+        "multiselect_category": {
+          "array": []
+        },
+        "select_season": {
+          "array": []
+        },
+        "keyValue_item_info": {
+          "array": []
+        },
+        "keyValue_item_inventory": {
+          "array": []
+        },
+        "keyValue_item_price": {
+          "array": []
+        },
+        "keyValue_item_": {
+          "array": []
+        },
+        "keyValue_item_cost": {
+          "array": []
+        },
+        "keyValue_item_date": {
+          "array": []
+        },
+        "keyValue_item_date_logistics": {
+          "array": []
+        },
+        "get_item_list": {
+          "array": []
+        },
+        "get_item_detail": {
+          "array": []
+        },
+        "get_item_size_detail": {
+          "array": []
+        },
+        "get_image_list": {
+          "array": []
+        },
+        "get_daily_sales_by_style": {
+          "array": []
+        },
+        "get_image": {
+          "array": []
+        },
+        "download_images_zip": {
+          "array": []
+        },
+        "query_avg_sale_rate": {
+          "array": []
+        },
+        "var_category_list": {
+          "array": []
+        },
+        "var_color_hex_list": {
+          "array": []
+        },
+        "get_item_list_new": {
+          "array": []
+        },
+        "var_sty_cd": {
+          "array": []
+        },
+        "var_sel_sty_info": {
+          "array": []
+        },
+        "get_category_list": {
+          "array": []
+        },
+        "sel_category": {
+          "array": []
+        },
+        "end_date": {
+          "array": []
+        },
+        "start_date": {
+          "array": []
+        },
+        "sel_start_date": {
+          "array": []
+        },
+        "sel_end_date": {
+          "array": []
+        },
+        "listView_item_categories": {
+          "array": []
+        },
+        "container_filter": {
+          "array": []
+        },
+        "container_items": {
+          "array": []
+        },
+        "listView_top_wrapper": {
+          "array": []
+        },
+        "container_items_2": {
+          "array": []
+        }
+      }
+    },
+    "appThemeName": "Custom app theme",
+    "shortlink": "review-category-bestworst-disney",
+    "preloadedAppJSLinks": {
+      "array": [
+        "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/jszip-utils/0.1.0/jszip-utils.min.js"
+      ]
+    },
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
