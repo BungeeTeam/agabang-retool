@@ -1,0 +1,11 @@
+{
+  "module1": {
+    "height": 3.8,
+    "width": 12
+  },
+  "topNavigation1": {
+    "subcontainer": "header",
+    "height": 2.4,
+    "width": 12
+  }
+}
