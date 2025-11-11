@@ -1,0 +1,24 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "7c3f227a-0e16-11f0-9e6e-bb2a865dced7",
+  "appTemplate": {
+    "urlFragmentDefinitions": [
+      {
+        "ordered": [
+          {
+            "name": ""
+          },
+          {
+            "value": ""
+          }
+        ]
+      }
+    ],
+    "isFetching": true,
+    "customDocumentTitleEnabled": true,
+    "shortlink": "price_decision-ettoi",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
