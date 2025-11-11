@@ -1,0 +1,82 @@
+{
+  "title": {
+    "text": "",
+    "font": {
+      "color": "#3D3D3D",
+      "size": 16
+    }
+  },
+  "font": {
+    "family": "var(--default-font, var(--sans-serif))",
+    "color": "#979797"
+  },
+  "showlegend": true,
+  "legend": {
+    "xanchor": "center",
+    "x": 0.9,
+    "y": 1.2,
+    "orientation": "h"
+  },
+  "margin": {
+    "l": 80,
+    "r": 90,
+    "t": 24,
+    "b": 0,
+    "pad": 1
+  },
+  "hovermode": "closest",
+  "hoverlabel": {
+    "bgcolor": "#000",
+    "bordercolor": "#000",
+    "font": {
+      "color": "#fff",
+      "family": "var(--default-font, var(--sans-serif))",
+      "size": 12
+    }
+  },
+  "clickmode": "select+event",
+  "dragmode": "select",
+  "xaxis": {
+    "title": {
+      "text": "",
+      "standoff": 6,
+      "font": {
+        "size": 12
+      }
+    },
+    "type": "-",
+    "tickformat": "",
+    "automargin": true,
+    "fixedrange": true,
+    "gridcolor": "#fff",
+    "zerolinecolor": "#fff"
+  },
+  "yaxis": {
+    "title": {
+      "text": "수량",
+      "standoff": 6,
+      "font": {
+        "size": 12
+      }
+    },
+    "type": "linear",
+    "tickformat": "",
+    "automargin": true,
+    "fixedrange": true,
+    "zerolinecolor": "#DEDEDE",
+    "range": [0, {{ Math.max(...formatDataAsObject(get_item_list.data[item])['sale_qty'], ...formatDataAsObject(get_item_list.data[item])['tot_in_qty']) * 1.3 }}]
+
+  },
+  "yaxis2": {
+    "title": {
+      "text": "판매율(%)"
+    },
+    "side": "right",
+    "overlaying": "y",
+    "visible": true,
+    "range": [0, 119]
+  },
+  "xaxis": {
+    "visible": false
+  }
+}
