@@ -1,0 +1,11 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "e1694326-ed03-11ef-84b3-476e47ab6ce2",
+  "appTemplate": {
+    "appThemeId": -1,
+    "shortlink": "weather-disney",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
