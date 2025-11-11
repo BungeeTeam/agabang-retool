@@ -321,22 +321,22 @@
         >
           <Event
             event="clickToolbar"
-            method="exportData"
+            method="trigger"
             params={{
               ordered: [
                 {
                   options: {
-                    ordered: [
-                      { fileType: "xlsx" },
-                      { includeHiddenColumns: false },
-                      { fileName: "{{ text1.value.slice(6) }}" },
-                    ],
+                    object: {
+                      onSuccess: null,
+                      onFailure: null,
+                      additionalScope: null,
+                    },
                   },
                 },
               ],
             }}
-            pluginId="typeStatTbl"
-            type="widget"
+            pluginId="excelDownloadByBiz"
+            type="datasource"
             waitMs="0"
             waitType="debounce"
           />

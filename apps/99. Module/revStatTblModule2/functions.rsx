@@ -67,4 +67,11 @@
     funcBody={include("./lib/salesBySecondLevelWithBiz.js", "string")}
   />
   <State id="variable4" value="" />
+  <JavascriptQuery
+    id="excelDownloadByBiz"
+    notificationDuration={4.5}
+    query={include("./lib/excelDownloadByBiz.js", "string")}
+    resourceName="JavascriptQuery"
+    showSuccessToaster={false}
+  />
 </GlobalFunctions>
