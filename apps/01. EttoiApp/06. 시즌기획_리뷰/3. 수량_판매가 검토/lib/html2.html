@@ -1,0 +1,84 @@
+<div class="card-container">
+{{
+  (() => {
+    
+    const colorDict = JSON.parse(retoolContext.configVars.var_color_dict);
+    const items = formatDataAsArray(get_item_list.data)
+      .filter(item =>
+        item.item_price == var_price_list.value[i] &&
+        item.year_sesn_nm_eng == var_season_list.value[1]
+      );
+
+    return items.map(item => {
+      const saleRate = item.tot_in_qty > 0
+        ? ((item.tot_sale_qty / item.tot_in_qty) * 100).toFixed(0)
+        : '0';
+
+      const colorCode = colorDict[item.col_nm] || '#ccc';
+
+      const sizes = item.size_nm_list.replace("[","").replace("]", "").split(",");
+      const quantities = item.size_in_qty_list.replace("[","").replace("]", "").split(",");
+
+      //  console.log(`===>>> item.size_nm_list : ${item.size_nm_list}`)
+      
+      const maxLength = Math.max(sizes.length, quantities.length);
+      
+      // 길이 맞추기 (패딩)
+      const paddedSizes = [...sizes, ...Array(maxLength - sizes.length).fill("")];
+      const paddedQuantities = [...quantities.map(q => q.toString()), ...Array(maxLength - quantities.length).fill("")];
+      
+      // size와 qty 쌍으로 반복해서 HTML 생성
+      const sizeQtyHtml = paddedSizes.map((size, index) => {
+        const cleanSize = size.trim().replace(/^['"]|['"]$/g, '');
+        const qty = paddedQuantities[index].trim().replace(/^['"]|['"]$/g, '');
+        return `
+          <div class="item">
+            <div class="item-label">${cleanSize}</div>
+            <div class="item-value">${qty}</div>
+          </div>
+        `;
+      }).join('');
+
+      return `
+        <div class="card">
+          <h5>${item.sty_cd || ''}</h5>
+          <h5>${item.sty_nm || ''}</h5>
+          <p class="badge" style="background-color:${colorCode}">${item.col_nm || ''}</p>
+          <img class="img" src="https://agabang-image.s3.ap-northeast-2.amazonaws.com/item_final/${item.sty_cd}${item.col_cd}.jpg" alt="제품 사진" />
+
+          <p class="small"><span class="bold">생산처 |</span> ${item.prod_comp || ''}</p>
+          <p class="small"><span class="bold">소재 |</span> ${item.fabric || ''}</p>
+          <p class="small"><span class="bold">판매율 |</span> ${saleRate}%</p>
+
+          <hr />
+
+          <h6>생산량 : ${item.tot_in_qty || 0}</h6>
+          <div class="container">
+            ${sizeQtyHtml}
+          </div>
+
+          <h6>판매가/원가</h6>
+          <div class="container">
+            <div class="item">
+              <div class="item-label">최종</div>
+              <div class="item-value">${Number(item.item_price).toLocaleString() || ''}</div>
+              <div class="item-value small">( ${Number(item.cost_price) == 0 ? "-":  (Number(item.item_price)/Number(item.cost_price*1.1)).toFixed(2) } )</div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="item">
+              <div class="item-label">VAT(-)</div>
+              <div class="item-value">${ Number(item.cost_price).toLocaleString() || ''}</div>
+            </div>
+            <div class="item">
+              <div class="item-label">VAT(+)</div>
+              <div class="item-value">${ Number((item.cost_price*1.1).toFixed(0)).toLocaleString(0) || ''}</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  })()
+}}
+</div>

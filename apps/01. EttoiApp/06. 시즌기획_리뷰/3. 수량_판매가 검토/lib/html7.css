@@ -1,0 +1,92 @@
+.card-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+      }
+      .card {
+        border: 1px solid #e0e0e0;
+        padding: 8px;
+        margin: 0;
+        font-size: 11px;
+        color: #000000;
+      }
+
+      .card img {
+        display: block;
+        width: 70%;
+        margin-bottom: 8px;
+      }
+
+      .card h5 {
+        font-size: 12px;
+        margin: 4px 0;
+        padding: 0;
+      }
+
+      .card h6 {
+        font-size: 11px;
+        margin: 16px 0 4px;
+        padding: 0;
+      }
+
+      .card p {
+        margin: 4px 0 0;
+      }
+
+      .card .badge {
+        display: inline-block;
+        background-color: #eee;
+        margin: 4px 0 12px;
+        padding: 2px 8px;
+        font-size: 12px;
+        border-radius: 12px;
+      }
+
+      .card hr {
+        border: none;
+        border-top: 1px solid #e0e0e0;
+        margin: 12px 0;
+      }
+
+      .container {
+        display: flex;
+        width: 100%;
+        background-color: #f9f9f9;
+        padding: 4px 0;
+        margin-bottom: 4px;
+      }
+
+      .item {
+        flex: 1;
+        padding: 0 4px;
+        text-align: center;
+        border-right: 1px #ccc solid;
+      }
+
+      .item:last-child {
+        border-right: 0;
+      }
+
+      .item-label {
+        font-weight: bold;
+        margin-bottom: 4px;
+      }
+
+      .item-value {
+        margin-bottom: 2px;
+      }
+
+      .small {
+        font-size: 0.9em;
+        padding-bottom: 0;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .price-section {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border-radius: 4px;
+      }
