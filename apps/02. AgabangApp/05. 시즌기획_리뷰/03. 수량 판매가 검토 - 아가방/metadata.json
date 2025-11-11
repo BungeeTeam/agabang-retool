@@ -1,0 +1,11 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "2526375e-470e-11f0-88ef-dbf9e2c39b8b",
+  "appTemplate": {
+    "rootScreen": "defaultPage",
+    "shortlink": "price-review-agabang",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
