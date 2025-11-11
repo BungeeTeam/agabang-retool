@@ -1,0 +1,117 @@
+{
+  "bizMultiSelect": {
+    "subcontainer": "sidebarFrame1",
+    "row": 0,
+    "height": 0.2,
+    "width": 1
+  },
+  "brMultiselect": {
+    "row": 4.2,
+    "height": 0.2,
+    "width": 6
+  },
+  "dateRange": {
+    "height": 0.2,
+    "width": 4
+  },
+  "drawerCloseButton1": {
+    "rowGroup": "header",
+    "subcontainer": "bizDrawerFrame",
+    "col": 9,
+    "height": 1
+  },
+  "drawerCloseButton2": {
+    "rowGroup": "header",
+    "subcontainer": "brDrawerFrame",
+    "col": 9,
+    "height": 1
+  },
+  "drawerTitle1": {
+    "rowGroup": "header",
+    "subcontainer": "bizDrawerFrame",
+    "height": 0.6,
+    "width": 9
+  },
+  "drawerTitle2": {
+    "rowGroup": "header",
+    "subcontainer": "brDrawerFrame",
+    "height": 0.6,
+    "width": 9
+  },
+  "salesTopNavigation1": {
+    "subcontainer": "header",
+    "height": 2.4,
+    "width": 12
+  },
+  "searchText": {
+    "col": 8,
+    "height": 0.2,
+    "width": 4
+  },
+  "shareSwitch": {
+    "row": 1.2,
+    "col": 2,
+    "height": 0.6
+  },
+  "spacer1": {
+    "row": 2.8,
+    "height": 0.8,
+    "width": 2
+  },
+  "spacer2": {
+    "row": 9,
+    "height": 0.8,
+    "width": 2
+  },
+  "storeDetailModule1": {
+    "row": 9.8,
+    "height": 0.2,
+    "width": 12
+  },
+  "storeDetailModule2": {
+    "subcontainer": "bizDrawerFrame",
+    "height": 0.2,
+    "width": 12
+  },
+  "text1": {
+    "row": 0.2,
+    "height": 0.6,
+    "width": 2
+  },
+  "text35": {
+    "row": 1.2,
+    "col": 9,
+    "height": 0.6
+  },
+  "text36": {
+    "row": 3.6,
+    "height": 0.6,
+    "width": 9
+  },
+  "text37": {
+    "row": 7.4,
+    "col": 9,
+    "height": 0.6
+  },
+  "text38": {
+    "rowGroup": "header",
+    "subcontainer": "sidebarFrame1",
+    "height": 1,
+    "width": 1
+  },
+  "typeStatTbl": {
+    "row": 1.8,
+    "height": 1,
+    "width": 12
+  },
+  "typeStatTbl2": {
+    "row": 8,
+    "height": 1,
+    "width": 12
+  },
+  "typeStatTbl3": {
+    "subcontainer": "brDrawerFrame",
+    "height": 1,
+    "width": 12
+  }
+}
