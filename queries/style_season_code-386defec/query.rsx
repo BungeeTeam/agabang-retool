@@ -1,0 +1,22 @@
+<PlaygroundQuery
+  id="style_season_code"
+  adhocResourceType={null}
+  data={null}
+  resourceType="jdbc"
+>
+  <SqlQuery
+    _additionalScope={[]}
+    allowedGroupIds={[]}
+    allowedGroups={[]}
+    dataArray={[]}
+    events={[]}
+    importedQueryDefaults={{}}
+    importedQueryInputs={{}}
+    privateParams={[]}
+    query={include("./lib/style_season_code.sql", "string")}
+    queryTimeout="100000"
+    retoolVersion="3.114.3"
+    warningCodes={[]}
+    watchedParams={[]}
+  />
+</PlaygroundQuery>
