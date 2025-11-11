@@ -1,0 +1,12 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "b396c2a0-5736-11f0-83f0-dbdccbfe2035",
+  "appTemplate": {
+    "isFetching": true,
+    "customDocumentTitleEnabled": true,
+    "shortlink": "ai-assort-order-review-ettoi",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}

@@ -1,0 +1,15 @@
+._retool-table_items, ._retool-table_items_related, ._retool-listView_selected_item, ._retool-container_qty_prod {
+  height: {{ viewport.height*0.8 }}px
+}
+
+div[data-row-index="-1"] {
+  height: 30px !important;
+  position: sticky !important; /* 헤더를 고정 */
+  top: 0 !important; /* 화면 상단에 고정 */
+  word-break: keep-all !important;
+}
+
+span[data-testid*="HeaderCellContents"] {
+  text-align: center !important;
+  text-wrap: wrap !important;
+}
