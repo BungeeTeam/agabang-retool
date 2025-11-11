@@ -1,0 +1,198 @@
+<div class="card-container">
+{{ (() => {
+  const list = get_item_list_new.data 
+  
+  return list.map((item, index) => {
+    if(item?.sty_cd?.length<=0){
+      return `<div class="card"></div>`
+    }
+
+    let simple_info = `${item.year_sesn_nm_kor}/ ${item.cat_nm}/ ${item.item_nm}`
+    
+    return `
+      <div class="card" data-click-target="primary-${index}">
+        <div class="head" >
+          <div class="head-left">
+            <div class="head-title">${item.sty_nm}</div>
+            <div style="margin-top: 5px;">${item.sty_cd}</div>
+          </div>
+          <div class="head-right">
+            <div style="padding-bottom: 1px; font-weight: 400;">${simple_info}</div>
+            <div style="display: flex; flex-direction: row; float: right;">
+              <div style="margin-right: 25px;">${item.deli_dt ? moment(item.deli_dt).format("M/D") : ''}</div>
+              <b style="color: red;">${moment(item.fin_date).format("M/D")}</b>
+            </div>
+          </div>
+          
+        </div>
+    
+        <div class="divider" style="margin: 8px 1px;" > </div>
+        
+    
+        <div class="item-body">
+          <div class="item-left">
+            <img class="img-layout" 
+                 src="https://agabang-image.s3.ap-northeast-2.amazonaws.com/item_final/${ item.sty_cd}${ item.col_cd }.jpg"/>
+                 
+            <div class="product-layout">
+              <div class="product-box">
+              
+                <div class="product-data" style="color: #3170F9" >${item.preview_score.toFixed(2)}</div>
+                <div class="middle-border product-data" style="background-color: ${[JSON.parse(retoolContext.configVars.var_color_dict)[item.col_nm]]}">
+            ${item.col_nm}
+          </div>
+              </div>
+              <div class="product-box">
+                <div class="product-data">회수율: ${ Math.round(item.return_per,0)}%</div>
+                <div class="product-data">${item.prod_country ?? ''}</div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="item-right">
+            <div class="info-box">
+              <div class="info-box-layout"> 
+                <b>TAG가</b>
+                <div class="info-data">${item.tag_prce?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</div>
+              </div>
+              <div class="info-box-layout"> 
+                <b>현판가</b>
+                <div class="info-data">${item.f_sale_prce?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</div>
+              </div>
+              <div class="info-box-layout"> 
+                <b>구입가(-)</b>
+                <div class="info-data">${item.cost_prce?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</div>
+              </div>
+            </div>
+
+
+
+            <div class="info-box">
+              <div class="info-box-layout"> 
+                <b>M/UP</b>
+                <div class="info-data">${item.mark_up}</div>
+              </div>
+              <div class="info-box-layout"> 
+                <b>최초출고</b>
+                <div class="info-data">${moment(item.fout_date).format("M/D")}</div>
+              </div>
+              <div class="info-box-layout"> 
+                <b>발주량</b>
+                <div class="info-data">${item.plan_qty}</div>
+              </div>
+            </div>
+
+
+
+
+
+            <div class="info-box">
+              <div class="info-box-layout"> 
+                <b>입고량</b>
+                <div class="info-data">${item.tot_in_qty?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</div>
+              </div>
+              <div class="info-box-layout"> 
+                <b>판매량</b>
+                <div class="info-data">${item.tot_sale_qty?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</div>
+              </div>
+              <div class="info-box-layout"> 
+                <b>판매량(주간)</b>
+                <div class="info-data">${item.week_sale_qty?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="info-box">
+              <div class="info-box-layout" style="width: 50%;"> 
+                <b>판매율(수량)</b>
+                <div class="info-data">${item.tot_sale_qty_per}%</div>
+              </div>
+              <div class="info-box-layout" style="width: 50%;"> 
+                <b>입고금액(TAG)</b>
+                <div class="info-data">${item.tot_in_tag_amt?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</div>
+              </div>
+            </div>
+
+
+
+
+
+            <div class="info-box">
+              <div class="info-box-layout" style="width: 50%;"> 
+                <b>실판매금액</b>
+                <div class="info-data">${item.tot_sale_amt?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</div>
+              </div>
+              <div class="info-box-layout" style="width: 50%;"> 
+                <b>실판매율(금액)</b>
+                <div class="info-data">${item.tot_sale_amt_per}%</div>
+              </div>
+            </div>
+
+
+            <div class="info-box">
+              <div class="info-box-layout" style="width: 35%;"> 
+                <b>디자이너</b>
+                <div class="info-data">${item.designer_nm}</div>
+              </div>
+              <div class="info-box-layout" style="width: 65%;"> 
+                <b>소재</b>
+                <div class="info-data">${item.fabric}</div>
+              </div>
+            </div>
+
+
+            
+          </div>
+    
+          
+        </div>
+    
+    
+    
+    
+
+    
+    
+        <div style="margin: 8px 0;" > </div>
+    
+    
+          
+        <div class="table-layout">
+
+          ${item.table_data?.map((tbl) => {
+            return `<div>
+            <div class="table-row">
+              <div class="table-title">${tbl?.SIZE}</div>
+              <div class="table-data">${tbl?.col_1 ? tbl?.col_1.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : ''}</div>
+              <div class="table-data">${tbl?.col_2 ? tbl?.col_2.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : ''}</div>
+              <div class="table-data">${tbl?.col_3 ? tbl?.col_3.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : ''}</div>
+              <div class="table-data">${tbl?.col_4 ? tbl?.col_4.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : ''}</div>
+              <div class="table-data">${tbl?.col_5 ? tbl?.col_5.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : ''}</div>
+              <div class="table-data">${tbl?.col_6 ? tbl?.col_6.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : ''}</div>
+            </div>
+            <div class="divider" > </div>
+          </div>`
+          }).join('')}
+        
+    
+          <div style="margin-top: 5px"> </div>
+          
+        </div>
+    
+        
+        
+      </div>
+      `
+    }).join('')
+  })() 
+  
+}}
+  
+  
+</div>
