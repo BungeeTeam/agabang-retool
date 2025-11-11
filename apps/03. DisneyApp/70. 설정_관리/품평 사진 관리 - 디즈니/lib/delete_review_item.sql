@@ -1,0 +1,2 @@
+DELETE FROM item_image_review_by_brand 
+WHERE s3_key = '{{sel_s3_key.value.replace("'", "''")}}'
