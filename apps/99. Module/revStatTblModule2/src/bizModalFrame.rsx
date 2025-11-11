@@ -240,25 +240,10 @@
       >
         <Event
           event="clickToolbar"
-          method="exportData"
-          params={{
-            ordered: [
-              {
-                options: {
-                  ordered: [
-                    { fileType: "xlsx" },
-                    { includeHiddenColumns: false },
-                    {
-                      fileName:
-                        "{{ text40.value.slice(5) }} 매출현황({{ moment().format('YYYY-MM-DD') }})",
-                    },
-                  ],
-                },
-              },
-            ],
-          }}
-          pluginId="salesTypeTbl"
-          type="widget"
+          method="trigger"
+          params={{ ordered: [] }}
+          pluginId="salesTypeExcelDownload"
+          type="datasource"
           waitMs="0"
           waitType="debounce"
         />

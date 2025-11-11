@@ -321,22 +321,10 @@
         >
           <Event
             event="clickToolbar"
-            method="exportData"
-            params={{
-              ordered: [
-                {
-                  options: {
-                    ordered: [
-                      { fileType: "xlsx" },
-                      { includeHiddenColumns: false },
-                      { fileName: "{{ text1.value.slice(6) }}" },
-                    ],
-                  },
-                },
-              ],
-            }}
-            pluginId="typeStatTbl"
-            type="widget"
+            method="trigger"
+            params={{ ordered: [] }}
+            pluginId="bizExcelDownload"
+            type="datasource"
             waitMs="0"
             waitType="debounce"
           />
@@ -648,22 +636,10 @@
         >
           <Event
             event="clickToolbar"
-            method="exportData"
-            params={{
-              ordered: [
-                {
-                  options: {
-                    ordered: [
-                      { fileType: "xlsx" },
-                      { includeHiddenColumns: false },
-                      { fileName: "{{ text3.value.slice(7) }}" },
-                    ],
-                  },
-                },
-              ],
-            }}
-            pluginId="typeStatTbl3"
-            type="widget"
+            method="trigger"
+            params={{ ordered: [] }}
+            pluginId="onoffExcelDownload"
+            type="datasource"
             waitMs="0"
             waitType="debounce"
           />
@@ -1374,25 +1350,10 @@
             >
               <Event
                 event="clickToolbar"
-                method="exportData"
-                params={{
-                  ordered: [
-                    {
-                      options: {
-                        ordered: [
-                          { fileType: "xlsx" },
-                          { includeHiddenColumns: false },
-                          {
-                            fileName:
-                              "{{ tabs4.selectedLabel}} 매출 현황({{ moment().format('YYYY-MM-DD') }})",
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                }}
-                pluginId="typeStatTbl26"
-                type="widget"
+                method="trigger"
+                params={{ ordered: [] }}
+                pluginId="teamExcelDownload"
+                type="datasource"
                 waitMs="0"
                 waitType="debounce"
               />
@@ -1711,22 +1672,10 @@
             >
               <Event
                 event="clickToolbar"
-                method="exportData"
-                params={{
-                  ordered: [
-                    {
-                      options: {
-                        ordered: [
-                          { fileType: "xlsx" },
-                          { includeHiddenColumns: false },
-                          { fileName: "{{ tabs4.selectedLabel}} 매출 현황" },
-                        ],
-                      },
-                    },
-                  ],
-                }}
-                pluginId="typeStatTbl27"
-                type="widget"
+                method="trigger"
+                params={{ ordered: [] }}
+                pluginId="userExcelDownload"
+                type="datasource"
                 waitMs="0"
                 waitType="debounce"
               />

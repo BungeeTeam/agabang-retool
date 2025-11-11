@@ -66,5 +66,40 @@
     id="salesBySecondLevelWithBiz"
     funcBody={include("./lib/salesBySecondLevelWithBiz.js", "string")}
   />
+  <JavascriptQuery
+    id="bizExcelDownload"
+    notificationDuration={4.5}
+    query={include("./lib/bizExcelDownload.js", "string")}
+    resourceName="JavascriptQuery"
+    showSuccessToaster={false}
+  />
+  <JavascriptQuery
+    id="onoffExcelDownload"
+    notificationDuration={4.5}
+    query={include("./lib/onoffExcelDownload.js", "string")}
+    resourceName="JavascriptQuery"
+    showSuccessToaster={false}
+  />
+  <JavascriptQuery
+    id="teamExcelDownload"
+    notificationDuration={4.5}
+    query={include("./lib/teamExcelDownload.js", "string")}
+    resourceName="JavascriptQuery"
+    showSuccessToaster={false}
+  />
+  <JavascriptQuery
+    id="userExcelDownload"
+    notificationDuration={4.5}
+    query={include("./lib/userExcelDownload.js", "string")}
+    resourceName="JavascriptQuery"
+    showSuccessToaster={false}
+  />
+  <JavascriptQuery
+    id="salesTypeExcelDownload"
+    notificationDuration={4.5}
+    query={include("./lib/salesTypeExcelDownload.js", "string")}
+    resourceName="JavascriptQuery"
+    showSuccessToaster={false}
+  />
   <State id="variable4" value="" />
 </GlobalFunctions>
