@@ -1,0 +1,135 @@
+{
+  "button4": {
+    "type": "stack",
+    "container": "stack12",
+    "subcontainer": "55a72",
+    "row": 0,
+    "col": 10,
+    "height": 1,
+    "width": 2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 3,
+        "widthType": "auto",
+        "width": 277.5,
+        "height": 40
+      }
+    }
+  },
+  "button5": {
+    "container": "moduleContainer",
+    "row": 4.8,
+    "col": 4,
+    "height": 1,
+    "width": 4
+  },
+  "inputExpectedSalesPeriod": {
+    "type": "stack",
+    "container": "stack12",
+    "subcontainer": "55a72",
+    "row": 0,
+    "col": 8,
+    "height": 0.2,
+    "width": 2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "fixed",
+        "width": 196.5,
+        "height": 40
+      }
+    }
+  },
+  "inputExpectedSalesRate": {
+    "type": "stack",
+    "container": "stack12",
+    "subcontainer": "55a72",
+    "row": 0,
+    "col": 6,
+    "height": 0.2,
+    "width": 2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 172.5,
+        "height": 40
+      }
+    }
+  },
+  "modalCloseButton6": {
+    "rowGroup": "header",
+    "subcontainer": "modalFrame3",
+    "col": 9,
+    "height": 1
+  },
+  "modalTitle5": {
+    "rowGroup": "header",
+    "subcontainer": "modalFrame3",
+    "height": 0.6,
+    "width": 9
+  },
+  "moduleContainer": {
+    "height": 20.2,
+    "width": 12
+  },
+  "multiselect1": {
+    "type": "stack",
+    "container": "stack12",
+    "subcontainer": "55a72",
+    "col": 3,
+    "height": 0.2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 626,
+        "height": 40
+      }
+    }
+  },
+  "stack11": {
+    "container": "moduleContainer",
+    "height": 3.8,
+    "width": 2
+  },
+  "stack12": {
+    "container": "moduleContainer",
+    "row": 0,
+    "col": 2,
+    "height": 3.8,
+    "width": 10
+  },
+  "table13": {
+    "container": "table_reorder_targets2",
+    "height": 1,
+    "width": 12
+  },
+  "table_reorder_targets2": {
+    "container": "moduleContainer",
+    "row": 3.8,
+    "height": 1,
+    "width": 12
+  },
+  "text31": {
+    "container": "moduleContainer",
+    "subcontainer": "modalFrame3",
+    "height": 0.6,
+    "width": 9
+  },
+  "text37": {
+    "type": "stack",
+    "container": "stack11",
+    "subcontainer": "5bfc2",
+    "row": 2.6,
+    "height": 0.6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "auto",
+        "width": 267,
+        "height": 40
+      }
+    }
+  }
+}
