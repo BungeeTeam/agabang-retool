@@ -1,0 +1,10 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "e0e0157c-4cfa-11f0-95dc-0baa0513da4d",
+  "appTemplate": {
+    "shortlink": "reorder_simulation_supplies_ettoi",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
