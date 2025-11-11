@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .product-card {
+    width: auto;
+    background: #ffffff;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .product-price {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    color: #0d0d0d;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .product-divider {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 4px 8px;
+  }
+  
+  .product-code {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(13, 13, 13, 0.44);
+    padding: 0;
+    margin: 0;
+  }
+  
+  .product-link-container {
+    margin: 4px 8px;
+    padding: 0px;
+    text-align: center;
+  }
+  
+  .product-link {
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  
+  .product-sale-percent {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 4px 8px;
+    padding: 0;
+  }
+  
+  .product-sale-percent.danger {
+    color: #dc2626;
+  }
+  
+  .product-sale-percent.success {
+    color: #16a34a;
+  }
+  
+  .product-sale-percent.gray {
+    color: #6b7280;
+  }
+  
+  .product-rank {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(13, 13, 13, 0.52);
+    margin: 4px 8px;
+  }
+  
+  .product-tags {
+    margin: 4px 8px;
+    text-align: center;
+  }
+  
+  .product-tag {
+    display: inline-block;
+    padding: 0 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #5d5d5d;
+  }
+</style>
+</head>
+<body>
+  <div class="product-card">
+    <!-- 제품 이미지 -->
+    <img class="product-image" 
+         src="{{ item.image_url}}" 
+         alt="제품 이미지">
+    
+    <!-- 가격 -->
+    <p class="product-price">{{Number(item.origin_price).toLocaleString()}}원</p>
+    
+    <!-- 구분선 -->
+    <hr class="product-divider">
+    
+    <!-- 제품 코드 -->
+    <p class="product-code">{{item.item_code}}</p>
+    
+    <!-- 제품 링크 컨테이너 -->
+    <div class="product-link-container">
+      <a href="{{ item.item_link || item.image_url }}" class="product-link" target="_blank">{{item.item_name}}</a>
+    </div>
+    
+    <!-- 판매율 (sale_per가 0이 아니고 null이 아닐 때만 표시) -->
+    {{(item.sale_per != 0 && item.sale_per != null) ? '<p class="product-sale-percent ' + (item.sale_per > 60 ? "danger" : item.sale_per > 40 ? "success" : "gray") + '"><strong>' + item.sale_per + '%</strong></p>' : ''}}
+    
+    <!-- 컬러 태그 (color가 있을 때만 표시) -->
+    {{item.color ? '<div class="product-tags"><span class="product-tag" style="background-color: ' + JSON.parse(retoolContext.configVars.var_color_dict)[item.color] + ';">' + item.color + '</span></div>' : ''}}
+    
+    <!-- 순위 정보 -->
+    <p class="product-rank">{{ item.origin_price_ranking}}</p>
+  </div>
+</body>
+</html>
