@@ -8,7 +8,6 @@
   "chart1": {
     "container": "container1",
     "subcontainer": "18f70",
-    "row": 0,
     "height": 5.2,
     "width": 12
   },
@@ -224,14 +223,12 @@
   "text4": {
     "container": "container3",
     "subcontainer": "bf65f",
-    "row": 0,
     "height": 0.6,
     "width": 12
   },
   "text5": {
     "container": "container4",
     "subcontainer": "bf65f",
-    "row": 0,
     "height": 0.6,
     "width": 12
   },
