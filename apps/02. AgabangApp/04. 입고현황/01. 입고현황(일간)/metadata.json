@@ -1,0 +1,42 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "876bb57e-e90d-11ef-b869-4760b4b3462a",
+  "appTemplate": {
+    "preloadedAppJavaScript": "function color_grad(slider_value, num) {\n\n  console.log(num)\n\n  const _cut = slider_value\n\n  // #DADADA\n  const start_r = 200\n  const start_g = 200\n  const start_b = 200\n\n  const mid_r = 13\n  const mid_g = 13\n  const mid_b = 13\n\n  // #DD5E2C\n  const end_r = 255\n  const end_g = 0\n  const end_b = 0\n\n  let r\n  let g\n  let b\n  let per\n\n  const cut_0 = 0\n  const cut_1 = Math.floor(_cut * 0.3)\n  const cut_2 = Math.floor(_cut * 0.6)\n  const cut_3 = Math.floor(_cut * 0.9)\n\n  if(num >= cut_0 && num < cut_1) {\n    per = (num - cut_0) / (cut_1 - cut_0)\n    r = Math.floor(start_r + (mid_r - start_r) * per)\n    g = Math.floor(start_g + (mid_g - start_g) * per)\n    b = Math.floor(start_b + (mid_b - start_b) * per)\n  } else if(num >= cut_1 && num < cut_2) {\n    r = mid_r\n    g = mid_g\n    b = mid_b\n  } else if(num >= cut_2 && num < cut_3) {\n    per = (num - cut_2) / (cut_3 - cut_2)\n    r = Math.floor(mid_r + (end_r - mid_r) * per)\n    g = Math.floor(mid_g + (end_g - mid_g) * per)\n    b = Math.floor(mid_b + (end_b - mid_b) * per)\n  } else if(num >= cut_3) {\n    r = end_r\n    g = end_g\n    b = end_b\n  } else {\n    r = start_r\n    g = start_g\n    b = start_b\n  }\n  \n  const hex_r = r.toString(16).padStart(2, '0')\n  const hex_g = g.toString(16).padStart(2, '0')\n  const hex_b = b.toString(16).padStart(2, '0')\n\n  const hex = `#${hex_r}${hex_g}${hex_b}`\n\n  return hex\n}",
+    "pageCodeFolders": {
+      "object": {
+        "query_get_": {
+          "array": []
+        },
+        "query_get_threshold": {
+          "array": []
+        },
+        "query_get_season_code": {
+          "array": []
+        },
+        "var_season_code": {
+          "array": []
+        },
+        "get_day_in_list": {
+          "array": []
+        },
+        "get_day_in_data": {
+          "array": []
+        },
+        "search_text": {
+          "array": []
+        },
+        "sel_days": {
+          "array": []
+        },
+        "initial_viewport": {
+          "array": []
+        }
+      }
+    },
+    "shortlink": "agabang_dsin_daily",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
