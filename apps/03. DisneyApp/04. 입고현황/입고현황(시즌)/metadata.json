@@ -1,0 +1,10 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "f316cc5a-edb3-11ef-8759-977e97c740ea",
+  "appTemplate": {
+    "shortlink": "disney_dsin_season",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
