@@ -1,0 +1,11 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "6354588a-470e-11f0-8b4b-63b7c91fa761",
+  "appTemplate": {
+    "rootScreen": "defaultPage",
+    "shortlink": "price-review-disney",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
