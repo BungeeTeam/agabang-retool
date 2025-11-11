@@ -1,0 +1,364 @@
+{
+  "btn_reorder_simulation": {
+    "type": "stack",
+    "container": "stack2",
+    "subcontainer": "e69fb",
+    "col": 10,
+    "height": 0.8,
+    "width": 2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 3,
+        "widthType": "auto",
+        "width": 105,
+        "height": 40
+      }
+    }
+  },
+  "btn_reorder_simulation2": {
+    "type": "stack",
+    "container": "stack2",
+    "subcontainer": "e69fb",
+    "col": 8,
+    "height": 0.8,
+    "width": 2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "auto",
+        "width": 80,
+        "height": 40
+      }
+    }
+  },
+  "btn_reorder_simulation3": {
+    "type": "stack",
+    "container": "stack2",
+    "subcontainer": "e69fb",
+    "row": 0.8,
+    "col": 10,
+    "height": 0.8,
+    "width": 2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "auto",
+        "width": 105,
+        "height": 40
+      }
+    }
+  },
+  "button1": {
+    "rowGroup": "footer",
+    "subcontainer": "modalFrame1",
+    "col": 10,
+    "height": 1,
+    "width": 2
+  },
+  "cascaderNew1": {
+    "type": "stack",
+    "container": "stack1",
+    "subcontainer": "bead2",
+    "height": 1.6,
+    "width": 4,
+    "stackPosition": {
+      "object": {
+        "ordinal": 4,
+        "widthType": "fixed",
+        "width": 263.08333333333337,
+        "height": 64
+      }
+    }
+  },
+  "collapsibleContainer_discontinued_items": {
+    "container": "moduleContainer",
+    "row": 19.4,
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "collapsibleContainer_discontinued_items2": {
+    "container": "moduleContainer",
+    "row": 19.6,
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "collapsibleTitle1": {
+    "container": "collapsibleContainer_discontinued_items",
+    "rowGroup": "header",
+    "height": 0.8,
+    "width": 9
+  },
+  "collapsibleTitle2": {
+    "container": "collapsibleContainer_discontinued_items2",
+    "rowGroup": "header",
+    "subcontainer": "f474a",
+    "height": 0.8,
+    "width": 9
+  },
+  "collapsibleToggle1": {
+    "container": "collapsibleContainer_discontinued_items",
+    "rowGroup": "header",
+    "col": 9,
+    "height": 0.8
+  },
+  "collapsibleToggle2": {
+    "container": "collapsibleContainer_discontinued_items2",
+    "rowGroup": "header",
+    "subcontainer": "f474a",
+    "col": 9,
+    "height": 0.8
+  },
+  "inputReferenceDate": {
+    "type": "stack",
+    "container": "stack1",
+    "subcontainer": "bead2",
+    "row": 7.4,
+    "height": 0.2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 5,
+        "widthType": "fixed",
+        "width": 138,
+        "height": 8
+      }
+    }
+  },
+  "inputSalesEndDate": {
+    "type": "stack",
+    "container": "stack1",
+    "subcontainer": "bead2",
+    "row": 10.8,
+    "height": 0.2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 6,
+        "widthType": "fixed",
+        "width": 132,
+        "height": 8
+      }
+    }
+  },
+  "itemDetail2": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame1",
+    "row": 0.2,
+    "height": 8.2,
+    "width": 12
+  },
+  "modalCloseButton1": {
+    "rowGroup": "header",
+    "subcontainer": "modalFrame1",
+    "col": 9,
+    "height": 0.8
+  },
+  "modalTitle1": {
+    "rowGroup": "header",
+    "subcontainer": "modalFrame1",
+    "height": 0.6,
+    "width": 9
+  },
+  "moduleContainer": {
+    "height": 20.4,
+    "width": 12
+  },
+  "multiselect1": {
+    "subcontainer": "modalFrame1",
+    "row": 1.6,
+    "height": 0.2,
+    "width": 12
+  },
+  "sel_category3": {
+    "container": "moduleContainer",
+    "row": 3.8,
+    "height": 0.8,
+    "width": 12
+  },
+  "select_brand": {
+    "type": "stack",
+    "container": "stack1",
+    "subcontainer": "bead2",
+    "row": 2.8,
+    "height": 0.2,
+    "width": 4,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 106,
+        "height": 64
+      }
+    }
+  },
+  "selectedrows_count": {
+    "type": "stack",
+    "container": "stack2",
+    "subcontainer": "e69fb",
+    "height": 0.6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "auto",
+        "width": 90,
+        "height": 24
+      }
+    }
+  },
+  "stack1": {
+    "type": "stack",
+    "container": "stack3",
+    "subcontainer": "ff9f4",
+    "height": 3.8,
+    "width": 5,
+    "stackPosition": {
+      "object": {
+        "ordinal": -0.5,
+        "widthType": "auto",
+        "width": 771,
+        "height": 48
+      }
+    }
+  },
+  "stack2": {
+    "type": "stack",
+    "container": "stack3",
+    "subcontainer": "ff9f4",
+    "row": 2.4,
+    "col": 8,
+    "height": 1,
+    "width": 4,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "auto",
+        "width": 536,
+        "height": 32
+      }
+    }
+  },
+  "stack3": {
+    "container": "moduleContainer",
+    "height": 3.8,
+    "width": 12
+  },
+  "table8": {
+    "container": "table_main_list",
+    "row": 0,
+    "height": 1,
+    "width": 12
+  },
+  "table9": {
+    "subcontainer": "modalFrame1",
+    "row": 0.6,
+    "height": 1,
+    "width": 12
+  },
+  "table_discontinued_items": {
+    "container": "collapsibleContainer_discontinued_items",
+    "subcontainer": "f474a",
+    "row": 0.2,
+    "height": 9.8,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "table_main_list": {
+    "container": "moduleContainer",
+    "row": 4.6,
+    "height": 14.8,
+    "width": 12
+  },
+  "table_reorder_history": {
+    "container": "collapsibleContainer_discontinued_items2",
+    "subcontainer": "f474a",
+    "row": 0.2,
+    "height": 8,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text1": {
+    "subcontainer": "modalFrame1",
+    "height": 0.6
+  },
+  "text2": {
+    "subcontainer": "modalFrame1",
+    "row": 1.8,
+    "height": 0.6,
+    "width": 12
+  },
+  "textInput1": {
+    "type": "stack",
+    "container": "stack1",
+    "subcontainer": "bead2",
+    "row": 2.6,
+    "height": 0.2,
+    "width": 2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 7,
+        "widthType": "fixed",
+        "width": 176,
+        "height": 64
+      }
+    }
+  },
+  "textInput2": {
+    "type": "stack",
+    "container": "collapsibleContainer_discontinued_items",
+    "subcontainer": "f474a",
+    "row": 0,
+    "height": 0.2,
+    "width": 4,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 359,
+        "height": 48
+      }
+    }
+  },
+  "textInput3": {
+    "type": "stack",
+    "container": "collapsibleContainer_discontinued_items2",
+    "subcontainer": "f474a",
+    "height": 0.2,
+    "width": 4,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 359,
+        "height": 48
+      }
+    }
+  }
+}
