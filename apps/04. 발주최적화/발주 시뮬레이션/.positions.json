@@ -1,0 +1,777 @@
+{
+  "agabangTopNavigation1": {
+    "subcontainer": "header",
+    "height": 1,
+    "width": 12
+  },
+  "button1": {
+    "row": 10,
+    "col": 10,
+    "height": 1,
+    "width": 2
+  },
+  "button2": {
+    "rowGroup": "header",
+    "subcontainer": "AIReviewModal",
+    "row": 2,
+    "height": 1,
+    "width": 12
+  },
+  "button3": {
+    "row": 10,
+    "col": 10,
+    "height": 1,
+    "width": 2
+  },
+  "button4": {
+    "rowGroup": "header",
+    "subcontainer": "AIReviewModal2",
+    "row": 2,
+    "height": 1,
+    "width": 12
+  },
+  "button5": {
+    "row": 10,
+    "col": 10,
+    "height": 1,
+    "width": 2
+  },
+  "button6": {
+    "rowGroup": "header",
+    "subcontainer": "AIReviewModal3",
+    "row": 2,
+    "height": 1,
+    "width": 12
+  },
+  "container1": {
+    "row": 11,
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container2": {
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container3": {
+    "row": 11,
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container4": {
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container5": {
+    "row": 11,
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container6": {
+    "height": 0.2,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "containerTitle1": {
+    "container": "container1",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "containerTitle2": {
+    "container": "container2",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "containerTitle3": {
+    "container": "container3",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "containerTitle4": {
+    "container": "container4",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "containerTitle5": {
+    "container": "container5",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "containerTitle6": {
+    "container": "container6",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "disneyTopNavigation1": {
+    "subcontainer": "header3",
+    "height": 1,
+    "width": 12
+  },
+  "ettoiTopNavigation1": {
+    "subcontainer": "header4",
+    "height": 1,
+    "width": 12
+  },
+  "modalCloseButton1": {
+    "rowGroup": "header",
+    "subcontainer": "AIReviewModal",
+    "col": 9,
+    "height": 1
+  },
+  "modalCloseButton2": {
+    "rowGroup": "header",
+    "subcontainer": "alertModal",
+    "col": 9,
+    "height": 1
+  },
+  "modalCloseButton3": {
+    "rowGroup": "header",
+    "subcontainer": "AIReviewModal2",
+    "col": 9,
+    "height": 1
+  },
+  "modalCloseButton4": {
+    "rowGroup": "header",
+    "subcontainer": "alertModal2",
+    "col": 9,
+    "height": 1
+  },
+  "modalCloseButton5": {
+    "rowGroup": "header",
+    "subcontainer": "AIReviewModal3",
+    "col": 9,
+    "height": 1
+  },
+  "modalCloseButton6": {
+    "rowGroup": "header",
+    "subcontainer": "alertModal3",
+    "col": 9,
+    "height": 1
+  },
+  "modalTitle1": {
+    "rowGroup": "header",
+    "subcontainer": "AIReviewModal",
+    "height": 0.6,
+    "width": 9
+  },
+  "modalTitle2": {
+    "rowGroup": "header",
+    "subcontainer": "alertModal",
+    "height": 0.6,
+    "width": 9
+  },
+  "modalTitle3": {
+    "rowGroup": "header",
+    "subcontainer": "AIReviewModal2",
+    "height": 0.6,
+    "width": 9
+  },
+  "modalTitle4": {
+    "rowGroup": "header",
+    "subcontainer": "alertModal2",
+    "height": 0.6,
+    "width": 9
+  },
+  "modalTitle5": {
+    "rowGroup": "header",
+    "subcontainer": "AIReviewModal3",
+    "height": 0.6,
+    "width": 9
+  },
+  "modalTitle6": {
+    "rowGroup": "header",
+    "subcontainer": "alertModal3",
+    "height": 0.6,
+    "width": 9
+  },
+  "orderOptChat": {
+    "subcontainer": "AIReviewModal",
+    "height": 9.6,
+    "width": 12
+  },
+  "orderOptChat2": {
+    "subcontainer": "AIReviewModal2",
+    "height": 9.6,
+    "width": 12
+  },
+  "orderOptChat3": {
+    "subcontainer": "AIReviewModal3",
+    "height": 9.6,
+    "width": 12
+  },
+  "reviewPrompt": {
+    "rowGroup": "header",
+    "subcontainer": "AIReviewModal",
+    "row": 1,
+    "height": 1,
+    "width": 12
+  },
+  "reviewPrompt2": {
+    "rowGroup": "header",
+    "subcontainer": "AIReviewModal2",
+    "row": 1,
+    "height": 1,
+    "width": 12
+  },
+  "reviewPrompt3": {
+    "rowGroup": "header",
+    "subcontainer": "AIReviewModal3",
+    "row": 1,
+    "height": 1,
+    "width": 12
+  },
+  "seasonSelect": {
+    "row": 0.8,
+    "height": 0.2
+  },
+  "seasonSelect2": {
+    "row": 0.8,
+    "height": 0.2
+  },
+  "seasonSelect3": {
+    "row": 0.8,
+    "height": 0.2
+  },
+  "simulTbl": {
+    "row": 11.6,
+    "height": 1,
+    "width": 12
+  },
+  "simulTbl2": {
+    "row": 11.6,
+    "height": 1,
+    "width": 12
+  },
+  "simulTbl3": {
+    "row": 15.2,
+    "height": 1,
+    "width": 12
+  },
+  "spacer1": {
+    "container": "container1",
+    "subcontainer": "7ac0c",
+    "row": 0.8,
+    "height": 0.6,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "spacer10": {
+    "row": 0.2,
+    "height": 0.6,
+    "width": 12
+  },
+  "spacer3": {
+    "row": 11.2,
+    "height": 0.4,
+    "width": 12
+  },
+  "spacer4": {
+    "row": 0.2,
+    "height": 0.6,
+    "width": 12
+  },
+  "spacer5": {
+    "container": "container3",
+    "subcontainer": "7ac0c",
+    "row": 0.8,
+    "height": 0.6,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "spacer6": {
+    "row": 11.2,
+    "height": 0.4,
+    "width": 12
+  },
+  "spacer7": {
+    "row": 0.2,
+    "height": 0.6,
+    "width": 12
+  },
+  "spacer8": {
+    "container": "container5",
+    "subcontainer": "7ac0c",
+    "row": 0.8,
+    "height": 0.6,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "spacer9": {
+    "row": 14.8,
+    "height": 0.4,
+    "width": 12
+  },
+  "statistic1": {
+    "container": "container1",
+    "subcontainer": "7ac0c",
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "statistic10": {
+    "container": "container3",
+    "subcontainer": "7ac0c",
+    "col": 9,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 5,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "statistic11": {
+    "container": "container3",
+    "subcontainer": "7ac0c",
+    "row": 1.4,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 4,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "statistic12": {
+    "container": "container3",
+    "subcontainer": "7ac0c",
+    "row": 1.4,
+    "col": 3,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 3,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "statistic13": {
+    "container": "container5",
+    "subcontainer": "7ac0c",
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "statistic14": {
+    "container": "container5",
+    "subcontainer": "7ac0c",
+    "col": 3,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 7,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "statistic15": {
+    "container": "container5",
+    "subcontainer": "7ac0c",
+    "row": 0,
+    "col": 6,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 6,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "statistic16": {
+    "container": "container5",
+    "subcontainer": "7ac0c",
+    "col": 9,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 5,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "statistic17": {
+    "container": "container5",
+    "subcontainer": "7ac0c",
+    "row": 1.4,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 4,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "statistic18": {
+    "container": "container5",
+    "subcontainer": "7ac0c",
+    "row": 1.4,
+    "col": 3,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 3,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "statistic2": {
+    "container": "container1",
+    "subcontainer": "7ac0c",
+    "col": 3,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 6,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "statistic3": {
+    "container": "container1",
+    "subcontainer": "7ac0c",
+    "row": 1.4,
+    "col": 6,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 5,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "statistic4": {
+    "container": "container1",
+    "subcontainer": "7ac0c",
+    "row": 1.4,
+    "col": 9,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 4,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "statistic5": {
+    "container": "container1",
+    "subcontainer": "7ac0c",
+    "row": 1.4,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 3,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "statistic6": {
+    "container": "container1",
+    "subcontainer": "7ac0c",
+    "row": 1.4,
+    "col": 3,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "statistic7": {
+    "container": "container3",
+    "subcontainer": "7ac0c",
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "statistic8": {
+    "container": "container3",
+    "subcontainer": "7ac0c",
+    "col": 3,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 7,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "statistic9": {
+    "container": "container3",
+    "subcontainer": "7ac0c",
+    "row": 0,
+    "col": 6,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 6,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "summaryTbl": {
+    "row": 1.6,
+    "height": 1,
+    "width": 12
+  },
+  "summaryTbl2": {
+    "row": 1.6,
+    "height": 1,
+    "width": 12
+  },
+  "summaryTbl3": {
+    "row": 1.6,
+    "height": 1,
+    "width": 12
+  },
+  "targetRatioInput": {
+    "row": 3.2,
+    "height": 0.2
+  },
+  "targetRatioInput2": {
+    "row": 3.2,
+    "height": 0.2
+  },
+  "targetRatioInput3": {
+    "row": 3.2,
+    "height": 0.2
+  },
+  "text1": {
+    "row": 1,
+    "height": 1
+  },
+  "text10": {
+    "row": 1,
+    "height": 1
+  },
+  "text11": {
+    "row": 3.4,
+    "height": 1
+  },
+  "text12": {
+    "container": "container4",
+    "subcontainer": "b8957",
+    "height": 0.6,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text13": {
+    "container": "container4",
+    "subcontainer": "b8957",
+    "row": 0.6,
+    "height": 0.6,
+    "width": 12
+  },
+  "text14": {
+    "subcontainer": "alertModal2",
+    "row": 0.4,
+    "height": 0.6,
+    "width": 12
+  },
+  "text15": {
+    "row": 2.6,
+    "height": 1
+  },
+  "text16": {
+    "row": 1,
+    "height": 1
+  },
+  "text17": {
+    "row": 10.4,
+    "height": 1
+  },
+  "text18": {
+    "container": "container6",
+    "subcontainer": "b8957",
+    "height": 0.6,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text19": {
+    "container": "container6",
+    "subcontainer": "b8957",
+    "row": 0.6,
+    "height": 0.6,
+    "width": 12
+  },
+  "text20": {
+    "subcontainer": "alertModal3",
+    "row": 0.4,
+    "height": 0.6,
+    "width": 12
+  },
+  "text4": {
+    "row": 2.6,
+    "height": 1
+  },
+  "text5": {
+    "row": 3.4,
+    "height": 1
+  },
+  "text6": {
+    "container": "container2",
+    "subcontainer": "b8957",
+    "height": 0.6,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text7": {
+    "container": "container2",
+    "subcontainer": "b8957",
+    "row": 0.6,
+    "height": 0.6,
+    "width": 12
+  },
+  "text8": {
+    "subcontainer": "alertModal",
+    "row": 0.4,
+    "height": 0.6,
+    "width": 12
+  },
+  "text9": {
+    "row": 2.6,
+    "height": 1
+  }
+}
