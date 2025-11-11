@@ -1,0 +1,124 @@
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  /* font-size: 11px; */
+}
+.card {
+  border: 1px solid #e0e0e0;
+  padding: 8px;
+  margin: 0;
+  font-size: 11px;
+  color: #000000;
+  background-color: #ffffff;
+}
+.head {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.head-left {
+  width: 60%;
+}
+.head-right {
+  width: 40%;
+  align-self: flex-end;
+  text-align: right;
+}
+.head-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+.divider {
+  /* margin: 8px 1px;  */
+  border-top: 1px solid #d7dbdd;
+}
+.item-body {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 10px; /* Add gap between left and right sections */
+}
+.item-left {
+  width: 45%; /* Reduced width for better spacing */
+}
+.item-right {
+  width: 55%; /* Increased width for more space */
+  padding-left: 5px; /* Add some padding on the left */
+}
+.img-layout {
+  padding: 16px 0;
+}
+.info-box {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 9px;
+}
+.info-box-layout {
+  width: 33.3%;
+  padding-right: 3px; /* Add small right padding */
+}
+.info-data {
+  margin-top: 3px;
+  padding-left: 2px; /* Add small left padding */
+}
+.product-layout{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 11px;
+  color: #626567;
+  /* background-color: red; */
+}
+.product-box{
+  display: flex;
+  flex-direction: row;
+  width: 100%; /* Changed from 92% to use full available width */
+  margin-top: 5px; /* Add some top margin */
+  justify-content: space-between; /* Better spacing */
+}
+.product-data{
+  text-align: center;
+  width: 41%;
+  margin-top: 7px;
+  padding: 1px 8px; 
+}
+
+.middle-layout{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 8px 0;
+}
+.middle-border{
+  background-color: #aed6f1;
+  border: 0 solid #01579B;
+  border-radius: 5px;
+  color: #1b4f72;
+  font-weight: 700;
+}
+.middle-data {
+  width: 33.3%;
+  text-align: center;
+  padding: 2px 12px;
+}
+.table-layout{
+  /* display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 8px 0; */
+}
+.table-row{
+  display: flex;
+  flex-direction: row;
+  /* width: 100%;*/
+  margin: 3px 0; 
+}
+.table-title{
+  width: 22%;
+  padding-right: 2px; /* Add padding to the right */
+}
+.table-data{
+  width: 12%;
+}
