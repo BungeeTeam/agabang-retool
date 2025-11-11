@@ -1,1 +1,0 @@
-SELECT * FROM target_sales_rate_by_sale_type
