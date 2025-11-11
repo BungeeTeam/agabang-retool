@@ -1,0 +1,17 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "0edc0096-475e-11f0-8eda-77fe1eaea197",
+  "appTemplate": {
+    "pageCodeFolders": {
+      "object": {
+        "defaultPage": {
+          "array": []
+        }
+      }
+    },
+    "rootScreen": "defaultPage",
+    "shortlink": "reorder_simulation_season_ettoi",
+    "version": "3.148.10"
+  }
+}
