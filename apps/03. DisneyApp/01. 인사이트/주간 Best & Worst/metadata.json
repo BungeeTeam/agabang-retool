@@ -1,0 +1,173 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "dcb25486-e0fa-11ef-afe0-07e98348c8b4",
+  "appTemplate": {
+    "appThemeId": "custom",
+    "preloadedAppJavaScript": "function checkImage(url) {\n  var image = new Image();\n  image.onload = function() {\n    if (this.width > 0) {\n      console.log(\"image exists\")\n    } else {\n      console.log(\"wrong link\")\n    }\n  }\n  image.onerror = function() {\n    console.log(\"image doesn't exist\")\n  }\n  image.src = url\n}\nconsole.log(checkImage(\"https://picsum.photos/200/300\"))",
+    "pageCodeFolders": {
+      "object": {
+        "get_best_20": {
+          "array": []
+        },
+        "def_year_code": {
+          "array": []
+        },
+        "var_best_20": {
+          "array": []
+        },
+        "input_target_date": {
+          "array": []
+        },
+        "input_date_range": {
+          "array": []
+        },
+        "var_best_20_query": {
+          "array": []
+        },
+        "var_best_20_result": {
+          "array": []
+        },
+        "var_color_by_item_query": {
+          "array": []
+        },
+        "get_color_by_item": {
+          "array": []
+        },
+        "table_main": {
+          "array": []
+        },
+        "get_item_code": {
+          "array": []
+        },
+        "get_item_code_list": {
+          "array": []
+        },
+        "var_item_code_cascader": {
+          "array": []
+        },
+        "get_it_code_list": {
+          "array": []
+        },
+        "get_it_gb_code_list": {
+          "array": []
+        },
+        "var_best_20_filter_text": {
+          "array": []
+        },
+        "var_cascader_to_code": {
+          "array": []
+        },
+        "cascader_category": {
+          "array": []
+        },
+        "get_season_code_list": {
+          "array": []
+        },
+        "var_best_50_query": {
+          "array": []
+        },
+        "var_best_50_result": {
+          "array": []
+        },
+        "get_best_50": {
+          "array": []
+        },
+        "input_category": {
+          "array": []
+        },
+        "input_season": {
+          "array": []
+        },
+        "input_sum": {
+          "array": []
+        },
+        "input_sumcriteria": {
+          "array": []
+        },
+        "input_sum_criteria": {
+          "array": []
+        },
+        "var_best_50_filter_text": {
+          "array": []
+        },
+        "get_daily_sales_by_style": {
+          "array": []
+        },
+        "input_limit": {
+          "array": []
+        },
+        "get_best_50_redshift": {
+          "array": []
+        },
+        "get_item_list": {
+          "array": []
+        },
+        "season_list": {
+          "array": []
+        },
+        "query_get_data": {
+          "array": []
+        },
+        "var_best_worst": {
+          "array": []
+        },
+        "table_1_best": {
+          "array": []
+        },
+        "table_1_worst": {
+          "array": []
+        },
+        "table_2_best": {
+          "array": []
+        },
+        "table_best": {
+          "array": []
+        },
+        "table_worst": {
+          "array": []
+        },
+        "var_category_list": {
+          "array": []
+        },
+        "var_category_query_raw": {
+          "array": []
+        },
+        "dateRange": {
+          "array": []
+        },
+        "var_current_season_code": {
+          "array": []
+        },
+        "query_": {
+          "array": []
+        },
+        "query_recent_no_seasons": {
+          "array": []
+        },
+        "recent_no_seasons_list": {
+          "array": []
+        },
+        "recent_no_season_list": {
+          "array": []
+        },
+        "var_target_season_code": {
+          "array": []
+        },
+        "var_color_hex_list": {
+          "array": []
+        }
+      }
+    },
+    "appThemeName": "Custom app theme",
+    "shortlink": "best-worst-disney",
+    "preloadedAppJSLinks": {
+      "array": [
+        "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"
+      ]
+    },
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
