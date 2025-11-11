@@ -1,0 +1,61 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "cd0e0728-055d-11f0-82c8-87ca7b76571e",
+  "appTemplate": {
+    "urlFragmentDefinitions": [
+      {
+        "ordered": [
+          {
+            "name": "deadline_date"
+          },
+          {
+            "value": "{{ date_select.value }}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "year_sesn_cd"
+          },
+          {
+            "value": "{{ season_select.value }}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "hide_columns"
+          },
+          {
+            "value": "{{ inventory_columns_toggle.value }}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "comparison_basis"
+          },
+          {
+            "value": "{{ comparison_basis_select.selectedItem.value }}"
+          }
+        ]
+      }
+    ],
+    "notificationsSettings": {
+      "object": {
+        "globalQueryShowFailureToast": false,
+        "globalQueryShowSuccessToast": false,
+        "globalQueryToastDuration": 4.5,
+        "globalToastPosition": "bottomRight"
+      }
+    },
+    "isFetching": true,
+    "shortlink": "sales-rate-agabang",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
