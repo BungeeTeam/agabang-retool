@@ -1,0 +1,43 @@
+{
+  "SalesRevenueByGift": {
+    "height": 7.6,
+    "width": 12
+  },
+  "SalesRevenueByGift2": {
+    "row": 7.6,
+    "height": 7.6,
+    "width": 12
+  },
+  "agabangTopNavigation1": {
+    "subcontainer": "header",
+    "height": 2.4,
+    "width": 12
+  },
+  "barChart2": {
+    "row": 15.8,
+    "height": 8.8,
+    "width": 6
+  },
+  "barChart4": {
+    "row": 15.8,
+    "col": 6,
+    "height": 9.6,
+    "width": 6
+  },
+  "barChart5": {
+    "row": 36.6,
+    "height": 9.8,
+    "width": 6
+  },
+  "pieChart1": {
+    "row": 26,
+    "height": 10,
+    "width": 6
+  },
+  "pieChart2": {
+    "row": 26,
+    "col": 6,
+    "height": 10.4,
+    "width": 6
+  }
+}
