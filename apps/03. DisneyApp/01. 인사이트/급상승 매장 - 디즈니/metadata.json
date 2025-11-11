@@ -1,0 +1,136 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "b63bb7c2-4aa2-11f0-8e0c-cb1523ade4c9",
+  "appTemplate": {
+    "appThemeId": "custom",
+    "preloadedAppJavaScript": "",
+    "pageCodeFolders": {
+      "object": {
+        "get_best_20": {
+          "array": []
+        },
+        "def_year_code": {
+          "array": []
+        },
+        "var_best_20": {
+          "array": []
+        },
+        "input_target_date": {
+          "array": []
+        },
+        "input_date_range": {
+          "array": []
+        },
+        "var_best_20_query": {
+          "array": []
+        },
+        "var_best_20_result": {
+          "array": []
+        },
+        "var_color_by_item_query": {
+          "array": []
+        },
+        "get_color_by_item": {
+          "array": []
+        },
+        "table_main": {
+          "array": []
+        },
+        "get_item_code": {
+          "array": []
+        },
+        "get_item_code_list": {
+          "array": []
+        },
+        "var_item_code_cascader": {
+          "array": []
+        },
+        "get_it_code_list": {
+          "array": []
+        },
+        "get_it_gb_code_list": {
+          "array": []
+        },
+        "var_best_20_filter_text": {
+          "array": []
+        },
+        "var_cascader_to_code": {
+          "array": []
+        },
+        "cascader_category": {
+          "array": []
+        },
+        "get_season_code_list": {
+          "array": []
+        },
+        "var_best_50_query": {
+          "array": []
+        },
+        "var_best_50_result": {
+          "array": []
+        },
+        "get_best_50": {
+          "array": []
+        },
+        "input_category": {
+          "array": []
+        },
+        "input_season": {
+          "array": []
+        },
+        "input_sum": {
+          "array": []
+        },
+        "input_sumcriteria": {
+          "array": []
+        },
+        "input_sum_criteria": {
+          "array": []
+        },
+        "var_best_50_filter_text": {
+          "array": []
+        },
+        "get_daily_sales_by_style": {
+          "array": []
+        },
+        "input_limit": {
+          "array": []
+        },
+        "get_best_50_redshift": {
+          "array": []
+        },
+        "rise_top": {
+          "array": []
+        },
+        "base_day": {
+          "array": []
+        },
+        "min_sales_qty": {
+          "array": []
+        },
+        "teams_send": {
+          "array": []
+        },
+        "var_rise_top": {
+          "array": []
+        },
+        "min_week_sales_qty": {
+          "array": []
+        }
+      }
+    },
+    "notificationsSettings": {
+      "object": {
+        "globalQueryShowFailureToast": true,
+        "globalQueryShowSuccessToast": false,
+        "globalQueryToastDuration": 4.5,
+        "globalToastPosition": "topCenter"
+      }
+    },
+    "appThemeName": "Custom app theme",
+    "shortlink": "shop_rapid_up-disney",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
