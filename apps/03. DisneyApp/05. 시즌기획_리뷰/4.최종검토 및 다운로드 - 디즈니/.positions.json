@@ -1,0 +1,22 @@
+{
+  "disneyTopNavigation1": {
+    "subcontainer": "header",
+    "height": 2.4,
+    "width": 12
+  },
+  "drawerCloseButton1": {
+    "rowGroup": "header",
+    "subcontainer": "drawerFrame1",
+    "col": 9,
+    "height": 1
+  },
+  "itemDetail1": {
+    "subcontainer": "drawerFrame1",
+    "height": 8,
+    "width": 12
+  },
+  "module최종검토및다운로드1": {
+    "height": 2.4,
+    "width": 12
+  }
+}
