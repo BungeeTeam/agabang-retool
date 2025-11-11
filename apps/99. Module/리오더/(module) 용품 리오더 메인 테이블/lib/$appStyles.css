@@ -1,0 +1,33 @@
+/* =================================================== */
+/* Retool 테이블 헤더 고정 최종 솔루션 (z-index 문제 해결) */
+/* =================================================== */
+
+/* 1. (핵심) 테이블 컨테이너의 스크롤 제한 해제 */
+._retool-table_main_list--0 {
+  overflow: visible !important;
+}
+
+/* 2. 모든 헤더 셀의 공통 스타일 (상단 고정, 기본 z-index) */
+div[role="columnheader"] {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 10 !important; /* 일반 헤더를 위한 기본 z-index */
+  background-color: white !important;
+}
+
+/* 3. (★★★★★ 중요) 왼쪽 고정 헤더에만 더 높은 z-index 부여 */
+/* 이 코드가 일반 헤더가 고정 헤더를 덮는 현상을 해결합니다. */
+div[role="columnheader"][class*="_leftSticky"] {
+  z-index: 11 !important; /* 고정 헤더가 항상 위에 오도록 z-index를 더 높게 설정 */
+}
+
+/* 4. 기타 헤더 스타일 */
+div[data-row-index="-1"] {
+  height: 50px !important;
+}
+
+span[data-testid*="HeaderCellContents"] {
+  text-align: center !important;
+  text-wrap: wrap !important;
+  word-break: keep-all !important;
+}
