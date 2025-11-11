@@ -1,0 +1,168 @@
+{
+  "button_analysis": {
+    "container": "container1",
+    "rowGroup": "header",
+    "col": 10,
+    "height": 0.8,
+    "width": 2
+  },
+  "button_analysis2": {
+    "subcontainer": "splitPaneFrame_analysis",
+    "col": 11,
+    "height": 0.8,
+    "width": 1
+  },
+  "button_analysis3": {
+    "subcontainer": "splitPaneFrame_analysis",
+    "row": 2,
+    "height": 1,
+    "width": 12
+  },
+  "container1": {
+    "container": "listView1",
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "containerTitle1": {
+    "container": "container_filter",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "containerTitle2": {
+    "container": "container1",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 9
+  },
+  "container_filter": {
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "drawerCloseButton1": {
+    "rowGroup": "header",
+    "subcontainer": "drawerFrame1",
+    "col": 9,
+    "height": 1
+  },
+  "drawerTitle1": {
+    "rowGroup": "header",
+    "subcontainer": "drawerFrame1",
+    "height": 0.6,
+    "width": 9
+  },
+  "ettoiTopNavigation1": {
+    "subcontainer": "header",
+    "height": 2.4,
+    "width": 12
+  },
+  "listView1": {
+    "row": 1,
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "numberInput_sale_days": {
+    "container": "container_filter",
+    "subcontainer": "28726",
+    "col": 3,
+    "height": 0.2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "numberInput_years": {
+    "container": "container_filter",
+    "subcontainer": "28726",
+    "col": 6,
+    "height": 0.2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "select_ai_history": {
+    "subcontainer": "splitPaneFrame_analysis",
+    "row": 0.8,
+    "col": 5,
+    "height": 0.2,
+    "width": 7
+  },
+  "select_season": {
+    "container": "container_filter",
+    "subcontainer": "28726",
+    "height": 0.2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "table1": {
+    "container": "container1",
+    "subcontainer": "64752",
+    "row": 0,
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text3": {
+    "subcontainer": "splitPaneFrame_analysis",
+    "height": 0.6,
+    "width": 11
+  },
+  "textArea_prompt": {
+    "subcontainer": "splitPaneFrame_analysis",
+    "row": 1,
+    "height": 1,
+    "width": 12
+  },
+  "text_ai_result": {
+    "subcontainer": "splitPaneFrame_analysis",
+    "row": 3,
+    "height": 0.6,
+    "width": 12
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "211b6664-fef9-11ef-86c7-975d9642d953",
+  "appTemplate": {
+    "isFetching": true,
+    "customDocumentTitleEnabled": true,
+    "shortlink": "ai-sku-plan-ettoi",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
