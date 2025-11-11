@@ -1,0 +1,86 @@
+<GlobalFunctions>
+  <SqlQuery
+    id="rtResultQuery"
+    cacheKeyTtl={300}
+    enableCaching={true}
+    isMultiplayerEdited={false}
+    notificationDuration={4.5}
+    query={include("./lib/rtResultQuery.sql", "string")}
+    queryTimeout="30000"
+    resourceDisplayName="clickhouse-dw"
+    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
+    showSuccessToaster={false}
+    warningCodes={[]}
+  />
+  <SqlQuery
+    id="autoRtResultQuery"
+    isMultiplayerEdited={false}
+    notificationDuration={4.5}
+    query={include("./lib/autoRtResultQuery.sql", "string")}
+    queryTimeout="30000"
+    resourceDisplayName="clickhouse-dw"
+    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
+    showSuccessToaster={false}
+    warningCodes={[]}
+  />
+  <SqlQuery
+    id="rtResultByTypeQuery"
+    isMultiplayerEdited={false}
+    notificationDuration={4.5}
+    query={include("./lib/rtResultByTypeQuery.sql", "string")}
+    queryTimeout="30000"
+    resourceDisplayName="clickhouse-dw"
+    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
+    showSuccessToaster={false}
+    warningCodes={[]}
+  />
+  <SqlQuery
+    id="rtResultByFlexQuery"
+    cacheKeyTtl={300}
+    enableCaching={true}
+    isMultiplayerEdited={false}
+    notificationDuration={4.5}
+    query={include("./lib/rtResultByFlexQuery.sql", "string")}
+    queryTimeout="30000"
+    resourceDisplayName="clickhouse-dw"
+    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
+    showSuccessToaster={false}
+    warningCodes={[]}
+  />
+  <SqlQuery
+    id="agbPerformanceAnalysis"
+    cacheKeyTtl="10800"
+    enableCaching={true}
+    isMultiplayerEdited={false}
+    notificationDuration={4.5}
+    query={include("./lib/agbPerformanceAnalysis.sql", "string")}
+    queryTimeout="30000"
+    resourceDisplayName="clickhouse-dw"
+    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
+    showSuccessToaster={false}
+    warningCodes={[]}
+  />
+  <SqlQuery
+    id="ettoiPerformanceAnalysis"
+    cacheKeyTtl="10800"
+    enableCaching={true}
+    isMultiplayerEdited={false}
+    notificationDuration={4.5}
+    query={include("./lib/ettoiPerformanceAnalysis.sql", "string")}
+    queryTimeout="30000"
+    resourceDisplayName="clickhouse-dw"
+    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
+    showSuccessToaster={false}
+    warningCodes={[]}
+  />
+  <SqlQuery
+    id="disneyPerformanceAnalysis"
+    cacheKeyTtl="10800"
+    enableCaching={true}
+    query={include("./lib/disneyPerformanceAnalysis.sql", "string")}
+    queryTimeout="60000"
+    resourceDisplayName="clickhouse-dw"
+    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
+    warningCodes={[]}
+  />
+</GlobalFunctions>

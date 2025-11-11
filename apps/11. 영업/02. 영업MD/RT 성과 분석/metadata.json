@@ -1,0 +1,10 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "ba83363a-0f91-11f0-872c-1fefe51f5d8e",
+  "appTemplate": {
+    "shortlink": "sales-rt-analysis",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
