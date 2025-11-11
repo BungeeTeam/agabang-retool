@@ -1,0 +1,20 @@
+<div class="card-container">
+{{
+  (() => {
+
+    const items = formatDataAsArray(get_competitor_item_list.data).filter(item => item.year_season == var_season_list.value[1]).filter(item => item.item_price == var_price_list.value[i]);
+
+    return items.map(item => {
+
+      return `
+        <div class="card">
+          <p>${item.item_code || ''}</p>
+          <h5>${item.item_name || ''}</h5>
+          <img class="img" src="${item.image_url.startsWith("http") ? item.image_url : "https:" + item.image_url}" alt="제품 사진" />
+          <h6>${item.brand || ''}</h6>
+        </div>
+      `;
+    }).join('');
+  })()
+}}
+</div>

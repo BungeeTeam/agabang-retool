@@ -1,0 +1,24 @@
+<Screen
+  id="defaultPage"
+  _customShortcuts={[]}
+  _hashParams={[]}
+  _searchParams={[]}
+  title="Default Page"
+  urlSlug=""
+>
+  <Frame
+    id="$main"
+    enableFullBleed={false}
+    isHiddenOnDesktop={false}
+    isHiddenOnMobile={false}
+    padding="0"
+    type="main"
+  >
+    <Module
+      id="module1"
+      brand_code="'01'"
+      name="판가맵"
+      pageUuid="b9235058-46e7-11f0-b750-1715fe2a5d27"
+    />
+  </Frame>
+</Screen>
