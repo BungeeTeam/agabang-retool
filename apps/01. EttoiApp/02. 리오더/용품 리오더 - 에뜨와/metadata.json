@@ -1,0 +1,10 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "a519f5cc-24c2-11f0-ac40-8b67cea3cc16",
+  "appTemplate": {
+    "shortlink": "reorder_supplies_ettoi",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
