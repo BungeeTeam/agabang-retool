@@ -1,0 +1,1 @@
+select * from item_md_category WHERE br_cd = '07' order by id asc

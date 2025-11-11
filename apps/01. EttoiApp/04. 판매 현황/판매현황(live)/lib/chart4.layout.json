@@ -1,0 +1,146 @@
+{{ radioGroup1.value === 'cum' ? {
+  // 누적 차트 레이아웃 (기존 유지)
+  "title": {
+    "text": "",
+    "font": {
+      "color": "#3D3D3D",
+      "size": 16
+    }
+  },
+  "font": {
+    "family": "var(--default-font, var(--sans-serif))",
+    "color": "#979797"
+  },
+  "showlegend": true,
+  "legend": {
+    "xanchor": "left",
+    "x": 1,
+    "y": 0.5,
+    "orientation": "v"
+  },
+  "margin": {
+    "l": 50,
+    "r": 50,
+    "t": 30,
+    "b": 50,  // 누적 차트는 하단 여백 줄임
+    "pad": 2
+  },
+  "hovermode": "closest",
+  "hoverlabel": {
+    "bgcolor": "#000",
+    "bordercolor": "#000",
+    "font": {
+      "color": "#fff",
+      "family": "var(--default-font, var(--sans-serif))",
+      "size": 12
+    }
+  },
+  "clickmode": "select+event",
+  "dragmode": "select",
+  "xaxis": {
+    "title": {
+      "text": "월 일",
+      "standoff": 6,
+      "font": {
+        "size": 12
+      }
+    },
+    "type": "category",
+    "categoryorder": "array",
+    "categoryarray": get_cum_sales_by_day.data.xCategories,
+    "tickmode": "linear",
+    "dtick": 30,
+    "automargin": true,
+    "fixedrange": true,
+    "gridcolor": "#fff",
+    "zerolinecolor": "#fff",
+    "range": get_cum_sales_by_day.data.xRange
+  },
+  "yaxis": {
+    "title": {
+      "text": "판매율(%)",
+      "standoff": 6,
+      "font": {
+        "size": 12
+      }
+    },
+    "type": "linear",
+    "tickformat": "",
+    "automargin": true,
+    "fixedrange": true,
+    "zerolinecolor": "#DEDEDE",
+    "autorange": true,
+    "rangemode": "tozero"
+  }
+} 
+: {
+  // 주간 차트 레이아웃
+  "title": {
+    "text": "",
+    "font": {
+      "color": "#3D3D3D",
+      "size": 16
+    }
+  },
+  "font": {
+    "family": "var(--default-font, var(--sans-serif))",
+    "color": "#979797"
+  },
+  "showlegend": true,
+  "legend": {
+    "xanchor": "left",
+    "x": 1,
+    "y": 0.5,
+    "orientation": "v"
+  },
+  "margin": {
+    "l": 50,
+    "r": 50,
+    "t": 30,
+    "b": 100,  // 주간 차트는 x축 라벨 회전으로 하단 여백 유지
+    "pad": 2
+  },
+  "hovermode": "closest",
+  "hoverlabel": {
+    "bgcolor": "#000",
+    "bordercolor": "#000",
+    "font": {
+      "color": "#fff",
+      "family": "var(--default-font, var(--sans-serif))",
+      "size": 12
+    }
+  },
+  "clickmode": "select+event",
+  "dragmode": "select",
+  "xaxis": {
+    "title": {
+      "text": "기간",
+      "standoff": 6,
+      "font": {
+        "size": 12
+      }
+    },
+    "type": "category",
+    "tickangle": -45,
+    "tickmode": "auto",
+    "automargin": true,
+    "fixedrange": true,
+    "gridcolor": "#fff",
+    "zerolinecolor": "#fff"
+  },
+  "yaxis": {
+    "title": {
+      "text": "판매액 or 판매수량",
+      "standoff": 6,
+      "font": {
+        "size": 12
+      }
+    },
+    "type": "linear",
+    "tickformat": "",
+    "automargin": true,
+    "fixedrange": true,
+    "zerolinecolor": "#DEDEDE"
+  }
+}
+}}
