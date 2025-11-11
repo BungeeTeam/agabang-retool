@@ -1,0 +1,20 @@
+<PlaygroundQuery
+  id="style_year_code"
+  adhocResourceType={null}
+  data={null}
+  resourceType="jdbc"
+>
+  <SqlQuery
+    _additionalScope={[]}
+    allowedGroupIds={[]}
+    allowedGroups={[]}
+    dataArray={[]}
+    events={[]}
+    importedQueryDefaults={{}}
+    importedQueryInputs={{}}
+    privateParams={[]}
+    query={include("./lib/style_year_code.sql", "string")}
+    warningCodes={[]}
+    watchedParams={[]}
+  />
+</PlaygroundQuery>
