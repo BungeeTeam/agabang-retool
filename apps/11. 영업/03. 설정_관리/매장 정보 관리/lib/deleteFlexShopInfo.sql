@@ -1,0 +1,1 @@
+delete from flex_shop where flex_shop.id = {{ flexShopTbl.selectedSourceRow?.id }}

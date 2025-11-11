@@ -1,0 +1,1 @@
+delete from shop_handover where shop_handover.id = {{ shopHandoverTbl.selectedSourceRow?.id }}

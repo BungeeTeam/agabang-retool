@@ -1,0 +1,19 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "2f799e00-1a2a-11f0-8cd9-e37cf2af7c39",
+  "appTemplate": {
+    "preloadedAppJavaScript": "function groupBySum(arr, groupKeys, sumKeys) {\n  return Object.values(\n    arr.reduce((acc, item) => {\n      const key = groupKeys.map(k => item[k]).join(\"-\");\n\n      if (!acc[key]) {\n        acc[key] = Object.fromEntries(groupKeys.map(k => [k, item[k]]));\n        sumKeys.forEach(sumKey => {\n          acc[key][sumKey] = Number(item[sumKey]) || 0;\n        });\n      } else {\n        sumKeys.forEach(sumKey => {\n          acc[key][sumKey] += Number(item[sumKey]) || 0;\n        });\n      }\n      return acc;\n    }, {})\n  );\n}\n",
+    "notificationsSettings": {
+      "object": {
+        "globalQueryShowFailureToast": true,
+        "globalQueryShowSuccessToast": false,
+        "globalQueryToastDuration": 4.5,
+        "globalToastPosition": "topCenter"
+      }
+    },
+    "shortlink": "settings_sales",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}

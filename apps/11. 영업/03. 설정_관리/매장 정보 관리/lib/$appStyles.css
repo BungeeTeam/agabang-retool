@@ -1,0 +1,15 @@
+/*._retool-tabbedContainer1{
+  height: {{ viewport.height * 0.9 }}px;
+}
+
+._retool-excludedShopTbl{
+  height: {{ viewport.height * 0.7 }}px;
+}
+
+._retool-shopHandoverTbl{
+  height: {{ viewport.height * 0.7 }}px;
+}
+
+._retool-flexShopTbl{
+  height: {{ viewport.height * 0.7 }}px;
+}*/
