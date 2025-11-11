@@ -1,4 +1,5 @@
 <App>
+  <AppStyles id="$appStyles" css="" />
   <CustomAppTheme
     id="$appTheme"
     _migrated={true}
@@ -20,12 +21,12 @@
       source:
         "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css",
     }}
-    h1Font={{ size: "36px" }}
-    h2Font={{ size: "28px" }}
-    h3Font={{ size: "24px" }}
-    h4Font={{ size: "18px" }}
-    h5Font={{ size: "16px" }}
-    h6Font={{ size: "14px" }}
+    h1Font={{ map: { size: "36px" } }}
+    h2Font={{ map: { size: "28px" } }}
+    h3Font={{ map: { size: "24px" } }}
+    h4Font={{ map: { size: "18px" } }}
+    h5Font={{ map: { size: "16px" } }}
+    h6Font={{ map: { size: "14px" } }}
     highlight="#fde68a"
     info="#3170f9"
     primary="#dd5e2c"
@@ -40,7 +41,6 @@
     textLight="#ffffff"
     warning="#cd6f00"
   />
-  <AppStyles id="$appStyles" css="" />
   <Include src="./header.rsx" />
   <Include src="./src/drawerFrame_item_detail.rsx" />
   <Frame

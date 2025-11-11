@@ -121,6 +121,39 @@
       textSize="h6"
     />
     <Spacer id="spacer2" />
+    <Container
+      id="container1"
+      footerPadding="4px 12px"
+      headerPadding="4px 12px"
+      padding="0"
+      showBody={true}
+    >
+      <Header>
+        <Text
+          id="containerTitle3"
+          value="#### Container title"
+          verticalAlign="center"
+        />
+      </Header>
+      <View id="18f70" viewKey="View 1">
+        <PlotlyChart
+          id="chart1"
+          chartType="line"
+          data={include("../lib/chart1.data.json", "string")}
+          datasourceDataType="object"
+          datasourceInputMode="javascript"
+          datasourceJS="{{season_item_list.data}}"
+          isDataTemplateDirty={true}
+          isJsonTemplateDirty={true}
+          isLayoutJsonDirty={true}
+          layout={include("../lib/chart1.layout.json", "string")}
+          margin="4px 8px"
+          skipDatasourceUpdate={true}
+          xAxis="{{season_item_list.data.style_no}}"
+          xAxisDropdown="style_no"
+        />
+      </View>
+    </Container>
     <KeyValue
       id="keyValue_item_inventory"
       data=""
@@ -179,39 +212,6 @@
         valueOverride="{{ get_item_detail.data.int_sale_qty }}"
       />
     </KeyValue>
-    <Container
-      id="container1"
-      footerPadding="4px 12px"
-      headerPadding="4px 12px"
-      padding="0"
-      showBody={true}
-    >
-      <Header>
-        <Text
-          id="containerTitle3"
-          value="#### Container title"
-          verticalAlign="center"
-        />
-      </Header>
-      <View id="18f70" viewKey="View 1">
-        <PlotlyChart
-          id="chart1"
-          chartType="line"
-          data={include("../lib/chart1.data.json", "string")}
-          datasourceDataType="object"
-          datasourceInputMode="javascript"
-          datasourceJS="{{season_item_list.data}}"
-          isDataTemplateDirty={true}
-          isJsonTemplateDirty={true}
-          isLayoutJsonDirty={true}
-          layout={include("../lib/chart1.layout.json", "string")}
-          margin="4px 8px"
-          skipDatasourceUpdate={true}
-          xAxis="{{season_item_list.data.style_no}}"
-          xAxisDropdown="style_no"
-        />
-      </View>
-    </Container>
     <Spacer id="spacer7" />
     <Text id="text2" value="**사이즈별 입고/판매량**" verticalAlign="center" />
     <Spacer id="spacer10" />
