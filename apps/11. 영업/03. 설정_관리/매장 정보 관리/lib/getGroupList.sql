@@ -1,0 +1,1 @@
+select * from channel_groups WHERE biz_cd = '{{ bizSelect.value }}'

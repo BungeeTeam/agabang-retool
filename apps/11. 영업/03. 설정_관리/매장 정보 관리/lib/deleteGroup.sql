@@ -1,0 +1,1 @@
+delete from channel_groups where channel_groups.id = {{ groupList.selectedSourceRow?.id }}

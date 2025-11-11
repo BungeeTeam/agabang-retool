@@ -1,0 +1,1 @@
+delete from excluded_shop where excluded_shop.id = {{ excludedShopTbl.selectedSourceRow?.id }}
