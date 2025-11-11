@@ -1,0 +1,11 @@
+._retool-tabs1 * {
+  font-size: 16px;
+}
+
+.retool-grid-content {
+  font-size: 10px;
+  word-break: keep-all;
+}
+/* ._retool-tabs1 div[role="tablist"] {
+  gap: 5px;
+} */
