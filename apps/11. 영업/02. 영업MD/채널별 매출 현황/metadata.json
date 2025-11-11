@@ -1,0 +1,76 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "ff1f2d4e-3f75-11f0-8eb1-1315800c3013",
+  "appTemplate": {
+    "urlFragmentDefinitions": [
+      {
+        "ordered": [
+          {
+            "name": "biz"
+          },
+          {
+            "value": "{{ bizSelect.value }}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "br"
+          },
+          {
+            "value": "{{ brandSelect.value }}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "season"
+          },
+          {
+            "value": "{{ itCodeSelect.value }}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "even"
+          },
+          {
+            "value": "{{ switch1.value }}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "startDate"
+          },
+          {
+            "value": "{{ dateRange.value.end }}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "endDate"
+          },
+          {
+            "value": "{{ dateRange.value.end }}"
+          }
+        ]
+      }
+    ],
+    "appThemeId": 1,
+    "preloadedAppJavaScript": "",
+    "isFetching": true,
+    "appThemeName": "Agabang & Company key color",
+    "shortlink": "sales-sales-by-channel",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
