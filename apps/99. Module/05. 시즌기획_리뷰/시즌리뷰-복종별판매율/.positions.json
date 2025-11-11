@@ -1,0 +1,480 @@
+{
+  "button1": {
+    "container": "moduleContainer",
+    "rowGroup": "header",
+    "subcontainer": "drawerFrame_item_detail",
+    "col": 9,
+    "height": 1
+  },
+  "chart1": {
+    "container": "container1",
+    "subcontainer": "18f70",
+    "row": 0,
+    "height": 5.2,
+    "width": 12
+  },
+  "chart2": {
+    "container": "container3",
+    "subcontainer": "bf65f",
+    "row": 0.6,
+    "height": 3.4,
+    "width": 12
+  },
+  "chart3": {
+    "container": "container4",
+    "subcontainer": "bf65f",
+    "row": 0.6,
+    "height": 3.4,
+    "width": 12
+  },
+  "chart4": {
+    "container": "container_item_category",
+    "subcontainer": "0a507",
+    "row": 0.4,
+    "height": 7,
+    "width": 12
+  },
+  "container1": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 6.4,
+    "height": 0.2,
+    "width": 7
+  },
+  "container10": {
+    "container": "gridView1",
+    "row": 0.6,
+    "height": 1.6,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container2": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "col": 5,
+    "height": 5.6,
+    "width": 7
+  },
+  "container3": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 9.2,
+    "height": 0.2,
+    "width": 6
+  },
+  "container4": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 9.2,
+    "col": 6,
+    "height": 0.2,
+    "width": 6
+  },
+  "containerTitle12": {
+    "container": "container10",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "containerTitle13": {
+    "container": "container_item_category",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 6
+  },
+  "containerTitle14": {
+    "container": "container_item_category",
+    "rowGroup": "header",
+    "col": 6,
+    "height": 0.6,
+    "width": 6
+  },
+  "containerTitle3": {
+    "container": "container1",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "containerTitle4": {
+    "container": "container2",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "containerTitle5": {
+    "container": "container3",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "containerTitle6": {
+    "container": "container4",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "containerTitle8": {
+    "container": "container_filter",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 12
+  },
+  "container_filter": {
+    "container": "moduleContainer",
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container_item_category": {
+    "container": "listView1",
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "divider2": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 9.8,
+    "height": 0.2,
+    "width": 12
+  },
+  "divider3": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 11.2,
+    "height": 0.2,
+    "width": 12
+  },
+  "divider4": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 6,
+    "height": 0.2,
+    "width": 12
+  },
+  "gridView1": {
+    "container": "container_item_category",
+    "subcontainer": "0a507",
+    "row": 7.4,
+    "col": 1,
+    "height": 5.2,
+    "width": 10,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "image1": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "height": 3,
+    "width": 5
+  },
+  "image2": {
+    "container": "gridView1",
+    "row": 3.4,
+    "height": 1.6,
+    "width": 12
+  },
+  "imageGrid1": {
+    "container": "container2",
+    "subcontainer": "bf65f",
+    "row": 0.2,
+    "height": 0.4,
+    "width": 12
+  },
+  "keyValue_item_cost": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 11.6,
+    "col": 6,
+    "height": 5.2,
+    "width": 6
+  },
+  "keyValue_item_date_logistics": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 10.2,
+    "col": 6,
+    "height": 4,
+    "width": 6
+  },
+  "keyValue_item_info": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 10.2,
+    "height": 8.6,
+    "width": 6
+  },
+  "keyValue_item_inventory": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 6.4,
+    "col": 7,
+    "height": 5.2,
+    "width": 5
+  },
+  "keyValue_item_price": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 11.6,
+    "height": 5.2,
+    "width": 6
+  },
+  "listView1": {
+    "container": "moduleContainer",
+    "row": 1,
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "moduleContainer": {
+    "height": 24.8,
+    "width": 12
+  },
+  "sel_category": {
+    "container": "container_filter",
+    "subcontainer": "33666",
+    "row": 0.6,
+    "height": 0.8,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "sel_end_date": {
+    "container": "container_filter",
+    "subcontainer": "33666",
+    "col": 9,
+    "height": 0.2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 3,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "sel_start_date": {
+    "container": "container_filter",
+    "subcontainer": "33666",
+    "col": 6,
+    "height": 0.2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "select_season": {
+    "container": "container_filter",
+    "subcontainer": "33666",
+    "row": 0,
+    "col": 3,
+    "height": 0.2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "spacer1": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 10,
+    "height": 0.2,
+    "width": 12
+  },
+  "spacer10": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 7.8,
+    "height": 0.2,
+    "width": 12
+  },
+  "spacer11": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 12.2,
+    "height": 1,
+    "width": 12
+  },
+  "spacer13": {
+    "container": "container_item_category",
+    "subcontainer": "0a507",
+    "row": 0.2,
+    "height": 0.2,
+    "width": 12
+  },
+  "spacer2": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 6.2,
+    "height": 0.2,
+    "width": 12
+  },
+  "spacer3": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 5.6,
+    "height": 0.4,
+    "width": 12
+  },
+  "spacer4": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 10.8,
+    "height": 0.4,
+    "width": 12
+  },
+  "spacer5": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 11.4,
+    "height": 0.2,
+    "width": 12
+  },
+  "spacer6": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 9.4,
+    "height": 0.4,
+    "width": 12
+  },
+  "spacer7": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 7,
+    "height": 0.2,
+    "width": 12
+  },
+  "spacer9": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 9,
+    "height": 0.2,
+    "width": 12
+  },
+  "table1": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 8,
+    "height": 1,
+    "width": 12
+  },
+  "tags1": {
+    "container": "container10",
+    "subcontainer": "ce711",
+    "row": 0.6,
+    "height": 0.8,
+    "width": 12
+  },
+  "text10": {
+    "container": "container10",
+    "subcontainer": "ce711",
+    "height": 0.6,
+    "width": 12
+  },
+  "text11": {
+    "container": "container_filter",
+    "subcontainer": "33666",
+    "height": 0.6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 4,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "text2": {
+    "container": "moduleContainer",
+    "subcontainer": "drawerFrame_item_detail",
+    "row": 7.2,
+    "height": 0.6,
+    "width": 4
+  },
+  "text3": {
+    "container": "moduleContainer",
+    "rowGroup": "header",
+    "subcontainer": "drawerFrame_item_detail",
+    "height": 0.6,
+    "width": 9
+  },
+  "text4": {
+    "container": "container3",
+    "subcontainer": "bf65f",
+    "row": 0,
+    "height": 0.6,
+    "width": 12
+  },
+  "text5": {
+    "container": "container4",
+    "subcontainer": "bf65f",
+    "row": 0,
+    "height": 0.6,
+    "width": 12
+  },
+  "text7": {
+    "container": "gridView1",
+    "row": 2.2,
+    "height": 0.6,
+    "width": 12
+  },
+  "text8": {
+    "container": "gridView1",
+    "row": 2.8,
+    "height": 0.6,
+    "width": 12
+  },
+  "text9": {
+    "container": "gridView1",
+    "height": 0.6,
+    "width": 12
+  }
+}
