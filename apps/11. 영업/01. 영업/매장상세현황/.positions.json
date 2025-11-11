@@ -1,0 +1,99 @@
+{
+  "areaSelect": {
+    "subcontainer": "sidebarFrame1",
+    "row": 5.6,
+    "height": 0.2,
+    "width": 1
+  },
+  "avatar1": {
+    "rowGroup": "footer",
+    "subcontainer": "sidebarFrame1",
+    "height": 0.2,
+    "width": 1
+  },
+  "bizMultiSelect": {
+    "subcontainer": "sidebarFrame1",
+    "row": 0.2,
+    "height": 0.2,
+    "width": 1
+  },
+  "brandMultiSelect": {
+    "subcontainer": "sidebarFrame1",
+    "row": 2.4,
+    "height": 0.2,
+    "width": 1
+  },
+  "dateRange": {
+    "height": 0.2,
+    "width": 4
+  },
+  "salesTopNavigation1": {
+    "subcontainer": "header",
+    "height": 2.4,
+    "width": 12
+  },
+  "searchText": {
+    "col": 8,
+    "height": 0.2,
+    "width": 4
+  },
+  "spacer1": {
+    "subcontainer": "sidebarFrame1",
+    "row": 2.6,
+    "height": 0.6,
+    "width": 1
+  },
+  "spacer2": {
+    "subcontainer": "sidebarFrame1",
+    "row": 3.4,
+    "height": 0.6,
+    "width": 1
+  },
+  "spacer3": {
+    "subcontainer": "sidebarFrame1",
+    "row": 4.2,
+    "height": 0.6,
+    "width": 1
+  },
+  "spacer4": {
+    "subcontainer": "sidebarFrame1",
+    "row": 5,
+    "height": 0.6,
+    "width": 1
+  },
+  "spacer5": {
+    "subcontainer": "sidebarFrame1",
+    "row": 1.8,
+    "height": 0.6,
+    "width": 1
+  },
+  "storeDetailModule1": {
+    "row": 0.2,
+    "height": 0.2,
+    "width": 12
+  },
+  "teamSelect": {
+    "subcontainer": "sidebarFrame1",
+    "row": 4,
+    "height": 0.2,
+    "width": 1
+  },
+  "text1": {
+    "rowGroup": "header",
+    "subcontainer": "sidebarFrame1",
+    "height": 1,
+    "width": 1
+  },
+  "tpSelect": {
+    "subcontainer": "sidebarFrame1",
+    "row": 3.2,
+    "height": 0.2,
+    "width": 1
+  },
+  "userSelect": {
+    "subcontainer": "sidebarFrame1",
+    "row": 4.8,
+    "height": 0.2,
+    "width": 1
+  }
+}

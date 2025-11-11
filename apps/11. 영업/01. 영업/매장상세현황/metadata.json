@@ -1,0 +1,158 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "88f62050-fb37-11ef-9dfc-47aabcf5b8e0",
+  "appTemplate": {
+    "urlFragmentDefinitions": [
+      {
+        "ordered": [
+          {
+            "name": "bizMultiSelect"
+          },
+          {
+            "value": "{{ JSON.stringify(bizMultiSelect.value) }}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "brandMultiSelect"
+          },
+          {
+            "value": "{{ JSON.stringify(brandMultiSelect.value) }}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "tpSelect"
+          },
+          {
+            "value": "{{ tpSelect.value }}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "teamSelect"
+          },
+          {
+            "value": "{{ teamSelect.value }}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "userSelect"
+          },
+          {
+            "value": "{{ userSelect.value }}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "areaSelect"
+          },
+          {
+            "value": "{{ areaSelect.value }}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "searchText"
+          },
+          {
+            "value": "{{ searchText.value }}"
+          }
+        ]
+      }
+    ],
+    "appThemeId": 1,
+    "preloadedAppJavaScript": "function groupBySum(arr, groupKeys, sumKeys) {\n  return Object.values(\n    arr.reduce((acc, item) => {\n      const key = groupKeys.map(k => item[k]).join(\"-\");\n\n      if (!acc[key]) {\n        acc[key] = Object.fromEntries(groupKeys.map(k => [k, item[k]]));\n        sumKeys.forEach(sumKey => {\n          acc[key][sumKey] = Number(item[sumKey]) || 0;\n        });\n      } else {\n        sumKeys.forEach(sumKey => {\n          acc[key][sumKey] += Number(item[sumKey]) || 0;\n        });\n      }\n      return acc;\n    }, {})\n  );\n}\n\nfunction pivotData(data, groupKeys, pivotKey, sumKeys) {\n  const pivotMap = {};\n\n  data.forEach(item => {\n    // Create a unique key based on selected group keys\n    const groupKey = groupKeys.map(k => item[k]).join(\"-\");\n\n    if (!pivotMap[groupKey]) {\n      // Initialize object with only group keys\n      pivotMap[groupKey] = Object.fromEntries(groupKeys.map(k => [k, item[k]]));\n    }\n\n    // Ensure numeric fields exist and sum them\n    sumKeys.forEach(sumKey => {\n      pivotMap[groupKey][item[pivotKey]] = \n        (pivotMap[groupKey][item[pivotKey]] || 0) + Number(item[sumKey] || 0);\n    });\n  });\n\n  return Object.values(pivotMap);\n}\n",
+    "pageLoadValueOverrides": [
+      {
+        "ordered": [
+          {
+            "name": "searchText.value"
+          },
+          {
+            "value": "{{ urlparams.hash?.searchText ?? ''}}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "bizMultiSelect.value"
+          },
+          {
+            "value": "{{ urlparams.hash?.bizMultiSelect  ? JSON.parse(urlparams.hash?.bizMultiSelect) : \n(current_user.groups.map(i => i.name).includes('admin') ? ['A1'] :\n  current_user.groups.map(i => i.name).includes('아가방 부문') ? ['A1'] : \n  current_user.groups.map(i => i.name).includes('에뜨와 부문') ? ['A4'] : \n  current_user.groups.map(i => i.name).includes('디즈니 부문') ? ['DS']:['A1'])}}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "brandMultiSelect.value"
+          },
+          {
+            "value": "{{\n (() => { // URL에 brandMultiSelect 파라미터가 있는지 확인합니다.\n  if (urlparams.hash?.brandMultiSelect && urlparams.hash.brandMultiSelect.length > 2) {\n    try {\n      // 값이 있다면, JSON으로 파싱해서 사용합니다.\n      return JSON.parse(urlparams.hash.brandMultiSelect);\n    } catch (e) {\n      console.error(\"URL 파라미터 파싱 오류:\", e);\n    }\n  }\n  const availableOptions = (() => {\n    const seen = new Set();\n    const result = shopInfoQuery.data\n      .filter(item => item.br_cd !== null && bizMultiSelect.value.includes(item.biz_cd))\n      .filter(item => {\n        const key = `${item.br_cd}-${item.br_nm}`;\n        if (seen.has(key)) return false;\n        seen.add(key);\n        return true;\n      })\n      .sort((a, b) => a.br_cd - b.br_cd);\n    return result;\n  })();\n  return availableOptions.map(item => item.br_cd);\n })()\n}}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "tpSelect.value"
+          },
+          {
+            "value": "{{ urlparams.hash?.tpSelect ? urlparams.hash?.tpSelect : \"-1\" }}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "teamSelect.value"
+          },
+          {
+            "value": "{{ urlparams.hash?.teamSelect ? urlparams.hash?.teamSelect : \"-1\" }}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "userSelect.value"
+          },
+          {
+            "value": "{{ urlparams.hash?.userSelect ? urlparams.hash?.userSelect : \"-1\" }}"
+          }
+        ]
+      },
+      {
+        "ordered": [
+          {
+            "name": "areaSelect.value"
+          },
+          {
+            "value": "{{ urlparams.hash?.areaSelect ? urlparams.hash?.areaSelect : \"-1\" }}"
+          }
+        ]
+      }
+    ],
+    "isFetching": true,
+    "appThemeName": "Agabang & Company key color",
+    "shortlink": "shop_datail",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
