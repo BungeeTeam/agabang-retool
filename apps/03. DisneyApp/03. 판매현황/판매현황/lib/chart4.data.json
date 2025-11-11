@@ -1,0 +1,1 @@
+{{ radioGroup1.value === 'cum' ? get_cum_sales_by_day.data[segment_cum_sale_type.value] : get_cum_sales_by_week.data[segment_cum_sale_type.value]}}
