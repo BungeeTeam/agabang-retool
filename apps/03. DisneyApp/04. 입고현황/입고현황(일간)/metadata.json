@@ -1,0 +1,10 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "c3a66716-ed11-11ef-921f-675dd9f035b9",
+  "appTemplate": {
+    "shortlink": "disney_dsin_daily",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
