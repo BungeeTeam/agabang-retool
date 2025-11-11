@@ -1,0 +1,10 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "e083b6aa-0efd-11f0-8c1a-d31d33b0026f",
+  "appTemplate": {
+    "shortlink": "agabang-category",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
