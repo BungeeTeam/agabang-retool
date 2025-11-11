@@ -1,0 +1,11 @@
+{
+  "toolscriptVersion": "1.0.0",
+  "version": "43.0.9",
+  "pageUuid": "a6e2d3f6-4600-11f0-a54e-cb342abb2825",
+  "appTemplate": {
+    "rootScreen": "defaultPage",
+    "shortlink": "ai-assort-order-disney",
+    "version": "3.148.10",
+    "experimentalDataTabEnabled": true
+  }
+}
