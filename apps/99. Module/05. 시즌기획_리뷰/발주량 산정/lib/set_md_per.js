@@ -1,0 +1,12 @@
+let total_lot = size_1_qty.value + size_2_qty.value + size_3_qty.value + size_4_qty.value + size_5_qty.value + size_6_qty.value + size_7_qty.value + size_8_qty.value + size_9_qty.value + size_10_qty.value
+lot_qty.setValue(total_lot)
+size_1_per.setValue((size_1_qty.value/total_lot).toFixed(2))
+size_2_per.setValue((size_2_qty.value/total_lot).toFixed(2))
+size_3_per.setValue((size_3_qty.value/total_lot).toFixed(2))
+size_4_per.setValue((size_4_qty.value/total_lot).toFixed(2))
+size_5_per.setValue((size_5_qty.value/total_lot).toFixed(2))
+size_6_per.setValue((size_6_qty.value/total_lot).toFixed(2))
+size_7_per.setValue((size_7_qty.value/total_lot).toFixed(2))
+size_8_per.setValue((size_8_qty.value/total_lot).toFixed(2))
+size_9_per.setValue((size_9_qty.value/total_lot).toFixed(2))
+size_10_per.setValue((size_10_qty.value/total_lot).toFixed(2))
