@@ -1,0 +1,95 @@
+[
+  {
+    "name": "판매율(%)",
+    "x": {{formatDataAsObject(get_item_list.data[item])['sty_nm']}},
+    "y": {{formatDataAsObject(get_item_list.data[item])['sale_qty_per']}},
+    "type": "line",
+    "hovertemplate": "<b>%{x}</b><br>%{fullData.name}: %{y}<extra></extra>",
+    "transforms": [
+      {
+        "type": "sort",
+        "target": {{formatDataAsObject(get_item_list.data[item])['sty_nm']}},
+        "order": "ascending"
+      }
+    ],
+    "marker": {
+      "color": "red"
+    },
+    "line": {
+      "dash": "dash"  // 점선 스타일 설정
+    },
+    "mode": "lines+markers+text",
+    "text": {{formatDataAsObject(get_item_list.data[item])['sale_qty_per'].map(value => value + "%")}},  // 숫자에 % 추가
+    "textposition": "top center",
+    "textfont": {
+      "color": "red"  // 텍스트 색상을 그래프 색상과 동일하게 설정
+    },
+    "yaxis": "y2"
+  },
+  {
+    "name": "입고량",
+    "x": {{formatDataAsObject(get_item_list.data[item])['sty_nm']}},
+    "y": {{formatDataAsObject(get_item_list.data[item])['tot_in_qty'].map(Number)}},
+    "type": "bar",
+    "hovertemplate": "<b>%{x}</b><br>%{fullData.name}: %{y}<extra></extra>",
+    "transforms": [
+      {
+        "type": "sort",
+        "target": {{formatDataAsObject(get_item_list.data[item])['sty_nm']}},
+        "order": "ascending"
+      },
+      {
+        "type": "aggregate",
+        "groups": {{formatDataAsObject(get_item_list.data[item])['sty_nm']}},
+        "aggregations": [
+          {
+            "target": "y",
+            "func": "sum",
+            "enabled": true
+          }
+        ]
+      }
+    ],
+    "marker": {
+      "color": "#dbc8d3"
+    },
+    "text": {{formatDataAsObject(get_item_list.data[item])['tot_in_qty'].map(Number)}},
+    "textposition": "outside",
+    "textfont": {
+      "color": "#dbc8d3"  // 텍스트 색상을 그래프 색상과 동일하게 설정
+    }
+  },
+  {
+    "name": "판매량",
+    "x": {{formatDataAsObject(get_item_list.data[item])['sty_nm']}},
+    "y": {{formatDataAsObject(get_item_list.data[item])['sale_qty'].map(Number)}},
+    "type": "bar",
+    "hovertemplate": "<b>%{x}</b><br>%{fullData.name}: %{y}<extra></extra>",
+    "transforms": [
+      {
+        "type": "sort",
+        "target": {{formatDataAsObject(get_item_list.data[item])['sty_nm']}},
+        "order": "ascending"
+      },
+      {
+        "type": "aggregate",
+        "groups": {{formatDataAsObject(get_item_list.data[item])['sty_nm']}},
+        "aggregations": [
+          {
+            "target": "y",
+            "func": "sum",
+            "enabled": true
+          }
+        ]
+      }
+    ],
+    "marker": {
+      "color": "#60A5FA"
+    },
+    "text": {{formatDataAsObject(get_item_list.data[item])['sale_qty'].map(Number)}},
+    "textposition": "outside",
+    "textfont": {
+      "color": "#60A5FA"  // 텍스트 색상을 그래프 색상과 동일하게 설정
+    }
+  }
+]
