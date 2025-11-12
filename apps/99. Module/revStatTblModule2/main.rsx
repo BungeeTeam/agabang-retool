@@ -1,11 +1,14 @@
 <App>
   <Include src="./functions.rsx" />
   <GlobalWidgetProp id="inputData" defaultValue="{{ testQuery.data }}" />
-  <GlobalWidgetProp id="inputDataByStyle" />
+  <GlobalWidgetProp
+    id="inputDataByStyle"
+    value="{{ formatDataAsObject(testData.value) }}"
+  />
   <GlobalWidgetProp
     id="inputDateRange"
     description=""
-    value={'{\n  "start": "2024-09-01",\n  "end": "2024-12-31"\n}'}
+    value={'{\n  "start": "2025-11-11",\n  "end": "2025-11-12"\n}'}
   />
   <Include src="./src/bizModalFrame.rsx" />
   <Include src="./src/onoffModalFrame.rsx" />
@@ -24,8 +27,8 @@
       id="moduleContainer"
       backgroundColor="white"
       inputData=""
-      inputDataByStyle=""
-      inputDateRange={'{\n  "start": "2024-09-01",\n  "end": "2024-12-31"\n}'}
+      inputDataByStyle="{{ formatDataAsObject(testData.value) }}"
+      inputDateRange={'{\n  "start": "2025-11-11",\n  "end": "2025-11-12"\n}'}
       inventoryData=""
       isGlobalWidgetContainer={true}
       margin="0"
@@ -1781,7 +1784,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="biz_nm"
-          size={47.109375}
+          size={78.1875}
           summaryAggregationMode="none"
           valueOverride="{{ item }}"
         />
@@ -1802,7 +1805,7 @@
           label="기초류"
           placeholder="Enter value"
           position="center"
-          size={47.109375}
+          size={47.078125}
           summaryAggregationMode="none"
           textColor={
             '{{  currentSourceRow.기초류신장율 > 0 ?  "green" : "red"  }}'
@@ -1825,7 +1828,7 @@
           label="외의류"
           placeholder="Enter value"
           position="center"
-          size={47.109375}
+          size={47.8125}
           summaryAggregationMode="none"
           textColor={
             '{{ currentSourceRow.외의류신장율 > 0 ?  "green" : "red"  }}'
@@ -1848,7 +1851,7 @@
           label="발육"
           placeholder="Enter value"
           position="center"
-          size={36.734375}
+          size={36.71875}
           summaryAggregationMode="none"
           textColor={
             '{{ currentSourceRow.발육신장율 > 0 ?  "green" : "red"  }}'
@@ -1871,7 +1874,7 @@
           label="섬유공산품"
           placeholder="Enter value"
           position="center"
-          size={67.859375}
+          size={67.8125}
           summaryAggregationMode="none"
           textColor={
             '{{ currentSourceRow.섬유공산품신장율 > 0 ? "green" :"red"   }}'
@@ -1894,7 +1897,7 @@
           label="시즌용품"
           placeholder="Enter value"
           position="center"
-          size={57.484375}
+          size={57.453125}
           summaryAggregationMode="none"
           textColor={
             '{{ currentSourceRow.시즌용품신장율 > 0 ?  "green": "red"   }}'
@@ -1917,7 +1920,7 @@
           label="일반용품위탁"
           placeholder="Enter value"
           position="center"
-          size={78.234375}
+          size={78.1875}
           summaryAggregationMode="none"
           textColor={
             '{{ currentSourceRow.일반용품위탁신장율 > 0  ?  "green" : "red"   }}'
@@ -1940,7 +1943,7 @@
           label="하드류"
           placeholder="Enter value"
           position="center"
-          size={47.109375}
+          size={47.078125}
           summaryAggregationMode="none"
           textColor={
             '{{ currentSourceRow.하드류신장율 > 0 ? "green" : "red"  }}'
@@ -1963,7 +1966,7 @@
           label="기타"
           placeholder="Enter value"
           position="center"
-          size={36.734375}
+          size={36.71875}
           summaryAggregationMode="none"
           textColor={'{{ currentSourceRow.기타신장율 > 0 ? "green" : "red"  }}'}
           valueOverride="{{ item }}"

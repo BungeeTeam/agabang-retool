@@ -58,7 +58,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="year_nm"
-        size={36.71875}
+        size={44.609375}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["year_nm"] }}'}
       />
@@ -79,7 +79,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearRev"
-        size={51.0625}
+        size={50.90625}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
       >
@@ -264,7 +264,7 @@
       heightType="auto"
       hidden=""
       margin="0"
-      primaryKeyColumnId="b7f5c"
+      primaryKeyColumnId="2d619"
       rowBackgroundColor=""
       rowHeight="small"
       rowSelection="none"
@@ -291,6 +291,7 @@
       <Column
         id="2d619"
         alignment="left"
+        editable={false}
         format="string"
         groupAggregationMode="none"
         label="시즌코드"
@@ -332,8 +333,9 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearRev"
-        size={51.0625}
+        size={50.90625}
         summaryAggregationMode="none"
+        valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
       >
         <Event
           event="clickCell"
@@ -358,11 +360,12 @@
         }}
         groupAggregationMode="sum"
         key="2024"
-        label="24실적"
+        label="{{(thisYear.value-1).toString().slice(2)}}실적"
         placeholder="Enter value"
         position="center"
         size={51.0625}
         summaryAggregationMode="none"
+        valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
       />
       <Column
         id="36681"
@@ -375,16 +378,16 @@
           decimalPlaces: "1",
         }}
         groupAggregationMode="average"
-        label="24대비신장율"
+        label="{{(thisYear.value-1).toString().slice(2)}}대비신장율"
         placeholder="Enter value"
         position="center"
-        referenceId="24대비신장율"
+        referenceId="thisYearValue1ToStringSlice2대비신장율"
         size={82.15625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
         }
-        valueOverride={'{{ self.data[i]["2025"] / self.data[i]["2024"] - 1 }}'}
+        valueOverride="{{ self.data[i][(thisYear.value).toString()] / self.data[i][(thisYear.value-1).toString()] - 1 }}"
       />
       <Column
         id="e0872"
@@ -418,11 +421,12 @@
         }}
         groupAggregationMode="sum"
         key="2023"
-        label="23실적"
+        label="{{(thisYear.value-2).toString().slice(2)}}실적"
         placeholder="Enter value"
         position="center"
         size={51.171875}
         summaryAggregationMode="none"
+        valueOverride="{{ self.data[i][(thisYear.value-2).toString()]}}"
       />
       <Column
         id="2783a"
@@ -435,16 +439,16 @@
           decimalPlaces: "1",
         }}
         groupAggregationMode="average"
-        label="23대비신장율"
+        label="{{(thisYear.value-2).toString().slice(2)}}대비신장율"
         placeholder="Enter value"
         position="center"
-        referenceId="23대비신장율"
-        size={82.265625}
+        referenceId="thisYearValue2ToStringSlice2대비신장율"
+        size={91.6875}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
         }
-        valueOverride={'{{ self.data[i]["2025"] / self.data[i]["2023"] - 1 }}'}
+        valueOverride="{{ self.data[i][(thisYear.value)] / self.data[i][(thisYear.value-2).toString()] - 1 }}"
       />
       <Column
         id="cc18b"
@@ -457,13 +461,13 @@
           decimalPlaces: "0",
         }}
         groupAggregationMode="sum"
-        label="23대비신장액"
+        label="{{(thisYear.value-2).toString().slice(2)}}대비신장액"
         placeholder="Enter value"
         position="center"
         referenceId="23대비N신장액"
         size={82.265625}
         summaryAggregationMode="none"
-        valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2023"]}}'}
+        valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
       />
       <ToolbarButton
         id="1a"
@@ -479,25 +483,22 @@
       >
         <Event
           event="clickToolbar"
-          method="exportData"
+          method="trigger"
           params={{
             ordered: [
               {
                 options: {
-                  ordered: [
-                    { fileType: "xlsx" },
-                    { includeHiddenColumns: false },
-                    {
-                      fileName:
-                        "{{ tabs3.selectedLabel }} 매출현황({{ moment().format('YYYY-MM-DD') }})",
-                    },
-                  ],
+                  object: {
+                    onSuccess: null,
+                    onFailure: null,
+                    additionalScope: null,
+                  },
                 },
               },
             ],
           }}
-          pluginId="typeStatTbl21"
-          type="widget"
+          pluginId="excelDownloadByStyle"
+          type="datasource"
           waitMs="0"
           waitType="debounce"
         />
@@ -540,7 +541,7 @@
         optionList={{ mode: "manual" }}
         placeholder="Enter value"
         position="center"
-        size={47.078125}
+        size={75.984375}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["it_nm"] }}'}
       />
@@ -561,8 +562,9 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearRev"
-        size={51.0625}
+        size={50.90625}
         summaryAggregationMode="none"
+        valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
       >
         <Event
           event="clickCell"
@@ -587,11 +589,12 @@
         }}
         groupAggregationMode="sum"
         key="2024"
-        label="24실적"
+        label="{{(thisYear.value-1).toString().slice(2)}}실적"
         placeholder="Enter value"
         position="center"
         size={51.0625}
         summaryAggregationMode="none"
+        valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
       />
       <Column
         id="36681"
@@ -604,16 +607,16 @@
           decimalPlaces: "1",
         }}
         groupAggregationMode="average"
-        label="24대비신장율"
+        label="{{ (thisYear.value-1).toString().slice(2) }}대비신장율"
         placeholder="Enter value"
         position="center"
-        referenceId="24대비신장율"
+        referenceId="thisYearValue1ToStringSlice2대비신장율"
         size={82.15625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
         }
-        valueOverride={'{{ self.data[i]["2025"] / self.data[i]["2024"] - 1 }}'}
+        valueOverride="{{ self.data[i][(thisYear.value).toString()] / self.data[i][(thisYear.value-1).toString()] - 1 }}"
       />
       <Column
         id="e0872"
@@ -626,13 +629,13 @@
           decimalPlaces: "0",
         }}
         groupAggregationMode="sum"
-        label="24대비신장액"
+        label="{{(thisYear.value-1).toString().slice(2)}}대비신장액"
         placeholder="Enter value"
         position="center"
-        referenceId="24대비신장액"
+        referenceId="thisYearValue1ToStringSlice2대비신장액"
         size={82.15625}
         summaryAggregationMode="none"
-        valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2024"]}}'}
+        valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-1).toString()]}}"
       />
       <Column
         id="ba994"
@@ -647,11 +650,12 @@
         }}
         groupAggregationMode="sum"
         key="2023"
-        label="23실적"
+        label="{{(thisYear.value-2).toString().slice(2)}}실적"
         placeholder="Enter value"
         position="center"
         size={51.171875}
         summaryAggregationMode="none"
+        valueOverride="{{ self.data[i][(thisYear.value-2).toString()]}}"
       />
       <Column
         id="2783a"
@@ -664,16 +668,16 @@
           decimalPlaces: "1",
         }}
         groupAggregationMode="average"
-        label="23대비신장율"
+        label="{{(thisYear.value-2).toString().slice(2)}}대비신장율"
         placeholder="Enter value"
         position="center"
-        referenceId="23대비신장율"
+        referenceId="thisYearValue2ToStringSlice2대비신장율"
         size={82.265625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
         }
-        valueOverride={'{{ self.data[i]["2025"] / self.data[i]["2023"] - 1 }}'}
+        valueOverride="{{ self.data[i][(thisYear.value)] / self.data[i][(thisYear.value-2).toString()] - 1 }}"
       />
       <Column
         id="cc18b"
@@ -686,13 +690,13 @@
           decimalPlaces: "0",
         }}
         groupAggregationMode="sum"
-        label="23대비신장액"
+        label="{{(thisYear.value-2).toString().slice(2)}}대비신장액"
         placeholder="Enter value"
         position="center"
         referenceId="23대비N신장액"
         size={82.265625}
         summaryAggregationMode="none"
-        valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2023"]}}'}
+        valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
       />
       <ToolbarButton
         id="1a"
@@ -708,25 +712,22 @@
       >
         <Event
           event="clickToolbar"
-          method="exportData"
+          method="trigger"
           params={{
             ordered: [
               {
                 options: {
-                  ordered: [
-                    { fileType: "xlsx" },
-                    { includeHiddenColumns: false },
-                    {
-                      fileName:
-                        "{{ tabs3.selectedLabel }} 매출현황({{ moment().format('YYYY-MM-DD') }})",
-                    },
-                  ],
+                  object: {
+                    onSuccess: null,
+                    onFailure: null,
+                    additionalScope: null,
+                  },
                 },
               },
             ],
           }}
-          pluginId="typeStatTbl22"
-          type="widget"
+          pluginId="excelDownloadByStyle"
+          type="datasource"
           waitMs="0"
           waitType="debounce"
         />
@@ -776,7 +777,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="팀"
-        size={47.078125}
+        size={75.984375}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["it_nm"] }}'}
       />
@@ -813,8 +814,9 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearRev"
-        size={51.0625}
+        size={50.90625}
         summaryAggregationMode="none"
+        valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
       >
         <Event
           event="clickCell"
@@ -839,11 +841,12 @@
         }}
         groupAggregationMode="sum"
         key="2024"
-        label="24실적"
+        label="{{(thisYear.value-1).toString().slice(2)}}실적"
         placeholder="Enter value"
         position="center"
         size={51.0625}
         summaryAggregationMode="none"
+        valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
       />
       <Column
         id="36681"
@@ -856,16 +859,16 @@
           decimalPlaces: "1",
         }}
         groupAggregationMode="average"
-        label="24대비신장율"
+        label="{{ (thisYear.value-1).toString().slice(2) }}대비신장율"
         placeholder="Enter value"
         position="center"
-        referenceId="24대비신장율"
+        referenceId="thisYearValue1ToStringSlice2대비신장율"
         size={82.15625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
         }
-        valueOverride={'{{ self.data[i]["2025"] / self.data[i]["2024"] - 1 }}'}
+        valueOverride="{{ self.data[i][(thisYear.value).toString()] / self.data[i][(thisYear.value-1).toString()] - 1 }}"
       />
       <Column
         id="e0872"
@@ -878,13 +881,13 @@
           decimalPlaces: "0",
         }}
         groupAggregationMode="sum"
-        label="24대비신장액"
+        label="{{(thisYear.value-1).toString().slice(2)}}대비신장액"
         placeholder="Enter value"
         position="center"
-        referenceId="24대비신장액"
+        referenceId="thisYearValue1ToStringSlice2대비신장액"
         size={82.15625}
         summaryAggregationMode="none"
-        valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2024"]}}'}
+        valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-1).toString()]}}"
       />
       <Column
         id="ba994"
@@ -899,11 +902,12 @@
         }}
         groupAggregationMode="sum"
         key="2023"
-        label="23실적"
+        label="{{(thisYear.value-2).toString().slice(2)}}실적"
         placeholder="Enter value"
         position="center"
         size={51.171875}
         summaryAggregationMode="none"
+        valueOverride="{{ self.data[i][(thisYear.value-2).toString()]}}"
       />
       <Column
         id="2783a"
@@ -916,16 +920,16 @@
           decimalPlaces: "1",
         }}
         groupAggregationMode="average"
-        label="23대비신장율"
+        label="{{(thisYear.value-2).toString().slice(2)}}대비신장율"
         placeholder="Enter value"
         position="center"
-        referenceId="23대비신장율"
-        size={82.265625}
+        referenceId="thisYearValue2ToStringSlice2대비신장율"
+        size={91.6875}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
         }
-        valueOverride={'{{ self.data[i]["2025"] / self.data[i]["2023"] - 1 }}'}
+        valueOverride="{{ self.data[i][(thisYear.value)] / self.data[i][(thisYear.value-2).toString()] - 1 }}"
       />
       <Column
         id="cc18b"
@@ -938,13 +942,13 @@
           decimalPlaces: "0",
         }}
         groupAggregationMode="sum"
-        label="23대비신장액"
+        label="{{(thisYear.value-2).toString().slice(2)}}대비신장액"
         placeholder="Enter value"
         position="center"
         referenceId="23대비N신장액"
         size={82.265625}
         summaryAggregationMode="none"
-        valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2023"]}}'}
+        valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
       />
       <ToolbarButton
         id="1a"
@@ -960,25 +964,22 @@
       >
         <Event
           event="clickToolbar"
-          method="exportData"
+          method="trigger"
           params={{
             ordered: [
               {
                 options: {
-                  ordered: [
-                    { fileType: "xlsx" },
-                    { includeHiddenColumns: false },
-                    {
-                      fileName:
-                        "{{ tabs3.selectedLabel }} 매출현황({{ moment().format('YYYY-MM-DD') }})",
-                    },
-                  ],
+                  object: {
+                    onSuccess: null,
+                    onFailure: null,
+                    additionalScope: null,
+                  },
                 },
               },
             ],
           }}
-          pluginId="typeStatTbl23"
-          type="widget"
+          pluginId="excelDownloadByStyle"
+          type="datasource"
           waitMs="0"
           waitType="debounce"
         />
@@ -1028,7 +1029,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="팀"
-        size={47.078125}
+        size={75.984375}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["it_nm"] }}'}
       />
@@ -1044,7 +1045,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="column12"
-        size={47.078125}
+        size={64.484375}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["it_gb_nm"] }}'}
       />
@@ -1081,7 +1082,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearRev"
-        size={51.0625}
+        size={50.90625}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
       >
@@ -1112,7 +1113,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="lastYearRev"
-        size={51.171875}
+        size={51.0625}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
       />
@@ -1131,7 +1132,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="lastYearGrowthRate"
-        size={82.265625}
+        size={82.15625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -1153,7 +1154,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="lastYearGrowth"
-        size={82.265625}
+        size={82.15625}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-1).toString()]}}"
       />
@@ -1174,7 +1175,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="yearBeforeLastRev"
-        size={50.796875}
+        size={51.171875}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value-3).toString()]}}"
       />
@@ -1193,7 +1194,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="yearBeforeLastGrowthRate"
-        size={81.890625}
+        size={82.265625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -1215,7 +1216,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="yearBeforeLastGrowth"
-        size={81.890625}
+        size={82.265625}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
       />
@@ -1233,25 +1234,22 @@
       >
         <Event
           event="clickToolbar"
-          method="exportData"
+          method="trigger"
           params={{
             ordered: [
               {
                 options: {
-                  ordered: [
-                    { fileType: "xlsx" },
-                    {
-                      fileName:
-                        "{{ tabs3.selectedLabel }} 매출현황({{ moment().format('YYYY-MM-DD') }})",
-                    },
-                    { includeHiddenColumns: false },
-                  ],
+                  object: {
+                    onSuccess: null,
+                    onFailure: null,
+                    additionalScope: null,
+                  },
                 },
               },
             ],
           }}
-          pluginId="typeStatTbl24"
-          type="widget"
+          pluginId="excelDownloadByStyle"
+          type="datasource"
           waitMs="0"
           waitType="debounce"
         />

@@ -79,20 +79,20 @@ const exportData = data.map(row => {
   newRow[`${lastYear.toString().slice(2)}대비신장액`] = currentRev - lastYearRev
 
   // 7. 2년 전 실적 (원단위)
-  newRow[`${lastYear.toString().slice(2)}실적`] = yearBeforeLastRev
+  newRow[`${yearBeforeLast.toString().slice(2)}실적`] = yearBeforeLastRev
   
   // 8. 2년 전 대비 신장율 (퍼센트, 소수점 1자리)
-  newRow[`${lastYear.toString().slice(2)}대비신장율`] = yearBeforeLastGrowthRate !== null ? yearBeforeLastGrowthRate : null
+  newRow[`${yearBeforeLast.toString().slice(2)}대비신장율`] = yearBeforeLastGrowthRate !== null ? yearBeforeLastGrowthRate : null
 
   // 9. 2년 전 대비 신장액 (원단위)
-  newRow[`${lastYear.toString().slice(2)}대비신장액`] = currentRev - yearBeforeLastRev
+  newRow[`${yearBeforeLast.toString().slice(2)}대비신장액`] = currentRev - yearBeforeLastRev
 
   
   return newRow
 })
 
 // 파일명 생성
-const fileName = `${tabs3.value} 매출 현황(${moment().format('YYYY-MM-DD')})`
+const fileName = `${tabs3.selectedLabel} 매출 현황`
 
 // 엑셀 다운로드
 utils.exportData(exportData, fileName, "xlsx")
