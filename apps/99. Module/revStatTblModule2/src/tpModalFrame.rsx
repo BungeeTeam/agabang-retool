@@ -368,12 +368,21 @@
           params={{
             ordered: [
               {
-                src: 'const fileName = revDetailByShopModal.value.replace("매출 상세", "").trim()\n\nutils.changeLocale("ko")\nutils.exportData(salesByShop.value.map(obj => {\n  const newObj = {}\n  newObj["매장명"] = obj["shop_nm"]\n  newObj["매장코드"] = obj["shop_cd"]  \n  for (let year = thisYear.value; year >= thisYear.value -2; year--) {\n    newObj[`${year}년도`] = obj[year]\n\n    if (year === thisYear.value) {\n      newObj["목표매출"] = obj?.target_sales\n      newObj["목표차액"] = obj[year] - newObj["목표매출"]\n      newObj["목표달성률"] = obj[year] / newObj["목표매출"]\n    } else {\n      newObj[`${year}대비`] = (obj[thisYear.value] - obj[year]) / obj[year]\n      newObj[`${year}신장액`] =  obj[thisYear.value] - obj[year]   \n    }\n  }\n  return newObj\n}), fileName, "xlsx")',
+                src: '//  const fileName = revDetailByShopModal.value.replace("매출 상세", "").trim()\n\n//  utils.changeLocale("ko")\n//  utils.exportData(salesByShop.value.map(obj => {\n//    const newObj = {}\n//    newObj["매장명"] = obj["shop_nm"]\n//    newObj["매장코드"] = obj["shop_cd"]  \n//    for (let year = thisYear.value; year >= thisYear.value -2; year--) {\n//      newObj[`${year}년도`] = obj[year]\n\n//      if (year === thisYear.value) {\n//        newObj["목표매출"] = obj?.target_sales\n//        newObj["목표차액"] = obj[year] - newObj["목표매출"]\n//        newObj["목표달성률"] = obj[year] / newObj["목표매출"]\n//      } else {\n//        newObj[`${year}대비`] = (obj[thisYear.value] - obj[year]) / obj[year]\n//        newObj[`${year}신장액`] =  obj[thisYear.value] - obj[year]   \n//      }\n//    }\n//    return newObj\n//  }), fileName, "xlsx")',
               },
             ],
           }}
           pluginId=""
           type="script"
+          waitMs="0"
+          waitType="debounce"
+        />
+        <Event
+          event="clickToolbar"
+          method="trigger"
+          params={{ ordered: [] }}
+          pluginId="excelDownloadByShop"
+          type="datasource"
           waitMs="0"
           waitType="debounce"
         />

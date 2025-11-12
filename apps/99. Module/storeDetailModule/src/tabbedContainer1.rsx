@@ -303,25 +303,22 @@
       >
         <Event
           event="clickToolbar"
-          method="exportData"
+          method="trigger"
           params={{
             ordered: [
               {
                 options: {
-                  ordered: [
-                    { fileType: "xlsx" },
-                    { includeHiddenColumns: false },
-                    {
-                      fileName:
-                        "[{{head.value.slice(4) }}] {{ tabs2.selectedLabel }} {{ text64.value.slice(7) }} (마감 일자:{{ endDate.value }})",
-                    },
-                  ],
+                  object: {
+                    onSuccess: null,
+                    onFailure: null,
+                    additionalScope: null,
+                  },
                 },
               },
             ],
           }}
-          pluginId="table41"
-          type="widget"
+          pluginId="excelDownloadShopSalesByMonth"
+          type="datasource"
           waitMs="0"
           waitType="debounce"
         />

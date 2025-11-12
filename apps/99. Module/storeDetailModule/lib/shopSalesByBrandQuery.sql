@@ -46,7 +46,7 @@ SELECT
   shop_cd, 
   shop_nm,
   br_cd,
-  ROUND(sum(sales_price) / 1000, 0) as "매출"
+  sum(sales_price) / 1000 as "매출"
 FROM tbl
 GROUP BY "연도", "정상구분", "할인구분", br_cd, cat_nm, shop_cd, shop_nm
 ;

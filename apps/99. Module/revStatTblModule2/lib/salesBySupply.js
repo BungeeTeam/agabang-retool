@@ -1,3 +1,5 @@
+// 현재는 사용하지 않는 테이블
+
 function groupBySum(arr, groupKeys, sumKeys) {
   return Object.values(
     arr.reduce((acc, item) => {

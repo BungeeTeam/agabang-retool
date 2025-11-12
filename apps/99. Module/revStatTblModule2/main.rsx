@@ -1,11 +1,14 @@
 <App>
   <Include src="./functions.rsx" />
   <GlobalWidgetProp id="inputData" defaultValue="{{ testQuery.data }}" />
-  <GlobalWidgetProp id="inputDataByStyle" />
+  <GlobalWidgetProp
+    id="inputDataByStyle"
+    value="{{ formatDataAsObject(testData.value) }}"
+  />
   <GlobalWidgetProp
     id="inputDateRange"
     description=""
-    value={'{\n  "start": "2024-09-01",\n  "end": "2024-12-31"\n}'}
+    value={'{\n  "start": "2025-11-11",\n  "end": "2025-11-12"\n}'}
   />
   <Include src="./src/bizModalFrame.rsx" />
   <Include src="./src/onoffModalFrame.rsx" />
@@ -24,8 +27,8 @@
       id="moduleContainer"
       backgroundColor="white"
       inputData=""
-      inputDataByStyle=""
-      inputDateRange={'{\n  "start": "2024-09-01",\n  "end": "2024-12-31"\n}'}
+      inputDataByStyle="{{ formatDataAsObject(testData.value) }}"
+      inputDateRange={'{\n  "start": "2025-11-11",\n  "end": "2025-11-12"\n}'}
       inventoryData=""
       isGlobalWidgetContainer={true}
       margin="0"
@@ -76,7 +79,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="biz_nm"
-          size={47.078125}
+          size={47.109375}
           summaryAggregationMode="none"
           valueOverride={'{{ self.data[i]["biz_nm"] }}'}
         />
@@ -98,7 +101,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="thisYearRev"
-          size={51.0625}
+          size={51.515625}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
         >
@@ -128,7 +131,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="thisYearTarget"
-          size={51.0625}
+          size={51.515625}
           summaryAggregationMode="none"
           valueOverride={
             '{{ self.data[i]["target_sales"] === 0 ? null: self.data[i]["target_sales"] }}'
@@ -154,7 +157,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="목표달성율"
-          size={67.8125}
+          size={67.859375}
           summaryAggregationMode="none"
           valueOverride={
             '{{ self.data[i]["target_sales"] === 0 ? null : self.data[i][(thisYear.value).toString()] / self.data[i]["target_sales"] }}'
@@ -176,7 +179,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="목표차액"
-          size={57.453125}
+          size={57.484375}
           summaryAggregationMode="none"
           textColor={'{{ item > 0 ? "green" : "red" }}'}
           valueOverride={
@@ -200,7 +203,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="lastYearRev"
-          size={51.171875}
+          size={51.625}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
         />
@@ -219,7 +222,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="lastYearGrowthRate"
-          size={82.265625}
+          size={82.75}
           summaryAggregationMode="none"
           textColor={
             '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -241,7 +244,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="lastYearGrowth"
-          size={82.265625}
+          size={82.75}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][thisYear.value.toString()] - self.data[i][(thisYear.value-1).toString()]}}"
         />
@@ -262,7 +265,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="yearBeforeLastRev"
-          size={50.796875}
+          size={51.25}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][(thisYear.value-2).toString()]}}"
         />
@@ -281,7 +284,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="yearBeforeLastGrowthRate"
-          size={81.890625}
+          size={82.375}
           summaryAggregationMode="none"
           textColor={
             '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -303,7 +306,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="yeatBeforeLastGrowth"
-          size={81.890625}
+          size={82.375}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
         />
@@ -321,22 +324,22 @@
         >
           <Event
             event="clickToolbar"
-            method="exportData"
+            method="trigger"
             params={{
               ordered: [
                 {
                   options: {
-                    ordered: [
-                      { fileType: "xlsx" },
-                      { includeHiddenColumns: false },
-                      { fileName: "{{ text1.value.slice(6) }}" },
-                    ],
+                    object: {
+                      onSuccess: null,
+                      onFailure: null,
+                      additionalScope: null,
+                    },
                   },
                 },
               ],
             }}
-            pluginId="typeStatTbl"
-            type="widget"
+            pluginId="excelDownloadByBiz"
+            type="datasource"
             waitMs="0"
             waitType="debounce"
           />
@@ -408,7 +411,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="onoff_flag"
-          size={67.8125}
+          size={67.859375}
           summaryAggregationMode="none"
           valueOverride={'{{ self.data[i]["onoff_flag"] }}(전국)'}
         />
@@ -429,7 +432,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="thisYearRev"
-          size={51.0625}
+          size={51.515625}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
         >
@@ -458,7 +461,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="thisYearTarget"
-          size={51.0625}
+          size={51.515625}
           summaryAggregationMode="none"
           valueOverride={
             '{{ self.data[i]["target_sales"] === 0 ? null: self.data[i]["target_sales"] }}'
@@ -482,7 +485,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="목표달성율"
-          size={67.8125}
+          size={67.859375}
           summaryAggregationMode="none"
           valueOverride={
             '{{ self.data[i]["target_sales"] === 0 ? null : self.data[i][(thisYear.value).toString()] / self.data[i]["target_sales"] }}'
@@ -503,7 +506,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="목표차액"
-          size={57.453125}
+          size={57.484375}
           summaryAggregationMode="none"
           textColor={'{{ item > 0 ? "green" : "red" }}'}
           valueOverride={
@@ -527,7 +530,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="lastYearRev"
-          size={51.171875}
+          size={51.625}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
         />
@@ -546,7 +549,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="lastYearGrowthRate"
-          size={82.265625}
+          size={82.75}
           summaryAggregationMode="none"
           textColor={
             '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -568,7 +571,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="lastYearGrowth"
-          size={82.265625}
+          size={82.75}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][thisYear.value.toString()] - self.data[i][(thisYear.value-1).toString()]}}"
         />
@@ -589,7 +592,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="yearBeforeLastRev"
-          size={50.796875}
+          size={51.25}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][(thisYear.value-2).toString()]}}"
         />
@@ -608,7 +611,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="yearBeforeLastGrowthRate"
-          size={81.890625}
+          size={82.375}
           summaryAggregationMode="none"
           textColor={
             '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -630,7 +633,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="yeatBeforeLastGrowth"
-          size={81.890625}
+          size={82.375}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
         />
@@ -648,22 +651,22 @@
         >
           <Event
             event="clickToolbar"
-            method="exportData"
+            method="trigger"
             params={{
               ordered: [
                 {
                   options: {
-                    ordered: [
-                      { fileType: "xlsx" },
-                      { includeHiddenColumns: false },
-                      { fileName: "{{ text3.value.slice(7) }}" },
-                    ],
+                    object: {
+                      onSuccess: null,
+                      onFailure: null,
+                      additionalScope: null,
+                    },
                   },
                 },
               ],
             }}
-            pluginId="typeStatTbl3"
-            type="widget"
+            pluginId="excelDownloadByOnOff"
+            type="datasource"
             waitMs="0"
             waitType="debounce"
           />
@@ -772,7 +775,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="tp_group_nm"
-              size={57.453125}
+              size={57.484375}
               sortMode="disabled"
               summaryAggregationMode="none"
               valueOverride={'{{ self.data[i]["tp_group_nm"] }}'}
@@ -794,7 +797,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="thisYearRev"
-              size={51.0625}
+              size={51.515625}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
             >
@@ -823,7 +826,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="thisYearTarget"
-              size={51.0625}
+              size={51.515625}
               summaryAggregationMode="sum"
               valueOverride={
                 '{{ self.data[i]["target_sales"] === 0 ? null: self.data[i]["target_sales"] }}'
@@ -847,7 +850,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="목표달성율"
-              size={67.8125}
+              size={67.859375}
               summaryAggregationMode="none"
               valueOverride={
                 '{{ self.data[i]["target_sales"] === 0 ? null : self.data[i][(thisYear.value).toString()] / self.data[i]["target_sales"] }}'
@@ -868,7 +871,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="목표차액"
-              size={57.453125}
+              size={57.484375}
               summaryAggregationMode="sum"
               textColor={'{{ item > 0 ? "green" : "red" }}'}
               valueOverride={
@@ -892,7 +895,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="lastYearRev"
-              size={51.171875}
+              size={51.625}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
             />
@@ -911,7 +914,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="lastYearGrowthRate"
-              size={82.265625}
+              size={82.75}
               summaryAggregationMode="none"
               textColor={
                 '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -933,7 +936,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="lastYearGrowth"
-              size={82.265625}
+              size={82.75}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][thisYear.value.toString()] - self.data[i][(thisYear.value-1).toString()]}}"
             />
@@ -954,7 +957,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="yearBeforeLastRev"
-              size={50.796875}
+              size={51.25}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][(thisYear.value-2).toString()]}}"
             />
@@ -973,7 +976,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="yearBeforeLastGrowthRate"
-              size={81.890625}
+              size={82.375}
               summaryAggregationMode="none"
               textColor={
                 '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -995,7 +998,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="yeatBeforeLastGrowth"
-              size={81.890625}
+              size={82.375}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
             />
@@ -1027,25 +1030,22 @@
             >
               <Event
                 event="clickToolbar"
-                method="exportData"
+                method="trigger"
                 params={{
                   ordered: [
                     {
                       options: {
-                        ordered: [
-                          { fileType: "xlsx" },
-                          { includeHiddenColumns: false },
-                          {
-                            fileName:
-                              "{{ tabs4.selectedLabel}} 매출 현황({{ moment().format('YYYY-MM-DD') }})",
-                          },
-                        ],
+                        object: {
+                          onSuccess: null,
+                          onFailure: null,
+                          additionalScope: null,
+                        },
                       },
                     },
                   ],
                 }}
-                pluginId="typeStatTbl2"
-                type="widget"
+                pluginId="excelDownloadByType"
+                type="datasource"
                 waitMs="0"
                 waitType="debounce"
               />
@@ -1374,25 +1374,22 @@
             >
               <Event
                 event="clickToolbar"
-                method="exportData"
+                method="trigger"
                 params={{
                   ordered: [
                     {
                       options: {
-                        ordered: [
-                          { fileType: "xlsx" },
-                          { includeHiddenColumns: false },
-                          {
-                            fileName:
-                              "{{ tabs4.selectedLabel}} 매출 현황({{ moment().format('YYYY-MM-DD') }})",
-                          },
-                        ],
+                        object: {
+                          onSuccess: null,
+                          onFailure: null,
+                          additionalScope: null,
+                        },
                       },
                     },
                   ],
                 }}
-                pluginId="typeStatTbl26"
-                type="widget"
+                pluginId="excelDownloadByTeam"
+                type="datasource"
                 waitMs="0"
                 waitType="debounce"
               />
@@ -1456,7 +1453,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="user_nm"
-              size={57.484375}
+              size={57.453125}
               sortMode="disabled"
               summaryAggregationMode="none"
               valueOverride={'{{ self.data[i]["user_nm"] }}'}
@@ -1478,7 +1475,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="thisYearRev"
-              size={50.9375}
+              size={51.0625}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
             >
@@ -1507,7 +1504,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="thisYearTarget"
-              size={50.9375}
+              size={51.0625}
               summaryAggregationMode="sum"
               valueOverride={
                 '{{ self.data[i]["target_sales"] === 0 ? null: self.data[i]["target_sales"] }}'
@@ -1531,7 +1528,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="목표달성율"
-              size={67.859375}
+              size={67.8125}
               summaryAggregationMode="none"
               valueOverride={
                 '{{ self.data[i]["target_sales"] === 0 ? null : self.data[i][(thisYear.value).toString()] / self.data[i]["target_sales"] }}'
@@ -1552,7 +1549,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="목표차액"
-              size={57.484375}
+              size={57.453125}
               summaryAggregationMode="sum"
               textColor={'{{ item > 0 ? "green" : "red" }}'}
               valueOverride={
@@ -1576,7 +1573,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="lastYearRev"
-              size={51.09375}
+              size={51.171875}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
             />
@@ -1595,7 +1592,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="lastYearGrowthRate"
-              size={82.203125}
+              size={82.265625}
               summaryAggregationMode="none"
               textColor={
                 '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -1617,7 +1614,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="lastYearGrowth"
-              size={82.203125}
+              size={82.265625}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][thisYear.value.toString()] - self.data[i][(thisYear.value-1).toString()]}}"
             />
@@ -1638,7 +1635,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="yearBeforeLastRev"
-              size={51.1875}
+              size={50.796875}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][(thisYear.value-2).toString()]}}"
             />
@@ -1657,7 +1654,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="yearBeforeLastGrowthRate"
-              size={82.296875}
+              size={81.890625}
               summaryAggregationMode="none"
               textColor={
                 '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -1679,7 +1676,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="yeatBeforeLastGrowth"
-              size={82.296875}
+              size={81.890625}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
             />
@@ -1711,22 +1708,22 @@
             >
               <Event
                 event="clickToolbar"
-                method="exportData"
+                method="trigger"
                 params={{
                   ordered: [
                     {
                       options: {
-                        ordered: [
-                          { fileType: "xlsx" },
-                          { includeHiddenColumns: false },
-                          { fileName: "{{ tabs4.selectedLabel}} 매출 현황" },
-                        ],
+                        object: {
+                          onSuccess: null,
+                          onFailure: null,
+                          additionalScope: null,
+                        },
                       },
                     },
                   ],
                 }}
-                pluginId="typeStatTbl27"
-                type="widget"
+                pluginId="excelDownloadByUser"
+                type="datasource"
                 waitMs="0"
                 waitType="debounce"
               />
@@ -1787,7 +1784,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="biz_nm"
-          size={47.078125}
+          size={78.1875}
           summaryAggregationMode="none"
           valueOverride="{{ item }}"
         />
@@ -1831,7 +1828,7 @@
           label="외의류"
           placeholder="Enter value"
           position="center"
-          size={47.078125}
+          size={47.8125}
           summaryAggregationMode="none"
           textColor={
             '{{ currentSourceRow.외의류신장율 > 0 ?  "green" : "red"  }}'
@@ -2116,21 +2113,22 @@
         >
           <Event
             event="clickToolbar"
-            method="exportData"
+            method="trigger"
             params={{
               ordered: [
                 {
                   options: {
-                    ordered: [
-                      { fileType: "xlsx" },
-                      { fileName: "{{ text66.value.slice(6) }}" },
-                    ],
+                    object: {
+                      onSuccess: null,
+                      onFailure: null,
+                      additionalScope: null,
+                    },
                   },
                 },
               ],
             }}
-            pluginId="salesBySecondLevelTbl"
-            type="widget"
+            pluginId="excelDownloadBySecondLevelWithBiz"
+            type="datasource"
             waitMs="0"
             waitType="debounce"
           />
