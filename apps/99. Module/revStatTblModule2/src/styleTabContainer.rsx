@@ -106,11 +106,12 @@
         }}
         groupAggregationMode="sum"
         key="2024"
-        label="24실적"
+        label="{{(thisYear.value-1).toString().slice(2)}}실적"
         placeholder="Enter value"
         position="center"
         size={51.0625}
         summaryAggregationMode="none"
+        valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
       />
       <Column
         id="36681"
@@ -123,16 +124,16 @@
           decimalPlaces: "1",
         }}
         groupAggregationMode="average"
-        label="24대비신장율"
+        label="{{(thisYear.value-1).toString().slice(2)}}대비신장율"
         placeholder="Enter value"
         position="center"
-        referenceId="24대비신장율"
+        referenceId="thisYearValue1ToStringSlice2대비신장율"
         size={82.15625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
         }
-        valueOverride={'{{ self.data[i]["2025"] / self.data[i]["2024"] - 1 }}'}
+        valueOverride="{{ self.data[i][(thisYear.value).toString()] / self.data[i][(thisYear.value-1).toString()] - 1 }}"
       />
       <Column
         id="e0872"
@@ -145,13 +146,13 @@
           decimalPlaces: "0",
         }}
         groupAggregationMode="sum"
-        label="24대비신장액"
+        label="{{(thisYear.value-1).toString().slice(2)}}대비신장액"
         placeholder="Enter value"
         position="center"
-        referenceId="24대비신장액"
+        referenceId="thisYearValue1ToStringSlice2대비신장액"
         size={82.15625}
         summaryAggregationMode="none"
-        valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2024"]}}'}
+        valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-1).toString()]}}"
       />
       <Column
         id="ba994"
@@ -166,11 +167,12 @@
         }}
         groupAggregationMode="sum"
         key="2023"
-        label="23실적"
+        label="{{(thisYear.value-2).toString().slice(2)}}실적"
         placeholder="Enter value"
         position="center"
         size={51.171875}
         summaryAggregationMode="none"
+        valueOverride="{{ self.data[i][(thisYear.value-2).toString()]}}"
       />
       <Column
         id="2783a"
@@ -183,16 +185,16 @@
           decimalPlaces: "1",
         }}
         groupAggregationMode="average"
-        label="23대비신장율"
+        label="{{(thisYear.value-2).toString().slice(2)}}대비신장율"
         placeholder="Enter value"
         position="center"
-        referenceId="23대비신장율"
+        referenceId="thisYearValue2ToStringSlice2대비신장율"
         size={82.265625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
         }
-        valueOverride={'{{ self.data[i]["2025"] / self.data[i]["2023"] - 1 }}'}
+        valueOverride="{{ self.data[i][(thisYear.value).toString()] / self.data[i][(thisYear.value-2).toString()] - 1 }}"
       />
       <Column
         id="cc18b"
@@ -205,13 +207,13 @@
           decimalPlaces: "0",
         }}
         groupAggregationMode="sum"
-        label="23대비신장액"
+        label="{{(thisYear.value-2).toString().slice(2)}}대비신장액"
         placeholder="Enter value"
         position="center"
         referenceId="23대비N신장액"
         size={82.265625}
         summaryAggregationMode="none"
-        valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2023"]}}'}
+        valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
       />
       <ToolbarButton
         id="1a"

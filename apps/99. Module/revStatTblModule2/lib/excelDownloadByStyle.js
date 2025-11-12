@@ -8,38 +8,40 @@ utils.changeLocale("ko")
 const data = salesByStyle.value
 const currentYear = thisYear.value
 const lastYear = currentYear - 1
-const viewKey = styleTabContainer.currentViewKey
+const yearBeforeLast = currentYear - 2
+const viewKey = tabs3.value
 
-// viewKey에 따른 컬럼 매핑
+// viewKey에 따른 컬럼 매핑 (테이블 컴포넌트의 컬럼 순서와 동일하게 정의)
+// columns 배열의 순서가 엑셀 다운로드 시 컬럼 순서가 됨
 const columnMapping = {
   season: {
-    labelKey: "year_nm",
-    labelName: "시즌"
+    columns: [
+      { key: "year_nm", name: "시즌" }
+    ]
   },
   season_detail: {
-    labelKey: "season_nm",
-    labelName: "시즌계절",
-    additionalKeys: [
-      { key: "year_nm", name: "시즌연도" }
+    columns: [
+      { key: "year_nm", name: "시즌" },
+      { key: "year_cd", name: "시즌코드" },
+      { key: "season_nm", name: "계절" }
     ]
   },
   it: {
-    labelKey: "it_nm",
-    labelName: "IT명"
+    columns: [
+      { key: "it_nm", name: "대분류" }
+    ]
   },
   it_gb: {
-    labelKey: "it_nm",
-    labelName: "IT명",
-    additionalKeys: [
-      { key: "it_gb_nm", name: "ITGB명" }
+    columns: [
+      { key: "it_nm", name: "대분류" },
+      { key: "it_gb_nm", name: "중분류" }
     ]
   },
   item: {
-    labelKey: "it_nm",
-    labelName: "IT명",
-    additionalKeys: [
-      { key: "it_gb_nm", name: "ITGB명" },
-      { key: "item_nm", name: "아이템명" }
+    columns: [
+      { key: "it_nm", name: "대분류" },
+      { key: "it_gb_nm", name: "중분류" },
+      { key: "item_nm", name: "소분류" }
     ]
   }
 }
@@ -51,22 +53,18 @@ const exportData = data.map(row => {
   // 금액 값 계산 (원단위로 변환)
   const currentRev = (Number(row[currentYear]) || 0) * 1000000
   const lastYearRev = (Number(row[lastYear]) || 0) * 1000000
-  
+  const yearBeforeLastRev = (Number(row[yearBeforeLast]) || 0) * 1000000
   // 신장율 계산
   const lastYearGrowthRate = lastYearRev !== 0 ? (currentRev / lastYearRev) - 1 : null
+  const yearBeforeLastGrowthRate = yearBeforeLastRev !== 0 ? (currentRev / yearBeforeLastRev) - 1 : null
   
-  // 기본 컬럼 구성
-  const newRow = {
-    // 1. 첫 번째 라벨 컬럼
-    [mapping.labelName]: row[mapping.labelKey] || ""
-  }
+  // 테이블 컴포넌트의 컬럼 순서대로 구성
+  const newRow = {}
   
-  // 2. 추가 컬럼들 (있는 경우)
-  if (mapping.additionalKeys) {
-    mapping.additionalKeys.forEach(({ key, name }) => {
-      newRow[name] = row[key] || ""
-    })
-  }
+  // 1. 정의된 컬럼들을 순서대로 추가
+  mapping.columns.forEach(({ key, name }) => {
+    newRow[name] = row[key] || ""
+  })
   
   // 3. 현재 연도 실적 (원단위)
   newRow[`${currentYear.toString().slice(2)}실적`] = currentRev
@@ -76,12 +74,25 @@ const exportData = data.map(row => {
   
   // 5. 전년 대비 신장율 (퍼센트, 소수점 1자리)
   newRow[`${lastYear.toString().slice(2)}대비신장율`] = lastYearGrowthRate !== null ? lastYearGrowthRate : null
+
+  // 6. 전년 대비 신장액 (원단위)
+  newRow[`${lastYear.toString().slice(2)}대비신장액`] = currentRev - lastYearRev
+
+  // 7. 2년 전 실적 (원단위)
+  newRow[`${lastYear.toString().slice(2)}실적`] = yearBeforeLastRev
+  
+  // 8. 2년 전 대비 신장율 (퍼센트, 소수점 1자리)
+  newRow[`${lastYear.toString().slice(2)}대비신장율`] = yearBeforeLastGrowthRate !== null ? yearBeforeLastGrowthRate : null
+
+  // 9. 2년 전 대비 신장액 (원단위)
+  newRow[`${lastYear.toString().slice(2)}대비신장액`] = currentRev - yearBeforeLastRev
+
   
   return newRow
 })
 
 // 파일명 생성
-const fileName = `${tabs3.selectedLabel} 매출 현황(${moment().format('YYYY-MM-DD')})`
+const fileName = `${tabs3.value} 매출 현황(${moment().format('YYYY-MM-DD')})`
 
 // 엑셀 다운로드
 utils.exportData(exportData, fileName, "xlsx")

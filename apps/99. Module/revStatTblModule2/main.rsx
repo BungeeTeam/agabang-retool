@@ -76,7 +76,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="biz_nm"
-          size={47.078125}
+          size={47.109375}
           summaryAggregationMode="none"
           valueOverride={'{{ self.data[i]["biz_nm"] }}'}
         />
@@ -98,7 +98,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="thisYearRev"
-          size={51.0625}
+          size={51.515625}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
         >
@@ -128,7 +128,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="thisYearTarget"
-          size={51.0625}
+          size={51.515625}
           summaryAggregationMode="none"
           valueOverride={
             '{{ self.data[i]["target_sales"] === 0 ? null: self.data[i]["target_sales"] }}'
@@ -154,7 +154,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="목표달성율"
-          size={67.8125}
+          size={67.859375}
           summaryAggregationMode="none"
           valueOverride={
             '{{ self.data[i]["target_sales"] === 0 ? null : self.data[i][(thisYear.value).toString()] / self.data[i]["target_sales"] }}'
@@ -176,7 +176,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="목표차액"
-          size={57.453125}
+          size={57.484375}
           summaryAggregationMode="none"
           textColor={'{{ item > 0 ? "green" : "red" }}'}
           valueOverride={
@@ -200,7 +200,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="lastYearRev"
-          size={51.171875}
+          size={51.625}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
         />
@@ -219,7 +219,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="lastYearGrowthRate"
-          size={82.265625}
+          size={82.75}
           summaryAggregationMode="none"
           textColor={
             '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -241,7 +241,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="lastYearGrowth"
-          size={82.265625}
+          size={82.75}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][thisYear.value.toString()] - self.data[i][(thisYear.value-1).toString()]}}"
         />
@@ -262,7 +262,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="yearBeforeLastRev"
-          size={50.796875}
+          size={51.25}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][(thisYear.value-2).toString()]}}"
         />
@@ -281,7 +281,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="yearBeforeLastGrowthRate"
-          size={81.890625}
+          size={82.375}
           summaryAggregationMode="none"
           textColor={
             '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -303,7 +303,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="yeatBeforeLastGrowth"
-          size={81.890625}
+          size={82.375}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
         />
@@ -408,7 +408,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="onoff_flag"
-          size={67.8125}
+          size={67.859375}
           summaryAggregationMode="none"
           valueOverride={'{{ self.data[i]["onoff_flag"] }}(전국)'}
         />
@@ -429,7 +429,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="thisYearRev"
-          size={51.0625}
+          size={51.515625}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
         >
@@ -458,7 +458,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="thisYearTarget"
-          size={51.0625}
+          size={51.515625}
           summaryAggregationMode="none"
           valueOverride={
             '{{ self.data[i]["target_sales"] === 0 ? null: self.data[i]["target_sales"] }}'
@@ -482,7 +482,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="목표달성율"
-          size={67.8125}
+          size={67.859375}
           summaryAggregationMode="none"
           valueOverride={
             '{{ self.data[i]["target_sales"] === 0 ? null : self.data[i][(thisYear.value).toString()] / self.data[i]["target_sales"] }}'
@@ -503,7 +503,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="목표차액"
-          size={57.453125}
+          size={57.484375}
           summaryAggregationMode="none"
           textColor={'{{ item > 0 ? "green" : "red" }}'}
           valueOverride={
@@ -527,7 +527,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="lastYearRev"
-          size={51.171875}
+          size={51.625}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
         />
@@ -546,7 +546,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="lastYearGrowthRate"
-          size={82.265625}
+          size={82.75}
           summaryAggregationMode="none"
           textColor={
             '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -568,7 +568,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="lastYearGrowth"
-          size={82.265625}
+          size={82.75}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][thisYear.value.toString()] - self.data[i][(thisYear.value-1).toString()]}}"
         />
@@ -589,7 +589,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="yearBeforeLastRev"
-          size={50.796875}
+          size={51.25}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][(thisYear.value-2).toString()]}}"
         />
@@ -608,7 +608,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="yearBeforeLastGrowthRate"
-          size={81.890625}
+          size={82.375}
           summaryAggregationMode="none"
           textColor={
             '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -630,7 +630,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="yeatBeforeLastGrowth"
-          size={81.890625}
+          size={82.375}
           summaryAggregationMode="none"
           valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
         />
@@ -772,7 +772,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="tp_group_nm"
-              size={57.453125}
+              size={57.484375}
               sortMode="disabled"
               summaryAggregationMode="none"
               valueOverride={'{{ self.data[i]["tp_group_nm"] }}'}
@@ -794,7 +794,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="thisYearRev"
-              size={51.0625}
+              size={51.515625}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
             >
@@ -823,7 +823,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="thisYearTarget"
-              size={51.0625}
+              size={51.515625}
               summaryAggregationMode="sum"
               valueOverride={
                 '{{ self.data[i]["target_sales"] === 0 ? null: self.data[i]["target_sales"] }}'
@@ -847,7 +847,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="목표달성율"
-              size={67.8125}
+              size={67.859375}
               summaryAggregationMode="none"
               valueOverride={
                 '{{ self.data[i]["target_sales"] === 0 ? null : self.data[i][(thisYear.value).toString()] / self.data[i]["target_sales"] }}'
@@ -868,7 +868,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="목표차액"
-              size={57.453125}
+              size={57.484375}
               summaryAggregationMode="sum"
               textColor={'{{ item > 0 ? "green" : "red" }}'}
               valueOverride={
@@ -892,7 +892,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="lastYearRev"
-              size={51.171875}
+              size={51.625}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
             />
@@ -911,7 +911,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="lastYearGrowthRate"
-              size={82.265625}
+              size={82.75}
               summaryAggregationMode="none"
               textColor={
                 '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -933,7 +933,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="lastYearGrowth"
-              size={82.265625}
+              size={82.75}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][thisYear.value.toString()] - self.data[i][(thisYear.value-1).toString()]}}"
             />
@@ -954,7 +954,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="yearBeforeLastRev"
-              size={50.796875}
+              size={51.25}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][(thisYear.value-2).toString()]}}"
             />
@@ -973,7 +973,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="yearBeforeLastGrowthRate"
-              size={81.890625}
+              size={82.375}
               summaryAggregationMode="none"
               textColor={
                 '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -995,7 +995,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="yeatBeforeLastGrowth"
-              size={81.890625}
+              size={82.375}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
             />
@@ -1781,7 +1781,7 @@
           placeholder="Enter value"
           position="center"
           referenceId="biz_nm"
-          size={47.078125}
+          size={47.109375}
           summaryAggregationMode="none"
           valueOverride="{{ item }}"
         />
@@ -1802,7 +1802,7 @@
           label="기초류"
           placeholder="Enter value"
           position="center"
-          size={47.078125}
+          size={47.109375}
           summaryAggregationMode="none"
           textColor={
             '{{  currentSourceRow.기초류신장율 > 0 ?  "green" : "red"  }}'
@@ -1825,7 +1825,7 @@
           label="외의류"
           placeholder="Enter value"
           position="center"
-          size={47.078125}
+          size={47.109375}
           summaryAggregationMode="none"
           textColor={
             '{{ currentSourceRow.외의류신장율 > 0 ?  "green" : "red"  }}'
@@ -1848,7 +1848,7 @@
           label="발육"
           placeholder="Enter value"
           position="center"
-          size={36.71875}
+          size={36.734375}
           summaryAggregationMode="none"
           textColor={
             '{{ currentSourceRow.발육신장율 > 0 ?  "green" : "red"  }}'
@@ -1871,7 +1871,7 @@
           label="섬유공산품"
           placeholder="Enter value"
           position="center"
-          size={67.8125}
+          size={67.859375}
           summaryAggregationMode="none"
           textColor={
             '{{ currentSourceRow.섬유공산품신장율 > 0 ? "green" :"red"   }}'
@@ -1894,7 +1894,7 @@
           label="시즌용품"
           placeholder="Enter value"
           position="center"
-          size={57.453125}
+          size={57.484375}
           summaryAggregationMode="none"
           textColor={
             '{{ currentSourceRow.시즌용품신장율 > 0 ?  "green": "red"   }}'
@@ -1917,7 +1917,7 @@
           label="일반용품위탁"
           placeholder="Enter value"
           position="center"
-          size={78.1875}
+          size={78.234375}
           summaryAggregationMode="none"
           textColor={
             '{{ currentSourceRow.일반용품위탁신장율 > 0  ?  "green" : "red"   }}'
@@ -1940,7 +1940,7 @@
           label="하드류"
           placeholder="Enter value"
           position="center"
-          size={47.078125}
+          size={47.109375}
           summaryAggregationMode="none"
           textColor={
             '{{ currentSourceRow.하드류신장율 > 0 ? "green" : "red"  }}'
@@ -1963,7 +1963,7 @@
           label="기타"
           placeholder="Enter value"
           position="center"
-          size={36.71875}
+          size={36.734375}
           summaryAggregationMode="none"
           textColor={'{{ currentSourceRow.기타신장율 > 0 ? "green" : "red"  }}'}
           valueOverride="{{ item }}"
