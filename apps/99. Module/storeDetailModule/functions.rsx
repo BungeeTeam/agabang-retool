@@ -10,6 +10,29 @@ shop_nm: '월계이마트아가방갤러리'
     <State id="selectedInventoryRow" value="" />
     <State id="thisYear" value="{{ new Date().getFullYear() }} " />
   </Folder>
+  <Folder id="excelDownload">
+    <JavascriptQuery
+      id="excelDownloadByShop"
+      notificationDuration={4.5}
+      query={include("./lib/excelDownloadByShop.js", "string")}
+      resourceName="JavascriptQuery"
+      showSuccessToaster={false}
+    />
+    <JavascriptQuery
+      id="excelDownloadShopSalesByMonth"
+      notificationDuration={4.5}
+      query={include("./lib/excelDownloadShopSalesByMonth.js", "string")}
+      resourceName="JavascriptQuery"
+      showSuccessToaster={false}
+    />
+    <JavascriptQuery
+      id="excelDownloadshopSalesByBrand"
+      notificationDuration={4.5}
+      query={include("./lib/excelDownloadshopSalesByBrand.js", "string")}
+      resourceName="JavascriptQuery"
+      showSuccessToaster={false}
+    />
+  </Folder>
   <Function
     id="salesByShop"
     funcBody={include("./lib/salesByShop.js", "string")}

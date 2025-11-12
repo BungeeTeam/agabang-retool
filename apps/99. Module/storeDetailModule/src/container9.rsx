@@ -54,26 +54,6 @@
           value={'{{ shopReceiptStat.data["recp_cnt"] }}'}
         />
         <Statistic
-          id="statistic4"
-          currency="USD"
-          decimalPlaces="2"
-          label="영수증당 평균 판매갯수"
-          labelCaption="사업부 매장 전체 평균 대비"
-          positiveTrend="{{ self.value >= 0 }}"
-          secondaryCurrency="USD"
-          secondaryDecimalPlaces="1"
-          secondaryEnableTrend={true}
-          secondaryFormattingStyle="percent"
-          secondaryPositiveTrend="{{ self.secondaryValue >= 0 }}"
-          secondaryShowSeparators={true}
-          secondarySignDisplay="trendArrows"
-          secondaryValue={
-            '{{ shopReceiptStat.data["avg_selling_qty"] / shopReceiptStat.data["tot_avg_selling_qty"] - 1 }}'
-          }
-          showSeparators={true}
-          value={'{{ shopReceiptStat.data["avg_selling_qty"] }}'}
-        />
-        <Statistic
           id="statistic5"
           currency="KRW"
           formattingStyle="currency"
@@ -92,6 +72,26 @@
           }
           showSeparators={true}
           value={'{{ shopReceiptStat.data["avg_selling_price"] }}'}
+        />
+        <Statistic
+          id="statistic4"
+          currency="USD"
+          decimalPlaces="2"
+          label="영수증당 평균 판매갯수"
+          labelCaption="사업부 매장 전체 평균 대비"
+          positiveTrend="{{ self.value >= 0 }}"
+          secondaryCurrency="USD"
+          secondaryDecimalPlaces="1"
+          secondaryEnableTrend={true}
+          secondaryFormattingStyle="percent"
+          secondaryPositiveTrend="{{ self.secondaryValue >= 0 }}"
+          secondaryShowSeparators={true}
+          secondarySignDisplay="trendArrows"
+          secondaryValue={
+            '{{ shopReceiptStat.data["avg_selling_qty"] / shopReceiptStat.data["tot_avg_selling_qty"] - 1 }}'
+          }
+          showSeparators={true}
+          value={'{{ shopReceiptStat.data["avg_selling_qty"] }}'}
         />
       </View>
     </Container>

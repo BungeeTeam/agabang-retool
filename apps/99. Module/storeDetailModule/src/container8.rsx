@@ -23,28 +23,28 @@
       verticalAlign="center"
     />
     <Text
-      id="goalFiguretext"
-      hidden="{{ goalProgress.value === 0 }}"
-      margin="2px 8px"
-      value="###### 목표달성률"
-      verticalAlign="center"
-    />
-    <Text
       id="text58"
       hidden=""
       margin="2px 8px"
       value="###### 이동지시 이행률"
       verticalAlign="center"
     />
-    <ProgressCircle
-      id="progressCircle1"
-      horizontalAlign="center"
-      value={'{{ rtInfoByShop.data[0]["rt_ratio"] * 100}}'}
+    <Text
+      id="goalFiguretext"
+      hidden="{{ goalProgress.value === 0 }}"
+      margin="2px 8px"
+      value="###### 목표달성률"
+      verticalAlign="center"
     />
     <ProgressCircle
       id="progressCircle2"
       horizontalAlign="center"
       value="{{ (shopSalesByOnline.data.online_sales / shopSalesByOnline.data.tot_sales) * 100 }}"
+    />
+    <ProgressCircle
+      id="progressCircle1"
+      horizontalAlign="center"
+      value={'{{ rtInfoByShop.data[0]["rt_ratio"] * 100}}'}
     />
     <ProgressCircle
       id="goalProgress"

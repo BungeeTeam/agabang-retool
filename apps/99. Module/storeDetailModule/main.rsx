@@ -1,26 +1,26 @@
 <App>
   <Include src="./functions.rsx" />
+  <AppStyles id="$appStyles" css={include("./lib/$appStyles.css", "string")} />
+  <GlobalWidgetProp
+    id="endDate"
+    defaultValue={'{{ moment().subtract(1, "days").format("YYYY-MM-DD") }}'}
+    value="'2025-07-02'"
+  />
   <GlobalWidgetProp
     id="inputData"
     value={
       '{\n  "time_unit": [\n    2023,\n    2023,\n    2025,\n    2024,\n    2025,\n    2025,\n    2024,\n    2025,\n    2025,\n    2025,\n    2024,\n    2025,\n    2025,\n    2024,\n    2024,\n    2025,\n    2025,\n    2024,\n    2025,\n    2023,\n    2023,\n    2023\n  ],\n  "ym": [\n    "2023-08",\n    "2023-08",\n    "2025-08",\n    "2024-08",\n    "2025-08",\n    "2025-08",\n    "2024-08",\n    "2025-08",\n    "2025-08",\n    "2025-08",\n    "2024-08",\n    "2025-08",\n    "2025-08",\n    "2024-08",\n    "2024-08",\n    "2025-08",\n    "2025-08",\n    "2024-08",\n    "2025-08",\n    "2023-08",\n    "2023-08",\n    "2023-08"\n  ],\n  "yr": [\n    2023,\n    2023,\n    2025,\n    2024,\n    2025,\n    2025,\n    2024,\n    2025,\n    2025,\n    2025,\n    2024,\n    2025,\n    2025,\n    2024,\n    2024,\n    2025,\n    2025,\n    2024,\n    2025,\n    2023,\n    2023,\n    2023\n  ],\n  "month": [\n    8,\n    8,\n    8,\n    8,\n    8,\n    8,\n    8,\n    8,\n    8,\n    8,\n    8,\n    8,\n    8,\n    8,\n    8,\n    8,\n    8,\n    8,\n    8,\n    8,\n    8,\n    8\n  ],\n  "shop_cd": [\n    "124062",\n    "124062",\n    "126668",\n    "126053",\n    "126668",\n    "126053",\n    "126737",\n    "124062",\n    "126737",\n    "126668",\n    "126053",\n    "124062",\n    "126053",\n    "124062",\n    "124062",\n    "126053",\n    "124062",\n    "126053",\n    "126053",\n    "126053",\n    "126737",\n    "126053"\n  ],\n  "shop_nm": [\n    "원주무실아가방갤러리",\n    "원주무실아가방갤러리",\n    "원주롯데마트 아가방",\n    "원주중앙아가방갤러리",\n    "원주롯데마트 아가방",\n    "원주중앙아가방갤러리",\n    "신)원주베이비하우스",\n    "원주무실아가방갤러리",\n    "신)원주베이비하우스",\n    "원주롯데마트 아가방",\n    "원주중앙아가방갤러리",\n    "원주무실아가방갤러리",\n    "원주중앙아가방갤러리",\n    "원주무실아가방갤러리",\n    "원주무실아가방갤러리",\n    "원주중앙아가방갤러리",\n    "원주무실아가방갤러리",\n    "원주중앙아가방갤러리",\n    "원주중앙아가방갤러리",\n    "원주중앙아가방갤러리",\n    "신)원주베이비하우스",\n    "원주중앙아가방갤러리"\n  ],\n  "biz_cd": [\n    "A1",\n    "A1",\n    "A1",\n    "A1",\n    "A1",\n    "A1",\n    "A1",\n    "A1",\n    "A1",\n    "A1",\n    "A1",\n    "A1",\n    "A1",\n    "A1",\n    "A1",\n    "A1",\n    "A1",\n    "A1",\n    "A1",\n    "A1",\n    "A1",\n    "A1"\n  ],\n  "biz_nm": [\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부",\n    "아가방사업부"\n  ],\n  "br_cd": [\n    "71",\n    "01",\n    "76",\n    "01",\n    "01",\n    "74",\n    "01",\n    "01",\n    "01",\n    "71",\n    "74",\n    "76",\n    "01",\n    "01",\n    "76",\n    "71",\n    "01",\n    "71",\n    "76",\n    "71",\n    "01",\n    "01"\n  ],\n  "br_nm": [\n    "퓨토시크릿리뉴얼",\n    "아가방",\n    "해외브랜드2",\n    "아가방",\n    "아가방",\n    "엘츠",\n    "아가방",\n    "",\n    "아가방",\n    "퓨토시크릿리뉴얼",\n    "엘츠",\n    "해외브랜드2",\n    "아가방",\n    "아가방",\n    "해외브랜드2",\n    "퓨토시크릿리뉴얼",\n    "아가방",\n    "퓨토시크릿리뉴얼",\n    "해외브랜드2",\n    "퓨토시크릿리뉴얼",\n    "아가방",\n    "아가방"\n  ],\n  "tp_cd": [\n    "31",\n    "31",\n    "34",\n    "31",\n    "34",\n    "31",\n    "31",\n    "31",\n    "31",\n    "34",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31"\n  ],\n  "tp_nm": [\n    "가두점",\n    "가두점",\n    "롯데마트",\n    "가두점",\n    "롯데마트",\n    "가두점",\n    "가두점",\n    "가두점",\n    "가두점",\n    "롯데마트",\n    "가두점",\n    "가두점",\n    "가두점",\n    "가두점",\n    "가두점",\n    "가두점",\n    "가두점",\n    "가두점",\n    "가두점",\n    "가두점",\n    "가두점",\n    "가두점"\n  ],\n  "team_cd": [\n    "05",\n    "05",\n    "02",\n    "05",\n    "02",\n    "05",\n    "05",\n    "05",\n    "05",\n    "02",\n    "05",\n    "05",\n    "05",\n    "05",\n    "05",\n    "05",\n    "05",\n    "05",\n    "05",\n    "05",\n    "05",\n    "05"\n  ],\n  "team_nm": [\n    "05팀",\n    "05팀",\n    "02팀",\n    "05팀",\n    "02팀",\n    "05팀",\n    "05팀",\n    "05팀",\n    "05팀",\n    "02팀",\n    "05팀",\n    "05팀",\n    "05팀",\n    "05팀",\n    "05팀",\n    "05팀",\n    "05팀",\n    "05팀",\n    "05팀",\n    "05팀",\n    "05팀",\n    "05팀"\n  ],\n  "user_cd": [\n    "14",\n    "14",\n    "01",\n    "14",\n    "01",\n    "14",\n    "14",\n    "14",\n    "14",\n    "01",\n    "14",\n    "14",\n    "14",\n    "14",\n    "14",\n    "14",\n    "14",\n    "14",\n    "14",\n    "14",\n    "14",\n    "14"\n  ],\n  "user_nm": [\n    "이승국",\n    "이승국",\n    "남기훈",\n    "이승국",\n    "남기훈",\n    "이승국",\n    "이승국",\n    "이승국",\n    "이승국",\n    "남기훈",\n    "이승국",\n    "이승국",\n    "이승국",\n    "이승국",\n    "이승국",\n    "이승국",\n    "이승국",\n    "이승국",\n    "이승국",\n    "이승국",\n    "이승국",\n    "이승국"\n  ],\n  "area_cd": [\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31",\n    "31"\n  ],\n  "area_nm": [\n    "강원",\n    "강원",\n    "강원",\n    "강원",\n    "강원",\n    "강원",\n    "강원",\n    "강원",\n    "강원",\n    "강원",\n    "강원",\n    "강원",\n    "강원",\n    "강원",\n    "강원",\n    "강원",\n    "강원",\n    "강원",\n    "강원",\n    "강원",\n    "강원",\n    "강원"\n  ],\n  "onoff_flag": [\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인",\n    "오프라인"\n  ],\n  "is_flex": [\n    false,\n    false,\n    false,\n    false,\n    false,\n    false,\n    false,\n    false,\n    false,\n    false,\n    false,\n    false,\n    false,\n    false,\n    false,\n    false,\n    false,\n    false,\n    false,\n    false,\n    false,\n    false\n  ],\n  "rev": [\n    0.056,\n    2.91287,\n    0.027,\n    3.92576,\n    2.4784,\n    0.129,\n    1.17942,\n    0,\n    1.0211,\n    0.069,\n    0.079,\n    0.0187,\n    4.8926,\n    1.41414,\n    0.0978,\n    0.091,\n    1.0106,\n    0.1072,\n    0.0258,\n    0.2088,\n    0.58968,\n    3.59653\n  ],\n  "target_sales": [\n    0,\n    0,\n    0,\n    0,\n    3.17,\n    0,\n    0,\n    0.67,\n    1.09,\n    0,\n    0,\n    0,\n    2.18,\n    0,\n    0,\n    0,\n    0.33,\n    0,\n    0,\n    0,\n    0,\n    0\n  ]\n}'
     }
   />
-  <GlobalWidgetProp
-    id="startDate"
-    defaultValue={'{{ moment().startOf("year").format("YYYY-MM-DD") }}'}
-    value="'2025-01-01'"
-  />
-  <GlobalWidgetProp
-    id="endDate"
-    defaultValue={'{{ moment().subtract(1, "days").format("YYYY-MM-DD") }}'}
-    value="'2025-07-02'"
-  />
-  <AppStyles id="$appStyles" css={include("./lib/$appStyles.css", "string")} />
   <GlobalWidgetOutput
     id="selectedData"
     description="클릭 데이터"
     value="{{ selectedRow.value }}"
+  />
+  <GlobalWidgetProp
+    id="startDate"
+    defaultValue={'{{ moment().startOf("year").format("YYYY-MM-DD") }}'}
+    value="'2025-01-01'"
   />
   <Include src="./src/inventoryDrawerFrame.rsx" />
   <Include src="./src/shopDetailModalFrame.rsx" />
@@ -54,7 +54,7 @@
         id="text47"
         horizontalAlign="right"
         margin="4px 12px"
-        value="단위: 천원"
+        value="단위: 백만원"
         verticalAlign="center"
       />
       <Table
@@ -348,12 +348,21 @@
             params={{
               ordered: [
                 {
-                  src: 'utils.changeLocale("ko")\nutils.exportData(salesByShop.value.map(obj => {\n  const newObj = {}\n  newObj["매장명"] = obj["shop_nm"]\n  newObj["매장코드"] = obj["shop_cd"]  \n  for (let year = thisYear.value; year >= thisYear.value -2; year--) {\n    newObj[`${year}년도`] = obj[year]\n\n    if (year === thisYear.value) {\n      newObj["목표매출"] = obj?.target_sales\n      newObj["목표차액"] = obj[year] - newObj["목표매출"]\n      newObj["목표달성률"] = obj[year] / newObj["목표매출"]\n    } else {\n      newObj[`${year}대비`] = (obj[thisYear.value] - obj[year]) / obj[year]\n      newObj[`${year}신장액`] =  obj[thisYear.value] - obj[year]   \n    }\n  }\n  return newObj\n}), "매장목록", "xlsx")',
+                  src: '//  utils.changeLocale("ko")\n//  utils.exportData(salesByShop.value.map(obj => {\n//    const newObj = {}\n//    newObj["매장명"] = obj["shop_nm"]\n//    newObj["매장코드"] = obj["shop_cd"]  \n//    for (let year = thisYear.value; year >= thisYear.value -2; year--) {\n//      newObj[`${year}년도`] = obj[year]\n\n//      if (year === thisYear.value) {\n//        newObj["목표매출"] = obj?.target_sales\n//        newObj["목표차액"] = obj[year] - newObj["목표매출"]\n//        newObj["목표달성률"] = obj[year] / newObj["목표매출"]\n//      } else {\n//        newObj[`${year}대비`] = (obj[thisYear.value] - obj[year]) / obj[year]\n//        newObj[`${year}신장액`] =  obj[thisYear.value] - obj[year]   \n//      }\n//    }\n//    return newObj\n//  }), "매장목록", "xlsx")',
                 },
               ],
             }}
             pluginId=""
             type="script"
+            waitMs="0"
+            waitType="debounce"
+          />
+          <Event
+            event="clickToolbar"
+            method="trigger"
+            params={{ ordered: [] }}
+            pluginId="excelDownloadByShop"
+            type="datasource"
             waitMs="0"
             waitType="debounce"
           />

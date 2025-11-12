@@ -297,12 +297,6 @@
     <Include src="./tabbedContainer1.rsx" />
     <Spacer id="spacer20" />
     <Text
-      id="text48"
-      margin="0px 4px"
-      value="###### 브랜드별 매출 추이"
-      verticalAlign="center"
-    />
-    <Text
       id="text21"
       margin="0px 4px"
       value="###### 기간별 매출 추이"
@@ -314,6 +308,14 @@
       value="###### 매장 판매 지표"
       verticalAlign="center"
     />
+    <Text
+      id="text48"
+      margin="0px 4px"
+      value="###### 브랜드별 매출 추이"
+      verticalAlign="center"
+    />
+    <Include src="./timeTabbedContainer.rsx" />
+    <Include src="./container9.rsx" />
     <Container
       id="brTabbedContainer"
       currentViewKey="{{ self.viewKeys[0] }}"
@@ -484,8 +486,6 @@
         </Table>
       </View>
     </Container>
-    <Include src="./timeTabbedContainer.rsx" />
-    <Include src="./container9.rsx" />
     <Spacer id="spacer3" />
     <Text
       id="text18"
@@ -559,7 +559,7 @@
             label="연도"
             placeholder="Enter value"
             position="left"
-            size={44.640625}
+            size={44.609375}
             sortMode="disabled"
             summaryAggregationMode="none"
           />
@@ -573,7 +573,7 @@
             label="정상구분"
             placeholder="Enter value"
             position="left"
-            size={57.484375}
+            size={57.453125}
             summaryAggregationMode="none"
           />
           <Column
@@ -595,7 +595,7 @@
             placeholder="Enter value"
             position="right"
             referenceId="비중"
-            size={55.5}
+            size={55.46875}
             summaryAggregationMode="none"
           />
           <Column
@@ -603,13 +603,17 @@
             alignment="right"
             editableOptions={{ showStepper: true }}
             format="decimal"
-            formatOptions={{ showSeparators: true, notation: "standard" }}
+            formatOptions={{
+              showSeparators: true,
+              notation: "standard",
+              decimalPlaces: "0",
+            }}
             groupAggregationMode="sum"
             key="기초류"
             label="기초류"
             placeholder="Enter value"
             position="center"
-            size={55.21875}
+            size={55.109375}
             summaryAggregationMode="none"
           />
           <Column
@@ -617,13 +621,17 @@
             alignment="right"
             editableOptions={{ showStepper: true }}
             format="decimal"
-            formatOptions={{ showSeparators: true, notation: "standard" }}
+            formatOptions={{
+              showSeparators: true,
+              notation: "standard",
+              decimalPlaces: "0",
+            }}
             groupAggregationMode="sum"
             key="외의류"
             label="외의류"
             placeholder="Enter value"
             position="center"
-            size={60.046875}
+            size={60.015625}
             summaryAggregationMode="none"
           />
           <Column
@@ -631,13 +639,17 @@
             alignment="right"
             editableOptions={{ showStepper: true }}
             format="decimal"
-            formatOptions={{ showSeparators: true, notation: "standard" }}
+            formatOptions={{
+              showSeparators: true,
+              notation: "standard",
+              decimalPlaces: "0",
+            }}
             groupAggregationMode="sum"
             key="시즌용품"
             label="시즌용품"
             placeholder="Enter value"
             position="center"
-            size={57.484375}
+            size={57.453125}
             summaryAggregationMode="none"
           />
           <Column
@@ -645,13 +657,17 @@
             alignment="right"
             editableOptions={{ showStepper: true }}
             format="decimal"
-            formatOptions={{ showSeparators: true, notation: "standard" }}
+            formatOptions={{
+              showSeparators: true,
+              notation: "standard",
+              decimalPlaces: "0",
+            }}
             groupAggregationMode="sum"
             key="일반용품위탁"
             label="일반용품위탁"
             placeholder="Enter value"
             position="center"
-            size={78.21875}
+            size={78.1875}
             summaryAggregationMode="none"
           />
           <Column
@@ -659,13 +675,17 @@
             alignment="right"
             editableOptions={{ showStepper: true }}
             format="decimal"
-            formatOptions={{ showSeparators: true, notation: "standard" }}
+            formatOptions={{
+              showSeparators: true,
+              notation: "standard",
+              decimalPlaces: "0",
+            }}
             groupAggregationMode="sum"
             key="섬유공산품"
             label="섬유공산품"
             placeholder="Enter value"
             position="center"
-            size={67.84375}
+            size={67.8125}
             summaryAggregationMode="none"
           />
           <Column
@@ -673,13 +693,17 @@
             alignment="right"
             editableOptions={{ showStepper: true }}
             format="decimal"
-            formatOptions={{ showSeparators: true, notation: "standard" }}
+            formatOptions={{
+              showSeparators: true,
+              notation: "standard",
+              decimalPlaces: "0",
+            }}
             groupAggregationMode="sum"
             key="하드류"
             label="하드류"
             placeholder="Enter value"
             position="center"
-            size={48.3125}
+            size={48}
             summaryAggregationMode="none"
           />
           <Column
@@ -687,13 +711,17 @@
             alignment="right"
             editableOptions={{ showStepper: true }}
             format="decimal"
-            formatOptions={{ showSeparators: true, notation: "standard" }}
+            formatOptions={{
+              showSeparators: true,
+              notation: "standard",
+              decimalPlaces: "0",
+            }}
             groupAggregationMode="sum"
             key="발육"
             label="발육"
             placeholder="Enter value"
             position="center"
-            size={47.84375}
+            size={47.8125}
             summaryAggregationMode="none"
           />
           <Column
@@ -701,13 +729,17 @@
             alignment="right"
             editableOptions={{ showStepper: true }}
             format="decimal"
-            formatOptions={{ showSeparators: true, notation: "standard" }}
+            formatOptions={{
+              showSeparators: true,
+              notation: "standard",
+              decimalPlaces: "0",
+            }}
             groupAggregationMode="sum"
             key="화장품"
             label="화장품"
             placeholder="Enter value"
             position="center"
-            size={47.59375}
+            size={47.078125}
             summaryAggregationMode="none"
           />
           <Column
@@ -715,14 +747,18 @@
             alignment="right"
             editableOptions={{ showStepper: true }}
             format="decimal"
-            formatOptions={{ showSeparators: true, notation: "standard" }}
+            formatOptions={{
+              showSeparators: true,
+              notation: "standard",
+              decimalPlaces: "0",
+            }}
             groupAggregationMode="sum"
             hidden="false"
             key="기타"
             label="기타"
             placeholder="Enter value"
             position="center"
-            size={36.734375}
+            size={36.71875}
             summaryAggregationMode="none"
           />
           <Column
@@ -740,7 +776,7 @@
             label="총합"
             placeholder="Enter value"
             position="right"
-            size={61.5625}
+            size={61.53125}
             summaryAggregationMode="none"
           />
           <ToolbarButton
@@ -751,24 +787,22 @@
           >
             <Event
               event="clickToolbar"
-              method="exportData"
+              method="trigger"
               params={{
                 ordered: [
                   {
                     options: {
-                      ordered: [
-                        { fileType: "xlsx" },
-                        {
-                          fileName:
-                            "[{{head.value.slice(4) }}] {{ text18.value.slice(7) }} (마감 일자:{{ endDate.value }})",
-                        },
-                      ],
+                      object: {
+                        onSuccess: null,
+                        onFailure: null,
+                        additionalScope: null,
+                      },
                     },
                   },
                 ],
               }}
-              pluginId="table4"
-              type="widget"
+              pluginId="excelDownloadshopSalesByBrand"
+              type="datasource"
               waitMs="0"
               waitType="debounce"
             />
@@ -862,7 +896,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="year_nm"
-        size={57.484375}
+        size={57.453125}
         sortMode="disabled"
         summaryAggregationMode="none"
       />
@@ -878,7 +912,7 @@
         label="매장입고량"
         placeholder="Enter value"
         position="center"
-        size={67.84375}
+        size={67.8125}
         summaryAggregationMode="none"
         valueOverride="{{ currentSourceRow.in_qty.toLocaleString() }}"
       />
@@ -894,7 +928,7 @@
         label="RT물량"
         placeholder="Enter value"
         position="center"
-        size={51.375}
+        size={53.4375}
         summaryAggregationMode="none"
         valueOverride="{{ currentSourceRow.rt_in_qty.toLocaleString() }}"
       />
@@ -910,7 +944,7 @@
         label="판매수량"
         placeholder="Enter value"
         position="center"
-        size={57.484375}
+        size={57.453125}
         summaryAggregationMode="none"
         tooltip="판매-반품"
         valueOverride="{{ currentSourceRow.net_sales_qty.toLocaleString() }}"
@@ -926,7 +960,7 @@
         label="재고수량"
         placeholder="Enter value"
         position="center"
-        size={57.484375}
+        size={57.453125}
         summaryAggregationMode="none"
       />
       <Column
@@ -961,7 +995,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="shop_ratio"
-        size={67.84375}
+        size={67.8125}
         summaryAggregationMode="none"
         valueOverride="{{ currentSourceRow.sales_qty / (currentSourceRow.stock_qty + currentSourceRow.sales_qty) }}"
       />
@@ -980,7 +1014,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="tot_ratio"
-        size={67.84375}
+        size={67.8125}
         summaryAggregationMode="none"
         tooltip="전 매장의 평균판매량을 의미합니다"
         valueOverride="{{ currentSourceRow.tot_sales_qty / (currentSourceRow.tot_stock_qty + currentSourceRow.tot_sales_qty) }}"
@@ -1030,7 +1064,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="diff"
-        size={67.84375}
+        size={67.8125}
         summaryAggregationMode="none"
         textColor={
           '{{ currentSourceRow.sales_qty / (currentSourceRow.stock_qty + currentSourceRow.sales_qty) - currentSourceRow.tot_sales_qty / (currentSourceRow.tot_stock_qty + currentSourceRow.tot_sales_qty) > 0? "green": "red" }}'

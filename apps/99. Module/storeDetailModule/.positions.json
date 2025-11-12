@@ -288,7 +288,6 @@
   "goalFiguretext": {
     "container": "container8",
     "subcontainer": "73da1",
-    "row": 0,
     "col": 8,
     "height": 0.6,
     "width": 4,
@@ -401,7 +400,6 @@
   "plotlyJsonChart1": {
     "container": "timeTabbedContainer",
     "subcontainer": "29828",
-    "row": 0,
     "height": 8.6,
     "width": 12,
     "stackPosition": {
@@ -640,7 +638,6 @@
   "statistic6": {
     "container": "container11",
     "subcontainer": "0473b",
-    "row": 0,
     "height": 0.8,
     "width": 6,
     "stackPosition": {
@@ -655,7 +652,6 @@
   "statistic7": {
     "container": "container11",
     "subcontainer": "0473b",
-    "row": 0,
     "col": 6,
     "height": 0.8,
     "width": 6,
@@ -750,7 +746,6 @@
   },
   "table9": {
     "container": "inventoryTbl",
-    "row": 0,
     "height": 1,
     "width": 12
   },
@@ -896,7 +891,6 @@
   },
   "text50": {
     "subcontainer": "inventoryDrawerFrame",
-    "row": 0,
     "height": 0.6,
     "width": 4
   },
@@ -926,7 +920,6 @@
   "text58": {
     "container": "container8",
     "subcontainer": "73da1",
-    "row": 0,
     "col": 4,
     "height": 0.6,
     "width": 4,
@@ -968,7 +961,6 @@
   "text63": {
     "container": "container8",
     "subcontainer": "73da1",
-    "row": 0,
     "height": 0.6,
     "width": 4,
     "stackPosition": {
