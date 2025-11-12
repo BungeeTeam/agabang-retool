@@ -648,22 +648,22 @@
         >
           <Event
             event="clickToolbar"
-            method="exportData"
+            method="trigger"
             params={{
               ordered: [
                 {
                   options: {
-                    ordered: [
-                      { fileType: "xlsx" },
-                      { includeHiddenColumns: false },
-                      { fileName: "{{ text3.value.slice(7) }}" },
-                    ],
+                    object: {
+                      onSuccess: null,
+                      onFailure: null,
+                      additionalScope: null,
+                    },
                   },
                 },
               ],
             }}
-            pluginId="typeStatTbl3"
-            type="widget"
+            pluginId="excelDownloadByOnOff"
+            type="datasource"
             waitMs="0"
             waitType="debounce"
           />
@@ -1027,25 +1027,22 @@
             >
               <Event
                 event="clickToolbar"
-                method="exportData"
+                method="trigger"
                 params={{
                   ordered: [
                     {
                       options: {
-                        ordered: [
-                          { fileType: "xlsx" },
-                          { includeHiddenColumns: false },
-                          {
-                            fileName:
-                              "{{ tabs4.selectedLabel}} 매출 현황({{ moment().format('YYYY-MM-DD') }})",
-                          },
-                        ],
+                        object: {
+                          onSuccess: null,
+                          onFailure: null,
+                          additionalScope: null,
+                        },
                       },
                     },
                   ],
                 }}
-                pluginId="typeStatTbl2"
-                type="widget"
+                pluginId="excelDownloadByType"
+                type="datasource"
                 waitMs="0"
                 waitType="debounce"
               />
@@ -1374,25 +1371,22 @@
             >
               <Event
                 event="clickToolbar"
-                method="exportData"
+                method="trigger"
                 params={{
                   ordered: [
                     {
                       options: {
-                        ordered: [
-                          { fileType: "xlsx" },
-                          { includeHiddenColumns: false },
-                          {
-                            fileName:
-                              "{{ tabs4.selectedLabel}} 매출 현황({{ moment().format('YYYY-MM-DD') }})",
-                          },
-                        ],
+                        object: {
+                          onSuccess: null,
+                          onFailure: null,
+                          additionalScope: null,
+                        },
                       },
                     },
                   ],
                 }}
-                pluginId="typeStatTbl26"
-                type="widget"
+                pluginId="excelDownloadByTeam"
+                type="datasource"
                 waitMs="0"
                 waitType="debounce"
               />
@@ -1456,7 +1450,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="user_nm"
-              size={57.484375}
+              size={57.453125}
               sortMode="disabled"
               summaryAggregationMode="none"
               valueOverride={'{{ self.data[i]["user_nm"] }}'}
@@ -1478,7 +1472,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="thisYearRev"
-              size={50.9375}
+              size={51.0625}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
             >
@@ -1507,7 +1501,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="thisYearTarget"
-              size={50.9375}
+              size={51.0625}
               summaryAggregationMode="sum"
               valueOverride={
                 '{{ self.data[i]["target_sales"] === 0 ? null: self.data[i]["target_sales"] }}'
@@ -1531,7 +1525,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="목표달성율"
-              size={67.859375}
+              size={67.8125}
               summaryAggregationMode="none"
               valueOverride={
                 '{{ self.data[i]["target_sales"] === 0 ? null : self.data[i][(thisYear.value).toString()] / self.data[i]["target_sales"] }}'
@@ -1552,7 +1546,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="목표차액"
-              size={57.484375}
+              size={57.453125}
               summaryAggregationMode="sum"
               textColor={'{{ item > 0 ? "green" : "red" }}'}
               valueOverride={
@@ -1576,7 +1570,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="lastYearRev"
-              size={51.09375}
+              size={51.171875}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
             />
@@ -1595,7 +1589,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="lastYearGrowthRate"
-              size={82.203125}
+              size={82.265625}
               summaryAggregationMode="none"
               textColor={
                 '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -1617,7 +1611,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="lastYearGrowth"
-              size={82.203125}
+              size={82.265625}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][thisYear.value.toString()] - self.data[i][(thisYear.value-1).toString()]}}"
             />
@@ -1638,7 +1632,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="yearBeforeLastRev"
-              size={51.1875}
+              size={50.796875}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][(thisYear.value-2).toString()]}}"
             />
@@ -1657,7 +1651,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="yearBeforeLastGrowthRate"
-              size={82.296875}
+              size={81.890625}
               summaryAggregationMode="none"
               textColor={
                 '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -1679,7 +1673,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="yeatBeforeLastGrowth"
-              size={82.296875}
+              size={81.890625}
               summaryAggregationMode="sum"
               valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
             />
@@ -1711,22 +1705,22 @@
             >
               <Event
                 event="clickToolbar"
-                method="exportData"
+                method="trigger"
                 params={{
                   ordered: [
                     {
                       options: {
-                        ordered: [
-                          { fileType: "xlsx" },
-                          { includeHiddenColumns: false },
-                          { fileName: "{{ tabs4.selectedLabel}} 매출 현황" },
-                        ],
+                        object: {
+                          onSuccess: null,
+                          onFailure: null,
+                          additionalScope: null,
+                        },
                       },
                     },
                   ],
                 }}
-                pluginId="typeStatTbl27"
-                type="widget"
+                pluginId="excelDownloadByUser"
+                type="datasource"
                 waitMs="0"
                 waitType="debounce"
               />
@@ -2116,21 +2110,22 @@
         >
           <Event
             event="clickToolbar"
-            method="exportData"
+            method="trigger"
             params={{
               ordered: [
                 {
                   options: {
-                    ordered: [
-                      { fileType: "xlsx" },
-                      { fileName: "{{ text66.value.slice(6) }}" },
-                    ],
+                    object: {
+                      onSuccess: null,
+                      onFailure: null,
+                      additionalScope: null,
+                    },
                   },
                 },
               ],
             }}
-            pluginId="salesBySecondLevelTbl"
-            type="widget"
+            pluginId="excelDownloadBySecondLevelWithBiz"
+            type="datasource"
             waitMs="0"
             waitType="debounce"
           />

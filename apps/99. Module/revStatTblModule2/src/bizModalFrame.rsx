@@ -79,7 +79,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="sales_type"
-        size={57.484375}
+        size={57.453125}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["sales_type"] }}'}
       />
@@ -99,7 +99,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearRev"
-        size={50.9375}
+        size={51.0625}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
       />
@@ -120,7 +120,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="lastYearRev"
-        size={51.09375}
+        size={51.171875}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
       />
@@ -139,7 +139,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="lastYearGrowthRate"
-        size={82.203125}
+        size={82.265625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -161,7 +161,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="lastYearGrowth"
-        size={82.203125}
+        size={82.265625}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-1).toString()]}}"
       />
@@ -181,7 +181,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="yearBeforeLastRev"
-        size={51.1875}
+        size={50.796875}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value-2).toString()]}}"
       />
@@ -200,7 +200,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="yearBeforeLastGrowthRate"
-        size={82.296875}
+        size={81.890625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -222,7 +222,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="yearBeforeLastGrowth"
-        size={82.296875}
+        size={81.890625}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
       />
@@ -240,25 +240,22 @@
       >
         <Event
           event="clickToolbar"
-          method="exportData"
+          method="trigger"
           params={{
             ordered: [
               {
                 options: {
-                  ordered: [
-                    { fileType: "xlsx" },
-                    { includeHiddenColumns: false },
-                    {
-                      fileName:
-                        "{{ text40.value.slice(5) }} 매출현황({{ moment().format('YYYY-MM-DD') }})",
-                    },
-                  ],
+                  object: {
+                    onSuccess: null,
+                    onFailure: null,
+                    additionalScope: null,
+                  },
                 },
               },
             ],
           }}
-          pluginId="salesTypeTbl"
-          type="widget"
+          pluginId="excelDownloadBySalesType"
+          type="datasource"
           waitMs="0"
           waitType="debounce"
         />
@@ -351,7 +348,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="팀"
-        size={67.859375}
+        size={67.8125}
         sortMode="disabled"
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["sub_br_nm"] }}'}
@@ -373,7 +370,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearRev"
-        size={50.9375}
+        size={51.0625}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
       >
@@ -404,7 +401,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="lastYearRev"
-        size={51.09375}
+        size={51.171875}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
       />
@@ -423,7 +420,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="lastYearGrowthRate"
-        size={82.203125}
+        size={82.265625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -445,7 +442,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearValue1ToStringSlice2대비신장액"
-        size={82.203125}
+        size={82.265625}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-1).toString()]}}"
       />
@@ -466,7 +463,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="yearBeforeLastRev"
-        size={51.1875}
+        size={50.796875}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value-2).toString()]}}"
       />
@@ -485,7 +482,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="yearBeforeLastGrowthRate"
-        size={82.296875}
+        size={81.890625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -507,7 +504,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="yearBeforeLastGrowth"
-        size={82.296875}
+        size={81.890625}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
       />
@@ -525,25 +522,22 @@
       >
         <Event
           event="clickToolbar"
-          method="exportData"
+          method="trigger"
           params={{
             ordered: [
               {
                 options: {
-                  ordered: [
-                    { fileType: "xlsx" },
-                    { includeHiddenColumns: false },
-                    {
-                      fileName:
-                        "{{ text37.value.slice(5) }} 매출현황({{ moment().format('YYYY-MM-DD') }})",
-                    },
-                  ],
+                  object: {
+                    onSuccess: null,
+                    onFailure: null,
+                    additionalScope: null,
+                  },
                 },
               },
             ],
           }}
-          pluginId="subBrandTbl"
-          type="widget"
+          pluginId="excelDownloadBySubBrand"
+          type="datasource"
           waitMs="0"
           waitType="debounce"
         />

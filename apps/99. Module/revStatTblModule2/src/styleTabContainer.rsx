@@ -58,7 +58,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="year_nm"
-        size={36.734375}
+        size={36.71875}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["year_nm"] }}'}
       />
@@ -79,7 +79,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearRev"
-        size={50.9375}
+        size={51.0625}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
       >
@@ -109,7 +109,7 @@
         label="24실적"
         placeholder="Enter value"
         position="center"
-        size={51.09375}
+        size={51.0625}
         summaryAggregationMode="none"
       />
       <Column
@@ -127,7 +127,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="24대비신장율"
-        size={82.203125}
+        size={82.15625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -149,7 +149,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="24대비신장액"
-        size={82.203125}
+        size={82.15625}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2024"]}}'}
       />
@@ -169,7 +169,7 @@
         label="23실적"
         placeholder="Enter value"
         position="center"
-        size={51.1875}
+        size={51.171875}
         summaryAggregationMode="none"
       />
       <Column
@@ -187,7 +187,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="23대비신장율"
-        size={82.296875}
+        size={82.265625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -209,7 +209,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="23대비N신장액"
-        size={82.296875}
+        size={82.265625}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2023"]}}'}
       />
@@ -227,24 +227,22 @@
       >
         <Event
           event="clickToolbar"
-          method="exportData"
+          method="trigger"
           params={{
             ordered: [
               {
                 options: {
-                  ordered: [
-                    { fileType: "xlsx" },
-                    {
-                      fileName:
-                        "{{ tabs3.selectedLabel }} 매출현황({{ moment().format('YYYY-MM-DD') }})",
-                    },
-                  ],
+                  object: {
+                    onSuccess: null,
+                    onFailure: null,
+                    additionalScope: null,
+                  },
                 },
               },
             ],
           }}
-          pluginId="typeStatTbl20"
-          type="widget"
+          pluginId="excelDownloadByStyle"
+          type="datasource"
           waitMs="0"
           waitType="debounce"
         />
@@ -284,7 +282,7 @@
         label="시즌"
         placeholder="Enter value"
         position="center"
-        size={36.734375}
+        size={36.71875}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["year_nm"] }}'}
       />
@@ -297,7 +295,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="season_cd"
-        size={57.484375}
+        size={57.453125}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["year_cd"] }}'}
       />
@@ -311,7 +309,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="계절"
-        size={36.734375}
+        size={36.71875}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["season_nm"] }}'}
       />
@@ -332,7 +330,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearRev"
-        size={50.9375}
+        size={51.0625}
         summaryAggregationMode="none"
       >
         <Event
@@ -361,7 +359,7 @@
         label="24실적"
         placeholder="Enter value"
         position="center"
-        size={51.09375}
+        size={51.0625}
         summaryAggregationMode="none"
       />
       <Column
@@ -379,7 +377,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="24대비신장율"
-        size={82.203125}
+        size={82.15625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -401,7 +399,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="24대비신장액"
-        size={82.203125}
+        size={82.15625}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2024"]}}'}
       />
@@ -421,7 +419,7 @@
         label="23실적"
         placeholder="Enter value"
         position="center"
-        size={51.1875}
+        size={51.171875}
         summaryAggregationMode="none"
       />
       <Column
@@ -439,7 +437,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="23대비신장율"
-        size={82.296875}
+        size={82.265625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -461,7 +459,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="23대비N신장액"
-        size={82.296875}
+        size={82.265625}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2023"]}}'}
       />
@@ -540,7 +538,7 @@
         optionList={{ mode: "manual" }}
         placeholder="Enter value"
         position="center"
-        size={47.109375}
+        size={47.078125}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["it_nm"] }}'}
       />
@@ -561,7 +559,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearRev"
-        size={50.9375}
+        size={51.0625}
         summaryAggregationMode="none"
       >
         <Event
@@ -590,7 +588,7 @@
         label="24실적"
         placeholder="Enter value"
         position="center"
-        size={51.09375}
+        size={51.0625}
         summaryAggregationMode="none"
       />
       <Column
@@ -608,7 +606,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="24대비신장율"
-        size={82.203125}
+        size={82.15625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -630,7 +628,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="24대비신장액"
-        size={82.203125}
+        size={82.15625}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2024"]}}'}
       />
@@ -650,7 +648,7 @@
         label="23실적"
         placeholder="Enter value"
         position="center"
-        size={51.1875}
+        size={51.171875}
         summaryAggregationMode="none"
       />
       <Column
@@ -668,7 +666,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="23대비신장율"
-        size={82.296875}
+        size={82.265625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -690,7 +688,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="23대비N신장액"
-        size={82.296875}
+        size={82.265625}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2023"]}}'}
       />
@@ -776,7 +774,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="팀"
-        size={47.109375}
+        size={47.078125}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["it_nm"] }}'}
       />
@@ -792,7 +790,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="column12"
-        size={47.109375}
+        size={47.078125}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["it_gb_nm"] }}'}
       />
@@ -813,7 +811,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearRev"
-        size={50.9375}
+        size={51.0625}
         summaryAggregationMode="none"
       >
         <Event
@@ -842,7 +840,7 @@
         label="24실적"
         placeholder="Enter value"
         position="center"
-        size={51.09375}
+        size={51.0625}
         summaryAggregationMode="none"
       />
       <Column
@@ -860,7 +858,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="24대비신장율"
-        size={82.203125}
+        size={82.15625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -882,7 +880,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="24대비신장액"
-        size={82.203125}
+        size={82.15625}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2024"]}}'}
       />
@@ -902,7 +900,7 @@
         label="23실적"
         placeholder="Enter value"
         position="center"
-        size={51.1875}
+        size={51.171875}
         summaryAggregationMode="none"
       />
       <Column
@@ -920,7 +918,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="23대비신장율"
-        size={82.296875}
+        size={82.265625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -942,7 +940,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="23대비N신장액"
-        size={82.296875}
+        size={82.265625}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["2025"] - self.data[i]["2023"]}}'}
       />
@@ -1028,7 +1026,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="팀"
-        size={47.109375}
+        size={47.078125}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["it_nm"] }}'}
       />
@@ -1044,7 +1042,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="column12"
-        size={47.109375}
+        size={47.078125}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["it_gb_nm"] }}'}
       />
@@ -1060,7 +1058,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="소분류"
-        size={47.109375}
+        size={47.078125}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["item_nm"] }}'}
       />
@@ -1081,7 +1079,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearRev"
-        size={50.9375}
+        size={51.0625}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
       >
@@ -1112,7 +1110,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="lastYearRev"
-        size={51.09375}
+        size={51.171875}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
       />
@@ -1131,7 +1129,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="lastYearGrowthRate"
-        size={82.203125}
+        size={82.265625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -1153,7 +1151,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="lastYearGrowth"
-        size={82.203125}
+        size={82.265625}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-1).toString()]}}"
       />
@@ -1174,7 +1172,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="yearBeforeLastRev"
-        size={51.1875}
+        size={50.796875}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value-3).toString()]}}"
       />
@@ -1193,7 +1191,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="yearBeforeLastGrowthRate"
-        size={82.296875}
+        size={81.890625}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -1215,7 +1213,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="yearBeforeLastGrowth"
-        size={82.296875}
+        size={81.890625}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
       />
