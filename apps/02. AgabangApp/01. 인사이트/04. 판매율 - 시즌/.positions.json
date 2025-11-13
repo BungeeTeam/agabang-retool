@@ -45,12 +45,6 @@
       }
     }
   },
-  "container13": {
-    "container": "cur_sales_table",
-    "row": 1,
-    "height": 1,
-    "width": 12
-  },
   "container16": {
     "row": 1.2,
     "height": 1,
@@ -189,21 +183,6 @@
       }
     }
   },
-  "cur_sales_table8": {
-    "type": "stack",
-    "container": "container13",
-    "subcontainer": "7b13c",
-    "height": 1,
-    "width": 12,
-    "stackPosition": {
-      "object": {
-        "ordinal": 0,
-        "widthType": "auto",
-        "width": 1402,
-        "height": 375
-      }
-    }
-  },
   "date_select": {
     "container": "container10",
     "subcontainer": "a260c",
@@ -326,12 +305,6 @@
   "spacer17": {
     "container": "cur_sales_table",
     "row": 2,
-    "height": 0.2,
-    "width": 12
-  },
-  "spacer19": {
-    "container": "cur_sales_table8",
-    "row": 1,
     "height": 0.2,
     "width": 12
   },
@@ -459,11 +432,6 @@
     "height": 1,
     "width": 12
   },
-  "table6": {
-    "container": "cur_sales_table8",
-    "height": 1,
-    "width": 12
-  },
   "table9": {
     "container": "cur_sales_table11",
     "height": 1,
@@ -529,27 +497,6 @@
     "row": 0.8,
     "col": 9,
     "height": 0.6
-  },
-  "text22": {
-    "container": "container13",
-    "rowGroup": "header",
-    "height": 0.6,
-    "width": 2
-  },
-  "text23": {
-    "container": "container13",
-    "rowGroup": "header",
-    "row": 0.6,
-    "col": 11,
-    "height": 0.6,
-    "width": 1
-  },
-  "text24": {
-    "container": "container13",
-    "rowGroup": "header",
-    "row": 0.6,
-    "height": 0.6,
-    "width": 8
   },
   "text34": {
     "container": "container16",

@@ -69,7 +69,7 @@
           { fontFamily: "pretendard variable" },
         ],
       }}
-      value="* 조회기간: ~ {{  }}"
+      value="* 조회기간: ~ {{date_select.value  }}"
       verticalAlign="center"
     />
   </Header>
@@ -78,7 +78,12 @@
       id="table_item_list"
       cellSelection="none"
       clearChangesetOnSave={true}
-      data="{{ formatDataAsArray(salesByColor.data).filter(i=>i.year_cd === var_clicked_middle_cat.value.year_cd  && i.large_cat === var_clicked_middle_cat.value.large_cat && i.middle_cat === var_clicked_middle_cat.value.middle_cat) }}"
+      data="{{ formatDataAsArray(salesByColor.data).filter(i=>i.year_cd === var_clicked_middle_cat.value.year_cd  
+  && i.large_cat === var_clicked_middle_cat.value.large_cat 
+  && i.it === var_clicked_middle_cat.value.it 
+  && i.middle_cat === var_clicked_middle_cat.value.middle_cat
+  && i.cat_group === var_clicked_middle_cat.value.cat_group
+  && i.apparel_group === var_clicked_middle_cat.value.apparel_group)}}"
       defaultSelectedRow={{ mode: "index", indexType: "display", index: "" }}
       emptyMessage="상품이 없습니다"
       enableSaveActions={true}
