@@ -13,6 +13,12 @@
     />
   </Header>
   <View id="a260c" viewKey="View 1">
+    <Text
+      id="text13"
+      style={{ ordered: [] }}
+      value="#### 시즌 판매율"
+      verticalAlign="center"
+    />
     <Container
       id="stack3"
       _flexWrap={true}
@@ -74,12 +80,6 @@
         </Date>
       </View>
     </Container>
-    <Text
-      id="text13"
-      style={{ ordered: [] }}
-      value="#### 시즌 판매율"
-      verticalAlign="center"
-    />
     <Text
       id="text14"
       margin="0"
