@@ -26,11 +26,15 @@ const sumKeys = ["st_count", "in_st_count", "out_st_count",
                  "p_week_sale_qty", "p_week_sale_tag", "p_week_sale_amt",
                  "week_sale_qty", "week_sale_tag", "week_sale_amt"
                 ]
-const groupKeys = ["large_cat", "middle_cat"]
+const groupKeys = ["year_nm", "year_cd","season_nm", "total","cat_group","apparel_group","large_cat","it", "middle_cat"]
+
 const data = {{ salesByColor.data }}
 let arrData = formatDataAsArray(data)
 
-const groupedArr = groupBySum(arrData, ["year_nm", "year_cd","season_nm", "total","cat_group","apparel_group", ...groupKeys], sumKeys)
+const groupedArr = groupBySum(arrData, groupKeys, sumKeys)
+
+//  const groupedArr = groupBySum(arrData, groupKeys, sumKeys)
+
 
 return groupedArr.sort((a, b) => {
   const yearDiff = b.year_nm - a.year_nm;

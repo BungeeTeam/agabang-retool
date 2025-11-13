@@ -41,7 +41,7 @@
       label="대분류"
       placeholder="Enter value"
       position="center"
-      size={73.09375}
+      size={47.078125}
       summaryAggregationMode="none"
     />
     <Column
@@ -54,7 +54,7 @@
       label="중분류"
       placeholder="Enter value"
       position="center"
-      size={65.078125}
+      size={47.078125}
       sortMode="disabled"
       summaryAggregationMode="none"
     />
@@ -69,7 +69,7 @@
       label="총 컬러수"
       placeholder="Enter value"
       position="center"
-      size={60.34375}
+      size={60.390625}
       summaryAggregationMode="none"
     />
     <Column
@@ -83,7 +83,7 @@
       label="총입고수량"
       placeholder="Enter value"
       position="center"
-      size={67.859375}
+      size={67.8125}
       summaryAggregationMode="none"
     />
     <Column
@@ -97,7 +97,7 @@
       label="총판매수량"
       placeholder="Enter value"
       position="center"
-      size={67.859375}
+      size={67.8125}
       summaryAggregationMode="none"
     />
     <Column
@@ -116,7 +116,7 @@
       placeholder="Enter value"
       position="center"
       referenceId="tot_sale_rate_qty"
-      size={76.8125}
+      size={76.390625}
       summaryAggregationMode="none"
       valueOverride="{{ currentSourceRow.tot_sale_qty/currentSourceRow.tot_in_qty }}"
     />
@@ -131,7 +131,7 @@
       placeholder="Enter value"
       position="center"
       referenceId="inven_qty"
-      size={57.484375}
+      size={57.453125}
       summaryAggregationMode="none"
       valueOverride="{{ currentSourceRow.tot_in_qty-currentSourceRow.tot_sale_qty }}"
     />
@@ -150,7 +150,7 @@
       placeholder="Enter value"
       position="center"
       referenceId="inven_tag"
-      size={89.640625}
+      size={88.703125}
       summaryAggregationMode="none"
       valueOverride="{{ (currentSourceRow.tot_in_tag-currentSourceRow.tot_sale_tag)/1000000 }}"
     />
@@ -169,7 +169,7 @@
       label="누적입고금액(TAG)"
       placeholder="Enter value"
       position="center"
-      size={110.375}
+      size={109.4375}
       summaryAggregationMode="none"
       valueOverride="{{ item/1000000 }}"
     />
@@ -188,7 +188,7 @@
       label="누적판매금액(TAG)"
       placeholder="Enter value"
       position="center"
-      size={110.375}
+      size={109.4375}
       summaryAggregationMode="none"
       valueOverride="{{ item/1000000 }}"
     />
@@ -207,7 +207,7 @@
       label="누적실판매금액"
       placeholder="Enter value"
       position="center"
-      size={88.59375}
+      size={88.546875}
       summaryAggregationMode="none"
       valueOverride="{{ item/1000000 }}"
     />
@@ -227,7 +227,7 @@
       placeholder="Enter value"
       position="center"
       referenceId="tot_sale_rate_tag"
-      size={100}
+      size={99.078125}
       summaryAggregationMode="none"
       textColor="{{ currentRow.tot_sale_rate_tag >= item ? '#fc5b5b' : '#000000' }}"
       valueOverride="{{ currentSourceRow.tot_sale_tag/currentSourceRow.tot_in_tag }}"
@@ -248,7 +248,7 @@
       placeholder="Enter value"
       position="center"
       referenceId="tot_sale_rate_amt"
-      size={78.21875}
+      size={78.1875}
       summaryAggregationMode="none"
       textColor="{{ currentRow.tot_sale_rate_amt >= item ? '#fc5b5b' : '#000000' }}"
       valueOverride="{{ currentSourceRow.tot_sale_amt/currentSourceRow.tot_in_tag }}"
@@ -269,7 +269,7 @@
       placeholder="Enter value"
       position="center"
       referenceId="discount_rate"
-      size={47.109375}
+      size={47.078125}
       summaryAggregationMode="none"
       valueOverride="{{(currentSourceRow.tot_sale_tag-currentSourceRow.tot_sale_amt)/currentSourceRow.tot_sale_tag }}"
     />
@@ -289,7 +289,7 @@
       placeholder="Enter value"
       position="center"
       referenceId="p_week_sale_rate"
-      size={94.296875}
+      size={94.40625}
       summaryAggregationMode="none"
       valueOverride="{{ currentSourceRow.p_week_sale_tag/currentSourceRow.tot_in_tag }}"
     />
@@ -309,7 +309,7 @@
       placeholder="Enter value"
       position="center"
       referenceId="week_sale_rate"
-      size={94.296875}
+      size={94.40625}
       summaryAggregationMode="none"
       valueOverride="{{ currentSourceRow.week_sale_tag/currentSourceRow.tot_in_tag }}"
     />
@@ -329,7 +329,7 @@
       placeholder="Enter value"
       position="center"
       referenceId="diff_sale_rate"
-      size={57.484375}
+      size={57.453125}
       summaryAggregationMode="none"
       valueOverride="{{ currentSourceRow.week_sale_tag/currentSourceRow.tot_in_tag-currentSourceRow.p_week_sale_tag/currentSourceRow.tot_in_tag }}"
     />
