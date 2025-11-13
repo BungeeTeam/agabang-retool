@@ -11,8 +11,8 @@
     dataArray={[]}
     enableTransformer={true}
     events={[]}
-    importedQueryDefaults={{ variable1: "" }}
-    importedQueryInputs={{ variable0: "", variable1: "" }}
+    importedQueryDefaults={{ variable0: "01", variable1: "2" }}
+    importedQueryInputs={{ variable0: "01", variable1: "2" }}
     notificationDuration={4.5}
     privateParams={[]}
     query={include("./lib/get_latest_seasons.sql", "string")}
