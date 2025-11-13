@@ -19,27 +19,6 @@
       value="#### 시즌 판매율"
       verticalAlign="center"
     />
-    <Date
-      id="date_select"
-      dateFormat="yyyy-MM-dd"
-      datePlaceholder="{{ self.dateFormat.toUpperCase() }}"
-      iconBefore="bold/interface-calendar"
-      label=""
-      labelPosition="top"
-      margin="4px 0px"
-      textBefore="마감기준일"
-      value="{{ urlparams.hash?.deadline_date ?? (() => { const yesterday = new Date(); yesterday.setDate(yesterday.getDate() - 1); return yesterday.toISOString().split('T')[0]; })() }}"
-    >
-      <Event
-        event="change"
-        method="trigger"
-        params={{ ordered: [] }}
-        pluginId="get_same_weekday"
-        type="datasource"
-        waitMs="0"
-        waitType="debounce"
-      />
-    </Date>
     <Select
       id="season_select"
       data="{{ season_list_new.data }}"
@@ -64,6 +43,27 @@
         waitType="debounce"
       />
     </Select>
+    <Date
+      id="date_select"
+      dateFormat="yyyy-MM-dd"
+      datePlaceholder="{{ self.dateFormat.toUpperCase() }}"
+      iconBefore="bold/interface-calendar"
+      label=""
+      labelPosition="top"
+      margin="4px 0px"
+      textBefore="마감기준일"
+      value="{{ urlparams.hash?.deadline_date ?? (() => { const yesterday = new Date(); yesterday.setDate(yesterday.getDate() - 1); return yesterday.toISOString().split('T')[0]; })() }}"
+    >
+      <Event
+        event="change"
+        method="trigger"
+        params={{ ordered: [] }}
+        pluginId="get_same_weekday"
+        type="datasource"
+        waitMs="0"
+        waitType="debounce"
+      />
+    </Date>
     <Container
       id="stack1"
       _flexWrap={true}

@@ -312,7 +312,6 @@
   "season_select": {
     "container": "container10",
     "subcontainer": "a260c",
-    "row": 0,
     "col": 6,
     "height": 0.2,
     "stackPosition": {
