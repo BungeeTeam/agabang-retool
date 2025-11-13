@@ -21,7 +21,8 @@ WITH period_sales AS (
                 WHEN season_cd = '0' THEN 'NO' END as season_nm_eng
          FROM agabang_dw.daily_shop_sales_by_dimension
         )
-    WHERE year_nm = toString(toYear(today()))
+    WHERE year_nm NOT LIKE '%이하%'
+      AND toInt32(year_nm) >= toYear(today())
       AND sale_dt >= today() - INTERVAL 59 DAY
       AND season_cd != '0'
       AND br_cd = '{{ variable0 }}'
@@ -50,9 +51,8 @@ SELECT
     CASE
         WHEN previous_30days_qty > 0 THEN
             ROUND(((recent_30days_qty - previous_30days_qty) / previous_30days_qty) * 100, 2)
-        ELSE NULL
+        ELSE ROUND(((recent_30days_qty - previous_30days_qty) / previous_30days_qty + 1) * 100, 2)
     END as growth_rate_percent
 FROM season_comparison
-WHERE previous_30days_qty > 0
 ORDER BY growth_rate_percent DESC
 LIMIT {{ variable1 }};
