@@ -116,7 +116,6 @@
       showBorder={true}
       showHeader={true}
       showSummaryRow={true}
-      toolbarPosition="bottom"
     >
       <Column
         id="c6cd3"
@@ -141,7 +140,7 @@
         label="매장명"
         placeholder="Enter value"
         position="center"
-        size={100}
+        size={143}
         summaryAggregationMode="none"
       />
       <Column

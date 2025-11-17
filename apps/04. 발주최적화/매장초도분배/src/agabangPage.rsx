@@ -857,7 +857,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
-        size={57.484375}
+        size={57.734375}
       />
       <Column
         id="77e78"
@@ -869,7 +869,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
-        size={156.84375}
+        size={164.203125}
       />
       <Column
         id="52305"
@@ -881,7 +881,7 @@
         label="스타일코드"
         placeholder="Enter value"
         position="center"
-        size={78.296875}
+        size={73.71875}
       />
       <Column
         id="eac68"
@@ -894,7 +894,7 @@
         label="칼라코드"
         placeholder="Enter value"
         position="center"
-        size={57.484375}
+        size={57.46875}
       />
       <Column
         id="7afab"

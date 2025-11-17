@@ -116,7 +116,6 @@
       showBorder={true}
       showHeader={true}
       showSummaryRow={true}
-      toolbarPosition="bottom"
     >
       <Column
         id="c6cd3"

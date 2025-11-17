@@ -317,7 +317,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
-        size={57.890625}
+        size={57.984375}
         summaryAggregationMode="none"
       />
       <Column
@@ -329,7 +329,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
-        size={167.140625}
+        size={127.578125}
         summaryAggregationMode="none"
       />
       <Column
@@ -343,7 +343,7 @@
         label="분배수량"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
+        size={57.46875}
         summaryAggregationMode="sum"
       />
       <Column
@@ -356,7 +356,7 @@
         label="대분류"
         placeholder="Select option"
         position="center"
-        size={91.984375}
+        size={73.46875}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -370,7 +370,7 @@
         label="중분류"
         placeholder="Enter value"
         position="center"
-        size={47.078125}
+        size={62.734375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -384,7 +384,7 @@
         label="소분류"
         placeholder="Enter value"
         position="center"
-        size={67.8125}
+        size={88.59375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -398,7 +398,7 @@
         label="유통채널"
         placeholder="Enter value"
         position="center"
-        size={67.8125}
+        size={78.21875}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -426,7 +426,7 @@
         label="담당자명"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
+        size={57.46875}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -840,7 +840,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
-        size={57.515625}
+        size={57.796875}
         summaryAggregationMode="none"
       />
       <Column
@@ -853,7 +853,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
-        size={133.015625}
+        size={127.578125}
         summaryAggregationMode="none"
       />
       <Column
@@ -866,7 +866,7 @@
         label="스타일코드"
         placeholder="Enter value"
         position="center"
-        size={74.9375}
+        size={75.703125}
         summaryAggregationMode="none"
       />
       <Column
@@ -880,7 +880,7 @@
         label="칼라코드"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
+        size={57.46875}
         summaryAggregationMode="none"
       />
       <Column
