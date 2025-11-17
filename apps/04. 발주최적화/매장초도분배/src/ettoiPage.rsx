@@ -828,7 +828,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
-        size={57.796875}
+        size={57.90625}
         summaryAggregationMode="none"
       />
       <Column
@@ -841,7 +841,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
-        size={127.578125}
+        size={133.09375}
         summaryAggregationMode="none"
       />
       <Column
@@ -854,7 +854,7 @@
         label="스타일코드"
         placeholder="Enter value"
         position="center"
-        size={75.703125}
+        size={73.671875}
         summaryAggregationMode="none"
       />
       <Column

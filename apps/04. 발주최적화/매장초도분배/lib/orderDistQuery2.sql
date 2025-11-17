@@ -22,8 +22,8 @@ all_sty_codes AS (
 )
 SELECT
   t2.it_nm as large_cat,
-  t2.it_gb_nm as middle_cat,
-  t2.item_nm as small_cat,
+  coalesce(t3.it_gb_nm, t1.middle_cat) as middle_cat,
+  coalesce(t4.item_nm, t1.small_cat) as small_cat,
   t1.sty_cd,
   t1.shop_cd,
   t1.in_qty,
@@ -41,10 +41,22 @@ FROM (
     AND (sty_cd IN (SELECT DISTINCT sty_cd FROM all_sty_codes) OR sty_cd = '-')
     AND br_cd = '07'
 ) as t1
-LEFT JOIN (
-  SELECT 
-      DISTINCT it_nm, large_cat, it_gb_nm, middle_cat, item_nm, small_cat
-  FROM agabang_dw.dim_style
-) as t2
-ON t1.large_cat = t2.large_cat AND t1.middle_cat = t2.middle_cat AND t1.small_cat = t2.small_cat
+left join (
+  select 
+    distinct large_cat, it_nm
+  from agabang_dw.dim_style
+) t2
+on t1.large_cat = t2.large_cat
+left join (
+  select 
+    distinct middle_cat, it_gb_nm
+  from agabang_dw.dim_style
+) t3
+on t1.middle_cat = t3.middle_cat
+left join (
+  select 
+    distinct small_cat, item_nm
+  from agabang_dw.dim_style
+) t4
+on t1.small_cat = t4.small_cat
 ;

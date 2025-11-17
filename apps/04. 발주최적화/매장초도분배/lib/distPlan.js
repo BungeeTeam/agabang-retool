@@ -19,7 +19,7 @@ styList = styList.map(obj => {
   }
   else {
     const lastSeasonCatInfo = {{ lastSeasonCatQuery.data }}
-    const isSmallCat = lastSeasonCatInfo.find(item => item.it === obj.it && item.it_gb === obj.it_gb && item.item === obj.item)
+    const isSmallCat = lastSeasonCatInfo.find(item => item.large_cat === obj.large_cat && item.middle_cat === obj.middle_cat && item.small_cat === obj.small_cat)
     if (isSmallCat) {
       return {...obj, related_info: {"small_cat": isSmallCat}}
     } else {

@@ -857,7 +857,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
-        size={57.65625}
+        size={57.734375}
       />
       <Column
         id="77e78"
@@ -869,7 +869,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
-        size={164.203125}
+        size={164.21875}
       />
       <Column
         id="52305"
