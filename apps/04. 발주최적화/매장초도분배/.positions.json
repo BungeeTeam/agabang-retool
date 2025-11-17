@@ -1,7 +1,6 @@
 {
   "agabangTopNavigation1": {
     "subcontainer": "header",
-    "row": 0,
     "height": 2.4,
     "width": 12
   },
@@ -376,7 +375,6 @@
   "plotlyJsonChart2": {
     "container": "container1",
     "subcontainer": "be7b9",
-    "row": 0,
     "col": 6,
     "height": 6.2,
     "width": 6,
@@ -406,7 +404,6 @@
   "plotlyJsonChart4": {
     "container": "container4",
     "subcontainer": "be7b9",
-    "row": 0,
     "col": 6,
     "height": 6.2,
     "width": 6,
@@ -657,7 +654,6 @@
   },
   "table10": {
     "container": "shopStat2",
-    "row": 0,
     "height": 1,
     "width": 12
   },
@@ -680,7 +676,6 @@
   },
   "table3": {
     "container": "shopStat",
-    "row": 0,
     "height": 1,
     "width": 12
   },

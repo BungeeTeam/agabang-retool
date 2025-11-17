@@ -19,11 +19,11 @@ styList = styList.map(obj => {
   }
   else {
     const lastSeasonCatInfo = {{ lastSeasonCatQuery.data }}
-    const isSmallCat = lastSeasonCatInfo.find(item => item.large_cat === obj.large_cat && item.middle_cat === obj.middle_cat && item.small_cat === obj.small_cat)
+    const isSmallCat = lastSeasonCatInfo.find(item => item.it === obj.it && item.it_gb === obj.it_gb && item.item === obj.item)
     if (isSmallCat) {
       return {...obj, related_info: {"small_cat": isSmallCat}}
     } else {
-      const isMiddleCat = lastSeasonCatInfo.find(item => item.large_cat === obj.large_cat && item.middle_cat === obj.middle_cat)
+      const isMiddleCat = lastSeasonCatInfo.find(item => item.it === obj.it && item.it_gb === obj.it_gb)
       if (isMiddleCat) {
         return {...obj, related_info: {"middle_cat": isMiddleCat}}  
       } else {
@@ -137,7 +137,7 @@ styList = styList.map(obj => {
 
   // 1. Assgin the min qty for all type shops first
   let r = plan_qty - targetLength * minDistQty
-  console.log("remainder", r)
+  //  console.log("remainder", r)
   shopTypeList.forEach(type => {
     if (distSummary?.[type]) {
       distSummary[type]["common_min_qty"] = minDistQty
@@ -146,7 +146,7 @@ styList = styList.map(obj => {
       distSummary[type]["remainder"] = distSummary[type]["type_dist_qty"] - distSummary[type]["type_min_qty"] * distSummary[type]["num"]
     }
   })
-  console.log(targetLength, "target_shop_summary", distSummary)
+  //  console.log(targetLength, "target_shop_summary", distSummary)
 
   // 2. Distribute the initial qty upto the plan
   shopTypeList.forEach(type => {
@@ -154,7 +154,7 @@ styList = styList.map(obj => {
     if (distPlan) {
       let remainder = distPlan.remainder
       const baseQty = distPlan.common_min_qty + distPlan.type_min_qty
-      console.log(type, distPlan, baseQty)
+      //  console.log(type, distPlan, baseQty)
       const shopListByType = targetShopList
         .filter(obj => obj.segment === type)
         .sort((a, b) => b.sales_qty - a.sales_qty)
@@ -185,6 +185,5 @@ styList = styList.map(obj => {
 
   return {...obj, actualPlanQty: plan_qty, summaryQty, distStrategy, distByQty, distByRatio}  
 })
-
 
 return styList
