@@ -869,7 +869,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
-        size={164.21875}
+        size={164.203125}
       />
       <Column
         id="52305"
