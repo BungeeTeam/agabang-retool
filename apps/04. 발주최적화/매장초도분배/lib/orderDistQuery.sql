@@ -8,6 +8,7 @@ WITH extracted_sty_codes AS (
   FROM agabang_dw.retooldb_item_md_assort
   WHERE substr(sty_col_cd, 4, 1) = '{{ seasonSelect.value.slice(1, 2) }}' 
   AND substr(sty_col_cd, 3, 1) = '{{ seasonSelect.value.slice(0, 1) }}' 
+ AND substr(sty_col_cd, 1, 2) = '{{ brcd.value }}'
 ),
 all_sty_codes AS (
   SELECT first_sty as sty_cd FROM extracted_sty_codes WHERE first_sty != ''

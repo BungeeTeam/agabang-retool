@@ -76,19 +76,18 @@ styList = styList.map(obj => {
     dist = distData
       .filter(item => item.sty_cd === "-" && item.small_cat === "-" && item.middle_cat === "-")
       .filter(item => item.large_cat === cond.large_cat)
-  } 
-  console.log("dist", dist)
+  }
   
   if (!dist || dist.length === 0) {
     // if no matched, then large cat with the most revenue is assigned
     const catList = distData
       .filter(item => item.sty_cd === "-" && item.small_cat === "-" && item.middle_cat === "-")
-    console.log("catList", catList)
+
     const catSummary = catList.reduce((acc, cat) => {
       acc[cat.large_cat] = (acc[cat.large_cat] || 0) + (cat?.sales_qty || 0)
       return acc
     }, {})
-    console.log("catSummary", catSummary)
+
     const maxKey = Object.keys(catSummary)
       .reduce((a, b) => catSummary[a] > catSummary[b] ? a : b)
     dist = distData
