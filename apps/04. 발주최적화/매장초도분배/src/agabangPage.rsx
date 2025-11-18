@@ -347,7 +347,6 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
-        size={57.921875}
         summaryAggregationMode="none"
       />
       <Column
@@ -359,7 +358,6 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
-        size={168.21875}
         summaryAggregationMode="none"
       />
       <Column
@@ -373,7 +371,6 @@
         label="분배수량"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
         summaryAggregationMode="sum"
       />
       <Column
@@ -386,7 +383,6 @@
         label="대분류"
         placeholder="Select option"
         position="center"
-        size={91.984375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -400,7 +396,6 @@
         label="중분류"
         placeholder="Enter value"
         position="center"
-        size={47.078125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -414,7 +409,6 @@
         label="소분류"
         placeholder="Enter value"
         position="center"
-        size={67.8125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -428,7 +422,6 @@
         label="유통채널"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -442,7 +435,6 @@
         label="팀명"
         placeholder="Enter value"
         position="center"
-        size={40.984375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -456,7 +448,6 @@
         label="담당자명"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -472,7 +463,6 @@
         label="입고수량"
         placeholder="Enter value"
         position="center"
-        size={0}
         summaryAggregationMode="sum"
       />
       <Column
@@ -487,7 +477,6 @@
         label="판매수량"
         placeholder="Enter value"
         position="center"
-        size={0}
         summaryAggregationMode="sum"
       />
       <Column
@@ -500,7 +489,6 @@
         label="Related info"
         placeholder="Enter value"
         position="center"
-        size={0}
         summaryAggregationMode="none"
       />
       <ToolbarButton

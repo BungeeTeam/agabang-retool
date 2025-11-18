@@ -29,6 +29,20 @@
     "col": 9,
     "height": 0.8
   },
+  "button13": {
+    "subcontainer": "shopSelectDrawer2",
+    "row": 8.8,
+    "col": 8,
+    "height": 0.8,
+    "width": 4
+  },
+  "button14": {
+    "rowGroup": "header",
+    "subcontainer": "groupSelectModal2",
+    "row": 1,
+    "col": 9,
+    "height": 0.8
+  },
   "button2": {
     "row": 15.6,
     "height": 1,
@@ -66,7 +80,7 @@
   "button8": {
     "subcontainer": "shopSelectDrawer2",
     "row": 8.8,
-    "col": 6,
+    "col": 4,
     "height": 0.8,
     "width": 4
   },
@@ -223,6 +237,7 @@
   "drawerTitle4": {
     "rowGroup": "header",
     "subcontainer": "shopSelectDrawer2",
+    "row": 0.8,
     "height": 0.6,
     "width": 9
   },
@@ -245,6 +260,13 @@
     "rowGroup": "header",
     "subcontainer": "groupSelectModal",
     "row": 1.2,
+    "height": 0.2,
+    "width": 5
+  },
+  "groupSelect2": {
+    "rowGroup": "header",
+    "subcontainer": "groupSelectModal2",
+    "row": 0.6,
     "height": 0.2,
     "width": 5
   },
@@ -340,6 +362,12 @@
     "col": 9,
     "height": 1
   },
+  "modalCloseButton4": {
+    "rowGroup": "header",
+    "subcontainer": "groupSelectModal2",
+    "col": 9,
+    "height": 1
+  },
   "modalTitle1": {
     "rowGroup": "header",
     "subcontainer": "shopSelectionModal",
@@ -355,6 +383,12 @@
   "modalTitle3": {
     "rowGroup": "header",
     "subcontainer": "groupSelectModal",
+    "height": 0.6,
+    "width": 9
+  },
+  "modalTitle5": {
+    "rowGroup": "header",
+    "subcontainer": "groupSelectModal2",
     "height": 0.6,
     "width": 9
   },
@@ -674,6 +708,12 @@
     "height": 8,
     "width": 12
   },
+  "table14": {
+    "subcontainer": "groupSelectModal2",
+    "row": 0.6,
+    "height": 8,
+    "width": 12
+  },
   "table3": {
     "container": "shopStat",
     "height": 1,
@@ -911,6 +951,10 @@
   },
   "text63": {
     "subcontainer": "groupSelectModal",
+    "height": 0.6
+  },
+  "text64": {
+    "subcontainer": "groupSelectModal2",
     "height": 0.6
   },
   "text7": {

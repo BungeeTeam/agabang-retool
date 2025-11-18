@@ -82,10 +82,10 @@
       />
     </SqlQueryUnified>
     <SqlQueryUnified
-      id="resetShopStatus2"
+      id="updateShopWithRevenue2"
       isMultiplayerEdited={false}
       notificationDuration={4.5}
-      query={include("../lib/resetShopStatus2.sql", "string")}
+      query={include("../lib/updateShopWithRevenue2.sql", "string")}
       resourceDisplayName="retool_db"
       resourceName="33c51bac-e1f2-4560-8260-3be760a1fd8f"
       runWhenModelUpdates={false}
@@ -95,10 +95,18 @@
       warningCodes={[]}
     />
     <SqlQueryUnified
-      id="updateShopWithRevenue2"
+      id="updateShopByGroup2"
+      query={include("../lib/updateShopByGroup2.sql", "string")}
+      resourceDisplayName="retool_db"
+      resourceName="33c51bac-e1f2-4560-8260-3be760a1fd8f"
+      runWhenModelUpdates={false}
+      warningCodes={[]}
+    />
+    <SqlQueryUnified
+      id="resetShopStatus2"
       isMultiplayerEdited={false}
       notificationDuration={4.5}
-      query={include("../lib/updateShopWithRevenue2.sql", "string")}
+      query={include("../lib/resetShopStatus2.sql", "string")}
       resourceDisplayName="retool_db"
       resourceName="33c51bac-e1f2-4560-8260-3be760a1fd8f"
       runWhenModelUpdates={false}
@@ -113,6 +121,20 @@
       isMultiplayerEdited={false}
       query={include("../lib/effectiveShops2.sql", "string")}
       queryTimeout="120000"
+      resourceDisplayName="clickhouse-dw"
+      resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
+      warningCodes={[]}
+    />
+    <SqlQuery
+      id="getGroupInfo2"
+      query={include("../lib/getGroupInfo2.sql", "string")}
+      resourceDisplayName="clickhouse-dw"
+      resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
+      warningCodes={[]}
+    />
+    <SqlQuery
+      id="getSelectedGroupShop2"
+      query={include("../lib/getSelectedGroupShop2.sql", "string")}
       resourceDisplayName="clickhouse-dw"
       resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
       warningCodes={[]}
@@ -225,6 +247,7 @@
   </Folder>
   <Include src="./header2.rsx" />
   <Include src="./distDrawerFrame2.rsx" />
+  <Include src="./groupSelectModal2.rsx" />
   <Include src="./shopSelectDrawer2.rsx" />
   <Include src="./shopSelectionModal2.rsx" />
   <Frame
@@ -317,7 +340,6 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
-        size={57.96875}
         summaryAggregationMode="none"
       />
       <Column
@@ -329,7 +351,6 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
-        size={133.015625}
         summaryAggregationMode="none"
       />
       <Column
@@ -343,7 +364,6 @@
         label="분배수량"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
         summaryAggregationMode="sum"
       />
       <Column
@@ -356,7 +376,6 @@
         label="대분류"
         placeholder="Select option"
         position="center"
-        size={91.984375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -370,7 +389,6 @@
         label="중분류"
         placeholder="Enter value"
         position="center"
-        size={47.078125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -384,7 +402,6 @@
         label="소분류"
         placeholder="Enter value"
         position="center"
-        size={47.078125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -398,7 +415,6 @@
         label="유통채널"
         placeholder="Enter value"
         position="center"
-        size={78.1875}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -412,7 +428,6 @@
         label="팀명"
         placeholder="Enter value"
         position="center"
-        size={38.765625}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -426,7 +441,6 @@
         label="담당자명"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -442,7 +456,6 @@
         label="입고수량"
         placeholder="Enter value"
         position="center"
-        size={0}
         summaryAggregationMode="sum"
       />
       <Column
@@ -457,7 +470,6 @@
         label="판매수량"
         placeholder="Enter value"
         position="center"
-        size={0}
         summaryAggregationMode="sum"
       />
       <Column
@@ -470,7 +482,6 @@
         label="Related info"
         placeholder="Enter value"
         position="center"
-        size={0}
         summaryAggregationMode="none"
       />
       <ToolbarButton
