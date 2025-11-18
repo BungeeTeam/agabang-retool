@@ -347,6 +347,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
+        size={57.921875}
         summaryAggregationMode="none"
       />
       <Column
@@ -358,6 +359,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
+        size={168.21875}
         summaryAggregationMode="none"
       />
       <Column
@@ -371,6 +373,7 @@
         label="분배수량"
         placeholder="Enter value"
         position="center"
+        size={57.453125}
         summaryAggregationMode="sum"
       />
       <Column
@@ -383,6 +386,7 @@
         label="대분류"
         placeholder="Select option"
         position="center"
+        size={91.984375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -396,6 +400,7 @@
         label="중분류"
         placeholder="Enter value"
         position="center"
+        size={47.078125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -409,6 +414,7 @@
         label="소분류"
         placeholder="Enter value"
         position="center"
+        size={67.8125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -422,6 +428,7 @@
         label="유통채널"
         placeholder="Enter value"
         position="center"
+        size={57.453125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -435,6 +442,7 @@
         label="팀명"
         placeholder="Enter value"
         position="center"
+        size={40.984375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -448,6 +456,7 @@
         label="담당자명"
         placeholder="Enter value"
         position="center"
+        size={57.453125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -463,6 +472,7 @@
         label="입고수량"
         placeholder="Enter value"
         position="center"
+        size={0}
         summaryAggregationMode="sum"
       />
       <Column
@@ -477,6 +487,7 @@
         label="판매수량"
         placeholder="Enter value"
         position="center"
+        size={0}
         summaryAggregationMode="sum"
       />
       <Column
@@ -489,6 +500,7 @@
         label="Related info"
         placeholder="Enter value"
         position="center"
+        size={0}
         summaryAggregationMode="none"
       />
       <ToolbarButton
@@ -642,7 +654,7 @@
         id="f21d7"
         alignment="left"
         editableOptions={{ showStepper: true }}
-        format="decimal"
+        format="string"
         formatOptions={{ showSeparators: true, notation: "standard" }}
         groupAggregationMode="sum"
         key="col_cd"
@@ -656,7 +668,7 @@
         id="f1aed"
         alignment="left"
         editableOptions={{ showStepper: true }}
-        format="decimal"
+        format="string"
         formatOptions={{ showSeparators: true, notation: "standard" }}
         groupAggregationMode="sum"
         key="size_cd"
@@ -809,7 +821,7 @@
         params={{
           ordered: [
             {
-              src: 'const fileName = brcd.value + "_" + seasonSelect.value + "시즌_초도분배(ERP상신용)"\n\nconst originData = distPlan.value\nlet result = []\noriginData.map(obj => {\n  const distPlan = obj?.distStrategy\n  if (distPlan) {\n    const distWithInfo = distPlan.map(item => {\n      const newObj = {}\n      newObj.shop_cd = item.shop_cd\n      newObj.sty_cd = obj.sty_cd\n      newObj.col_cd = obj.col_cd\n      newObj.size_cd = obj.size_cd\n      newObj.plan_qty = item?.plan_qty || 0\n      return newObj\n    })\n  \nresult.push(...distWithInfo.filter(obj => obj.plan_qty > 0))\n  }\n})\n\nconst changes = finalTbl.changesetArray\nif(changes) {\n  console.log("r: ", result[0])\n\n  changes.map(change => {\n    console.log("ch: ", change)\n    const shopCd = change["shop_cd"]\n    const styCd = change["sty_cd"]\n    const colCd = change["col_cd"]\n    const numericKeys = Object.keys(change).filter(key => typeof change[key] === \'number\')\n    console.log("numericKeys: ", numericKeys)\n    numericKeys.forEach(size => {\n      result = result.map(obj => {\n        if (obj.shop_cd === shopCd && obj.sty_cd === styCd && obj.col_cd === colCd && obj.size_cd === size) {\n          obj["plan_qty"] = change[size]\n        }\n        return obj\n      })\n    })\n  })\n}\n\nconsole.log(result.length)\nif (result.length > 0) {\n  utils.changeLocale("ko")\n  utils.exportData(result, fileName, "csv")  \n}',
+              src: 'const fileName = brcd.value + "_" + seasonSelect.value + "시즌_초도분배(ERP상신용)"\n\nconst originData = distPlan.value\nlet result = []\noriginData.map(obj => {\n  const distPlan = obj?.distStrategy\n  if (distPlan) {\n    const distWithInfo = distPlan.map(item => {\n      const newObj = {}\n      newObj.shop_cd = String(item.shop_cd)      // 문자열로 변환\n      newObj.sty_cd = String(obj.sty_cd)         // 문자열로 변환\n      newObj.col_cd = String(obj.col_cd)         // 문자열로 변환\n      newObj.size_cd = String(obj.size_cd)       // 문자열로 변환\n      newObj.plan_qty = item?.plan_qty || 0\n      return newObj\n    })\n  \nresult.push(...distWithInfo.filter(obj => obj.plan_qty > 0))\n  }\n})\n\nconst changes = finalTbl.changesetArray\nif(changes) {\n  console.log("r: ", result[0])\n\n  changes.map(change => {\n    console.log("ch: ", change)\n    const shopCd = String(change["shop_cd"])      // 문자열로 변환 \n    const styCd = String(change["sty_cd"])        // 문자열로 변환\n    const colCd = String(change["col_cd"])        // 문자열로 변환\n    const numericKeys = Object.keys(change).filter(key => typeof change[key] === \'number\')\n    console.log("numericKeys: ", numericKeys)\n    numericKeys.forEach(size => {\n      result = result.map(obj => {\n        if (obj.shop_cd === shopCd && obj.sty_cd === styCd && obj.col_cd === colCd && obj.size_cd === size) {\n          obj["plan_qty"] = change[size]\n        }\n        return obj\n      })\n    })\n  })\n}\n\nconsole.log(result.length)\nif (result.length > 0) {\n  utils.changeLocale("ko")\n  utils.exportData(result, fileName, "xlsx")  \n}',
             },
           ],
         }}
@@ -857,7 +869,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
-        size={57.734375}
+        size={57.71875}
       />
       <Column
         id="77e78"
@@ -869,7 +881,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
-        size={164.203125}
+        size={161.109375}
       />
       <Column
         id="52305"
@@ -881,7 +893,7 @@
         label="스타일코드"
         placeholder="Enter value"
         position="center"
-        size={73.71875}
+        size={74.015625}
       />
       <Column
         id="eac68"
@@ -894,7 +906,7 @@
         label="칼라코드"
         placeholder="Enter value"
         position="center"
-        size={57.46875}
+        size={57.453125}
       />
       <Column
         id="7afab"
