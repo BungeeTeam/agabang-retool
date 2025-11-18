@@ -11,7 +11,7 @@ from (
   from agabang_dw.seasonal_order_distribution 
   where season_cd = '{{ seasonSelect2.value.slice(1, 2) }}' 
   and year_cd = '{{ getPreviousChar(seasonSelect2.value.slice(0, 1)) }}'
-  and br_cd = '07'
+  and br_cd = '{{ brcd2.value }}'
 ) t1
 left join (
   select 
