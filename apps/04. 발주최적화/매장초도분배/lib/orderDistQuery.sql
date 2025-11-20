@@ -40,7 +40,7 @@ FROM (
   WHERE season_cd = '{{ seasonSelect.value.slice(1, 2) }}' 
     AND year_cd IN ('{{ getPreviousChar(seasonSelect.value.slice(0, 1)) }}')
     AND (sty_cd IN (SELECT DISTINCT sty_cd FROM all_sty_codes) OR sty_cd = '-')
-    AND br_cd = '01'
+    AND br_cd = '{{ brcd.value }}'
 ) as t1
 left join (
   select 

@@ -340,6 +340,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
+        size={57.984375}
         summaryAggregationMode="none"
       />
       <Column
@@ -351,6 +352,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
+        size={133.09375}
         summaryAggregationMode="none"
       />
       <Column
@@ -364,6 +366,7 @@
         label="분배수량"
         placeholder="Enter value"
         position="center"
+        size={57.46875}
         summaryAggregationMode="sum"
       />
       <Column
@@ -376,6 +379,7 @@
         label="대분류"
         placeholder="Select option"
         position="center"
+        size={92.03125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -389,6 +393,7 @@
         label="중분류"
         placeholder="Enter value"
         position="center"
+        size={47.109375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -402,6 +407,7 @@
         label="소분류"
         placeholder="Enter value"
         position="center"
+        size={47.109375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -415,6 +421,7 @@
         label="유통채널"
         placeholder="Enter value"
         position="center"
+        size={78.21875}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -428,6 +435,7 @@
         label="팀명"
         placeholder="Enter value"
         position="center"
+        size={38.765625}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -441,6 +449,7 @@
         label="담당자명"
         placeholder="Enter value"
         position="center"
+        size={57.46875}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -456,6 +465,7 @@
         label="입고수량"
         placeholder="Enter value"
         position="center"
+        size={0}
         summaryAggregationMode="sum"
       />
       <Column
@@ -470,6 +480,7 @@
         label="판매수량"
         placeholder="Enter value"
         position="center"
+        size={0}
         summaryAggregationMode="sum"
       />
       <Column
@@ -482,6 +493,7 @@
         label="Related info"
         placeholder="Enter value"
         position="center"
+        size={0}
         summaryAggregationMode="none"
       />
       <ToolbarButton
@@ -643,7 +655,6 @@
         placeholder="Enter value"
         position="center"
         size={64.25}
-        summaryAggregationMode="sum"
       />
       <Column
         id="f1aed"
@@ -657,13 +668,12 @@
         placeholder="Enter value"
         position="center"
         size={74.3125}
-        summaryAggregationMode="sum"
       />
       <Column
         id="6a607"
         alignment="left"
         editableOptions={{ showStepper: true }}
-        format="decimal"
+        format="string"
         formatOptions={{ showSeparators: true, notation: "standard" }}
         groupAggregationMode="sum"
         key="size_nm"
@@ -671,7 +681,7 @@
         placeholder="Enter value"
         position="center"
         size={69.625}
-        summaryAggregationMode="sum"
+        summaryAggregationMode="none"
       />
       <Column
         id="e383a"
@@ -851,7 +861,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
-        size={57.6875}
+        size={57.703125}
         summaryAggregationMode="none"
       />
       <Column
@@ -864,7 +874,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
-        size={133.015625}
+        size={133.09375}
         summaryAggregationMode="none"
       />
       <Column
@@ -877,7 +887,7 @@
         label="스타일코드"
         placeholder="Enter value"
         position="center"
-        size={72.4375}
+        size={72.46875}
         summaryAggregationMode="none"
       />
       <Column
@@ -891,7 +901,7 @@
         label="칼라코드"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
+        size={57.46875}
         summaryAggregationMode="none"
       />
       <Column

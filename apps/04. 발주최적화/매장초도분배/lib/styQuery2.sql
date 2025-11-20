@@ -5,18 +5,28 @@ select
   middle_cat, 
   item,
   small_cat,
-  t1.sty_cd as sty_cd, sty_nm,
-  t1.col_cd as col_cd, col_nm,
-  t1.size_cd as size_cd, size_nm,
+  t1.sty_cd as sty_cd, 
+  sty_nm,
+  t1.col_cd as col_cd, 
+  col_nm,
+  t1.size_cd as size_cd, 
+  size_nm,
   plan_qty,
   plan_dt,
   sty_codes as related_items
 from (
   select
-    sty_cd, col_cd, size_cd, plan_qty, COALESCE(updt_dt, toDate(plan_date)) as plan_dt, cust_cd
-  from agabang.plcoszqty
+    sty_cd, 
+    col_cd, 
+    size_cd, 
+    in_dt as plan_dt, 
+    sum(in_qty) as plan_qty
+  from agabang.dsin
   where substr(sty_cd, 1, 2) = '{{ brcd2.value }}' 
-  and substr(sty_cd, 3, 2) = '{{ seasonSelect2.value || "-" }}' 
+    and substr(sty_cd, 3, 2) = '{{ seasonSelect2.value || "-" }}'
+    and io_type = 'I'
+    and wh_cd = '1000'
+    group by sty_cd, col_cd, size_cd, in_dt
 ) as t1
 left join (
   select 
