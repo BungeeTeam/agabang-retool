@@ -226,26 +226,6 @@
         valueOverride="{{ ((currentSourceRow.cur_rev-currentSourceRow.prev_rev)/1000000).toFixed(0) }}"
       />
       <Column
-        id="4fe2f"
-        alignment="right"
-        editableOptions={{ showStepper: true }}
-        format="percent"
-        formatOptions={{
-          showSeparators: true,
-          notation: "standard",
-          decimalPlaces: "0",
-        }}
-        groupAggregationMode="average"
-        hidden="{{!checkboxTreeNew1.value.includes(tableHeader.value[7]) }}"
-        label="{{ tableHeader.value[7]  }}"
-        placeholder="Enter value"
-        position="center"
-        referenceId="{{ tableHeader.value[7] }}"
-        size={47.140625}
-        summaryAggregationMode="none"
-        valueOverride="{{ currentSourceRow.cur_rev/currentSourceRow.target_sales }}"
-      />
-      <Column
         id="cbaee"
         alignment="right"
         editableOptions={{ showStepper: true }}
@@ -475,7 +455,7 @@
         label="시즌"
         placeholder="Enter value"
         position="center"
-        size={47.109375}
+        size={47.078125}
         summaryAggregationMode="none"
       />
       <Column
@@ -488,7 +468,7 @@
         label="대분류"
         placeholder="Enter value"
         position="center"
-        size={67.921875}
+        size={67.890625}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -506,7 +486,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="cur_rev"
-        size={78.515625}
+        size={78.46875}
         summaryAggregationMode="none"
         valueOverride="{{ (item/1000000).toFixed(0) }}"
       />
@@ -527,7 +507,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="tableHeaderValue16"
-        size={99.265625}
+        size={99.21875}
         summaryAggregationMode="none"
       />
       <Column
@@ -546,7 +526,7 @@
         label="{{ tableHeader.value[3] }}"
         placeholder="Enter value"
         position="center"
-        size={88.890625}
+        size={88.84375}
         summaryAggregationMode="none"
         valueOverride="{{ 1-currentSourceRow.cur_rev/item }}"
       />
@@ -563,7 +543,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="{{ checkboxTreeNew1.values[4] }}"
-        size={78.671875}
+        size={78.625}
         summaryAggregationMode="none"
         valueOverride="{{ (item/1000000).toFixed(0) }}"
       />
@@ -583,7 +563,7 @@
         label="{{ tableHeader.value[17] }}"
         placeholder="Enter value"
         position="center"
-        size={99.40625}
+        size={99.359375}
         summaryAggregationMode="none"
       />
       <Column
@@ -603,7 +583,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="작년 할인율"
-        size={89.03125}
+        size={88.984375}
         summaryAggregationMode="none"
         valueOverride="{{ 1-(currentSourceRow.prev_rev/item) }}"
       />
@@ -619,29 +599,9 @@
         placeholder="Enter value"
         position="center"
         referenceId="매출증감"
-        size={57.484375}
+        size={57.453125}
         summaryAggregationMode="none"
         valueOverride="{{ ((currentSourceRow.cur_rev-currentSourceRow.prev_rev)/1000000).toFixed(0) }}"
-      />
-      <Column
-        id="4fe2f"
-        alignment="right"
-        editableOptions={{ showStepper: true }}
-        format="percent"
-        formatOptions={{
-          showSeparators: true,
-          notation: "standard",
-          decimalPlaces: "0",
-        }}
-        groupAggregationMode="average"
-        hidden="{{!checkboxTreeNew1.value.includes(tableHeader.value[7]) }}"
-        label="{{ tableHeader.value[7]  }}"
-        placeholder="Enter value"
-        position="center"
-        referenceId="{{ tableHeader.value[7] }}"
-        size={47.140625}
-        summaryAggregationMode="none"
-        valueOverride="{{ currentSourceRow.cur_rev/currentSourceRow.target_sales }}"
       />
       <Column
         id="cbaee"
@@ -659,7 +619,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="{{tableHeader.value[8]}}"
-        size={70.859375}
+        size={70.828125}
         summaryAggregationMode="none"
         valueOverride="{{ ratio = currentSourceRow.prev_rev === 0 
   ? 0 

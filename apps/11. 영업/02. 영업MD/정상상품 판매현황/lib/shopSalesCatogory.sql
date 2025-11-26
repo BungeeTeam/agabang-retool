@@ -150,7 +150,8 @@ WITH
         )
          WHERE sale_dt BETWEEN sale_start_date and end_date
           AND sales_type = '정상'
-          AND season_cd in ('1','3','5','7','0') AND biz_cd in biz_code
+          -- AND season_cd in ('1','3','5','7','0') 
+          AND biz_cd in biz_code
           AND br_cd in brand_code AND onoff_flag in selected_onoff_flag
         GROUP BY shop_cd, shop_nm, season_cd, season_nm, category_name
     )

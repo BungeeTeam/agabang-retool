@@ -11,7 +11,8 @@ SELECT
   sale_gb,
   sub_br_cd,
   sub_br_nm,
-  season_nm,
+  CASE WHEN season_cd in ('1','3','5','7','0') THEN season_nm
+  ElSE CONCAT('시즌코드 ',season_cd) END as season_nm,
   season_cd,
   season_seq,
   year_cd,
@@ -36,7 +37,7 @@ WHERE (
   sale_dt BETWEEN toDate(addYears('{{dateRange.value.start}}', -1)) AND toDate(addYears('{{dateRange.value.end}}', -1))
 ) 
 AND sales_type = '정상'
-AND season_cd in ('1','3','5','7','0')
+-- AND season_cd in ('1','3','5','7','0')
 AND br_cd in (brand_code)
 GROUP BY
   year_unit,
