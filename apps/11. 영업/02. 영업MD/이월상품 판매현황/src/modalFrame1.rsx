@@ -116,6 +116,93 @@
         size={121.859375}
       />
       <Column
+        id="204ee"
+        alignment="right"
+        editableOptions={{ showStepper: true }}
+        format="decimal"
+        formatOptions={{ showSeparators: true, notation: "standard" }}
+        groupAggregationMode="sum"
+        hidden="{{!checkboxTreeNew1.value.includes(7)}}"
+        key="sale_tag"
+        label="판매금액(TAG)"
+        placeholder="Enter value"
+        position="center"
+        size={122.859375}
+        valueOverride="{{ (item/1000).toFixed(0) }}"
+      />
+      <Column
+        id="60fbd"
+        alignment="right"
+        editableOptions={{ showStepper: true }}
+        format="decimal"
+        formatOptions={{ showSeparators: true, notation: "standard" }}
+        groupAggregationMode="sum"
+        hidden="{{!checkboxTreeNew1.value.includes(8)}}"
+        key="sale_amt"
+        label="실판매금액"
+        placeholder="Enter value"
+        position="center"
+        size={102.859375}
+        valueOverride="{{ (item/1000).toFixed(0) }}"
+      />
+      <Column
+        id="b441e"
+        alignment="right"
+        editableOptions={{ showStepper: true }}
+        format="decimal"
+        formatOptions={{ showSeparators: true, notation: "standard" }}
+        groupAggregationMode="sum"
+        hidden="{{!checkboxTreeNew1.value.includes(9)}}"
+        key="sale_qty"
+        label="판매수량"
+        placeholder="Enter value"
+        position="center"
+        size={100.484375}
+      />
+      <Column
+        id="982ea"
+        alignment="right"
+        backgroundColor="{{  'FDE68A60'}}"
+        editableOptions={{ showStepper: true }}
+        format="percent"
+        formatOptions={{
+          showSeparators: true,
+          notation: "standard",
+          decimalPlaces: "0",
+        }}
+        groupAggregationMode="average"
+        hidden="{{!checkboxTreeNew1.value.includes(10)}}"
+        label="판매율(금액)"
+        placeholder="Enter value"
+        position="center"
+        referenceId="sale_rate_amt"
+        size={113.03125}
+        tooltip="(판매금액/순출고금액)"
+        valueOverride="{{ currentSourceRow.sale_amt/currentSourceRow.net_out_amt}}"
+      />
+      <Column
+        id="c99ab"
+        alignment="right"
+        backgroundColor="{{  'FDE68A60'}}"
+        editableOptions={{ showStepper: true }}
+        format="percent"
+        formatOptions={{
+          showSeparators: true,
+          notation: "standard",
+          decimalPlaces: "0",
+        }}
+        groupAggregationMode="average"
+        hidden="{{!checkboxTreeNew1.value.includes(11)}}"
+        label="판매율(수량)"
+        placeholder="Enter value"
+        position="center"
+        referenceId="sale_rate_qty"
+        size={111.03125}
+        summaryAggregationMode="none"
+        tooltip="(판매/순출고)"
+        valueOverride="{{currentSourceRow.sale_qty/currentSourceRow.net_out_qty}}"
+      />
+      <Column
         id="facb8"
         alignment="right"
         editableOptions={{ showStepper: true }}
@@ -217,93 +304,6 @@
         size={93.484375}
         tooltip="(순출고-판매)"
         valueOverride="{{ currentSourceRow.net_out_qty-currentSourceRow.sale_qty }}"
-      />
-      <Column
-        id="204ee"
-        alignment="right"
-        editableOptions={{ showStepper: true }}
-        format="decimal"
-        formatOptions={{ showSeparators: true, notation: "standard" }}
-        groupAggregationMode="sum"
-        hidden="{{!checkboxTreeNew1.value.includes(7)}}"
-        key="sale_tag"
-        label="판매금액(TAG)"
-        placeholder="Enter value"
-        position="center"
-        size={122.859375}
-        valueOverride="{{ (item/1000).toFixed(0) }}"
-      />
-      <Column
-        id="60fbd"
-        alignment="right"
-        editableOptions={{ showStepper: true }}
-        format="decimal"
-        formatOptions={{ showSeparators: true, notation: "standard" }}
-        groupAggregationMode="sum"
-        hidden="{{!checkboxTreeNew1.value.includes(8)}}"
-        key="sale_amt"
-        label="실판매금액"
-        placeholder="Enter value"
-        position="center"
-        size={102.859375}
-        valueOverride="{{ (item/1000).toFixed(0) }}"
-      />
-      <Column
-        id="b441e"
-        alignment="right"
-        editableOptions={{ showStepper: true }}
-        format="decimal"
-        formatOptions={{ showSeparators: true, notation: "standard" }}
-        groupAggregationMode="sum"
-        hidden="{{!checkboxTreeNew1.value.includes(9)}}"
-        key="sale_qty"
-        label="판매수량"
-        placeholder="Enter value"
-        position="center"
-        size={100.484375}
-      />
-      <Column
-        id="982ea"
-        alignment="right"
-        backgroundColor="{{  'FDE68A60'}}"
-        editableOptions={{ showStepper: true }}
-        format="percent"
-        formatOptions={{
-          showSeparators: true,
-          notation: "standard",
-          decimalPlaces: "0",
-        }}
-        groupAggregationMode="average"
-        hidden="{{!checkboxTreeNew1.value.includes(10)}}"
-        label="판매율(금액)"
-        placeholder="Enter value"
-        position="center"
-        referenceId="sale_rate_amt"
-        size={113.03125}
-        tooltip="(판매금액/순출고금액)"
-        valueOverride="{{ currentSourceRow.sale_amt/currentSourceRow.net_out_amt}}"
-      />
-      <Column
-        id="c99ab"
-        alignment="right"
-        backgroundColor="{{  'FDE68A60'}}"
-        editableOptions={{ showStepper: true }}
-        format="percent"
-        formatOptions={{
-          showSeparators: true,
-          notation: "standard",
-          decimalPlaces: "0",
-        }}
-        groupAggregationMode="average"
-        hidden="{{!checkboxTreeNew1.value.includes(11)}}"
-        label="판매율(수량)"
-        placeholder="Enter value"
-        position="center"
-        referenceId="sale_rate_qty"
-        size={111.03125}
-        summaryAggregationMode="none"
-        tooltip="(판매/순출고)"
-        valueOverride="{{currentSourceRow.sale_qty/currentSourceRow.net_out_qty}}"
       />
       <Column
         id="bc312"
@@ -470,24 +470,22 @@
       >
         <Event
           event="clickToolbar"
-          method="exportData"
+          method="trigger"
           params={{
             ordered: [
               {
                 options: {
-                  ordered: [
-                    { fileType: "xlsx" },
-                    {
-                      fileName:
-                        "[{{ moment().format('YYYY-MM-DD') }}] {{ text54.value.slice(7,60) }}",
-                    },
-                  ],
+                  object: {
+                    onSuccess: null,
+                    onFailure: null,
+                    additionalScope: null,
+                  },
                 },
               },
             ],
           }}
-          pluginId="table27"
-          type="widget"
+          pluginId="excelDownloadByShop"
+          type="datasource"
           waitMs="0"
           waitType="debounce"
         />
