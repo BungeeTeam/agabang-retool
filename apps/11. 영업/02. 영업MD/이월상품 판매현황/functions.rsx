@@ -177,4 +177,27 @@ return arrData"
     transformer="return formatDataAsArray(data).map(i=>i.year_season_cd)"
     warningCodes={[]}
   />
+  <JavascriptQuery
+    id="excelDownloadByCategory"
+    isMultiplayerEdited={false}
+    notificationDuration={4.5}
+    query={include("./lib/excelDownloadByCategory.js", "string")}
+    resourceName="JavascriptQuery"
+    showSuccessToaster={false}
+  />
+  <JavascriptQuery
+    id="excelDownloadSummary"
+    isMultiplayerEdited={false}
+    notificationDuration={4.5}
+    query={include("./lib/excelDownloadSummary.js", "string")}
+    resourceName="JavascriptQuery"
+    showSuccessToaster={false}
+  />
+  <JavascriptQuery
+    id="excelDownloadByShop"
+    notificationDuration={4.5}
+    query={include("./lib/excelDownloadByShop.js", "string")}
+    resourceName="JavascriptQuery"
+    showSuccessToaster={false}
+  />
 </GlobalFunctions>

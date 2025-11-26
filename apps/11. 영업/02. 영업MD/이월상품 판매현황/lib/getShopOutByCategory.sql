@@ -88,7 +88,7 @@ WITH
            toDate(wrk_dt) BETWEEN seasonEndDate AND greatest(endDate, outEndDate)
           AND year_cd IN year_code_array
           AND substring(sty_cd,5,1) IN ('1','2','3','4','5','7')
-         AND wrk_gb not in ('R1','R12','O12') -- R1: 시즌 종료로 인한 반품 제거 / R12, O12: 정산이동으로 인한 출고반품 제거
+         -- AND wrk_gb not in ('R1','R12','O12') -- R1: 시즌 종료로 인한 반품 제거 / R12, O12: 정산이동으로 인한 출고반품 제거
           AND (br_cd = brand_code OR sty_cd IN (SELECT sty_cd from agabang_dw.retooldb_disney_style))
           AND sesn_cd = season_code
     )

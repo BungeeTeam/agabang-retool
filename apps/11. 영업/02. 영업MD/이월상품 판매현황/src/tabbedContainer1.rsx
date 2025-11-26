@@ -484,25 +484,22 @@
       >
         <Event
           event="clickToolbar"
-          method="exportData"
+          method="trigger"
           params={{
             ordered: [
               {
                 options: {
-                  ordered: [
-                    { fileType: "xlsx" },
-                    { includeHiddenColumns: false },
-                    {
-                      fileName:
-                        "{{ text15.value.slice(6) }}({{ tabs1.value }})",
-                    },
-                  ],
+                  object: {
+                    onSuccess: null,
+                    onFailure: null,
+                    additionalScope: null,
+                  },
                 },
               },
             ],
           }}
-          pluginId="table20"
-          type="widget"
+          pluginId="excelDownloadSummary"
+          type="datasource"
           waitMs="0"
           waitType="debounce"
         />
@@ -958,25 +955,22 @@
       >
         <Event
           event="clickToolbar"
-          method="exportData"
+          method="trigger"
           params={{
             ordered: [
               {
                 options: {
-                  ordered: [
-                    { fileType: "xlsx" },
-                    {
-                      fileName:
-                        "{{ text15.value.slice(6,20) }}등급별 판매현황({{ tabs1.value }})",
-                    },
-                    { includeHiddenColumns: false },
-                  ],
+                  object: {
+                    onSuccess: null,
+                    onFailure: null,
+                    additionalScope: null,
+                  },
                 },
               },
             ],
           }}
-          pluginId="table2"
-          type="widget"
+          pluginId="excelDownloadByCategory"
+          type="datasource"
           waitMs="0"
           waitType="debounce"
         />
