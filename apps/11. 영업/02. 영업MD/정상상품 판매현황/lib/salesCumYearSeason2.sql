@@ -18,7 +18,7 @@ where sales_type = '정상'
 and sale_dt between start_date and end_date
 and biz_cd in biz_code
 and br_cd in brand_code
-AND season_cd in ('0','1','3','5','7')
+-- AND season_cd in ('0','1','3','5','7')
 ORDER BY year_cd, season_cd
 -- and season_cd = selected_season_cd
 
@@ -30,6 +30,6 @@ where sales_type = '정상'
 and sale_dt between prev_start_date and prev_end_date
 and biz_cd in biz_code
 and br_cd in brand_code
-AND season_cd in ('0','1','3','5','7')
+-- AND season_cd in ('0','1','3','5','7')
 ORDER BY year_cd, season_cd
 -- and season_cd = selected_season_cd

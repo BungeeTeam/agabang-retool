@@ -17,7 +17,7 @@ WITH
           AND sale_dt BETWEEN start_date AND end_date 
           AND biz_cd in biz_code
           AND br_cd in brand_code
-          AND season_cd in ('0','1','3','5','7')
+          -- AND season_cd in ('0','1','3','5','7')
         UNION ALL
         SELECT DISTINCT
             'PREV' as period_type, year_cd, season_cd, season_end_dt
@@ -26,7 +26,7 @@ WITH
           AND sale_dt BETWEEN prev_start_date AND prev_end_date 
           AND biz_cd in biz_code
           AND br_cd in brand_code
-          AND season_cd in ('0','1','3','5','7')
+          -- AND season_cd in ('0','1','3','5','7')
     ),
 
     CategoryMapper AS (
@@ -145,7 +145,8 @@ WITH
         )
         WHERE sale_dt BETWEEN sale_start_date and end_date
           AND sales_type = '정상'
-          AND A.season_cd in ('1','3','5','7','0') AND biz_cd in biz_code
+          -- AND A.season_cd in ('1','3','5','7','0') 
+          AND biz_cd in biz_code
           AND br_cd in brand_code AND onoff_flag in selected_onoff_flag
         GROUP BY shop_cd, shop_nm, category_name
     )
