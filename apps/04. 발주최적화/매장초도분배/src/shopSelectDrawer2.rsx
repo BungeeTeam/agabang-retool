@@ -13,11 +13,6 @@
   width="60%"
 >
   <Header>
-    <Text
-      id="drawerTitle4"
-      value="### 분배 대상 매장 선정"
-      verticalAlign="center"
-    />
     <Button
       id="drawerCloseButton4"
       ariaLabel="Close"
@@ -36,6 +31,11 @@
         waitType="debounce"
       />
     </Button>
+    <Text
+      id="drawerTitle4"
+      value="### 분배 대상 매장 선정"
+      verticalAlign="center"
+    />
   </Header>
   <Body>
     <Text
@@ -133,7 +133,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
+        size={57.46875}
         summaryAggregationMode="none"
       />
       <Column
@@ -145,7 +145,7 @@
         label="매장명"
         placeholder="Enter value"
         position="center"
-        size={140.390625}
+        size={140.4375}
         summaryAggregationMode="none"
       />
       <Column
@@ -159,7 +159,7 @@
         label="고정수량"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
+        size={57.46875}
         summaryAggregationMode="none"
       />
       <Column
@@ -249,6 +249,17 @@
             },
           ],
         }}
+        pluginId=""
+        type="script"
+        waitMs="1"
+        waitType="throttle"
+      />
+    </Button>
+    <Button id="button13" margin="2px 8px" text="ERP 매장그룹으로 선택하기">
+      <Event
+        event="click"
+        method="run"
+        params={{ ordered: [{ src: "groupSelectModal2.show()" }] }}
         pluginId=""
         type="script"
         waitMs="1"

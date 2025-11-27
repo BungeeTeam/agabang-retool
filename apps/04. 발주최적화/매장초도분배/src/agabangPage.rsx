@@ -329,6 +329,7 @@
       enableExpandableRows={true}
       enableSaveActions={true}
       margin="0"
+      primaryKeyColumnId="83dbc"
       rowHeight="xsmall"
       showBorder={true}
       showHeader={true}
@@ -347,7 +348,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
-        size={57.921875}
+        size={57.9375}
         summaryAggregationMode="none"
       />
       <Column
@@ -359,7 +360,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
-        size={168.21875}
+        size={167.203125}
         summaryAggregationMode="none"
       />
       <Column
@@ -373,7 +374,7 @@
         label="분배수량"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
+        size={57.46875}
         summaryAggregationMode="sum"
       />
       <Column
@@ -386,7 +387,7 @@
         label="대분류"
         placeholder="Select option"
         position="center"
-        size={91.984375}
+        size={92.03125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -400,7 +401,7 @@
         label="중분류"
         placeholder="Enter value"
         position="center"
-        size={47.078125}
+        size={47.109375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -414,7 +415,7 @@
         label="소분류"
         placeholder="Enter value"
         position="center"
-        size={67.8125}
+        size={67.84375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -428,7 +429,7 @@
         label="유통채널"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
+        size={57.46875}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -442,7 +443,7 @@
         label="팀명"
         placeholder="Enter value"
         position="center"
-        size={40.984375}
+        size={41}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -456,7 +457,7 @@
         label="담당자명"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
+        size={57.46875}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -661,8 +662,7 @@
         label="색상코드"
         placeholder="Enter value"
         position="center"
-        size={64.25}
-        summaryAggregationMode="sum"
+        size={88.25}
       />
       <Column
         id="f1aed"
@@ -675,22 +675,21 @@
         label="사이즈코드"
         placeholder="Enter value"
         position="center"
-        size={74.3125}
-        summaryAggregationMode="sum"
+        size={92.3125}
       />
       <Column
         id="6a607"
         alignment="left"
         editableOptions={{ showStepper: true }}
-        format="decimal"
+        format="string"
         formatOptions={{ showSeparators: true, notation: "standard" }}
         groupAggregationMode="sum"
         key="size_nm"
         label="사이즈명"
         placeholder="Enter value"
         position="center"
-        size={69.625}
-        summaryAggregationMode="sum"
+        size={76.625}
+        summaryAggregationMode="none"
       />
       <Column
         id="e383a"
@@ -698,7 +697,7 @@
         format="string"
         groupAggregationMode="none"
         key="plan_dt"
-        label="기획일자"
+        label="입고일자"
         placeholder="Enter value"
         position="center"
         size={86.84375}
@@ -869,7 +868,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
-        size={57.71875}
+        size={57.46875}
       />
       <Column
         id="77e78"
@@ -881,7 +880,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
-        size={161.109375}
+        size={168.296875}
       />
       <Column
         id="52305"
@@ -893,7 +892,7 @@
         label="스타일코드"
         placeholder="Enter value"
         position="center"
-        size={74.015625}
+        size={72.53125}
       />
       <Column
         id="eac68"
@@ -906,7 +905,7 @@
         label="칼라코드"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
+        size={57.46875}
       />
       <Column
         id="7afab"
