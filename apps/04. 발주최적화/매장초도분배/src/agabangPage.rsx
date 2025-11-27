@@ -329,6 +329,7 @@
       enableExpandableRows={true}
       enableSaveActions={true}
       margin="0"
+      primaryKeyColumnId="83dbc"
       rowHeight="xsmall"
       showBorder={true}
       showHeader={true}
