@@ -9,4 +9,4 @@ from (
   where season_cd != '0' and season_cd in ('1', '3', '5', '7') and br_cd = '{{ brcd.value }}'
 )
 order by year_cd desc, season_cd desc
-limit 3;
+limit 4;
