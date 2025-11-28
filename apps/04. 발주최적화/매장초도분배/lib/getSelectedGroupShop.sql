@@ -6,7 +6,7 @@ select
   t2.user_nm
 from (
   select distinct shop_cd from agabang.cfshgrpd
-  where grp_id = '{{ groupSelect.value }}' and use_yn = 'Y'  
+  where grp_id = '{{ groupSelect.value }}' and use_yn = 'Y' and biz_div = '{{ bizcd.value }}'
 ) as t1
 left join (
   select distinct shop_cd, shop_nm, tp_nm, team_nm, user_nm from agabang_dw.dim_shop

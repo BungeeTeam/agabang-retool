@@ -142,7 +142,7 @@
   </Folder>
   <Folder id="loadData">
     <State id="brcd2" value={'"07"'} />
-    <State id="selectedShop2" value="{}" />
+    <State id="bizcd2" value="{}" />
     <SqlQuery
       id="styQuery2"
       enableTransformer={true}
@@ -512,7 +512,7 @@
         event="expandRow"
         method="setValue"
         params={{ ordered: [{ value: "{{ currentSourceRow }}" }] }}
-        pluginId="selectedShop2"
+        pluginId="bizcd2"
         type="state"
         waitMs="0"
         waitType="debounce"
@@ -521,7 +521,7 @@
         event="selectRow"
         method="setValue"
         params={{ ordered: [{ value: "{{ currentSourceRow }}" }] }}
-        pluginId="selectedShop2"
+        pluginId="bizcd2"
         type="state"
         waitMs="0"
         waitType="debounce"
@@ -947,7 +947,7 @@
         event="expandRow"
         method="setValue"
         params={{ ordered: [{ value: "{{ currentSourceRow }}" }] }}
-        pluginId="selectedShop2"
+        pluginId="bizcd2"
         type="state"
         waitMs="0"
         waitType="debounce"
