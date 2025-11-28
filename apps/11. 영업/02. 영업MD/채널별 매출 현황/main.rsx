@@ -8,7 +8,7 @@
         { biz: "{{ bizSelect.value }}" },
         { br: "{{ brandSelect.value }}" },
         { season: "{{ itCodeSelect.value }}" },
-        { even: "{{ switch1.value }}" },
+        { even: "{{ JSON.stringify(switchGroup1.value) }}" },
         { startDate: "{{ dateRange.value.end }}" },
         { endDate: "{{ dateRange.value.end }}" },
       ],
