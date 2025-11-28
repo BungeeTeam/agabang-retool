@@ -86,6 +86,7 @@
       rowSelection="none"
       showBorder={true}
       showHeader={true}
+      showSummaryRow={true}
     >
       <Column
         id="f4d64"
@@ -100,7 +101,7 @@
         placeholder="Enter value"
         position="center"
         size={100}
-        summaryAggregationMode="none"
+        summaryAggregationMode="countDistinct"
       />
       <Column
         id="87b29"

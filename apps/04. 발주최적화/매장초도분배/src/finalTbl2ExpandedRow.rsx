@@ -4,7 +4,7 @@
     cellSelection="none"
     clearChangesetOnSave={true}
     data={
-      '{{ (() => {\n  const selectedData = shopPlan2.value\n  .filter(obj => obj.shop_cd === selectedShop2.value.shop_cd)\n  .filter(obj => obj.large_cat === selectedShop2.value.large_cat)\n  .filter(obj => obj.middle_cat === selectedShop2.value.middle_cat)\n  .filter(obj => obj.small_cat === selectedShop2.value.small_cat)\n  const groupKeys = ["shop_cd", "shop_nm", "sty_cd", "col_cd", "related_info"]\n  const pivottedData = pivotData(selectedData, groupKeys, "size_cd", ["plan_qty"])\n  return pivottedData\n})()\n}}'
+      '{{ (() => {\n  const selectedData = shopPlan2.value\n  .filter(obj => obj.shop_cd === bizcd2.value.shop_cd)\n  .filter(obj => obj.large_cat === bizcd2.value.large_cat)\n  .filter(obj => obj.middle_cat === bizcd2.value.middle_cat)\n  .filter(obj => obj.small_cat === bizcd2.value.small_cat)\n  const groupKeys = ["shop_cd", "shop_nm", "sty_cd", "col_cd", "related_info"]\n  const pivottedData = pivotData(selectedData, groupKeys, "size_cd", ["plan_qty"])\n  return pivottedData\n})()\n}}'
     }
     defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
     dynamicColumnFormatOptions={{ decimal: { ordered: [] } }}
