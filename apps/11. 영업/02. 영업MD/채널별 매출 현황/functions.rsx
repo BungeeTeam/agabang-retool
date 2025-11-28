@@ -192,34 +192,4 @@
 ]
 }"
   />
-  <SqlQuery
-    id="query8"
-    query={include("./lib/query8.sql", "string")}
-    resourceDisplayName="clickhouse-dw"
-    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
-    warningCodes={[]}
-  />
-  <SqlQuery
-    id="query9"
-    query={include("./lib/query9.sql", "string")}
-    resourceDisplayName="clickhouse-dw"
-    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
-    warningCodes={[]}
-  />
-  <SqlQuery
-    id="query10"
-    notificationDuration={4.5}
-    query={include("./lib/query10.sql", "string")}
-    resourceDisplayName="clickhouse-dw"
-    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
-    showSuccessToaster={false}
-    warningCodes={[]}
-  />
-  <SqlQuery
-    id="query11"
-    query={include("./lib/query11.sql", "string")}
-    resourceDisplayName="clickhouse-dw"
-    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
-    warningCodes={[]}
-  />
 </GlobalFunctions>

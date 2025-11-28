@@ -143,23 +143,9 @@
     "height": 3.8,
     "width": 8
   },
-  "switch1": {
-    "subcontainer": "sidebarFrame1",
-    "row": 6.4,
-    "height": 0.6,
-    "width": 1,
-    "stackPosition": {
-      "object": {
-        "ordinal": 0,
-        "widthType": "fixed",
-        "width": 0,
-        "height": 0
-      }
-    }
-  },
   "switchGroup1": {
     "subcontainer": "sidebarFrame1",
-    "row": 7.6,
+    "row": 6.4,
     "height": 0.6,
     "width": 1
   },
