@@ -348,6 +348,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
+        size={57.84375}
         summaryAggregationMode="none"
       />
       <Column
@@ -359,6 +360,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
+        size={178.578125}
         summaryAggregationMode="none"
       />
       <Column
@@ -372,6 +374,7 @@
         label="분배수량"
         placeholder="Enter value"
         position="center"
+        size={57.453125}
         summaryAggregationMode="sum"
       />
       <Column
@@ -384,6 +387,7 @@
         label="대분류"
         placeholder="Select option"
         position="center"
+        size={73.4375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -397,6 +401,7 @@
         label="중분류"
         placeholder="Enter value"
         position="center"
+        size={62.703125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -410,6 +415,7 @@
         label="소분류"
         placeholder="Enter value"
         position="center"
+        size={47.078125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -423,6 +429,7 @@
         label="유통채널"
         placeholder="Enter value"
         position="center"
+        size={57.453125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -436,6 +443,7 @@
         label="팀명"
         placeholder="Enter value"
         position="center"
+        size={40.984375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -449,6 +457,7 @@
         label="담당자명"
         placeholder="Enter value"
         position="center"
+        size={57.453125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -464,6 +473,7 @@
         label="입고수량"
         placeholder="Enter value"
         position="center"
+        size={0}
         summaryAggregationMode="sum"
       />
       <Column
@@ -478,6 +488,7 @@
         label="판매수량"
         placeholder="Enter value"
         position="center"
+        size={0}
         summaryAggregationMode="sum"
       />
       <Column
@@ -490,6 +501,7 @@
         label="Related info"
         placeholder="Enter value"
         position="center"
+        size={0}
         summaryAggregationMode="none"
       />
       <ToolbarButton
@@ -824,7 +836,7 @@
       cellSelection="none"
       clearChangesetOnSave={true}
       data={
-        '{{ (() => {\n  const selectedData = shopPlan.value\n  const groupKeys = ["shop_cd", "shop_nm", "sty_cd", "col_cd", "sales_qty", "related_info"]\n  const pivottedData = pivotData(selectedData, groupKeys, "size_cd", ["plan_qty"])\n  return pivottedData.sort((a, b) => b?.sales_qty || 0 - a?.sales_qty || 0)\n})()\n}}'
+        '{{ (() => {\n  const selectedData = shopPlan.value\n  const groupKeys = ["shop_cd", "shop_nm", "sty_cd", "col_cd", "sales_qty", "related_info"]\n  const allSizes = [...new Set(selectedData.map(item => item.size_cd).filter(Boolean))].sort() // 모든 사이즈 표시\n  const pivottedData = pivotData(selectedData, groupKeys, "size_cd", ["plan_qty"])\n  const normalizedData = pivottedData.map(row => {\n    const newRow = { ...row }\n    allSizes.forEach(size => {\n      if (!(size in newRow)) {\n        newRow[size] = 0\n      }\n    })\n    return newRow\n  })\n  return normalizedData.sort((a, b) => b?.sales_qty || 0 - a?.sales_qty || 0)\n  //  return pivottedData.sort((a, b) => b?.sales_qty || 0 - a?.sales_qty || 0)\n})()\n}}'
       }
       defaultFilterOperator="or"
       defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
@@ -856,7 +868,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
-        size={57.46875}
+        size={57.703125}
       />
       <Column
         id="77e78"
@@ -868,7 +880,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
-        size={168.296875}
+        size={164.125}
       />
       <Column
         id="52305"
@@ -880,7 +892,7 @@
         label="스타일코드"
         placeholder="Enter value"
         position="center"
-        size={72.53125}
+        size={73.6875}
       />
       <Column
         id="eac68"
@@ -893,7 +905,7 @@
         label="칼라코드"
         placeholder="Enter value"
         position="center"
-        size={57.46875}
+        size={57.453125}
       />
       <Column
         id="7afab"
