@@ -816,7 +816,7 @@
       cellSelection="none"
       clearChangesetOnSave={true}
       data={
-        '{{ (() => {\n  const selectedData = shopPlan2.value\n  const groupKeys = ["shop_cd", "shop_nm", "sty_cd", "col_cd", "sales_qty", "related_info"]\n  const pivottedData = pivotData(selectedData, groupKeys, "size_cd", ["plan_qty"])\n  return pivottedData.sort((a, b) => b?.sales_qty || 0 - a?.sales_qty || 0)\n})()\n}}'
+        '{{ (() => {\n    const selectedData = shopPlan2.value\n    const groupKeys = ["shop_cd", "shop_nm", "sty_cd", "col_cd", "sales_qty", "related_info"]\n    const allSizes = [...new Set(selectedData.map(item => item.size_cd).filter(Boolean))].sort() // 모든 사이즈 표시\n    const pivottedData = pivotData(selectedData, groupKeys, "size_cd", ["plan_qty"])\n    const normalizedData = pivottedData.map(row => {\n      const newRow = { ...row }\n      allSizes.forEach(size => {\n        if (!(size in newRow)) {\n          newRow[size] = 0\n        }\n      })\n      return newRow\n    })\n    return normalizedData.sort((a, b) => b?.sales_qty || 0 - a?.sales_qty || 0)\n    //  return pivottedData.sort((a, b) => b?.sales_qty || 0 - a?.sales_qty || 0)\n  })()\n  }}'
       }
       defaultFilterOperator="or"
       defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
