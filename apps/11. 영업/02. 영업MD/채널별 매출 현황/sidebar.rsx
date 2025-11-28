@@ -115,14 +115,20 @@
     showSelectionIndicator={true}
     textBefore=" 시즌"
     tooltipByIndex=""
-    value="'25년 여름'"
+    value="'25년 겨울'"
     values="{{ item.year_season_kor }}"
   />
-  <Switch
-    id="switch1"
-    hidden="{{ toggleButton1.value }}"
-    label="{{ bizSelect.value === 'DS' ? '마트 포함' : '짝수 시즌코드 포함'  }}"
-  />
+  <SwitchGroup
+    id="switchGroup1"
+    itemMode="static"
+    label=""
+    labelPosition="top"
+    minCount="1"
+    value="{{ [self.values[0]] }}"
+  >
+    <Option id="e8bc3" label="홀수 시즌코드" value="0" />
+    <Option id="995e5" label="짝수 시즌코드" value="1" />
+  </SwitchGroup>
   <Spacer id="spacer3" />
   <Select
     id="itCodeSelect"
@@ -148,14 +154,4 @@
     value="'-1'"
     values="{{ item.it_code }}"
   />
-  <SwitchGroup
-    id="switchGroup1"
-    itemMode="static"
-    labelPosition="top"
-    minCount="1"
-    value="{{ [self.values[0]] }}"
-  >
-    <Option id="e8bc3" label="홀수 시즌코드" value="0" />
-    <Option id="995e5" label="짝수 시즌코드" value="1" />
-  </SwitchGroup>
 </SidebarFrame>

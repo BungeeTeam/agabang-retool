@@ -40,7 +40,7 @@
             "name": "even"
           },
           {
-            "value": "{{ switch1.value }}"
+            "value": "{{ JSON.stringify(switchGroup1.value) }}"
           }
         ]
       },

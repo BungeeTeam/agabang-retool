@@ -16,9 +16,9 @@ query_params AS (
 
 -- 1-1. 시즌코드 파라미터 (IN 절에서 사용하기 위해 별도 테이블로 정의)
 season_params AS (
-    SELECT '{{ Number(seasonSelect.selectedItem.season_cd) + switchGroup1.value[0]}}' as season_code
+    SELECT '{{ Number(seasonSelect.selectedItem.season_cd) + switchGroup1.value[0] || null}}' as season_code
     UNION ALL
-    SELECT '{{ Number(seasonSelect.selectedItem.season_cd) + (switchGroup1.value[1])}}' as season_code
+    SELECT '{{ Number(seasonSelect.selectedItem.season_cd) + (switchGroup1.value[1]) || null }}' as season_code
 ),
 shop_handover_mapping AS (
     SELECT DISTINCT
@@ -78,11 +78,11 @@ warehouse_data AS (
         CROSS JOIN query_params p
         where br_cd = brand_code
         and( year_cd = current_year_code or year_cd = previous_year_code)
-        and season_cd IN (SELECT season_code FROM season_params)
+        and season_cd IN (SELECT season_code FROM season_params WHERE season_code != '')
     ) as item on dsoutrtn.sty_cd = item.sty_cd
     WHERE
         dsoutrtn.br_cd = p.brand_code
-        AND dsoutrtn.sesn_cd IN (SELECT season_code FROM season_params)
+        AND dsoutrtn.sesn_cd IN (SELECT season_code FROM season_params WHERE season_code != '')
         AND (
             (dsoutrtn.year_cd = p.current_year_code AND toDate(dsoutrtn.wrk_dt) BETWEEN p.start_date AND p.end_date)
             OR
@@ -117,7 +117,7 @@ sales_data AS (
     WHERE
         sales.br_cd = p.brand_code
         AND sales.biz_cd = p.biz_code
-        AND sales.season_cd IN (SELECT season_code FROM season_params)
+        AND sales.season_cd IN (SELECT season_code FROM season_params WHERE season_code != '')
         -- AND sales.team_cd != '60'
         AND (
             (sales.year_cd = p.current_year_code AND sales.sale_dt BETWEEN p.start_date AND p.end_date)
