@@ -649,7 +649,7 @@
             label="시즌용품"
             placeholder="Enter value"
             position="center"
-            size={57.5}
+            size={57.484375}
             summaryAggregationMode="none"
           />
           <Column
@@ -857,7 +857,7 @@
           { fontFamily: "Pretendard variable" },
         ],
       }}
-      value="* 괄호 안 숫자는 조회기간 내의 수량"
+      value="* 괄호 안 숫자는 조회기간 내의 수량/판매율"
       verticalAlign="center"
     />
     <Table
@@ -982,7 +982,7 @@
         id="8f132"
         alignment="right"
         backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
-        caption="{{ (currentSourceRow.period_sale_qty / (currentSourceRow.period_in_qty + currentSourceRow.period_rt_in_qty)*100).toFixed(1) }}%"
+        caption="({{ (currentSourceRow.period_sale_qty / (currentSourceRow.period_in_qty + currentSourceRow.period_rt_in_qty || 0)*100).toFixed(1) }}%)"
         editableOptions={{ showStepper: true }}
         format="percent"
         formatOptions={{

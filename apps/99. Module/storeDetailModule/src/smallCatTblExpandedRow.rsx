@@ -35,7 +35,7 @@
       placeholder="Enter value"
       position="center"
       referenceId="sty_nm"
-      size={88.59375}
+      size={109.34375}
       summaryAggregationMode="none"
     />
     <Column
@@ -147,6 +147,7 @@
       id="8f132"
       alignment="right"
       backgroundColor="{{ theme.tokens.primaryOpacity20 }}"
+      caption="({{ (currentSourceRow.period_sale_qty / (currentSourceRow.period_in_qty + currentSourceRow.period_rt_in_qty)*100 || 0).toFixed(1)}}%)"
       editableOptions={{ showStepper: true }}
       format="percent"
       formatOptions={{
