@@ -559,7 +559,7 @@
             label="연도"
             placeholder="Enter value"
             position="left"
-            size={44.609375}
+            size={44.640625}
             sortMode="disabled"
             summaryAggregationMode="none"
           />
@@ -573,7 +573,7 @@
             label="정상구분"
             placeholder="Enter value"
             position="left"
-            size={57.453125}
+            size={57.484375}
             summaryAggregationMode="none"
           />
           <Column
@@ -595,7 +595,7 @@
             placeholder="Enter value"
             position="right"
             referenceId="비중"
-            size={55.46875}
+            size={55.5}
             summaryAggregationMode="none"
           />
           <Column
@@ -613,7 +613,7 @@
             label="기초류"
             placeholder="Enter value"
             position="center"
-            size={55.109375}
+            size={55.140625}
             summaryAggregationMode="none"
           />
           <Column
@@ -631,7 +631,7 @@
             label="외의류"
             placeholder="Enter value"
             position="center"
-            size={60.015625}
+            size={60.046875}
             summaryAggregationMode="none"
           />
           <Column
@@ -649,7 +649,7 @@
             label="시즌용품"
             placeholder="Enter value"
             position="center"
-            size={57.453125}
+            size={57.5}
             summaryAggregationMode="none"
           />
           <Column
@@ -667,7 +667,7 @@
             label="일반용품위탁"
             placeholder="Enter value"
             position="center"
-            size={78.1875}
+            size={78.21875}
             summaryAggregationMode="none"
           />
           <Column
@@ -685,7 +685,7 @@
             label="섬유공산품"
             placeholder="Enter value"
             position="center"
-            size={67.8125}
+            size={67.859375}
             summaryAggregationMode="none"
           />
           <Column
@@ -703,7 +703,7 @@
             label="하드류"
             placeholder="Enter value"
             position="center"
-            size={48}
+            size={48.03125}
             summaryAggregationMode="none"
           />
           <Column
@@ -721,7 +721,7 @@
             label="발육"
             placeholder="Enter value"
             position="center"
-            size={47.8125}
+            size={47.84375}
             summaryAggregationMode="none"
           />
           <Column
@@ -739,7 +739,7 @@
             label="화장품"
             placeholder="Enter value"
             position="center"
-            size={47.078125}
+            size={47.109375}
             summaryAggregationMode="none"
           />
           <Column
@@ -758,7 +758,7 @@
             label="기타"
             placeholder="Enter value"
             position="center"
-            size={36.71875}
+            size={36.734375}
             summaryAggregationMode="none"
           />
           <Column
@@ -776,7 +776,7 @@
             label="총합"
             placeholder="Enter value"
             position="right"
-            size={61.53125}
+            size={61.5625}
             summaryAggregationMode="none"
           />
           <ToolbarButton
@@ -896,7 +896,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="year_nm"
-        size={57.453125}
+        size={0}
         sortMode="disabled"
         summaryAggregationMode="none"
       />
@@ -912,7 +912,7 @@
         label="매장입고량"
         placeholder="Enter value"
         position="center"
-        size={67.8125}
+        size={0}
         summaryAggregationMode="none"
         valueOverride="{{ currentSourceRow.in_qty.toLocaleString() }}"
       />
@@ -928,7 +928,7 @@
         label="RT물량"
         placeholder="Enter value"
         position="center"
-        size={53.4375}
+        size={0}
         summaryAggregationMode="none"
         valueOverride="{{ currentSourceRow.rt_in_qty.toLocaleString() }}"
       />
@@ -944,7 +944,7 @@
         label="판매수량"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
+        size={0}
         summaryAggregationMode="none"
         tooltip="판매-반품"
         valueOverride="{{ currentSourceRow.net_sales_qty.toLocaleString() }}"
@@ -960,7 +960,7 @@
         label="재고수량"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
+        size={0}
         summaryAggregationMode="none"
       />
       <Column
@@ -995,9 +995,9 @@
         placeholder="Enter value"
         position="center"
         referenceId="shop_ratio"
-        size={67.8125}
+        size={0}
         summaryAggregationMode="none"
-        valueOverride="{{ currentSourceRow.sales_qty / (currentSourceRow.stock_qty + currentSourceRow.sales_qty) }}"
+        valueOverride="{{ currentSourceRow.net_sales_qty / (currentSourceRow.stock_qty + currentSourceRow.net_sales_qty) }}"
       />
       <Column
         id="bf41a"
@@ -1014,7 +1014,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="tot_ratio"
-        size={67.8125}
+        size={0}
         summaryAggregationMode="none"
         tooltip="전 매장의 평균판매량을 의미합니다"
         valueOverride="{{ currentSourceRow.tot_sales_qty / (currentSourceRow.tot_stock_qty + currentSourceRow.tot_sales_qty) }}"
@@ -1053,7 +1053,7 @@
         id="bb430"
         alignment="right"
         editableOptions={{ showStepper: true }}
-        format="string"
+        format="percent"
         formatOptions={{
           showSeparators: true,
           notation: "standard",
@@ -1064,12 +1064,12 @@
         placeholder="Enter value"
         position="center"
         referenceId="diff"
-        size={67.8125}
+        size={0}
         summaryAggregationMode="none"
         textColor={
           '{{ currentSourceRow.sales_qty / (currentSourceRow.stock_qty + currentSourceRow.sales_qty) - currentSourceRow.tot_sales_qty / (currentSourceRow.tot_stock_qty + currentSourceRow.tot_sales_qty) > 0? "green": "red" }}'
         }
-        valueOverride="{{ (100*(currentSourceRow.sales_qty / (currentSourceRow.stock_qty + currentSourceRow.sales_qty) - currentSourceRow.tot_sales_qty / (currentSourceRow.tot_stock_qty + currentSourceRow.tot_sales_qty))).toFixed(1) }} %p"
+        valueOverride="{{ currentSourceRow.net_sales_qty / (currentSourceRow.stock_qty + currentSourceRow.net_sales_qty) - currentSourceRow.tot_sales_qty / (currentSourceRow.tot_stock_qty + currentSourceRow.tot_sales_qty) }}"
       />
       <ToolbarButton
         id="3c"
