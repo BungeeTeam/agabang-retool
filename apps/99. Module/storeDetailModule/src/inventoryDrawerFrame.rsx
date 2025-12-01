@@ -124,7 +124,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="it_nm"
-        size={75.984375}
+        size={76.03125}
         summaryAggregationMode="none"
       />
       <Column
@@ -139,7 +139,7 @@
         label="매장입고량"
         placeholder="Enter value"
         position="center"
-        size={67.8125}
+        size={67.859375}
         summaryAggregationMode="none"
       />
       <Column
@@ -154,7 +154,7 @@
         label="RT물량"
         placeholder="Enter value"
         position="center"
-        size={51.34375}
+        size={51.375}
         summaryAggregationMode="none"
       />
       <Column
@@ -183,7 +183,7 @@
         label="재고수량"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
+        size={57.484375}
         summaryAggregationMode="none"
       />
       <Column
@@ -198,7 +198,7 @@
         label="판매량"
         placeholder="Enter value"
         position="center"
-        size={47.078125}
+        size={47.109375}
         summaryAggregationMode="none"
         tooltip="판매-반품"
       />
@@ -248,9 +248,9 @@
         placeholder="Enter value"
         position="center"
         referenceId="column19"
-        size={67.8125}
+        size={67.859375}
         summaryAggregationMode="none"
-        valueOverride="{{ currentSourceRow.sales_qty / (currentSourceRow.stock_qty + currentSourceRow.sales_qty) }}"
+        valueOverride="{{ currentSourceRow.net_sales_qty / (currentSourceRow.stock_qty + currentSourceRow.net_sales_qty) }}"
       />
       <Column
         id="bf41a"
@@ -267,7 +267,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="column18"
-        size={67.8125}
+        size={67.859375}
         summaryAggregationMode="none"
         tooltip="전 매장의 평균판매량을 의미합니다"
         valueOverride="{{ currentSourceRow.tot_sales_qty / (currentSourceRow.tot_stock_qty + currentSourceRow.tot_sales_qty) }}"
@@ -287,10 +287,10 @@
         placeholder="Enter value"
         position="center"
         referenceId="column23"
-        size={67.8125}
+        size={67.859375}
         summaryAggregationMode="none"
         textColor={'{{ item > 0? "green": "red" }}'}
-        valueOverride="{{ currentSourceRow.sales_qty / (currentSourceRow.stock_qty + currentSourceRow.sales_qty) - currentSourceRow.tot_sales_qty / (currentSourceRow.tot_stock_qty + currentSourceRow.tot_sales_qty) }}"
+        valueOverride="{{ currentSourceRow.net_sales_qty / (currentSourceRow.stock_qty + currentSourceRow.net_sales_qty) - currentSourceRow.tot_sales_qty / (currentSourceRow.tot_stock_qty + currentSourceRow.tot_sales_qty) }}"
       />
       <Column
         id="ea71f"
@@ -370,7 +370,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="it_nm"
-        size={75.984375}
+        size={76.03125}
         summaryAggregationMode="none"
       />
       <Column
@@ -385,7 +385,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="중분류"
-        size={47.078125}
+        size={62.75}
         summaryAggregationMode="none"
       />
       <Column
@@ -400,7 +400,7 @@
         label="매장입고량"
         placeholder="Enter value"
         position="center"
-        size={67.8125}
+        size={67.859375}
         summaryAggregationMode="none"
       />
       <Column
@@ -415,7 +415,7 @@
         label="RT물량"
         placeholder="Enter value"
         position="center"
-        size={51.34375}
+        size={51.375}
         summaryAggregationMode="none"
       />
       <Column
@@ -445,7 +445,7 @@
         label="재고수량"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
+        size={57.484375}
         summaryAggregationMode="none"
       />
       <Column
@@ -460,7 +460,7 @@
         label="판매량"
         placeholder="Enter value"
         position="center"
-        size={47.078125}
+        size={47.109375}
         summaryAggregationMode="none"
         tooltip="판매-반품"
       >
@@ -520,9 +520,9 @@
         placeholder="Enter value"
         position="center"
         referenceId="column19"
-        size={67.8125}
+        size={67.859375}
         summaryAggregationMode="none"
-        valueOverride="{{ currentSourceRow.sales_qty / (currentSourceRow.stock_qty + currentSourceRow.sales_qty) }}"
+        valueOverride="{{ currentSourceRow.net_sales_qty / (currentSourceRow.stock_qty + currentSourceRow.net_sales_qty) }}"
       />
       <Column
         id="bf41a"
@@ -539,7 +539,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="column18"
-        size={67.8125}
+        size={67.859375}
         summaryAggregationMode="none"
         tooltip="전 매장의 평균판매량을 의미합니다"
         valueOverride="{{ currentSourceRow.tot_sales_qty / (currentSourceRow.tot_stock_qty + currentSourceRow.tot_sales_qty) }}"
@@ -559,10 +559,10 @@
         placeholder="Enter value"
         position="center"
         referenceId="column23"
-        size={67.8125}
+        size={67.859375}
         summaryAggregationMode="none"
         textColor={'{{ item > 0? "green": "red" }}'}
-        valueOverride="{{ currentSourceRow.sales_qty / (currentSourceRow.stock_qty + currentSourceRow.sales_qty) - currentSourceRow.tot_sales_qty / (currentSourceRow.tot_stock_qty + currentSourceRow.tot_sales_qty) }}"
+        valueOverride="{{ currentSourceRow.net_sales_qty / (currentSourceRow.stock_qty + currentSourceRow.net_sales_qty) - currentSourceRow.tot_sales_qty / (currentSourceRow.tot_stock_qty + currentSourceRow.tot_sales_qty) }}"
       />
       <Column
         id="ea71f"
@@ -640,7 +640,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="it_nm"
-        size={75.984375}
+        size={76.03125}
         summaryAggregationMode="none"
       />
       <Column
@@ -654,7 +654,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="it_gb_nm"
-        size={62.703125}
+        size={62.75}
         summaryAggregationMode="none"
       />
       <Column
@@ -667,7 +667,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="item_nm"
-        size={67.8125}
+        size={67.859375}
         summaryAggregationMode="none"
       />
       <Column
@@ -682,7 +682,7 @@
         label="매장입고량"
         placeholder="Enter value"
         position="center"
-        size={67.8125}
+        size={67.859375}
         summaryAggregationMode="none"
       />
       <Column
@@ -697,7 +697,7 @@
         label="RT물량"
         placeholder="Enter value"
         position="center"
-        size={51.34375}
+        size={51.375}
         summaryAggregationMode="none"
       />
       <Column
@@ -726,7 +726,7 @@
         label="재고수량"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
+        size={57.484375}
         summaryAggregationMode="none"
       />
       <Column
@@ -741,7 +741,7 @@
         label="판매량"
         placeholder="Enter value"
         position="center"
-        size={47.078125}
+        size={47.109375}
         summaryAggregationMode="none"
         tooltip="판매-반품"
       />
@@ -791,9 +791,9 @@
         placeholder="Enter value"
         position="center"
         referenceId="column19"
-        size={67.8125}
+        size={67.859375}
         summaryAggregationMode="none"
-        valueOverride="{{ currentSourceRow.sales_qty / (currentSourceRow.stock_qty + currentSourceRow.sales_qty) }}"
+        valueOverride="{{ currentSourceRow.net_sales_qty / (currentSourceRow.stock_qty + currentSourceRow.net_sales_qty) }}"
       />
       <Column
         id="bf41a"
@@ -810,7 +810,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="column18"
-        size={67.8125}
+        size={67.859375}
         summaryAggregationMode="none"
         tooltip="전 매장의 평균판매량을 의미합니다"
         valueOverride="{{ currentSourceRow.tot_sales_qty / (currentSourceRow.tot_stock_qty + currentSourceRow.tot_sales_qty) }}"
@@ -830,10 +830,10 @@
         placeholder="Enter value"
         position="center"
         referenceId="column23"
-        size={67.8125}
+        size={67.859375}
         summaryAggregationMode="none"
         textColor={'{{ item > 0? "green": "red" }}'}
-        valueOverride="{{ currentSourceRow.sales_qty / (currentSourceRow.stock_qty + currentSourceRow.sales_qty) - currentSourceRow.tot_sales_qty / (currentSourceRow.tot_stock_qty + currentSourceRow.tot_sales_qty) }}"
+        valueOverride="{{ currentSourceRow.net_sales_qty / (currentSourceRow.stock_qty + currentSourceRow.net_sales_qty) - currentSourceRow.tot_sales_qty / (currentSourceRow.tot_stock_qty + currentSourceRow.tot_sales_qty) }}"
       />
       <Column
         id="ea71f"

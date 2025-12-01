@@ -35,7 +35,7 @@
       placeholder="Enter value"
       position="center"
       referenceId="sty_nm"
-      size={109.421875}
+      size={88.59375}
       summaryAggregationMode="none"
     />
     <Column
@@ -50,7 +50,7 @@
       label="매장입고량"
       placeholder="Enter value"
       position="center"
-      size={67.90625}
+      size={67.859375}
       summaryAggregationMode="none"
     />
     <Column
@@ -65,7 +65,7 @@
       label="RT물량"
       placeholder="Enter value"
       position="center"
-      size={52.484375}
+      size={51.59375}
       summaryAggregationMode="none"
     />
     <Column
@@ -94,7 +94,7 @@
       label="재고수량"
       placeholder="Enter value"
       position="center"
-      size={57.515625}
+      size={57.484375}
       summaryAggregationMode="none"
     />
     <Column
@@ -109,7 +109,7 @@
       label="판매량"
       placeholder="Enter value"
       position="center"
-      size={47.140625}
+      size={47.109375}
       summaryAggregationMode="none"
       tooltip="판매-반품"
     />
@@ -159,9 +159,9 @@
       placeholder="Enter value"
       position="center"
       referenceId="column19"
-      size={67.90625}
+      size={67.859375}
       summaryAggregationMode="none"
-      valueOverride="{{ currentSourceRow.sales_qty / (currentSourceRow.stock_qty + currentSourceRow.sales_qty) }}"
+      valueOverride="{{ currentSourceRow.net_sales_qty / (currentSourceRow.stock_qty + currentSourceRow.net_sales_qty) }}"
     />
     <Column
       id="bf41a"
@@ -178,7 +178,7 @@
       placeholder="Enter value"
       position="center"
       referenceId="column18"
-      size={67.90625}
+      size={67.859375}
       summaryAggregationMode="none"
       tooltip="전 매장의 평균판매량을 의미합니다"
       valueOverride="{{ currentSourceRow.tot_sales_qty / (currentSourceRow.tot_stock_qty + currentSourceRow.tot_sales_qty) }}"
@@ -198,10 +198,10 @@
       placeholder="Enter value"
       position="center"
       referenceId="column23"
-      size={67.90625}
+      size={67.859375}
       summaryAggregationMode="none"
       textColor={'{{ item > 0? "green": "red" }}'}
-      valueOverride="{{ currentSourceRow.sales_qty / (currentSourceRow.stock_qty + currentSourceRow.sales_qty) - currentSourceRow.tot_sales_qty / (currentSourceRow.tot_stock_qty + currentSourceRow.tot_sales_qty) }}"
+      valueOverride="{{ currentSourceRow.net_sales_qty / (currentSourceRow.stock_qty + currentSourceRow.net_sales_qty) - currentSourceRow.tot_sales_qty / (currentSourceRow.tot_stock_qty + currentSourceRow.tot_sales_qty) }}"
     />
     <Column
       id="ea71f"
