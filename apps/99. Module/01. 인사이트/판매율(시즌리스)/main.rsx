@@ -38,7 +38,7 @@
                 { fontFamily: "h6Font" },
               ],
             }}
-            value="{{moment(date_select.value).year()}}년 신상품 기준({{ season_select.selectedItem.year_cd }})"
+            value="{{moment(season_select.selectedItem.year_nm).year()}}년 신상품 기준({{ season_select.selectedItem.year_cd }})"
             verticalAlign="center"
           />
         </Header>
@@ -873,7 +873,7 @@
                 { fontFamily: "h6Font" },
               ],
             }}
-            value="{{moment(date_select.value).year()-1}}년 신상품 기준({{ String.fromCharCode(season_select.selectedItem.year_cd.charCodeAt()-1) }})"
+            value="{{moment(season_select.selectedItem.year_nm).year()-1}}년 신상품 기준({{ String.fromCharCode(season_select.selectedItem.year_cd.charCodeAt()-1) }})"
             verticalAlign="center"
           />
         </Header>
@@ -1708,7 +1708,7 @@
                 { fontFamily: "h6Font" },
               ],
             }}
-            value="{{moment(date_select.value).year()-2}}년 신상품 기준({{ String.fromCharCode(season_select.selectedItem.year_cd.charCodeAt()-2) }})"
+            value="{{moment(season_select.selectedItem.year_nm).year()-2}}년 신상품 기준({{ String.fromCharCode(season_select.selectedItem.year_cd.charCodeAt()-2) }})"
             verticalAlign="center"
           />
         </Header>
@@ -2543,7 +2543,7 @@
                 { fontFamily: "h6Font" },
               ],
             }}
-            value="{{moment(date_select.value).year()-3}}년 신상품 기준({{ String.fromCharCode(season_select.selectedItem.year_cd.charCodeAt()-3) }})"
+            value="{{moment(season_select.selectedItem.year_nm).year()-3}}년 신상품 기준({{ String.fromCharCode(season_select.selectedItem.year_cd.charCodeAt()-3) }})"
             verticalAlign="center"
           />
         </Header>
