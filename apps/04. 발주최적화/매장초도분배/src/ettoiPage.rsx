@@ -340,6 +340,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
+        size={57.796875}
         summaryAggregationMode="none"
       />
       <Column
@@ -351,6 +352,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
+        size={127.578125}
         summaryAggregationMode="none"
       />
       <Column
@@ -364,6 +366,7 @@
         label="분배수량"
         placeholder="Enter value"
         position="center"
+        size={57.484375}
         summaryAggregationMode="sum"
       />
       <Column
@@ -376,6 +379,7 @@
         label="대분류"
         placeholder="Select option"
         position="center"
+        size={63.109375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -389,6 +393,7 @@
         label="중분류"
         placeholder="Enter value"
         position="center"
+        size={47.109375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -402,6 +407,7 @@
         label="소분류"
         placeholder="Enter value"
         position="center"
+        size={67.859375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -415,6 +421,7 @@
         label="유통채널"
         placeholder="Enter value"
         position="center"
+        size={78.21875}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -428,6 +435,7 @@
         label="팀명"
         placeholder="Enter value"
         position="center"
+        size={38.78125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -441,6 +449,7 @@
         label="담당자명"
         placeholder="Enter value"
         position="center"
+        size={57.484375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -456,6 +465,7 @@
         label="입고수량"
         placeholder="Enter value"
         position="center"
+        size={0}
         summaryAggregationMode="sum"
       />
       <Column
@@ -470,6 +480,7 @@
         label="판매수량"
         placeholder="Enter value"
         position="center"
+        size={0}
         summaryAggregationMode="sum"
       />
       <Column
@@ -482,6 +493,7 @@
         label="Related info"
         placeholder="Enter value"
         position="center"
+        size={0}
         summaryAggregationMode="none"
       />
       <ToolbarButton
@@ -816,7 +828,7 @@
       cellSelection="none"
       clearChangesetOnSave={true}
       data={
-        '{{ (() => {\n    const selectedData = shopPlan2.value\n    const groupKeys = ["shop_cd", "shop_nm", "sty_cd", "col_cd", "sales_qty", "related_info"]\n    const allSizes = [...new Set(selectedData.map(item => item.size_cd).filter(Boolean))].sort() // 모든 사이즈 표시\n    const pivottedData = pivotData(selectedData, groupKeys, "size_cd", ["plan_qty"])\n    const normalizedData = pivottedData.map(row => {\n      const newRow = { ...row }\n      allSizes.forEach(size => {\n        if (!(size in newRow)) {\n          newRow[size] = 0\n        }\n      })\n      return newRow\n    })\n    return normalizedData.sort((a, b) => b?.sales_qty || 0 - a?.sales_qty || 0)\n    //  return pivottedData.sort((a, b) => b?.sales_qty || 0 - a?.sales_qty || 0)\n  })()\n  }}'
+        '{{ (() => {\n    const selectedData = shopPlan2.value\n    const groupKeys = ["shop_cd", "shop_nm", "sty_cd", "col_cd", "sales_qty", "related_info"]\n    const allSizes = [...new Set(selectedData.map(item => item.size_cd).filter(Boolean))].sort() // 모든 사이즈 표시\n    const pivottedData = pivotData(selectedData, groupKeys, "size_cd", ["plan_qty"])\n    const normalizedData = pivottedData.map(row => {\n      const newRow = { ...row }\n      allSizes.forEach(size => {\n        if (!(size in newRow)) {\n          newRow[size] = 0\n        }\n      })\n      newRow.idx = `${newRow.shop_cd}${newRow.sty_cd}${newRow.col_cd}`\n      return newRow\n    })\n    return normalizedData.sort((a, b) => b?.sales_qty || 0 - a?.sales_qty || 0)\n    //  return pivottedData.sort((a, b) => b?.sales_qty || 0 - a?.sales_qty || 0)\n  })()\n  }}'
       }
       defaultFilterOperator="or"
       defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
@@ -832,6 +844,7 @@
       heightType="auto"
       includeRowInChangesetArray={true}
       margin="0"
+      primaryKeyColumnId="2289c"
       rowHeight="xsmall"
       showBorder={true}
       showHeader={true}
@@ -849,7 +862,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
-        size={57.90625}
+        size={57.796875}
         summaryAggregationMode="none"
       />
       <Column
@@ -875,7 +888,7 @@
         label="스타일코드"
         placeholder="Enter value"
         position="center"
-        size={73.671875}
+        size={75.453125}
         summaryAggregationMode="none"
       />
       <Column
@@ -889,7 +902,7 @@
         label="칼라코드"
         placeholder="Enter value"
         position="center"
-        size={57.46875}
+        size={57.484375}
         summaryAggregationMode="none"
       />
       <Column
@@ -920,6 +933,21 @@
         placeholder="Enter value"
         position="center"
         size={318.40625}
+        summaryAggregationMode="none"
+      />
+      <Column
+        id="2289c"
+        alignment="left"
+        editable="false"
+        format="string"
+        groupAggregationMode="none"
+        hidden="true"
+        key="idx"
+        label="Idx"
+        placeholder="Enter value"
+        position="center"
+        referenceId="column7"
+        size={66.6875}
         summaryAggregationMode="none"
       />
       <ToolbarButton
