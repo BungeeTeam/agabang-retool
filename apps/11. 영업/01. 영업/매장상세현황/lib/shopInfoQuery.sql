@@ -6,5 +6,5 @@ SELECT DISTINCT
   user_cd, user_nm,
   area_cd, area_nm
 FROM agabang_dw.daily_shop_sales_by_dimension
-WHERE YEAR(sale_dt) >= YEAR(today()) AND biz_cd != ''
+WHERE YEAR(sale_dt) >= YEAR(today()) AND biz_cd != '' AND user_nm != ''
 ;

@@ -85,7 +85,7 @@
         '{{\n(() => {\n  const seen = new Set();\n  let result = shopInfoQuery\n    .data\n    .filter(item => item.team_cd != \'\' && bizMultiSelect.value.includes(item.biz_cd))\n    .filter(item => {\n      const key = `${item.team_cd}-${item.team_nm}`;\n      if (seen.has(key)) return false;\n      seen.add(key);\n      return true;\n  })\n  .map(item => ({ team_cd: item.team_cd, team_nm: item.team_nm }))\n  .sort((a, b) => a.team_nm.localeCompare(b.team_nm, "ko"))\n\n  result.unshift({team_cd: "-1", team_nm: "전체"})\n\n  return result\n})()\n}}'
       }
       emptyMessage="No options"
-      fallbackTextByIndex="{{ item.tp_cd }}"
+      fallbackTextByIndex="{{ item.team_cd }}"
       label=""
       labelPosition="top"
       labels="{{ item.team_nm }}"
@@ -101,10 +101,10 @@
     <Select
       id="userSelect"
       data={
-        '{{\n(() => {\n  const seen = new Set();\n  let result = shopInfoQuery\n    .data\n    .filter(item => item.user_cd != \'\')\n    .filter(item => bizMultiSelect.value.includes(item.biz_cd))\n    .filter(item => {\n      const key = `${item.user_cd}-${item.user_nm}`;\n      if (seen.has(key)) return false;\n      seen.add(key);\n      return true;\n  })\n  .sort((a, b) => a.user_nm.localeCompare(b.user_nm, "ko"))\n\n  result.unshift({user_cd: "-1", user_nm: "전체"})\n\n  return result\n})()\n}}'
+        '{{\n(() => {\n  const seen = new Set();\n  let result = shopInfoQuery\n    .data\n    .filter(item => item.user_cd != \'\')\n    .filter(item => bizMultiSelect.value.includes(item.biz_cd))\n    //  .filter(item => teamSelect.value.includes(item.team_cd))\n    .filter(item => {\n      const key = `${item.user_cd}-${item.user_nm}-${item.team_cd}-${item.team_nm}`;\n      if (seen.has(key)) return false;\n      seen.add(key);\n      return true;\n  })\n  .sort((a, b) => a.user_nm.localeCompare(b.user_nm, "ko"))\n\n  const selectedTeamCd = teamSelect.value\n  if (selectedTeamCd != \'-1\'){\n    result = result.filter(item => item.team_cd === selectedTeamCd)\n  }\n  \n  result.unshift({user_cd: "-1", user_nm: "전체"})\n\n  return result\n})()\n}}'
       }
       emptyMessage="No options"
-      fallbackTextByIndex="{{ item.user_nm }}"
+      fallbackTextByIndex="{{ item.user_cd }}"
       label=""
       labelPosition="top"
       labels="{{ item.user_nm }}"
@@ -113,8 +113,8 @@
       placeholder="Select an option"
       showSelectionIndicator={true}
       textBefore="담당자명"
-      value=""
-      values="{{ item.user_cd }}"
+      value="{{ self.data[0].user_cd }}{{ self.data[0].team_cd }}"
+      values="{{ item.user_cd }}{{ item.team_cd }}"
     />
     <Spacer id="spacer4" />
     <Select
