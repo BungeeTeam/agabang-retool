@@ -176,6 +176,10 @@
       transformer="return formatDataAsArray(data)"
       warningCodes={[]}
     />
+    <Function
+      id="finalTblData"
+      funcBody={include("../lib/finalTblData.js", "string")}
+    />
   </Folder>
   <Folder id="loadData">
     <State id="selectedRow" value="{}" />
@@ -348,6 +352,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
+        size={57.953125}
         summaryAggregationMode="none"
       />
       <Column
@@ -359,6 +364,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
+        size={167.21875}
         summaryAggregationMode="none"
       />
       <Column
@@ -372,6 +378,7 @@
         label="분배수량"
         placeholder="Enter value"
         position="center"
+        size={57.484375}
         summaryAggregationMode="sum"
       />
       <Column
@@ -384,6 +391,7 @@
         label="대분류"
         placeholder="Select option"
         position="center"
+        size={92.03125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -397,6 +405,7 @@
         label="중분류"
         placeholder="Enter value"
         position="center"
+        size={47.109375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -410,6 +419,7 @@
         label="소분류"
         placeholder="Enter value"
         position="center"
+        size={67.859375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -423,6 +433,7 @@
         label="유통채널"
         placeholder="Enter value"
         position="center"
+        size={57.484375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -436,6 +447,7 @@
         label="팀명"
         placeholder="Enter value"
         position="center"
+        size={41}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -449,6 +461,7 @@
         label="담당자명"
         placeholder="Enter value"
         position="center"
+        size={57.484375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -464,6 +477,7 @@
         label="입고수량"
         placeholder="Enter value"
         position="center"
+        size={0}
         summaryAggregationMode="sum"
       />
       <Column
@@ -478,6 +492,7 @@
         label="판매수량"
         placeholder="Enter value"
         position="center"
+        size={0}
         summaryAggregationMode="sum"
       />
       <Column
@@ -490,6 +505,7 @@
         label="Related info"
         placeholder="Enter value"
         position="center"
+        size={0}
         summaryAggregationMode="none"
       />
       <ToolbarButton
@@ -824,7 +840,7 @@
       cellSelection="none"
       clearChangesetOnSave={true}
       data={
-        '{{ (() => {\n  const selectedData = shopPlan.value\n  const groupKeys = ["shop_cd", "shop_nm", "sty_cd", "col_cd", "sales_qty", "related_info"]\n  const allSizes = [...new Set(selectedData.map(item => item.size_cd).filter(Boolean))].sort() // 모든 사이즈 표시\n  const pivottedData = pivotData(selectedData, groupKeys, "size_cd", ["plan_qty"])\n  const normalizedData = pivottedData.map(row => {\n    const newRow = { ...row }\n    allSizes.forEach(size => {\n      if (!(size in newRow)) {\n        newRow[size] = 0\n      }\n    })\n    return newRow\n  })\n  return normalizedData.sort((a, b) => b?.sales_qty || 0 - a?.sales_qty || 0)\n  //  return pivottedData.sort((a, b) => b?.sales_qty || 0 - a?.sales_qty || 0)\n})()\n}}'
+        '{{ (() => {\n  const selectedData = shopPlan.value\n  const groupKeys = ["shop_cd", "shop_nm", "sty_cd", "col_cd", "sales_qty", "related_info"]\n  const allSizes = [...new Set(selectedData.map(item => item.size_cd).filter(Boolean))].sort() // 모든 사이즈 표시\n  const pivottedData = pivotData(selectedData, groupKeys, "size_cd", ["plan_qty"])\n  const normalizedData = pivottedData.map(row => {\n    const newRow = { ...row }\n    allSizes.forEach(size => {\n      if (!(size in newRow)) {\n        newRow[size] = 0\n      }\n    })\n    newRow.idx = `${newRow.shop_cd}${newRow.sty_cd}${newRow.col_cd}`\n    return newRow\n  })\n  return normalizedData.sort((a, b) => b?.sales_qty || 0 - a?.sales_qty || 0)\n  //  return pivottedData.sort((a, b) => b?.sales_qty || 0 - a?.sales_qty || 0)\n})()\n}}'
       }
       defaultFilterOperator="or"
       defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
@@ -840,6 +856,7 @@
       heightType="auto"
       includeRowInChangesetArray={true}
       margin="0"
+      primaryKeyColumnId="6c568"
       rowHeight="xsmall"
       showBorder={true}
       showHeader={true}
@@ -856,7 +873,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
-        size={57.703125}
+        size={57.828125}
       />
       <Column
         id="77e78"
@@ -868,7 +885,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
-        size={164.125}
+        size={161.1875}
       />
       <Column
         id="52305"
@@ -880,7 +897,7 @@
         label="스타일코드"
         placeholder="Enter value"
         position="center"
-        size={73.6875}
+        size={72.265625}
       />
       <Column
         id="eac68"
@@ -893,7 +910,7 @@
         label="칼라코드"
         placeholder="Enter value"
         position="center"
-        size={57.453125}
+        size={57.484375}
       />
       <Column
         id="7afab"
@@ -922,6 +939,20 @@
         placeholder="Enter value"
         position="center"
         size={318.40625}
+      />
+      <Column
+        id="6c568"
+        alignment="left"
+        editable="false"
+        format="string"
+        groupAggregationMode="none"
+        hidden="true"
+        key="idx"
+        label="Idx"
+        placeholder="Enter value"
+        position="center"
+        size={100}
+        summaryAggregationMode="none"
       />
       <ToolbarButton
         id="1a"
