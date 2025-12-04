@@ -8,18 +8,18 @@ WITH
 ({{ p_year_codes }}) as year_code,
 [{{ p_year_codes }}] as year_code_array,
       
-    dsmove as (SELECT sty_cd,
+    dsmove as (SELECT sty_cd, col_cd,
                       sum(CASE WHEN in_wh_cd = '3000' THEN fix_qty ELSE 0 END)  as mv_in_qty,
                       sum(CASE WHEN out_wh_cd = '3000' THEN fix_qty ELSE 0 END) as mv_out_qty
                FROM agabang.dsmove as A
                WHERE toDate(move_dt) between seasonEndDate and endDate
-               group by sty_cd),
-    dsin as (SELECT sty_cd,
+               group by sty_cd, col_cd),
+    dsin as (SELECT sty_cd, col_cd,
                     sum(in_qty) as in_qty
             from agabang.dsin
             WHERE wh_cd = '3000'
             and toDate(in_dt) between seasonEndDate and endDate
-            group by sty_cd),
+            group by sty_cd, col_cd),
     itemBase as(
            SELECT
             sty_cd, sty_nm,
@@ -79,7 +79,7 @@ SELECT
     (mv_in_qty + coalesce(in_qty,0) - mv_out_qty) * tag_price as net_out_tag,
     (mv_in_qty + coalesce(in_qty,0) - mv_out_qty) * sale_price as net_out_amt
 FROM dsmove as A
-LEFT JOIN dsin as B ON A.sty_cd = B.sty_cd
+LEFT JOIN dsin as B ON A.sty_cd = B.sty_cd and A.col_cd = B.col_cd
 JOIN(
     SELECT
         distinct sty_cd, tag_prce as tag_price, f_sale_prce as sale_price
