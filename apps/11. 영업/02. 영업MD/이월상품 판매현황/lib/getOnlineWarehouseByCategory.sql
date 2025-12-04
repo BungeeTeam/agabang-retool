@@ -23,6 +23,7 @@ WITH
             group by sty_cd, col_cd),
     itemBase as(
            SELECT
+            distinct
             sty_cd, sty_nm,
             col_cd, col_nm,
             tag_price, cost_price,

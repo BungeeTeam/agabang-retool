@@ -14,7 +14,11 @@ const filtered = rawData.filter(i => i.br_cd === {{ brandMultiSelect2.value }});
 
 // 2. 카테고리별 그룹화 (year_season_cd 제거 - 매칭 키와 일치)
 const sumKeys = ["net_out_qty","net_out_tag","net_out_amt","ttl_out_qty","ttl_rtn_qty","ttl_out_amt","ttl_rtn_amt","ttl_out_tag","ttl_rtn_tag"];
-const keys = ["br_cd", "year_cd", "season_cd", "category_name"];
+const keys = [
+  "br_cd", "br_nm",
+  "year_cd", "year_nm", "season_cd", "season_nm",
+ "category_name", "category_order", "item_grade"
+];
 
 const groupedArr = groupBySum(filtered, keys, sumKeys);
 

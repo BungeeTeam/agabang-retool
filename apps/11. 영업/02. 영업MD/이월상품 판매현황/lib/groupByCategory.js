@@ -34,7 +34,8 @@ if ({{tabs1.value}} === '오프라인') {
   });
 
   // 출고 데이터를 기준으로 최종 배열 생성
-  const onlineGroupedFromTarget = groupBySum(online_data, keys, sumKeys);
+  //  const onlineGroupedFromTarget = groupBySum(online_data, keys, sumKeys);
+  const onlineGroupedFromTarget = online_data
   const finalOnlineArr = [];
   
   onlineGroupedFromTarget.forEach(outItem => {
@@ -202,11 +203,18 @@ const totalObj = {
   category_name: '총계',
   category_order: "-1",
   season_nm: '총계',
+  item_grade:'총계',
   ...totalSums
 };
 finalArr.push(totalObj);
 
-return finalArr.sort((a, b) => {
+//primay key를 위해 idx 추가
+const _finalArr = finalArr.map(item => ({
+  ...item,
+  idx: `${item.item_grade}-${item.category_name}`
+}));
+
+return _finalArr.sort((a, b) => {
   const yearA = a.year_nm || '';
   const yearB = b.year_nm || '';
   const yearComparison = yearB.localeCompare(yearA, "ko");
