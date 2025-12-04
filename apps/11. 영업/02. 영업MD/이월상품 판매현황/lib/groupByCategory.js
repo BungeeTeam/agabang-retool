@@ -22,67 +22,154 @@ if ({{tabs1.value}} === '오프라인') {
 
 } else if ({{tabs1.value}} === '온라인') {
   // '온라인' 탭: 판매량은 data 소스, 출고량은 online_data 소스 사용
+  // 출고 데이터를 기준으로 순회하여, 판매가 없어도 출고 데이터가 표시되도록 수정
   const onlineSourceData = data.filter(i => i.onoff_flag === '온라인');
   const onlineGroupedFromSource = groupBySum(onlineSourceData, keys, sumKeys);
-
-  const onlineTargetMap = new Map();
-  groupBySum(online_data, keys, sumKeys).forEach(item => {
-    const key = `${item.br_cd}-${item.year_cd}-${item.season_cd}-${item.category_name}`;
-    onlineTargetMap.set(key, item);
-  });
-
+  
+  // 판매 데이터를 Map으로 변환 (빠른 조회를 위해)
+  const onlineSaleMap = new Map();
   onlineGroupedFromSource.forEach(item => {
     const key = `${item.br_cd}-${item.year_cd}-${item.season_cd}-${item.category_name}`;
-    const targetData = onlineTargetMap.get(key);
-    if (targetData) {
-      // online_data의 출고량 값으로 덮어쓰기
+    onlineSaleMap.set(key, item);
+  });
+
+  // 출고 데이터를 기준으로 최종 배열 생성
+  const onlineGroupedFromTarget = groupBySum(online_data, keys, sumKeys);
+  const finalOnlineArr = [];
+  
+  onlineGroupedFromTarget.forEach(outItem => {
+    const key = `${outItem.br_cd}-${outItem.year_cd}-${outItem.season_cd}-${outItem.category_name}`;
+    const saleItem = onlineSaleMap.get(key);
+    
+    if (saleItem) {
+      // 판매 데이터가 있는 경우: 판매량은 판매 데이터에서, 출고량은 출고 데이터에서
+      const mergedItem = { ...saleItem };
       netOutKeys.forEach(netKey => {
-        item[netKey] = targetData[netKey] || 0;
+        mergedItem[netKey] = outItem[netKey] || 0;
       });
+      finalOnlineArr.push(mergedItem);
     } else {
-      // 매칭되는 온라인 출고량이 없으면 0으로 처리
-      netOutKeys.forEach(netKey => {
-        item[netKey] = 0;
-      });
+      // 판매 데이터가 없는 경우: 출고 데이터만 사용 (판매량은 0으로 초기화)
+      const outOnlyItem = { ...outItem };
+      // 판매 관련 필드 초기화
+      outOnlyItem.sale_tag = 0;
+      outOnlyItem.sale_qty = 0;
+      outOnlyItem.sale_amt = 0;
+      // 나머지 필드는 outItem에서 가져오거나 기본값 설정
+      if (!outOnlyItem.biz_cd) outOnlyItem.biz_cd = '';
+      if (!outOnlyItem.biz_nm) outOnlyItem.biz_nm = '';
+      if (!outOnlyItem.year_season_cd) outOnlyItem.year_season_cd = '';
+      finalOnlineArr.push(outOnlyItem);
     }
   });
-  baseArr = onlineGroupedFromSource;
+  
+  // 판매 데이터에는 있지만 출고 데이터에는 없는 경우도 추가
+  onlineGroupedFromSource.forEach(saleItem => {
+    const key = `${saleItem.br_cd}-${saleItem.year_cd}-${saleItem.season_cd}-${saleItem.category_name}`;
+    const existsInOut = onlineGroupedFromTarget.some(outItem => 
+      `${outItem.br_cd}-${outItem.year_cd}-${outItem.season_cd}-${outItem.category_name}` === key
+    );
+    if (!existsInOut) {
+      // 출고 데이터가 없는 경우: 출고량은 0으로 설정
+      const saleOnlyItem = { ...saleItem };
+      netOutKeys.forEach(netKey => {
+        saleOnlyItem[netKey] = 0;
+      });
+      finalOnlineArr.push(saleOnlyItem);
+    }
+  });
+  
+  baseArr = finalOnlineArr;
 
 } else if ({{tabs1.value}} === '합계') {
-  // '합계' 탭: (전체 판매량) + (오프라인 출고량 + 온라인 출고량)
+  // '합계' 탭: 오프라인 결과 + 온라인 결과를 합산
+  // 각각의 탭 로직을 독립적으로 실행한 후 합침
   
-  // 1. 전체 데이터 합산 (올바른 전체 판매량 + (오프라인+소스온라인) 출고량)
-  const allGrouped = groupBySum(data, keys, sumKeys);
-
-  // 2. 소스 데이터 중 '온라인' 출고량만 따로 계산 (나중에 빼줄 값)
+  // 1. 오프라인 데이터 처리 (오프라인 탭 로직과 동일)
+  const offlineData = data.filter(i => i.onoff_flag === '오프라인');
+  const offlineGrouped = groupBySum(offlineData, keys, sumKeys);
+  
+  // 2. 온라인 데이터 처리 (온라인 탭 로직과 동일)
   const onlineSourceData = data.filter(i => i.onoff_flag === '온라인');
-  const onlineSourceMap = new Map();
-  groupBySum(onlineSourceData, keys, sumKeys).forEach(item => {
+  const onlineGroupedFromSource = groupBySum(onlineSourceData, keys, sumKeys);
+  
+  // 판매 데이터를 Map으로 변환
+  const onlineSaleMap = new Map();
+  onlineGroupedFromSource.forEach(item => {
     const key = `${item.br_cd}-${item.year_cd}-${item.season_cd}-${item.category_name}`;
-    onlineSourceMap.set(key, item);
+    onlineSaleMap.set(key, item);
+  });
+
+  // 출고 데이터를 기준으로 최종 배열 생성
+  const onlineGroupedFromTarget = groupBySum(online_data, keys, sumKeys);
+  const finalOnlineArr = [];
+  
+  onlineGroupedFromTarget.forEach(outItem => {
+    const key = `${outItem.br_cd}-${outItem.year_cd}-${outItem.season_cd}-${outItem.category_name}`;
+    const saleItem = onlineSaleMap.get(key);
+    
+    if (saleItem) {
+      // 판매 데이터가 있는 경우: 판매량은 판매 데이터에서, 출고량은 출고 데이터에서
+      const mergedItem = { ...saleItem };
+      netOutKeys.forEach(netKey => {
+        mergedItem[netKey] = outItem[netKey] || 0;
+      });
+      finalOnlineArr.push(mergedItem);
+    } else {
+      // 판매 데이터가 없는 경우: 출고 데이터만 사용 (판매량은 0으로 초기화)
+      const outOnlyItem = { ...outItem };
+      outOnlyItem.sale_tag = 0;
+      outOnlyItem.sale_qty = 0;
+      outOnlyItem.sale_amt = 0;
+      if (!outOnlyItem.biz_cd) outOnlyItem.biz_cd = '';
+      if (!outOnlyItem.biz_nm) outOnlyItem.biz_nm = '';
+      if (!outOnlyItem.year_season_cd) outOnlyItem.year_season_cd = '';
+      finalOnlineArr.push(outOnlyItem);
+    }
   });
   
-  // 3. 최종적으로 반영할 '타겟' 온라인 출고량 데이터 (나중에 더해줄 값)
-  const onlineTargetMap = new Map();
-  groupBySum(online_data, keys, sumKeys).forEach(item => {
-    const key = `${item.br_cd}-${item.year_cd}-${item.season_cd}-${item.category_name}`;
-    onlineTargetMap.set(key, item);
+  // 판매 데이터에는 있지만 출고 데이터에는 없는 경우도 추가
+  onlineGroupedFromSource.forEach(saleItem => {
+    const key = `${saleItem.br_cd}-${saleItem.year_cd}-${saleItem.season_cd}-${saleItem.category_name}`;
+    const existsInOut = onlineGroupedFromTarget.some(outItem => 
+      `${outItem.br_cd}-${outItem.year_cd}-${outItem.season_cd}-${outItem.category_name}` === key
+    );
+    if (!existsInOut) {
+      const saleOnlyItem = { ...saleItem };
+      netOutKeys.forEach(netKey => {
+        saleOnlyItem[netKey] = 0;
+      });
+      finalOnlineArr.push(saleOnlyItem);
+    }
   });
-
-  // 4. 최종 계산: (전체합) - (소스온라인출고) + (타겟온라인출고)
-  allGrouped.forEach(item => {
+  
+  // 3. 오프라인과 온라인 결과를 합산
+  const combinedMap = new Map();
+  
+  // 오프라인 데이터를 Map에 추가
+  offlineGrouped.forEach(item => {
     const key = `${item.br_cd}-${item.year_cd}-${item.season_cd}-${item.category_name}`;
-    const sourceOnline = onlineSourceMap.get(key);
-    const targetOnline = onlineTargetMap.get(key);
-
-    netOutKeys.forEach(netKey => {
-        const initialValue = item[netKey] || 0;
-        const sourceValue = sourceOnline ? (sourceOnline[netKey] || 0) : 0;
-        const targetValue = targetOnline ? (targetOnline[netKey] || 0) : 0;
-        item[netKey] = initialValue - sourceValue + targetValue;
-    });
+    combinedMap.set(key, { ...item });
   });
-  baseArr = allGrouped;
+  
+  // 온라인 데이터를 Map에 합산
+  finalOnlineArr.forEach(item => {
+    const key = `${item.br_cd}-${item.year_cd}-${item.season_cd}-${item.category_name}`;
+    const existing = combinedMap.get(key);
+    
+    if (existing) {
+      // 기존 항목이 있으면 합산
+      sumKeys.forEach(sumKey => {
+        existing[sumKey] = (existing[sumKey] || 0) + (item[sumKey] || 0);
+      });
+    } else {
+      // 기존 항목이 없으면 새로 추가
+      combinedMap.set(key, { ...item });
+    }
+  });
+  
+  // Map을 배열로 변환
+  baseArr = Array.from(combinedMap.values());
 }
 
 // --- ✨ 소계 및 총계 추가, 최종 정렬 (이하 로직은 동일) ---
