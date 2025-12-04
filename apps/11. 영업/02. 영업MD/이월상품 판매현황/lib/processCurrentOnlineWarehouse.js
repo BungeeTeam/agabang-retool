@@ -20,6 +20,7 @@ const keys = [
   "year_season_cd", "category_name", "category_order", "item_grade"
 ];
 
+
 const groupedArr = groupBySum(filtered, keys, sumKeys);
 
 return groupedArr;

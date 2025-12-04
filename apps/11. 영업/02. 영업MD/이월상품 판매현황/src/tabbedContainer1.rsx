@@ -529,6 +529,7 @@
       emptyMessage="No rows found"
       enableSaveActions={true}
       heightType="auto"
+      primaryKeyColumnId="2237c"
       rowBackgroundColor="{{ currentSourceRow.category_name === '소계' ? '01488f33' :
   currentSourceRow.category_name === '총계' ? '01488f60' :
   'ffffff' }}"
@@ -940,6 +941,20 @@
         size={111}
         summaryAggregationMode="none"
         valueOverride="{{ item/1000000 }}"
+      />
+      <Column
+        id="2237c"
+        alignment="left"
+        editable={false}
+        format="string"
+        groupAggregationMode="none"
+        hidden="true"
+        key="idx"
+        label="Idx"
+        placeholder="Enter value"
+        position="center"
+        size={100}
+        summaryAggregationMode="none"
       />
       <ToolbarButton
         id="1a"
