@@ -8,6 +8,7 @@ WITH
 ({{ p_year_codes }}) as year_code,
 [{{ p_year_codes }}] as year_code_array,
       
+
     dsmove as (SELECT sty_cd, col_cd,
                       sum(CASE WHEN in_wh_cd = '3000' THEN fix_qty ELSE 0 END)  as mv_in_qty,
                       sum(CASE WHEN out_wh_cd = '3000' THEN fix_qty ELSE 0 END) as mv_out_qty
@@ -28,6 +29,7 @@ WITH
             br_cd, br_nm,
             year_nm, year_cd,
             season_cd, season_nm,
+            concat(year_cd, season_cd) as year_season_cd,
            CASE WHEN year_cd = year_code_array[1] THEN 'B'
                 WHEN year_cd = year_code_array[2] THEN 'C'
                 WHEN year_cd = year_code_array[3] THEN 'D'
@@ -55,7 +57,7 @@ WITH
     WHEN it = '9' THEN '9'
   ELSE '기타' END AS category_order
         FROM agabang_dw.dim_style
-        WHERE 
+        WHERE
             year_cd in year_code
             and it in ('1','2','3','4','5','7')
             and br_cd in (brand_code)
@@ -70,13 +72,13 @@ SELECT
     A.sty_cd as sty_cd,
     D.category_name as category_name, D.category_order, D.item_grade, '온라인' as onoff_flag,
     mv_in_qty + coalesce(in_qty,0) as ttl_out_qty,
-    (mv_in_qty + coalesce(in_qty,0))*tag_price as ttl_out_tag,
+    (mv_in_qty + coalesce(in_qty,0))*C.tag_price as ttl_out_tag,
     (mv_in_qty + coalesce(in_qty,0))*sale_price as ttl_out_amt,
     mv_out_qty as ttl_rtn_qty,
-    mv_out_qty*tag_price as ttl_rtn_tag,
+    mv_out_qty*C.tag_price as ttl_rtn_tag,
     mv_out_qty*sale_price as ttl_rtn_amt,
     (mv_in_qty + coalesce(in_qty,0) - mv_out_qty) as net_out_qty,
-    (mv_in_qty + coalesce(in_qty,0) - mv_out_qty) * tag_price as net_out_tag,
+    (mv_in_qty + coalesce(in_qty,0) - mv_out_qty) * C.tag_price as net_out_tag,
     (mv_in_qty + coalesce(in_qty,0) - mv_out_qty) * sale_price as net_out_amt
 FROM dsmove as A
 LEFT JOIN dsin as B ON A.sty_cd = B.sty_cd and A.col_cd = B.col_cd
@@ -85,6 +87,6 @@ JOIN(
         distinct sty_cd, tag_prce as tag_price, f_sale_prce as sale_price
     FROM agabang_dw.prod_sales_stock_by_color
 ) as C ON A.sty_cd = C.sty_cd
-LEFT JOIN itemBase as D ON A.sty_cd = D.sty_cd and A.col_cd = D.col_cd 
-WHERE substring(A.sty_cd,5,1) not in ('6','8','9') 
+LEFT JOIN itemBase as D ON A.sty_cd = D.sty_cd and A.col_cd = D.col_cd
+WHERE substring(A.sty_cd,5,1) not in ('6','8','9')
 and substring(A.sty_cd,3,1) in year_code ;
