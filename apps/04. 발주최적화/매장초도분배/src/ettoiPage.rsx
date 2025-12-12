@@ -142,7 +142,7 @@
   </Folder>
   <Folder id="loadData">
     <State id="brcd2" value={'"07"'} />
-    <State id="bizcd2" value="{}" />
+    <State id="bizcd2" value={'"A4"'} />
     <SqlQuery
       id="styQuery2"
       enableTransformer={true}
@@ -340,7 +340,6 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
-        size={57.796875}
         summaryAggregationMode="none"
       />
       <Column
@@ -352,7 +351,6 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
-        size={127.578125}
         summaryAggregationMode="none"
       />
       <Column
@@ -366,7 +364,6 @@
         label="분배수량"
         placeholder="Enter value"
         position="center"
-        size={57.484375}
         summaryAggregationMode="sum"
       />
       <Column
@@ -379,7 +376,6 @@
         label="대분류"
         placeholder="Select option"
         position="center"
-        size={63.109375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -393,7 +389,6 @@
         label="중분류"
         placeholder="Enter value"
         position="center"
-        size={47.109375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -407,7 +402,6 @@
         label="소분류"
         placeholder="Enter value"
         position="center"
-        size={67.859375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -421,7 +415,6 @@
         label="유통채널"
         placeholder="Enter value"
         position="center"
-        size={78.21875}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -435,7 +428,6 @@
         label="팀명"
         placeholder="Enter value"
         position="center"
-        size={38.78125}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -449,7 +441,6 @@
         label="담당자명"
         placeholder="Enter value"
         position="center"
-        size={57.484375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -465,7 +456,6 @@
         label="입고수량"
         placeholder="Enter value"
         position="center"
-        size={0}
         summaryAggregationMode="sum"
       />
       <Column
@@ -480,7 +470,6 @@
         label="판매수량"
         placeholder="Enter value"
         position="center"
-        size={0}
         summaryAggregationMode="sum"
       />
       <Column
@@ -493,7 +482,6 @@
         label="Related info"
         placeholder="Enter value"
         position="center"
-        size={0}
         summaryAggregationMode="none"
       />
       <ToolbarButton

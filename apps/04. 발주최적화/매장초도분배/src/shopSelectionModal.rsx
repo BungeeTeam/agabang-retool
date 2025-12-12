@@ -65,7 +65,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="center"
-        size={57.53125}
+        size={57.484375}
         summaryAggregationMode="none"
       />
       <Column
@@ -77,7 +77,7 @@
         label="매장명"
         placeholder="Enter value"
         position="center"
-        size={108.25}
+        size={140.453125}
         summaryAggregationMode="none"
       />
       <Column
@@ -105,7 +105,7 @@
         label="지정 수량"
         placeholder="Enter value"
         position="center"
-        size={60.484375}
+        size={60.5}
         summaryAggregationMode="none"
       />
       <ToolbarButton
