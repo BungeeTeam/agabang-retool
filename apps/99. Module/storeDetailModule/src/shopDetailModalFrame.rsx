@@ -810,15 +810,15 @@
         </Table>
       </Header>
       <View id="1c9b4" label="전체" viewKey={'"-1"'} />
-      <View id="90951" label="아가방" viewKey={'"01"'} />
-      <View id="d2422" label="에뜨와" viewKey={'"07"'} />
+      <View id="90951" label="아가방" viewKey={'"A1"'} />
+      <View id="d2422" label="에뜨와" viewKey={'"A4"'} />
       <View
         id="e50cd"
         disabled={false}
         hidden={false}
         iconPosition="left"
         label="디즈니"
-        viewKey={'"79"'}
+        viewKey={'"DS"'}
       />
     </Container>
     <Spacer id="spacer1" />

@@ -1,3 +1,4 @@
+-- 정준기 부문장님 요청에 따라 브랜드 코드 기준 집계에서 사업부 코드 기준 집계로 변경
 WITH tbl AS (
   SELECT 
     *,
@@ -45,8 +46,8 @@ SELECT
   COALESCE(cat_nm, '미분류') as "카테고리",
   shop_cd, 
   shop_nm,
-  br_cd,
+  biz_cd,
   sum(sales_price) / 1000 as "매출"
 FROM tbl
-GROUP BY "연도", "정상구분", "할인구분", br_cd, cat_nm, shop_cd, shop_nm
+GROUP BY "연도", "정상구분", "할인구분", biz_cd, cat_nm, shop_cd, shop_nm
 ;
