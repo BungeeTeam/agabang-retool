@@ -80,7 +80,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="sale_gb"
-        size={78.1875}
+        size={78.21875}
         valueOverride={'{{ self.data[i]["sale_gb"] }}'}
       />
       <Column
@@ -99,7 +99,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearRev"
-        size={51.0625}
+        size={50.9375}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
       />
@@ -120,7 +120,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="lastYearRev"
-        size={51.171875}
+        size={51.09375}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
       />
@@ -139,7 +139,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="lastYearGrowthRate"
-        size={82.265625}
+        size={82.203125}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -161,7 +161,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="lastYearGrowth"
-        size={82.265625}
+        size={82.203125}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-1).toString()]}}"
       />
@@ -181,7 +181,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="yearBeforeLastRev"
-        size={50.796875}
+        size={51.1875}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value-2).toString()]}}"
       />
@@ -200,7 +200,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="yearBeforeLastGrowthRate"
-        size={81.890625}
+        size={82.296875}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -222,7 +222,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="yearBeforeLastGrowth"
-        size={81.890625}
+        size={82.296875}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
       />
@@ -310,7 +310,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="팀"
-        size={36.71875}
+        size={36.734375}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["area_nm"] }}'}
       />
@@ -331,7 +331,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearRev"
-        size={51.0625}
+        size={50.9375}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
       >
@@ -360,7 +360,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearTarget"
-        size={51.0625}
+        size={50.9375}
         summaryAggregationMode="none"
         valueOverride={
           '{{ self.data[i]["target_sales"] === 0 ? null: self.data[i]["target_sales"] }}'
@@ -382,7 +382,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="목표달성율"
-        size={67.8125}
+        size={67.859375}
         summaryAggregationMode="none"
         valueOverride={
           '{{ self.data[i]["target_sales"] === 0 ? null : self.data[i][thisYear.value] / self.data[i]["target_sales"] }}'
@@ -403,7 +403,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="목표차액"
-        size={57.453125}
+        size={57.484375}
         summaryAggregationMode="none"
         textColor={'{{ item > 0 ? "green" : "red" }}'}
         valueOverride={
@@ -427,7 +427,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="lastYearRev"
-        size={51.171875}
+        size={51.09375}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
       />
@@ -446,7 +446,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="lastYearGrowthRate"
-        size={82.265625}
+        size={82.203125}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -468,7 +468,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="lastYearGrowth"
-        size={82.265625}
+        size={82.203125}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-1).toString()]}}"
       />
@@ -489,7 +489,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="yearBeforeLastRev"
-        size={50.796875}
+        size={51.1875}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value-2).toString()]}}"
       />
@@ -508,7 +508,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="yearBeforeLastGrowthRate"
-        size={81.890625}
+        size={82.296875}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -530,7 +530,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="yearBeforeLastGrowth"
-        size={81.890625}
+        size={82.296875}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
       />

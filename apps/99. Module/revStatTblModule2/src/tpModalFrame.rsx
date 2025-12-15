@@ -231,7 +231,7 @@
         summaryAggregationMode="sum"
         textColor={'{{ item > 0 ? "green" : "red" }}'}
         valueOverride={
-          '{{ self.data[i]["2025"] - self.data[i]["target_sales"] }}'
+          '{{ (self.data[i]["2025"] - self.data[i]["target_sales"] || 0) }}'
         }
       />
       <Column
@@ -293,7 +293,7 @@
         referenceId="lastYearGrowth"
         size={89.453125}
         summaryAggregationMode="sum"
-        valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-1).toString()]}}"
+        valueOverride="{{ (self.data[i][thisYear.value] - self.data[i][thisYear.value-1]) || 0}}"
       />
       <Column
         id="ba994"
@@ -354,7 +354,7 @@
         referenceId="yearBeforeLastGrowth"
         size={83.453125}
         summaryAggregationMode="sum"
-        valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
+        valueOverride="{{ (self.data[i][thisYear.value] - self.data[i][thisYear.value-2]) || 0}}"
       />
       <ToolbarButton
         id="3c"
