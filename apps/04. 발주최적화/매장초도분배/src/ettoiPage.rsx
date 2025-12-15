@@ -850,7 +850,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
-        size={57.796875}
+        size={57.90625}
         summaryAggregationMode="none"
       />
       <Column
@@ -876,7 +876,7 @@
         label="스타일코드"
         placeholder="Enter value"
         position="center"
-        size={75.453125}
+        size={73.671875}
         summaryAggregationMode="none"
       />
       <Column
@@ -890,7 +890,7 @@
         label="칼라코드"
         placeholder="Enter value"
         position="center"
-        size={57.484375}
+        size={57.46875}
         summaryAggregationMode="none"
       />
       <Column

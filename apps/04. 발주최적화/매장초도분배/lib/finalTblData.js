@@ -13,5 +13,5 @@ const normalizedData = pivottedData.map(row => {
   //  newRow.idx = `${newRow.shop_cd}${newRow.sty_cd}${newRow.col_cd}`
   return newRow
 })
-return normalizedData.sort((a, b) => b?.sales_qty || 0 - a?.sales_qty || 0
+return normalizedData.sort((a, b) => b?.sales_qty || 0 - a?.sales_qty || 0)
 
