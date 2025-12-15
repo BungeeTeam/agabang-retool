@@ -33,6 +33,16 @@
     </Button>
   </Header>
   <Body>
+    <FileDropzone
+      id="upload_file_dropzone"
+      _isUpgraded={true}
+      appendNewSelection={true}
+      iconBefore="bold/programming-browser-search"
+      label=""
+      labelPosition="top"
+      maxCount="100"
+      placeholder="업로드할 사진을 끌어오거나 선택하세요"
+    />
     <Table
       id="upload_list_table"
       cellSelection="none"
@@ -118,16 +128,6 @@
         }
       />
     </Table>
-    <FileDropzone
-      id="upload_file_dropzone"
-      _isUpgraded={true}
-      appendNewSelection={true}
-      iconBefore="bold/programming-browser-search"
-      label=""
-      labelPosition="top"
-      maxCount="100"
-      placeholder="업로드할 사진을 끌어오거나 선택하세요"
-    />
     <Button
       id="button4"
       iconBefore="bold/interface-upload-button-2"

@@ -73,6 +73,7 @@
       defaultSelectedRow={{ mode: "none", indexType: "display", index: 0 }}
       emptyMessage="No rows found"
       enableSaveActions={true}
+      primaryKeyColumnId="ae266"
       rowHeight="small"
       rowSelection="multiple"
       showBorder={true}
@@ -99,6 +100,7 @@
       <Column
         id="ae266"
         alignment="right"
+        editable="false"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{ showSeparators: true, notation: "standard" }}
@@ -110,7 +112,17 @@
         position="center"
         size={77}
         summaryAggregationMode="none"
-      />
+      >
+        <Event
+          event="clickCell"
+          method="copyToClipboard"
+          params={{ ordered: [{ value: "{{ currentSourceRow }}" }] }}
+          pluginId=""
+          type="util"
+          waitMs="0"
+          waitType="debounce"
+        />
+      </Column>
       <Column
         id="bce07"
         alignment="center"
