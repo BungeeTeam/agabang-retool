@@ -16,7 +16,7 @@ const data = {{ mergeShopInventoryByStyleQuery.value }}
 const sumKeys = ["in_qty", "rt_in_qty","net_sales_qty", "sales_qty", "cust_rqty", "rtn_qty", "adjt_qty", "stock_qty", "tot_sales_qty", "tot_stock_qty","period_in_qty", "period_rt_in_qty", "period_net_sale_qty", "period_sale_qty","period_cust_rqty"]
 
 const currentYear = new Date().getFullYear();
-const last5Years = Array.from({length: 5}, (_, i) => (currentYear - i).toString());
+const last5Years = Array.from({length: 6}, (_, i) => (currentYear + 1 - i).toString());
 
 const keys = ["year_nm"]
 
