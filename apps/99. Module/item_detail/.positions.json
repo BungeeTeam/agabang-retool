@@ -2,7 +2,6 @@
   "button1": {
     "container": "container4",
     "subcontainer": "846fc",
-    "row": 0,
     "col": 9,
     "height": 0.8,
     "stackPosition": {
@@ -140,7 +139,6 @@
   "containerTitle4": {
     "container": "container4",
     "subcontainer": "846fc",
-    "row": 0,
     "height": 0.6,
     "width": 9,
     "stackPosition": {
@@ -741,7 +739,6 @@
   },
   "upload_list_table": {
     "subcontainer": "modalFrame1",
-    "row": 0,
     "col": 5,
     "height": 8,
     "width": 7

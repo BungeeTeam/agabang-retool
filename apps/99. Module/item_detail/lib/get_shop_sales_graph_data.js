@@ -19,6 +19,7 @@ const shop_data = data.reduce((acc, item) => {
 
   if (!Array.isArray(parsedTrend) || parsedTrend.length === 0) return acc;
 
+
   if (selected_shop_names.length > 0 && selected_shop_names.includes(shopName)) {
     acc[shopName] = parsedTrend;
   } else if (selected_shop_names.length === 0) {
