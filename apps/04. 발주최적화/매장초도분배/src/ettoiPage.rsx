@@ -134,6 +134,7 @@
     />
     <SqlQuery
       id="getSelectedGroupShop2"
+      enableTransformer={true}
       query={include("../lib/getSelectedGroupShop2.sql", "string")}
       resourceDisplayName="clickhouse-dw"
       resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
