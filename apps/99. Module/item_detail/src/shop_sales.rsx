@@ -172,6 +172,20 @@
         summaryAggregationMode="sum"
       />
       <Column
+        id="a82ef"
+        alignment="center"
+        editableOptions={{ showStepper: true }}
+        format="decimal"
+        formatOptions={{ showSeparators: true, notation: "standard" }}
+        groupAggregationMode="sum"
+        key="total_in_qty"
+        label="순 입고량"
+        placeholder="Enter value"
+        position="center"
+        size={100}
+        summaryAggregationMode="sum"
+      />
+      <Column
         id="74e83"
         alignment="center"
         editableOptions={{ showStepper: true }}
@@ -184,20 +198,6 @@
         position="center"
         size={102}
         summaryAggregationMode="sum"
-      />
-      <Column
-        id="a82ef"
-        alignment="center"
-        editableOptions={{ showStepper: true }}
-        format="decimal"
-        formatOptions={{ showSeparators: true, notation: "standard" }}
-        groupAggregationMode="sum"
-        key="total_in_qty"
-        label="순 입고량"
-        placeholder="Enter value"
-        position="center"
-        size={100}
-        summaryAggregationMode="none"
       />
       <Column
         id="d8a8b"
