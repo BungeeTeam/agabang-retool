@@ -502,9 +502,9 @@
   },
   "shop_sales_table": {
     "subcontainer": "shop_sales",
-    "row": 0.2,
+    "row": 0.8,
     "col": 7,
-    "height": 14.2,
+    "height": 14,
     "width": 5
   },
   "shop_search_text": {
@@ -731,6 +731,13 @@
         "height": 0
       }
     }
+  },
+  "text4": {
+    "subcontainer": "shop_sales",
+    "row": 0.2,
+    "col": 7,
+    "height": 0.6,
+    "width": 4
   },
   "upload_file_dropzone": {
     "subcontainer": "modalFrame1",

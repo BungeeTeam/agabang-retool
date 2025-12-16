@@ -11,7 +11,8 @@ WITH
         sty_cd,
         col_cd,
         toDate(A.wrk_dt) as wrk_dt,
-        SUM(SUM(out_qty)) OVER (PARTITION BY shop_cd ORDER BY wrk_dt) AS cum_in_qty
+        SUM(SUM(CASE WHEN io_type = 'O' THEN out_qty ELSE 0 END)) OVER (PARTITION BY shop_cd ORDER BY wrk_dt) AS cum_in_qty,
+        SUM(SUM(CASE WHEN io_type = 'O' THEN out_qty ELSE out_qty *(-1) END)) OVER (PARTITION BY shop_cd ORDER BY wrk_dt) AS net_in_qty
     from agabang.dsoutrtn as A
     LEFT JOIN (
         SELECT distinct shop_cd, shop_nm FROM agabang_dw.dim_shop
@@ -37,7 +38,9 @@ WITH
         br_cd,
         sty_cd,
         col_cd,
-        sum(CASE WHEN A.io_type = 'O' THEN A.out_qty ELSE A.out_qty*(-1)END) as total_in_qty
+        sum(CASE WHEN A.io_type = 'O' THEN A.out_qty ELSE A.out_qty*(-1)END) as total_in_qty,
+        sum(CASE WHEN A.io_type = 'O' THEN A.out_qty ELSE 0 END) as cum_in_qty,
+        sum(CASE WHEN A.io_type = 'R' THEN A.out_qty ELSE 0 END) as cum_rtn_qty
     from agabang.dsoutrtn as A
     LEFT JOIN (
         SELECT distinct shop_cd, shop_nm FROM agabang_dw.dim_shop
@@ -114,8 +117,13 @@ WITH
         arrayMap(
             (day, val) -> concat('{"day":"', toString(day), '", "val":', toString(val), '}'),
             groupArray(wrk_dt),
-            groupArray(cum_in_qty)
+            groupArray(net_in_qty)
         ) AS in_trend
+        -- arrayMap(
+        --     (day, val) -> concat('{"day":"', toString(day), '", "val":', toString(val), '}'),
+        --     groupArray(wrk_dt),
+        --     groupArray(cum_in_qty)
+        -- ) AS in_trend
     FROM SHOP_IN
     GROUP BY 1,2,3,4
 )
@@ -135,7 +143,7 @@ WITH
         arrayMap(
             (day, val) -> concat('{"day":"', toString(day), '", "val":', toString(val), '}'),
             groupArray(sale_dt),
-            groupArray(ROUND(coalesce(if(B.total_in_qty = 0, 0, A.cum_sale_qty / B.total_in_qty),0) * 100, 2))
+            groupArray(ROUND(coalesce(if(B.cum_in_qty = 0, 0, A.cum_sale_qty / B.cum_in_qty),0) * 100, 2))
         ) AS sale_per_trend
     FROM SHOP_SALES A
     INNER JOIN SHOP_IN_TOTAL B ON A.shop_cd = B.shop_cd
@@ -149,8 +157,10 @@ SELECT
     A.sty_cd,
     A.col_cd,
     A.total_in_qty,
+    A.cum_in_qty,
+    A.cum_rtn_qty,
     coalesce(B.total_sale_qty,0) as total_sale_qty,
-    ROUND(coalesce(if(A.total_in_qty = 0, 0,  coalesce(B.total_sale_qty,0) / A.total_in_qty),0) * 100, 2) AS total_sale_per,  
+    ROUND(coalesce(if(A.cum_in_qty = 0, 0,  coalesce(B.total_sale_qty,0) / A.cum_in_qty),0) * 100, 2) AS total_sale_per,  
     CONCAT('[', arrayStringConcat(C.in_trend, ','), ']') AS in_trend,
     CONCAT('[', arrayStringConcat(D.sale_trend, ','), ']') AS sale_trend,
     CONCAT('[', arrayStringConcat(D.sale_per_trend, ','), ']') AS sale_per_trend
