@@ -206,6 +206,7 @@ return formatDataAsArray(data)"
     />
     <JavascriptQuery
       id="get_shop_in_graph_data"
+      isMultiplayerEdited={false}
       notificationDuration={4.5}
       query={include("./lib/get_shop_in_graph_data.js", "string")}
       resourceName="JavascriptQuery"
@@ -218,6 +219,13 @@ return formatDataAsArray(data)"
       query={include("./lib/get_brand_and_season.js", "string")}
       resourceName="JavascriptQuery"
       runWhenPageLoads={true}
+      showSuccessToaster={false}
+    />
+    <JavascriptQuery
+      id="query21"
+      notificationDuration={4.5}
+      query={include("./lib/query21.js", "string")}
+      resourceName="JavascriptQuery"
       showSuccessToaster={false}
     />
   </Folder>

@@ -1,6 +1,7 @@
 // 데이터 전처리
 let data = formatDataAsArray(get_shop_sales.data);
-const selected_shop_names = shop_sales_table.selectedRowKeys;
+const selected_shop_names = shop_sales_table.selectedRows.map(i=> i['A.shop_nm']);
+const selected_shop_codes = shop_sales_table.selectedRows.map(i=> i['A.shop_cd']);
 
 // 매장별로 일별 판매율
 const plotlyData = [];
@@ -12,9 +13,10 @@ for (let i = 0; i < data.length; i++) {
     
     // 매장명 가져오기 - 문자열로 확실하게 변환
     const shopName = item["A.shop_nm"];
+    const shopCode = item["A.shop_cd"];
     
     // 선택된 매장 필터링
-    if (selected_shop_names.length > 0 && !selected_shop_names.includes(shopName)) {
+    if (selected_shop_codes.length > 0 && !selected_shop_codes.includes(shopCode)) {
       continue;
     }
     

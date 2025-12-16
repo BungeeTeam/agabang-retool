@@ -44,7 +44,7 @@
       iconBefore="bold/interface-search"
       label=""
       labelPosition="top"
-      placeholder="매장이름"
+      placeholder="매장이름 입력 후 엔터를 눌러주세요."
     >
       <Event
         event="submit"
@@ -65,11 +65,16 @@
         waitType="debounce"
       />
     </TextInput>
+    <Text
+      id="text4"
+      value="ℹ️ 본 페이지의 판매율은 매장 총 입고량(물류 반품량 차감 전) 대비 판매량으로 계산됩니다."
+      verticalAlign="center"
+    />
     <Table
       id="shop_sales_table"
       cellSelection="none"
       clearChangesetOnSave={true}
-      data="{{ filter_out_handover_shops.data }}"
+      data="{{ get_shop_sales.data }}"
       defaultSelectedRow={{ mode: "none", indexType: "display", index: 0 }}
       emptyMessage="No rows found"
       enableSaveActions={true}
@@ -94,13 +99,13 @@
         label="매장"
         placeholder="Enter value"
         position="left"
-        size={189.765625}
+        size={150.5}
         summaryAggregationMode="none"
       />
       <Column
         id="ae266"
         alignment="right"
-        editable="false"
+        editable={false}
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{ showSeparators: true, notation: "standard" }}
@@ -110,7 +115,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="center"
-        size={77}
+        size={60.6875}
         summaryAggregationMode="none"
       >
         <Event
@@ -134,23 +139,9 @@
         label="판매율"
         placeholder="Enter value"
         position="center"
-        size={131.140625}
+        size={76.109375}
         summaryAggregationMode="none"
         valueOverride="{{ item.toFixed() }}%"
-      />
-      <Column
-        id="ebab0"
-        alignment="center"
-        editableOptions={{ showStepper: true }}
-        format="decimal"
-        formatOptions={{ showSeparators: true, notation: "standard" }}
-        groupAggregationMode="sum"
-        key="total_in_qty"
-        label="입고량"
-        placeholder="Enter value"
-        position="center"
-        size={95.140625}
-        summaryAggregationMode="sum"
       />
       <Column
         id="ba9a4"
@@ -163,8 +154,50 @@
         label="판매량"
         placeholder="Enter value"
         position="center"
-        size={47.140625}
+        size={78.109375}
         summaryAggregationMode="sum"
+      />
+      <Column
+        id="4e8bb"
+        alignment="center"
+        editableOptions={{ showStepper: true }}
+        format="decimal"
+        formatOptions={{ showSeparators: true, notation: "standard" }}
+        groupAggregationMode="sum"
+        key="cum_in_qty"
+        label="총 입고량"
+        placeholder="Enter value"
+        position="center"
+        size={103}
+        summaryAggregationMode="sum"
+      />
+      <Column
+        id="74e83"
+        alignment="center"
+        editableOptions={{ showStepper: true }}
+        format="decimal"
+        formatOptions={{ showSeparators: true, notation: "standard" }}
+        groupAggregationMode="sum"
+        key="cum_rtn_qty"
+        label="물류 반품량"
+        placeholder="Enter value"
+        position="center"
+        size={102}
+        summaryAggregationMode="sum"
+      />
+      <Column
+        id="a82ef"
+        alignment="center"
+        editableOptions={{ showStepper: true }}
+        format="decimal"
+        formatOptions={{ showSeparators: true, notation: "standard" }}
+        groupAggregationMode="sum"
+        key="total_in_qty"
+        label="순 입고량"
+        placeholder="Enter value"
+        position="center"
+        size={100}
+        summaryAggregationMode="none"
       />
       <Column
         id="d8a8b"
@@ -178,7 +211,7 @@
         label="Br cd"
         placeholder="Enter value"
         position="center"
-        size={100}
+        size={44.078125}
         summaryAggregationMode="none"
       />
       <Column
@@ -191,7 +224,7 @@
         label="A sty cd"
         placeholder="Enter value"
         position="center"
-        size={100}
+        size={76.609375}
         summaryAggregationMode="none"
       />
       <Column
@@ -206,7 +239,7 @@
         label="A col cd"
         placeholder="Enter value"
         position="center"
-        size={100}
+        size={58.984375}
         summaryAggregationMode="none"
       />
       <Column
@@ -221,7 +254,7 @@
         label="In trend"
         placeholder="Select options"
         position="center"
-        size={100}
+        size={57.09375}
         summaryAggregationMode="none"
       />
       <Column
@@ -236,7 +269,7 @@
         label="Sale trend"
         placeholder="Select options"
         position="center"
-        size={100}
+        size={70.4375}
         summaryAggregationMode="none"
       />
       <Column
@@ -251,7 +284,7 @@
         label="Sale per trend"
         placeholder="Select options"
         position="center"
-        size={100}
+        size={91.234375}
         summaryAggregationMode="none"
       />
       <ToolbarButton
@@ -325,11 +358,26 @@
         waitType="debounce"
       />
       <Event
-        event="selectRow"
+        event="clickRow"
         method="trigger"
         params={{ ordered: [] }}
         pluginId="get_shop_in_graph_data"
         type="datasource"
+        waitMs="0"
+        waitType="debounce"
+      />
+      <Event
+        event="deselectRow"
+        method="run"
+        params={{
+          ordered: [
+            {
+              src: "get_shop_in_graph_data.trigger();\nget_shop_sales_per_graph_data.trigger();\nget_shop_sales_graph_data.trigger();",
+            },
+          ],
+        }}
+        pluginId=""
+        type="script"
         waitMs="0"
         waitType="debounce"
       />

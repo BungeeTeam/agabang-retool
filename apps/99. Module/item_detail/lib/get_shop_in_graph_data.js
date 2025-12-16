@@ -1,9 +1,12 @@
 let data = formatDataAsArray(get_shop_sales.data);
-const selected_shop_names = shop_sales_table.selectedRowKeys;
+const selected_shop_names = shop_sales_table.selectedRows.map(i=> i['A.shop_nm']);
+const selected_shop_codes = shop_sales_table.selectedRows.map(i=> i['A.shop_cd']);
+console.log(selected_shop_names)
 
 // 매장별로 일별 입고량
 const shop_data = data.reduce((acc, item) => {
   const shopName = item["A.shop_nm"];
+  const shopCode = item["A.shop_cd"];
   const rawTrend = item.in_trend;
 
   if (!rawTrend || !shopName) return acc;
@@ -23,8 +26,8 @@ const shop_data = data.reduce((acc, item) => {
 
   // 매장 필터링 조건
   if (
-    (selected_shop_names.length > 0 && selected_shop_names.includes(shopName)) ||
-    selected_shop_names.length === 0
+    (selected_shop_codes.length > 0 && selected_shop_codes.includes(shopCode)) ||
+    selected_shop_codes.length === 0
   ) {
     acc[shopName] = parsedTrend;
   }

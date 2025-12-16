@@ -1,8 +1,10 @@
 let data = formatDataAsArray(get_shop_sales.data);
-const selected_shop_names = shop_sales_table.selectedRowKeys;
+const selected_shop_names = shop_sales_table.selectedRows.map(i=> i['A.shop_nm']);
+const selected_shop_codes = shop_sales_table.selectedRows.map(i=> i['A.shop_cd']);
 
 const shop_data = data.reduce((acc, item) => {
   const shopName = item["A.shop_nm"];
+  const shopCode = item["A.shop_cd"];
   const rawTrend = item.sale_trend;
 
   if (!rawTrend || !shopName) return acc;
@@ -20,9 +22,9 @@ const shop_data = data.reduce((acc, item) => {
   if (!Array.isArray(parsedTrend) || parsedTrend.length === 0) return acc;
 
 
-  if (selected_shop_names.length > 0 && selected_shop_names.includes(shopName)) {
+  if (selected_shop_codes.length > 0 && selected_shop_codes.includes(shopCode)) {
     acc[shopName] = parsedTrend;
-  } else if (selected_shop_names.length === 0) {
+  } else if (selected_shop_codes.length === 0) {
     acc[shopName] = parsedTrend;
   }
 
