@@ -17,14 +17,14 @@
       doNotThrowOnNoOp={true}
       editorMode="gui"
       filterBy={
-        '[{"key":"shop_cd","value":"{{ shopTbl2.selectedRow.shop_cd }}","operation":"="}]'
+        '[{"key":"shop_cd","value":"{{ shopTbl2.selectedRow?.shop_cd }}","operation":"="},{"key":"biz_cd","value":"{{ bizcd2.value }}","operation":"="}]'
       }
       isMultiplayerEdited={false}
       query={include("../lib/updateRetoolDB2.sql", "string")}
       resourceDisplayName="retool_db"
       resourceName="33c51bac-e1f2-4560-8260-3be760a1fd8f"
       runWhenModelUpdates={false}
-      tableName="dim_shop"
+      tableName="dim_shop_v2"
       warningCodes={[]}
     >
       <Event
@@ -40,7 +40,7 @@
     <SqlQueryUnified
       id="updateDefaultQty2"
       actionType="BULK_UPDATE_BY_KEY"
-      bulkUpdatePrimaryKey="shop_cd"
+      bulkUpdatePrimaryKey="idx"
       changesetIsObject={true}
       changesetObject="{{ defaultShopTbl2.changesetArray }}"
       editorMode="gui"
@@ -56,7 +56,7 @@
       runWhenModelUpdates={false}
       showSuccessToaster={false}
       showUpdateSetValueDynamicallyToggle={false}
-      tableName="dim_shop"
+      tableName="dim_shop_v2"
       updateSetValueDynamically={true}
     >
       <Event

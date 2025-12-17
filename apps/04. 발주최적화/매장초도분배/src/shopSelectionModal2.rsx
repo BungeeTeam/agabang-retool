@@ -47,7 +47,7 @@
       defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
       emptyMessage="No rows found"
       enableSaveActions={true}
-      primaryKeyColumnId="da143"
+      primaryKeyColumnId="2e516"
       rowSelection="none"
       showBorder={true}
       showFooter={true}
@@ -65,7 +65,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="center"
-        size={57.8125}
+        size={57.84375}
         summaryAggregationMode="none"
       />
       <Column
@@ -77,7 +77,7 @@
         label="매장명"
         placeholder="Enter value"
         position="center"
-        size={143.390625}
+        size={140.453125}
         summaryAggregationMode="none"
       />
       <Column
@@ -105,7 +105,21 @@
         label="지정 수량"
         placeholder="Enter value"
         position="center"
-        size={60.46875}
+        size={60.5}
+        summaryAggregationMode="none"
+      />
+      <Column
+        id="2e516"
+        alignment="left"
+        editable="false"
+        format="string"
+        groupAggregationMode="none"
+        hidden="true"
+        key="idx"
+        label="Idx"
+        placeholder="Enter value"
+        position="center"
+        size={100}
         summaryAggregationMode="none"
       />
       <ToolbarButton

@@ -10,7 +10,7 @@
     <SqlQueryUnified
       id="updateDefaultQty"
       actionType="BULK_UPDATE_BY_KEY"
-      bulkUpdatePrimaryKey="shop_cd"
+      bulkUpdatePrimaryKey="idx"
       changesetIsObject={true}
       changesetObject="{{ defaultShopTbl.changesetArray }}"
       editorMode="gui"
@@ -26,7 +26,7 @@
       runWhenModelUpdates={false}
       showSuccessToaster={false}
       showUpdateSetValueDynamicallyToggle={false}
-      tableName="dim_shop"
+      tableName="dim_shop_v2"
       updateSetValueDynamically={true}
     >
       <Event
@@ -55,20 +55,20 @@
       id="updateRetoolDB"
       actionType="UPDATE_BY"
       changeset={
-        '[{"key":"is_checked","value":"{{ !shopTbl.selectedRow.is_checked }}"}]'
+        '[{"key":"is_checked","value":"{{ !shopTbl.selectedRow?.is_checked }}"}]'
       }
       changesetObject="{{ styTbl.changesetArray[0] }}"
       doNotThrowOnNoOp={true}
       editorMode="gui"
       filterBy={
-        '[{"key":"shop_cd","value":"{{ shopTbl.selectedRow.shop_cd }}","operation":"="}]'
+        '[{"key":"shop_cd","value":"{{ shopTbl.selectedRow?.shop_cd }}","operation":"="},{"key":"biz_cd","value":"{{ bizcd.value }}","operation":"="}]'
       }
       isMultiplayerEdited={false}
       query={include("../lib/updateRetoolDB.sql", "string")}
       resourceDisplayName="retool_db"
       resourceName="33c51bac-e1f2-4560-8260-3be760a1fd8f"
       runWhenModelUpdates={false}
-      tableName="dim_shop"
+      tableName="dim_shop_v2"
       warningCodes={[]}
     >
       <Event
@@ -861,7 +861,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
-        size={57.9375}
+        size={57.515625}
       />
       <Column
         id="77e78"
@@ -873,7 +873,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
-        size={161.1875}
+        size={47.140625}
       />
       <Column
         id="52305"
@@ -885,7 +885,7 @@
         label="스타일코드"
         placeholder="Enter value"
         position="center"
-        size={74.3125}
+        size={67.90625}
       />
       <Column
         id="eac68"
@@ -898,7 +898,7 @@
         label="칼라코드"
         placeholder="Enter value"
         position="center"
-        size={57.46875}
+        size={57.515625}
       />
       <Column
         id="7afab"

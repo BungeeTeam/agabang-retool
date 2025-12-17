@@ -47,12 +47,26 @@
       defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
       emptyMessage="No rows found"
       enableSaveActions={true}
-      primaryKeyColumnId="da143"
+      primaryKeyColumnId="cf2d1"
       rowSelection="none"
       showBorder={true}
       showFooter={true}
       showHeader={true}
     >
+      <Column
+        id="cf2d1"
+        alignment="left"
+        editable="false"
+        format="string"
+        groupAggregationMode="none"
+        hidden="true"
+        key="idx"
+        label="Idx"
+        placeholder="Enter value"
+        position="center"
+        size={100}
+        summaryAggregationMode="none"
+      />
       <Column
         id="da143"
         alignment="left"
@@ -77,7 +91,7 @@
         label="매장명"
         placeholder="Enter value"
         position="center"
-        size={140.453125}
+        size={130.078125}
         summaryAggregationMode="none"
       />
       <Column

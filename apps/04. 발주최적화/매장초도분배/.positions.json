@@ -490,7 +490,7 @@
   },
   "shopTbl": {
     "subcontainer": "shopSelectDrawer",
-    "row": 16,
+    "row": 9.6,
     "height": 1,
     "width": 12
   },
