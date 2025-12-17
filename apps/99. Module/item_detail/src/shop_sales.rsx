@@ -129,19 +129,18 @@
         />
       </Column>
       <Column
-        id="bce07"
+        id="4e8bb"
         alignment="center"
         editableOptions={{ showStepper: true }}
-        format="string"
+        format="decimal"
         formatOptions={{ showSeparators: true, notation: "standard" }}
         groupAggregationMode="sum"
-        key="total_sale_per"
-        label="판매율"
+        key="cum_in_qty"
+        label="총 입고량"
         placeholder="Enter value"
         position="center"
-        size={76.109375}
-        summaryAggregationMode="none"
-        valueOverride="{{ item.toFixed() }}%"
+        size={103}
+        summaryAggregationMode="sum"
       />
       <Column
         id="ba9a4"
@@ -158,17 +157,32 @@
         summaryAggregationMode="sum"
       />
       <Column
-        id="4e8bb"
+        id="bce07"
+        alignment="center"
+        editableOptions={{ showStepper: true }}
+        format="string"
+        formatOptions={{ showSeparators: true, notation: "standard" }}
+        groupAggregationMode="sum"
+        key="total_sale_per"
+        label="판매율"
+        placeholder="Enter value"
+        position="center"
+        size={76.109375}
+        summaryAggregationMode="none"
+        valueOverride="{{ item.toFixed() }}%"
+      />
+      <Column
+        id="74e83"
         alignment="center"
         editableOptions={{ showStepper: true }}
         format="decimal"
         formatOptions={{ showSeparators: true, notation: "standard" }}
         groupAggregationMode="sum"
-        key="cum_in_qty"
-        label="총 입고량"
+        key="cum_rtn_qty"
+        label="물류 반품량"
         placeholder="Enter value"
         position="center"
-        size={103}
+        size={102}
         summaryAggregationMode="sum"
       />
       <Column
@@ -183,20 +197,6 @@
         placeholder="Enter value"
         position="center"
         size={100}
-        summaryAggregationMode="sum"
-      />
-      <Column
-        id="74e83"
-        alignment="center"
-        editableOptions={{ showStepper: true }}
-        format="decimal"
-        formatOptions={{ showSeparators: true, notation: "standard" }}
-        groupAggregationMode="sum"
-        key="cum_rtn_qty"
-        label="물류 반품량"
-        placeholder="Enter value"
-        position="center"
-        size={102}
         summaryAggregationMode="sum"
       />
       <Column
