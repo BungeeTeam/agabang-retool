@@ -274,6 +274,7 @@
       emptyMessage="No rows found"
       heightType="auto"
       includeRowInChangesetArray={true}
+      primaryKeyColumnId="ec72f"
       showBorder={true}
       showFooter={true}
       showHeader={true}
@@ -389,6 +390,20 @@
         placeholder="Enter value"
         position="center"
         size={47.109375}
+        summaryAggregationMode="none"
+      />
+      <Column
+        id="ec72f"
+        alignment="left"
+        editable={false}
+        format="string"
+        groupAggregationMode="none"
+        hidden="true"
+        key="idx"
+        label="Idx"
+        placeholder="Enter value"
+        position="center"
+        size={100}
         summaryAggregationMode="none"
       />
       <ToolbarButton

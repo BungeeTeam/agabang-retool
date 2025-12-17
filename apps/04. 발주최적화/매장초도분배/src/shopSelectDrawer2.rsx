@@ -145,7 +145,7 @@
         label="매장명"
         placeholder="Enter value"
         position="center"
-        size={140.453125}
+        size={123}
         summaryAggregationMode="none"
       />
       <Column
@@ -276,10 +276,10 @@
       emptyMessage="No rows found"
       heightType="auto"
       includeRowInChangesetArray={true}
+      primaryKeyColumnId="bba0b"
       showBorder={true}
       showFooter={true}
       showHeader={true}
-      toolbarPosition="bottom"
     >
       <Column
         id="b1fb0"
@@ -391,6 +391,20 @@
         placeholder="Enter value"
         position="center"
         size={47.109375}
+        summaryAggregationMode="none"
+      />
+      <Column
+        id="bba0b"
+        alignment="left"
+        editable={false}
+        format="string"
+        groupAggregationMode="none"
+        hidden="true"
+        key="idx"
+        label="Idx"
+        placeholder="Enter value"
+        position="center"
+        size={100}
         summaryAggregationMode="none"
       />
       <ToolbarButton

@@ -1,5 +1,6 @@
 select
   distinct
+    concat(biz_cd,shop_cd) as idx,
     shop_cd, 
     shop_nm, 
     biz_nm,
