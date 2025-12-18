@@ -152,6 +152,7 @@
       enableSaveActions={true}
       heightType="auto"
       margin="4px 4px"
+      primaryKeyColumnId="e73d4"
       rowHeight="medium"
       rowSelection="none"
       showBorder={true}
@@ -163,6 +164,7 @@
       <Column
         id="e73d4"
         alignment="left"
+        editable={false}
         format="tag"
         formatOptions={{ automaticColors: true }}
         groupAggregationMode="none"
@@ -201,7 +203,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="biz_nm"
-        size={78.234375}
+        size={78.21875}
         summaryAggregationMode="none"
         valueOverride="{{ item }}"
       />
@@ -222,7 +224,7 @@
         label="기초류"
         placeholder="Enter value"
         position="center"
-        size={49.59375}
+        size={48.234375}
         summaryAggregationMode="none"
         textColor={
           '{{  currentSourceRow.기초류신장율 > 0 ?  "green" : "red"  }}'
@@ -245,7 +247,7 @@
         label="외의류"
         placeholder="Enter value"
         position="center"
-        size={54.765625}
+        size={47.109375}
         summaryAggregationMode="none"
         textColor={
           '{{ currentSourceRow.외의류신장율 > 0 ?  "green" : "red"  }}'
@@ -268,7 +270,7 @@
         label="발육"
         placeholder="Enter value"
         position="center"
-        size={45.75}
+        size={55.890625}
         summaryAggregationMode="none"
         textColor={'{{ currentSourceRow.발육신장율 > 0 ?  "green" : "red"  }}'}
         valueOverride="{{ item }}"
@@ -335,7 +337,7 @@
         label="일반용품위탁"
         placeholder="Enter value"
         position="center"
-        size={78.234375}
+        size={78.21875}
         summaryAggregationMode="none"
         textColor={
           '{{ currentSourceRow.일반용품위탁신장율 > 0  ?  "green" : "red"   }}'
@@ -358,7 +360,7 @@
         label="하드류"
         placeholder="Enter value"
         position="center"
-        size={47.125}
+        size={55.765625}
         summaryAggregationMode="none"
         textColor={'{{ currentSourceRow.하드류신장율 > 0 ? "green" : "red"  }}'}
         valueOverride="{{ item }}"
@@ -379,7 +381,7 @@
         label="기타"
         placeholder="Enter value"
         position="center"
-        size={47.953125}
+        size={53.109375}
         summaryAggregationMode="none"
         textColor={'{{ currentSourceRow.기타신장율 > 0 ? "green" : "red"  }}'}
         valueOverride="{{ item }}"

@@ -8,6 +8,7 @@ FROM (
   FROM agabang_dw.daily_shop_sales_by_dimension
   WHERE shop_cd = '{{ selectedRow.value.shop_cd }}' 
     AND date_format(DATE '{{ moment().startOf('year').format('YYYY-MM-DD') }}', '%m-%d') <= date_format(sale_dt, '%m-%d') AND date_format(sale_dt, '%m-%d') <= date_format(DATE '{{ endDate.value }}', '%m-%d')
-)
+  AND YEAR(sale_dt) >= {{ moment(endDate.value).subtract('years',2).year() }}
+) 
 GROUP BY year_month, br_cd
 ORDER BY br_cd, year_month

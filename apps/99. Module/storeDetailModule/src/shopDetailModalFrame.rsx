@@ -426,7 +426,7 @@
             label="브랜드코드"
             placeholder="Enter value"
             position="center"
-            size={67.90625}
+            size={67.859375}
             summaryAggregationMode="none"
           />
           <Column
@@ -444,7 +444,7 @@
             label="2025"
             placeholder="Enter value"
             position="center"
-            size={45.3125}
+            size={44.390625}
             summaryAggregationMode="none"
           />
           <Column
@@ -462,7 +462,7 @@
             label="2024"
             placeholder="Enter value"
             position="center"
-            size={45.546875}
+            size={44.546875}
             summaryAggregationMode="none"
           />
           <Column
@@ -480,7 +480,7 @@
             label="2023"
             placeholder="Enter value"
             position="center"
-            size={45.65625}
+            size={44.640625}
             summaryAggregationMode="none"
           />
         </Table>
@@ -489,7 +489,7 @@
     <Spacer id="spacer3" />
     <Text
       id="text18"
-      value="###### 브랜드별 카테고리 매출"
+      value="###### 사업부별 카테고리 매출"
       verticalAlign="center"
     />
     <Spacer id="spacer11" />
@@ -613,7 +613,7 @@
             label="기초류"
             placeholder="Enter value"
             position="center"
-            size={59.796875}
+            size={47.546875}
             summaryAggregationMode="none"
           />
           <Column
@@ -631,7 +631,7 @@
             label="외의류"
             placeholder="Enter value"
             position="center"
-            size={62.375}
+            size={51.828125}
             summaryAggregationMode="none"
           />
           <Column
@@ -703,7 +703,7 @@
             label="하드류"
             placeholder="Enter value"
             position="center"
-            size={47.875}
+            size={47.109375}
             summaryAggregationMode="none"
           />
           <Column
@@ -721,7 +721,7 @@
             label="발육"
             placeholder="Enter value"
             position="center"
-            size={45.59375}
+            size={36.734375}
             summaryAggregationMode="none"
           />
           <Column
@@ -739,7 +739,7 @@
             label="화장품"
             placeholder="Enter value"
             position="center"
-            size={48.09375}
+            size={47.109375}
             summaryAggregationMode="none"
           />
           <Column
@@ -776,7 +776,7 @@
             label="총합"
             placeholder="Enter value"
             position="right"
-            size={62.65625}
+            size={53.0625}
             summaryAggregationMode="none"
           />
           <ToolbarButton

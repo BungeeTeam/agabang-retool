@@ -222,7 +222,6 @@
   "text1": {
     "rowGroup": "header",
     "subcontainer": "sidebarFrame1",
-    "row": 0,
     "height": 1,
     "width": 1
   },
@@ -275,7 +274,6 @@
   "text2": {
     "container": "monthlySelect",
     "subcontainer": "490e1",
-    "row": 0,
     "height": 0.6,
     "stackPosition": {
       "object": {

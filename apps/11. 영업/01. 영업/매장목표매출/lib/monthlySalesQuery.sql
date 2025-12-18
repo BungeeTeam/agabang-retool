@@ -15,6 +15,7 @@ SELECT
   COALESCE(SUM(target_sales), 0) / 1000000 as target_sales
 FROM agabang_dw.f_daily_sales_by_shop
 WHERE date_format(dt, '%m-%d') < date_format(CURDATE(), '%m-%d')
+  AND yr >= {{ moment(dateRange.value.end).subtract('years',2).year() }}
 GROUP BY 
   yr as time_unit,
   ym,

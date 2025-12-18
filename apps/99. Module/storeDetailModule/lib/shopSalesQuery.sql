@@ -14,7 +14,7 @@ FROM (
     CONCAT(toString(year(sale_dt)), '-Q', toString(toQuarter(sale_dt))) AS year_quarter
   FROM agabang_dw.daily_shop_sales_by_dimension
   WHERE shop_cd = '{{ selectedRow.value.shop_cd }}' 
-    AND date_format(sale_dt, '%m-%d') <= date_format(DATE '{{ endDate.value }}', '%m-%d')
+    AND date_format(sale_dt, '%m-%d') <= date_format(DATE '{{ endDate.value }}', '%m-%d') AND YEAR(sale_dt) >= {{ moment(endDate.value).subtract('years',2).year() }}
 )
 GROUP BY year_month, year_quarter, yr, sale_dt
 ORDER BY year_month, sale_dt

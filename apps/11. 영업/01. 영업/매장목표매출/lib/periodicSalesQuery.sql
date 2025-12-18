@@ -14,7 +14,7 @@ SELECT
   SUM(rev) / 1000000 as rev, 
   COALESCE(SUM(target_sales), 0) / 1000000 as target_sales
 FROM agabang_dw.f_daily_sales_by_shop
-WHERE md >= date_format(DATE '{{ dateRange.value.start }}', '%m-%d') AND md <= date_format(DATE '{{ dateRange.value.end }}', '%m-%d')
+WHERE md >= date_format(DATE '{{ dateRange.value.start }}', '%m-%d') AND md <= date_format(DATE '{{ dateRange.value.end }}', '%m-%d') AND yr >= {{ moment(dateRange.value.end).subtract('years',2).year() }}
 GROUP BY 
   yr as time_unit,
   ym,
