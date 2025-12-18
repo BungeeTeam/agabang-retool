@@ -23,7 +23,7 @@ WITH tbl AS (
       year(sale_dt) as sales_year
     FROM agabang_dw.daily_shop_sales_by_dimension
     WHERE shop_cd = '{{ selectedRow.value.shop_cd }}' 
-    AND date_format(DATE '{{ startDate.value }}', '%m-%d') <= date_format(sale_dt, '%m-%d') AND date_format(sale_dt, '%m-%d') <= date_format(DATE '{{ endDate.value }}', '%m-%d')
+    AND date_format(DATE '{{ startDate.value }}', '%m-%d') <= date_format(sale_dt, '%m-%d') AND date_format(sale_dt, '%m-%d') <= date_format(DATE '{{ endDate.value }}', '%m-%d') AND YEAR(sale_dt) >= {{ moment(endDate.value).subtract('years',2).year() }}
   ) AS A
   LEFT JOIN (
     SELECT

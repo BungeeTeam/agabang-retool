@@ -656,7 +656,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="it_gb_nm"
-        size={62.75}
+        size={64.53125}
         summaryAggregationMode="none"
       />
       <Column
@@ -669,7 +669,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="item_nm"
-        size={67.859375}
+        size={88.59375}
         summaryAggregationMode="none"
       />
       <Column
