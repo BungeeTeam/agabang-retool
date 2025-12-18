@@ -15,6 +15,7 @@ SELECT
   COALESCE(SUM(target_sales), 0) / 1000000 as target_sales
 FROM agabang_dw.f_daily_sales_by_shop
 WHERE md >= date_format(DATE '{{ dateRange.value.start }}', '%m-%d') AND md <= date_format(DATE '{{ dateRange.value.end }}', '%m-%d') 
+  AND yr >= {{ moment(dateRange.value.end).subtract('years',2).year() }}
   AND biz_cd IN ('{{ bizMultiSelect.value.join("','") }}') 
   AND br_cd IN ('{{ brandMultiSelect.value.join("','") }}')
   AND CONCAT(shop_cd, shop_nm) LIKE '%{{ searchText.value }}%'
