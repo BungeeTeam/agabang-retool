@@ -26,6 +26,7 @@ SELECT
   SUM(sales_price) / 1000000 as rev
 FROM agabang_dw.daily_shop_sales_by_dimension
 WHERE date_format(sale_dt, '%m-%d') >= date_format(DATE '{{ dateRange.value.start || moment().startOf("year").format("YYYY-MM-DD") }}', '%m-%d') AND date_format(sale_dt, '%m-%d') <= date_format(DATE '{{ dateRange.value.end || moment().subtract(1, "days").format("YYYY-MM-DD") }}', '%m-%d')
+  AND YEAR(sale_dt) >= {{ moment().subtract('years',2).year() }}
 AND biz_cd IN ('{{ bizMultiSelect.value.join("','") }}') 
 AND br_cd IN ('{{ brandMultiSelect.value.join("','") }}')
 GROUP BY

@@ -21,15 +21,15 @@
       verticalAlign="center"
     />
     <Text
-      id="text8"
-      horizontalAlign="center"
-      value="**목표 달성률**"
-      verticalAlign="center"
-    />
-    <Text
       id="text6"
       horizontalAlign="center"
       value="**목표 매출**"
+      verticalAlign="center"
+    />
+    <Text
+      id="text8"
+      horizontalAlign="center"
+      value="**목표 달성률**"
       verticalAlign="center"
     />
     <ProgressCircle
