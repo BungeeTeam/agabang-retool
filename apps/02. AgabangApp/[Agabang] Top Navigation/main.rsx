@@ -60,56 +60,6 @@
       backgroundColor="white"
       isGlobalWidgetContainer={true}
     >
-      <DropdownButton
-        id="AccountDropdown"
-        _colorByIndex={["", ""]}
-        _fallbackTextByIndex={["", ""]}
-        _imageByIndex={["", ""]}
-        _values={["", ""]}
-        horizontalAlign="right"
-        icon="bold/interface-user-circle"
-        itemMode="static"
-        margin="8px 2px 8px 8px"
-        overlayMaxHeight={375}
-        style={{
-          ordered: [
-            { fontSize: "12px" },
-            { fontWeight: "600" },
-            { fontFamily: "Pretendard Variable" },
-            { icon: "#292929" },
-          ],
-        }}
-        styleVariant="outline"
-        text="{{current_user.lastName}}{{current_user.firstName}}"
-      >
-        <Option
-          id="16e70"
-          caption="{{ current_user.email }}"
-          disabled="true"
-          icon="bold/interface-user-circle"
-          label="{{current_user.lastName}}{{current_user.firstName}}"
-        />
-        <Option
-          id="516a6"
-          icon="bold/interface-logout-circle-alternate"
-          label="로그아웃"
-        >
-          <Event
-            event="click"
-            method="openUrl"
-            params={{
-              ordered: [
-                { url: "/logout" },
-                { options: { ordered: [{ newTab: false }] } },
-              ],
-            }}
-            pluginId=""
-            type="util"
-            waitMs="0"
-            waitType="debounce"
-          />
-        </Option>
-      </DropdownButton>
       <Navigation
         id="navigation1"
         dbBlobId="d3e265a3-7302-47a0-89ef-5dc40b9770c0"
@@ -797,7 +747,7 @@
             params={{
               ordered: [
                 {
-                  url: "https://agabang.cleave.work/app/reports_management/form#email={{ current_user.email }}&name={{ current_user.fullName }}&url={{ urlparams.href }}&version={{ retoolContext.pageTag }}",
+                  url: "https://agabang.cleave.work/app/reports_management/form#email={{ current_user.email }}&name={{ current_user.fullName }}&url={{ urlparams.href }}&version={{ retoolContext.pageTag }}&app_name={{ decodeURIComponent(retoolContext.appName) }}",
                 },
               ],
             }}
@@ -820,6 +770,56 @@
           screenTargetId="all_reports"
         />
       </Navigation>
+      <DropdownButton
+        id="AccountDropdown"
+        _colorByIndex={["", ""]}
+        _fallbackTextByIndex={["", ""]}
+        _imageByIndex={["", ""]}
+        _values={["", ""]}
+        horizontalAlign="right"
+        icon="bold/interface-user-circle"
+        itemMode="static"
+        margin="8px 2px 8px 8px"
+        overlayMaxHeight={375}
+        style={{
+          ordered: [
+            { fontSize: "12px" },
+            { fontWeight: "600" },
+            { fontFamily: "Pretendard Variable" },
+            { icon: "#292929" },
+          ],
+        }}
+        styleVariant="outline"
+        text="{{current_user.lastName}}{{current_user.firstName}}"
+      >
+        <Option
+          id="16e70"
+          caption="{{ current_user.email }}"
+          disabled="true"
+          icon="bold/interface-user-circle"
+          label="{{current_user.lastName}}{{current_user.firstName}}"
+        />
+        <Option
+          id="516a6"
+          icon="bold/interface-logout-circle-alternate"
+          label="로그아웃"
+        >
+          <Event
+            event="click"
+            method="openUrl"
+            params={{
+              ordered: [
+                { url: "/logout" },
+                { options: { ordered: [{ newTab: false }] } },
+              ],
+            }}
+            pluginId=""
+            type="util"
+            waitMs="0"
+            waitType="debounce"
+          />
+        </Option>
+      </DropdownButton>
     </ModuleContainerWidget>
   </Frame>
 </App>
