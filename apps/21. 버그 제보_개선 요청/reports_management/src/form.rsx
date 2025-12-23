@@ -20,6 +20,7 @@
 	submitted_at: {{ moment() }} ,
 	submitter_email: {{ current_user.email }},
 	submitter_name: {{ current_user.fullName }},
+    app_name: {{ url.hashParams?.app_name ?? '' }}
 }
 
 "
@@ -142,6 +143,14 @@
    }
  }
 }"
+  />
+  <JavascriptQuery
+    id="formatUrl"
+    notificationDuration={4.5}
+    query={include("../lib/formatUrl.js", "string")}
+    resourceName="JavascriptQuery"
+    runWhenPageLoads={true}
+    showSuccessToaster={false}
   />
   <Frame
     id="$main3"
