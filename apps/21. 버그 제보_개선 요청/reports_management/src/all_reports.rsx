@@ -202,7 +202,7 @@
         label="작성일시"
         placeholder="Enter value"
         position="center"
-        size={111}
+        size={96}
         summaryAggregationMode="none"
       />
       <Column
@@ -255,7 +255,7 @@
         params={{
           ordered: [
             {
-              src: "varSelectedRow.setValue(currentSourceRow);\nmodalFrameReportsDetailUser.show();\ngetReplies.trigger();\n",
+              src: "varSelectedRow.setValue(currentSourceRow);\nmodalFrameReportsDetailUser.show();\nformatFiles.trigger();\ngetReplies.trigger();\n",
             },
           ],
         }}
