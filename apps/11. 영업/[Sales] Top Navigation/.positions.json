@@ -3,7 +3,6 @@
     "type": "stack",
     "container": "stack1",
     "subcontainer": "c010c",
-    "row": 0,
     "col": 11,
     "height": 1,
     "width": 1,
@@ -76,7 +75,6 @@
   },
   "stack1": {
     "container": "moduleContainer",
-    "row": 0,
     "height": 3.8,
     "width": 12
   }
