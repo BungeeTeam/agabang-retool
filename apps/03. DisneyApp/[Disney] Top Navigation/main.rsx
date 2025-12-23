@@ -679,7 +679,7 @@
             params={{
               ordered: [
                 {
-                  url: "https://agabang.cleave.work/app/reports_management/form#email={{ current_user.email }}&name={{ current_user.fullName }}&url={{ urlparams.href }}&version={{ retoolContext.pageTag }}",
+                  url: "https://agabang.cleave.work/app/reports_management/form#email={{ current_user.email }}&name={{ current_user.fullName }}&url={{ urlparams.href }}&version={{ retoolContext.pageTag }}&app_name={{ decodeURIComponent(retoolContext.appName) }}",
                 },
               ],
             }}
