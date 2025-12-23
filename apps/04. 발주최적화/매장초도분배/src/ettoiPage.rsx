@@ -11,7 +11,7 @@
       id="updateRetoolDB2"
       actionType="UPDATE_BY"
       changeset={
-        '[{"key":"is_checked","value":"{{ !shopTbl2.selectedRow.is_checked }}"}]'
+        '[{"key":"is_checked","value":"{{ !shopTbl2.selectedRow?.is_checked }}"}]'
       }
       changesetObject="{{ styTbl2.changesetArray[0] }}"
       doNotThrowOnNoOp={true}
@@ -135,6 +135,7 @@
     <SqlQuery
       id="getSelectedGroupShop2"
       enableTransformer={true}
+      isMultiplayerEdited={false}
       query={include("../lib/getSelectedGroupShop2.sql", "string")}
       resourceDisplayName="clickhouse-dw"
       resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
@@ -143,7 +144,9 @@
   </Folder>
   <Folder id="loadData">
     <State id="brcd2" value={'"07"'} />
+    <State id="selectedShop2" value="" />
     <State id="bizcd2" value={'"A4"'} />
+    <State id="selectedRow2" value="{}" />
     <SqlQuery
       id="styQuery2"
       enableTransformer={true}
@@ -180,7 +183,6 @@
       transformer="return formatDataAsArray(data)"
       warningCodes={[]}
     />
-    <State id="selectedRow2" value="{}" />
     <Function
       id="shopListCombined2"
       funcBody={include("../lib/shopListCombined2.js", "string")}
@@ -513,7 +515,7 @@
         event="expandRow"
         method="setValue"
         params={{ ordered: [{ value: "{{ currentSourceRow }}" }] }}
-        pluginId="bizcd2"
+        pluginId="selectedShop2"
         type="state"
         waitMs="0"
         waitType="debounce"
@@ -522,7 +524,7 @@
         event="selectRow"
         method="setValue"
         params={{ ordered: [{ value: "{{ currentSourceRow }}" }] }}
-        pluginId="bizcd2"
+        pluginId="selectedShop2"
         type="state"
         waitMs="0"
         waitType="debounce"
@@ -964,7 +966,7 @@
         event="expandRow"
         method="setValue"
         params={{ ordered: [{ value: "{{ currentSourceRow }}" }] }}
-        pluginId="bizcd2"
+        pluginId="selectedShop2"
         type="state"
         waitMs="0"
         waitType="debounce"
