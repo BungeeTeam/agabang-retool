@@ -14,7 +14,7 @@
   <Header>
     <Text
       id="modalTitle1"
-      value="### {{ varSelectedRow.value.report_title }}"
+      value="##### {{ varSelectedRow.value.report_title }}"
       verticalAlign="center"
     />
     <Button
@@ -36,10 +36,10 @@
       />
       <Event
         event="click"
-        method="run"
-        params={{ ordered: [{ src: "richTextEditor1.setValue('')" }] }}
-        pluginId=""
-        type="script"
+        method="clearValue"
+        params={{ ordered: [] }}
+        pluginId="textArea2"
+        type="widget"
         waitMs="0"
         waitType="debounce"
       />
@@ -56,6 +56,123 @@
       value="{{varSelectedRow.value.report_description }}"
       verticalAlign="center"
     />
+    <ToggleLink
+      id="toggleLink3"
+      hidden="{{ varSelectedRow.value.file_attachments.length <= 0}}"
+      text="{{ self.value ? '첨부파일' : '첨부파일 숨기기' }}"
+      value="true"
+    />
+    <Table
+      id="table6"
+      actionsOverflowPosition={1}
+      cellSelection="none"
+      clearChangesetOnSave={true}
+      data="{{ varSelectedRow.value.file_attachments }}"
+      defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
+      dynamicRowHeights={true}
+      emptyMessage="No rows found"
+      enableSaveActions={true}
+      heightType="auto"
+      hidden="{{ toggleLink3.value }}"
+      rowHeight="small"
+      showBorder={true}
+      showHeader={true}
+      toolbarPosition="bottom"
+    >
+      <Column
+        id="26ba2"
+        alignment="left"
+        format="image"
+        formatOptions={{ widthType: "fit" }}
+        groupAggregationMode="none"
+        key="base64Data"
+        placeholder="Enter value"
+        position="center"
+        size={60.953125}
+        summaryAggregationMode="none"
+      />
+      <Column
+        id="47a92"
+        alignment="left"
+        format="link"
+        formatOptions={{ showUnderline: "hover", underlineStyle: "solid" }}
+        groupAggregationMode="none"
+        key="name"
+        label="파일명"
+        position="center"
+        size={342.59375}
+        summaryAggregationMode="none"
+      />
+      <Column
+        id="6031c"
+        alignment="left"
+        format="string"
+        groupAggregationMode="none"
+        key="type"
+        label="파일 형식"
+        placeholder="Enter value"
+        position="center"
+        size={104.453125}
+        summaryAggregationMode="none"
+      />
+      <Action
+        id="29c65"
+        icon="bold/interface-download-button-2"
+        label="Action 1"
+      >
+        <Event
+          event="clickAction"
+          method="run"
+          params={{
+            ordered: [
+              {
+                src: "utils.downloadFile(\n  {\n    data:currentSourceRow.base64Data,\n    fileName:currentSourceRow.name,\n    type:currentSourceRow.type\n  }\n)",
+              },
+            ],
+          }}
+          pluginId=""
+          type="script"
+          waitMs="0"
+          waitType="debounce"
+        />
+      </Action>
+      <ToolbarButton
+        id="1a"
+        icon="bold/interface-text-formatting-filter-2"
+        label="Filter"
+        type="filter"
+      />
+      <ToolbarButton
+        id="3c"
+        icon="bold/interface-download-button-2"
+        label="Download"
+        type="custom"
+      >
+        <Event
+          event="clickToolbar"
+          method="exportData"
+          pluginId="table6"
+          type="widget"
+          waitMs="0"
+          waitType="debounce"
+        />
+      </ToolbarButton>
+      <ToolbarButton
+        id="4d"
+        icon="bold/interface-arrows-round-left"
+        label="Refresh"
+        type="custom"
+      >
+        <Event
+          event="clickToolbar"
+          method="refresh"
+          pluginId="table6"
+          type="widget"
+          waitMs="0"
+          waitType="debounce"
+        />
+      </ToolbarButton>
+    </Table>
     <KeyValue
       id="keyValue3"
       data="{
@@ -111,27 +228,7 @@
       numColumns={3}
       padding="0"
     >
-      <Container
-        id="container6"
-        footerPadding="4px 12px"
-        headerPadding="4px 12px"
-        padding="0"
-        showBody={true}
-      >
-        <View id="7b7dc" viewKey="View 1">
-          <Text
-            id="modalTitle5"
-            value="작성자: {{ getReplies.data.filter(i=>i.id === item)[0].sumitter_name}} | 작성일시: {{ moment(getReplies.data.filter(i=>i.id === item)[0].submitted_time).format('YYYY-MM-DD HH:MM')}}"
-            verticalAlign="center"
-          />
-          <Divider id="divider2" />
-          <Text
-            id="text1"
-            value="{{ getReplies.data.filter(i=>i.id === item)[0].contents}}"
-            verticalAlign="center"
-          />
-        </View>
-      </Container>
+      <Include src="./container6.rsx" />
     </ListViewBeta>
     <Container
       id="container5"
@@ -149,11 +246,19 @@
         />
       </Header>
       <View id="367e2" viewKey="View 1">
-        <TextEditor id="richTextEditor1" margin="0" value="" />
+        <TextArea
+          id="textArea2"
+          autoResize={true}
+          label=""
+          labelPosition="top"
+          minLines="5"
+          placeholder="Enter value"
+        />
         <Button
           id="button2"
-          disabled="{{ current_user.fullName === '클리브' }}"
+          disabled="{{ !textArea2.value }}"
           iconAfter="bold/mail-send-email"
+          loading="{{ updateReplies.isFetching || updateTs.isFetching }}"
           text="제출하기"
         >
           <Event
@@ -162,7 +267,7 @@
             params={{
               ordered: [
                 {
-                  src: "await updateReplies.trigger();\ngetReplies.trigger();\nslackThreadAlert.trigger();",
+                  src: "await updateReplies.trigger();\ngetReplies.trigger();\nupdateTs.trigger();",
                 },
               ],
             }}
@@ -172,6 +277,17 @@
             waitType="debounce"
           />
         </Button>
+        <FileButton
+          id="fileButton1"
+          _isUpgraded={true}
+          appendNewSelection={true}
+          iconBefore="bold/programming-browser-search"
+          maxCount={20}
+          maxSize="250mb"
+          selectionType="multiple"
+          styleVariant="outline"
+          text="파일 첨부"
+        />
       </View>
     </Container>
   </Body>

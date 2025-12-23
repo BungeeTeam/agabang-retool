@@ -82,7 +82,7 @@
     id="updateReplies"
     actionType="INSERT"
     changeset={
-      '[{"key":"contents","value":"{{ richTextEditor1.value }}"},{"key":"user_reports_id","value":"{{ varSelectedRow.value?.id }}"},{"key":"sumitter_name","value":"{{current_user.fullName }}"},{"key":"sumitter_email","value":"{{current_user.email }}"}]'
+      '[{"key":"contents","value":"{{ textArea2.value }}"},{"key":"user_reports_id","value":"{{varSelectedRow.value?.id }}"},{"key":"sumitter_name","value":"{{current_user.fullName }}"},{"key":"sumitter_email","value":"{{current_user.email }}"},{"key":"file_attachments","value":"{{ fileButton1.value }}"}]'
     }
     changesetObject="{{ richTextEditor1.value }}"
     editorMode="gui"
@@ -171,32 +171,53 @@ return result;
     resourceName="JavascriptQuery"
     showSuccessToaster={false}
   />
-  <WorkflowRun
-    id="slackThreadAlert"
-    notificationDuration={4.5}
-    resourceName="WorkflowRun"
-    showSuccessToaster={false}
-    workflowId="44e03f0b-2d54-4357-8bd0-84f040018ede"
-    workflowParams={include("./lib/slackThreadAlert.json", "string")}
-  >
-    <Event
-      event="success"
-      method="setValue"
-      params={{ ordered: [{ value: "''" }] }}
-      pluginId="richTextEditor1"
-      type="widget"
-      waitMs="0"
-      waitType="debounce"
-    />
-  </WorkflowRun>
   <Function id="textOnly" funcBody={include("./lib/textOnly.js", "string")} />
   <State id="varSelected" />
-  <SqlQueryUnified
-    id="query18"
-    query={include("./lib/query18.sql", "string")}
-    resourceDisplayName="retool_db"
-    resourceName="33c51bac-e1f2-4560-8260-3be760a1fd8f"
-    runWhenModelUpdates={false}
-    warningCodes={[]}
+  <OpenAPIQuery
+    id="updateTs"
+    isMultiplayerEdited={false}
+    method="post"
+    notificationDuration={4.5}
+    operationId="chat_postMessage"
+    parameterDynamicStates={
+      '{"attachments":false,"blocks":false,"channel":false,"icon_emoji":false,"icon_url":false,"link_names":false,"mrkdwn":false,"parse":false,"reply_broadcast":false,"text":false,"thread_ts":false,"unfurl_links":false,"unfurl_media":false,"username":false}'
+    }
+    parameterMetadata={'{"channel":{"label":"ai-아가방-retool-noti"}}'}
+    parameters={
+      '{"channel":"C096YNEVCAK","thread_ts":"{{ varSelectedRow.value.slack_message_ts}}","blocks":"[\\n  {\\n    \\"type\\": \\"section\\",\\n    \\"text\\": {\\n      \\"type\\": \\"mrkdwn\\",\\n      \\"text\\": \\" *{{current_user.fullName ?? \'\'}}님 댓글*\\\\n{{updateReplies.data?.result[0].contents ?? \'\'}}\\"\\n    }\\n  }\\n]"}'
+    }
+    path="/chat.postMessage"
+    requestBodyMetadata=""
+    resourceDisplayName="bug report"
+    resourceName="d85c5a28-e8f9-4ebe-bade-8ec0a807b734"
+    showSuccessToaster={false}
+  />
+  <JavascriptQuery
+    id="formatFiles"
+    notificationDuration={4.5}
+    query={include("./lib/formatFiles.js", "string")}
+    resourceName="JavascriptQuery"
+    showSuccessToaster={false}
+  />
+  <JavascriptQuery
+    id="downloadFiles"
+    notificationDuration={4.5}
+    query={include("./lib/downloadFiles.js", "string")}
+    resourceName="JavascriptQuery"
+    showSuccessToaster={false}
+  />
+  <JavascriptQuery
+    id="formatFiles2"
+    notificationDuration={4.5}
+    query={include("./lib/formatFiles2.js", "string")}
+    resourceName="JavascriptQuery"
+    showSuccessToaster={false}
+  />
+  <JavascriptQuery
+    id="downloadFiles2"
+    notificationDuration={4.5}
+    query={include("./lib/downloadFiles2.js", "string")}
+    resourceName="JavascriptQuery"
+    showSuccessToaster={false}
   />
 </GlobalFunctions>

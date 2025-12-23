@@ -1,8 +1,0 @@
-{
-  title: {{varSelectedRow.value?.report_title }} ,
-  submitter_name: {{varSelectedRow.value?.submitter_name }} ,
-  submitter_email: {{varSelectedRow.value?.submitter_email }} ,
-  contents: {{ 
-  richTextEditor1.value.replace(/<img\s+src="data:image\/[a-zA-Z]+;base64,[^"]*">/g, " (이미지 첨부) ") 
-}}
-}

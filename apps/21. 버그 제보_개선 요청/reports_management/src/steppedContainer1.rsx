@@ -224,46 +224,105 @@
     </Container>
   </View>
   <View
-    id="60222"
+    id="0f889"
     disabled={false}
     hidden={false}
     iconPosition="left"
     label="문의 상세 기입"
-    viewKey="Step 11"
+    viewKey="Step 12"
   >
-    <Include src="./steppedContainer2.rsx" />
-  </View>
-  <View
-    id="8156a"
-    disabled={false}
-    hidden={false}
-    iconPosition="left"
-    label="사진 첨부"
-    viewKey="Step 7"
-  >
-    <FileDropzone
-      id="fileDropzone3"
+    <TextArea
+      id="textArea1"
+      autoResize={true}
+      label=""
+      labelPosition="top"
+      minLines="18"
+      placeholder="{{ questions.value[select4.value].placeholder }}"
+    />
+    <Table
+      id="table5"
+      cellSelection="none"
+      clearChangesetOnSave={true}
+      data="{{ fileInput1.value }}"
+      defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
+      emptyMessage="No rows found"
+      enableSaveActions={true}
+      heightType="auto"
+      hidden="{{ fileInput1.value.length <= 0 }}"
+      primaryKeyColumnId="f2fe0"
+      rowHeight="xsmall"
+      showBorder={true}
+      style={{}}
+      toolbarPosition="bottom"
+    >
+      <Column
+        id="f2fe0"
+        alignment="left"
+        editable={false}
+        format="string"
+        groupAggregationMode="none"
+        key="name"
+        label="파일명"
+        placeholder="Enter value"
+        position="center"
+        size={278}
+        summaryAggregationMode="none"
+      />
+      <ToolbarButton
+        id="1a"
+        icon="bold/interface-text-formatting-filter-2"
+        label="Filter"
+        type="filter"
+      />
+      <ToolbarButton
+        id="3c"
+        icon="bold/interface-download-button-2"
+        label="Download"
+        type="custom"
+      >
+        <Event
+          event="clickToolbar"
+          method="exportData"
+          pluginId="table5"
+          type="widget"
+          waitMs="0"
+          waitType="debounce"
+        />
+      </ToolbarButton>
+      <ToolbarButton
+        id="4d"
+        icon="bold/interface-arrows-round-left"
+        label="Refresh"
+        type="custom"
+      >
+        <Event
+          event="clickToolbar"
+          method="refresh"
+          pluginId="table5"
+          type="widget"
+          waitMs="0"
+          waitType="debounce"
+        />
+      </ToolbarButton>
+    </Table>
+    <Spacer id="spacer28" />
+    <FileInput
+      id="fileInput1"
       _isUpgraded={true}
-      accept="['png','jpeg','jpg','gif','svg']"
+      accept="['xlsx','docx','pdf','txt','pptx','png','jpeg','jpg','gif','svg']"
       appendNewSelection={true}
       iconBefore="bold/programming-browser-search"
-      label=""
+      label="사진 및 파일 첨부(선택)"
       labelPosition="top"
       maxCount={20}
       maxSize="250mb"
-      placeholder="png, jpeg, jpg, gif, svg 파일만 업로드 가능합니다."
+      placeholder="이곳을 눌러 사진 또는 파일을 업로드 해주세요"
       selectionType="multiple"
-    />
-    <Spacer id="spacer12" />
-    <Text
-      id="text20"
-      horizontalAlign="center"
-      value="#### (선택) 사진을 첨부해주세요
-사진 파일을 드래그해서 아래 박스로 가져오거나 혹은 박스를 눌러 폴더에서 직접 사진 파일을 추가해 주세요"
-      verticalAlign="center"
+      showClear={true}
+      textBefore="첨부파일"
     />
     <Container
-      id="stack8"
+      id="stack18"
       _flexWrap={true}
       _gap="0px"
       _justify="space-between"
@@ -276,9 +335,9 @@
     >
       <View id="210f0" viewKey="View 1">
         <Button
-          id="nextButton7"
-          disabled=""
-          hidden=""
+          id="nextButton16"
+          disabled="{{ !textArea1.value }}"
+          hidden="{{ steppedContainer1.currentViewIndex + 1 === steppedContainer1.viewKeys.length || steppedContainer1.currentViewIndex + 1 === 8}}"
           iconAfter="bold/interface-arrows-right-alternate"
           text="다음"
         >
@@ -293,7 +352,7 @@
           />
         </Button>
         <Button
-          id="prevButton7"
+          id="prevButton15"
           disabled="{{ steppedContainer1.currentViewIndex === 0 || steppedContainer1.currentViewIndex + 1 === steppedContainer1.viewKeys.length }}"
           hidden="{{ steppedContainer1.currentViewIndex === 0 || steppedContainer1.currentViewIndex + 1 === steppedContainer1.viewKeys.length || steppedContainer1.currentViewIndex + 1 === 8}}"
           iconBefore="bold/interface-arrows-left-alternate"
@@ -313,87 +372,20 @@
         </Button>
       </View>
     </Container>
-  </View>
-  <View
-    id="088ec"
-    disabled={false}
-    hidden={false}
-    iconPosition="left"
-    label="파일 첨부"
-    viewKey="Step 8"
-  >
-    <FileDropzone
-      id="fileDropzone4"
-      _isUpgraded={true}
-      accept="['xlsx','docx','pdf','txt','pptx']"
-      appendNewSelection={true}
-      iconBefore="bold/programming-browser-search"
-      label=""
-      labelPosition="top"
-      maxCount={20}
-      maxSize="250mb"
-      placeholder="xlsx, docx, pdf, txt, pptx 파일만 업로드 가능합니다."
-      selectionType="multiple"
-    />
-    <Spacer id="spacer13" />
     <Text
-      id="text21"
+      id="text35"
       horizontalAlign="center"
-      value="#### (선택) 문서 파일을 첨부해주세요
-파일을 드래그해서 아래 박스로 가져오거나 혹은 박스를 눌러 폴더에서 직접 사진 파일을 추가해 주세요"
+      style={{
+        ordered: [
+          { fontSize: "15px" },
+          { fontWeight: "400" },
+          { fontFamily: "Pretendard Variable" },
+        ],
+      }}
+      value="#### {{ questions.value[select4.value].question }}
+{{ questions.value[select4.value].description }}"
       verticalAlign="center"
     />
-    <Container
-      id="stack9"
-      _flexWrap={true}
-      _gap="0px"
-      _justify="space-between"
-      _type="stack"
-      footerPadding="4px 12px"
-      headerPadding="4px 12px"
-      padding="12px"
-      showBody={true}
-      showBorder={false}
-    >
-      <View id="210f0" viewKey="View 1">
-        <Button
-          id="nextButton8"
-          disabled=""
-          hidden=""
-          iconAfter="bold/interface-arrows-right-alternate"
-          text="다음"
-        >
-          <Event
-            event="click"
-            method="showNextVisibleView"
-            params={{ ordered: [{ wrap: false }] }}
-            pluginId="steppedContainer1"
-            type="widget"
-            waitMs="0"
-            waitType="debounce"
-          />
-        </Button>
-        <Button
-          id="prevButton8"
-          disabled="{{ steppedContainer1.currentViewIndex === 0 || steppedContainer1.currentViewIndex + 1 === steppedContainer1.viewKeys.length }}"
-          hidden=""
-          iconBefore="bold/interface-arrows-left-alternate"
-          maintainSpaceWhenHidden={true}
-          styleVariant="outline"
-          text="이전"
-        >
-          <Event
-            event="click"
-            method="showPreviousVisibleView"
-            params={{ ordered: [{ wrap: false }] }}
-            pluginId="steppedContainer1"
-            type="widget"
-            waitMs="0"
-            waitType="debounce"
-          />
-        </Button>
-      </View>
-    </Container>
   </View>
   <View
     id="5ba8f"
@@ -483,7 +475,7 @@
       id="stack10"
       _flexWrap={true}
       _gap="0px"
-      _justify="center"
+      _justify="space-between"
       _type="stack"
       footerPadding="4px 12px"
       headerPadding="4px 12px"
@@ -494,9 +486,10 @@
       <View id="210f0" viewKey="View 1">
         <Button
           id="nextButton9"
-          disabled="{{ !textInput3.value || !radioGroup1.value || insertReports.isFetching }}"
+          disabled="{{ !textInput3.value || !radioGroup1.value }}"
           hidden=""
           iconAfter="bold/mail-send-email"
+          loading="{{ insertReports.isFetching }}"
           text="최종 제출"
         >
           <Event
@@ -511,6 +504,25 @@
             }}
             pluginId=""
             type="script"
+            waitMs="0"
+            waitType="debounce"
+          />
+        </Button>
+        <Button
+          id="prevButton16"
+          disabled="{{ steppedContainer1.currentViewIndex === 0 || steppedContainer1.currentViewIndex + 1 === steppedContainer1.viewKeys.length }}"
+          hidden="{{ steppedContainer1.currentViewIndex === 0 || steppedContainer1.currentViewIndex + 1 === steppedContainer1.viewKeys.length || steppedContainer1.currentViewIndex + 1 === 8}}"
+          iconBefore="bold/interface-arrows-left-alternate"
+          maintainSpaceWhenHidden={true}
+          styleVariant="outline"
+          text="이전"
+        >
+          <Event
+            event="click"
+            method="showPreviousVisibleView"
+            params={{ ordered: [{ wrap: false }] }}
+            pluginId="steppedContainer1"
+            type="widget"
             waitMs="0"
             waitType="debounce"
           />
