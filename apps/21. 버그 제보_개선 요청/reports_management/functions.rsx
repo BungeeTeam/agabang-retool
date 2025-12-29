@@ -220,4 +220,16 @@ return result;
     resourceName="JavascriptQuery"
     showSuccessToaster={false}
   />
+  <SqlQueryUnified
+    id="getFileAttachments"
+    enableTransformer={true}
+    query={include("./lib/getFileAttachments.sql", "string")}
+    resourceDisplayName="retool_db"
+    resourceName="33c51bac-e1f2-4560-8260-3be760a1fd8f"
+    resourceTypeOverride=""
+    transformer="const arrData = formatDataAsArray(data)
+
+return arrData"
+    warningCodes={[]}
+  />
 </GlobalFunctions>

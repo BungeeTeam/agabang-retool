@@ -58,7 +58,7 @@
     />
     <ToggleLink
       id="toggleLink3"
-      hidden="{{ varSelectedRow.value.file_attachments.length <= 0}}"
+      hidden="{{ getFileAttachments.data[0].file_attachments.length <= 0}}"
       text="{{ self.value ? '첨부파일' : '첨부파일 숨기기' }}"
       value="true"
     />
@@ -67,13 +67,14 @@
       actionsOverflowPosition={1}
       cellSelection="none"
       clearChangesetOnSave={true}
-      data="{{ varSelectedRow.value.file_attachments }}"
+      data="{{ getFileAttachments.data[0].file_attachments }}"
       defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
       dynamicRowHeights={true}
       emptyMessage="No rows found"
       enableSaveActions={true}
       heightType="auto"
       hidden="{{ toggleLink3.value }}"
+      primaryKeyColumnId="47a92"
       rowHeight="small"
       showBorder={true}
       showHeader={true}
@@ -94,6 +95,7 @@
       <Column
         id="47a92"
         alignment="left"
+        editable={false}
         format="link"
         formatOptions={{ showUnderline: "hover", underlineStyle: "solid" }}
         groupAggregationMode="none"
@@ -254,6 +256,17 @@
           minLines="5"
           placeholder="Enter value"
         />
+        <FileButton
+          id="fileButton1"
+          _isUpgraded={true}
+          appendNewSelection={true}
+          iconBefore="bold/programming-browser-search"
+          maxCount={20}
+          maxSize="250mb"
+          selectionType="multiple"
+          styleVariant="outline"
+          text="파일 첨부"
+        />
         <Button
           id="button2"
           disabled="{{ !textArea2.value }}"
@@ -277,17 +290,6 @@
             waitType="debounce"
           />
         </Button>
-        <FileButton
-          id="fileButton1"
-          _isUpgraded={true}
-          appendNewSelection={true}
-          iconBefore="bold/programming-browser-search"
-          maxCount={20}
-          maxSize="250mb"
-          selectionType="multiple"
-          styleVariant="outline"
-          text="파일 첨부"
-        />
       </View>
     </Container>
   </Body>
