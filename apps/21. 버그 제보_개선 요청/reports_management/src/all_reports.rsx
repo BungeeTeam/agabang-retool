@@ -255,7 +255,7 @@
         params={{
           ordered: [
             {
-              src: "varSelectedRow.setValue(currentSourceRow);\nmodalFrameReportsDetailUser.show();\nformatFiles.trigger();\ngetReplies.trigger();\n",
+              src: "varSelectedRow.setValue(currentSourceRow);\nmodalFrameReportsDetailUser.show();\nformatFiles.trigger();\ngetReplies.trigger();\ngetFileAttachments.trigger();\n",
             },
           ],
         }}

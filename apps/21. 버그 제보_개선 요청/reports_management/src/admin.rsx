@@ -395,18 +395,6 @@ return result;
       toolbarPosition="bottom"
     >
       <Column
-        id="86bc7"
-        alignment="left"
-        format="string"
-        groupAggregationMode="none"
-        key="affected_app_version"
-        label="Affected app version"
-        placeholder="Enter value"
-        position="center"
-        size={100}
-        summaryAggregationMode="none"
-      />
-      <Column
         id="5965d"
         alignment="right"
         editableOptions={{ showStepper: true }}
@@ -418,7 +406,7 @@ return result;
         label="ID"
         placeholder="Enter value"
         position="center"
-        size={34}
+        size={54}
       />
       <Column
         id="8e8c8"
@@ -745,7 +733,7 @@ return result;
         params={{
           ordered: [
             {
-              src: "varSelectedRow.setValue(currentSourceRow)\nmodalFrameAdmin.show();\ngetImages.trigger();\ngetReplies.trigger();",
+              src: "varSelectedRow.setValue(currentSourceRow)\nmodalFrameAdmin.show();\ngetFileAttachments.trigger();\ngetReplies.trigger();",
             },
           ],
         }}
