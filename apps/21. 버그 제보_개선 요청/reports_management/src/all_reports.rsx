@@ -55,6 +55,17 @@
       cellSelection="none"
       clearChangesetOnSave={true}
       data="{{ getReportsQuery.data }}"
+      defaultFilters={{
+        0: {
+          ordered: [
+            { id: "e42b5" },
+            { columnId: "41394" },
+            { operator: "!=" },
+            { value: "클리브" },
+            { disabled: false },
+          ],
+        },
+      }}
       defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
       emptyMessage="No rows found"
       enableSaveActions={true}
