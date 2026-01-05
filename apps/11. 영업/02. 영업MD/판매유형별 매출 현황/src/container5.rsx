@@ -135,7 +135,7 @@
         label="정상/이월"
         placeholder="Enter value"
         position="center"
-        size={61.453125}
+        size={61.484375}
         summaryAggregationMode="none"
         valueOverride="{{ currentSourceRow.season_cd === '0' ? item:'' }}"
       />
@@ -163,7 +163,7 @@
         label="시즌"
         placeholder="Enter value"
         position="center"
-        size={67.734375}
+        size={67.765625}
         summaryAggregationMode="none"
       />
       <Column
@@ -184,7 +184,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="cur_rev"
-        size={78.46875}
+        size={78.71875}
         summaryAggregationMode="none"
         valueOverride="{{ (item/1000000) }}"
       />
@@ -205,7 +205,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="tableHeaderValue1"
-        size={57.453125}
+        size={57.484375}
         summaryAggregationMode="none"
         valueOverride="{{ (item/1000000)}}"
       />
@@ -225,7 +225,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="{{ tableHeader.value[7] }}"
-        size={47.078125}
+        size={47.109375}
         summaryAggregationMode="none"
         valueOverride="{{ currentSourceRow.cur_rev/currentSourceRow.target_sales }}"
       />
@@ -246,7 +246,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="tableHeaderValue16"
-        size={99.21875}
+        size={99.453125}
         summaryAggregationMode="none"
       />
       <Column
@@ -265,7 +265,7 @@
         label="{{ tableHeader.value[3] }}"
         placeholder="Enter value"
         position="center"
-        size={88.84375}
+        size={89.09375}
         summaryAggregationMode="none"
         valueOverride="{{ 1-currentSourceRow.cur_rev/item }}"
       />
@@ -286,7 +286,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="{{ tableHeader.value[4] }}"
-        size={78.625}
+        size={78.515625}
         summaryAggregationMode="none"
         valueOverride="{{ (item/1000000) }}"
       />
@@ -306,7 +306,7 @@
         label="{{ tableHeader.value[17] }}"
         placeholder="Enter value"
         position="center"
-        size={99.359375}
+        size={99.265625}
         summaryAggregationMode="none"
       />
       <Column
@@ -326,7 +326,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="작년 할인율"
-        size={88.984375}
+        size={88.890625}
         summaryAggregationMode="none"
         valueOverride="{{ 1-(currentSourceRow.prev_rev/item) }}"
       />
@@ -342,7 +342,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="매출증감"
-        size={57.453125}
+        size={57.484375}
         summaryAggregationMode="none"
         valueOverride="{{ ((currentSourceRow.cur_rev-currentSourceRow.prev_rev)/1000000).toFixed(0) }}"
       />
@@ -362,7 +362,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="{{tableHeader.value[8]}}"
-        size={48.25}
+        size={47.109375}
         summaryAggregationMode="none"
         valueOverride="{{ ratio = currentSourceRow.prev_rev === 0 
   ? 0 
@@ -561,7 +561,7 @@
               label="구분"
               placeholder="Enter value"
               position="center"
-              size={36.71875}
+              size={36.734375}
               summaryAggregationMode="none"
               valueOverride="{{ currentSourceRow.season_cd === '0' ? item:'' }}"
             />
@@ -574,7 +574,7 @@
               label="' '"
               placeholder="Enter value"
               position="center"
-              size={67.8125}
+              size={16}
               summaryAggregationMode="none"
             />
             <Column
@@ -595,7 +595,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="cur_rev"
-              size={96.375}
+              size={78.71875}
               summaryAggregationMode="none"
               valueOverride="{{ (item/1000000) }}"
             />
@@ -616,7 +616,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="rev_goal"
-              size={93.8125}
+              size={57.484375}
               summaryAggregationMode="none"
               valueOverride="{{ item/1000000 }}"
             />
@@ -636,7 +636,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="{{ tableHeader.value[7] }}"
-              size={47.078125}
+              size={47.109375}
               summaryAggregationMode="none"
               valueOverride="{{ currentSourceRow.cur_rev /currentSourceRow.target_sales}}"
             />
@@ -657,7 +657,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="tableHeaderValue16"
-              size={99.21875}
+              size={99.453125}
               summaryAggregationMode="none"
             />
             <Column
@@ -676,7 +676,7 @@
               label="{{ tableHeader.value[3] }}"
               placeholder="Enter value"
               position="center"
-              size={120.8125}
+              size={89.09375}
               summaryAggregationMode="none"
               valueOverride="{{ 1-currentSourceRow.cur_rev/item }}"
             />
@@ -697,7 +697,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="{{ tableHeader.value[4] }}"
-              size={95.453125}
+              size={78.515625}
               summaryAggregationMode="none"
               valueOverride="{{ (item/1000000) }}"
             />
@@ -718,7 +718,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="tableHeaderValue17"
-              size={99.359375}
+              size={99.265625}
               summaryAggregationMode="none"
             />
             <Column
@@ -738,7 +738,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="{{tableHeader.value[5]}}"
-              size={118.8125}
+              size={88.890625}
               summaryAggregationMode="none"
               valueOverride="{{ 1-(currentSourceRow.prev_rev/item) }}"
             />
@@ -754,7 +754,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="{{tableHeader.value[6]}}"
-              size={57.453125}
+              size={57.484375}
               summaryAggregationMode="none"
               valueOverride="{{ ((currentSourceRow.cur_rev-currentSourceRow.prev_rev)/1000000).toFixed(0) }}"
             />
@@ -774,7 +774,7 @@
               placeholder="Enter value"
               position="center"
               referenceId="{{tableHeader.value[8]}}"
-              size={47.078125}
+              size={47.109375}
               summaryAggregationMode="none"
               valueOverride="{{ currentSourceRow.prev_rev === 0 
   ? 0 

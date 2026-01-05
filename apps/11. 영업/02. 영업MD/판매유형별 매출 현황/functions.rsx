@@ -22,22 +22,22 @@
     id="tableHeader"
     value="['매출',
 '목표매출',
-'{{ moment(dateRange.value?.start).format('YYYY') }}년 매출',
-'{{ moment(dateRange.value?.start).format('YYYY') }}년 할인율',
-'{{ moment(dateRange.value?.start).subtract(1,'years').format('YYYY') }}년 매출',
-'{{ moment(dateRange.value?.start).subtract(1,'years').format('YYYY') }}년 할인율',
+'{{ moment(dateRange.value?.end).format('YYYY') }}년 매출',
+'{{ moment(dateRange.value?.end).format('YYYY') }}년 할인율',
+'{{ moment(dateRange.value?.end).subtract(1,'years').format('YYYY') }}년 매출',
+'{{ moment(dateRange.value?.end).subtract(1,'years').format('YYYY') }}년 할인율',
 '매출증감',
 '진행율',
 '신장율',
 '원가',
-'{{ moment(dateRange.value?.start).format('YYYY') }}년 원가',
-'{{ moment(dateRange.value?.start).format('YYYY') }}년 원가율',
-'{{ moment(dateRange.value?.start).subtract(1,'years').format('YYYY') }}년 원가',
-'{{ moment(dateRange.value?.start).subtract(1,'years').format('YYYY') }}년 원가율',
+'{{ moment(dateRange.value?.end).format('YYYY') }}년 원가',
+'{{ moment(dateRange.value?.end).format('YYYY') }}년 원가율',
+'{{ moment(dateRange.value?.end).subtract(1,'years').format('YYYY') }}년 원가',
+'{{ moment(dateRange.value?.end).subtract(1,'years').format('YYYY') }}년 원가율',
 '원가증감',
 '원가율증감',
-'{{ moment(dateRange.value?.start).format('YYYY') }}년 매출비중',
-'{{ moment(dateRange.value?.start).subtract(1,'years').format('YYYY') }}년 매출비중']
+'{{ moment(dateRange.value?.end).format('YYYY') }}년 매출비중',
+'{{ moment(dateRange.value?.end).subtract(1,'years').format('YYYY') }}년 매출비중']
 
 "
   />
@@ -65,6 +65,8 @@ quarter_unit: [1,2,3,4]
     }
     resourceDisplayName="clickhouse-dw"
     resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
+    runWhenModelUpdates={false}
+    runWhenPageLoads={true}
     transformer="// FILTER by selected options
 let arrData = formatDataAsArray(data)
 

@@ -2,6 +2,10 @@ SELECT
   YEAR(sale_dt) as year_unit,
   toQuarter(sale_dt) as quarter_unit,
   MONTH(sale_dt) as month_unit,
+  CASE 
+    WHEN sale_dt BETWEEN toDate('{{dateRange.value.start}}') AND toDate('{{dateRange.value.end}}') THEN 1
+    ELSE 0
+  END as is_current_period,
   br_cd,
   br_nm,
   biz_cd,
@@ -25,12 +29,13 @@ WHERE (
   sale_dt BETWEEN toDate('{{dateRange.value.start}}') AND toDate('{{dateRange.value.end}}') OR
   sale_dt BETWEEN toDate(addYears('{{dateRange.value.start}}', -1)) AND toDate(addYears('{{dateRange.value.end}}', -1))
 ) --AND team_cd != '05'
-AND it not in ('6','8') -- 용품 제외
+AND sales_type != '용품'
 --AND season_cd in ('1','3','5','7','0')
 GROUP BY
   year_unit,
   quarter_unit,
   month_unit,
+  is_current_period,
   br_cd,
   br_nm,
   biz_cd,

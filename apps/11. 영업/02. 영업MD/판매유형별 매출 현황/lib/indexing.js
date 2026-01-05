@@ -30,24 +30,6 @@ const categoryNameRules = [
   { when: item => ['2', '3'].includes(item.it), then: '정상의류' }
 ];
 
-//  const salesTypeRules = [
-//    { when: item => item.year_unit === '2025'&&(
-//      (item.season_cd === '0'&&parseInt(item.year_nm.match(/\d+/)[0])<= 2023)||(item.season_cd != '0'&&parseInt(item.year_nm.match(/\d+/)[0])<= 2024)
-//    ), then: '정상' },
-//    { when: item => item.year_unit === '2024'&&(
-//      (item.season_cd === '0'&&parseInt(item.year_nm.match(/\d+/)[0])<= 2022)||(item.season_cd != '0'&&parseInt(item.year_nm.match(/\d+/)[0])<= 2023)
-//    ), then: '정상' }
-//  ];
-
-//  const salesTypeRules = [
-//    { when: item => item.year_unit === 2025&&(
-//      (item.season_cd === '0'&&['2024','2025'].includes(item.year_nm)||(item.season_cd != '0'&& item.year_nm === '2025' ))
-//    ), then: '정상' },
-//    { when: item => item.year_unit === 2024&&(
-//      (item.season_cd === '0'&&['2023','2024'].includes(item.year_nm)||(item.season_cd != '0'&& item.year_nm === '2024' ))
-//    ), then: '정상' }
-//  ];
-
 const categoryOrderRules = [
   { when: item => ['1', '4'].includes(item.it), then: '1' },
   { when: item => item.it === '5' && item.it_gb === '57', then: '3' },

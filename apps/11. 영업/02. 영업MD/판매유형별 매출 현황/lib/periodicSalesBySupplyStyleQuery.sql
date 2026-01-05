@@ -2,6 +2,10 @@ SELECT
   YEAR(sale_dt) as year_unit,
   toQuarter(sale_dt) as quarter_unit,
   MONTH(sale_dt) as month_unit,
+  CASE 
+    WHEN sale_dt BETWEEN toDate('{{dateRange.value.start}}') AND toDate('{{dateRange.value.end}}') THEN 1
+    ELSE 0
+  END as is_current_period,
   br_cd,
   br_nm,
   biz_cd,
@@ -22,11 +26,7 @@ SELECT
   onoff_flag,
   -- is_flex,
   first_lv_class,
-      CASE
-    WHEN it in ('6', '8') THEN '용품'
-    WHEN it not in ('6', '8') AND (sale_dt <= season_end_dt OR  (season_cd = '0' AND cast(replace(year_nm, '이하', '') as int) >= toYear(sale_dt) - 2)) THEN '정상'
-    ELSE '이월'
-  END AS sales_type,
+  sales_type,
   -- second_lv_class,
   sum(sales_price) as rev,
   sum(sales_qty*tag_price) as tag,
@@ -36,11 +36,12 @@ WHERE (
   sale_dt BETWEEN toDate('{{dateRange.value.start}}') AND toDate('{{dateRange.value.end}}') OR
   sale_dt BETWEEN toDate(addYears('{{dateRange.value.start}}', -1)) AND toDate(addYears('{{dateRange.value.end}}', -1))
 ) --AND team_cd != '05'
-AND it in ('6','8') -- 용품만
+AND sales_type = '용품'
 GROUP BY
   year_unit,
   quarter_unit,
   month_unit,
+  is_current_period,
   br_cd,
   br_nm,
   biz_cd,
@@ -63,92 +64,3 @@ GROUP BY
   year_cd,
   year_nm,
   sales_type
-
--- SELECT 
---     YEAR(sale_dt) as year_unit,
---     toQuarter(sale_dt) as quarter_unit,
---    MONTH(sale_dt) as month_unit,
---   -- sales_type,
---   -- sale_dt,
---   sale_gb,
---   br_cd,
---   br_nm,
---   biz_cd,
---   sub_br_cd,
---   sub_br_nm,
---   season_nm,
---   season_cd,
---   season_seq,
---   year_cd,
---   year_nm,
---   it,
---   it_nm,
---   it_gb,
---   it_gb_nm,
---   item,
---   item_nm,
---   onoff_flag,
---   is_flex,
---   -- CASE
---   --   WHEN it in ('6', '8') THEN '용품'
---   --   WHEN it not in ('6', '8') AND (sale_dt <= season_end_dt OR  (season_cd = '0' AND cast(replace(year_nm, '이하', '') as int) >= toYear(sale_dt) - 2)) THEN '정상'
---   --   ELSE '이월'
---   -- END AS sales_type,
---   --       CASE
---   --      WHEN it IN ('1', '4') THEN '기초정상'
---   --      WHEN it = '5' AND it_gb = '57' THEN '기획내의'
---   --      WHEN it = '5' AND (it_gb IS NULL OR it_gb != '57') THEN '기획의류'
---   --      WHEN it = '7' THEN '시즌용품'
---   --      WHEN it IN ('2', '3') THEN '정상의류'
---   --      ELSE '용품'
---   --  END AS category_name,
---   --  CASE
---   --      WHEN it IN ('1', '4') THEN '1'
---   --      WHEN it = '5' AND it_gb = '57' THEN '3'
---   --      WHEN it = '5' AND (it_gb IS NULL OR it_gb != '57') THEN '4'
---   --      WHEN it = '7' THEN '5'
---   --      WHEN it IN ('2', '3') THEN '2'
---   --      ELSE '6'
---   --  END AS category_order,
---   first_lv_class,
---   second_lv_class,
---   --   sum(sales_qty) as qty,
---     sum(sales_price) as rev
---     sum(sales_qty*tag_price) as tag,
---   --   sum(cost_price) as cost
--- FROM agabang_dw.daily_shop_sales_by_dimension
--- WHERE (
---   sale_dt BETWEEN toDate('{{dateRange.value.start}}') AND toDate('{{dateRange.value.end}}') OR
---   sale_dt BETWEEN toDate(addYears('{{dateRange.value.start}}', -1)) AND toDate(addYears('{{dateRange.value.end}}', -1))
--- )
---   AND YEAR(sale_dt) >= 2024
---   AND team_cd != '05'
--- GROUP BY
---   year_unit,
---   quarter_unit,
---   month_unit,
---   -- sales_type,
---   -- category_name,
---   -- category_order,
---   -- sale_dt,
---   sale_gb,
---   first_lv_class,
---   second_lv_class,
---   br_cd,
---   br_nm,
---   biz_cd,
---   sub_br_cd,
---   sub_br_nm,
---   it,
---   it_nm,
---   it_gb,
---   it_gb_nm,
---   item,
---   item_nm,
---   onoff_flag,
---   is_flex,
---   season_nm,
---   season_cd,
---   season_seq,
---   year_cd,
---   year_nm

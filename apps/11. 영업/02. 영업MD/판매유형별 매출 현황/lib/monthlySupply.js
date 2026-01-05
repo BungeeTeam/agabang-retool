@@ -19,9 +19,6 @@ function groupBySum(arr, groupKeys, sumKeys) {
 }
 
 function transformSalesData(data, groupKeys, sumKeys) {
-  const years = [...new Set(data.map(entry => entry.year_unit))].sort((a, b) => b - a);
-  const [currentYear, previousYear] = years;
-
   const grouped = {};
 
   data.forEach(entry => {
@@ -38,10 +35,12 @@ function transformSalesData(data, groupKeys, sumKeys) {
     }
 
     sumKeys.forEach(k => {
-      if (entry.year_unit === currentYear) {
-        grouped[key][`cur_${k}`] += entry[k] || 0;
-      } else if (entry.year_unit === previousYear) {
-        grouped[key][`prev_${k}`] += entry[k] || 0;
+      const value = Number(entry[k]) || 0;
+      // is_current_period 플래그를 사용하여 cur/prev 구분
+      if (entry.is_current_period === 1) {
+        grouped[key][`cur_${k}`] += value;
+      } else if (entry.is_current_period === 0) {
+        grouped[key][`prev_${k}`] += value;
       }
     });
   });
@@ -79,7 +78,7 @@ const updatedArrData = arrData.map(obj => {
 console.log(updatedArrData)
 
 const sumKeys = ["rev","tag","cost"]
-const groupKeys = ["year_unit","quarter_unit","month_unit","sales_type", "season_nm","order"]
+const groupKeys = ["year_unit","quarter_unit","month_unit","sales_type", "season_nm","order", "is_current_period"]
 const groupedArr = groupBySum(updatedArrData, ["year_unit", ...groupKeys], sumKeys)
 
 console.log(groupedArr)
