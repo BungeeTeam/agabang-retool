@@ -407,7 +407,7 @@
         summaryAggregationMode="none"
         textColor={'{{ item > 0 ? "green" : "red" }}'}
         valueOverride={
-          '{{ self.data[i]["2025"] - self.data[i]["target_sales"] }}'
+          '{{ self.data[i][thisYear.value] - self.data[i]["target_sales"] }}'
         }
       />
       <Column

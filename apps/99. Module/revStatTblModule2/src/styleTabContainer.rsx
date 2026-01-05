@@ -58,7 +58,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="year_nm"
-        size={44.609375}
+        size={36.734375}
         summaryAggregationMode="none"
         valueOverride={'{{ self.data[i]["year_nm"] }}'}
       />
@@ -79,7 +79,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearRev"
-        size={50.90625}
+        size={50.9375}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()]}}"
       >
@@ -109,7 +109,7 @@
         label="{{(thisYear.value-1).toString().slice(2)}}실적"
         placeholder="Enter value"
         position="center"
-        size={51.0625}
+        size={51.09375}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value-1).toString()]}}"
       />
@@ -128,7 +128,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearValue1ToStringSlice2대비신장율"
-        size={82.15625}
+        size={82.203125}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -150,7 +150,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearValue1ToStringSlice2대비신장액"
-        size={82.15625}
+        size={82.203125}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-1).toString()]}}"
       />
@@ -170,7 +170,7 @@
         label="{{(thisYear.value-2).toString().slice(2)}}실적"
         placeholder="Enter value"
         position="center"
-        size={51.171875}
+        size={51.1875}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value-2).toString()]}}"
       />
@@ -189,7 +189,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="thisYearValue2ToStringSlice2대비신장율"
-        size={82.265625}
+        size={82.296875}
         summaryAggregationMode="none"
         textColor={
           '{{ item > 0 ? "rgba(0, 128, 0, 1)" : "rgba(255, 0, 0, 1)" }}'
@@ -211,7 +211,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="23대비N신장액"
-        size={82.265625}
+        size={82.296875}
         summaryAggregationMode="none"
         valueOverride="{{ self.data[i][(thisYear.value).toString()] - self.data[i][(thisYear.value-2).toString()]}}"
       />
