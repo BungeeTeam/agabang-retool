@@ -65,7 +65,6 @@ quarter_unit: [1,2,3,4]
     }
     resourceDisplayName="clickhouse-dw"
     resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
-    runWhenModelUpdates={false}
     runWhenPageLoads={true}
     transformer="// FILTER by selected options
 let arrData = formatDataAsArray(data)
