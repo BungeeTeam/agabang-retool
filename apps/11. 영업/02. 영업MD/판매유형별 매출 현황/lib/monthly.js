@@ -1,23 +1,4 @@
-function groupBySum(arr, groupKeys, sumKeys) {
-  const getKey = item => groupKeys.map(k => item[k]).join("|");
-
-  const grouped = arr.reduce((acc, item) => {
-    const key = getKey(item);
-    if (!acc[key]) {
-      acc[key] = Object.fromEntries(groupKeys.map(k => [k, item[k]]));
-      sumKeys.forEach(k => acc[key][k] = Number(item[k]) || 0);
-    } else {
-      sumKeys.forEach(k => acc[key][k] += Number(item[k]) || 0);
-    }
-    return acc;
-  }, {});
-
-  return Object.values(grouped);
-}
-
 function transformSalesData(data, groupKeys, sumKeys) {
-  const years = [...new Set(data.map(d => d.year_unit))].sort((a, b) => b - a);
-  const [currentYear, previousYear] = years;
   const getKey = item => groupKeys.map(k => item[k]).join("|");
 
   const grouped = {};
@@ -34,8 +15,12 @@ function transformSalesData(data, groupKeys, sumKeys) {
 
     sumKeys.forEach(k => {
       const value = Number(entry[k]) || 0;
-      if (entry.year_unit === currentYear) grouped[key][`cur_${k}`] += value;
-      else if (entry.year_unit === previousYear) grouped[key][`prev_${k}`] += value;
+      // is_current_period 플래그를 사용하여 cur/prev 구분
+      if (entry.is_current_period === 1) {
+        grouped[key][`cur_${k}`] += value;
+      } else if (entry.is_current_period === 0) {
+        grouped[key][`prev_${k}`] += value;
+      }
     });
   });
 
@@ -90,7 +75,7 @@ function calculateSaleRates(result) {
 
 const data = {{ indexing.value }};
 const sumKeys = ["rev", "tag", "cost"];
-const groupKeys = ["year_unit", "quarter_unit", "month_unit", "season_cd", "season_nm", "sales_type"];
+const groupKeys = ["year_unit", "quarter_unit", "month_unit", "season_cd", "season_nm", "sales_type","is_current_period"];
 const groupedArr = groupBySum(data, groupKeys, sumKeys);
 
 const analysisKeys = ["season_cd", "season_nm", "quarter_unit", "month_unit", "sales_type"];

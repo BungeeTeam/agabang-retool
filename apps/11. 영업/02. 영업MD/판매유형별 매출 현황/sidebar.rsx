@@ -140,29 +140,28 @@
         disabled={false}
         hidden={false}
         parentKey="bbb313a3-baf4-4147-ab5c-fba3cc8dc620"
-        value="{{ moment(dateRange.value?.start).format('YYYY') }}년 매출"
+        value="{{ moment(dateRange.value?.end).format('YYYY') }}년 매출"
       />
       <Option
         id="86261"
         disabled={false}
         hidden={false}
-        label="{{ moment(dateRange.value?.start).format('YYYY') }}년 매출비중"
         parentKey="bbb313a3-baf4-4147-ab5c-fba3cc8dc620"
-        value="{{ moment(dateRange.value?.start).format('YYYY') }}년 매출비중"
+        value="{{ moment(dateRange.value?.end).format('YYYY') }}년 매출비중"
       />
       <Option
         id="40336"
         disabled={false}
         hidden={false}
         parentKey="bbb313a3-baf4-4147-ab5c-fba3cc8dc620"
-        value="{{ moment(dateRange.value?.start).format('YYYY') }}년 할인율"
+        value="{{ moment(dateRange.value?.end).format('YYYY') }}년 할인율"
       />
       <Option
         id="40978"
         disabled={false}
         hidden={false}
         parentKey="bbb313a3-baf4-4147-ab5c-fba3cc8dc620"
-        value="{{ moment(dateRange.value?.start).subtract(1,'years').format('YYYY') }}년 매출"
+        value="{{ moment(dateRange.value?.end).subtract(1,'years').format('YYYY') }}년 매출"
       />
       <Option
         id="a4e01"
@@ -170,14 +169,14 @@
         hidden={false}
         label="{{ moment(dateRange.value?.start).subtract(1,'years').format('YYYY') }}년 매출비중"
         parentKey="bbb313a3-baf4-4147-ab5c-fba3cc8dc620"
-        value="{{ moment(dateRange.value?.start).subtract(1,'years').format('YYYY') }}년 매출비중"
+        value="{{ moment(dateRange.value?.end).subtract(1,'years').format('YYYY') }}년 매출비중"
       />
       <Option
         id="7b5df"
         disabled={false}
         hidden={false}
         parentKey="bbb313a3-baf4-4147-ab5c-fba3cc8dc620"
-        value="{{ moment(dateRange.value?.start).subtract(1,'years').format('YYYY') }}년 할인율"
+        value="{{ moment(dateRange.value?.end).subtract(1,'years').format('YYYY') }}년 할인율"
       />
       <Option
         id="b0b08"

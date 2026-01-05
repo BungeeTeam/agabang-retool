@@ -3,6 +3,7 @@
   "version": "43.0.9",
   "pageUuid": "8787f894-2c77-11f0-92b7-afea289567e4",
   "appTemplate": {
+    "preloadedAppJavaScript": "function groupBySum(arr, groupKeys, sumKeys) {\n  const getKey = item => groupKeys.map(k => item[k]).join(\"|\");\n\n  const grouped = arr.reduce((acc, item) => {\n    const key = getKey(item);\n    if (!acc[key]) {\n      acc[key] = Object.fromEntries(groupKeys.map(k => [k, item[k]]));\n      sumKeys.forEach(k => acc[key][k] = Number(item[k]) || 0);\n    } else {\n      sumKeys.forEach(k => acc[key][k] += Number(item[k]) || 0);\n    }\n    return acc;\n  }, {});\n\n  return Object.values(grouped);\n}",
     "shortlink": "sales-sales-by-sales-type",
     "version": "3.148.10",
     "experimentalDataTabEnabled": true
