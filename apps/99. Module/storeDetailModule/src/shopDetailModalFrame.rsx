@@ -613,7 +613,7 @@
             label="기초류"
             placeholder="Enter value"
             position="center"
-            size={47.546875}
+            size={48.171875}
             summaryAggregationMode="none"
           />
           <Column
@@ -631,7 +631,7 @@
             label="외의류"
             placeholder="Enter value"
             position="center"
-            size={51.828125}
+            size={47.9375}
             summaryAggregationMode="none"
           />
           <Column
@@ -721,7 +721,7 @@
             label="발육"
             placeholder="Enter value"
             position="center"
-            size={36.734375}
+            size={37.609375}
             summaryAggregationMode="none"
           />
           <Column
@@ -776,7 +776,7 @@
             label="총합"
             placeholder="Enter value"
             position="right"
-            size={53.0625}
+            size={53.28125}
             summaryAggregationMode="none"
           />
           <ToolbarButton
