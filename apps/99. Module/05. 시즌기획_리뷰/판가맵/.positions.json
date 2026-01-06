@@ -178,7 +178,6 @@
   "html6": {
     "container": "container1",
     "subcontainer": "bff08",
-    "row": 0,
     "height": 0.2,
     "width": 12,
     "stackPosition": {
@@ -226,7 +225,6 @@
   "renewedHtml": {
     "container": "container_price_product",
     "subcontainer": "28726",
-    "row": 0,
     "height": 0.2,
     "width": 4,
     "stackPosition": {
