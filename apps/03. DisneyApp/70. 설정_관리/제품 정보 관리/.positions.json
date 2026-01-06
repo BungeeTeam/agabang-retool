@@ -293,7 +293,6 @@
   "stack1": {
     "rowGroup": "header",
     "subcontainer": "modalFrameTutorial",
-    "row": 0,
     "height": 3.8,
     "width": 11
   },
