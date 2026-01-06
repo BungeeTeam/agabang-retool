@@ -269,7 +269,7 @@
         />
         <Button
           id="button2"
-          disabled="{{ !textArea2.value }}"
+          disabled=""
           iconAfter="bold/mail-send-email"
           loading="{{ updateReplies.isFetching || updateTs.isFetching }}"
           text="제출하기"

@@ -1,4 +1,4 @@
-const body = {{ richTextEditor2.value }}
+const body = {{ textArea3.value }}
 
 let result = body
   .replace(/<img[^>]*base64[^>]*>/gi, '')
