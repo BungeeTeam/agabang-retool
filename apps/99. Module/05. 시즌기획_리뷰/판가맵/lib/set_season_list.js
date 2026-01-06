@@ -10,3 +10,5 @@ let season_list = [
 ]
 
 var_season_list.setValue(season_list)
+
+console.log(season_list)

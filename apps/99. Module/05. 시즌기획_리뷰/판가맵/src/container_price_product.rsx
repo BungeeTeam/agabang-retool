@@ -15,16 +15,6 @@
   </Header>
   <View id="28726" viewKey="View 1">
     <HTML
-      id="html2"
-      css={include("../lib/html2.css", "string")}
-      html={include("../lib/html2.html", "string")}
-    />
-    <HTML
-      id="html3"
-      css={include("../lib/html3.css", "string")}
-      html={include("../lib/html3.html", "string")}
-    />
-    <HTML
       id="renewedHtml"
       css={include("../lib/renewedHtml.css", "string")}
       html={include("../lib/renewedHtml.html", "string")}
@@ -66,6 +56,16 @@
         waitType="debounce"
       />
     </HTML>
+    <HTML
+      id="html2"
+      css={include("../lib/html2.css", "string")}
+      html={include("../lib/html2.html", "string")}
+    />
+    <HTML
+      id="html3"
+      css={include("../lib/html3.css", "string")}
+      html={include("../lib/html3.html", "string")}
+    />
     <HTML
       id="html7"
       css={include("../lib/html7.css", "string")}
