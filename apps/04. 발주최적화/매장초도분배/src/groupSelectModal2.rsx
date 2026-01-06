@@ -38,6 +38,7 @@
     </Button>
     <Select
       id="groupSelect2"
+      captionByIndex="{{ item.grp_id }}"
       data="{{ getGroupInfo2.data }}"
       emptyMessage="No options"
       label=""
