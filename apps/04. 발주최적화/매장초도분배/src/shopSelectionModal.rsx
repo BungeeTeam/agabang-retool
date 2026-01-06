@@ -79,7 +79,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="center"
-        size={57.484375}
+        size={57.65625}
         summaryAggregationMode="none"
       />
       <Column
@@ -91,7 +91,7 @@
         label="매장명"
         placeholder="Enter value"
         position="center"
-        size={130.078125}
+        size={162.03125}
         summaryAggregationMode="none"
       />
       <Column

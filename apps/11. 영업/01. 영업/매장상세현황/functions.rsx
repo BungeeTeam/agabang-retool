@@ -49,5 +49,18 @@
       '// FILTER by selected options\nlet arrData = formatDataAsArray(data)\narrData =  arrData.filter(item => item?.rev !== 0 || item?.target_sales > 0)\n\n//  by tp\nconst selectedTpCd = {{ tpSelect.value }}\nif (selectedTpCd !== "-1") {\n  arrData = arrData.filter(item => item.tp_cd === selectedTpCd)\n}\n\n//  by team\nconst selectedTeamCd = {{ teamSelect.value }}\nif (selectedTeamCd !== "-1") {\n  arrData = arrData.filter(item => item.team_cd === selectedTeamCd)\n}\n\n//  by user\nconst selectedUserCd = {{ userSelect.selectedItem.user_cd }}\nconst selectedUserTeamCd = {{ userSelect.selectedItem.team_cd }}\nif (selectedUserCd !== "-1") {\n  arrData = arrData.filter(item => item.user_cd === selectedUserCd && item.team_cd === selectedUserTeamCd)\n}\n\n//  by area\nconst selectedAreaCd = {{ areaSelect.value }}\nif (selectedAreaCd !== "-1") {\n  arrData = arrData.filter(item => item.area_cd === selectedAreaCd)\n}\n\nreturn formatDataAsObject(arrData)'
     }
     warningCodes={[]}
+    watchedParams={[
+      "areaSelect.value",
+      "userSelect.selectedItem.team_cd",
+      "userSelect.selectedItem.user_cd",
+      "teamSelect.value",
+      "tpSelect.value",
+      "searchText.value",
+      "brandMultiSelect.value.join(\"','\")",
+      "bizMultiSelect.value.join(\"','\")",
+      "moment(dateRange.value.end).subtract('years',2).year()",
+      "dateRange.value.end",
+      "dateRange.value.start",
+    ]}
   />
 </GlobalFunctions>

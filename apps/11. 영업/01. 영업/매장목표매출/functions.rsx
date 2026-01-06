@@ -42,6 +42,7 @@ arrData = arrData.filter(item => bizLists.includes(item.biz_cd) && brLists.inclu
 
 return formatDataAsObject(arrData)"
     warningCodes={[]}
+    watchedParams={["bizMultiSelect.value", "brandMultiSelect.value"]}
   />
   <SqlQuery
     id="periodicSalesQuery"
@@ -66,6 +67,7 @@ arrData = arrData.filter(item => bizLists.includes(item.biz_cd) && brLists.inclu
 
 return formatDataAsObject(arrData)"
     warningCodes={[]}
+    watchedParams={["bizMultiSelect.value", "brandMultiSelect.value"]}
   />
   <SqlQuery
     id="monthlySalesByStyleQuery"

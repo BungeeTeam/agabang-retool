@@ -22,6 +22,7 @@
       '// FILTER by selected options\nlet arrData = formatDataAsArray(data)\narrData =  arrData\n  .filter(item => item?.rev !== 0)\n\nconst selectedBizCd = {{ select1.value }}\nif (selectedBizCd !== "-1") {\n  arrData = arrData.filter(item => item.biz_cd === selectedBizCd)\n}\n\nreturn formatDataAsObject(arrData)'
     }
     warningCodes={[]}
+    watchedParams={["select1.value"]}
   />
   <Function
     id="groupByBizCd"

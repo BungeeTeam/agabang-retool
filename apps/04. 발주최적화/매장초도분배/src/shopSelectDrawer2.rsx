@@ -145,7 +145,7 @@
         label="매장명"
         placeholder="Enter value"
         position="center"
-        size={123}
+        size={140.453125}
         summaryAggregationMode="none"
       />
       <Column

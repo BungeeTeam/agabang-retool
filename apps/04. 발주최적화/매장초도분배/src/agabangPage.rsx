@@ -96,6 +96,7 @@
     />
     <SqlQueryUnified
       id="updateShopByGroup"
+      enableTransformer={true}
       isMultiplayerEdited={false}
       notificationDuration={4.5}
       query={include("../lib/updateShopByGroup.sql", "string")}
@@ -106,7 +107,17 @@
       showUpdateSetValueDynamicallyToggle={false}
       updateSetValueDynamically={true}
       warningCodes={[]}
-    />
+    >
+      <Event
+        event="success"
+        method="trigger"
+        params={{ ordered: [] }}
+        pluginId="shopList"
+        type="datasource"
+        waitMs="0"
+        waitType="debounce"
+      />
+    </SqlQueryUnified>
     <SqlQueryUnified
       id="resetShopStatus"
       isMultiplayerEdited={false}
@@ -221,6 +232,15 @@
         'let arrData = formatDataAsArray(data)\n\nconst largeCat = {{ largeCatSelect.value }}\narrData = arrData.filter(item => item.it === largeCat)\n\nconst middleCat = {{ middleCatSelect.value }}\nif (middleCat !== "-1") {\n  arrData = arrData.filter(item => item.it_gb === middleCat)\n}\n\nconst smallCat = {{ smallCatSelect.value }}\nif (smallCat !== "-1") {\n  arrData = arrData.filter(item => item.item === smallCat)\n}\n\nconst styCd = {{ stySelect.value }}\nif (styCd.length > 0) {\n  arrData = arrData.filter(item => styCd.includes(item.sty_cd))\n}\n\nconst sizeCd = {{ sizeSelect.value }}\nif (sizeCd !== "-1") {\n  arrData = arrData.filter(item => item.size_cd === sizeCd)\n}\n\nreturn formatDataAsObject(arrData)'
       }
       warningCodes={[]}
+      watchedParams={[
+        "brcd.value",
+        'seasonSelect.value || "-"',
+        "largeCatSelect.value",
+        "middleCatSelect.value",
+        "smallCatSelect.value",
+        "stySelect.value",
+        "sizeSelect.value",
+      ]}
     />
     <SqlQuery
       id="seasonQuery"
