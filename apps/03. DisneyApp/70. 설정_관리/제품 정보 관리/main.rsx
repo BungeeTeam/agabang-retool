@@ -24,6 +24,7 @@
       defaultSelectedRow={{ mode: "none", indexType: "display", index: 0 }}
       emptyMessage="No rows found"
       enableSaveActions={true}
+      primaryKeyColumnId="150a1"
       rowHeight="medium"
       rowSelection="none"
       searchMode="caseInsensitive"
@@ -133,7 +134,19 @@
         format="string"
         groupAggregationMode="none"
         key="cost_price"
-        label="샘플원가(-V)"
+        label="사전원가(v-,원)"
+        placeholder="Enter value"
+        position="center"
+        size={100}
+        summaryAggregationMode="none"
+      />
+      <Column
+        id="e2afe"
+        alignment="left"
+        format="string"
+        groupAggregationMode="none"
+        key="cost_price_final"
+        label="확정원가(v-,원)"
         placeholder="Enter value"
         position="center"
         size={100}
