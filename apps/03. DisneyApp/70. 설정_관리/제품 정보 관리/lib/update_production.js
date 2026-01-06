@@ -32,12 +32,16 @@ const mappings = {
   '기획량4': 'color_4_qty',
   '색상5': 'color_5_nm',
   '기획량5': 'color_5_qty',
+  '확정원가(v-,원)': 'cost_price_final',
+  '사전원가(v-,원)': 'cost_price'
 };
 
 // 필드별 데이터 타입 정의
 const fieldTypes = {
   'sale_price': 'Int32',
   'sale_price_final': 'Int32',
+  'cost_price': 'Int32',
+  'cost_price_final': 'Int32',
   'item_md_category_id': 'Int32',
   'color_1_qty': 'Int32',
   'color_2_qty': 'Int32',

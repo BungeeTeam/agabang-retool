@@ -54,14 +54,6 @@
       />
     </Link>
     <Spacer id="spacer1" />
-    <TextInput
-      id="search_text"
-      iconBefore="bold/interface-search"
-      label=""
-      labelWidth="15
-"
-      placeholder="찾고싶은 검색어를 입력하세요"
-    />
     <Multiselect
       id="multiselect1"
       data="{{ season_list.data }}"
@@ -76,6 +68,14 @@
       value="{{ get_latest_seasons.data }}"
       values="{{ item.year_sesn_cd }}"
       wrapTags={true}
+    />
+    <TextInput
+      id="search_text"
+      iconBefore="bold/interface-search"
+      label=""
+      labelWidth="15
+"
+      placeholder="찾고싶은 검색어를 입력하세요"
     />
     <Button
       id="button6"
