@@ -149,6 +149,13 @@ placeholder:'- 어떤 기능/메뉴에 대한 문의인가요?
     runWhenPageLoads={true}
     showSuccessToaster={false}
   />
+  <OpenAPIQuery
+    id="query25"
+    notificationDuration={4.5}
+    resourceDisplayName="bug report"
+    resourceName="d85c5a28-e8f9-4ebe-bade-8ec0a807b734"
+    showSuccessToaster={false}
+  />
   <Frame
     id="$main3"
     enableFullBleed={true}

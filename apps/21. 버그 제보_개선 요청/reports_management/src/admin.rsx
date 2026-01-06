@@ -460,7 +460,7 @@ return result;
         label="제목"
         placeholder="Enter value"
         position="center"
-        size={410}
+        size={310}
         sortMode="disabled"
         valueOverride="{{ item }}"
       />
@@ -474,7 +474,7 @@ return result;
         label="요청 상세"
         placeholder="Enter value"
         position="center"
-        size={331}
+        size={308}
       />
       <Column
         id="a10c8"
@@ -535,8 +535,9 @@ return result;
             },
             { ordered: [{ value: "처리 진행 중" }, { color: "#a8d5e2" }] },
             { ordered: [{ value: "처리 완료" }, { color: "#c5d86d" }] },
-            { ordered: [{ value: "보류" }, { color: "#ff9aa2" }] },
             { ordered: [{ value: "반영 예정" }, { color: "#c7ceea" }] },
+            { ordered: [{ value: "보류" }, { color: "#ff9aa2" }] },
+            { ordered: [{ value: "반려" }] },
           ],
           mode: "manual",
         }}
@@ -658,24 +659,25 @@ return result;
       <Column
         id="fd4f2"
         alignment="left"
-        editable={true}
-        format="tag"
+        editable="true"
+        format="tags"
         formatOptions={{ automaticColors: true }}
         groupAggregationMode="none"
         key="admin_category"
         label="관리자 카테고리"
         optionList={{
           manualData: [
-            { ordered: [{ value: "데이터오류" }, { label: "데이터오류" }] },
-            { ordered: [{ value: "사용성개선" }] },
-            { ordered: [{ value: "사용법문의" }] },
+            { ordered: [{ value: "오류" }] },
+            { ordered: [{ value: "사용법 미숙지" }] },
+            { ordered: [{ value: "기능 개선 요청" }] },
+            { ordered: [{ value: "원천 데이터 이슈" }] },
           ],
         }}
-        placeholder="Select option
-"
+        placeholder="Select options"
         position="center"
         referenceId="column13"
-        size={100}
+        size={116}
+        summaryAggregationMode="none"
       />
       <Column
         id="55e6b"

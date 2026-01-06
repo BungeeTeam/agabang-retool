@@ -257,8 +257,10 @@
       id="container8"
       footerPadding="4px 12px"
       headerPadding="4px 12px"
+      heightType="fixed"
       padding="12px"
       showBody={true}
+      showFooter={true}
       showHeader={true}
     >
       <Header>
@@ -269,7 +271,16 @@
         />
       </Header>
       <View id="367e2" viewKey="View 1">
-        <TextEditor id="richTextEditor2" margin="0" value="" />
+        <TextArea
+          id="textArea3"
+          autoResize={true}
+          label=""
+          labelPosition="top"
+          minLines="10"
+          placeholder="Enter value"
+        />
+      </View>
+      <Footer>
         <Button id="button3" iconAfter="bold/mail-send-email" text="제출하기">
           <Event
             event="click"
@@ -277,7 +288,7 @@
             params={{
               ordered: [
                 {
-                  src: "  await updateRepliesAdmin.trigger();\n  await getReplies.trigger();\nmail.trigger();\n",
+                  src: "await updateRepliesAdmin.trigger();\nawait getReplies.trigger();\nmail.trigger();\n\n",
                 },
               ],
             }}
@@ -287,7 +298,7 @@
             waitType="debounce"
           />
         </Button>
-      </View>
+      </Footer>
     </Container>
   </Body>
 </ModalFrame>

@@ -39,7 +39,7 @@
 
 **💬 새 답변 내용:**
 
-{{ textOnly.value }}
+{{ textArea3.value }}
 
 ---
 
@@ -47,25 +47,22 @@
 
 **👉 [답변 확인 및 추가 문의하기](https://agabang.cleave.work/app/reports_management/all_reports#id={{ varSelectedRow.value?.id }})**
 
-감사합니다.
-
-임채원 매니저 드림"
+감사합니다."
     bodyType="markdown"
     isMultiplayerEdited={false}
     replyToEmail="team@cleave.work"
     resourceDisplayName="transaction email"
     resourceName="af865bfe-2089-4d9c-ba4a-991ec515bd4b"
     resourceTypeOverride=""
-    showReplyTo={true}
     subject="[Cleave] 문의에 새 답변이 등록되었습니다"
     successMessage="메일 발송 완료"
     toEmail="{{ varSelectedRow.value?.submitter_email }}"
   >
     <Event
       event="success"
-      method="setValue"
+      method="clearValue"
       params={{ ordered: [{ value: "''" }] }}
-      pluginId="richTextEditor2"
+      pluginId="textArea3"
       type="widget"
       waitMs="0"
       waitType="debounce"
@@ -153,7 +150,7 @@ return result;
     id="updateRepliesAdmin"
     actionType="INSERT"
     changeset={
-      '[{"key":"contents","value":"{{ richTextEditor2.value }}"},{"key":"user_reports_id","value":"{{ varSelectedRow.value?.id }}"},{"key":"sumitter_name","value":"{{current_user.fullName }}"},{"key":"sumitter_email","value":"{{current_user.email }}"}]'
+      '[{"key":"contents","value":"{{ textArea3.value }}"},{"key":"user_reports_id","value":"{{ varSelectedRow.value?.id }}"},{"key":"sumitter_name","value":"{{current_user.fullName }}"},{"key":"sumitter_email","value":"{{current_user.email }}"}]'
     }
     changesetObject="{{ richTextEditor1.value }}"
     editorMode="gui"

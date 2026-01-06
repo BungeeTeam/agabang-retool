@@ -58,7 +58,7 @@
       defaultFilters={{
         0: {
           ordered: [
-            { id: "e42b5" },
+            { id: "5a9b7" },
             { columnId: "41394" },
             { operator: "!=" },
             { value: "클리브" },
