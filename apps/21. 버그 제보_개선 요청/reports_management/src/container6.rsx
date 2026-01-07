@@ -81,7 +81,7 @@
       <Action
         id="e2cd0"
         icon="bold/interface-download-button-2"
-        label="첨부파일 다운로드"
+        label="파일 다운로드"
       >
         <Event
           event="clickAction"
@@ -89,7 +89,7 @@
           params={{
             ordered: [
               {
-                src: '//  utils.downloadFile(\n//    {\n//      data:currentSourceRow.base64Data,\n//      fileName:currentSourceRow.name,\n//      type:currentSourceRow.type\n//    }\n//  )\n\nconst file = currentSourceRow; // 필요에 맞게 변경\n\nconst b64 = file.base64Data.includes("base64,")\n  ? file.base64Data.split("base64,")[1]\n  : file.base64Data;\n\nconst bytes = Uint8Array.from(atob(b64), c => c.charCodeAt(0));\nconst blob = new Blob([bytes], { type: file.type || "application/octet-stream" });\n\nconst a = document.createElement("a");\na.href = URL.createObjectURL(blob);\na.download = file.name || "download";\na.click();',
+                src: '//  utils.downloadFile(\n//    {\n//      data:currentSourceRow.base64Data,\n//      fileName:currentSourceRow.name,\n//      type:currentSourceRow.type\n//    }\n//  )\n// file = { name, type, base64Data }\nconst file = currentSourceRow; // 필요에 맞게 변경\n\nconst b64 = file.base64Data.includes("base64,")\n  ? file.base64Data.split("base64,")[1]\n  : file.base64Data;\n\nconst bytes = Uint8Array.from(atob(b64), c => c.charCodeAt(0));\nconst blob = new Blob([bytes], { type: file.type || "application/octet-stream" });\n\nconst a = document.createElement("a");\na.href = URL.createObjectURL(blob);\na.download = file.name || "download";\na.click();',
               },
             ],
           }}

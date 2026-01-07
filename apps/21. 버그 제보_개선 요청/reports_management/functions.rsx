@@ -61,8 +61,8 @@
     <Event
       event="success"
       method="clearValue"
-      params={{ ordered: [{ value: "''" }] }}
-      pluginId="textArea3"
+      params={{ ordered: [] }}
+      pluginId="textArea2"
       type="widget"
       waitMs="0"
       waitType="debounce"
