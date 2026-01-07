@@ -1,5 +1,5 @@
 <Container
-  id="container6"
+  id="container7"
   footerPadding="4px 12px"
   headerPadding="4px 12px"
   padding="0"
@@ -7,24 +7,24 @@
 >
   <View id="7b7dc" viewKey="View 1">
     <Text
-      id="modalTitle5"
+      id="modalTitle6"
       value="작성자: {{ getReplies.data.filter(i=>i.id === item)[0].sumitter_name}} | 작성일시: {{ moment(getReplies.data.filter(i=>i.id === item)[0].submitted_time).format('YYYY-MM-DD HH:MM')}}"
       verticalAlign="center"
     />
-    <Divider id="divider2" />
+    <Divider id="divider4" />
     <Text
-      id="text1"
+      id="text4"
       value="{{ getReplies.data.filter(i=>i.id === item)[0].contents}}"
       verticalAlign="center"
     />
     <ToggleLink
-      id="toggleLink4"
+      id="toggleLink6"
       hidden="{{ getReplies.data.filter(i=>i.id === item)[0].file_attachments.length <= 0}}"
       text="{{ self.value ? '첨부파일' : '첨부파일 숨기기' }}"
       value="true"
     />
     <Table
-      id="table7"
+      id="table9"
       actionsOverflowPosition={1}
       cellSelection="none"
       clearChangesetOnSave={true}
@@ -34,7 +34,7 @@
       emptyMessage="No rows found"
       enableSaveActions={true}
       heightType="auto"
-      hidden="{{ toggleLink4.value }}"
+      hidden="{{ toggleLink6.value }}"
       rowHeight="small"
       showBorder={true}
       showHeader={true}
@@ -112,7 +112,7 @@
         <Event
           event="clickToolbar"
           method="exportData"
-          pluginId="table7"
+          pluginId="table9"
           type="widget"
           waitMs="0"
           waitType="debounce"
@@ -127,7 +127,7 @@
         <Event
           event="clickToolbar"
           method="refresh"
-          pluginId="table7"
+          pluginId="table9"
           type="widget"
           waitMs="0"
           waitType="debounce"

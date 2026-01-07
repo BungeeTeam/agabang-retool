@@ -79,7 +79,7 @@
     id="updateReplies"
     actionType="INSERT"
     changeset={
-      '[{"key":"contents","value":"{{ textArea2.value }}"},{"key":"user_reports_id","value":"{{varSelectedRow.value?.id }}"},{"key":"sumitter_name","value":"{{current_user.fullName }}"},{"key":"sumitter_email","value":"{{current_user.email }}"},{"key":"file_attachments","value":"{{ fileButton1.value }}"}]'
+      '[{"key":"contents","value":"{{ textArea2.value }}"},{"key":"user_reports_id","value":"{{varSelectedRow.value?.id }}"},{"key":"sumitter_name","value":"{{current_user.fullName }}"},{"key":"sumitter_email","value":"{{current_user.email }}"},{"key":"file_attachments","value":"{{fileInput2.value }}"}]'
     }
     changesetObject="{{ richTextEditor1.value }}"
     editorMode="gui"
@@ -150,7 +150,7 @@ return result;
     id="updateRepliesAdmin"
     actionType="INSERT"
     changeset={
-      '[{"key":"contents","value":"{{ textArea3.value }}"},{"key":"user_reports_id","value":"{{ varSelectedRow.value?.id }}"},{"key":"sumitter_name","value":"{{current_user.fullName }}"},{"key":"sumitter_email","value":"{{current_user.email }}"}]'
+      '[{"key":"contents","value":"{{ textArea3.value }}"},{"key":"user_reports_id","value":"{{ varSelectedRow.value?.id }}"},{"key":"sumitter_name","value":"{{current_user.fullName }}"},{"key":"sumitter_email","value":"{{current_user.email }}"},{"key":"file_attachments","value":"{{ fileInput3.value }}"}]'
     }
     changesetObject="{{ richTextEditor1.value }}"
     editorMode="gui"
