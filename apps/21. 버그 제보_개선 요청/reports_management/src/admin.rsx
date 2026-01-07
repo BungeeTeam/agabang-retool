@@ -735,7 +735,7 @@ return result;
         params={{
           ordered: [
             {
-              src: "varSelectedRow.setValue(currentSourceRow)\nmodalFrameAdmin.show();\ngetFileAttachments.trigger();\ngetReplies.trigger();",
+              src: "varSelectedRow.setValue(currentSourceRow)\n//  modalFrameAdmin.show();\nmodalFrameReportsDetailUser.show();\ngetFileAttachments.trigger();\ngetReplies.trigger();",
             },
           ],
         }}
