@@ -267,6 +267,7 @@
           maxSize="250mb"
           placeholder="jpg, jpeg, png, xlsx, pdf"
           selectionType="multiple"
+          showClear={true}
           textBefore="파일첨부"
         />
         <Button

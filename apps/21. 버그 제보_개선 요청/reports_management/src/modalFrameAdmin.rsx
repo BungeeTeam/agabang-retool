@@ -271,6 +271,7 @@
           maxSize="250mb"
           placeholder="클릭하여 파일 첨부"
           selectionType="multiple"
+          showClear={true}
           textBefore="파일 첨부"
         />
         <Button id="button3" iconAfter="bold/mail-send-email" text="제출하기">
