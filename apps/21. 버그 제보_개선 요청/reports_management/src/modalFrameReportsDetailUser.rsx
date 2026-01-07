@@ -265,7 +265,7 @@
           labelPosition="top"
           maxCount={20}
           maxSize="250mb"
-          placeholder="클릭하여 파일을 첨부하세요"
+          placeholder="jpg, jpeg, png, xlsx, pdf"
           selectionType="multiple"
           textBefore="파일첨부"
         />
