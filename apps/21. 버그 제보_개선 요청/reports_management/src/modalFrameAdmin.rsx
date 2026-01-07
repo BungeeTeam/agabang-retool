@@ -231,27 +231,7 @@
       numColumns={3}
       padding="0"
     >
-      <Container
-        id="container7"
-        footerPadding="4px 12px"
-        headerPadding="4px 12px"
-        padding="0"
-        showBody={true}
-      >
-        <View id="7b7dc" viewKey="View 1">
-          <Text
-            id="modalTitle6"
-            value="작성자: {{ getReplies.data.filter(i=>i.id === item)[0].sumitter_name}} | 작성일시: {{ moment(getReplies.data.filter(i=>i.id === item)[0].submitted_time).format('YYYY-MM-DD HH:MM')}}"
-            verticalAlign="center"
-          />
-          <Divider id="divider4" />
-          <Text
-            id="text4"
-            value="{{ getReplies.data.filter(i=>i.id === item)[0].contents}}"
-            verticalAlign="center"
-          />
-        </View>
-      </Container>
+      <Include src="./container7.rsx" />
     </ListViewBeta>
     <Container
       id="container8"
@@ -281,6 +261,18 @@
         />
       </View>
       <Footer>
+        <FileInput
+          id="fileInput3"
+          _isUpgraded={true}
+          iconBefore="bold/programming-browser-search"
+          label=""
+          labelPosition="top"
+          maxCount={20}
+          maxSize="250mb"
+          placeholder="클릭하여 파일 첨부"
+          selectionType="multiple"
+          textBefore="파일 첨부"
+        />
         <Button id="button3" iconAfter="bold/mail-send-email" text="제출하기">
           <Event
             event="click"

@@ -256,16 +256,18 @@
           minLines="5"
           placeholder="Enter value"
         />
-        <FileButton
-          id="fileButton1"
+        <FileInput
+          id="fileInput2"
           _isUpgraded={true}
-          appendNewSelection={true}
+          accept="['jpg','jpeg','png','xlsx','pdf']"
           iconBefore="bold/programming-browser-search"
+          label=""
+          labelPosition="top"
           maxCount={20}
           maxSize="250mb"
+          placeholder="클릭하여 파일을 첨부하세요"
           selectionType="multiple"
-          styleVariant="outline"
-          text="파일 첨부"
+          textBefore="파일첨부"
         />
         <Button
           id="button2"
