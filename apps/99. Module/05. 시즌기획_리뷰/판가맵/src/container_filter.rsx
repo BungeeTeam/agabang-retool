@@ -28,7 +28,7 @@
       placeholder="Select an option"
       showSelectionIndicator={true}
       textBefore="시즌"
-      value="25WT"
+      value="{{localStorage.values?.season_select || '26FA'}}"
       values="{{ item.year_sesn_nm_eng }}"
     >
       <Event
@@ -37,6 +37,20 @@
         params={{ ordered: [] }}
         pluginId="set_season_list"
         type="datasource"
+        waitMs="0"
+        waitType="debounce"
+      />
+      <Event
+        event="change"
+        method="setValue"
+        params={{
+          ordered: [
+            { key: "season_select" },
+            { newValue: "{{ select_season.value }}" },
+          ],
+        }}
+        pluginId=""
+        type="localStorage"
         waitMs="0"
         waitType="debounce"
       />

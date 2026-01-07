@@ -12,24 +12,6 @@
   size="medium"
 >
   <Header>
-    <Button
-      id="modalCloseButton3"
-      ariaLabel="Close"
-      horizontalAlign="right"
-      iconBefore="bold/interface-delete-1"
-      style={{ ordered: [{ border: "transparent" }] }}
-      styleVariant="outline"
-    >
-      <Event
-        event="click"
-        method="setHidden"
-        params={{ ordered: [{ hidden: true }] }}
-        pluginId="modalFrameTutorial"
-        type="widget"
-        waitMs="0"
-        waitType="debounce"
-      />
-    </Button>
     <Container
       id="stack1"
       _align="center"
@@ -70,6 +52,24 @@
         </Button>
       </View>
     </Container>
+    <Button
+      id="modalCloseButton3"
+      ariaLabel="Close"
+      horizontalAlign="right"
+      iconBefore="bold/interface-delete-1"
+      style={{ ordered: [{ border: "transparent" }] }}
+      styleVariant="outline"
+    >
+      <Event
+        event="click"
+        method="setHidden"
+        params={{ ordered: [{ hidden: true }] }}
+        pluginId="modalFrameTutorial"
+        type="widget"
+        waitMs="0"
+        waitType="debounce"
+      />
+    </Button>
   </Header>
   <Body>
     <Text

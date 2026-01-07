@@ -78,12 +78,28 @@
       enableSaveActions={true}
       hidden="{{ search_text.value ? false : true }}"
       margin="0px 18px 4px 18px"
+      primaryKeyColumnId="e08bb"
       rowBackgroundColor=""
       rowHeight="large"
       rowSelection="none"
       showHeader={true}
       toolbarPosition="bottom"
     >
+      <Column
+        id="84dd2"
+        alignment="left"
+        editable="false"
+        editableOptions={{ showStepper: true }}
+        format="string"
+        formatOptions={{ showSeparators: true, notation: "standard" }}
+        groupAggregationMode="sum"
+        key="shop_cd"
+        label="매장코드"
+        placeholder="Enter value"
+        position="center"
+        size={57.96875}
+        summaryAggregationMode="none"
+      />
       <Column
         id="4fdcd"
         alignment="center"
@@ -94,7 +110,7 @@
         label="매장명"
         placeholder="Enter value"
         position="center"
-        size={143.46875}
+        size={164.203125}
         summaryAggregationMode="none"
       />
       <Column
@@ -108,42 +124,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="biz_nm"
-        size={78.234375}
-        summaryAggregationMode="none"
-      />
-      <Column
-        id="54b3d"
-        alignment="right"
-        editableOptions={{ showStepper: true }}
-        format="decimal"
-        formatOptions={{
-          showSeparators: true,
-          notation: "standard",
-          decimalPlaces: "0",
-        }}
-        groupAggregationMode="sum"
-        hidden="true"
-        key="rev"
-        label="{{ moment().subtract(1,'day').format('YY') }}년 누적 매출(백만원)"
-        placeholder="Enter value"
-        position="center"
-        referenceId="column2"
-        size={127.375}
-        summaryAggregationMode="none"
-        valueOverride="{{ item }}"
-      />
-      <Column
-        id="84dd2"
-        alignment="right"
-        editableOptions={{ showStepper: true }}
-        format="decimal"
-        formatOptions={{ showSeparators: true, notation: "standard" }}
-        groupAggregationMode="sum"
-        key="shop_cd"
-        label="Shop cd"
-        placeholder="Enter value"
-        position="center"
-        size={60.375}
+        size={78.21875}
         summaryAggregationMode="none"
       />
       <Column
@@ -152,10 +133,23 @@
         format="string"
         groupAggregationMode="none"
         key="biz_cd"
-        label="Biz cd"
         placeholder="Enter value"
         position="center"
-        size={48.65625}
+        size={31.515625}
+        summaryAggregationMode="none"
+      />
+      <Column
+        id="e08bb"
+        alignment="left"
+        editable={false}
+        format="string"
+        groupAggregationMode="none"
+        hidden="true"
+        key="idx"
+        label="Idx"
+        placeholder="Enter value"
+        position="center"
+        size={100}
         summaryAggregationMode="none"
       />
       <Action

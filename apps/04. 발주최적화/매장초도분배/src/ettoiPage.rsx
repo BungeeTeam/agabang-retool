@@ -101,7 +101,17 @@
       resourceName="33c51bac-e1f2-4560-8260-3be760a1fd8f"
       runWhenModelUpdates={false}
       warningCodes={[]}
-    />
+    >
+      <Event
+        event="success"
+        method="trigger"
+        params={{ ordered: [] }}
+        pluginId="shopList2"
+        type="datasource"
+        waitMs="0"
+        waitType="debounce"
+      />
+    </SqlQueryUnified>
     <SqlQueryUnified
       id="resetShopStatus2"
       isMultiplayerEdited={false}
@@ -161,6 +171,15 @@
         'let arrData = formatDataAsArray(data)\n\nconst largeCat = {{ largeCatSelect2.value }}\narrData = arrData.filter(item => item.it === largeCat)\n\nconst middleCat = {{ middleCatSelect2.value }}\nif (middleCat !== "-1") {\n  arrData = arrData.filter(item => item.it_gb === middleCat)\n}\n\nconst smallCat = {{ smallCatSelect2.value }}\nif (smallCat !== "-1") {\n  arrData = arrData.filter(item => item.item === smallCat)\n}\n\nconst styCd = {{ stySelect2.value }}\nif (styCd.length > 0) {\n  arrData = arrData.filter(item => styCd.includes(item.sty_cd))\n}\n\nconst sizeCd = {{ sizeSelect2.value }}\nif (sizeCd !== "-1") {\n  arrData = arrData.filter(item => item.size_cd === sizeCd)\n}\n\nreturn formatDataAsObject(arrData)'
       }
       warningCodes={[]}
+      watchedParams={[
+        "brcd2.value",
+        'seasonSelect2.value || "-"',
+        "largeCatSelect2.value",
+        "middleCatSelect2.value",
+        "smallCatSelect2.value",
+        "stySelect2.value",
+        "sizeSelect2.value",
+      ]}
     />
     <SqlQuery
       id="seasonQuery2"
@@ -343,6 +362,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
+        size={58}
         summaryAggregationMode="none"
       />
       <Column
@@ -354,6 +374,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
+        size={127.578125}
         summaryAggregationMode="none"
       />
       <Column
@@ -367,6 +388,7 @@
         label="분배수량"
         placeholder="Enter value"
         position="center"
+        size={57.484375}
         summaryAggregationMode="sum"
       />
       <Column
@@ -379,6 +401,7 @@
         label="대분류"
         placeholder="Select option"
         position="center"
+        size={86.859375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -392,6 +415,7 @@
         label="중분류"
         placeholder="Enter value"
         position="center"
+        size={47.109375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -405,6 +429,7 @@
         label="소분류"
         placeholder="Enter value"
         position="center"
+        size={47.109375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -418,6 +443,7 @@
         label="유통채널"
         placeholder="Enter value"
         position="center"
+        size={78.21875}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -431,6 +457,7 @@
         label="팀명"
         placeholder="Enter value"
         position="center"
+        size={41.796875}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -444,6 +471,7 @@
         label="담당자명"
         placeholder="Enter value"
         position="center"
+        size={57.484375}
         summaryAggregationMode="none"
         valueOverride="{{ _.startCase(item) }}"
       />
@@ -459,6 +487,7 @@
         label="입고수량"
         placeholder="Enter value"
         position="center"
+        size={0}
         summaryAggregationMode="sum"
       />
       <Column
@@ -473,6 +502,7 @@
         label="판매수량"
         placeholder="Enter value"
         position="center"
+        size={0}
         summaryAggregationMode="sum"
       />
       <Column
@@ -485,6 +515,7 @@
         label="Related info"
         placeholder="Enter value"
         position="center"
+        size={0}
         summaryAggregationMode="none"
       />
       <ToolbarButton
@@ -853,7 +884,7 @@
         label="매장코드"
         placeholder="Enter value"
         position="left"
-        size={57.90625}
+        size={57.671875}
         summaryAggregationMode="none"
       />
       <Column
@@ -866,7 +897,7 @@
         label="매장명"
         placeholder="Enter value"
         position="left"
-        size={133.09375}
+        size={113.125}
         summaryAggregationMode="none"
       />
       <Column
@@ -879,7 +910,7 @@
         label="스타일코드"
         placeholder="Enter value"
         position="center"
-        size={73.671875}
+        size={77.703125}
         summaryAggregationMode="none"
       />
       <Column
@@ -893,7 +924,7 @@
         label="칼라코드"
         placeholder="Enter value"
         position="center"
-        size={57.46875}
+        size={57.484375}
         summaryAggregationMode="none"
       />
       <Column

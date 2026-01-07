@@ -1,8 +1,8 @@
 <App>
   <Include src="./functions.rsx" />
-  <UrlFragments id="$urlFragments" value={{ ordered: [{ "": "" }] }} />
   <AppStyles id="$appStyles" css={include("./lib/$appStyles.css", "string")} />
-  <GlobalWidgetProp id="brand_code" value="'79'" />
+  <UrlFragments id="$urlFragments" value={{ ordered: [{ "": "" }] }} />
+  <GlobalWidgetProp id="brand_code" value="'01'" />
   <Frame
     id="$main"
     enableFullBleed={false}
@@ -15,7 +15,7 @@
     <ModuleContainerWidget
       id="moduleContainer"
       backgroundColor="white"
-      brand_code="'79'"
+      brand_code="'01'"
       isGlobalWidgetContainer={true}
     >
       <Include src="./src/container_filter.rsx" />
