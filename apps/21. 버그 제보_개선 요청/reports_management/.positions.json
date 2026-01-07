@@ -34,7 +34,7 @@
     "width": 2,
     "stackPosition": {
       "object": {
-        "ordinal": 3,
+        "ordinal": 2,
         "widthType": "fixed",
         "width": 0,
         "height": 0
@@ -333,12 +333,12 @@
     "container": "container5",
     "subcontainer": "367e2",
     "row": 1,
-    "col": 6,
+    "col": 5,
     "height": 0.2,
-    "width": 4,
+    "width": 5,
     "stackPosition": {
       "object": {
-        "ordinal": 1,
+        "ordinal": 0,
         "widthType": "fixed",
         "width": 0,
         "height": 0
@@ -1356,7 +1356,7 @@
     "width": 12,
     "stackPosition": {
       "object": {
-        "ordinal": 2,
+        "ordinal": 1,
         "widthType": "fixed",
         "width": 0,
         "height": 0
