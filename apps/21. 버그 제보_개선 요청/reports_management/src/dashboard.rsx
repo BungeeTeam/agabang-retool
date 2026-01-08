@@ -590,11 +590,24 @@
         formatOptions={{ showSeparators: true, notation: "standard" }}
         groupAggregationMode="sum"
         key="lag_days"
-        label="처리시간(일)"
+        label="처리 소요일"
         placeholder="Enter value"
         position="center"
         size={123}
         summaryAggregationMode="average"
+      />
+      <Column
+        id="9e7e6"
+        alignment="left"
+        format="string"
+        formatOptions={{ timeFormat: "" }}
+        groupAggregationMode="none"
+        key="real_lag"
+        label="처리 소요 시간"
+        placeholder="Enter value"
+        position="center"
+        size={249}
+        summaryAggregationMode="none"
       />
       <Column
         id="6d966"
@@ -626,7 +639,13 @@
         id="d8cd2"
         alignment="left"
         format="datetime"
-        formatOptions={{ dateFormat: "yyyy-MM-dd", timeFormat: "'HH:mm'" }}
+        formatOptions={{
+          dateFormat: "yyyy-MM-dd",
+          timeFormat: "'HH:mm'",
+          manageTimeZone: true,
+          valueTimeZone: "00:00",
+          displayTimeZone: "local",
+        }}
         groupAggregationMode="none"
         key="last_updated_at"
         label="마지막 업데이트 일시"
@@ -640,7 +659,13 @@
         alignment="left"
         editable={false}
         format="datetime"
-        formatOptions={{ dateFormat: "yyyy-MM-dd", timeFormat: "'HH:mm'" }}
+        formatOptions={{
+          dateFormat: "yyyy-MM-dd",
+          timeFormat: "'HH:mm'",
+          manageTimeZone: true,
+          valueTimeZone: "00:00",
+          displayTimeZone: "local",
+        }}
         groupAggregationMode="none"
         key="resolved_at"
         label="처리완료 일시"
