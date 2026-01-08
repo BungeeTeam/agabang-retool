@@ -580,7 +580,13 @@ return result;
         id="d8cd2"
         alignment="left"
         format="datetime"
-        formatOptions={{ dateFormat: "yyyy-MM-dd", timeFormat: "'HH:mm'" }}
+        formatOptions={{
+          dateFormat: "yyyy-MM-dd",
+          timeFormat: "'HH:mm'",
+          manageTimeZone: true,
+          valueTimeZone: "00:00",
+          displayTimeZone: "local",
+        }}
         groupAggregationMode="none"
         key="last_updated_at"
         label="마지막 업데이트 일시"
@@ -619,6 +625,7 @@ return result;
         placeholder="Enter value"
         position="center"
         size={111}
+        summaryAggregationMode="none"
       />
       <Column
         id="f2dd6"
