@@ -116,6 +116,69 @@
             label="20개"
             value="20"
           />
+          <Option
+            id="ab401"
+            disabled={false}
+            hidden={false}
+            label="25개"
+            value="25"
+          />
+          <Option
+            id="ab402"
+            disabled={false}
+            hidden={false}
+            label="30개"
+            value="30"
+          />
+          <Option
+            id="ab403"
+            disabled={false}
+            hidden={false}
+            label="40개"
+            value="40"
+          />
+          <Option
+            id="ab404"
+            disabled={false}
+            hidden={false}
+            label="50개"
+            value="50"
+          />
+          <Option
+            id="ab405"
+            disabled={false}
+            hidden={false}
+            label="60개"
+            value="60"
+          />
+          <Option
+            id="ab406"
+            disabled={false}
+            hidden={false}
+            label="70개"
+            value="70"
+          />
+          <Option
+            id="ab407"
+            disabled={false}
+            hidden={false}
+            label="80개"
+            value="80"
+          />
+          <Option
+            id="ab408"
+            disabled={false}
+            hidden={false}
+            label="90개"
+            value="90"
+          />
+          <Option
+            id="ab409"
+            disabled={false}
+            hidden={false}
+            label="100개"
+            value="100"
+          />
         </Select>
       </Header>
       <View id="6a4e6" viewKey="View 1">

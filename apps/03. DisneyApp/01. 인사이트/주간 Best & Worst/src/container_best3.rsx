@@ -24,7 +24,7 @@
           { fontFamily: "Pretendard Variable" },
         ],
       }}
-      value="💡 조회 기간 동안 **가장** **적게** 판매된 순서대로 정렬됩니다."
+      value="💡 조회 기간 동안 **가장** **적게** 판매된 순서대로 정렬됩니다. best에 선정된 아이템은 worst에서 제외됩니다."
       verticalAlign="center"
     />
     <Select
@@ -58,6 +58,69 @@
         hidden={false}
         label="20개"
         value="20"
+      />
+      <Option
+        id="ac8ee"
+        disabled={false}
+        hidden={false}
+        label="25개"
+        value="25"
+      />
+      <Option
+        id="ac8ef"
+        disabled={false}
+        hidden={false}
+        label="30개"
+        value="30"
+      />
+      <Option
+        id="ac8f0"
+        disabled={false}
+        hidden={false}
+        label="40개"
+        value="40"
+      />
+      <Option
+        id="ac8f1"
+        disabled={false}
+        hidden={false}
+        label="50개"
+        value="50"
+      />
+      <Option
+        id="ac8f2"
+        disabled={false}
+        hidden={false}
+        label="60개"
+        value="60"
+      />
+      <Option
+        id="ac8f3"
+        disabled={false}
+        hidden={false}
+        label="70개"
+        value="70"
+      />
+      <Option
+        id="ac8f4"
+        disabled={false}
+        hidden={false}
+        label="80개"
+        value="80"
+      />
+      <Option
+        id="ac8f5"
+        disabled={false}
+        hidden={false}
+        label="90개"
+        value="90"
+      />
+      <Option
+        id="ac8f6"
+        disabled={false}
+        hidden={false}
+        label="100개"
+        value="100"
       />
     </Select>
     <Select
