@@ -110,10 +110,21 @@
     }
   },
   "closeButton1": {
-    "row": 9,
+    "type": "stack",
+    "container": "stack19",
+    "subcontainer": "a4244",
+    "row": 9.4,
     "col": 1,
     "height": 0.8,
-    "width": 1
+    "width": 1,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "auto",
+        "width": 94.5,
+        "height": 32
+      }
+    }
   },
   "collapsibleContainer1": {
     "row": 0.8,
@@ -580,6 +591,12 @@
       }
     }
   },
+  "pieChart2": {
+    "row": 20.4,
+    "col": 1,
+    "height": 7.6,
+    "width": 5
+  },
   "prevButton1": {
     "type": "stack",
     "container": "steppedContainer1",
@@ -955,6 +972,11 @@
       }
     }
   },
+  "stack19": {
+    "row": 9,
+    "height": 1,
+    "width": 5
+  },
   "stack2": {
     "type": "stack",
     "container": "steppedContainer1",
@@ -1101,7 +1123,7 @@
     "width": 12
   },
   "table4": {
-    "row": 9.8,
+    "row": 10,
     "height": 9.4,
     "width": 12
   },
@@ -1306,9 +1328,20 @@
     "height": 0.6
   },
   "text34": {
-    "row": 9,
+    "type": "stack",
+    "container": "stack19",
+    "subcontainer": "a4244",
+    "row": 9.4,
     "height": 0.6,
-    "width": 1
+    "width": 1,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "auto",
+        "width": 81.5,
+        "height": 32
+      }
+    }
   },
   "text35": {
     "type": "stack",
