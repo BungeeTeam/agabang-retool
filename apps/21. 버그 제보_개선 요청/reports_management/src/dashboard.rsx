@@ -28,6 +28,15 @@
     id="transformer3"
     funcBody={include("../lib/transformer3.js", "string")}
   />
+  <SqlQueryUnified
+    id="get_ticket_number2"
+    isMultiplayerEdited={false}
+    query={include("../lib/get_ticket_number2.sql", "string")}
+    resourceDisplayName="retool_db"
+    resourceName="33c51bac-e1f2-4560-8260-3be760a1fd8f"
+    resourceTypeOverride=""
+    warningCodes={[]}
+  />
   <Frame
     id="$main4"
     enableFullBleed={false}
@@ -339,51 +348,69 @@
       <View id="d2676" label="주간" viewKey="year_week_num" />
       <View id="45997" label="월간" viewKey="year_month" />
     </Container>
-    <Text
-      id="text34"
-      style={{
-        ordered: [
-          { fontSize: "h6Font" },
-          { fontWeight: "h6Font" },
-          { fontFamily: "h6Font" },
-        ],
-      }}
-      value="[티켓 목록]"
-      verticalAlign="center"
-    />
-    <Button
-      id="closeButton1"
-      ariaLabel="reset list"
-      horizontalAlign="left"
-      iconBefore="bold/interface-arrows-synchronize"
+    <Container
+      id="stack19"
+      _align="center"
+      _flexWrap={true}
+      _gap="0px"
+      _type="stack"
+      footerPadding="4px 12px"
+      headerPadding="4px 12px"
       margin="0"
-      style={{ ordered: [{ border: "transparent" }] }}
-      styleVariant="outline"
-      text="목록 초기화"
+      padding="0"
+      showBody={true}
+      showBorder={false}
+      style={{ ordered: [{ background: "rgba(255, 255, 255, 0)" }] }}
     >
-      <Event
-        event="click"
-        method="setFilter"
-        params={{
-          ordered: [
-            {
-              filter: {
-                ordered: [
-                  { id: "ticket_list" },
-                  { columnId: "id" },
-                  { operator: ">" },
-                  { value: "0" },
-                ],
-              },
-            },
-          ],
-        }}
-        pluginId="table4"
-        type="widget"
-        waitMs="0"
-        waitType="debounce"
-      />
-    </Button>
+      <View id="a4244" viewKey="View 1">
+        <Text
+          id="text34"
+          style={{
+            ordered: [
+              { fontSize: "h6Font" },
+              { fontWeight: "h6Font" },
+              { fontFamily: "h6Font" },
+            ],
+          }}
+          value="[티켓 목록]"
+          verticalAlign="center"
+        />
+        <Button
+          id="closeButton1"
+          ariaLabel="reset list"
+          heightType="auto"
+          horizontalAlign="left"
+          iconBefore="bold/interface-arrows-synchronize"
+          margin="0"
+          style={{ ordered: [{ border: "transparent" }] }}
+          styleVariant="outline"
+          text="목록 초기화"
+        >
+          <Event
+            event="click"
+            method="setFilter"
+            params={{
+              ordered: [
+                {
+                  filter: {
+                    ordered: [
+                      { id: "ticket_list" },
+                      { columnId: "id" },
+                      { operator: ">" },
+                      { value: "0" },
+                    ],
+                  },
+                },
+              ],
+            }}
+            pluginId="table4"
+            type="widget"
+            waitMs="0"
+            waitType="debounce"
+          />
+        </Button>
+      </View>
+    </Container>
     <Table
       id="table4"
       cellSelection="none"
@@ -789,6 +816,61 @@
         waitMs="0"
         waitType="debounce"
       />
+      <Event
+        event="clickRow"
+        method="run"
+        params={{
+          ordered: [
+            {
+              src: "varSelectedRow.setValue(currentSourceRow)\n//  modalFrameAdmin.show();\nmodalFrameReportsDetailUser.show();\ngetFileAttachments.trigger();\ngetReplies.trigger();",
+            },
+          ],
+        }}
+        pluginId=""
+        type="script"
+        waitMs="0"
+        waitType="debounce"
+      />
     </Table>
+    <Chart
+      id="pieChart2"
+      chartType="pie"
+      colorArray={[
+        "#11B5AE",
+        "#4046CA",
+        "#F68512",
+        "#DE3C82",
+        "#7E84FA",
+        "#72E06A",
+      ]}
+      colorArrayDropDown={[
+        "#11B5AE",
+        "#4046CA",
+        "#F68512",
+        "#DE3C82",
+        "#7E84FA",
+        "#72E06A",
+      ]}
+      colorInputMode="colorArrayDropDown"
+      datasource="{{ get_ticket_number2.data }}"
+      datasourceMode="source"
+      gradientColorArray={[
+        ["0.0", "{{ theme.canvas }}"],
+        ["1.0", "{{ theme.primary }}"],
+      ]}
+      hoverTemplate="%{label}<br>%{value}<br>%{percent}<extra></extra>"
+      hoverTemplateMode="source"
+      labelData="{{ get_ticket_number2.data.lag_days }}"
+      legendPosition="none"
+      lineColor="{{ theme.surfacePrimary }}"
+      lineWidth={2}
+      pieDataHole={0.4}
+      selectedPoints="[]"
+      textTemplate="%{label}<br>%{percent}<br>%{value}"
+      textTemplateMode="source"
+      title={null}
+      valueData="{{ get_ticket_number2.data.ticket_cnt}}"
+      valueDataMode="source"
+    />
   </Frame>
 </Screen>
