@@ -84,12 +84,12 @@
         format="decimal"
         formatOptions={{ showSeparators: true, notation: "standard" }}
         groupAggregationMode="sum"
-        hidden="true"
+        hidden="false"
         key="id"
         label="ID"
         placeholder="Enter value"
         position="center"
-        size={37}
+        size={48}
         summaryAggregationMode="none"
       />
       <Column
