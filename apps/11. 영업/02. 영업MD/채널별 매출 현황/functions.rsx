@@ -1,70 +1,4 @@
 <GlobalFunctions>
-  <Folder id="archive">
-    <Function
-      id="transformer4"
-      funcBody={include("./lib/transformer4.js", "string")}
-    />
-    <State
-      id="monthList"
-      value="{{ [...Array(new Date().getMonth() + 10).keys()] }}"
-    />
-    <SqlQuery
-      id="monthlySalesQuery"
-      cacheKeyTtl="3600"
-      enableCaching={true}
-      enableTransformer={true}
-      isMultiplayerEdited={false}
-      notificationDuration={4.5}
-      query={include("./lib/monthlySalesQuery.sql", "string")}
-      resourceDisplayName="clickhouse-dw"
-      resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
-      runWhenModelUpdates={false}
-      showSuccessToaster={false}
-      transformer={
-        '// // FILTER by selected options\n// let arrData = formatDataAsArray(data)\n\n// // by biz_div\n// arrData = arrData.filter(item => {{ bizSelect.value }}.includes(item.biz_cd))                       \n\n// //  by brand\n// arrData = arrData.filter(item => {{ brandMultiSelect.value }}.includes(item.br_cd))\n\n// //  by tp\n// const selectedTpCd = {{ tpSelect.value }}\n// if (selectedTpCd !== "-1") {\n//   arrData = arrData.filter(item => item.tp_cd === selectedTpCd)\n// }\n\n// //  by team\n// const selectedTeamCd = {{ teamSelect.value }}\n// if (selectedTeamCd !== "-1") {\n//   arrData = arrData.filter(item => item.team_cd === selectedTeamCd)\n// }\n\n// //  by user\n// const selectedUserCd = {{ userSelect.value }}\n// if (selectedUserCd !== "-1") {\n//   arrData = arrData.filter(item => item.user_cd === selectedUserCd)\n// }\n\n// //  by area\n// const selectedAreaCd = {{ areaSelect.value }}\n// if (selectedAreaCd !== "-1") {\n//   arrData = arrData.filter(item => item.area_cd === selectedAreaCd)\n// }\n\n// return formatDataAsObject(arrData)'
-      }
-      warningCodes={[]}
-    />
-    <SqlQuery
-      id="dailyShopOutCount2"
-      enableTransformer={true}
-      query={include("./lib/dailyShopOutCount2.sql", "string")}
-      resourceDisplayName="clickhouse-dw"
-      resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
-      transformer="return formatDataAsArray(data)
-"
-      warningCodes={[]}
-    />
-    <SqlQuery
-      id="dailyShopOutCount"
-      enableTransformer={true}
-      query={include("./lib/dailyShopOutCount.sql", "string")}
-      resourceDisplayName="clickhouse-dw"
-      resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
-      transformer="return formatDataAsArray(data)
-"
-      warningCodes={[]}
-    />
-    <SqlQuery
-      id="periodicSalesQuery"
-      cacheKeyTtl="10800"
-      enableCaching={true}
-      enableTransformer={true}
-      isMultiplayerEdited={false}
-      notificationDuration={4.5}
-      query={include("./lib/periodicSalesQuery.sql", "string")}
-      resourceDisplayName="clickhouse-dw"
-      resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
-      resourceTypeOverride=""
-      runWhenModelUpdates={false}
-      showSuccessToaster={false}
-      transformer={
-        '// FILTER by selected options\nlet arrData = formatDataAsArray(data)\narrData =  arrData.filter(item => item.rev && item?.rev > 0)\n\n// by biz_div\narrData = arrData.filter(item => {{ bizSelect.value }}.includes(item.biz_cd))                       \n\n//  by brand\narrData = arrData.filter(item => {{ brandMultiSelect.value }}.includes(item.br_cd))\n\n//  by tp\nconst selectedTpCd = {{ tpSelect.value }}\nif (selectedTpCd !== "-1") {\n  arrData = arrData.filter(item => item.tp_cd === selectedTpCd)\n}\n\n//  by team\nconst selectedTeamCd = {{ teamSelect.value }}\nif (selectedTeamCd !== "-1") {\n  arrData = arrData.filter(item => item.team_cd === selectedTeamCd)\n}\n\n//  by user\nconst selectedUserCd = {{ userSelect.value }}\nif (selectedUserCd !== "-1") {\n  arrData = arrData.filter(item => item.user_cd === selectedUserCd)\n}\n\n//  by area\nconst selectedAreaCd = {{ areaSelect.value }}\nif (selectedAreaCd !== "-1") {\n  arrData = arrData.filter(item => item.area_cd === selectedAreaCd)\n}\n\nreturn formatDataAsObject(arrData)'
-      }
-      warningCodes={[]}
-    />
-    <Function id="transformer3" />
-  </Folder>
   <SqlQuery
     id="shopInfoQuery"
     cacheKeyTtl="21600"
@@ -89,6 +23,18 @@
     resourceDisplayName="clickhouse-dw"
     resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
     warningCodes={[]}
+    watchedParams={[
+      "brandSelect.value",
+      "bizSelect.value",
+      "String.fromCharCode(seasonSelect.selectedItem.year_cd_ly.toUpperCase().charCodeAt(0)+1)",
+      "seasonSelect.selectedItem.year_cd_ly",
+      "itCodeSelect.value.slice(0,1)",
+      "itCodeSelect.value",
+      "dateRange.value?.start",
+      "dateRange.value?.end",
+      "Number(seasonSelect.selectedItem.season_cd) + switchGroup1.value[0] || null",
+      "Number(seasonSelect.selectedItem.season_cd) + (switchGroup1.value[1]) || null",
+    ]}
   />
   <SqlQuery
     id="getSeasonEndDate"
@@ -191,5 +137,18 @@
     {'it_code': '9', 'label': '판촉부자재'}
 ]
 }"
+  />
+  <SqlQuery
+    id="getSalesByShop_backup"
+    cacheKeyTtl="40000"
+    enableCaching={true}
+    enableTransformer={true}
+    isMultiplayerEdited={false}
+    query={include("./lib/getSalesByShop_backup.sql", "string")}
+    queryTimeout="30000"
+    resourceDisplayName="clickhouse-dw"
+    resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
+    runWhenModelUpdates={false}
+    warningCodes={[]}
   />
 </GlobalFunctions>

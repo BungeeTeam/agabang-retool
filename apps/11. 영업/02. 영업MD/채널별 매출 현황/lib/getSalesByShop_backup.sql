@@ -31,10 +31,10 @@ shop_handover_mapping AS (
 
 warehouse_data AS (
     SELECT
-        dsoutrtn.br_cd as br_cd,
+        dsoutrtn.br_cd,
         coalesce(handover.new_shop_cd, dsoutrtn.shop_cd) as shop_cd,
-        -- 원본 shop_cd의 채널 정보를 가져옴 (인수인계 이전 매장의 원본 채널)
-        dim_shop.tp_cd as tp_cd, dim_shop.tp_nm as tp_nm,
+
+
         sum(CASE
             WHEN dsoutrtn.year_cd = p.current_year_code
             THEN CASE WHEN dsoutrtn.io_type = 'O' THEN dsoutrtn.out_qty ELSE dsoutrtn.out_qty * -1 END
@@ -50,6 +50,8 @@ warehouse_data AS (
             THEN CASE WHEN dsoutrtn.io_type = 'O' THEN item.tag_price * dsoutrtn.out_qty ELSE item.tag_price * dsoutrtn.out_qty * -1 END
             ELSE 0
         END) as out_tag,
+
+
         sum(CASE
             WHEN dsoutrtn.year_cd = p.previous_year_code
             THEN CASE WHEN dsoutrtn.io_type = 'O' THEN dsoutrtn.out_qty ELSE dsoutrtn.out_qty * -1 END
@@ -69,19 +71,13 @@ warehouse_data AS (
     FROM agabang.dsoutrtn as dsoutrtn
     CROSS JOIN query_params p
     LEFT JOIN shop_handover_mapping as handover ON dsoutrtn.shop_cd = handover.prev_shop_cd
-    -- 원본 shop_cd의 채널 정보를 가져오기 위해 dim_shop 조인 (원본 shop_cd 기준)
-    LEFT JOIN (
-        SELECT DISTINCT
-            shop_cd, br_cd, tp_cd, tp_nm, onoff_flag, is_flex
-        FROM agabang_dw.dim_shop
-    ) as dim_shop ON dsoutrtn.shop_cd = dim_shop.shop_cd AND dsoutrtn.br_cd = dim_shop.br_cd
     JOIN (
         select
             distinct sty_cd, tag_price
         from agabang_dw.dim_style
-        CROSS JOIN query_params p2
-        where br_cd = p2.brand_code
-        and( year_cd = p2.current_year_code or year_cd = p2.previous_year_code)
+        CROSS JOIN query_params p
+        where br_cd = brand_code
+        and( year_cd = current_year_code or year_cd = previous_year_code)
         and season_cd IN (SELECT season_code FROM season_params WHERE season_code != '')
     ) as item on dsoutrtn.sty_cd = item.sty_cd
     WHERE
@@ -99,9 +95,7 @@ warehouse_data AS (
                ELSE true END
         AND wrk_gb not in ('O12','R12')
     GROUP BY
-        dsoutrtn.br_cd, 
-        coalesce(handover.new_shop_cd, dsoutrtn.shop_cd),
-        dim_shop.tp_cd as tp_cd, dim_shop.tp_nm as tp_nm
+        dsoutrtn.br_cd, shop_cd
 ),
 
 sales_data AS (
@@ -151,9 +145,5 @@ SELECT
     COALESCE(w.out_amt_ly, 0) as out_amt_ly,
     COALESCE(w.out_tag_ly, 0) as out_tag_ly
 FROM sales_data as s
-LEFT JOIN warehouse_data as w
-    ON s.br_cd = w.br_cd 
-    AND s.shop_cd = w.shop_cd 
-    AND s.tp_cd = w.tp_cd 
-    AND s.tp_nm = w.tp_nm
+LEFT JOIN warehouse_data as w ON s.br_cd = w.br_cd AND s.shop_cd = w.shop_cd
 ORDER BY s.shop_cd;
