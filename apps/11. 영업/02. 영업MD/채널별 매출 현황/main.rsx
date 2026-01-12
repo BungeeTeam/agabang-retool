@@ -872,6 +872,7 @@
       emptyMessage="No rows found"
       enableSaveActions={true}
       hidden=""
+      primaryKeyColumnId="60ee3"
       rowBackgroundColor="{{ currentSourceRow.tp_nm === '소계' ? '#01488F33' : '' }}"
       rowHeight="small"
       rowSelection="none"
@@ -897,6 +898,7 @@
       <Column
         id="60ee3"
         alignment="left"
+        editable={false}
         format="string"
         groupAggregationMode="none"
         key="shop_nm"
