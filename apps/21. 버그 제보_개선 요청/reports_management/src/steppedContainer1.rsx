@@ -489,7 +489,7 @@
           disabled="{{ !textInput3.value || !radioGroup1.value }}"
           hidden=""
           iconAfter="bold/mail-send-email"
-          loading="{{ insertReports.isFetching }}"
+          loading="{{ insertReports.isFetching || slackNewReportsAlert.isFetching }}"
           text="최종 제출"
         >
           <Event
