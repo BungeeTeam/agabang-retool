@@ -40,7 +40,7 @@
       labelPosition="top"
       placeholder="https://agabang.cleave.work/"
       style={{ ordered: [{ borderRadius: "400px" }] }}
-      value="{{ formatUrl.data ?? '' }}"
+      value="{{ url.hashParams?.url ?? '' }}"
     />
   </View>
 </Container>
