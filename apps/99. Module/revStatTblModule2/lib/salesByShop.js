@@ -11,11 +11,12 @@ if ({{ salesTabbedContainer.currentViewKey }} === "type") {
   arrData = arrData.filter(item => item.user_cd === {{ selectedRow.value.user_cd }})  
 }
 
+const currentYear = new Date().getFullYear();
 const groupedArr = groupBySum(arrData, ["time_unit", ...groupKeys], sumKeys)
-const targetArr = groupBySum(arrData, groupKeys, ["target_sales"])
+//  const targetArr = groupBySum(arrData, groupKeys, ["target_sales"])
+const targetArr = groupBySum(arrData.filter(obj => obj.time_unit === currentYear), groupKeys, ["target_sales"])
 const result = pivotData(groupedArr, groupKeys, "time_unit", sumKeys)
 
-const currentYear = new Date().getFullYear();
 return result.map(item => {
   const matched = targetArr.find((ele) =>
     groupKeys.every((key) => ele[key] === item[key])
