@@ -223,6 +223,30 @@
         summaryAggregationMode="none"
       />
       <Column
+        id="cost_price_preview"
+        alignment="left"
+        format="string"
+        groupAggregationMode="none"
+        key="사전원가(v-,원)"
+        label="사전원가(v-,원)"
+        placeholder="Enter value"
+        position="center"
+        size={100}
+        summaryAggregationMode="none"
+      />
+      <Column
+        id="cost_price_final_preview"
+        alignment="left"
+        format="string"
+        groupAggregationMode="none"
+        key="확정원가(v-,원)"
+        label="확정원가(v-,원)"
+        placeholder="Enter value"
+        position="center"
+        size={100}
+        summaryAggregationMode="none"
+      />
+      <Column
         id="b88e6"
         alignment="left"
         format="tag"
