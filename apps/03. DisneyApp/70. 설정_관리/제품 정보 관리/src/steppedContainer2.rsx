@@ -135,10 +135,10 @@
         id="f7195"
         alignment="left"
         cellTooltipMode="overflow"
-        format="multilineString"
+        format="string"
         groupAggregationMode="none"
-        key="소재세부"
-        label="소재세부"
+        key="소재"
+        label="소재"
         placeholder="Enter value"
         position="center"
         size={170.765625}
