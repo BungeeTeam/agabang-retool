@@ -1,6 +1,6 @@
 <App>
   <Include src="./functions.rsx" />
-  <GlobalWidgetProp id="brand_code" defaultValue="01" />
+  <GlobalWidgetProp id="brand_code" defaultValue="01" value="07" />
   <Frame
     id="$main"
     enableFullBleed={false}
@@ -13,6 +13,7 @@
     <ModuleContainerWidget
       id="moduleContainer"
       backgroundColor="white"
+      brand_code="07"
       isGlobalWidgetContainer={true}
       margin="0"
     >
