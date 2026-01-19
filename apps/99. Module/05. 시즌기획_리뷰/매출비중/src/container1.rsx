@@ -99,7 +99,7 @@
         formatOptions={{ automaticColors: true }}
         groupAggregationMode="none"
         key="saled_type"
-        label="타입"
+        label="분류"
         placeholder="Select option"
         position="left"
         size={52.734375}
@@ -296,7 +296,7 @@
         formatOptions={{ automaticColors: true }}
         groupAggregationMode="none"
         key="saled_type"
-        label="타입"
+        label="분류"
         placeholder="Select option"
         position="left"
         size={52.734375}
@@ -452,7 +452,7 @@
     >
       <Column
         id="cba64"
-        alignment="left"
+        alignment="center"
         format="string"
         groupAggregationMode="none"
         key="second_lv_class"
