@@ -10,6 +10,22 @@
     showSuccessToaster={false}
     transformer="// Reference external variables with curly brackets or using JS variables
 const arrData = formatDataAsArray(data)
+function addRevenueRates(items) {
+  const curTotal = items.reduce((sum, it) => sum + (Number(it.cur_rev) || 0), 0);
+  const prevTotal = items.reduce((sum, it) => sum + (Number(it.prev_rev) || 0), 0);
+
+  return items.map(it => {
+    const cur = Number(it.cur_rev) || 0;
+    const prev = Number(it.prev_rev) || 0;
+
+    return {
+      ...it,
+      cur_rev_rate: curTotal > 0 ? cur / curTotal : 0,
+      prev_rev_rate: prevTotal > 0 ? prev / prevTotal : 0,
+    };
+  });
+}
+
 
 // 사용 예시
 const result = addRevenueRates(arrData); // data = 질문에 올린 배열
@@ -28,7 +44,21 @@ return result"
     resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
     showSuccessToaster={false}
     transformer="const arrData = formatDataAsArray(data);
+function addRevenueRates(items) {
+  const curTotal = items.reduce((sum, it) => sum + (Number(it.cur_rev) || 0), 0);
+  const prevTotal = items.reduce((sum, it) => sum + (Number(it.prev_rev) || 0), 0);
 
+  return items.map(it => {
+    const cur = Number(it.cur_rev) || 0;
+    const prev = Number(it.prev_rev) || 0;
+
+    return {
+      ...it,
+      cur_rev_rate: curTotal > 0 ? cur / curTotal : 0,
+      prev_rev_rate: prevTotal > 0 ? prev / prevTotal : 0,
+    };
+  });
+}
 const result = addRevenueRates(arrData); 
 
 return result"
@@ -44,7 +74,21 @@ return result"
     resourceName="46922e5d-5645-4057-8fc8-3cc8cb9fbfe4"
     showSuccessToaster={false}
     transformer="const arrData = formatDataAsArray(data);
+function addRevenueRates(items) {
+  const curTotal = items.reduce((sum, it) => sum + (Number(it.cur_rev) || 0), 0);
+  const prevTotal = items.reduce((sum, it) => sum + (Number(it.prev_rev) || 0), 0);
 
+  return items.map(it => {
+    const cur = Number(it.cur_rev) || 0;
+    const prev = Number(it.prev_rev) || 0;
+
+    return {
+      ...it,
+      cur_rev_rate: curTotal > 0 ? cur / curTotal : 0,
+      prev_rev_rate: prevTotal > 0 ? prev / prevTotal : 0,
+    };
+  });
+}
 const result = addRevenueRates(arrData); 
 
 return result"
