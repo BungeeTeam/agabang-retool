@@ -1,0 +1,49 @@
+with
+    '{{ dateRange1.value.start }}' as startDate,
+    '{{ dateRange1.value.end }}' as endDate,
+    addYears(startDate, -1) as prevStartDate,
+    addYears(endDate, -1) as prevEndDate,
+    sales as(
+        select
+            toYear(sale_dt) as yearUnit,
+            year_cd, year_nm,
+            season_cd, season_nm,
+            sales_type,
+            sum(sales_price) as rev
+        from agabang_dw.daily_shop_sales_by_dimension
+        where sale_dt between startDate and endDate
+        and br_cd = '{{ brand_code.value }}'
+        group by yearUnit,
+             year_cd, year_nm,
+             season_cd, season_nm,
+             sales_type
+        ),
+
+        prevSales as(
+        select
+            toYear(sale_dt) as yearUnit,
+            year_cd, year_nm,
+            char(ascii(year_cd) + 1) AS prev_year_cd,
+            season_cd, season_nm,
+            sales_type,
+            sum(sales_price) as rev
+        from agabang_dw.daily_shop_sales_by_dimension
+        where sale_dt between prevStartDate and prevEndDate
+        and br_cd = '{{ brand_code.value }}'
+        group by yearUnit,
+             year_cd, year_nm,
+             season_cd, season_nm,
+             sales_type
+        )
+select
+    A.sales_type as saled_type,
+    B.sales_type as saled_type_prev,
+    concat(A.year_nm,' ',A.season_nm) as cur_season,
+    concat(B.year_nm,' ',B.season_nm) as prev_season,
+    A.rev as cur_rev,
+    B.rev as prev_rev
+from sales as A
+join prevSales as B on A.year_cd = B.prev_year_cd and A.season_cd = B.season_cd and A.sales_type = B.sales_type
+where A.sales_type != '용품'
+ORDER BY A.sales_type desc , A.rev desc
+;
