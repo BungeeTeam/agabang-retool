@@ -4,6 +4,7 @@
   "pageUuid": "6c4e5b84-f01f-11ef-b5ad-db9325754cbc",
   "appTemplate": {
     "inAppRetoolPillAppearance": "HIDE_MENU",
+    "preloadedAppJavaScript": "function addRevenueRates(items) {\n  const curTotal = items.reduce((sum, it) => sum + (Number(it.cur_rev) || 0), 0);\n  const prevTotal = items.reduce((sum, it) => sum + (Number(it.prev_rev) || 0), 0);\n\n  return items.map(it => {\n    const cur = Number(it.cur_rev) || 0;\n    const prev = Number(it.prev_rev) || 0;\n\n    return {\n      ...it,\n      cur_rev_rate: curTotal > 0 ? cur / curTotal : 0,\n      prev_rev_rate: prevTotal > 0 ? prev / prevTotal : 0,\n    };\n  });\n}",
     "isGlobalWidget": true,
     "version": "3.148.10",
     "experimentalDataTabEnabled": true

@@ -80,22 +80,16 @@
       autoColumnWidth={true}
       cellSelection="none"
       clearChangesetOnSave={true}
-      data="{{ transformer4.value }}"
+      data="{{ get_season_sales.data }}"
       defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
       emptyMessage="No rows found"
       enableSaveActions={true}
       heightType="auto"
-      margin="0"
-      primaryKeyColumnId="345a3"
       rowHeight="xsmall"
       rowSelection="none"
       showBorder={true}
       showHeader={true}
-      style={{
-        borderRadius: "0px",
-        border: "#ffffff",
-        rowSeparator: "#e0e0e0",
-      }}
+      style={{ rowSeparator: "#e0e0e0" }}
       toolbarPosition="bottom"
     >
       <Column
@@ -122,7 +116,7 @@
         label="시즌({{ moment(dateRange1.value.end).year()  }})"
         placeholder="Enter value"
         position="center"
-        size={78.71875}
+        size={78.765625}
       />
       <Column
         id="da073"
@@ -284,12 +278,11 @@
       autoColumnWidth={true}
       cellSelection="none"
       clearChangesetOnSave={true}
-      data="{{ transformer2.value }}"
+      data="{{ get_tot_sales.data }}"
       defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
       emptyMessage="No rows found"
       enableSaveActions={true}
       heightType="auto"
-      margin="0"
       rowHeight="xsmall"
       rowSelection="none"
       showBorder={true}
@@ -311,7 +304,7 @@
         valueOverride="{{ _.startCase(item) }}"
       />
       <Column
-        id="99bf9"
+        id="66f64"
         alignment="left"
         format="string"
         groupAggregationMode="none"
@@ -358,7 +351,7 @@
         valueOverride="{{ item/1000000}}"
       />
       <Column
-        id="406eb"
+        id="2aa02"
         alignment="left"
         format="string"
         groupAggregationMode="none"
@@ -446,12 +439,11 @@
       autoColumnWidth={true}
       cellSelection="none"
       clearChangesetOnSave={true}
-      data="{{ transformer3.value }}"
+      data="{{ get_supplies_sales.data }}"
       defaultSelectedRow={{ mode: "index", indexType: "display", index: 0 }}
       emptyMessage="No rows found"
       enableSaveActions={true}
       heightType="auto"
-      margin="0"
       rowHeight="xsmall"
       rowSelection="none"
       showBorder={true}
@@ -478,7 +470,7 @@
         groupAggregationMode="none"
         placeholder="Enter value"
         position="center"
-        size={100}
+        size={16}
         summaryAggregationMode="none"
       />
       <Column
@@ -525,7 +517,7 @@
         groupAggregationMode="none"
         placeholder="Enter value"
         position="center"
-        size={100}
+        size={16}
         summaryAggregationMode="none"
       />
       <Column
