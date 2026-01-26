@@ -13,28 +13,8 @@ WITH BaseData AS (
         -- 날짜 차이 계산 (원본 쿼리와 동일)
         dateDiff('day', date, toDate('{{ dateRange_day.value.end }}')) as diff_day,
 
-        -- 비교 연도 계산 (원본 쿼리의 'year' 로직 -> comparison_year 로 명명)
-        CASE
-            WHEN dateDiff('day', date, toDate('{{ dateRange_day.value.end }}'))
-                 < dateDiff('day', toDate(addYears('{{ dateRange_day.value.start }}', 0)), toDate('{{ dateRange_day.value.end }}')) + 1
-                THEN toYear(addYears('{{ dateRange_day.value.start }}', 0))
-            WHEN dateDiff('day', date, toDate('{{ dateRange_day.value.end }}'))
-                 < dateDiff('day', toDate(addYears('{{ dateRange_day.value.start }}', -1)), toDate('{{ dateRange_day.value.end }}')) + 1
-                THEN toYear(addYears('{{ dateRange_day.value.start }}', -1))
-            WHEN dateDiff('day', date, toDate('{{ dateRange_day.value.end }}'))
-                 < dateDiff('day', toDate(addYears('{{ dateRange_day.value.start }}', -2)), toDate('{{ dateRange_day.value.end }}')) + 1
-                THEN toYear(addYears('{{ dateRange_day.value.start }}', -2))
-            WHEN dateDiff('day', date, toDate('{{ dateRange_day.value.end }}'))
-                 < dateDiff('day', toDate(addYears('{{ dateRange_day.value.start }}', -3)), toDate('{{ dateRange_day.value.end }}')) + 1
-                THEN toYear(addYears('{{ dateRange_day.value.start }}', -3))
-            WHEN dateDiff('day', date, toDate('{{ dateRange_day.value.end }}'))
-                 < dateDiff('day', toDate(addYears('{{ dateRange_day.value.start }}', -4)), toDate('{{ dateRange_day.value.end }}')) + 1
-                THEN toYear(addYears('{{ dateRange_day.value.start }}', -4))
-            WHEN dateDiff('day', date, toDate('{{ dateRange_day.value.end }}'))
-                 < dateDiff('day', toDate(addYears('{{ dateRange_day.value.start }}', -5)), toDate('{{ dateRange_day.value.end }}')) + 1
-                THEN toYear(addYears('{{ dateRange_day.value.start }}', -5))
-            ELSE 1970
-        END as comparison_year,
+        -- 비교 연도 계산 (원본 날짜 기준 연도)
+        toYear(date) as comparison_year,
 
         -- 투영된 날짜 계산 (원본 쿼리의 'day' 로직 -> projected_full_date 로 명명)
         CASE

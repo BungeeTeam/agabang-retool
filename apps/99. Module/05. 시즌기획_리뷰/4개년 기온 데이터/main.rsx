@@ -145,7 +145,7 @@
           chartType="plotlyJson"
           plotlyDataJson="{{ weather_table_data.data.plotlyTracesMax}}"
           plotlyLayoutJson={
-            '{\n  "title": "",\n  "xaxis": {\n    "title": "",\n    "showgrid": false\n  },\n  "yaxis": {\n    "title": "",\n    "showgrid": true // Y축 그리드 표시\n  },\n  "hovermode": "x unified",\n  "margin": { // 여백 조정 (값을 줄여 여백 감소)\n    "l": 30,  // 왼쪽 여백\n    "r": 30,  // 오른쪽 여백\n    "t": 30,  // 상단 여백 (제목 공간 포함)\n    "b": 30   // 하단 여백\n  },\n  "colorway": [\n    "#feecaa", // 2022년\n    "#eecff3", // 2023년\n    "#bfdbfe", // 2024년\n    "#dc2626"  // 2025년\n  ],\n  "legend": { // 범례 설정\n    "orientation": "h",\n    "yanchor": "bottom",\n    "y": 1,\n    "xanchor": "center",\n    "x": 0.5\n  }\n}'
+            '{\n  "title": "",\n  "xaxis": {\n    "title": "",\n    "showgrid": false\n  },\n  "yaxis": {\n    "title": "",\n    "showgrid": true // Y축 그리드 표시\n  },\n  "hovermode": "x unified",\n  "margin": { // 여백 조정 (값을 줄여 여백 감소)\n    "l": 30,  // 왼쪽 여백\n    "r": 30,  // 오른쪽 여백\n    "t": 30,  // 상단 여백 (제목 공간 포함)\n    "b": 30   // 하단 여백\n  },\n  "colorway": [\n    "#feecaa", // 가장 오래된 해\n    "#eecff3",\n    "#bfdbfe",\n    "#dc2626"  // 가장 최근 해\n  ],\n  "legend": { // 범례 설정\n    "orientation": "h",\n    "yanchor": "bottom",\n    "y": 1,\n    "xanchor": "center",\n    "x": 0.5\n  }\n}'
           }
           selectedPoints="[]"
         />
@@ -187,12 +187,13 @@
               decimalPlaces: "1",
             }}
             groupAggregationMode="sum"
-            key="2022년"
-            label="2022 년"
+            key="year_latest"
+            label="{{ moment(dateRange_day.value.end || moment()).year() }} 년"
             placeholder="Enter value"
             position="center"
             size={60.84375}
             summaryAggregationMode="average"
+            valueOverride="{{ self.data[i][`${moment(dateRange_day.value.end || moment()).year()}년`] }}"
           />
           <Column
             id="d3969"
@@ -205,12 +206,13 @@
               decimalPlaces: "1",
             }}
             groupAggregationMode="sum"
-            key="2023년"
-            label="2023 년"
+            key="year_minus_1"
+            label="{{ moment(dateRange_day.value.end || moment()).year() - 1 }} 년"
             placeholder="Enter value"
             position="center"
             size={60.84375}
             summaryAggregationMode="average"
+            valueOverride="{{ self.data[i][`${moment(dateRange_day.value.end || moment()).year() - 1}년`] }}"
           />
           <Column
             id="85e62"
@@ -223,12 +225,13 @@
               decimalPlaces: "1",
             }}
             groupAggregationMode="sum"
-            key="2024년"
-            label="2024 년"
+            key="year_minus_2"
+            label="{{ moment(dateRange_day.value.end || moment()).year() - 2 }} 년"
             placeholder="Enter value"
             position="center"
             size={60.84375}
             summaryAggregationMode="average"
+            valueOverride="{{ self.data[i][`${moment(dateRange_day.value.end || moment()).year() - 2}년`] }}"
           />
           <Column
             id="4778c"
@@ -241,12 +244,13 @@
               decimalPlaces: "1",
             }}
             groupAggregationMode="sum"
-            key="2025년"
-            label="2025 년"
+            key="year_minus_3"
+            label="{{ moment(dateRange_day.value.end || moment()).year() - 3 }} 년"
             placeholder="Enter value"
             position="center"
             size={60.84375}
             summaryAggregationMode="average"
+            valueOverride="{{ self.data[i][`${moment(dateRange_day.value.end || moment()).year() - 3}년`] }}"
           />
         </Table>
       </View>
@@ -272,7 +276,7 @@
           chartType="plotlyJson"
           plotlyDataJson="{{ weather_table_data.data.plotlyTracesMin}}"
           plotlyLayoutJson={
-            '{\n  "title": "",\n  "xaxis": {\n    "title": "",\n    "showgrid": false\n  },\n  "yaxis": {\n    "title": "",\n    "showgrid": true // Y축 그리드 표시\n  },\n  "hovermode": "x unified",\n  "margin": { // 여백 조정 (값을 줄여 여백 감소)\n    "l": 30,  // 왼쪽 여백\n    "r": 30,  // 오른쪽 여백\n    "t": 30,  // 상단 여백 (제목 공간 포함)\n    "b": 30   // 하단 여백\n  },\n  "colorway": [\n    "#feecaa", // 2022년\n    "#eecff3", // 2023년\n    "#bfdbfe", // 2024년\n    "#3170f9"  // 2025년\n  ],\n  "legend": { // 범례 설정\n    "orientation": "h",\n    "yanchor": "bottom",\n    "y": 1,\n    "xanchor": "center",\n    "x": 0.5\n  }\n}'
+            '{\n  "title": "",\n  "xaxis": {\n    "title": "",\n    "showgrid": false\n  },\n  "yaxis": {\n    "title": "",\n    "showgrid": true // Y축 그리드 표시\n  },\n  "hovermode": "x unified",\n  "margin": { // 여백 조정 (값을 줄여 여백 감소)\n    "l": 30,  // 왼쪽 여백\n    "r": 30,  // 오른쪽 여백\n    "t": 30,  // 상단 여백 (제목 공간 포함)\n    "b": 30   // 하단 여백\n  },\n  "colorway": [\n    "#feecaa", // 가장 오래된 해\n    "#eecff3",\n    "#bfdbfe",\n    "#3170f9"  // 가장 최근 해\n  ],\n  "legend": { // 범례 설정\n    "orientation": "h",\n    "yanchor": "bottom",\n    "y": 1,\n    "xanchor": "center",\n    "x": 0.5\n  }\n}'
           }
           selectedPoints="[]"
         />
@@ -314,12 +318,13 @@
               decimalPlaces: "1",
             }}
             groupAggregationMode="sum"
-            key="2022년"
-            label="2022 년"
+            key="year_latest"
+            label="{{ moment(dateRange_day.value.end || moment()).year() }} 년"
             placeholder="Enter value"
             position="center"
             size={60.84375}
             summaryAggregationMode="average"
+            valueOverride="{{ self.data[i][`${moment(dateRange_day.value.end || moment()).year()}년`] }}"
           />
           <Column
             id="d3969"
@@ -332,12 +337,13 @@
               decimalPlaces: "1",
             }}
             groupAggregationMode="sum"
-            key="2023년"
-            label="2023 년"
+            key="year_minus_1"
+            label="{{ moment(dateRange_day.value.end || moment()).year() - 1 }} 년"
             placeholder="Enter value"
             position="center"
             size={60.84375}
             summaryAggregationMode="average"
+            valueOverride="{{ self.data[i][`${moment(dateRange_day.value.end || moment()).year() - 1}년`] }}"
           />
           <Column
             id="85e62"
@@ -350,12 +356,13 @@
               decimalPlaces: "1",
             }}
             groupAggregationMode="sum"
-            key="2024년"
-            label="2024 년"
+            key="year_minus_2"
+            label="{{ moment(dateRange_day.value.end || moment()).year() - 2 }} 년"
             placeholder="Enter value"
             position="center"
             size={60.84375}
             summaryAggregationMode="average"
+            valueOverride="{{ self.data[i][`${moment(dateRange_day.value.end || moment()).year() - 2}년`] }}"
           />
           <Column
             id="edc39"
@@ -368,12 +375,13 @@
               decimalPlaces: "1",
             }}
             groupAggregationMode="sum"
-            key="2025년"
-            label="2025 년"
+            key="year_minus_3"
+            label="{{ moment(dateRange_day.value.end || moment()).year() - 3 }} 년"
             placeholder="Enter value"
             position="center"
             size={60.84375}
             summaryAggregationMode="average"
+            valueOverride="{{ self.data[i][`${moment(dateRange_day.value.end || moment()).year() - 3}년`] }}"
           />
         </Table>
       </View>
@@ -399,7 +407,7 @@
           chartType="plotlyJson"
           plotlyDataJson="{{ weather_table_data.data.plotlyTracesAvg}}"
           plotlyLayoutJson={
-            '{\n  "title": "",\n  "xaxis": {\n    "title": "",\n    "showgrid": false\n  },\n  "yaxis": {\n    "title": "",\n    "showgrid": true // Y축 그리드 표시\n  },\n  "hovermode": "x unified",\n  "margin": { // 여백 조정 (값을 줄여 여백 감소)\n    "l": 30,  // 왼쪽 여백\n    "r": 30,  // 오른쪽 여백\n    "t": 30,  // 상단 여백 (제목 공간 포함)\n    "b": 30   // 하단 여백\n  },\n  "colorway": [\n    "#feecaa", // 2022년\n    "#eecff3", // 2023년\n    "#bfdbfe", // 2024년\n    "#069669"  // 2025년\n  ],\n  "legend": { // 범례 설정\n    "orientation": "h",\n    "yanchor": "bottom",\n    "y": 1,\n    "xanchor": "center",\n    "x": 0.5\n  }\n}'
+            '{\n  "title": "",\n  "xaxis": {\n    "title": "",\n    "showgrid": false\n  },\n  "yaxis": {\n    "title": "",\n    "showgrid": true // Y축 그리드 표시\n  },\n  "hovermode": "x unified",\n  "margin": { // 여백 조정 (값을 줄여 여백 감소)\n    "l": 30,  // 왼쪽 여백\n    "r": 30,  // 오른쪽 여백\n    "t": 30,  // 상단 여백 (제목 공간 포함)\n    "b": 30   // 하단 여백\n  },\n  "colorway": [\n    "#feecaa", // 가장 오래된 해\n    "#eecff3",\n    "#bfdbfe",\n    "#069669"  // 가장 최근 해\n  ],\n  "legend": { // 범례 설정\n    "orientation": "h",\n    "yanchor": "bottom",\n    "y": 1,\n    "xanchor": "center",\n    "x": 0.5\n  }\n}'
           }
           selectedPoints="[]"
         />
@@ -441,12 +449,13 @@
               decimalPlaces: "1",
             }}
             groupAggregationMode="sum"
-            key="2022년"
-            label="2022 년"
+            key="year_latest"
+            label="{{ moment(dateRange_day.value.end || moment()).year() }} 년"
             placeholder="Enter value"
             position="center"
             size={60.84375}
             summaryAggregationMode="average"
+            valueOverride="{{ self.data[i][`${moment(dateRange_day.value.end || moment()).year()}년`] }}"
           />
           <Column
             id="d3969"
@@ -459,12 +468,13 @@
               decimalPlaces: "1",
             }}
             groupAggregationMode="sum"
-            key="2023년"
-            label="2023 년"
+            key="year_minus_1"
+            label="{{ moment(dateRange_day.value.end || moment()).year() - 1 }} 년"
             placeholder="Enter value"
             position="center"
             size={60.84375}
             summaryAggregationMode="average"
+            valueOverride="{{ self.data[i][`${moment(dateRange_day.value.end || moment()).year() - 1}년`] }}"
           />
           <Column
             id="85e62"
@@ -477,12 +487,13 @@
               decimalPlaces: "1",
             }}
             groupAggregationMode="sum"
-            key="2024년"
-            label="2024 년"
+            key="year_minus_2"
+            label="{{ moment(dateRange_day.value.end || moment()).year() - 2 }} 년"
             placeholder="Enter value"
             position="center"
             size={60.84375}
             summaryAggregationMode="average"
+            valueOverride="{{ self.data[i][`${moment(dateRange_day.value.end || moment()).year() - 2}년`] }}"
           />
           <Column
             id="d9b43"
@@ -495,12 +506,13 @@
               decimalPlaces: "1",
             }}
             groupAggregationMode="sum"
-            key="2025년"
-            label="2025 년"
+            key="year_minus_3"
+            label="{{ moment(dateRange_day.value.end || moment()).year() - 3 }} 년"
             placeholder="Enter value"
             position="center"
             size={60.84375}
             summaryAggregationMode="average"
+            valueOverride="{{ self.data[i][`${moment(dateRange_day.value.end || moment()).year() - 3}년`] }}"
           />
         </Table>
       </View>

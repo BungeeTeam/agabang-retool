@@ -14,11 +14,15 @@ if (!rawData || !Array.isArray(rawData) || rawData.length === 0) {
 }
 
 // 2. 연도별/기간별 데이터 그룹화 및 정렬 준비
+const endYear = moment(dateRange_day.value.end || moment()).year();
+const oldestYear = endYear - 3;
 const uniqueYears = [...new Set(rawData.map(row => row.comparison_year))].sort((a, b) => a - b);
+const displayYears = uniqueYears.filter(year => year >= oldestYear && year <= endYear);
 const uniquePeriods = [...new Set(rawData.map(row => row.period_start))]
   .sort((a, b) => new Date(a) - new Date(b)); // 날짜/시간 정렬 보장
 
 console.log('Unique Years:', uniqueYears);
+console.log('Display Years:', displayYears);
 console.log('Unique Periods:', uniquePeriods);
 
 // 3. Plotly Trace 객체 생성 준비
@@ -36,14 +40,18 @@ const tableFormattedData = {
 
 // 5. 기간별 루프 시작 (테이블 데이터 생성)
 uniquePeriods.forEach(period => {
-  const tempMinEntry = { '날짜': period };
-  const tempMaxEntry = { '날짜': period };
-  const tempAvgEntry = { '날짜': period };
+  const periodLabel = moment(period).format('YYYY-MM-DD'); // 표의 날짜 컬럼 기준
+  const tempMinEntry = { '날짜': periodLabel };
+  const tempMaxEntry = { '날짜': periodLabel };
+  const tempAvgEntry = { '날짜': periodLabel };
 
-  uniqueYears.forEach(year => {
+  displayYears.forEach(year => {
     const yearKey = `${year}년`;
     const tempRecord = rawData.find(record => {
-      return record.comparison_year === year && String(record.period_start) === String(period);
+      return (
+        record.comparison_year === year &&
+        moment(record.period_start).format('YYYY-MM-DD') === periodLabel
+      );
     });
 
     // 테이블용 데이터 할당
@@ -59,13 +67,13 @@ uniquePeriods.forEach(period => {
 
 
 // 6. 연도별 루프 시작 (Plotly Trace 생성)
-uniqueYears.forEach(year => {
+displayYears.forEach(year => {
   const yearData = rawData.filter(row => row.comparison_year === year);
   yearData.sort((a, b) => new Date(a.period_start) - new Date(b.period_start));
 
   const lineStyle = { shape: 'spline', smoothing: 0.7 };
-  if (year === 2022) {
-    lineStyle.dash = 'dot'; // 2022년 점선 스타일 유지
+  if (year === oldestYear) {
+    lineStyle.dash = 'dot'; // 가장 오래된 해 점선 스타일 유지
   }
 
   tracesMax.push({
