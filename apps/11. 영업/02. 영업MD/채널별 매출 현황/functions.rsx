@@ -14,8 +14,6 @@
   />
   <SqlQuery
     id="getSalesByShop"
-    cacheKeyTtl="40000"
-    enableCaching={true}
     enableTransformer={true}
     isMultiplayerEdited={false}
     query={include("./lib/getSalesByShop.sql", "string")}
