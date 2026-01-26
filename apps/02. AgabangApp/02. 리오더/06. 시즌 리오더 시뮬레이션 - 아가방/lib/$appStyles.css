@@ -1,0 +1,33 @@
+div[data-row-index="-1"] {
+  height: 50px !important;
+  position: sticky !important; /* 헤더를 고정 */
+  top: 0 !important; /* 화면 상단에 고정 */
+  word-break: keep-all !important;
+}
+
+span[data-testid*="HeaderCellContents"] {
+  text-align: center !important;
+  text-wrap: wrap !important;
+}
+
+/* Replace "SUM" with "계" in the summary row */
+div[data-is-summary-row="true"] [data-testid^="SummaryRowCellContents"] span:first-child {
+  visibility: hidden; /* Hide the original "SUM" text */
+  position: relative;
+}
+
+div[data-is-summary-row="true"] [role="gridcell"] {
+  background-color: #01488F33 !important;
+}
+
+footer { /* 실제 footer 컨테이너의 data-testid에 맞게 수정 */
+    height: 50px !important;
+    position: sticky !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
