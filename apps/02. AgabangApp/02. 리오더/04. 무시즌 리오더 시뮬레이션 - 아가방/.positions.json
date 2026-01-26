@@ -1,0 +1,471 @@
+{
+  "agabangTopNavigation1": {
+    "subcontainer": "header",
+    "height": 2.4,
+    "width": 12
+  },
+  "approvalTable": {
+    "row": 39.8,
+    "col": 2,
+    "height": 10.2,
+    "width": 10
+  },
+  "button1": {
+    "type": "stack",
+    "container": "container2",
+    "rowGroup": "header",
+    "subcontainer": "fe38f",
+    "row": 0,
+    "col": 9,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "auto",
+        "width": 275,
+        "height": 40
+      }
+    }
+  },
+  "button10": {
+    "type": "stack",
+    "container": "mainContainer",
+    "rowGroup": "footer",
+    "subcontainer": "78ff7",
+    "col": 4,
+    "height": 1,
+    "width": 4,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 356,
+        "height": 40
+      }
+    }
+  },
+  "button3": {
+    "type": "stack",
+    "container": "gridContainer",
+    "rowGroup": "footer",
+    "subcontainer": "e5d12",
+    "row": 0,
+    "col": 4,
+    "height": 1,
+    "width": 4,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 356,
+        "height": 40
+      }
+    }
+  },
+  "button7": {
+    "type": "stack",
+    "container": "stack12",
+    "subcontainer": "5bfc2",
+    "row": 1,
+    "col": 10,
+    "height": 1,
+    "width": 2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "fixed",
+        "width": 168,
+        "height": 33
+      }
+    }
+  },
+  "button8": {
+    "type": "stack",
+    "container": "gridContainer",
+    "rowGroup": "header",
+    "subcontainer": "e5d12",
+    "row": 0,
+    "col": 10,
+    "height": 1,
+    "width": 2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 168,
+        "height": 33
+      }
+    }
+  },
+  "container2": {
+    "container": "gridView2",
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "container3": {
+    "type": "stack",
+    "container": "container2",
+    "subcontainer": "fe38f",
+    "row": 62.8,
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fill",
+        "width": 1226,
+        "height": 152
+      }
+    }
+  },
+  "container4": {
+    "type": "stack",
+    "container": "container3",
+    "subcontainer": "fe38f",
+    "row": 67,
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fill",
+        "width": 1980,
+        "height": 216
+      }
+    }
+  },
+  "containerTitle2": {
+    "type": "stack",
+    "container": "container2",
+    "rowGroup": "header",
+    "height": 0.6,
+    "width": 6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 1238,
+        "height": 24
+      }
+    }
+  },
+  "gridContainer": {
+    "type": "stack",
+    "container": "mainContainer",
+    "subcontainer": "78ff7",
+    "row": 1.4,
+    "height": 6.6,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fill",
+        "width": 1068,
+        "height": 408
+      }
+    }
+  },
+  "gridView2": {
+    "type": "stack",
+    "container": "gridContainer",
+    "subcontainer": "e5d12",
+    "row": 0.2,
+    "height": 24,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fill",
+        "width": 1068,
+        "height": 40
+      }
+    }
+  },
+  "icon1": {
+    "type": "stack",
+    "container": "stack11",
+    "subcontainer": "5bfc2",
+    "row": 1,
+    "col": 3,
+    "height": 0.6,
+    "width": 1,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 89,
+        "height": 24
+      }
+    }
+  },
+  "icon2": {
+    "type": "stack",
+    "container": "stack13",
+    "subcontainer": "5bfc2",
+    "row": 1,
+    "col": 3,
+    "height": 0.6,
+    "width": 1,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fixed",
+        "width": 30,
+        "height": 23
+      }
+    }
+  },
+  "image3": {
+    "type": "stack",
+    "container": "stack10",
+    "subcontainer": "01eb7",
+    "row": 69.4,
+    "height": 0.6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 120,
+        "height": 200
+      }
+    }
+  },
+  "keyValueProductInfo": {
+    "type": "stack",
+    "container": "container4",
+    "subcontainer": "fe38f",
+    "row": 5,
+    "height": 8.6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fill",
+        "width": 293,
+        "height": 264
+      }
+    }
+  },
+  "keyValueReorderInfo": {
+    "type": "stack",
+    "container": "container4",
+    "subcontainer": "fe38f",
+    "row": 4.4,
+    "height": 8.6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 3,
+        "widthType": "fill",
+        "width": 495,
+        "height": 344
+      }
+    }
+  },
+  "keyValueSalesPerformance": {
+    "type": "stack",
+    "container": "container4",
+    "subcontainer": "fe38f",
+    "height": 8.6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "fill",
+        "width": 330,
+        "height": 344
+      }
+    }
+  },
+  "mainContainer": {
+    "height": 26.8,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "mainTable": {
+    "row": 27.4,
+    "height": 6,
+    "width": 6
+  },
+  "modalCloseButton1": {
+    "rowGroup": "header",
+    "subcontainer": "modalFrame1",
+    "col": 9,
+    "height": 1
+  },
+  "modalTitle1": {
+    "rowGroup": "header",
+    "subcontainer": "modalFrame1",
+    "height": 0.6,
+    "width": 9
+  },
+  "multiselect1": {
+    "type": "stack",
+    "container": "stack13",
+    "subcontainer": "5bfc2",
+    "row": 3.2,
+    "height": 0.2,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "fixed",
+        "width": 733,
+        "height": 40
+      }
+    }
+  },
+  "reviewTable": {
+    "row": 27.4,
+    "col": 6,
+    "height": 6,
+    "width": 6
+  },
+  "sizeTable": {
+    "row": 33.4,
+    "height": 6.4,
+    "width": 6
+  },
+  "stack10": {
+    "type": "stack",
+    "container": "container4",
+    "subcontainer": "fe38f",
+    "row": 0.6,
+    "height": 3.8,
+    "width": 6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "auto",
+        "width": 825,
+        "height": 152
+      }
+    }
+  },
+  "stack11": {
+    "type": "stack",
+    "container": "stack12",
+    "subcontainer": "5bfc2",
+    "row": 1.8,
+    "height": 3.8,
+    "width": 7,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 275,
+        "height": 40
+      }
+    }
+  },
+  "stack12": {
+    "type": "stack",
+    "container": "mainContainer",
+    "rowGroup": "header",
+    "subcontainer": "78ff7",
+    "row": 0,
+    "height": 3.8,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 2,
+        "widthType": "fixed",
+        "width": 300,
+        "height": 152
+      }
+    }
+  },
+  "stack13": {
+    "type": "stack",
+    "container": "gridContainer",
+    "rowGroup": "header",
+    "subcontainer": "e5d12",
+    "height": 3.8,
+    "width": 10,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 275,
+        "height": 40
+      }
+    }
+  },
+  "table_size_details": {
+    "type": "stack",
+    "container": "container3",
+    "subcontainer": "fe38f",
+    "row": 68,
+    "height": 1,
+    "width": 12,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "fill",
+        "width": 1361,
+        "height": 40
+      }
+    }
+  },
+  "tags1": {
+    "type": "stack",
+    "container": "stack10",
+    "subcontainer": "01eb7",
+    "row": 10,
+    "height": 0.8,
+    "stackPosition": {
+      "object": {
+        "ordinal": 1,
+        "widthType": "auto",
+        "width": 176,
+        "height": 32
+      }
+    }
+  },
+  "text37": {
+    "type": "stack",
+    "container": "stack11",
+    "subcontainer": "5bfc2",
+    "row": 2.6,
+    "height": 0.6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "auto",
+        "width": 267,
+        "height": 40
+      }
+    }
+  },
+  "text39": {
+    "subcontainer": "modalFrame1",
+    "height": 0.6,
+    "width": 12
+  },
+  "text42": {
+    "type": "stack",
+    "container": "stack13",
+    "subcontainer": "5bfc2",
+    "row": 2.6,
+    "height": 0.6,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "auto",
+        "width": 267,
+        "height": 40
+      }
+    }
+  }
+}
