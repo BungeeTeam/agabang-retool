@@ -8,7 +8,7 @@ shop_nm: '월계이마트아가방갤러리'
 }"
     />
     <State id="selectedInventoryRow" value="" />
-    <State id="thisYear" value="{{ new Date().getFullYear() }} " />
+    <State id="thisYear" value="{{ new Date(endDate.value).getFullYear() }} " />
   </Folder>
   <Folder id="excelDownload">
     <JavascriptQuery
