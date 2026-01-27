@@ -1,4 +1,4 @@
-const currentYear = new Date().getFullYear()
+const currentYear = new Date({{ endDate.value }}).getFullYear()
 const sumKeys = ["rev"]
 const groupKeys = ["shop_cd", "shop_nm"]
 const data = {{ inputData.value }}
@@ -8,7 +8,7 @@ const groupedArr = groupBySum(arrData, ["time_unit", ...groupKeys], sumKeys)
 const targetArr = groupBySum(arrData.filter(obj => obj.time_unit === currentYear), groupKeys, ["target_sales"])
 const result = pivotData(groupedArr, groupKeys, "time_unit", sumKeys)
 
-const thisYear = new Date().getFullYear().toString()
+const thisYear = new Date({{ endDate.value }}).getFullYear().toString()
 return result
   .filter(ele => thisYear in ele)
   .map(item => {
