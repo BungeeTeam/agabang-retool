@@ -507,6 +507,7 @@
             formatOptions={{ showSeparators: true, notation: "standard" }}
             hidden="false"
             label="일 판매량"
+            valueOverride="{{ item.toFixed(1) }}"
           />
           <Property
             id="매장수"

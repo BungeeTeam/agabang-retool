@@ -1,7 +1,7 @@
 <App>
   <Include src="./functions.rsx" />
   <AppStyles id="$appStyles" css={include("./lib/$appStyles.css", "string")} />
-  <GlobalWidgetProp id="var_brand_code" value="'01'" />
+  <GlobalWidgetProp id="var_brand_code" value="'07'" />
   <Include src="./src/drawerFrame1.rsx" />
   <Include src="./src/modalFrame1.rsx" />
   <Frame
@@ -18,7 +18,7 @@
       backgroundColor="white"
       brand_code="'07'"
       isGlobalWidgetContainer={true}
-      var_brand_code="'01'"
+      var_brand_code="'07'"
     >
       <Container
         id="stack3"

@@ -63,7 +63,7 @@
         placeholder="Enter value"
         position="center"
         referenceId="image"
-        size={16}
+        size={516}
         summaryAggregationMode="none"
         valueOverride="{{ currentSourceRow.sty_cd?.length>0 ? `https://agabang-image.s3.ap-northeast-2.amazonaws.com/item_final/${currentSourceRow.sty_cd}${currentSourceRow.col_cd}.jpg` : null }}"
       />
@@ -76,7 +76,7 @@
         label="품명"
         placeholder="Enter value"
         position="center"
-        size={36.734375}
+        size={127.015625}
         summaryAggregationMode="none"
       />
       <Column
@@ -88,7 +88,7 @@
         label="품번"
         placeholder="Enter value"
         position="center"
-        size={36.734375}
+        size={75.8125}
         summaryAggregationMode="none"
       />
       <Column
@@ -100,7 +100,7 @@
         label="컬러"
         placeholder="Enter value"
         position="center"
-        size={36.734375}
+        size={56.40625}
         summaryAggregationMode="none"
       />
       <ToolbarButton
@@ -223,6 +223,15 @@
         params={{ ordered: [] }}
         pluginId="sendTeamsAlert"
         type="datasource"
+        waitMs="0"
+        waitType="debounce"
+      />
+      <Event
+        event="click"
+        method="clearSelection"
+        params={{ ordered: [] }}
+        pluginId="table_main_list"
+        type="widget"
         waitMs="0"
         waitType="debounce"
       />
