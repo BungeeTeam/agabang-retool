@@ -76,7 +76,7 @@
         label="품명"
         placeholder="Enter value"
         position="center"
-        size={119.703125}
+        size={36.734375}
         summaryAggregationMode="none"
       />
       <Column
@@ -88,7 +88,7 @@
         label="품번"
         placeholder="Enter value"
         position="center"
-        size={78.328125}
+        size={36.734375}
         summaryAggregationMode="none"
       />
       <Column
@@ -100,7 +100,7 @@
         label="컬러"
         placeholder="Enter value"
         position="center"
-        size={48.484375}
+        size={36.734375}
         summaryAggregationMode="none"
       />
       <ToolbarButton
