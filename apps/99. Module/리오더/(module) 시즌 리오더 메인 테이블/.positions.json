@@ -265,7 +265,6 @@
   },
   "table8": {
     "container": "table_main_list",
-    "row": 0,
     "height": 1,
     "width": 12
   },
@@ -341,7 +340,6 @@
     "type": "stack",
     "container": "collapsibleContainer_discontinued_items",
     "subcontainer": "f474a",
-    "row": 0,
     "height": 0.2,
     "width": 4,
     "stackPosition": {
