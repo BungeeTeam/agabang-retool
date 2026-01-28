@@ -4,7 +4,6 @@
     "container": "container2",
     "rowGroup": "header",
     "subcontainer": "fe38f",
-    "row": 0,
     "col": 9,
     "height": 1,
     "stackPosition": {
@@ -38,7 +37,6 @@
     "container": "gridContainer",
     "rowGroup": "footer",
     "subcontainer": "e5d12",
-    "row": 0,
     "col": 4,
     "height": 0.8,
     "width": 4,
@@ -73,7 +71,6 @@
     "container": "gridContainer",
     "rowGroup": "header",
     "subcontainer": "e5d12",
-    "row": 0,
     "col": 9,
     "height": 1,
     "stackPosition": {
@@ -309,9 +306,9 @@
     "height": 0.2,
     "stackPosition": {
       "object": {
-        "ordinal": 0,
+        "ordinal": 1,
         "widthType": "fixed",
-        "width": 733,
+        "width": 1022,
         "height": 40
       }
     }
@@ -389,7 +386,6 @@
     "container": "mainContainer",
     "rowGroup": "header",
     "subcontainer": "78ff7",
-    "row": 0,
     "height": 3.8,
     "width": 12,
     "stackPosition": {
@@ -406,7 +402,6 @@
     "container": "gridContainer",
     "rowGroup": "header",
     "subcontainer": "e5d12",
-    "row": 0,
     "height": 3.8,
     "width": 7,
     "stackPosition": {

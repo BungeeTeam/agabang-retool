@@ -722,19 +722,17 @@ function processItemUpdate(updatedItem, validatedChanges, executionId) {
         const salesPeriod = getDaysDifference(firstOutboundDate, validatedChanges.newReferenceDate);
         updatedItem.sales_performance["출고~기준일 판매일수"] = salesPeriod;
         console.log(`[${executionId}] 기준일 변경에 따른 판매일수 업데이트: ${salesPeriod}일`);
-        
-        if (salesPeriod > 0) {
-          const totSaleQty = safeNumber(updatedItem.sales_performance?.["누적 판매량"]);
-          const dailySales = totSaleQty / salesPeriod;
-          updatedItem.sales_performance["일 판매량"] = Math.round(dailySales);
-          
-          const shopCount = safeNumber(updatedItem.sales_performance["매장수"]);
-          if (shopCount > 0) {
-            updatedItem.sales_performance["매장당 일 판매량"] = Number((dailySales / shopCount).toFixed(2));
-          }
-          console.log(`[${executionId}] 일 판매량 재계산: ${Math.round(dailySales)}`);
-        }
       }
+
+      const weeklySales = safeNumber(updatedItem.sales_performance?.["최근 7일 판매량"]);
+      const dailySales = weeklySales / 7;
+      updatedItem.sales_performance["일 판매량"] = Number(dailySales.toFixed(1));
+      
+      const shopCount = safeNumber(updatedItem.sales_performance["매장수"]);
+      if (shopCount > 0) {
+        updatedItem.sales_performance["매장당 일 판매량"] = Number((dailySales / shopCount).toFixed(2));
+      }
+      console.log(`[${executionId}] 일 판매량 재계산(최근 7일 기준): ${Number(dailySales.toFixed(1))}`);
       
       updatedItem._reorderInfoNeedsUpdate = true;
       console.log(`[${executionId}] 기준일 업데이트 완료: ${validatedChanges.newReferenceDate} (이전: ${oldReferenceDate})`);
@@ -748,6 +746,7 @@ function processItemUpdate(updatedItem, validatedChanges, executionId) {
       if (shopCount > 0) {
         const dailyAvgSales = validatedChanges.newDailySales7d / 7;
         const shopDailySales = dailyAvgSales / shopCount;
+        updatedItem.sales_performance["일 판매량"] = Number(dailyAvgSales.toFixed(1));
         updatedItem.sales_performance["매장당 일 판매량"] = Number(shopDailySales.toFixed(2));
         
         const totOutQty = safeNumber(updatedItem.production_info?.["출고 수량"]);
@@ -817,13 +816,12 @@ function processItemUpdate(updatedItem, validatedChanges, executionId) {
       console.log(`[${executionId}] 리오더 입고 후 판매 가능일수 계산: ${salesEndToReorderInboundDays}일`);
       
       const shopCount = safeNumber(updatedItem.sales_performance?.["매장수"]);
-      const dailySalesFromLast7d = currentDailySales7d / 7;
-      const dailySales = dailySalesFromLast7d > 0 
-        ? dailySalesFromLast7d 
-        : safeNumber(updatedItem.sales_performance?.["일 판매량"]);
+      const dailySales = currentDailySales7d / 7;
       const shopDailySales = shopCount > 0 ? dailySales / shopCount : 0;
       
-      const expectedSales = daysUntilSalesEnd * shopCount * shopDailySales * (1 + currentGrowthRate);
+      const shouldApplyGrowthRate = validatedChanges.newGrowthRate !== undefined;
+      const growthRateFactor = shouldApplyGrowthRate ? (1 + currentGrowthRate) : 1;
+      const expectedSales = daysUntilSalesEnd * shopCount * shopDailySales * growthRateFactor;
       updatedItem.reorder_info["기준일~마감일 예상 판매량"] = safeInteger(expectedSales);
       updatedItem.expected_sales_full_period = safeInteger(expectedSales);
       console.log(`[${executionId}] 예상 판매량 계산: ${safeInteger(expectedSales)}`);
@@ -848,7 +846,7 @@ function processItemUpdate(updatedItem, validatedChanges, executionId) {
       updatedItem.expectedSupplyQty = safeInteger(shortageSales);
       console.log(`[${executionId}] 최종 리오더 수량 계산: ${safeInteger(reorderFinalQty)}`);
       
-      const expectedSalesDuringLeadTime = shopDailySales * shopCount * currentLeadTimeDays * (1 + currentGrowthRate);
+      const expectedSalesDuringLeadTime = shopDailySales * shopCount * currentLeadTimeDays * growthRateFactor;
       updatedItem.expected_sales_during_lead_time = safeInteger(expectedSalesDuringLeadTime);
       updatedItem.expected_sales = safeInteger(expectedSalesDuringLeadTime);
       updatedItem.expectedSalesQty = safeInteger(expectedSalesDuringLeadTime);
@@ -878,7 +876,7 @@ function processItemUpdate(updatedItem, validatedChanges, executionId) {
           const sizeDailySales = dailySales * sizeRatio;
           
           // 사이즈별 예상 판매량 계산
-          const sizeExpectedSales = daysUntilSalesEnd * shopCount * (sizeDailySales / shopCount) * (1 + currentGrowthRate);
+          const sizeExpectedSales = daysUntilSalesEnd * shopCount * (sizeDailySales / shopCount) * growthRateFactor;
 
           // 사이즈별 부족 수량 계산
           const sizeStock = safeNumber(sizeInfo.total_stock);
